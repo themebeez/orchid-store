@@ -1,0 +1,11 @@
+a {
+    
+    text-decoration: none;
+    @include transation_delay();
+}
+
+a:hover,
+a:active {
+
+    text-decoration:none;
+}

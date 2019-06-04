@@ -1,0 +1,162 @@
+span.widget_multicheck {
+	margin-top: 10px;
+	margin-bottom: 10px;
+    height: 250px;
+    display: block;
+    overflow-y: scroll;
+    border: 1px solid #eee;
+    background-color: #f5f5f5;
+}
+
+span.sldr-elmnt-cntnr {
+	padding: 10px;
+    display: block;    
+}
+
+span.sldr-elmnt-title,
+span.sldr-elmnt-desc {
+
+	display: block;
+}
+
+span.sldr-elmnt-desc {
+
+	margin-top: 5px;
+}
+
+span.sldr-elmnt-cntnr span.sldr-elmnt-btn-wrapper-hide,
+span.sldr-elmnt-btn-wrapper-clone-hide {
+	
+	display: none;
+}
+
+span.sldr-elmnt-cntnr span.sldr-elmnt-btn-wrapper-show {
+	
+	display: block;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    margin-top: 10px;
+}
+
+span.sldr-elmnt-cntnr span.sldr-elmnt-btn-wrapper-show .sldr-elmnt-btn-title,
+span.sldr-elmnt-cntnr span.sldr-elmnt-btn-wrapper-show .sldr-elmnt-btn-link {
+	
+	display: block;
+}
+
+span.sldr-elmnt-cntnr span.sldr-elmnt-btn-wrapper-show .sldr-elmnt-btn-title {
+
+	margin-bottom: 5px;
+}
+
+.widget .widget-inside .widget-content label {
+	
+	margin-bottom: 5px;
+}
+
+.widget .widget-inside .widget-content p {
+
+	margin-top: 20px;
+}  
+
+
+/**
+ * Styles for image upload in Widget
+ */
+
+.os-image-uploader-container {
+
+	display: block;
+}
+
+.os-upload-btn.os-btn-hide,
+.os-remove-btn.os-btn-hide,
+.os-replace-btn.os-btn-hide {
+
+	display: none;
+}
+
+.os-upload-btn.os-btn-show,
+.os-remove-btn.os-btn-show,
+.os-replace-btn.os-btn-show {
+
+	display: inline-block;
+}
+
+.os-upload-image-holder {
+
+	display: block;
+	height: 160px;
+	width: 100%;
+	background-color: #f5f5f5;
+	background-position: center;
+	background-size: cover;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #eeeeee;
+}
+
+/**
+ * Wrapped Fields Styles
+ */
+
+.os-fields-wrapper,
+.os-fields,
+.os-fields-wrapper-title {
+
+	display: block;
+}
+
+.os-fields-wrapper-title {
+
+	display: block;
+	padding: 5px;
+	text-align: center;
+	background: #f5f5f5;
+	border: 1px solid #eeeeee;
+}
+
+.os-fields {
+
+	margin-top: 10px;
+	padding: 10px;
+	border: 1px solid #eeeeee;
+}
+
+.os-fields input.widefat {
+
+	margin-bottom: 5px;
+}
+
+.os-image-notice {
+
+	display: block;
+	margin-top: 5px;
+}
+
+/**
+ * Wrapped Fields Styles
+ */
+
+.os-elements-container-wrapper {
+
+	display: block;
+	margin-top: 10px;
+	padding: 10px;
+	border: 1px solid #eeeeee;
+}
+
+.os-elements-container-wrapper input.widefat {
+
+	margin-bottom: 5px;
+}
+
+.os-elements-container-wrapper.show-wrapper {
+
+	display: block;
+}
+
+.os-elements-container-wrapper.hide-wrapper {
+
+	display: none;
+}

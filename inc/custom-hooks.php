@@ -1,0 +1,303 @@
+<?php
+/**
+ * Load custom hooks necessary for theme.
+ *
+ * @package Orchid_Store
+ */
+
+
+if( ! function_exists( 'orchid_store_header_action' ) ) {
+
+	function orchid_store_header_action() {
+
+		get_template_part( 'template-parts/header/header', 'one' );
+	}
+}
+add_action( 'orchid_store_header', 'orchid_store_header_action', 10 ); 
+
+
+if( ! function_exists( 'orchid_store_secondary_navigation_action' ) ) {
+
+	function orchid_store_secondary_navigation_action() {
+
+		if( has_nav_menu( 'menu-2' ) ) {
+ 			wp_nav_menu( array( 
+ 				'theme_location' => 'menu-2',
+ 				'container' => '', 
+ 				'menu_class' => 'secondary-navigation',
+ 				'depth' => 1,
+ 			) );
+ 		}
+	}
+}
+add_action( 'orchid_store_secondary_navigation', 'orchid_store_secondary_navigation_action', 10 );
+
+
+if( ! function_exists( 'orchid_store_site_identity_action' ) ) {
+
+	function orchid_store_site_identity_action() {
+
+		?>
+		<div class="site-branding">
+			<?php
+			if( has_custom_logo() ) {
+				the_custom_logo();
+			} else {
+				?>
+				<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+				<?php
+				$site_description = get_bloginfo( 'description', 'display' );
+				if ( $site_description || is_customize_preview() ) {
+					?>
+					<p class="site-description"><?php echo esc_html( $site_description ); /* WPCS: xss ok. */ ?></p> 
+					<?php
+				}
+			}
+			?>
+        </div><!-- site-branding -->
+		<?php
+	}
+}
+add_action( 'orchid_store_site_identity', 'orchid_store_site_identity_action', 10 );
+
+
+if( ! function_exists( 'orchid_store_primary_navigation_action' ) ) {
+
+	function orchid_store_primary_navigation_action() {
+		?>
+		<nav id="site-navigation" class="site-navigation">
+			<?php
+			$menu_args = array(
+	 			'theme_location' => 'menu-1',
+	 			'container' => '',
+	 			'menu_class' => 'primary-menu',
+				'menu_id' => 'primary-menu',
+				'fallback_cb' => 'orchid_store_navigation_fallback',
+	 		);
+			wp_nav_menu( $menu_args );
+			?>
+		</nav><!-- .site-navigation.site-navigation -->
+		<?php
+	}
+}
+add_action( 'orchid_store_primary_navigation', 'orchid_store_primary_navigation_action', 10 );
+
+
+if( ! function_exists( 'orchid_store_post_author_action' ) ) {
+
+	function orchid_store_post_author_action() {
+
+		if ( 'post' === get_post_type() ) { 
+			?>
+			<li class="posted-by"><?php orchid_store_posted_by(); ?></li>
+			<?php
+		}
+	}
+}
+add_action( 'orchid_store_post_author', 'orchid_store_post_author_action', 10 );
+
+
+if( ! function_exists( 'orchid_store_post_date_action' ) ) {
+
+	function orchid_store_post_date_action() {
+
+		if ( 'post' === get_post_type() ) { 
+			?>
+            <li class="posted-date"><?php orchid_store_posted_on(); ?></li>
+			<?php
+		}
+	}
+}
+add_action( 'orchid_store_post_date', 'orchid_store_post_date_action', 10 );
+
+
+if( ! function_exists( 'orchid_store_post_categories_action' ) ) {
+
+	function orchid_store_post_categories_action() {
+
+		if( 'post' === get_post_type() ) {
+			?>
+			<div class="entry-cats">
+                <?php orchid_store_post_categories_list(); ?>
+            </div><!-- .entry-cats -->
+			<?php
+		}
+	}
+}
+add_action( 'orchid_store_post_categories', 'orchid_store_post_categories_action', 10 );
+
+
+if( ! function_exists( 'orchid_store_post_tags_action' ) ) {
+
+	function orchid_store_post_tags_action() {
+
+		if( 'post' === get_post_type() ) {
+			?>
+			<div class="entry-tags">
+				<div class="post-tags">
+                	<?php orchid_store_post_categories_list(); ?>
+                </div><!-- .post-tags -->
+            </div><!-- .entry-cats -->
+			<?php
+		}
+	}
+}
+add_action( 'orchid_store_post_tags', 'orchid_store_post_tags_action', 10 );
+
+
+if( ! function_exists( 'orchid_store_excerpt_action' ) ) {
+
+	function orchid_store_excerpt_action() {
+		?>
+		<div class="excerpt">
+            <?php the_excerpt(); ?>
+        </div><!-- .excerpt -->
+		<?php
+	}
+}
+add_action( 'orchid_store_excerpt', 'orchid_store_excerpt_action', 10 );
+
+
+if( ! function_exists( 'orchid_store_pagination_action' ) ) {
+
+	function orchid_store_pagination_action() {
+		?>
+		<div class="patigation">
+            <div class="pagination-entry">
+               	<?php
+               	the_posts_pagination( array(
+	        		'mid_size' => 0,
+					'prev_text' => esc_html__( 'Previous', 'orchid-store' ),
+					'next_text' => esc_html__( 'Next', 'orchid-store' ),
+	        	) );
+	        	?>
+            </div><!-- .pagination-entry -->
+        </div><!-- .pagination -->
+		<?php
+	}
+}
+add_action( 'orchid_store_pagination', 'orchid_store_pagination_action' );
+
+
+if( ! function_exists( 'orchid_store_post_navigation_action' ) ) {
+
+	function orchid_store_post_navigation_action() {
+
+		$next_post = get_next_post();
+
+	    $previous_post = get_previous_post();
+	    ?>
+	    <div class="post-navigation">
+            <div class="nav-links">
+            	<?php
+            	if( ! empty( $previous_post ) ) {
+	            	?>
+	                <div class="nav-previous">
+	                    <span><?php esc_html_e( 'Prev post', 'orchid-store' ); ?></span>
+	                    <a href="<?php echo esc_url( get_permalink( $previous_post->ID ) ); ?>"><?php echo esc_html( $previous_post->post_title ); ?></a>
+	                </div><!-- .nav-previous -->
+	                <?php
+	            }
+
+
+	            if( ! empty( $next_post ) ) {
+	            	?>
+	                <div class="nav-next">
+	                    <span><?php esc_html_e( 'Next post', 'orchid-store' ); ?></span>
+	                    <a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>"><?php echo esc_html( $next_post->post_title ); ?></a>
+	                </div><!-- .nav-next -->
+	                <?php
+	            }
+	            ?>
+            </div><!-- .nav-links -->
+        </div><!-- .post-navigation -->
+	    <?php
+	}
+}
+add_action( 'orchid_store_post_navigation', 'orchid_store_post_navigation_action', 10 );
+
+
+
+if( ! function_exists( 'orchid_store_large_thumbnail_action' ) ) {
+
+	function orchid_store_large_thumbnail_action() {
+
+		if( has_post_thumbnail() ) {
+			?>
+			<a href="<?php the_permalink(); ?>">
+				<?php 
+				the_post_thumbnail( 'orchid-store-thumbnail-large', array(
+					'alt' => the_title_attribute( array(
+						'echo' => false,
+					) ),
+				) );	
+				?>
+			</a>
+			<?php
+		}
+	}
+}
+add_action( 'orchid_store_large_thumbnail', 'orchid_store_large_thumbnail_action', 10 );
+
+
+if( ! function_exists( 'orchid_store_extra_large_thumbnail_action' ) ) {
+
+	function orchid_store_extra_large_thumbnail_action() {
+
+		if( has_post_thumbnail() ) {
+			?>
+			<a href="<?php the_permalink(); ?>">
+				<?php 
+				the_post_thumbnail( 'orchid-store-thumbnail-extra-large', array(
+					'alt' => the_title_attribute( array(
+						'echo' => false,
+					) ),
+				) );	
+				?>
+			</a>
+			<?php
+		}
+	}
+}
+add_action( 'orchid_store_extra_large_thumbnail', 'orchid_store_extra_large_thumbnail_action', 10 );
+
+
+if( !function_exists( 'orchid_store_footer_left_action' ) ) {
+
+	function orchid_store_footer_left_action() {
+
+		$copyright_text = orchid_store_get_option( 'copyright_text' );
+		?>
+		<div class="copyrights">
+			<p>
+				<?php
+				if( !empty( $copyright_text ) ) {
+					/* translators: 1: copyright text, 2: theme name, 3: theme author, 4: powered by */
+					printf( esc_html__( '%1$s %2$s Theme by %3$s. Powered by %4$s.', 'orchid-store' ), $copyright_text, 'Orchid Store', '<a href="https://themebeez.com" rel="author" target="_blank">Themebeez</a>', '<a href="https://wordpress.org" target="_blank">WordPress</a>' );
+				} else {
+					/* translators: 1: theme name, 2: theme author, 3: powered by */
+					printf( esc_html__( '%1$s Theme by %2$s. Powered by %3$s.', 'orchid-store' ), 'Orchid Store', '<a href="https://themebeez.com" rel="author" target="_blank">Themebeez</a>', '<a href="https://wordpress.org" target="_blank">WordPress</a>' );
+				}
+				?>
+			</p>
+        </div><!-- .copyrights -->
+		<?php
+	}
+}
+add_action( 'orchid_store_footer_left', 'orchid_store_footer_left_action', 10 );
+
+if( !function_exists( 'orchid_store_footer_right_action' ) ) {
+
+	function orchid_store_footer_right_action() {
+
+		$payments_processors = orchid_store_get_option( 'payments_image' );
+		if( !empty( $payments_processors ) ) {
+			?>
+			<div class="payment-options payment-col">
+                <img src="<?php echo esc_url( $payments_processors ); ?>">
+            </div><!-- .payment-options -->
+			<?php
+		}
+	}
+}
+add_action( 'orchid_store_footer_right', 'orchid_store_footer_right_action', 10 );

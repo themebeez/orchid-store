@@ -1,0 +1,684 @@
+
+// default styles
+
+.secondary-widget-area .widget {
+
+	margin-bottom: 30px;
+    padding:30px;
+}
+
+.widget .widget-title h3,
+.widget .widget_title h3 {
+
+    margin-bottom: 20px;
+}
+
+.widget .widget-title {
+
+    margin-bottom:30px;
+}
+
+.widget .widget-title h3 {
+
+	display: block;
+    position: relative;
+    font-style: normal;
+    margin:0;
+    line-height: 1.1;
+    border-left:3px solid $secondary_color;
+    overflow:hidden;
+    padding: 0 10px 0 10px;
+
+    &:after {
+
+        content: "";
+        display: inline-block;
+        height: 4px;
+        vertical-align: middle;
+        width: 100%;
+        margin-right: -100%;
+        margin-left: 14px;
+        border-top: 3px solid $secondary_color;
+    }
+}
+
+
+.footer .widget,
+.footer.secondary-widget-area .widget  {
+
+    padding:0;
+    border:none;
+}
+
+.footer .widget .widget-title h3 {
+
+    padding:0;
+    overflow-x: initial;
+    border-left:none;
+}
+
+.footer .widget .widget-title h3:after {
+
+    content:'';
+    display:none;
+}
+
+
+
+/*
+================================================
+=
+= custom about widget
+=
+==================================
+*/
+
+.os-about-widget .info {
+
+    margin-bottom: 30px;
+}
+
+.os-about-widget .contact-info {
+
+    list-style:none;
+}
+
+.os-about-widget .contact-info li {
+
+    display:block;
+    padding-bottom:15px;
+}
+
+.os-about-widget .contact-info li:last-child {
+
+    padding-bottom:0;
+}
+
+.os-about-widget .contact-info li p {
+
+    margin-bottom: 2px;
+}
+
+
+
+
+
+
+// wordpress & wooocommerce default widgets 
+
+
+.widget_archive ul,
+.widget_categories ul,
+.widget_recent_entries ul,
+.widget_meta ul,
+.widget_recent_comments ul,
+.widget_rss ul,
+.widget_pages ul,
+.widget_nav_menu ul,
+.widget_product_categories ul,
+.woocommerce-widget-layered-nav ul {
+
+    list-style: none;
+    margin: 0;
+    padding-left:0;
+    overflow:hidden;
+    margin:-12px 0;
+}
+
+.woocommerce .woocommerce-widget-layered-nav-list {
+
+    list-style:none;
+}
+
+.widget_product_categories ul {
+
+    margin-left: 0;
+}
+
+.widget_archive li,
+.widget_categories li,
+.widget_recent_entries li,
+.widget_meta li,
+.widget_recent_comments li,
+.widget_rss li,
+.widget_pages li,
+.widget_nav_menu li a,
+.widget_product_categories li,
+.woocommerce-widget-layered-nav ul li,
+.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item {
+
+    position: relative;
+    padding: 12px 0;
+    margin: 0;
+}
+
+
+.widget_archive li:last-child,
+.widget_categories li:last-child,
+.widget_recent_entries li:last-child,
+.widget_meta li:last-child,
+.widget_recent_comments li:last-child,
+.widget_rss li:last-child,
+.widget_pages li:last-child,
+.widget_nav_menu li:last-child,
+.widget_product_categories li:last-child,
+.widget_nav_menu>ul>li:last-child a,
+.woocommerce-widget-layered-nav ul li:last-child {
+
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.widget_archive ul li:first-child,
+.widget_categories ul li:first-child,
+.widget_product_categories ul li:first-child,
+.widget_pages ul li:first-child,
+.widget_meta ul li:first-child,
+.widget_rss li:first-child,
+.widget_recent_entries li:first-child,
+.widget_recent_comments li:first-child,
+.woocommerce-widget-layered-nav ul li:first-child {
+
+    padding-top: 0;
+}
+
+.widget_archive a,
+.widget_categories a,
+.widget_recent_entries a,
+.widget_meta a,
+.widget_recent_comments li,
+.widget_rss li,
+.widget_pages li,
+.widget_nav_menu a,
+.widget_product_categories a,
+.woocommerce-widget-layered-nav ul li a {
+
+    padding-left: 0;
+    position: relative;
+    float:none;
+    @include transation_delay();
+}
+
+
+// Spacing ( pading left ) on widgets
+
+
+.widget_recent_entries a {
+
+    display: block;
+}
+
+.widget_recent_comments li a {
+
+    display: inline-block;
+}
+
+.widget_nav_menu li a {
+
+    padding-left: 0;
+    display: block;
+}
+
+
+// Align count values to right side 
+
+
+.widget_archive ul li,
+.widget_categories ul li,
+.widget_product_categories ul li,
+.woocommerce-widget-layered-nav ul li {
+
+    text-align:left;
+} 
+
+.widget_archive ul li a,
+.widget_categories ul li a,
+.widget_product_categories ul li a,
+.woocommerce-widget-layered-nav ul li a {
+    
+    display:inline-block;
+    width:80%;
+    float:none;
+}
+
+
+
+.widget_nav_menu ul li ul,
+.widget_product_categories ul li ul,
+.widget_nav_menu ul li ul {
+
+    padding-left:20px;
+}
+
+.widget_product_categories ul li ul {
+
+    padding-top:20px;
+    margin-top:20px;
+}
+
+
+
+/*
+=======================================
+=
+= Nav menus widget
+=
+===============================================
+*/
+
+
+.widget_nav_menu li:last-child a {
+
+    border-bottom:none;
+}
+
+
+
+/*
+=======================================
+=
+= Recent posts widget 
+=
+===============================================
+*/
+
+
+
+.widget_recent_entries .post-date {
+
+    display: block;
+    margin-top: 5px;
+    padding-left: 0;
+    font-size:14px;
+}
+
+
+
+/*
+=======================================
+=
+= Archive widget
+=
+===============================================
+*/
+
+
+
+.widget_archive label {
+
+    display:block;
+    margin-bottom: 10px;
+}
+
+
+
+/*
+=======================================
+=
+= Category widget
+=
+===============================================
+*/
+
+
+.widget_categories label {
+
+    display:block;
+    margin-bottom: 10px;
+}
+
+
+
+
+/*
+=======================================
+=
+= Rss widget
+=
+===============================================
+*/
+
+.widget_rss .widget-title h3 img {
+
+    display:none;
+}
+
+
+
+
+/*
+=======================================
+=
+= Tags cloud
+=
+===============================================
+*/
+
+
+.widget_tag_cloud .tagcloud {
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin:-5px -2px;
+}
+
+.widget_tag_cloud .tagcloud a {
+    
+    flex: 1 auto;
+    text-transform:capitalize;
+    font-size:16px !important;
+    text-align:center;
+    letter-spacing:0;
+    padding: 5px 15px;
+    margin:2px;
+    background:#eeeeee;
+    font-weight:400;
+}
+
+
+
+
+/*
+=======================================
+=
+= Search widget 
+=
+===============================================
+*/
+
+
+.widget_search {
+
+    
+    display:block;
+}
+
+.widget_search {
+    
+    display:block;
+    position:relative;
+    z-index:5;
+    left:auto;
+    top:auto;
+    right:auto;
+    box-shadow:none;
+    padding: 0;
+    border-top: none;
+    animation:none;
+}
+
+.widget_search form {
+
+    border-top:none;
+    padding: 0;
+    animation:none;
+    box-shadow:none;
+    background:transparent;
+}
+
+.widget_search form input[type="submit"] {
+    
+    position: relative;
+    width:100px;
+}
+
+.widget_search form input[type="search"] {
+
+    width:calc( 100% - 100px);
+}
+
+
+
+/*
+=======================================
+=
+= Calender widget
+=
+===============================================
+*/
+
+
+.calendar_wrap caption {
+
+    background: none repeat scroll 0 0 $secondary_color;
+    color: $white;
+    text-align: center;
+    padding: 5px 0;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.calendar_wrap table {
+
+    border-collapse: collapse;
+    width: auto;
+}
+
+.calendar_wrap table th {
+
+    font-weight: bold;
+    padding: 8px 0px;
+    text-align: center;
+    width: 5%
+}
+
+.calendar_wrap table td {
+
+    padding: 8px 0px;
+    width: 5%;
+    text-align: center;
+}
+
+.calendar_wrap table td#prev,
+.calendar_wrap table td#next {
+
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.calendar_wrap table td#next {
+
+    text-align: right;
+}
+
+
+
+/*
+=======================================
+=
+= Text widget
+=
+===============================================
+*/
+
+.secondary-widget-area .widget_text {
+
+    .textwidget {
+
+        strong,
+        p,
+        em,
+        pre,
+        code,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+
+            display: block;
+            padding: 7px 0;
+        }
+
+        img {
+
+            display: block;
+            padding: 5px 0;
+        }
+
+        select {
+
+            display: block;
+            outline: none;
+            width: 100%;
+            max-width: 100%;
+            padding: 10px;
+            text-transform: capitalize;
+            border-radius: 2px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            option {
+
+                display: block;
+                width:100%;
+                max-width: 100%;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+
+
+/*
+========================================
+=
+= Woocommerce cart widget
+=
+====================================================
+*/
+
+.woocommerce ul.cart_list, 
+.woocommerce ul.product_list_widget {
+
+    @include flex_row_alt();
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}
+
+.woocommerce .widget_shopping_cart .cart_list li, 
+.woocommerce.widget_shopping_cart .cart_list li,
+.woocommerce ul.product_list_widget li {
+
+    @include flex_col(100%);
+    position:relative;
+    padding: 15px 0 15px 40px;
+}
+
+
+.woocommerce.widget_shopping_cart .cart_list li a.remove {
+
+    @include position_absolute(50%,unset,0,unset);
+
+}
+
+.woocommerce ul.cart_list li a, 
+.woocommerce ul.product_list_widget li a {
+
+    font-weight:normal;
+    font-size:16px;
+}
+
+
+.woocommerce ul.cart_list li img, 
+.woocommerce ul.product_list_widget li img {
+
+    width:60px;
+}
+
+
+.woocommerce .widget_shopping_cart .total, 
+.woocommerce.widget_shopping_cart .total {
+
+    border:none;
+    margin: 20px 0;
+}
+
+.woocommerce .widget_shopping_cart .total strong, 
+.woocommerce.widget_shopping_cart .total strong {
+
+    font-weight:600;
+}
+
+
+/*
+========================================
+=
+= Woocommerce Top rated products widget
+=
+====================================================
+*/
+
+
+.woocommerce ul.product_list_widget li {
+
+    padding-left:0;
+}
+
+
+/*
+============================================
+=
+= Woocommerce filter by attribute widget
+=
+===========================================================
+*/
+
+.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item {
+
+    position:relative;
+    padding-left:20px;
+} 
+
+.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item::before {
+    
+    content:"\f111";
+    font-family: "fontAwesome";
+    font-size:7px;
+    position:absolute;
+    left:0;
+    top:50%;
+    -moz-transform:translateY(-50%);
+    -webkit-transform:translateY(-50%);
+    -o-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    transform:translateY(-50%);
+
+}
+
+
+/*
+============================================
+=
+= Woocommerce filter by price widget
+=
+===========================================================
+*/
+
+
+.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content {
+
+    background-color:#585858;
+}
+
+
+
+
+

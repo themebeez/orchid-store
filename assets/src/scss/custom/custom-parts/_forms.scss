@@ -1,0 +1,107 @@
+button,
+input,
+select,
+textarea {
+    
+    font-size: 100%;
+    /* Corrects font size not being inherited in all browsers */
+    margin: 0;
+    /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+    vertical-align: middle;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+
+    position: relative;
+    cursor: pointer;
+    line-height: 1;
+    border: none;
+    padding: 0 25px;
+    height:41px;
+    display: inline-block;
+    text-shadow: none;
+    @include transation_delay();
+}
+
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+
+    border:none;
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+
+    outline:none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+
+    padding: 0;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+
+    /* Corrects inner padding and border displayed oddly in FF3/4 
+    www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+    border: 0;
+    padding: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+
+    height: 48px;
+    width: 100%;
+    -webkit-appearance: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+    
+    outline-color: transparent;
+    outline:none;
+}
+
+.searchform input[type="text"]:focus {
+
+    border: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+
+    padding-left:10px;
+}
+
+textarea {
+
+    overflow: auto;
+    /* Removes default vertical scrollbar in IE6/7/8/9 */
+    padding:30px;
+    vertical-align: top;
+    /* Improves readability and alignment in all browsers */
+    height: 160px;
+    max-width: 100%;
+    width: 100%;
+}

@@ -1,0 +1,74 @@
+
+.x-inner-hero {
+	
+	position: relative;
+}
+
+.x-inner-hero .x-page-title {
+
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom:1px solid rgba(255,255,255,0.3);
+    text-align: center;
+}
+	
+.x-inner-hero .entry-metas,
+.x-inner-hero .x-page-title,
+.x-inner-hero .x-post-title,
+.x-inner-hero .x-breadcrumb {
+	
+	position: relative;
+	z-index: 2;
+}
+
+.x-breadcrumb-entry ul {
+
+	list-style: none;
+}
+
+.x-breadcrumb-entry ul li,
+.x-breadcrumb-entry ul li a,
+.x-breadcrumb-entry ul li span {
+    
+    font-size:14px;
+	display:inline-block;
+}
+
+.x-breadcrumb-entry ul {
+    
+    position:relative;
+    z-index: 5;
+    list-style:none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.x-breadcrumb-entry ul li {
+
+    flex: 0 auto;
+    padding-right: 10px;
+}
+
+.x-breadcrumb-entry ul li a,
+.x-breadcrumb-entry ul li span {
+
+    @include transation_delay();
+}
+
+
+.x-breadcrumb-entry li.trail-item:after {
+
+    content:'/';
+    font-size: 10px;
+    color:$white;
+    padding-left:10px;
+}
+
+.x-breadcrumb-entry li.trail-item.trail-end:after {
+
+    content:'';
+    display:none;
+}
+
