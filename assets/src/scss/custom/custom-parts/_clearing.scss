@@ -1,0 +1,48 @@
+
+// Clearing
+
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after,
+.os-container:after,
+.os-container:before,
+.dropcap:before,
+.dropcap:after,
+.alignleft:before,
+.alignright:before,
+.editor-entry:before {
+
+    content: '';
+    display: table;
+}
+
+.clearfix:after,
+.row:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after,
+.os-container:after,
+.alignleft:after,
+.alignright:after,
+.editor-entry:after {
+
+    clear: both;
+}
+
+.clear {
+
+    clear: both;
+}

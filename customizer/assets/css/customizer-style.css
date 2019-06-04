@@ -1,0 +1,426 @@
+/* Customizer UI */
+.customize-control.customize-control-ios label {
+  width: 100%;
+  display: inline-block;
+}
+
+.customize-control-description {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+
+
+/****************************************************************************************************
+ **************************************** Upsell Control Styles *************************************
+ ****************************************************************************************************/
+#customize-controls .control-section-upsell .accordion-section-title:hover,
+#customize-controls .control-section-upsell .accordion-section-title:focus {
+  background-color: #fff;
+}
+
+.control-section-upsell .accordion-section-title .button {
+  margin-top:  -4px;
+  font-weight: 700;
+  margin-left: 8px;
+  border-color: #f44332;
+  background-color: #f44332;
+  color: #fff;
+}
+
+.control-section-upsell .accordion-section-title .button:hover {
+  background-color: #f44332;
+}
+
+
+ /****************************************************************************************************
+ **************************************** Toggle Control Styles *************************************
+ ****************************************************************************************************/
+input[type=checkbox].tgl {
+
+  	display: none;
+}
+
+input[type=checkbox].tgl, 
+input[type=checkbox].tgl:after, 
+input[type=checkbox].tgl:before, 
+input[type=checkbox].tgl *, 
+input[type=checkbox].tgl *:after, 
+input[type=checkbox].tgl *:before, 
+input[type=checkbox].tgl + .tgl-btn {
+
+  	box-sizing: border-box;
+}
+
+input[type=checkbox].tgl::-moz-selection, 
+input[type=checkbox].tgl:after::-moz-selection, 
+input[type=checkbox].tgl:before::-moz-selection, 
+input[type=checkbox].tgl *::-moz-selection, 
+input[type=checkbox].tgl *:after::-moz-selection, 
+input[type=checkbox].tgl *:before::-moz-selection, 
+input[type=checkbox].tgl + .tgl-btn::-moz-selection {
+
+  	background: none;
+}
+
+input[type=checkbox].tgl::selection, 
+input[type=checkbox].tgl:after::selection, 
+input[type=checkbox].tgl:before::selection, 
+input[type=checkbox].tgl *::selection, 
+input[type=checkbox].tgl *:after::selection, 
+input[type=checkbox].tgl *:before::selection, 
+input[type=checkbox].tgl + .tgl-btn::selection {
+
+  	background: none;
+}
+
+input[type=checkbox].tgl + .tgl-btn {
+
+  	outline: 0;
+  	display: block;
+  	width: 4em;
+  	height: 2em;
+  	position: relative;
+  	cursor: pointer;
+  	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input[type=checkbox].tgl + .tgl-btn:after, 
+input[type=checkbox].tgl + .tgl-btn:before {
+
+  	position: relative;
+  	display: block;
+  	content: "";
+  	width: 50%;
+  	height: 100%;
+}
+
+input[type=checkbox].tgl + .tgl-btn:after {
+
+  	left: 0;
+}
+
+input[type=checkbox].tgl + .tgl-btn:before {
+
+  	display: none;
+}
+
+input[type=checkbox].tgl:checked + .tgl-btn:after {
+
+  	left: 50%;
+}
+
+input[type=checkbox].tgl-light + .tgl-btn {
+
+  	background: #f0f0f0;
+  	border-radius: 2em;
+  	padding: 2px;
+  	-webkit-transition: all .4s ease;
+  	transition: all .4s ease;
+}
+
+input[type=checkbox].tgl-light + .tgl-btn:after {
+
+  	border-radius: 50%;
+  	background: #fff;
+  	-webkit-transition: all .2s ease;
+  	transition: all .2s ease;
+}
+
+input[type=checkbox].tgl-light:checked + .tgl-btn {
+
+  	background: #9FD6AE;
+}
+
+input[type=checkbox].tgl-ios + .tgl-btn {
+
+  	background: #fbfbfb;
+  	border-radius: 2em;
+  	padding: 2px;
+  	-webkit-transition: all .4s ease;
+  	transition: all .4s ease;
+  	border: 1px solid #e8eae9;
+}
+
+input[type=checkbox].tgl-ios + .tgl-btn:after {
+
+  	border-radius: 2em;
+  	background: #fbfbfb;
+  	-webkit-transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+  	transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+  	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+input[type=checkbox].tgl-ios + .tgl-btn:hover:after {
+
+  	will-change: padding;
+}
+
+input[type=checkbox].tgl-ios + .tgl-btn:active {
+
+  	box-shadow: inset 0 0 0 2em #e8eae9;
+}
+
+input[type=checkbox].tgl-ios + .tgl-btn:active:after {
+
+  	padding-right: .8em;
+}
+
+input[type=checkbox].tgl-ios:checked + .tgl-btn {
+
+  	background: #86d993;
+}
+
+input[type=checkbox].tgl-ios:checked + .tgl-btn:active {
+
+  	box-shadow: none;
+}
+
+input[type=checkbox].tgl-ios:checked + .tgl-btn:active:after {
+
+  	margin-left: -.8em;
+}
+
+input[type=checkbox].tgl-flat + .tgl-btn {
+
+  	padding: 2px;
+  	-webkit-transition: all .2s ease;
+  	transition: all .2s ease;
+  	background: #fff;
+  	border: 4px solid #f2f2f2;
+  	border-radius: 2em;
+}
+
+input[type=checkbox].tgl-flat + .tgl-btn:after {
+
+  	-webkit-transition: all .2s ease;
+  	transition: all .2s ease;
+  	background: #f2f2f2;
+  	content: "";
+  	border-radius: 1em;
+}
+
+input[type=checkbox].tgl-flat:checked + .tgl-btn {
+
+  	border: 4px solid #7FC6A6;
+}
+
+input[type=checkbox].tgl-flat:checked + .tgl-btn:after {
+
+  	left: 50%;
+  	background: #7FC6A6;
+}
+
+
+/****************************************************************************************************
+ ****************************************** Selection Styles ****************************************
+ ****************************************************************************************************/
+.customize-control select {
+
+  border: 1px solid #eee;
+  background: #fcfcff;
+  position: relative;
+  border-radius: 0;
+  height: 27px;
+  line-height: 27px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.customize-control select:active,
+.customize-control select:focus {
+
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.customize-control select,
+.select2-container--default .selection .select2-selection--single {
+  border: none;
+  background: #fcfcff;
+  position: relative;
+  border-radius: 0;
+  height: 27px;
+  line-height: 27px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.wp-customizer .select2-container--default .selection .select2-selection--multiple {
+  border: none;
+  background: #fcfcff;
+  border-radius: 0;
+  height: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.wp-customizer .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+  width: 95%;
+}
+
+.wp-customizer .select2-container--default .select2-selection--multiple .select2-selection__clear {
+  position: absolute;
+  right: 0;
+}
+
+.wp-customizer .select2-container .select2-dropdown {
+  z-index: 900000;
+}
+
+.customize-control select:active,
+.customize-control select:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+
+/****************************************************************************************************
+ **************************************** Radio Image Styles ****************************************
+ ****************************************************************************************************/
+.image label {
+    position: relative;
+    margin: 0 3% 3% 0;
+    display: inline-block;
+    width: 46%;
+}
+
+.image input {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.image img {
+    display: block;
+    border: 2px solid #F6F6F6;
+}
+
+.image input:checked+img {
+    border: 2px solid #777777;
+}
+
+
+/****************************************************************************************************
+ **************************************** Slider Control Styles ****************************************
+ ****************************************************************************************************/
+.slider-custom-control {
+  margin-bottom: 30px;
+}
+.slider-custom-control input[type=number]::-webkit-inner-spin-button,
+.slider-custom-control input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.slider-custom-control input[type=number] {
+  -moz-appearance: textfield;
+}
+.slider-custom-control  .customize-control-title {
+  display: inline-block;
+}
+.slider-custom-control input[type=number] {
+  text-align: right;
+  width: 50px;
+  float: right;
+}
+.slider-custom-control .slider {
+  width: 85%;
+  float: left;
+  margin: 20px 0 10px;
+}
+.slider-custom-control .slider-reset {
+  float: right;
+  cursor: pointer;
+}
+.slider-custom-control .slider-value {
+  border: none;
+  text-align: right;
+  width: 50px;
+  margin-right: 5px;
+}
+.slider-custom-control .slider-value,
+.slider-custom-control .slider-unit {
+  float: right;
+}
+.slider-custom-control .ui-widget.ui-widget-content {
+  border: 1px solid #f4f4f4;
+}
+.slider-custom-control .ui-corner-all,
+.slider-custom-control .ui-corner-bottom,
+.slider-custom-control .ui-corner-right,
+.slider-custom-control .ui-corner-br {
+  border-bottom-right-radius: 3px;
+}
+.slider-custom-control .ui-corner-all,
+.slider-custom-control .ui-corner-bottom,
+.slider-custom-control .ui-corner-left,
+.slider-custom-control .ui-corner-bl {
+  border-bottom-left-radius: 3px;
+}
+.slider-custom-control .ui-corner-all,
+.slider-custom-control .ui-corner-top,
+.slider-custom-control .ui-corner-right,
+.slider-custom-control .ui-corner-tr {
+  border-top-right-radius: 3px;
+}
+.slider-custom-control .ui-corner-all,
+.slider-custom-control .ui-corner-top,
+.slider-custom-control .ui-corner-left,
+.slider-custom-control .ui-corner-tl {
+  border-top-left-radius: 3px;
+}
+.slider-custom-control .ui-widget-content {
+  background: #f4f4f4 none repeat scroll 0 0;
+  color: #333;
+}
+.slider-custom-control .ui-slider-horizontal {
+  height: 3px;
+}
+.slider-custom-control .ui-slider {
+  position: relative;
+  text-align: left;
+}
+.slider-custom-control .ui-state-default,
+.slider-custom-control .ui-widget-content .ui-state-default,
+.slider-custom-control .ui-widget-header .ui-state-default,
+.slider-custom-control .ui-button,
+.slider-custom-control .ui-button.ui-state-disabled:hover,
+.slider-custom-control .ui-button.ui-state-disabled:active {
+  background: #2885bb none repeat scroll 0 0;
+  border: 1px solid #2885bb;
+  color: #454545;
+  font-weight: normal;
+}
+.slider-custom-control .ui-slider-horizontal .ui-slider-handle {
+  margin-left: -7px;
+  top: -7px;
+  border-radius: 50%;
+}
+.slider-custom-control .ui-slider .ui-slider-handle {
+  cursor: pointer;
+  height: 14px;
+  position: absolute;
+  width: 14px;
+  z-index: 2;
+}
+.slider-custom-control .dashicons-image-rotate {
+  margin-top: 10px;
+  color: #d4d4d4;
+  size: 16px;
+}
+.slider-custom-control .dashicons-image-rotate:hover {
+  color: #a7a7a7;
+}

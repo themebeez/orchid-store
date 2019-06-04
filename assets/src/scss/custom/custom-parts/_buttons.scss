@@ -1,0 +1,44 @@
+
+
+.button-general,
+.woocommerce .add_to_cart_button,
+.woocommerce #respond input#submit, 
+.woocommerce input#submit, 
+.woocommerce a.button, 
+.woocommerce button.button, 
+.woocommerce input.button, 
+.woocommerce .cart .button, 
+.woocommerce .cart input.button, 
+.woocommerce button.button.alt, 
+.woocommerce a.button.alt, 
+.woocommerce input.button.alt {
+    
+    position: relative;
+    z-index:1;
+    display:inline-block;
+    padding:15px 30px;
+    line-height:1;
+    @include transation_delay();
+}
+
+.button-general.medium {
+	
+	padding:20px 50px;
+	letter-spacing:0.5px;
+	margin:5px 10px;
+}
+
+.button-general.large {
+    
+    padding:23px 80px;
+    letter-spacing:0.5px;
+    margin:5px 10px;
+}
+
+.button-general.shadow {
+
+	@include drop_shadow();
+}
+
+
+// add to cart button 

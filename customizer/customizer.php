@@ -1,0 +1,151 @@
+<?php
+/**
+ * Orchid_Store Theme Customizer
+ *
+ * @package Orchid_Store
+ */
+
+/**
+ * Add postMessage support for site title and description for the Theme Customizer.
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ */
+function orchid_store_customize_register( $wp_customize ) {
+	
+	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+
+	/**
+	 * Load custom customizer control for radio image control
+	 */
+	require get_template_directory() . '/customizer/controls/class-customizer-radio-image-control.php';
+
+	/**
+	 * Load custom customizer control for select control
+	 */
+	require get_template_directory() . '/customizer/controls/class-customizer-select-control.php';
+
+	/**
+	 * Load custom customizer control for toggle control
+	 */
+	require get_template_directory() . '/customizer/controls/class-customizer-toggle-control.php';
+
+	/**
+	 * Load custom customizer control for slider control
+	 */
+	require get_template_directory() . '/customizer/controls/class-customizer-slider-control.php';
+
+	/**
+	 * Load customizer functions for intializing theme upsell
+	 */
+	require get_template_directory() . '/customizer/controls/class-customizer-upsell.php';
+
+	$wp_customize->register_section_type( 'Orchid_Store_Customize_Section_Upsell' );
+
+	// Register theme upsell section
+	$wp_customize->add_section(
+		new Orchid_Store_Customize_Section_Upsell(
+			$wp_customize,
+			'theme_upsell',
+			array(
+				'title'    => esc_html__( 'Orchid Store', 'orchid-store' ),
+				'pro_text' => esc_html__( 'Upgrade to Pro', 'orchid-store' ),
+				'pro_url'  => 'https://themebeez.com/themes/orchid-store-pro/?ref=upsell-btn',
+				'priority' => 1,
+			)
+		)
+	);
+
+	/**
+	 * Load customizer functions for sanitization of input values of contol fields
+	 */
+	require get_template_directory() . '/customizer/functions/sanitize-callback.php';
+
+	/**
+	 * Load customizer functions for intializing panel, section, and control fields
+	 */
+	require get_template_directory() . '/customizer/functions/reuseable-callback.php';		
+
+	/**
+	 * Load customizer functions for loading control field's choices, declaration of panel, section 
+	 * and control fields
+	 */
+	require get_template_directory() . '/customizer/functions/customizer-fields.php';
+
+	orchid_store_control_rearrange();
+
+	if ( isset( $wp_customize->selective_refresh ) ) {
+		
+		$wp_customize->selective_refresh->add_partial( 'blogname', array(
+			'selector'        => '.site-title a',
+			'render_callback' => 'orchid_store_customize_partial_blogname',
+		) );
+		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+			'selector'        => '.site-description',
+			'render_callback' => 'orchid_store_customize_partial_blogdescription',
+		) );
+	}
+}
+add_action( 'customize_register', 'orchid_store_customize_register' );
+
+/**
+ * Load active callback functions.
+ */
+require get_template_directory() . '/customizer/functions/active-callback.php';
+
+/**
+ * Load function to load customizer field's default values.
+ */
+require get_template_directory() . '/customizer/functions/customizer-defaults.php';
+
+/**
+ * Load function to load dynamic style.
+ */
+require get_template_directory() . '/customizer/functions/dynamic-style.php';
+
+
+/**
+ * Render the site title for the selective refresh partial.
+ *
+ * @return void
+ */
+function orchid_store_customize_partial_blogname() {
+	bloginfo( 'name' );
+}
+
+/**
+ * Render the site tagline for the selective refresh partial.
+ *
+ * @return void
+ */
+function orchid_store_customize_partial_blogdescription() {
+	bloginfo( 'description' );
+}
+
+/**
+ * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ */
+function orchid_store_customize_preview_js() {
+
+	wp_enqueue_script( 'orchid-store-customizer', get_template_directory_uri() . '/customizer/assets/js/customizer.js', array( 'customize-preview' ), ORCHID_STORE_VERSION, true );
+}
+add_action( 'customize_preview_init', 'orchid_store_customize_preview_js' );
+
+
+
+/**
+ * Enqueue Customizer Scripts and Styles
+ */
+function orchid_store_enqueues() {
+
+	wp_enqueue_style( 'orchid-store-select2', get_template_directory_uri() . '/customizer/assets/css/select2.css' );
+
+	wp_enqueue_style( 'orchid-store-customizer-style', get_template_directory_uri() . '/customizer/assets/css/customizer-style.css' );
+
+	wp_enqueue_script( 'orchid-store-select2', get_template_directory_uri() . '/customizer/assets/js/select2.js', array( 'jquery' ), ORCHID_STORE_VERSION, true );
+
+	wp_enqueue_script( 'orchid-store-customizer-script', get_template_directory_uri() . '/customizer/assets/js/customizer-script.js', array( 'jquery' ), ORCHID_STORE_VERSION, true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'orchid_store_enqueues' );

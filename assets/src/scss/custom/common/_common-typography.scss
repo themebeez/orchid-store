@@ -1,0 +1,242 @@
+
+// All common typohraphy & fonts 
+// Will be scaling font size on media query ( 1024px, 768px & 574px )
+
+
+// text transforms 
+
+
+.button-general,
+.woocommerce input#submit,
+.woocommerce .add_to_cart_button, 
+.woocommerce a.button, 
+.woocommerce button.button, 
+.woocommerce input.button, 
+.woocommerce .cart .button, 
+.woocommerce .cart input.button, 
+.woocommerce button.button.alt, 
+.woocommerce a.button.alt, 
+.woocommerce input.button.alt,
+.woocommerce #respond input#submit,
+.masterheader .topbar-items a,
+.banner-style-1 h2,
+.cats-widget-styles .title h3,
+.cats-widget-styles .permalink a,
+.banner-style-1 .button-general,
+.cta-style-1 .title h3,
+section .section-title h2,
+section .section-title h3,
+.product-sale span,
+.cta-style-2 .title h3,
+.cta-style-2 .sub-title h4,
+.product-widget-style-2 .tab-nav ul li a,
+.entry-metas ul li.posted-date span,
+.widget .widget-title h3,
+.os-about-widget .contact-info li p,
+.entry-404 .sub-title h2,
+.entry-nothing-found h1,
+.widget .widget-title h3,
+.search-entry .entry-title,
+.archive-entry .entry-title,
+.default-page-wrap .entry-title,
+.default-post-wrap .entry-title,
+.post-navigation .nav-previous span,
+.post-navigation .nav-next  span  {
+
+	text-transform:uppercase;
+}
+
+
+.hello {
+
+	font-style: italic;
+}
+
+
+
+// font family 
+
+.woocommerce span.price,
+.woocommerce .woocommerce-Price-amount,
+.cta-style-2 .sub-title h4,
+.entry-metas ul li.posted-date span,
+.mini-cart .cart-amount,
+.patigation .page-numbers,
+.mini-cart-open .price {
+
+	font-family: $special_font; // lato
+}
+
+
+// line height 
+
+.cats-widget-styles .title h3,
+.product-sale span {
+
+	line-height:1;
+}
+
+.site-title {
+
+	line-height: 1.1;
+}
+
+
+
+// font weights
+
+
+.masterheader .topbar-items a,
+.woocommerce-loop-product__title,
+.product-sale span,
+.os-blog .title h3,
+.search-entry .entry-title,
+.search-entry article .title h3 {
+
+	font-weight:500;
+} 
+
+.button-general,
+.woocommerce input#submit, 
+.woocommerce a.button, 
+.woocommerce button.button, 
+.woocommerce input.button, 
+.woocommerce .cart .button, 
+.woocommerce .cart input.button, 
+.woocommerce button.button.alt, 
+.woocommerce a.button.alt, 
+.woocommerce input.button.alt,
+.woocommerce #respond input#submit, 
+.cats-widget-styles .title h3,
+.cats-widget-styles .permalink a,
+.banner-style-1 .button-general,
+.cta-style-1 .title h3,
+section .section-title h2,
+section .section-title h3,
+.woocommerce span.price, 
+.woocommerce .add_to_cart_button,
+.woocommerce .woocommerce-Price-amount,
+.product-widget-style-2 .tab-nav ul li a,
+.widget .widget-title h3,
+.os-about-widget .contact-info li p span,
+.post-navigation .nav-previous span,
+.post-navigation .nav-next  span  {
+
+	font-weight:bold;
+}
+
+.banner-style-1 h2,
+.cta-style-2 h3,
+.cta-style-2 h4,
+.entry-metas ul li.posted-date span,
+.entry-404 h1,
+.search-entry .entry-title,
+.default-page-wrap .entry-title,
+.default-post-wrap .entry-title  {
+
+	font-weight:900;
+}
+
+
+// Font sizes
+
+
+.button-general,
+.woocommerce #respond input#submit,
+.woocommerce .add_to_cart_button, 
+.woocommerce input#submit, 
+.woocommerce a.button, 
+.woocommerce button.button, 
+.woocommerce input.button, 
+.woocommerce .cart .button, 
+.woocommerce .cart input.button, 
+.woocommerce button.button.alt, 
+.woocommerce a.button.alt, 
+.woocommerce input.button.alt,
+.masterheader .topbar-items a,
+.cats-widget-styles .permalink a,
+.banner-style-1 .button-general,
+.product-sale span,
+.product-widget-style-2 .tab-nav ul li a {
+
+    font-size: 12px;
+}
+
+.entry-cats ul li a,
+.entry-metas ul li a,
+.entry-tags a  {
+
+	font-size:13px;
+}
+
+.woocommerce span.price,
+.woocommerce span.price del,
+.woocommerce span.price ins,
+.woocommerce .woocommerce-Price-amount,
+.os-about-widget .contact-info li p span,
+.patigation .page-numbers {
+
+	font-size:14px;
+}
+
+.excerpt p,
+.os-about-widget .contact-info li span {
+
+	font-size:15px;
+}
+
+.woocommerce-loop-product__title {
+
+	font-size:17px;
+}
+
+.cta-style-1 .title h3,
+.entry-metas ul li.posted-date span,
+.widget .widget-title h3 {
+
+	font-size:18px;
+}
+
+.os-blog .title h3,
+.search-entry article .title h3,
+.archive-entry article .title h3  {
+
+	font-size:20px;
+}
+
+.cats-widget-styles .title h3,
+.entry-404 .sub-title h2,
+.search-entry .entry-title {
+
+	font-size:21px;
+}
+
+.banner-style-1 .caption span {
+
+	font-size:24px;
+}
+
+section .section-title h2,
+section .section-title h3,
+.cta-style-2 .sub-title h4,
+.entry-nothing-found h1,
+.archive-entry .entry-title {
+
+	font-size:28px;
+}
+
+.banner-style-1 h2,
+.cta-style-2 .title h3,
+.default-page-wrap .entry-title,
+.default-post-wrap .entry-title  {
+
+	font-size:32px;
+}
+
+
+
+
+
+
+
+

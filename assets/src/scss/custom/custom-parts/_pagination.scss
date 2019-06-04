@@ -1,0 +1,60 @@
+
+// Pagination 
+
+
+
+.patigation .page-numbers {
+	
+	display:inline-block;
+	height: 45px;
+	line-height: 43px;
+	text-align: center;
+	margin:0 15px;
+}
+
+.patigation .page-numbers.current {
+	
+	margin: 0 5px;
+	padding:0;
+	width:45px;
+	@include border_radius(100%);
+}
+
+.patigation .page-numbers:first-child {
+
+	padding-left: 0;
+	margin-left: 0;
+}
+
+.patigation .page-numbers.next,
+.patigation .page-numbers.prev {
+
+	font-size:0;
+}
+
+.patigation .page-numbers.next:after,
+.patigation .page-numbers.prev:after {
+
+	font-family: 'boxicons';
+	font-size:16px;
+}
+
+.patigation .page-numbers.next:after {
+
+	content: "\e95b";
+}
+
+.patigation .page-numbers.prev:after {
+
+	content: "\e95a";
+}
+
+.patigation .page-numbers:last-child {
+	
+	padding-right: 0;
+}
+
+.patigation .page-numbers:first-child {
+	
+	padding-left: 0;
+}

@@ -1,0 +1,353 @@
+
+// color white 
+
+.product-sale span,
+.banner-style-1 .entry-contents,
+.cta-style-2 .promo-box,
+.footer .widget .widget-title h3,
+.masterheader .topbar-items a,
+.default-page-wrap .entry-title,
+.default-post-wrap .entry-title,
+.default-page-wrap .page-head .entry-metas ul li a,
+.default-post-wrap .page-head .entry-metas ul li a,
+.mini-cart-open .block a, 
+.mini-cart-open .block span  {
+
+	color:$white;
+}
+
+
+
+// color primary ( black grey )
+
+
+a,
+a:link,
+a:focus,
+a:visited,
+body,
+textarea,
+button,
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.entry-tags a:hover, 
+.wpcf7 input[type="submit"],
+.wpcf7 input[type="button"],
+.entry-cats ul li a:hover,
+.button-general,
+.button-general:hover,
+.woocommerce #respond input#submit, 
+.woocommerce input#submit, 
+.woocommerce a.button, 
+.woocommerce button.button:hover, 
+.woocommerce input.button:hover, 
+.woocommerce .cart .button:hover, 
+.woocommerce .cart input.button:hover, 
+.woocommerce button.button.alt:hover, 
+.woocommerce a.button.alt:hover, 
+.woocommerce input.button.alt:hover,
+.woocommerce .add_to_cart_button:hover,
+.category-nav li a:hover,
+.masterheader .mini-cart button,
+.product-widget-style-2 .tab-nav ul li a.active,
+.mini-cart-open .total-checkout a {
+
+	color:$primary_color;
+}
+
+
+
+// color secondary ( yellow )
+
+a:hover,
+.entry-metas ul li a:hover,
+.footer a:hover,
+.editor-entry a,
+.search-form button,
+.widget_archive a:hover,
+.widget_categories a:hover,
+.widget_recent_entries a:hover,
+.widget_meta a:hover,
+.widget_product_categories a:hover,
+.widget_rss li a:hover,
+.widget_pages li a:hover,
+.widget_nav_menu li a:hover,
+.woocommerce-widget-layered-nav ul li a:hover,
+.widget_rss .widget-title h3 a:hover,
+.widget_rss ul li a:hover,
+.comments-area .comment-body .reply a:hover,
+.comments-area .comment-body .reply a:focus,
+.comments-area .comment-body .fn a:hover,
+.comments-area .comment-body .fn a:focus,
+.footer .widget_rss ul li a:hover,
+.comments-area .comment-body .fn:hover,
+.comments-area .comment-body .fn a:hover,
+.comments-area .comment-body .reply a:hover, 
+.comments-area .comment-body .comment-metadata a:hover,
+.comments-area .comment-body .comment-metadata .edit-link:hover,
+.masterheader .topbar-items a:hover,
+.product-widget-style-2 .tab-nav ul li a:hover,
+.banner-style-1 .caption span,
+.entry-404 h1 span,
+.default-page-wrap .page-head .entry-metas ul li a:hover,
+.default-post-wrap .page-head .entry-metas ul li a:hover  {
+
+	color:$secondary_color;
+}
+
+
+// color special ( grey light )
+
+
+.entry-metas ul li a,
+.woocommerce span.price del,
+.product-widget-style-2 .tab-nav ul li a,
+.post-navigation .nav-previous span,
+.post-navigation .nav-next  span  {
+
+	color:$special_purpose_color; // #8e8e8e
+}
+
+
+
+
+// background color
+
+.mini-cart-open,
+.default-post-wrap .page-head .entry-cats ul li a {
+
+	background:$white;
+}
+
+.mini-cart-open,
+.mini-cart-open:before,
+.cta-style-2 .box-holder,
+.header-style-1 .top-header {
+
+	background:$primary_color;
+}
+
+
+.entry-tags a,
+.entry-cats ul li a,
+.button-general,
+.woocommerce .add_to_cart_button,
+.woocommerce #respond input#submit, 
+.woocommerce input#submit, 
+.woocommerce a.button, 
+.woocommerce button.button, 
+.woocommerce input.button, 
+.woocommerce .cart .button, 
+.woocommerce .cart input.button, 
+.woocommerce button.button.alt, 
+.woocommerce a.button.alt, 
+.woocommerce input.button.alt,
+.category-nav li a:hover,
+.cta-style-1,
+.main-navigation,
+.masterheader .mini-cart button,
+.owl-carousel button.owl-dot.active,
+.default-post-wrap .page-head .entry-cats ul li a:hover {
+
+	background:$secondary_color;
+}
+
+.entry-tags a:hover,
+.entry-cats ul li a:hover,
+.button-general:hover,
+.woocommerce .add_to_cart_button:hover,
+.woocommerce #respond input#submit:hover, 
+.woocommerce input#submit:hover, 
+.woocommerce a.button:hover, 
+.woocommerce button.button:hover, 
+.woocommerce input.button:hover, 
+.woocommerce .cart .button:hover, 
+.woocommerce .cart input.button:hover, 
+.woocommerce button.button.alt:hover, 
+.woocommerce a.button.alt:hover, 
+.woocommerce input.button.alt:hover,
+.woocommerce .product-hover-items ul li a:hover {
+
+	background:$third_color;
+}
+
+.owl-carousel button.owl-dot {
+
+	background:$special_purpose_color;
+}
+
+.product-sale span {
+
+	background:$woo-on-sale-color ;
+}
+
+
+// border color
+
+
+.widget .widget-title h3 {
+
+	border-left-color: $secondary_color;
+}
+
+.widget .widget-title h3:after {
+
+	border-top-color: $secondary_color;
+}
+
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+.nice-select,
+.comment-respond, 
+.calendar_wrap table th,
+.calendar_wrap table td,
+.comments-area .comment-body,
+.header-style-1 .custom-search-entry,
+.masterheader .mini-cart,
+.secondary-widget-area .widget,
+.category-description  {
+
+	border: 1px solid $border_color;
+}
+
+.category-nav ul,
+.patigation .page-numbers.current {
+
+	border:2px solid $secondary_color;
+}
+
+.woocommerce .widget_shopping_cart .cart_list li, 
+.woocommerce.widget_shopping_cart .cart_list li,
+.woocommerce ul.product_list_widget li,
+.widget_archive li,
+.widget_categories li,
+.widget_recent_entries li,
+.widget_meta li,
+.widget_recent_comments li,
+.widget_rss li,
+.widget_pages li,
+.widget_nav_menu li a,
+.widget_product_categories li,
+.woocommerce-widget-layered-nav ul li,
+.comments-area .comment-body .comment-meta,
+.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item {
+
+    border-bottom: 1px solid $border_color;
+}
+
+
+.widget_product_categories ul li ul {
+
+	border-top:1px solid $border_color;
+}
+
+
+
+// Footer ( Dark )
+
+
+.footer,
+.footer a,
+.footer .footer-bottom p,
+.footer .widget_rss ul li a,
+.footer .widget_tag_cloud .tagcloud a {
+
+	color:$dark_footer_links_color;
+}
+
+
+.footer .widget_nav_menu ul li a:hover,
+.footer .widget_rss .widget_title h3 a:hover,
+.footer .widget_tag_cloud .tagcloud a:hover {
+
+	color:$white;
+}
+
+.footer {
+
+	background:$dark_footer_bg;
+}
+
+.footer button, 
+.footer input[type="button"], 
+.footer input[type="reset"], 
+.footer input[type="submit"],
+.footer .wpcf7 input[type="submit"], 
+.footer .wpcf7 input[type="button"],   
+.footer .nice-select,
+.footer .calendar_wrap caption,
+.footer .nice-select .list,
+.footer .social-icons ul li a,
+.footer .widget_tag_cloud .tagcloud a {
+
+	background:$dark_footer_element_bg_color;
+}
+
+
+.footer .nice-select .option:hover, 
+.footer .nice-select .option.focus,
+.footer .social-icons ul li a:hover, 
+.footer .nice-select .option.selected.focus {
+
+	background-color: $dark_footer_element_hover_bg;
+}
+
+
+.footer button:hover, 
+.footer input[type="button"]:hover, 
+.footer input[type="reset"]:hover, 
+.footer input[type="submit"]:hover {
+
+	background:$secondary_color;
+}
+
+
+.footer .nice-select,
+.footer .widget_archive li, 
+.footer .widget_categories li, 
+.footer .widget_recent_entries li, 
+.footer .widget_meta li, 
+.footer .widget_recent_comments li, 
+.footer .widget_rss li, 
+.footer .widget_pages li, 
+.footer .widget_nav_menu li a, 
+.footer .widget_product_categories li, 
+.footer .woocommerce-widget-layered-nav ul li,
+.footer .calendar_wrap table td,
+.footer .calendar_wrap table th, 
+.footer .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item {
+
+	border-color:$dark_footer_border_color;
+}
+
+.footer .nice-select .option {
+
+	border-color:$dark_footer_alt_border_color;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

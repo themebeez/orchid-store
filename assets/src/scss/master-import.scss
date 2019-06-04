@@ -1,0 +1,85 @@
+/**
+=======================================================
+
+- File: Master importer ( Imports all scss files )
+
+- Project : Orchid-store
+
+- Author: Themebeez
+
+- Author url : https://themebeez.com/
+
+- Since : 17 jan, 2018
+
+- Scss version: 1.0.0 
+
+- Last updated: 
+
+======================================================================================
+*/
+
+
+// Import framework
+
+@import 'framework/bootstrap-reboot';
+@import 'framework/bootstrap-grid';
+
+// Import variables 
+
+@import 'variables/var-typography';
+@import 'variables/var-colors';
+@import 'variables/var-spacing';
+
+// Import mixins
+
+@import 'custom/custom-parts/mixins'; 
+
+// Import libraries 
+
+@import 'libraries/retina';
+@import 'libraries/niceselect';
+@import 'libraries/animate';
+@import 'libraries/owlcarousel';
+
+// Import font icons 
+
+@import 'fonticons/boxicons/boxicons';
+@import 'fonticons/feather/feather';
+@import 'fonticons/fontawesome/fontawesome';
+
+
+// Import custom parts & custom style file 
+
+@import 'custom/custom-parts/reset';         		// Our custom reset
+@import 'custom/custom-parts/forms';				// forms
+@import 'custom/custom-parts/links';				// links
+@import 'custom/custom-parts/aligment'; 			// aligment
+@import 'custom/custom-parts/elements';				// elements
+@import 'custom/custom-parts/buttons';				// button
+@import 'custom/custom-parts/accessibility';		// assibility
+@import 'custom/custom-parts/clearing';				// clearing
+@import 'custom/custom-parts/typography';			// typography
+@import 'custom/custom-parts/widget';				// custom widgets
+@import 'custom/custom-parts/pagination';			// pagination
+@import 'custom/custom-parts/breadcrumb';			// breadcrumb
+@import 'custom/custom-parts/back-to-top';			// back to top
+@import 'custom/custom-parts/menu';					// primary menu
+@import 'custom/custom-parts/search';				// Search classes
+@import 'custom/custom-parts/editor';				// Editor styles for front-end
+
+@import 'custom/wordpress/wordpress';				// wp styles
+
+@import 'custom/custom-styles';  					// [ we code custom style here ]
+
+@import 'custom/common/common-colors';				// custom common colors
+@import 'custom/common/common-typography';			// custom common typography
+@import 'custom/common/common-spacing';				// custom common spacing
+
+// Import media query for responsive 
+
+@import 'custom/custom-parts/responsive'; 			
+
+// Import keyframes
+
+@import 'custom/custom-parts/keyframe'; 
+
