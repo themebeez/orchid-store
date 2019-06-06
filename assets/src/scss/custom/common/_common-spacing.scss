@@ -56,6 +56,12 @@
 }
 
 
+.inner-page-wrap {
+
+    padding-bottom: 80px;
+}
+
+
 // margin
 
 
@@ -87,7 +93,8 @@
 }
 
 .banner-style-1 h2,
-.cta-style-2 .title h3 {
+.cta-style-2 .title h3,
+.woocommerce .woocommerce-result-count {
 
 	margin-bottom: 20px;
 }
@@ -96,7 +103,8 @@
 .cta-style-2 .sub-title h4,
 .search-entry article,
 .archive-entry article,
-.category-description {
+.category-description,
+.woocommerce .woocommerce-ordering {
 
 	margin-bottom:30px;
 }
@@ -113,11 +121,18 @@
 	margin-bottom: -30px;
 }
 
+
 .woocommerce ul.products li,
 .woocommerce ul.products li.product, 
 .woocommerce-page ul.products li.product  {
 
 	margin-bottom: 40px;
+}
+
+.woocommerce .cart-collaterals, 
+.woocommerce-page .cart-collaterals {
+
+	margin-top: 40px;
 }
 
 
