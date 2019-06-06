@@ -2,6 +2,7 @@
 // color white 
 
 .woocommerce .product-sale span,
+.woocommerce ul.products li.product .onsale,
 .banner-style-1 .entry-contents,
 .cta-style-2 .promo-box,
 .footer .widget .widget-title h3,
@@ -56,7 +57,9 @@ input[type="submit"],
 .category-nav li a:hover,
 .masterheader .mini-cart button,
 .product-widget-style-2 .tab-nav ul li a.active,
-.mini-cart-open .total-checkout a {
+.mini-cart-open .total-checkout a,
+.woocommerce ul.products li.product .price,
+.woocommerce ul.products li.product .price ins {
 
 	color:$primary_color;
 }
@@ -107,6 +110,7 @@ a:hover,
 
 .entry-metas ul li a,
 .woocommerce span.price del,
+.woocommerce ul.products li.product .price del,
 .product-widget-style-2 .tab-nav ul li a,
 .post-navigation .nav-previous span,
 .post-navigation .nav-next  span  {
@@ -184,7 +188,8 @@ a:hover,
 	background:$special_purpose_color;
 }
 
-.woocommerce .product-sale span {
+.woocommerce .product-sale span,
+.woocommerce ul.products li.product .onsale {
 
 	background:$woo-on-sale-color ;
 }
@@ -267,7 +272,7 @@ input[type="search"],
 	color:$dark_footer_links_color;
 }
 
-
+.footer .footer-bottom p a,
 .footer .widget_nav_menu ul li a:hover,
 .footer .widget_rss .widget_title h3 a:hover,
 .footer .widget_tag_cloud .tagcloud a:hover {

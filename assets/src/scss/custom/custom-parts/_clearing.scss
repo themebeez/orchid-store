@@ -34,3 +34,15 @@
 
     clear: both;
 }
+
+.woocommerce ul.products::after, 
+.woocommerce ul.products::before, 
+.woocommerce-page ul.products::after, 
+.woocommerce-page ul.products::before,
+.woocommerce .products ul::after, 
+.woocommerce .products ul::before, 
+.woocommerce ul.products::after, 
+.woocommerce ul.products::before {
+
+	display:none;
+}

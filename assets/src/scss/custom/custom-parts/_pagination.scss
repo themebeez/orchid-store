@@ -2,21 +2,26 @@
 // Pagination 
 
 
-.patigation .page-numbers {
+.patigation .page-numbers,
+.woocommerce .woocommerce-pagination .page-numbers li,
+.woocommerce .woocommerce-pagination .page-numbers li a,
+.woocommerce .woocommerce-pagination .page-numbers li span {
 	
 	display:inline-block;
 	height: 45px;
+	width:45px;
 	line-height: 43px;
 	text-align: center;
 	margin:0 15px;
 }
 
-.patigation .page-numbers.current {
+.patigation .page-numbers.current,
+.woocommerce .woocommerce-pagination .page-numbers li .current {
 	
 	margin: 0 5px;
 	padding:0;
 	width:45px;
-	@include border_radius(100%);
+	@include border_radius(0);
 }
 
 .patigation .page-numbers:first-child {
@@ -56,4 +61,36 @@
 .patigation .page-numbers:first-child {
 	
 	padding-left: 0;
+}
+
+
+// woocommerce 
+
+
+.woocommerce nav.woocommerce-pagination ul {
+
+	border:none;
+	display:block;
+}
+
+.woocommerce .woocommerce-pagination .page-numbers li {
+
+	margin:0;
+	padding:0;
+	border:none;
+}
+
+.woocommerce .woocommerce-pagination .page-numbers li span,
+.woocommerce .woocommerce-pagination .page-numbers li a,
+.woocommerce .woocommerce-pagination .page-numbers li .current {
+
+	margin:0;
+	padding:0;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:hover,
+.woocommerce nav.woocommerce-pagination ul li span.current {
+
+	background:transparent;
+	color:transparent;
 }

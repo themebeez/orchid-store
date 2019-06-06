@@ -27,6 +27,7 @@
 section .section-title h2,
 section .section-title h3,
 .woocommerce .product-sale span,
+.woocommerce ul.products li.product .onsale,
 .cta-style-2 .title h3,
 .cta-style-2 .sub-title h4,
 .product-widget-style-2 .tab-nav ul li a,
@@ -57,6 +58,7 @@ section .section-title h3,
 // font family 
 
 .woocommerce span.price,
+.woocommerce ul.products li.product .price,
 .woocommerce .woocommerce-Price-amount,
 .cta-style-2 .sub-title h4,
 .entry-metas ul li.posted-date span,
@@ -71,7 +73,8 @@ section .section-title h3,
 // line height 
 
 .cats-widget-styles .title h3,
-.woocommerce .product-sale span {
+.woocommerce .product-sale span,
+.woocommerce ul.products li.product .onsale {
 
 	line-height:1;
 }
@@ -90,6 +93,7 @@ section .section-title h3,
 .masterheader .topbar-items a,
 .woocommerce-loop-product__title,
 .woocommerce .product-sale span,
+.woocommerce ul.products li.product .onsale,
 .os-blog .title h3,
 .search-entry .entry-title,
 .search-entry article .title h3,
@@ -115,7 +119,8 @@ section .section-title h3,
 .cta-style-1 .title h3,
 section .section-title h2,
 section .section-title h3,
-.woocommerce span.price, 
+.woocommerce span.price,
+.woocommerce ul.products li.product .price, 
 .woocommerce .add_to_cart_button,
 .woocommerce .woocommerce-Price-amount,
 .product-widget-style-2 .tab-nav ul li a,
@@ -160,6 +165,7 @@ section .section-title h3,
 .cats-widget-styles .permalink a,
 .banner-style-1 .button-general,
 .woocommerce .product-sale span,
+.woocommerce ul.products li.product .onsale,
 .product-widget-style-2 .tab-nav ul li a {
 
     font-size: 12px;
@@ -172,9 +178,13 @@ section .section-title h3,
 	font-size:13px;
 }
 
+
 .woocommerce span.price,
 .woocommerce span.price del,
 .woocommerce span.price ins,
+.woocommerce ul.products li.product .price del,
+.woocommerce ul.products li.product .price ins,
+.woocommerce ul.products li.product .price,
 .woocommerce .woocommerce-Price-amount,
 .os-about-widget .contact-info li p span,
 .patigation .page-numbers {
@@ -188,7 +198,10 @@ section .section-title h3,
 	font-size:15px;
 }
 
-.woocommerce-loop-product__title {
+.woocommerce-loop-product__title,
+.woocommerce ul.products li.product h3,
+.woocommerce ul.products li.product .woocommerce-loop-category__title, 
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
 
 	font-size:17px;
 }
@@ -219,11 +232,13 @@ section .section-title h3,
 	font-size:24px;
 }
 
+
 section .section-title h2,
 section .section-title h3,
 .cta-style-2 .sub-title h4,
 .entry-nothing-found h1,
-.archive-entry .entry-title {
+.archive-entry .entry-title,
+.woocommerce .page-title {
 
 	font-size:28px;
 }

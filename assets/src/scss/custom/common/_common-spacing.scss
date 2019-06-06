@@ -17,6 +17,11 @@
 	padding-top:20px;
 }
 
+.product-info-wrap {
+
+	padding-top: 25px;
+}
+
 .inner-page-wrap {
 
 	padding-top:30px; // all inner pages default space
@@ -59,7 +64,6 @@
 	margin-bottom: 5px;
 }
 
-.woocommerce-loop-product__title,
 .search-entry article .title h3,
 .search-entry article .excerpt p,
 .archive-entry article .title h3,
@@ -73,7 +77,11 @@
 .entry-nothing-found h1,
 .category-description p,
 .cats-widget-styles .title h3,
-.default-post-wrap .page-head .entry-cats {
+.default-post-wrap .page-head .entry-cats,
+.woocommerce-loop-product__title,
+.woocommerce ul.products li.product .woocommerce-loop-category__title, 
+.woocommerce ul.products li.product .woocommerce-loop-product__title, 
+.woocommerce ul.products li.product h3 {
 
 	margin-bottom: 15px;
 }
@@ -103,6 +111,13 @@
 .product-widget .product-entry {
 
 	margin-bottom: -30px;
+}
+
+.woocommerce ul.products li,
+.woocommerce ul.products li.product, 
+.woocommerce-page ul.products li.product  {
+
+	margin-bottom: 40px;
 }
 
 

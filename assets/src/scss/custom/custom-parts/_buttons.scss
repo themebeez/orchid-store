@@ -15,7 +15,8 @@ input[type="reset"],
 .woocommerce .add_to_cart_button,
 .woocommerce .custom-cart-btn a,
 .woocommerce #respond input#submit, 
-.woocommerce input#submit {
+.woocommerce input#submit,
+.woocommerce ul.products li.product .button {
     
     position: relative;
     z-index:1;
