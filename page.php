@@ -14,7 +14,7 @@
 
 get_header();
 ?>
-<div class="inner-page-wrap default-post-wrap page-full-bg-thumbnail">
+<div class="inner-page-wrap default-post-wrap default-page-s2 page-full-bg-thumbnail">
     <div class="inner-entry">
     	<?php
     	while( have_posts() ) :

@@ -37,6 +37,7 @@
         ==================================
         */
 
+
         tippy('.os-tooltip', {
 
             content: "",
@@ -51,7 +52,6 @@
 
 
 
-
         /*
         =============================
         = Nice select
@@ -61,6 +61,38 @@
 
         $('select').niceSelect();
 
+
+         /*
+        =========================
+        = Nice scroll for category nav
+        ==================================
+        */
+
+
+        $( "#menu-category-menu" ).removeClass( "overflow-hidden" );
+
+        $( "#menu-category-menu" ).addClass( "overflow-visible" );
+
+
+        // nicescroll for category lists
+
+        $("#menu-category-menu").niceScroll({
+
+            cursorcolor: "#FFCA04",
+            cursorwidth: "5px",
+        });
+
+
+        // nicescroll for niceselect header
+
+
+        $(".masterheader .nice-select .list").niceScroll({
+
+            cursorcolor: "transparent",
+            cursorwidth: "0px",
+            cursorborder:"transparent",
+            cursorborderradius: "0px",
+        });
 
 
         /*
@@ -72,7 +104,7 @@
 
         $('.trigger-mini-cart').on('mouseover', function(e) {
 
-            $( ".mini-cart-open" ).toggle();
+            $(".mini-cart-open").toggle();
 
         });
 
@@ -258,32 +290,7 @@
         =======================================
         */
 
-        // $('body').append('<div id="glaze-toTop"><span>Back to top <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span></div>');
-
-        // // Window scroll function
-
-        // $(window).scroll(function() {
-
-        //     var height = $(window).scrollTop();
-
-        //     if (height > 500) {
-
-        //         $('#glaze-toTop').fadeIn();
-
-        //     } else {
-
-        //         $('#glaze-toTop').fadeOut();
-        //     }
-        // });
-
-        // $("#glaze-toTop").on('click', function(event) {
-
-        //     event.preventDefault();
-
-        //     $("html, body").animate({ scrollTop: 0 }, "slow");
-
-        //     return false;
-        // });
+        
 
 
 
@@ -302,7 +309,7 @@
 
 
 
-
+       
 
 
         });

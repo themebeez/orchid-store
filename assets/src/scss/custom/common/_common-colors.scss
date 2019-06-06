@@ -1,7 +1,7 @@
 
 // color white 
 
-.product-sale span,
+.woocommerce .product-sale span,
 .banner-style-1 .entry-contents,
 .cta-style-2 .promo-box,
 .footer .widget .widget-title h3,
@@ -172,7 +172,9 @@ a:hover,
 .woocommerce button.button.alt:hover, 
 .woocommerce a.button.alt:hover, 
 .woocommerce input.button.alt:hover,
-.woocommerce .product-hover-items ul li a:hover {
+.woocommerce .product-hover-items ul li a:hover,
+.owl-carousel .owl-nav button.owl-next:hover,
+.owl-carousel .owl-nav button.owl-prev:hover {
 
 	background:$third_color;
 }
@@ -182,7 +184,7 @@ a:hover,
 	background:$special_purpose_color;
 }
 
-.product-sale span {
+.woocommerce .product-sale span {
 
 	background:$woo-on-sale-color ;
 }
@@ -325,6 +327,7 @@ input[type="search"],
 .footer .woocommerce-widget-layered-nav ul li,
 .footer .calendar_wrap table td,
 .footer .calendar_wrap table th, 
+.footer .woocommerce ul.product_list_widget li,
 .footer .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item {
 
 	border-color:$dark_footer_border_color;

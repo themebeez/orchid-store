@@ -272,11 +272,11 @@ if( !function_exists( 'orchid_store_footer_left_action' ) ) {
 			<p>
 				<?php
 				if( !empty( $copyright_text ) ) {
-					/* translators: 1: copyright text, 2: theme name, 3: theme author, 4: powered by */
-					printf( esc_html__( '%1$s %2$s Theme by %3$s. Powered by %4$s.', 'orchid-store' ), $copyright_text, 'Orchid Store', '<a href="https://themebeez.com" rel="author" target="_blank">Themebeez</a>', '<a href="https://wordpress.org" target="_blank">WordPress</a>' );
+					/* translators: 1: copyright text, 2: theme name, 3: theme author */
+					printf( esc_html__( '%1$s %2$s Theme by %3$s', 'orchid-store' ), $copyright_text, 'Orchid Store', '<a href="https://themebeez.com" rel="author" target="_blank">Themebeez</a>' );
 				} else {
-					/* translators: 1: theme name, 2: theme author, 3: powered by */
-					printf( esc_html__( '%1$s Theme by %2$s. Powered by %3$s.', 'orchid-store' ), 'Orchid Store', '<a href="https://themebeez.com" rel="author" target="_blank">Themebeez</a>', '<a href="https://wordpress.org" target="_blank">WordPress</a>' );
+					/* translators: 1: theme name, 2: theme author */
+					printf( esc_html__( '%1$s Theme by %2$s', 'orchid-store' ), 'Orchid Store', '<a href="https://themebeez.com" rel="author" target="_blank">Themebeez</a>');
 				}
 				?>
 			</p>

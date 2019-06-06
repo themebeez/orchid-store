@@ -1,5 +1,23 @@
 
-// default styles
+// this stylesheet holds following:
+
+// default styles of secondary widgets
+
+// all custom secondary widgets 
+
+// all wp default widget styles
+
+// all woocommerce default widget styles
+
+
+/*
+====================================================
+=
+= Default styles for secondary widgets 
+=
+==========================================
+*/
+
 
 .secondary-widget-area .widget {
 
@@ -66,12 +84,13 @@
 
 
 /*
-================================================
+====================================================
 =
-= custom about widget
+= Custom about widget
 =
-==================================
+==========================================
 */
+
 
 .os-about-widget .info {
 
@@ -100,11 +119,13 @@
 }
 
 
-
-
-
-
-// wordpress & wooocommerce default widgets 
+/*
+====================================================
+=
+= wordpress & wooocommerce default widgets 
+=
+==========================================
+*/
 
 
 .widget_archive ul,
@@ -615,6 +636,26 @@
 .woocommerce.widget_shopping_cart .total strong {
 
     font-weight:600;
+}
+
+
+
+/*
+========================================
+=
+= Woocommerce product widget
+=
+====================================================
+*/
+
+.woocommerce ul.product_list_widget ins {
+
+    background: transparent;
+}
+
+.woocommerce ul.product_list_widget li:last-child {
+
+    border-bottom: none;
 }
 
 
