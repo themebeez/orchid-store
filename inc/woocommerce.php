@@ -31,7 +31,7 @@ add_action( 'after_setup_theme', 'orchid_store_woocommerce_setup' );
  */
 function orchid_store_woocommerce_scripts() {
 
-	wp_enqueue_style( 'orchid-store-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
+	//wp_enqueue_style( 'orchid-store-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
@@ -57,7 +57,8 @@ add_action( 'wp_enqueue_scripts', 'orchid_store_woocommerce_scripts' );
  *
  * @link https://docs.woocommerce.com/document/disable-the-default-stylesheet/
  */
-//add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+ 
+ // add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 /**
  * Add 'woocommerce-active' class to the body tag.

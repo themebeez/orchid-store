@@ -62,7 +62,8 @@ input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
-input[type="search"] {
+input[type="search"],
+input[type="number"] {
 
     height: 48px;
     width: 100%;
@@ -74,6 +75,7 @@ input[type="email"]:focus,
 input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
+input[type="number"]:focus,
 textarea:focus {
     
     outline-color: transparent;

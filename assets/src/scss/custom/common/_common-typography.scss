@@ -97,7 +97,10 @@ section .section-title h3,
 .os-blog .title h3,
 .search-entry .entry-title,
 .search-entry article .title h3,
-.woocommerce .product .product_title {
+.woocommerce .product .product_title,
+.woocommerce table.shop_table tbody th, 
+.woocommerce table.shop_table tfoot td, 
+.woocommerce table.shop_table tfoot th {
 
 	font-weight:500;
 } 
