@@ -26,7 +26,7 @@
 .cta-style-1 .title h3,
 section .section-title h2,
 section .section-title h3,
-.product-sale span,
+.woocommerce .product-sale span,
 .cta-style-2 .title h3,
 .cta-style-2 .sub-title h4,
 .product-widget-style-2 .tab-nav ul li a,
@@ -71,7 +71,7 @@ section .section-title h3,
 // line height 
 
 .cats-widget-styles .title h3,
-.product-sale span {
+.woocommerce .product-sale span {
 
 	line-height:1;
 }
@@ -86,12 +86,14 @@ section .section-title h3,
 // font weights
 
 
+
 .masterheader .topbar-items a,
 .woocommerce-loop-product__title,
-.product-sale span,
+.woocommerce .product-sale span,
 .os-blog .title h3,
 .search-entry .entry-title,
-.search-entry article .title h3 {
+.search-entry article .title h3,
+.woocommerce .product .product_title {
 
 	font-weight:500;
 } 
@@ -142,6 +144,7 @@ section .section-title h3,
 
 
 .button-general,
+.entry-cats ul li a,
 .woocommerce #respond input#submit,
 .woocommerce .add_to_cart_button, 
 .woocommerce input#submit, 
@@ -156,13 +159,13 @@ section .section-title h3,
 .masterheader .topbar-items a,
 .cats-widget-styles .permalink a,
 .banner-style-1 .button-general,
-.product-sale span,
+.woocommerce .product-sale span,
 .product-widget-style-2 .tab-nav ul li a {
 
     font-size: 12px;
 }
 
-.entry-cats ul li a,
+
 .entry-metas ul li a,
 .entry-tags a  {
 

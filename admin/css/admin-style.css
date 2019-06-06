@@ -1,3 +1,11 @@
+
+.widgets-holder-wrap [id*="orchid-store"] .widget-top {
+
+    background: #fdd954;
+    box-shadow: none !important;
+    border: none !important;
+}
+
 span.widget_multicheck {
 	margin-top: 10px;
 	margin-bottom: 10px;
