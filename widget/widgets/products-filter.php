@@ -118,7 +118,7 @@ if( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
                                                     ?>
                                                     <div id="tab<?php echo esc_attr( $index ); ?>" class="tab-content">
                                                         <div class="woocommerce columns-4">
-                                                            <ul class="product">
+                                                            <ul class="products">
                                                                 <?php
                                                                 while( $product_query->have_posts() ) {
 

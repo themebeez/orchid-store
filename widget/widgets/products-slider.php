@@ -73,7 +73,7 @@ if( ! class_exists( 'Orchid_Store_Products_Carousel_Widget' ) ) {
                                         ?>
                                         <div class="item">
                                             <div class="woocommerce columns-1">
-                                                <ul class="product">
+                                                <ul class="products">
                                                     <?php wc_get_template_part( 'content', 'product' ); ?>
                                                 </ul>
                                             </div><!-- .woocommerce.columns-1 -->

@@ -66,7 +66,7 @@ if( ! class_exists( 'Orchid_Store_Products_Grid_Widget' ) ) {
                                 ?>
                                 <div class="product-entry">
                                     <div class="woocommerce columns-4">
-                                        <ul class="product">
+                                        <ul class="products">
                                             <?php
                                             while( $product_query->have_posts() ) {
 

@@ -162,12 +162,12 @@ if( ! function_exists( 'orchid_store_product_categories_list_action' ) ) {
         }
         ?>
         <div class="category-nav">
-            <div class="cat-nav-entry">
+            <div class="cat-nav-entry overflow-hidden">
                 <?php
                 wp_nav_menu( array( 
                     'theme_location' => 'menu-3',
                     'container' => '', 
-                    'menu_class' => '',
+                    'menu_class' => 'overflow-hidden',
                     'menu_id' => '',
                     'depth' => 1,
                 ) );

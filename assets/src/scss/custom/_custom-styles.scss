@@ -172,6 +172,11 @@
 */
 
 
+.overflow-hidden {
+
+    overflow:hidden;
+}
+
 .mask {
 
     position:absolute;
@@ -294,12 +299,6 @@ section .section-title h3 {
     margin:2px 1px;
 }
 
-.owl-carousel .owl-nav button.owl-next:hover,
-.owl-carousel .owl-nav button.owl-prev:hover {
-
-    background:$third_color;
-}
-
 .owl-carousel .owl-nav button:focus {
 
     outline:none;
@@ -318,6 +317,10 @@ section .section-title h3 {
     height: 3px;
     margin-left:5px;
     line-height: 1;
+    -webkit-transition: all 0.15s;
+    -o-transition: all 0.15s;
+    -ms-transition: all 0.15s;
+    -moz-transition: all 0.15s;
     transition: all 0.15s;
     opacity:0.6;
 }
@@ -543,6 +546,34 @@ section .section-title h3 {
     flex:1;
 }
 
+.header-style-1 .custom-search-entry .select-custom select {
+    
+    opacity:0;
+    border:none;
+    font-size: 15px;
+    background: transparent;
+    line-height: 48px;
+    height: 48px;
+    padding: 0;
+    padding-left: 20px;
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Chrome */
+    -webkit-appearance: none;
+}
+
+/* For IE10 */
+
+.header-style-1 .custom-search-entry .select-custom select::-ms-expand {
+
+  display: none;
+}
+
+.header-style-1 .custom-search-entry .select-custom select:focus {
+
+    outline:none;
+}
+
 .header-style-1 .aside-right {
 
     display: flex;
@@ -627,7 +658,7 @@ section .section-title h3 {
     line-height:48px;
     height: 48px;
     padding:0;
-    padding-left:30px;
+    padding-left:20px;
 }
 
 .header-style-1 .nice-select:after {
@@ -638,16 +669,18 @@ section .section-title h3 {
 .header-style-1 .nice-select .list {
 
     top:100%;
-    left: 15px;
-    margin-top: 0;
-    max-width: 265px;
-    width: 265px;
+    left: 10px;
+    width: 100%;
+    max-height:500px;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    @include border-radius(5px);
 }
 
-.header-style-1 .nice-select .option {
+.header-style-1 .nice-select .list li {
 
-    padding-left:15px;
-    padding-right:15px;
+    padding: 12px 25px;
     line-height: 1;
 }
 
@@ -711,6 +744,17 @@ section .section-title h3 {
     
     overflow:hidden;
     list-style:none;
+}
+
+.category-nav ul.overflow-visible {
+
+    overflow-y:visible;
+}
+
+.banner-style-1 .cat-nav-entry {
+
+    overflow:hidden;
+    overflow-y: visible;
 }
 
 .category-nav li {
@@ -784,7 +828,7 @@ section .section-title h3 {
 }
 
 .banner-style-1 .button-general {
-
+    
     @include border_radius(0);
 }
 
@@ -857,7 +901,7 @@ section .section-title h3 {
 
 .cats-widget-style-1 {
 
-    background: #f7f7f7;
+    background: #f5f9ff;
 }
 
 .cats-widget-style-1 {
@@ -869,7 +913,6 @@ section .section-title h3 {
     
     height:200px;
 }
-
 
 
 
@@ -947,7 +990,7 @@ section .section-title h3 {
 
 .os-blog-style-1 {
 
-    background: #f7f7f7;
+    background: #f5f9ff;
 }
 
 .os-blog-style-1 .card {
@@ -997,22 +1040,22 @@ section .section-title h3 {
     padding-left:0;
 }
 
-.footer .columns-1 .os-col {
+.footer .columns-1 .os-col.column {
 
     flex:0 0 100%;
 }
 
-.footer .columns-2 .os-col {
+.footer .columns-2 .os-col.column {
 
     flex:0 0 50%;
 }
 
-.footer .columns-3 .os-col {
+.footer .columns-3 .os-col.column {
 
     flex:0 0 33.33%;
 }
 
-.footer .columns-4 .os-col {
+.footer .columns-4 .os-col.column {
 
     flex:0 0 25%;
 }
@@ -1046,6 +1089,7 @@ section .section-title h3 {
 =
 ==========================================
 */
+
 
 .search-entry .entry-title,
 .archive-entry .entry-title {
@@ -1098,7 +1142,6 @@ body.no-sidebar .archive-entry article .content-col {
 
     margin-bottom:0;
 }
-
 
 
 /*
@@ -1392,6 +1435,7 @@ body.no-sidebar .archive-entry article .content-col {
 ==========================================
 */
 
+// all default woocommerce widgets styles goes to custom-parts/_widget.scss
 
 // product
 
@@ -1424,7 +1468,7 @@ body.no-sidebar .archive-entry article .content-col {
     padding-left: 15px;
     padding-right:15px;
     margin:0;
-    margin-bottom:30px;
+    margin-bottom:40px;
 }
 
 .woocommerce.columns-1 ul.product li {
@@ -1514,8 +1558,10 @@ body.no-sidebar .archive-entry article .content-col {
 
 .woocommerce-loop-product__title {
 
-    font-weight:500;
-    margin-bottom:5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 // product price 
@@ -1541,61 +1587,30 @@ body.no-sidebar .archive-entry article .content-col {
 
 // product sale
 
-.product-sale {
+.woocommerce .product-sale  {
 
     display:inline-block;
     position: absolute;
     top:0;
     left:0;
     line-height:0;
-    
 }
 
-.product-sale span {
+.woocommerce .product-sale span {
 
-    display:inline-block;
+    display: inline-block;
     letter-spacing: 0;
-    padding:2px 10px;
-    margin:0;
+    padding: 2px 10px;
+    margin: 0;
+    min-height: auto;
+    min-width: auto;
+    position: relative;
+    top: unset;
+    left: unset;
+    background-color: transparent;
+    text-align: unset;
+    @include border-radius(0);
 }
-
-// custom cart button 
-
-.custom-cart-btn {
-
-    margin-top: 10px;
-}
-
-.woocommerce .custom-cart-btn .add_to_cart_button {
-
-   padding:10px 20px;
-}
-
-
-
-/*
-====================================================
-=
-= Woocommerce products
-=
-==========================================
-*/
-
-
-
-
-
-
-
-/*
-====================================================
-=
-= Footer styles 
-=
-==========================================
-*/
-
-
 
 
 
@@ -1606,6 +1621,8 @@ body.no-sidebar .archive-entry article .content-col {
 =
 ==========================================
 */
+
+
 
 
 
@@ -1622,6 +1639,9 @@ body.no-sidebar .archive-entry article .content-col {
 
 
 
+
+
+
 /*
 ====================================================
 =
@@ -1629,6 +1649,9 @@ body.no-sidebar .archive-entry article .content-col {
 =
 ==========================================
 */
+
+
+
 
 
 

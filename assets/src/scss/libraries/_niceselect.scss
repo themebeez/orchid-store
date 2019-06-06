@@ -154,6 +154,16 @@
     z-index: 99999;
 }
 
+.nice-select .list li {
+
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.nice-select .list li:last-child {
+
+    border-bottom: none;
+}
+
 .nice-select .list:hover .option:not(:hover) {
     background-color: transparent !important;
 }
