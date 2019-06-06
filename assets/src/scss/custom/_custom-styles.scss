@@ -1437,6 +1437,26 @@ body.no-sidebar .archive-entry article .content-col {
 
 // all default woocommerce widgets styles goes to custom-parts/_widget.scss
 
+
+
+// woocommerce layout break down 
+
+
+.wooocommerce-page .page-full-bg-thumbnail .page-head {
+
+    height:370px;
+}
+
+.wooocommerce-page .page-full-bg-thumbnail #main {
+
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+}
+
+
+
+
 // product
 
 .woocommerce-LoopProduct-link {
