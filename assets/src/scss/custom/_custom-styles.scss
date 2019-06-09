@@ -373,15 +373,33 @@ section .section-title h3 {
     text-align: right;
 }
 
-.masterheader .mini-cart {
+
+.mini-cart-open {
     
-    position:relative;
-    text-align: left;
-    background:transparent;
-    border:1px solid rgba(255,255,255,0.2);
-    height:48px;
-    padding-left:6px;
-    @include border_radius(25px);
+    display:none;
+    position:absolute;
+    z-index: 99999;
+    top:70px;
+    left:0;
+    width:350px;
+    padding:20px;
+    background-color:#f7f7f7;
+    @include border_radius(5px);
+    transform: translateX(-50%);
+}
+
+.mini-cart-open:before {
+
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: -8px;
+    left: 55%;
+    background-color: #f7f7f7;
+    transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }
 
 .masterheader .mini-cart button {
@@ -400,33 +418,6 @@ section .section-title h3 {
 .masterheader .mini-cart button:focus {
 
     outline:none;
-}
-
-.mini-cart-open {
-    
-    display:none;
-    position:absolute;
-    z-index: 999;
-    top:70px;
-    left:0;
-    width:350px;
-    padding:20px;
-    @include border_radius(5px);
-    transform: translateX(-50%);
-
-    &:before {
-
-        content: "";
-        position: absolute;
-        width: 16px;
-        height: 16px;
-        top: -8px;
-        left: 55%;
-        background-color: #ffffff;
-        transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-    }
 }
 
 .mini-cart-open ul {
@@ -493,6 +484,24 @@ section .section-title h3 {
     padding: 10px 20px;
     font-size: 13px;
 }
+
+.masterheader .mini-cart {
+    
+    position:relative;
+    text-align: left;
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.2);
+    height:48px;
+    padding-left:6px;
+    @include border_radius(25px);
+}
+
+.mini-cart-open .woocommerce ul.product_list_widget li img {
+
+    width:40px;
+}
+
+
 
 
 
@@ -591,15 +600,15 @@ section .section-title h3 {
 
 .header-style-1 .custom-search {
 
-    flex:0 0 calc( 100% - 170px );
-    max-width:calc( 100% - 170px );
+    flex:0 0 calc( 100% - 200px );
+    max-width:calc( 100% - 200px );
     padding-right: 10px;
 }
 
 .header-style-1 .mini-cart {
 
-    flex:0 0 170px;
-    max-width:170px;
+    flex:0 0 200px;
+    max-width:200px;
     line-height: 44px;
 }
 
@@ -2215,7 +2224,6 @@ body.no-sidebar .archive-entry article .content-col {
     border-left-color: transparent;
     border-top-color: transparent;
 }
-
 
  .woocommerce-checkout #payment div.payment_box p {
 

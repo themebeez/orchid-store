@@ -79,7 +79,9 @@
         $("#menu-category-menu").niceScroll({
 
             cursorcolor: "#FFCA04",
-            cursorwidth: "5px",
+            cursorwidth: "2px",
+            cursorborder:"transparent",
+            cursorborderradius: "0px",
         });
 
 
