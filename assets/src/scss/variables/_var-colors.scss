@@ -34,7 +34,7 @@ $white:#ffffff;
 $primary_color 							: #333333; 		// Black
 $secondary_color						: #FFCA04; 		// Yellow
 $third_color							: #FBD7CA; 		// Orange
-$special_purpose_color					: #8e8e8e; 		// Light Grey
+$special_purpose_color					: #808080; 		// Light Grey
 $border_color							: #f3f3f3; 		// 
 $mask_background						: rgba(50,50,50,0.2); 
 
@@ -49,17 +49,10 @@ $inner_page_master_bg					:#000;
 
 
 $woo-on-sale-color 						: red;
-$woo-body-color                         : #333333;
-$woo-primary-color                      : $primary_color;
-$woo-secondary-color                    : $secondary_color;
-$woo-third-color                        : $secondary_color;
-$woo-buttons-color						: $secondary_color;
-$woo-button-hover-color					: $third_color;
-$woo-border-color						: #eeeeee;
-$woo-section-bg-color					: #f5f5f5;
-$woo-special-color                      : #eeeeee;
-
-
+$woo-success-bar						: #1fa67a;
+$woo-info-bar							: #238ae6;
+$woo-error-bar							: #dc3545;
+$woo-warning-bar						: #ffc107;
 
 
 

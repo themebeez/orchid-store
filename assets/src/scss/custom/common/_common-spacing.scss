@@ -7,9 +7,17 @@
 // padding 
 
 
-.section-spacing {
+.woocommerce-page form.woocommerce-checkout {
 
-	padding:80px 0;
+	padding-top: 10px;
+}
+
+.woocommerce .cart_totals h2,
+.woocommerce .woocommerce-billing-fields h3,
+.woocommerce-page form.woocommerce-checkout h3,
+.woocommerce-page .woocommerce-order-details h2 {
+
+    padding-bottom: 10px;
 }
 
 .patigation {
@@ -49,12 +57,15 @@
     padding:120px 0;
 }
 
-
 .cats-widget-styles .card-content {
 
 	padding:30px 40px;
 }
 
+.section-spacing {
+
+	padding:80px 0;
+}
 
 .inner-page-wrap {
 
@@ -65,6 +76,11 @@
 // margin
 
 
+.woocommerce .added_to_cart.wc-forward {
+
+	margin-top: 5px;
+}
+
 .woocommerce ul.product_list_widget li a {
 
 	margin-bottom: 5px;
@@ -73,9 +89,18 @@
 .search-entry article .title h3,
 .search-entry article .excerpt p,
 .archive-entry article .title h3,
-.archive-entry article .excerpt p {
+.archive-entry article .excerpt p,
+.woocommerce .cart_totals h2,
+.woocommerce .woocommerce-billing-fields h3,
+.woocommerce-page form.woocommerce-checkout h3,
+.woocommerce-page .woocommerce-order-details h2 {
 
 	margin-bottom:10px;
+}
+
+.woocommerce ul.order_details li strong {
+
+	margin-top: 10px;
 }
 
 .woocommerce span.price,
@@ -87,7 +112,8 @@
 .woocommerce-loop-product__title,
 .woocommerce ul.products li.product .woocommerce-loop-category__title, 
 .woocommerce ul.products li.product .woocommerce-loop-product__title, 
-.woocommerce ul.products li.product h3 {
+.woocommerce ul.products li.product h3,
+.woocommerce-page .woocommerce-shipping-fields {
 
 	margin-bottom: 15px;
 }
@@ -99,12 +125,28 @@
 	margin-bottom: 20px;
 }
 
+
+#add_payment_method .cart-collaterals .shipping-calculator-button, 
+.woocommerce-cart .cart-collaterals .shipping-calculator-button, 
+.woocommerce-checkout .cart-collaterals .shipping-calculator-button {
+
+	margin-top: 20px;
+}
+
+.woocommerce-error, 
+.woocommerce-info, 
+.woocommerce-message,
 .banner-style-1 .excerpt p,
 .cta-style-2 .sub-title h4,
 .search-entry article,
 .archive-entry article,
 .category-description,
-.woocommerce .woocommerce-ordering {
+.woocommerce form.checkout_coupon, 
+.woocommerce form.login, 
+.woocommerce form.register, 
+.woocommerce .woocommerce-ordering,
+.woocommerce-page .woocommerce-billing-fields,
+.woocommerce-page #customer_login h2 {
 
 	margin-bottom:30px;
 }
@@ -124,13 +166,18 @@
 
 .woocommerce ul.products li,
 .woocommerce ul.products li.product, 
-.woocommerce-page ul.products li.product  {
+.woocommerce-page ul.products li.product,
+.woocommerce-page .woocommerce-notice,
+.woocommerce-page .woocommerce ul.order_details {
 
 	margin-bottom: 40px;
 }
 
+
 .woocommerce .cart-collaterals, 
-.woocommerce-page .cart-collaterals {
+.woocommerce-page .cart-collaterals,
+.woocommerce-cart .wc-proceed-to-checkout,
+.woocommerce-page .woocommerce-order-details {
 
 	margin-top: 40px;
 }

@@ -12,7 +12,12 @@
 .default-page-wrap .page-head .entry-metas ul li a,
 .default-post-wrap .page-head .entry-metas ul li a,
 .mini-cart-open .block a, 
-.mini-cart-open .block span  {
+.mini-cart-open .block span,
+.woocommerce-error li, 
+.woocommerce-info li, 
+.woocommerce-message li,
+.woocommerce-message,
+.woocommerce-page .woocommerce-notice {
 
 	color:$white;
 }
@@ -23,7 +28,6 @@
 
 
 a,
-a:link,
 a:focus,
 a:visited,
 body,
@@ -50,7 +54,9 @@ input[type="submit"],
 .woocommerce input.button:hover, 
 .woocommerce .cart .button:hover, 
 .woocommerce .cart input.button:hover, 
-.woocommerce button.button.alt:hover, 
+.woocommerce button.button.alt:hover,
+.woocommerce a.button.alt,
+.woocommerce .added_to_cart.wc-forward, 
 .woocommerce a.button.alt:hover, 
 .woocommerce input.button.alt:hover,
 .woocommerce .add_to_cart_button:hover,
@@ -59,7 +65,11 @@ input[type="submit"],
 .product-widget-style-2 .tab-nav ul li a.active,
 .mini-cart-open .total-checkout a,
 .woocommerce ul.products li.product .price,
-.woocommerce ul.products li.product .price ins {
+.woocommerce ul.products li.product .price ins,
+.woocommerce-checkout .checkout .col-2 h3 label,
+.woocommerce #payment #place_order, 
+.woocommerce-page #payment #place_order,
+.woocommerce-MyAccount-content .woocommerce-message a.button {
 
 	color:$primary_color;
 }
@@ -109,11 +119,14 @@ a:hover,
 
 
 .entry-metas ul li a,
+.woocommerce form label,
 .woocommerce span.price del,
 .woocommerce ul.products li.product .price del,
 .product-widget-style-2 .tab-nav ul li a,
 .post-navigation .nav-previous span,
-.post-navigation .nav-next  span  {
+.post-navigation .nav-next  span,
+.woocommerce .woocommerce-form-coupon p,
+.select2-container--default .select2-selection--single .select2-selection__rendered  {
 
 	color:$special_purpose_color; // #8e8e8e
 }
@@ -157,6 +170,7 @@ a:hover,
 .main-navigation,
 .masterheader .mini-cart button,
 .owl-carousel button.owl-dot.active,
+.woocommerce .added_to_cart.wc-forward,
 .default-post-wrap .page-head .entry-cats ul li a:hover {
 
 	background:$secondary_color;
@@ -178,7 +192,8 @@ a:hover,
 .woocommerce input.button.alt:hover,
 .woocommerce .product-hover-items ul li a:hover,
 .owl-carousel .owl-nav button.owl-next:hover,
-.owl-carousel .owl-nav button.owl-prev:hover {
+.owl-carousel .owl-nav button.owl-prev:hover,
+.woocommerce .added_to_cart.wc-forward:hover {
 
 	background:$third_color;
 }
@@ -218,6 +233,7 @@ input[type="number"],
 input[type="tel"],
 input[type="month"],
 input[type="date"],
+.select2-dropdown,
 .nice-select,
 .comment-respond, 
 .calendar_wrap table th,
@@ -226,15 +242,14 @@ input[type="date"],
 .header-style-1 .custom-search-entry,
 .masterheader .mini-cart,
 .secondary-widget-area .widget,
-.category-description  {
+.category-description,
+.woocommerce form.checkout_coupon, 
+.woocommerce form.login, 
+.woocommerce form.register,
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-search--dropdown .select2-search__field  {
 
 	border: 1px solid $border_color;
-}
-
-.category-nav ul,
-.patigation .page-numbers.current {
-
-	border:2px solid $secondary_color;
 }
 
 .woocommerce .widget_shopping_cart .cart_list li, 
@@ -251,6 +266,12 @@ input[type="date"],
 .widget_product_categories li,
 .woocommerce-widget-layered-nav ul li,
 .comments-area .comment-body .comment-meta,
+.woocommerce .cart_totals h2,
+.woocommerce .woocommerce-billing-fields h3,
+.woocommerce .woocommerce-shipping-fields h3
+.woocommerce-page .cart-collaterals table.shop_table th,
+.woocommerce-cart .cart-collaterals .cart_totals tr td,
+.woocommerce-page form.woocommerce-checkout h3, 
 .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item {
 
     border-bottom: 1px solid $border_color;
@@ -260,6 +281,12 @@ input[type="date"],
 .widget_product_categories ul li ul {
 
 	border-top:1px solid $border_color;
+}
+
+.category-nav ul,
+.patigation .page-numbers.current {
+
+	border:2px solid $secondary_color;
 }
 
 

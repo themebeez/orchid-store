@@ -95,6 +95,7 @@
         });
 
 
+
         /*
         ============================
         = Mini cart toggle
@@ -194,6 +195,10 @@
         = Sticky sidebar
         ==========================================
         */
+
+
+        $("#customer_details .col-1").addClass("sticky-portion"); // woo-commerce checkout page
+        $("#customer_details .col-2").addClass("sticky-portion"); // woo-commerce checkout page
 
         if (window.matchMedia("(max-width: 991px)").matches) {
 

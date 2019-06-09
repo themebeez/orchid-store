@@ -16,7 +16,20 @@ input[type="reset"],
 .woocommerce .custom-cart-btn a,
 .woocommerce #respond input#submit, 
 .woocommerce input#submit,
-.woocommerce ul.products li.product .button {
+.woocommerce .added_to_cart.wc-forward,
+.woocommerce ul.products li.product .button,
+.woocommerce #respond input#submit.disabled, 
+.woocommerce #respond input#submit:disabled, 
+.woocommerce #respond input#submit:disabled[disabled], 
+.woocommerce a.button.disabled, 
+.woocommerce a.button:disabled, 
+.woocommerce a.button:disabled[disabled], 
+.woocommerce button.button.disabled, 
+.woocommerce button.button:disabled, 
+.woocommerce button.button:disabled[disabled], 
+.woocommerce input.button.disabled, 
+.woocommerce input.button:disabled, 
+.woocommerce input.button:disabled[disabled] {
     
     position: relative;
     z-index:1;
@@ -39,7 +52,8 @@ input[type="reset"],
     padding:15px 30px;
 }
 
-.button-general.medium {
+.button-general.medium,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
 	
 	padding:20px 50px;
 	letter-spacing:0.5px;
