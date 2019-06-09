@@ -81,7 +81,9 @@
 	margin-top: 5px;
 }
 
-.woocommerce ul.product_list_widget li a {
+.woocommerce ul.product_list_widget li a,
+.woocommerce .os-breadcrumb-wrap .page-title,
+.os-breadcrumb-wrap .breadcrumb-inner .page-title {
 
 	margin-bottom: 5px;
 }
@@ -163,7 +165,7 @@
 	margin-bottom: -30px;
 }
 
-
+.os-breadcrumb-wrap,
 .woocommerce ul.products li,
 .woocommerce ul.products li.product, 
 .woocommerce-page ul.products li.product,

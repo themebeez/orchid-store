@@ -309,6 +309,7 @@ if( ! function_exists( 'orchid_store_title_breadcrumb_action' ) ) {
 		?>
 		<div class="os-breadcrumb-wrap" <?php if( has_header_image() ) { ?>style="background-image: url(<?php header_image(); ?>);" <?php } ?>>
 	        <div class="__os-container__">
+	        	<div class="breadcrumb-inner">
 	            <div class="title">
 	            	<?php
 	            	if( have_posts() ) {
@@ -376,34 +377,12 @@ if( ! function_exists( 'orchid_store_title_breadcrumb_action' ) ) {
                         'show_browse' => false,
                     );
 
-                    if( class_exists( 'Woocommerce' ) ) {
-                    	$breadcrumb_args['post_taxonomy'] = array(
-                    		'product' => 'product_cat',
-                    		'product' => 'product_tag',
-                    	);
-                    }
-
-                    if( class_exists( 'Woocommerce' ) ) {
-
-                    	if( is_shop() || is_product_category() || is_product_tag() ) {
-
-                    		/**
-					        * Hook - orchid_store_woocommerce_breadcrumb.
-					        *
-					        * @hooked woocommerce_breadcurm - 20
-					        */
-					        do_action( 'orchid_store_woocommerce_breadcrumb' ); 
-                    	} else {
-                    		orchid_store_breadcrumb_trail( $breadcrumb_args );
-                    	}
-                    } else {
-
-                    	orchid_store_breadcrumb_trail( $breadcrumb_args );
-                    }
+                    orchid_store_breadcrumb_trail( $breadcrumb_args );
                     ?>
 	            </div><!-- .os-breadcrumb -->
+	         	</div><!-- // breadcrumb-inner -->
 	        </div><!-- .os-container -->
-	        <!-- <div class="mask"></div>-->
+	         <div class="mask"></div>
 	    </div><!-- .os-breadcrumb-wrap -->
 		<?php
 	}

@@ -15,7 +15,15 @@
 .woocommerce-info li, 
 .woocommerce-message li,
 .woocommerce-message,
-.woocommerce-page .woocommerce-notice {
+.woocommerce-page .woocommerce-notice,
+.os-breadcrumb-wrap .breadcrumb-inner .page-title,
+.mini-cart-open .woocommerce.widget_shopping_cart .cart_list li a,
+.woocommerce .woocommerce-breadcrumb,
+.woocommerce .woocommerce-breadcrumb a,
+.woocommerce .woocommerce-breadcrumb span,
+.os-breadcrumb-wrap ul li a,
+.os-breadcrumb-wrap ul li,
+.os-breadcrumb-wrap li.trail-item:after {
 
 	color:$white;
 }
@@ -106,7 +114,10 @@ a:hover,
 .banner-style-1 .caption span,
 .entry-404 h1 span,
 .default-page-wrap .page-head .entry-metas ul li a:hover,
-.default-post-wrap .page-head .entry-metas ul li a:hover  {
+.default-post-wrap .page-head .entry-metas ul li a:hover,
+.mini-cart-open .woocommerce.widget_shopping_cart .cart_list li a:hover,
+.woocommerce .woocommerce-breadcrumb a:hover,
+.os-breadcrumb-wrap ul li a:hover  {
 
 	color:$secondary_color;
 }

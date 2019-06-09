@@ -104,11 +104,13 @@
         ===================================
         */
 
+        var miniCart = $( '.trigger-mini-cart' );
 
-        $('.trigger-mini-cart').on('mouseover', function(e) {
+        var openCart = $( '.mini-cart-open' );
 
-            $(".mini-cart-open").toggle();
+        miniCart.on( 'click', function(e) {
 
+            openCart.toggleClass( 'display-block' );
         });
 
 
