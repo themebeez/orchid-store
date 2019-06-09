@@ -11,8 +11,6 @@
 .default-post-wrap .entry-title,
 .default-page-wrap .page-head .entry-metas ul li a,
 .default-post-wrap .page-head .entry-metas ul li a,
-.mini-cart-open .block a, 
-.mini-cart-open .block span,
 .woocommerce-error li, 
 .woocommerce-info li, 
 .woocommerce-message li,
@@ -63,7 +61,6 @@ input[type="submit"],
 .category-nav li a:hover,
 .masterheader .mini-cart button,
 .product-widget-style-2 .tab-nav ul li a.active,
-.mini-cart-open .total-checkout a,
 .woocommerce ul.products li.product .price,
 .woocommerce ul.products li.product .price ins,
 .woocommerce-checkout .checkout .col-2 h3 label,
@@ -136,20 +133,17 @@ a:hover,
 
 // background color
 
-.mini-cart-open,
+
 .default-post-wrap .page-head .entry-cats ul li a {
 
 	background:$white;
 }
 
-.mini-cart-open,
-.mini-cart-open:before,
 .cta-style-2 .box-holder,
 .header-style-1 .top-header {
 
 	background:$primary_color;
 }
-
 
 .entry-tags a,
 .entry-cats ul li a,
