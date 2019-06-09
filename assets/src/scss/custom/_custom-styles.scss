@@ -1987,6 +1987,7 @@ body.no-sidebar .archive-entry article .content-col {
 .woocommerce-cart .cart-collaterals .cart_totals tr th {
 
     border:none;
+    border-bottom: 1px solid $border_color;
 }
 
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
@@ -2214,6 +2215,12 @@ body.no-sidebar .archive-entry article .content-col {
     border-left-color: transparent;
     border-top-color: transparent;
 }
+
+
+ .woocommerce-checkout #payment div.payment_box p {
+
+    padding-top: 0;
+ }
 
 
 /*

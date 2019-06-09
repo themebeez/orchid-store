@@ -98,7 +98,9 @@ section .section-title h3,
 
 
 .woocommerce-NoticeGroup ul li strong,
-.woocommerce ul.order_details li strong {
+.woocommerce ul.order_details li strong,
+.woocommerce ul.cart_list li a, 
+.woocommerce ul.product_list_widget li a {
 
 	font-weight:normal;
 }
@@ -217,7 +219,9 @@ section .section-title h3,
 
 .excerpt p,
 .os-about-widget .contact-info li span,
-.woocommerce ul.order_details li strong {
+.woocommerce ul.order_details li strong,
+.woocommerce ul.cart_list li a, 
+.woocommerce ul.product_list_widget li a {
 
 	font-size:15px;
 }
