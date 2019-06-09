@@ -19,9 +19,9 @@
 function orchid_store_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'orchid_store_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
+		'default-text-color'     => '222222',
+		'width'                  => 1920,
+		'height'                 => 600,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'orchid_store_header_style',
 	) ) );

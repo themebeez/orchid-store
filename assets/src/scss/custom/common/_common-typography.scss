@@ -50,7 +50,8 @@ section .section-title h3,
 .woocommerce .added_to_cart.wc-forward,
 .woocommerce ul.order_details li,
 .woocommerce-page .woocommerce-order-details h2,
-.woocommerce-page #customer_login h2  {
+.woocommerce-page #customer_login h2,
+.os-breadcrumb-wrap .breadcrumb-inner .page-title  {
 
 	text-transform:uppercase;
 }
@@ -96,11 +97,13 @@ section .section-title h3,
 
 // font weights
 
-
+.woocommerce .woocommerce-breadcrumb,
 .woocommerce-NoticeGroup ul li strong,
 .woocommerce ul.order_details li strong,
 .woocommerce ul.cart_list li a, 
-.woocommerce ul.product_list_widget li a {
+.woocommerce ul.product_list_widget li a,
+.mini-cart-open .woocommerce.widget_shopping_cart .total strong,
+.mini-cart-open .woocommerce.widget_shopping_cart .total {
 
 	font-weight:normal;
 }
@@ -212,7 +215,8 @@ section .section-title h3,
 .woocommerce ul.products li.product .price,
 .woocommerce .woocommerce-Price-amount,
 .os-about-widget .contact-info li p span,
-.patigation .page-numbers {
+.patigation .page-numbers,
+.woocommerce .woocommerce-breadcrumb {
 
 	font-size:14px;
 }
