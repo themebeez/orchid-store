@@ -178,6 +178,11 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 /**
+ * Load breadcrumb trails.
+ */
+require get_template_directory() . '/third-party/breadcrumbs.php';
+
+/**
  * Load custom hooks dependent on WooCommerce
  */
 require get_template_directory() . '/inc/woocommerce-hooks.php';

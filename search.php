@@ -10,6 +10,14 @@
 get_header();
 ?>
 <div class="inner-page-wrap search-page-wrap">
+	<?php
+    /**
+	* Hook - orchid_store_title_breadcrumb.
+	*
+	* @hooked orchid_store_title_breadcrumb_action - 10
+	*/
+	do_action( 'orchid_store_title_breadcrumb' );
+	?>
     <div class="inner-entry">
         <div class="__os-container__">
             <div class="row">
@@ -20,14 +28,6 @@ get_header();
                         	if( have_posts() ) :
                         		?>
 	                            <div class="search-entry">
-	                                <div class="title">
-	                                	<h1 class="entry-title">
-		                                	<?php
-											/* translators: %s: search query. */
-											printf( esc_html__( 'Search Results for: %s', 'orchid-store' ), '<span>' . get_search_query() . '</span>' );
-											?>
-										</h1><!-- .entry-title -->
-	                                </div><!-- .title -->
 	                                <?php
 	                                /* Start the Loop */
 									while ( have_posts() ) :

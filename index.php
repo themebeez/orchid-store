@@ -15,6 +15,14 @@
 get_header();
 ?>
 <div class="inner-page-wrap archive-page-wrap">
+	<?php
+    /**
+	* Hook - orchid_store_title_breadcrumb.
+	*
+	* @hooked orchid_store_title_breadcrumb_action - 10
+	*/
+	do_action( 'orchid_store_title_breadcrumb' );
+	?>
     <div class="inner-entry">
         <div class="__os-container__">
             <div class="row">

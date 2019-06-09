@@ -238,3 +238,4 @@ add_action( 'orchid_store_product_thumbnail', 'orchid_store_template_loop_produc
 add_action( 'orchid_store_loop_product_quick_link', 'orchid_store_template_loop_product_quick_link' );
 
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+add_action( 'orchid_store_woocommerce_breadcrumb', 'woocommerce_breadcrumb', 20, 0 );

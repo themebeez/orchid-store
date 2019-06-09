@@ -78,12 +78,14 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
             'enable_global_sidebar_position' => false,
             'global_sidebar_position' => 'right',
 
+            'display_post_featured_image' => true,
             'display_post_cats' => true,
             'display_post_date' => true,
             'display_post_author' => true,
             'display_post_tags' => true,
             'post_sidebar_position' => 'right',
 
+            'display_page_featured_image' => true,
             'page_sidebar_position' => 'right',
 
             'copyright_text' => '',

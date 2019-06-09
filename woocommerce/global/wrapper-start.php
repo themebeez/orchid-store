@@ -20,6 +20,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <div class="inner-page-wrap __os-woo-page-wrap__">
+	<?php
+    /**
+	* Hook - orchid_store_woocommerce_title_breadcrumb.
+	*
+	* @hooked orchid_store_woocommerce_title_breadcrumb_action - 10
+	*/
+	do_action( 'orchid_store_woocommerce_title_breadcrumb' );
+	?>
 	<div class="inner-entry">
 		<div class="__os-container__">
 			<div class="row">
