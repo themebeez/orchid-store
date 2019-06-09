@@ -10,6 +10,14 @@
 get_header();
 ?>
 <div class="inner-page-wrap error-404-wrap">
+    <?php
+    /**
+    * Hook - orchid_store_title_breadcrumb.
+    *
+    * @hooked orchid_store_title_breadcrumb_action - 10
+    */
+    do_action( 'orchid_store_title_breadcrumb' );
+    ?>
     <div class="inner-entry">
         <div id="primary" class="content-area">
             <div id="main" class="site-main">

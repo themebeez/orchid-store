@@ -10,6 +10,14 @@
 get_header();
 ?>
 <div class="inner-page-wrap archive-page-wrap">
+	<?php
+    /**
+	* Hook - orchid_store_title_breadcrumb.
+	*
+	* @hooked orchid_store_title_breadcrumb_action - 10
+	*/
+	do_action( 'orchid_store_title_breadcrumb' );
+	?>
     <div class="inner-entry">
         <div class="__os-container__">
             <div class="row">
@@ -19,11 +27,7 @@ get_header();
                             <div class="archive-entry">
                             	<?php
                             	if( have_posts() ) :
-                            		?>
-	                                <div class="title">
-	                                	<?php the_archive_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	                                </div><!-- .title -->
-	                                <?php
+                            		
 	                                $archive_description = get_the_archive_description();
 	                                if( !empty( $archive_description ) ) {
 	                                	?>

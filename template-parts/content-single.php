@@ -6,9 +6,65 @@
  *
  * @package Orchid_Store
  */
-$show_tags	= orchid_store_get_option( 'display_post_tags' );
+$show_tags			= orchid_store_get_option( 'display_post_tags' );
+$show_categories    = orchid_store_get_option( 'display_post_cats' );
+$show_author        = orchid_store_get_option( 'display_post_author' );
+$show_date          = orchid_store_get_option( 'display_post_date' );
+$show_featured_img 	= orchid_store_get_option( 'display_page_featured_image' );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php 
+	if( $show_featured_img == true && has_post_thumbnail() ) {
+		?>
+		<div class="thumb featured-thumb">
+	       	<?php
+	       	the_post_thumbnail( 'full', array(
+				'alt' => the_title_attribute( array(
+					'echo' => false,
+				) ),
+			) );
+	       	?>
+	    </div><!-- .thumb.featured-thumb -->
+	    <?php
+	}
+
+	if( $show_categories == true ) {
+        /**
+        * Hook - orchid_store_post_categories.
+        *
+        * @hooked orchid_store_post_categories_action - 10
+        */
+        do_action( 'orchid_store_post_categories' );
+    }
+
+    if( $show_date == true || $show_author == true ) {
+    	?>
+        <div class="entry-metas">
+            <ul>
+                <?php
+                if( $show_author == true ) {
+                    /**
+                    * Hook - orchid_store_post_author.
+                    *
+                    * @hooked orchid_store_post_author_action - 10
+                    */
+                    do_action( 'orchid_store_post_author' );
+                }
+
+                if( $show_date == true ) {
+                    /**
+                    * Hook - orchid_store_post_date.
+                    *
+                    * @hooked orchid_store_post_date_action - 10
+                    */
+                    do_action( 'orchid_store_post_date' );
+                }
+                ?>
+            </ul>
+        </div><!-- .entry-metas -->
+        <?php
+    }
+	?>
 	<div class="<?php orchid_store_content_entry_class(); ?>">
 		<?php
 		the_content();

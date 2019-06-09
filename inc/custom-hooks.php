@@ -301,3 +301,111 @@ if( !function_exists( 'orchid_store_footer_right_action' ) ) {
 	}
 }
 add_action( 'orchid_store_footer_right', 'orchid_store_footer_right_action', 10 );
+
+
+if( ! function_exists( 'orchid_store_title_breadcrumb_action' ) ) {
+
+	function orchid_store_title_breadcrumb_action() {
+		?>
+		<div class="os-breadcrumb-wrap" <?php if( has_header_image() ) { ?>style="background-image: url(<?php header_image(); ?>);" <?php } ?>>
+	        <div class="__os-container__">
+	            <div class="title">
+	            	<?php
+	            	if( have_posts() ) {
+		            	if( is_archive() ) {
+
+		            		the_archive_title( '<h1 class="entry-title page-title">', '</h1>' );
+		                }
+
+		                if( is_search() ) {
+		                	?>
+		                	<h1 class="entry-title page-title">
+	                        	<?php
+								/* translators: %s: search query. */
+								printf( esc_html__( 'Search Results for: %s', 'orchid-store' ), '<span>' . get_search_query() . '</span>' );
+								?>
+							</h1><!-- .entry-title -->
+		                	<?php
+		                }
+
+		                if( is_page() ) {
+
+		                	while( have_posts() ) {
+
+		                		the_post();
+			                	?>
+			                	<h1 class="entry-title page-title"><?php the_title(); ?></h1>
+			                	<?php
+			                }
+		                }
+
+		                if( is_single() ) {
+
+		                	while( have_posts() ) {
+
+		                		the_post();
+			                	?>
+			                	<h1 class="entry-title page-title"><?php the_title(); ?></h1>
+			                	<?php
+			                }
+		                }
+
+		                if( is_home() && ! is_front_page() ) {
+		                	?>
+		                	<h1 class="entry-title page-title"><?php single_post_title(); ?></h1>
+		                	<?php
+		                }
+
+		                if( class_exists( 'Woocommerce' ) ) {
+
+		                	if( is_shop() || is_woocommerce() ) {
+		                		?>
+		                		<h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>
+		                		<?php
+		                	}  else {
+
+		                		
+		                	}
+		                }
+		            }
+	                ?>
+	            </div><!-- .title -->
+	            <div class="os-breadcrumb">
+	            	<?php
+                    $breadcrumb_args = array(
+                        'show_browse' => false,
+                    );
+
+                    if( class_exists( 'Woocommerce' ) ) {
+                    	$breadcrumb_args['post_taxonomy'] = array(
+                    		'product' => 'product_cat',
+                    		'product' => 'product_tag',
+                    	);
+                    }
+
+                    if( class_exists( 'Woocommerce' ) ) {
+
+                    	if( is_shop() || is_product_category() || is_product_tag() ) {
+
+                    		/**
+					        * Hook - orchid_store_woocommerce_breadcrumb.
+					        *
+					        * @hooked woocommerce_breadcurm - 20
+					        */
+					        do_action( 'orchid_store_woocommerce_breadcrumb' ); 
+                    	} else {
+                    		orchid_store_breadcrumb_trail( $breadcrumb_args );
+                    	}
+                    } else {
+
+                    	orchid_store_breadcrumb_trail( $breadcrumb_args );
+                    }
+                    ?>
+	            </div><!-- .os-breadcrumb -->
+	        </div><!-- .os-container -->
+	        <!-- <div class="mask"></div>-->
+	    </div><!-- .os-breadcrumb-wrap -->
+		<?php
+	}
+}
+add_action( 'orchid_store_title_breadcrumb', 'orchid_store_title_breadcrumb_action', 10 );

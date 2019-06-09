@@ -202,6 +202,7 @@ orchid_store_add_radio_image_field( 'search_sidebar_position', esc_html__( 'Sele
 /*******************************************************************************************************
 *********************************** Blog Single Control Fields Declaration *****************************
 *******************************************************************************************************/
+orchid_store_add_toggle_field( 'display_post_featured_image', esc_html__( 'Display Featured Image', 'orchid-store' ), '', '', 'post_single' );
 orchid_store_add_toggle_field( 'display_post_cats', esc_html__( 'Display Categories', 'orchid-store' ), '', '', 'post_single' );
 orchid_store_add_toggle_field( 'display_post_date', esc_html__( 'Display Posted Date', 'orchid-store' ), '', '', 'post_single' );
 orchid_store_add_toggle_field( 'display_post_author', esc_html__( 'Display Author Name', 'orchid-store' ), '', '', 'post_single' );
@@ -213,6 +214,7 @@ orchid_store_add_radio_image_field( 'post_sidebar_position', esc_html__( 'Select
 /*******************************************************************************************************
 *********************************** Page Single Control Fields Declaration *****************************
 *******************************************************************************************************/
+orchid_store_add_toggle_field( 'display_page_featured_image', esc_html__( 'Display Featured Image', 'orchid-store' ), '', '', 'page_single' );
 orchid_store_add_radio_image_field( 'page_sidebar_position', esc_html__( 'Select Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), '', 'page_single' );
 
 
