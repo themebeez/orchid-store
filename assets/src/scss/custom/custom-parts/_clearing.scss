@@ -42,7 +42,9 @@
 .woocommerce .products ul::after, 
 .woocommerce .products ul::before, 
 .woocommerce ul.products::after, 
-.woocommerce ul.products::before {
+.woocommerce ul.products::before,
+.woocommerce ul.order_details::after, 
+.woocommerce ul.order_details::before {
 
 	display:none;
 }
