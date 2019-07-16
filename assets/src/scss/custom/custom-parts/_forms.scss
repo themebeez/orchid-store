@@ -110,6 +110,20 @@ textarea {
     width: 100%;
 }
 
+select {
+
+    height:48px;
+    width:100%;
+    max-width:100%;
+    padding:0 15px;
+    cursor:pointer;
+}
+
+select:focus {
+
+    outline:none;
+}
+
 
 
 

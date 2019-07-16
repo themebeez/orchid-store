@@ -57,7 +57,7 @@
 
 #site-navigation ul li a {
 
-    font-size: 16px;
+    font-size: 15px;
     padding: 0 20px;
     display: block;
     line-height: 1.4;
@@ -116,7 +116,7 @@
     -o-transition: 0.3s ease;
     transition: 0.3s ease;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    z-index: 99;
+    z-index: 999999;
 }
 
 #site-navigation ul li .sub-menu ul, 
@@ -160,6 +160,12 @@
 #site-navigation ul li .children li a:after {
 
     display: none;
+}
+
+#site-navigation ul li .sub-menu li:last-child a,
+#site-navigation ul li .children li:last-child a  {
+
+    border-bottom: none;
 }
 
 .sub-toggle,

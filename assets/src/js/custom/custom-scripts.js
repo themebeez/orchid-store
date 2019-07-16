@@ -51,27 +51,75 @@
         })
 
 
-
         /*
-        =============================
-        = Nice select
-        =======================================
+        ====================
+        = Woocommerce cart events
+        ============================
         */
 
 
-        $('select').niceSelect();
+        iziToast.settings({
+
+            class: 'izitoast-notification',
+            position: 'topRight',
+            theme: 'light',
+            zindex: 99999999,
+            rtl:false,
+        });
 
 
-         /*
+        if( jQuery('body').hasClass('rtl') ) {
+
+            iziToast.settings({
+
+                rtl:true,
+                position: 'topLeft',
+            });
+
+        };
+
+        $(document.body).on('added_to_cart', function() {
+
+            iziToast.success({
+
+                message: 'Product successfully added to cart!',
+
+            });
+
+        });
+
+
+        $(document.body).on('updated_cart_totals', function() {
+
+            iziToast.info({
+
+                message: 'Cart items has been updated successfully!',
+
+            });
+        });
+
+
+        $(document.body).on('removed_from_cart', function() {
+
+            iziToast.success({
+
+                message: 'Product has been removed from your cart!',
+
+            });
+        });
+
+
+
+        /*
         =========================
         = Nice scroll for category nav
         ==================================
         */
 
 
-        $( "#menu-category-menu" ).removeClass( "overflow-hidden" );
+        $("#menu-category-menu").removeClass("overflow-hidden");
 
-        $( "#menu-category-menu" ).addClass( "overflow-visible" );
+        $("#menu-category-menu").addClass("overflow-visible");
 
 
         // nicescroll for category lists
@@ -80,7 +128,7 @@
 
             cursorcolor: "#FFCA04",
             cursorwidth: "2px",
-            cursorborder:"transparent",
+            cursorborder: "transparent",
             cursorborderradius: "0px",
         });
 
@@ -92,7 +140,7 @@
 
             cursorcolor: "transparent",
             cursorwidth: "0px",
-            cursorborder:"transparent",
+            cursorborder: "transparent",
             cursorborderradius: "0px",
         });
 
@@ -104,13 +152,13 @@
         ===================================
         */
 
-        var miniCart = $( '.trigger-mini-cart' );
+        var miniCart = $('.trigger-mini-cart');
 
-        var openCart = $( '.mini-cart-open' );
+        var openCart = $('.mini-cart-open');
 
-        miniCart.on( 'click', function(e) {
+        miniCart.on('click', function(e) {
 
-            openCart.toggleClass( 'display-block' );
+            openCart.toggleClass('display-block');
         });
 
 
@@ -299,7 +347,7 @@
         =======================================
         */
 
-        
+
 
 
 
@@ -318,7 +366,7 @@
 
 
 
-       
+
 
 
         });

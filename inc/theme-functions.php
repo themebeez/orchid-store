@@ -30,8 +30,8 @@ if ( !function_exists( 'orchid_store_lite_fonts_url' ) ) {
         }
 
         /* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-        if ('off' !== _x('on', 'Heebo font: on or off', 'orchid-store')) {
-            $fonts[] = 'Heebo:400,500,700,900';
+        if ('off' !== _x('on', 'Roboto font: on or off', 'orchid-store')) {
+            $fonts[] = 'Roboto:400,500,500i,700,700i,900';
         }
 
         /* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */

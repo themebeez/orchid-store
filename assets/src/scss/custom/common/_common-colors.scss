@@ -1,6 +1,7 @@
 
 // color white 
 
+.woocommerce span.onsale,
 .woocommerce .product-sale span,
 .woocommerce ul.products li.product .onsale,
 .banner-style-1 .entry-contents,
@@ -50,8 +51,12 @@ input[type="submit"],
 .entry-tags a:hover, 
 .wpcf7 input[type="submit"],
 .wpcf7 input[type="button"],
+::-webkit-input-placeholder,
+#yith-quick-view-close,
 .entry-cats ul li a:hover,
 .button-general,
+#yith-wcwl-popup-message,
+#yith-quick-view-close:hover,
 .button-general:hover,
 .woocommerce #respond input#submit, 
 .woocommerce input#submit, 
@@ -66,15 +71,27 @@ input[type="submit"],
 .woocommerce a.button.alt:hover, 
 .woocommerce input.button.alt:hover,
 .woocommerce .add_to_cart_button:hover,
+.woocommerce #respond input#submit.alt, 
+.woocommerce a.button.alt, 
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt,
 .category-nav li a:hover,
 .masterheader .mini-cart button,
 .product-widget-style-2 .tab-nav ul li a.active,
 .woocommerce ul.products li.product .price,
+.woocommerce div.product p.price, 
+.woocommerce div.product span.price,
 .woocommerce ul.products li.product .price ins,
 .woocommerce-checkout .checkout .col-2 h3 label,
+.woocommerce div.product p.price ins, 
+.woocommerce div.product span.price ins,
 .woocommerce #payment #place_order, 
 .woocommerce-page #payment #place_order,
-.woocommerce-MyAccount-content .woocommerce-message a.button {
+.header-style-1 .custom-search-entry input,
+.header-style-1 .custom-search-entry select,
+.woocommerce-MyAccount-content .woocommerce-message a.button,
+.woocommerce .wishlist_table tr td.product-stock-status span.wishlist-in-stock,
+.woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist a:hover {
 
 	color:$primary_color;
 }
@@ -117,7 +134,10 @@ a:hover,
 .default-post-wrap .page-head .entry-metas ul li a:hover,
 .mini-cart-open .woocommerce.widget_shopping_cart .cart_list li a:hover,
 .woocommerce .woocommerce-breadcrumb a:hover,
-.os-breadcrumb-wrap ul li a:hover  {
+.os-breadcrumb-wrap ul li a:hover,
+.woocommerce-page a.edit:hover,
+.footer .footer-bottom p a:hover,
+.header-style-1 .custom-search-entry button  {
 
 	color:$secondary_color;
 }
@@ -125,15 +145,19 @@ a:hover,
 
 // color special ( grey light )
 
-
+.woocommerce-page a.edit,
 .entry-metas ul li a,
 .woocommerce form label,
 .woocommerce span.price del,
 .woocommerce ul.products li.product .price del,
+.woocommerce div.product p.price del, 
+.woocommerce div.product span.price del,
 .product-widget-style-2 .tab-nav ul li a,
 .post-navigation .nav-previous span,
 .post-navigation .nav-next  span,
 .woocommerce .woocommerce-form-coupon p,
+.woocommerce div.product p.stock.in-stock,
+.header-style-1 .nice-select,
 .select2-container--default .select2-selection--single .select2-selection__rendered  {
 
 	color:$special_purpose_color; // #8e8e8e
@@ -159,6 +183,7 @@ a:hover,
 .entry-tags a,
 .entry-cats ul li a,
 .button-general,
+#yith-quick-view-close,
 .woocommerce .add_to_cart_button,
 .woocommerce #respond input#submit, 
 .woocommerce input#submit, 
@@ -173,10 +198,13 @@ a:hover,
 .category-nav li a:hover,
 .cta-style-1,
 .main-navigation,
+#yith-wcwl-popup-message,
 .masterheader .mini-cart button,
 .owl-carousel button.owl-dot.active,
 .woocommerce .added_to_cart.wc-forward,
-.default-post-wrap .page-head .entry-cats ul li a:hover {
+.woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist a,
+.default-post-wrap .page-head .entry-cats ul li a:hover,
+.woocommerce nav.woocommerce-pagination ul li a:hover {
 
 	background:$secondary_color;
 }
@@ -184,6 +212,7 @@ a:hover,
 .entry-tags a:hover,
 .entry-cats ul li a:hover,
 .button-general:hover,
+#yith-quick-view-close:hover,
 .woocommerce .add_to_cart_button:hover,
 .woocommerce #respond input#submit:hover, 
 .woocommerce input#submit:hover, 
@@ -198,7 +227,8 @@ a:hover,
 .woocommerce .product-hover-items ul li a:hover,
 .owl-carousel .owl-nav button.owl-next:hover,
 .owl-carousel .owl-nav button.owl-prev:hover,
-.woocommerce .added_to_cart.wc-forward:hover {
+.woocommerce .added_to_cart.wc-forward:hover,
+.woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist a:hover {
 
 	background:$third_color;
 }
@@ -208,6 +238,7 @@ a:hover,
 	background:$special_purpose_color;
 }
 
+.woocommerce span.onsale,
 .woocommerce .product-sale span,
 .woocommerce ul.products li.product .onsale {
 
@@ -217,6 +248,11 @@ a:hover,
 
 // border color
 
+
+#yith-wcwl-popup-message {
+
+	border:none;
+}
 
 .widget .widget-title h3 {
 
@@ -228,6 +264,12 @@ a:hover,
 	border-top-color: $secondary_color;
 }
 
+.woocommerce-page .woocommerce-MyAccount-content p a  {
+
+	border-bottom:1px solid $secondary_color;
+}
+
+select,
 textarea,
 input[type="text"],
 input[type="email"],
@@ -244,13 +286,14 @@ input[type="date"],
 .calendar_wrap table th,
 .calendar_wrap table td,
 .comments-area .comment-body,
-.header-style-1 .custom-search-entry,
-.masterheader .mini-cart,
 .secondary-widget-area .widget,
 .category-description,
 .woocommerce form.checkout_coupon, 
 .woocommerce form.login, 
 .woocommerce form.register,
+.widget_tag_cloud .tagcloud a,
+.widget_product_tag_cloud .tagcloud a,
+.woocommerce .woocommerce-customer-details address,
 .select2-container--default .select2-selection--single,
 .select2-container--default .select2-search--dropdown .select2-search__field  {
 
@@ -268,7 +311,7 @@ input[type="date"],
 .widget_rss li,
 .widget_pages li,
 .widget_nav_menu li a,
-.widget_product_categories li,
+//.widget_product_categories li,
 .woocommerce-widget-layered-nav ul li,
 .comments-area .comment-body .comment-meta,
 .woocommerce .cart_totals h2,
@@ -276,16 +319,35 @@ input[type="date"],
 .woocommerce .woocommerce-shipping-fields h3
 .woocommerce-page .cart-collaterals table.shop_table th,
 .woocommerce-cart .cart-collaterals .cart_totals tr td,
-.woocommerce-page form.woocommerce-checkout h3, 
+.woocommerce-page form.woocommerce-checkout h3,
+.woocommerce-checkout #payment ul.payment_methods li, 
 .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item {
 
     border-bottom: 1px solid $border_color;
 }
 
 
-.widget_product_categories ul li ul {
+// //.widget_product_categories ul li ul {
 
-	border-top:1px solid $border_color;
+// 	border-top:1px solid $border_color;
+// }
+
+
+.masterheader .mini-cart,
+.header-style-1 .custom-search-entry {
+
+	border:2px solid $secondary_color;
+}
+
+.widget_tag_cloud .tagcloud a:hover,
+.widget_product_tag_cloud .tagcloud a:hover {
+
+	border-color:$secondary_color;
+}
+
+.header-style-1 .custom-search-entry .select-custom {
+
+	border-right:2px solid $secondary_color;
 }
 
 .category-nav ul,
@@ -364,7 +426,7 @@ input[type="date"],
 .footer .widget_rss li, 
 .footer .widget_pages li, 
 .footer .widget_nav_menu li a, 
-.footer .widget_product_categories li, 
+//.footer .widget_product_categories li, 
 .footer .woocommerce-widget-layered-nav ul li,
 .footer .calendar_wrap table td,
 .footer .calendar_wrap table th, 
