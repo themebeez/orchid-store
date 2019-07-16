@@ -30,18 +30,12 @@
 	padding-top: 25px;
 }
 
-.inner-page-wrap {
-
-	padding-top:30px; // all inner pages default space
-}
-
 .patigation {
 
 	padding-bottom:30px;
 }
 
-.header-style-1 .mid-header,
-.banner-style-1.section-spacing {
+.header-style-1 .mid-header {
 
 	padding-top:30px;
 	padding-bottom: 30px;
@@ -52,9 +46,14 @@
 	padding:30px;
 }
 
-.cta-style-2.section-spacing {
+.inner-page-wrap {
 
-    padding:120px 0;
+	padding-top:40px; // all inner pages default space
+}
+
+.banner-style-1.section-spacing {
+
+	padding:40px 0;
 }
 
 .cats-widget-styles .card-content {
@@ -71,6 +70,12 @@
 
     padding-bottom: 80px;
 }
+
+.cta-style-2.section-spacing {
+
+    padding:120px 0;
+}
+
 
 
 // margin
@@ -105,6 +110,7 @@
 	margin-top: 10px;
 }
 
+.yith-wcwl-share,
 .woocommerce span.price,
 .entry-404 .sub-title h2,
 .entry-nothing-found h1,
@@ -115,7 +121,9 @@
 .woocommerce ul.products li.product .woocommerce-loop-category__title, 
 .woocommerce ul.products li.product .woocommerce-loop-product__title, 
 .woocommerce ul.products li.product h3,
-.woocommerce-page .woocommerce-shipping-fields {
+.woocommerce-page .woocommerce-shipping-fields,
+.woocommerce div.product .product_title,
+.woocommerce-page .woocommerce-MyAccount-content h3 {
 
 	margin-bottom: 15px;
 }
@@ -148,7 +156,9 @@
 .woocommerce form.register, 
 .woocommerce .woocommerce-ordering,
 .woocommerce-page .woocommerce-billing-fields,
-.woocommerce-page #customer_login h2 {
+.woocommerce-page #customer_login h2,
+.woocommerce-account .addresses .title h3,
+.woocommerce .woocommerce-column__title {
 
 	margin-bottom:30px;
 }
@@ -170,7 +180,10 @@
 .woocommerce ul.products li.product, 
 .woocommerce-page ul.products li.product,
 .woocommerce-page .woocommerce-notice,
-.woocommerce-page .woocommerce ul.order_details {
+.woocommerce-page .woocommerce ul.order_details,
+.woocommerce .woocommerce-customer-details, 
+.woocommerce .woocommerce-order-details, 
+.woocommerce .woocommerce-order-downloads {
 
 	margin-bottom: 40px;
 }

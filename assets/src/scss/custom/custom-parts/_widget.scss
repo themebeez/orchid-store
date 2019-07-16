@@ -22,7 +22,7 @@
 .secondary-widget-area .widget {
 
 	margin-bottom: 30px;
-    padding:30px;
+    padding:30px 20px;
 }
 
 .widget .widget-title h3,
@@ -136,7 +136,7 @@
 .widget_rss ul,
 .widget_pages ul,
 .widget_nav_menu ul,
-.widget_product_categories ul,
+// .widget_product_categories ul,
 .woocommerce-widget-layered-nav ul {
 
     list-style: none;
@@ -146,15 +146,20 @@
     margin:-12px 0;
 }
 
+// .widget_product_categories ul.children {
+
+//     margin:0;
+// }
+
 .woocommerce .woocommerce-widget-layered-nav-list {
 
     list-style:none;
 }
 
-.widget_product_categories ul {
+// .widget_product_categories ul {
 
-    margin-left: 0;
-}
+//     margin-left: 0;
+// }
 
 .widget_archive li,
 .widget_categories li,
@@ -164,7 +169,7 @@
 .widget_rss li,
 .widget_pages li,
 .widget_nav_menu li a,
-.widget_product_categories li,
+// .widget_product_categories li,
 .woocommerce-widget-layered-nav ul li,
 .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item {
 
@@ -182,9 +187,11 @@
 .widget_rss li:last-child,
 .widget_pages li:last-child,
 .widget_nav_menu li:last-child,
-.widget_product_categories li:last-child,
+// .widget_product_categories li:last-child,
 .widget_nav_menu>ul>li:last-child a,
-.woocommerce-widget-layered-nav ul li:last-child {
+.woocommerce-widget-layered-nav ul li:last-child,
+.widget_recent_reviews ul li:last-child,
+.widget_recent_reviews ul.product_list_widget li:last-child {
 
     border-bottom: none;
     padding-bottom: 0;
@@ -192,7 +199,7 @@
 
 .widget_archive ul li:first-child,
 .widget_categories ul li:first-child,
-.widget_product_categories ul li:first-child,
+// .widget_product_categories ul li:first-child,
 .widget_pages ul li:first-child,
 .widget_meta ul li:first-child,
 .widget_rss li:first-child,
@@ -211,7 +218,7 @@
 .widget_rss li,
 .widget_pages li,
 .widget_nav_menu a,
-.widget_product_categories a,
+// .widget_product_categories a,
 .woocommerce-widget-layered-nav ul li a {
 
     padding-left: 0;
@@ -219,6 +226,50 @@
     float:none;
     @include transation_delay();
 }
+
+
+.widget_product_categories ul {
+
+    list-style: none;
+}
+
+.widget_product_categories ul.children {
+
+    padding-left: 20px;
+}
+
+.widget_product_categories ul li {
+
+    display:block;
+}
+
+.widget_product_categories ul li:last-child a {
+
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.widget_product_categories ul li a,
+.widget_product_categories ul.children li a {
+
+    display:inline-block;
+    padding:10px 0;
+    border-bottom: 1px solid $border_color;
+}
+
+
+// .widget_product_categories>ul>li:last-child a,
+// .widget_product_categories ul.children li:last-child a {
+
+//     border-bottom: none;
+//     padding-bottom: 0;
+// }
+
+// .widget_product_categories>ul>li:first-child a {
+
+//     padding-top:0;
+// }
+
 
 
 // Spacing ( pading left ) on widgets
@@ -262,22 +313,18 @@
     float:none;
 }
 
+.widget_nav_menu ul.children,
+.widget_product_categorili ul.children,
+.widget_nav_menu ul.children {
 
-
-.widget_nav_menu ul li ul,
-.widget_product_categories ul li ul,
-.widget_nav_menu ul li ul {
-
-    padding-left:20px;
+    padding-left:0;
 }
 
-.widget_product_categories ul li ul {
+.widget_product_categories ul.children {
 
-    padding-top:20px;
-    margin-top:20px;
+    //padding-top:20px;
+    //margin-top:20px;
 }
-
-
 
 /*
 =======================================
@@ -287,13 +334,10 @@
 ===============================================
 */
 
-
 .widget_nav_menu li:last-child a {
 
     border-bottom:none;
 }
-
-
 
 /*
 =======================================
@@ -302,8 +346,6 @@
 =
 ===============================================
 */
-
-
 
 .widget_recent_entries .post-date {
 
@@ -314,7 +356,6 @@
 }
 
 
-
 /*
 =======================================
 =
@@ -323,15 +364,11 @@
 ===============================================
 */
 
-
-
 .widget_archive label {
 
     display:block;
     margin-bottom: 10px;
 }
-
-
 
 /*
 =======================================
@@ -349,8 +386,6 @@
 }
 
 
-
-
 /*
 =======================================
 =
@@ -365,8 +400,6 @@
 }
 
 
-
-
 /*
 =======================================
 =
@@ -375,8 +408,8 @@
 ===============================================
 */
 
-
-.widget_tag_cloud .tagcloud {
+.widget_tag_cloud .tagcloud,
+.widget_product_tag_cloud .tagcloud {
 
     display: -webkit-box;
     display: -ms-flexbox;
@@ -391,19 +424,22 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     overflow: hidden;
-    margin:-5px -2px;
+    margin:-5px -4px;
+
 }
 
-.widget_tag_cloud .tagcloud a {
+.widget_tag_cloud .tagcloud a,
+.widget_product_tag_cloud .tagcloud a {
     
     flex: 1 auto;
     text-transform:capitalize;
-    font-size:16px !important;
+    font-size:15px !important;
+    padding: 13px 20px;
+    line-height:1;
+    margin:4px;
     text-align:center;
     letter-spacing:0;
-    padding: 5px 15px;
-    margin:2px;
-    background:#eeeeee;
+    background:transparent;
     font-weight:400;
 }
 
@@ -573,6 +609,26 @@
     }
 }
 
+/*
+========================================
+=
+= Woocommerce stars widget
+=
+====================================================
+*/
+
+
+.woocommerce ul.product_list_widget li .star-rating {
+
+    margin-bottom: 5px;
+}
+
+.woocommerce ul.product_list_widget li .star-rating,
+.woocommerce.widget ul li .star-rating:before,
+.woocommerce.widget ul li .star-rating span:before {
+
+    font-size:13px;
+}
 
 
 /*
@@ -643,6 +699,7 @@
 ====================================================
 */
 
+
 .woocommerce ul.product_list_widget ins {
 
     background: transparent;
@@ -651,6 +708,23 @@
 .woocommerce ul.product_list_widget li:last-child {
 
     border-bottom: none;
+}
+
+.woocommerce.widget_products ul.product_list_widget li,
+.woocommerce.widget_top_rated_products ul.product_list_widget li,
+.woocommerce.widget_recent_reviews ul.product_list_widget li {
+
+    padding-top:0;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.woocommerce.widget_products ul.product_list_widget li:last-child,
+.woocommerce.widget_recent_reviews ul.product_list_widget li:last-child,
+.woocommerce.widget_top_rated_products ul.product_list_widget li:last-child {
+
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 
