@@ -13,6 +13,14 @@
 .alignleft:before,
 .alignright:before,
 .editor-entry:before,
+form.search-form:before,
+form.search-form:after,
+.widget_search form:before,
+.widget_product_search form:before,
+.widget_search form:after,
+.widget_product_search form:after,
+.search-form-entry form:after,
+.search-form-entry form:before,
 .mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list li:after,
 .mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list li:before {
 
@@ -28,6 +36,10 @@
 .alignleft:after,
 .alignright:after,
 .editor-entry:after,
+form.search-form:after,
+.widget_search form:after,
+.widget_product_search form:after,
+.search-form-entry form:after,
 .mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list li:after {
 
     clear: both;

@@ -7,6 +7,7 @@
 
 
 .button-general,
+.not-found .page-title,
 .woocommerce-page a.edit,
 .woocommerce input#submit,
 .woocommerce .add_to_cart_button, 
@@ -230,7 +231,8 @@ section .section-title h3,
 .woocommerce span.onsale,
 .woocommerce .added_to_cart.wc-forward,
 .woocommerce ul.products li.product .onsale,
-.product-widget-style-2 .tab-nav ul li a {
+.product-widget-style-2 .tab-nav ul li a,
+.woocommerce .widget_price_filter .price_slider_amount .button {
 
     font-size: 12px;
 }
@@ -313,7 +315,8 @@ section .section-title h3,
 
 .cats-widget-styles .title h3,
 .entry-404 .sub-title h2,
-.search-entry .entry-title {
+.search-entry .entry-title,
+.not-found .page-title {
 
 	font-size:21px;
 }

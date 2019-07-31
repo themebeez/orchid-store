@@ -136,7 +136,6 @@
 .widget_rss ul,
 .widget_pages ul,
 .widget_nav_menu ul,
-// .widget_product_categories ul,
 .woocommerce-widget-layered-nav ul {
 
     list-style: none;
@@ -146,20 +145,10 @@
     margin:-12px 0;
 }
 
-// .widget_product_categories ul.children {
-
-//     margin:0;
-// }
-
 .woocommerce .woocommerce-widget-layered-nav-list {
 
     list-style:none;
 }
-
-// .widget_product_categories ul {
-
-//     margin-left: 0;
-// }
 
 .widget_archive li,
 .widget_categories li,
@@ -169,7 +158,6 @@
 .widget_rss li,
 .widget_pages li,
 .widget_nav_menu li a,
-// .widget_product_categories li,
 .woocommerce-widget-layered-nav ul li,
 .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item {
 
@@ -187,7 +175,6 @@
 .widget_rss li:last-child,
 .widget_pages li:last-child,
 .widget_nav_menu li:last-child,
-// .widget_product_categories li:last-child,
 .widget_nav_menu>ul>li:last-child a,
 .woocommerce-widget-layered-nav ul li:last-child,
 .widget_recent_reviews ul li:last-child,
@@ -199,7 +186,6 @@
 
 .widget_archive ul li:first-child,
 .widget_categories ul li:first-child,
-// .widget_product_categories ul li:first-child,
 .widget_pages ul li:first-child,
 .widget_meta ul li:first-child,
 .widget_rss li:first-child,
@@ -218,7 +204,7 @@
 .widget_rss li,
 .widget_pages li,
 .widget_nav_menu a,
-// .widget_product_categories a,
+.widget_product_categories a,
 .woocommerce-widget-layered-nav ul li a {
 
     padding-left: 0;
@@ -235,7 +221,7 @@
 
 .widget_product_categories ul.children {
 
-    padding-left: 20px;
+    padding-left: 0;
 }
 
 .widget_product_categories ul li {
@@ -253,23 +239,9 @@
 .widget_product_categories ul.children li a {
 
     display:inline-block;
-    padding:10px 0;
+    padding:13px 0;
     border-bottom: 1px solid $border_color;
 }
-
-
-// .widget_product_categories>ul>li:last-child a,
-// .widget_product_categories ul.children li:last-child a {
-
-//     border-bottom: none;
-//     padding-bottom: 0;
-// }
-
-// .widget_product_categories>ul>li:first-child a {
-
-//     padding-top:0;
-// }
-
 
 
 // Spacing ( pading left ) on widgets
@@ -309,7 +281,7 @@
 .woocommerce-widget-layered-nav ul li a {
     
     display:inline-block;
-    width:80%;
+    width:85%;
     float:none;
 }
 
@@ -320,10 +292,24 @@
     padding-left:0;
 }
 
-.widget_product_categories ul.children {
+.widget_product_categories ul.children li a {
 
-    //padding-top:20px;
-    //margin-top:20px;
+    padding-left: 10px;
+}
+
+
+/*
+=======================================
+=
+= Category widget
+=
+===============================================
+*/
+
+.widget_categories label {
+
+    display:block;
+    margin-bottom: 10px;
 }
 
 /*
@@ -370,20 +356,6 @@
     margin-bottom: 10px;
 }
 
-/*
-=======================================
-=
-= Category widget
-=
-===============================================
-*/
-
-
-.widget_categories label {
-
-    display:block;
-    margin-bottom: 10px;
-}
 
 
 /*
@@ -454,14 +426,9 @@
 ===============================================
 */
 
-
-.widget_search {
-
-    
-    display:block;
-}
-
-.widget_search {
+.widget_search,
+.widget_product_search,
+form.search-form {
     
     display:block;
     position:relative;
@@ -475,8 +442,12 @@
     animation:none;
 }
 
-.widget_search form {
-
+.widget_search form,
+.widget_product_search form,
+form.search-form {
+    
+    display:block;
+    position: relative;
     border-top:none;
     padding: 0;
     animation:none;
@@ -484,16 +455,30 @@
     background:transparent;
 }
 
-.widget_search form input[type="submit"] {
+.widget_search form input[type="search"],
+.widget_product_search form input[type="search"],
+form.search-form label {
+
+    float:left;
+    width:calc( 100% - 120px );
+    border-right:none;
+    height:43px;
+}
+
+form.search-form label  {
+
+    height:auto;
+}
+
+.widget_search form button[type="submit"],
+.widget_product_search form button[type="submit"],
+form.search-form button[type="search"]  {
     
-    position: relative;
-    width:100px;
+    float:left;
+    width:120px;
+    height:43px;
 }
 
-.widget_search form input[type="search"] {
-
-    width:calc( 100% - 100px);
-}
 
 
 
@@ -628,6 +613,38 @@
 .woocommerce.widget ul li .star-rating span:before {
 
     font-size:13px;
+}
+
+
+
+/*
+========================================
+=
+= Woocommerce Filter by price
+=
+====================================================
+*/
+
+.woocommerce .widget_price_filter .price_slider {
+
+    margin-bottom: 30px;
+}
+
+.woocommerce .widget_price_filter .ui-slider-horizontal {
+
+    height:4px;
+}
+
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+
+    width: 10px;
+    height: 10px;
+    top: -3px;
+}
+
+.woocommerce .widget_price_filter .price_slider_amount .button {
+
+    height: auto;
 }
 
 

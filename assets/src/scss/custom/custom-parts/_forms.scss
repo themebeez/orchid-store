@@ -58,42 +58,57 @@ input::-moz-focus-inner {
     padding: 0;
 }
 
+select,
+textarea, 
 input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
 input[type="number"],
-input[type="tel"]  {
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"]  {
 
-    height: 48px;
+    height: 43px;
     width: 100%;
     -webkit-appearance: none;
 }
 
-input[type="tel"]:focus, 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-textarea:focus {
+select:focus ,
+textarea:focus , 
+input[type="text"]:focus ,
+input[type="email"]:focus ,
+input[type="url"]:focus ,
+input[type="password"]:focus ,
+input[type="search"]:focus ,
+input[type="number"]:focus ,
+input[type="tel"]:focus ,
+input[type="range"]:focus ,
+input[type="date"]:focus ,
+input[type="month"]:focus ,
+input[type="week"]:focus ,
+input[type="time"]:focus ,
+input[type="datetime"]:focus ,
+input[type="datetime-local"]:focus ,
+input[type="color"]:focus {
     
     outline-color: transparent;
     outline:none;
-}
-
-.searchform input[type="text"]:focus {
-
-    border: none;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
-input[type="search"] {
+input[type="search"],
+input[type="number"] {
 
     padding-left:10px;
 }
@@ -112,7 +127,6 @@ textarea {
 
 select {
 
-    height:48px;
     width:100%;
     max-width:100%;
     padding:0 15px;

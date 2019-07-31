@@ -93,6 +93,7 @@
 	margin-bottom: 5px;
 }
 
+.not-found .page-title,
 .search-entry article .title h3,
 .search-entry article .excerpt p,
 .archive-entry article .title h3,
@@ -104,6 +105,7 @@
 
 	margin-bottom:10px;
 }
+
 
 .woocommerce ul.order_details li strong {
 
@@ -135,7 +137,7 @@
 	margin-bottom: 20px;
 }
 
-
+.not-found form,
 #add_payment_method .cart-collaterals .shipping-calculator-button, 
 .woocommerce-cart .cart-collaterals .shipping-calculator-button, 
 .woocommerce-checkout .cart-collaterals .shipping-calculator-button {
