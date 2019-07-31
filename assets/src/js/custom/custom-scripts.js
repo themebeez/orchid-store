@@ -207,41 +207,6 @@
             e.preventDefault(); // prevent empty links clicks
         });
 
-
-        /*
-        ============================
-        = Tab at theme single
-        ==========================================
-        */
-
-        $('div.tab-content').hide();
-
-        $('div#tab1').show('fast');
-
-        $('body').on('click', '.tab-nav ul li a', function(e) {
-
-            e.preventDefault();
-
-            var parentLi = $(this).parent();
-
-            var activeA = parentLi.siblings().find('a.active');
-
-            var activeARel = activeA.attr('rel');
-
-            $('.tab-wrapper').find('div#' + activeARel).hide();
-
-            activeA.removeClass('active');
-
-            $(this).addClass('active');
-
-            var currentARel = $(this).attr('rel');
-
-            $('.tab-wrapper').find('div#' + currentARel).show();
-
-        });
-
-
-
         /*
         ===========================
         = Sticky sidebar

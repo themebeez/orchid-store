@@ -48,6 +48,11 @@ input[type="search"],
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
+a:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
 .entry-tags a:hover, 
 .wpcf7 input[type="submit"],
 .wpcf7 input[type="button"],
@@ -180,6 +185,11 @@ a:hover,
 	background:$primary_color;
 }
 
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
 .entry-tags a,
 .entry-cats ul li a,
 .button-general,
@@ -204,11 +214,17 @@ a:hover,
 .woocommerce .added_to_cart.wc-forward,
 .woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist a,
 .default-post-wrap .page-head .entry-cats ul li a:hover,
-.woocommerce nav.woocommerce-pagination ul li a:hover {
+.woocommerce nav.woocommerce-pagination ul li a:hover,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
 
 	background:$secondary_color;
 }
 
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
 .entry-tags a:hover,
 .entry-cats ul li a:hover,
 .button-general:hover,
@@ -270,7 +286,7 @@ a:hover,
 }
 
 select,
-textarea,
+textarea, 
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -278,10 +294,15 @@ input[type="password"],
 input[type="search"],
 input[type="number"],
 input[type="tel"],
-input[type="month"],
+input[type="range"],
 input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
 .select2-dropdown,
-.nice-select,
 .comment-respond, 
 .calendar_wrap table th,
 .calendar_wrap table td,
@@ -361,6 +382,11 @@ input[type="date"],
 // Footer ( Dark )
 
 
+.footer .copyrights a {
+
+	color:$white;
+}
+
 .footer,
 .footer a,
 .footer .footer-bottom p,
@@ -370,12 +396,12 @@ input[type="date"],
 	color:$dark_footer_links_color;
 }
 
-.footer .footer-bottom p a,
+.footer .copyrights a:hover,
 .footer .widget_nav_menu ul li a:hover,
 .footer .widget_rss .widget_title h3 a:hover,
 .footer .widget_tag_cloud .tagcloud a:hover {
 
-	color:$white;
+	color:$secondary_color;
 }
 
 .footer {
@@ -425,8 +451,9 @@ input[type="date"],
 .footer .widget_recent_comments li, 
 .footer .widget_rss li, 
 .footer .widget_pages li, 
-.footer .widget_nav_menu li a, 
-//.footer .widget_product_categories li, 
+.footer .widget_nav_menu li a,
+.footer .widget_tag_cloud a, 
+.footer .widget_product_tag_cloud a,
 .footer .woocommerce-widget-layered-nav ul li,
 .footer .calendar_wrap table td,
 .footer .calendar_wrap table th, 
@@ -436,10 +463,6 @@ input[type="date"],
 	border-color:$dark_footer_border_color;
 }
 
-.footer .nice-select .option {
-
-	border-color:$dark_footer_alt_border_color;
-}
 
 
 
