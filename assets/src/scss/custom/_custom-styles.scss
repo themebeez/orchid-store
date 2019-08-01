@@ -1368,9 +1368,15 @@ body.no-sidebar .archive-entry article .content-col {
 ==========================================
 */
 
-.default-page-wrap {
+.default-page-wrap .featured-thumb {
 
-    
+    margin-bottom: 30px;
+}
+
+.default-page-wrap .inner-content-metas,
+.default-page-wrap .inner-content-metas .entry-cats {
+
+    margin-bottom: 20px;
 }
 
 .entry-tags {
@@ -1383,9 +1389,14 @@ body.no-sidebar .archive-entry article .content-col {
     list-style: none;
 }
 
+.entry-tags li,
 .entry-tags a {
 
     display:inline-block;
+}
+
+.entry-tags a {
+
     padding:6px 30px;
     margin:3px 1px;
     @include border_radius(30px);

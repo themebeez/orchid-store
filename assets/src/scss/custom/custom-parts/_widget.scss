@@ -468,6 +468,12 @@ form.search-form label {
 form.search-form label  {
 
     height:auto;
+    margin-right: -5px;
+}
+
+.widget_search form input[type="search"] {
+
+    border-right: none;
 }
 
 .widget_search form button[type="submit"],
