@@ -28,6 +28,12 @@ $show_featured_img 	= orchid_store_get_option( 'display_page_featured_image' );
 	    <?php
 	}
 
+	?>
+
+	<div class="inner-content-metas">
+
+	<?php 
+
 	if( $show_categories == true ) {
         /**
         * Hook - orchid_store_post_categories.
@@ -65,6 +71,8 @@ $show_featured_img 	= orchid_store_get_option( 'display_page_featured_image' );
         <?php
     }
 	?>
+
+	</div><!-- // inner-content-metas -->
 	<div class="<?php orchid_store_content_entry_class(); ?>">
 		<?php
 		the_content();
