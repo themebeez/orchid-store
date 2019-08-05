@@ -46,6 +46,12 @@
     background:transparent; 
 }
 
+body.boxed .__os-container__ {
+
+    padding-left:30px;
+    padding-right:30px;
+}
+
 
 /*
 ====================================================
@@ -593,7 +599,7 @@ section .section-title h3 {
 
 .masterheader .top-header {
 
-    padding: 5px;
+    padding: 5px 0;
     border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
@@ -1780,6 +1786,42 @@ body.no-sidebar .archive-entry article .content-col {
     padding-left: 20px;
 }
 
+.woocommerce-store-notice.demo_store {
+    
+    position: sticky;
+    padding:0;
+    padding-left:20px;
+    bottom: 0;
+    z-index: 20;
+    margin: 0;
+    width: 100%;
+    list-style: none;
+    background-color: #1e9ff2;
+    line-height: 51px;
+    text-align:left;
+    -webkit-box-shadow: 0 2px 1px 0 rgba(0,0,0,.03);
+    box-shadow: 0 2px 1px 0 rgba(0,0,0,.03);
+}
+
+
+.woocommerce-store-notice.demo_store:before {
+
+    content:'\e836';
+    font-family: "feather";
+    display:inline-block;
+    margin-right: 10px;
+}
+
+.woocommerce-store-notice.demo_store a {
+    
+    float:right;
+    display:inline-block;
+    background-color: #0081D4;
+    text-decoration:none;
+    padding-left:30px;
+    padding-right:30px;
+}
+
 .woocommerce .woocommerce-notice a.button,
 .woocommerce-page .woocommerce-notice a.button,
 .woocommerce .woocommerce-message a.button,
@@ -1897,6 +1939,17 @@ body.no-sidebar .archive-entry article .content-col {
 .woocommerce ul.products li.product a img {
 
     margin:0;
+}
+
+
+.woocommerce ul.products li.product .woocommerce-loop-category__title mark {
+
+    background-color:transparent;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-category__title .count {
+
+    float:right;
 }
 
 
@@ -2280,7 +2333,8 @@ body.no-sidebar .archive-entry article .content-col {
 }
 
 .woocommerce .woocommerce-tabs h2,
-.woocommerce .related.products h2 {
+.woocommerce .related.products h2,
+.woocommerce .up-sells h2 {
 
     margin-bottom: 20px;
 }

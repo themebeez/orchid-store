@@ -205,6 +205,7 @@ input[type="submit"],
 .woocommerce button.button.alt, 
 .woocommerce a.button.alt, 
 .woocommerce input.button.alt,
+.orchid-backtotop,
 .category-nav li a:hover,
 .cta-style-1,
 .main-navigation,
@@ -418,12 +419,15 @@ input[type="color"],
 .footer .nice-select,
 .footer .calendar_wrap caption,
 .footer .nice-select .list,
-.footer .social-icons ul li a,
-.footer .widget_tag_cloud .tagcloud a {
+.footer .social-icons ul li a {
 
 	background:$dark_footer_element_bg_color;
 }
 
+.footer .widget_tag_cloud .tagcloud a {
+
+	background-color:transparent;
+}
 
 .footer .nice-select .option:hover, 
 .footer .nice-select .option.focus,

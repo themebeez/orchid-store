@@ -59,6 +59,7 @@ section .section-title h3,
 .woocommerce table.wishlist_table .yith-wcwl-share-title,
 .woocommerce .woocommerce-tabs h2,
 .woocommerce .related.products>h2,
+.woocommerce .up-sells>h2
 .woocommerce-account .addresses .title h3,
 .woocommerce-page .woocommerce-MyAccount-content h3,
 .woocommerce div.product .woocommerce-tabs ul.tabs li a,
@@ -140,7 +141,8 @@ section .section-title h3,
 .woocommerce table.shop_table tfoot td, 
 .woocommerce table.shop_table tfoot th,
 .woocommerce table.shop_attributes th,
-.woocommerce .cart-collaterals .cart_totals strong {
+.woocommerce .cart-collaterals .cart_totals strong,
+.woocommerce ul.products li.product .woocommerce-loop-category__title {
 
 	font-weight:500;
 }
@@ -274,7 +276,8 @@ section .section-title h3,
 .woocommerce ul.product_list_widget li a,
 .woocommerce table.wishlist_table tbody td,
 .woocommerce div.product p.stock,
-.woocommerce table.my_account_orders {
+.woocommerce table.my_account_orders,
+.woocommerce-store-notice.demo_store  {
 
 	font-size:15px;
 }
@@ -301,7 +304,8 @@ section .section-title h3,
 .woocommerce .woocommerce-shipping-fields h3,
 .woocommerce-page form.woocommerce-checkout h3,
 .woocommerce .woocommerce-tabs h2,
-.woocommerce .related.products>h2 {
+.woocommerce .related.products>h2,
+.woocommerce .up-sells>h2 {
 
 	font-size:18px;
 }
@@ -332,14 +336,14 @@ section .section-title h2,
 section .section-title h3,
 .cta-style-2 .sub-title h4,
 .entry-nothing-found h1,
-.archive-entry .entry-title,
-.woocommerce .page-title {
+.archive-entry .entry-title {
 
 	font-size:28px;
 }
 
 .banner-style-1 h2,
 .cta-style-2 .title h3,
+.woocommerce .entry-title,
 .archive-page-wrap .entry-title,
 .default-page-wrap .entry-title,
 .default-post-wrap .entry-title  {

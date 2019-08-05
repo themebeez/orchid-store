@@ -20,20 +20,13 @@
     padding-bottom: 10px;
 }
 
-.patigation {
 
-	padding-top:20px;
-}
-
-.product-info-wrap {
+.product-info-wrap,
+.woocommerce ul.products li.product .woocommerce-loop-category__title {
 
 	padding-top: 25px;
 }
 
-.patigation {
-
-	padding-bottom:30px;
-}
 
 .header-style-1 .mid-header {
 
@@ -80,6 +73,11 @@
 
 // margin
 
+.archive-entry article:last-child,
+.woocommerce ul.products li.product .woocommerce-loop-category__title {
+
+	margin: 0;
+}
 
 .woocommerce .added_to_cart.wc-forward {
 
@@ -120,7 +118,6 @@
 .cats-widget-styles .title h3,
 .default-post-wrap .page-head .entry-cats,
 .woocommerce-loop-product__title,
-.woocommerce ul.products li.product .woocommerce-loop-category__title, 
 .woocommerce ul.products li.product .woocommerce-loop-product__title, 
 .woocommerce ul.products li.product h3,
 .woocommerce-page .woocommerce-shipping-fields,

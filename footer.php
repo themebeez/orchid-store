@@ -10,7 +10,7 @@
  */
 
 ?>
-
+	<div class="orchid-backtotop"><span><i class="fa fa-angle-up" aria-hidden="true"></i></span></div>
 	<footer class="footer secondary-widget-area">
         <div class="footer-inner">
             <div class="__os-container__">

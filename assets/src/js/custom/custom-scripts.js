@@ -64,15 +64,15 @@
             position: 'topRight',
             theme: 'light',
             zindex: 99999999,
-            rtl:false,
+            rtl: false,
         });
 
 
-        if( jQuery('body').hasClass('rtl') ) {
+        if (jQuery('body').hasClass('rtl')) {
 
             iziToast.settings({
 
-                rtl:true,
+                rtl: true,
                 position: 'topLeft',
             });
 
@@ -308,29 +308,73 @@
 
         /*
         ==========================
+        = Product category filter tab widget
+        =======================================
+        */
+
+        $('div.tab-content').hide();
+
+        $('div#tab1').show('fast');
+
+        $('body').on('click', '.tab-nav ul li a', function(e) {
+
+            e.preventDefault();
+
+            var parentLi = $(this).parent();
+
+            var activeA = parentLi.siblings().find('a.active');
+
+            var activeARel = activeA.attr('rel');
+
+            $('.tab-wrapper').find('div#' + activeARel).hide();
+
+            activeA.removeClass('active');
+
+            $(this).addClass('active');
+
+            var currentARel = $(this).attr('rel');
+
+            $('.tab-wrapper').find('div#' + currentARel).show();
+
+        });
+
+
+        /*
+        ==========================
         = Back to top
         =======================================
         */
 
+        $(".orchid-backtotop").on('click', function(event) {
+
+            event.preventDefault();
+
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+
+            return false;
+        });
 
 
+        // Window scroll event
+
+        $(window).scroll(function() {
+
+            var height = $(window).scrollTop();
+
+            if (height > 600) {
+
+                $('.orchid-backtotop').fadeIn('slow');
+
+            } else {
+
+                $('.orchid-backtotop').fadeOut('slow');
+            }
+        });
 
 
-
-
-        /* 
-        =============================
-        =
-        = Window load function
-        =
-        =====================================
-        */
-
+        // window load function
 
         $(window).load(function() {
-
-
-
 
 
 
