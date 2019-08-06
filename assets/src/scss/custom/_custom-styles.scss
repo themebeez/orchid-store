@@ -222,30 +222,20 @@ section .section-title h2,
 section .section-title h3 {
     
     position: relative;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
 
-    &:before,
-    &:after {
+    &:before {
     
         content: '';
         position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
-        height: 1px;
-        width: 120px;
+        height: 2px;
+        width: 60px;
         margin: 0 auto;
-        background: -webkit-linear-gradient(right, transparent 0%, #FBB017 50%, transparent 100%);
-        background: -o-linear-gradient(right, transparent 0%, #FBB017 50%, transparent 100%);
-        background: linear-gradient(to left, transparent 0%, #FBB017 50%, transparent 100%);
-    }
-
-    &:before {
-
-        content: '';
-        bottom: 8px;
-        width: 250px;
+        background-color:$secondary_color; 
     }
 }
 
@@ -1470,7 +1460,7 @@ body.no-sidebar .archive-entry article .content-col {
 
 .product-widget-style-2 .tab-nav {
 
-    margin-bottom:30px;
+    margin-bottom:40px;
 }
 
 .product-widget-style-2 .tab-nav ul {
@@ -1484,29 +1474,7 @@ body.no-sidebar .archive-entry article .content-col {
 
     display:inline-block;
     position:relative;
-    margin:5px 0;
-    padding:0 10px;
-}
-
-.product-widget-style-2 .tab-nav ul li:after {
-
-    content:'|';
-    position:absolute;
-    top:55%;
-    right:-3px;
-    font-size:12px;
-    color:$secondary_color;
-    -webkit-transform:translateY(-50%);
-    -moz-transform:translateY(-50%);
-    -ms-transform:translateY(-50%);
-    -o-transform:translateY(-50%);
-    transform:translateY(-50%);
-}
-
-.product-widget-style-2 .tab-nav ul li:last-child:after {
-
-    content:'';
-    display:none;
+    margin:5px;
 }
 
 .product-widget-style-2 .tab-nav ul li a {
@@ -1520,7 +1488,9 @@ body.no-sidebar .archive-entry article .content-col {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
+  padding:6px 25px;
+  @include border-radius(30px);
+  @include transation_delay();
 }
 
 .product-widget.product-widget-style-2 .product-entry {

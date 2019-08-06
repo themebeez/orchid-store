@@ -7,6 +7,7 @@
     $(document).ready(function() {
 
 
+
         /*
         ====================
         = Init wow js
