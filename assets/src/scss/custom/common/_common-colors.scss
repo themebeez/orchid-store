@@ -82,7 +82,6 @@ input[type="submit"]:hover,
 .woocommerce input.button.alt,
 .category-nav li a:hover,
 .masterheader .mini-cart button,
-.product-widget-style-2 .tab-nav ul li a.active,
 .woocommerce ul.products li.product .price,
 .woocommerce div.product p.price, 
 .woocommerce div.product span.price,
@@ -94,6 +93,7 @@ input[type="submit"]:hover,
 .woocommerce-page #payment #place_order,
 .header-style-1 .custom-search-entry input,
 .header-style-1 .custom-search-entry select,
+.product-widget-style-2 .tab-nav ul li a:hover,
 .woocommerce-MyAccount-content .woocommerce-message a.button,
 .woocommerce .wishlist_table tr td.product-stock-status span.wishlist-in-stock,
 .woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist a:hover {
@@ -132,7 +132,6 @@ a:hover,
 .comments-area .comment-body .comment-metadata a:hover,
 .comments-area .comment-body .comment-metadata .edit-link:hover,
 .masterheader .topbar-items a:hover,
-.product-widget-style-2 .tab-nav ul li a:hover,
 .banner-style-1 .caption span,
 .entry-404 h1 span,
 .default-page-wrap .page-head .entry-metas ul li a:hover,
@@ -157,7 +156,6 @@ a:hover,
 .woocommerce ul.products li.product .price del,
 .woocommerce div.product p.price del, 
 .woocommerce div.product span.price del,
-.product-widget-style-2 .tab-nav ul li a,
 .post-navigation .nav-previous span,
 .post-navigation .nav-next  span,
 .woocommerce .woocommerce-form-coupon p,
@@ -213,6 +211,7 @@ input[type="submit"],
 .masterheader .mini-cart button,
 .owl-carousel button.owl-dot.active,
 .woocommerce .added_to_cart.wc-forward,
+.product-widget-style-2 .tab-nav ul li a.active,
 .woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist a,
 .default-post-wrap .page-head .entry-cats ul li a:hover,
 .woocommerce nav.woocommerce-pagination ul li a:hover,
@@ -245,6 +244,8 @@ input[type="submit"]:hover,
 .owl-carousel .owl-nav button.owl-next:hover,
 .owl-carousel .owl-nav button.owl-prev:hover,
 .woocommerce .added_to_cart.wc-forward:hover,
+.product-widget-style-2 .tab-nav ul li a:hover,
+.product-widget-style-2 .tab-nav ul li a:hover,
 .woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist a:hover {
 
 	background:$third_color;
@@ -279,6 +280,11 @@ input[type="submit"]:hover,
 .widget .widget-title h3:after {
 
 	border-top-color: $secondary_color;
+}
+
+.product-widget-style-2 .tab-nav ul li a {
+
+	border:1px solid $secondary_color;
 }
 
 .woocommerce-page .woocommerce-MyAccount-content p a  {
@@ -378,7 +384,10 @@ input[type="color"],
 	border:2px solid $secondary_color;
 }
 
+.product-widget-style-2 .tab-nav ul li a:hover {
 
+	border-color:$third_color;
+}
 
 // Footer ( Dark )
 
