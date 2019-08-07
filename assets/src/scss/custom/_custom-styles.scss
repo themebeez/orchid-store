@@ -954,8 +954,9 @@ section .section-title h3 {
 .cats-widget-styles .card-content {
 
     position:absolute;
-    top:54%;
+    top:50%;
     left:0;
+    width:100%;
     -webkit-transform:translateY(-50%);
     -moz-transform:translateY(-50%);
     -ms-transform:translateY(-50%);
@@ -992,7 +993,7 @@ section .section-title h3 {
 
 .cats-widget-style-1 .thumb {
     
-    height:200px;
+    height:250px;
 }
 
 
@@ -1488,7 +1489,7 @@ body.no-sidebar .archive-entry article .content-col {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  padding:6px 25px;
+  padding:10px 25px;
   @include border-radius(30px);
   @include transation_delay();
 }
