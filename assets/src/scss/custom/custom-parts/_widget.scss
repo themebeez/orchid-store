@@ -22,7 +22,12 @@
 .secondary-widget-area .widget {
 
 	margin-bottom: 30px;
-    padding:30px 20px;
+    padding:30px;
+}
+
+aside.secondary-widget-area .widget  {
+
+    @include border-radius(5px);
 }
 
 .widget .widget-title h3,
@@ -43,29 +48,27 @@
     font-style: normal;
     margin:0;
     line-height: 1.1;
-    border-left:3px solid $secondary_color;
     overflow:hidden;
-    padding: 0 10px 0 10px;
-
-    &:after {
-
-        content: "";
-        display: inline-block;
-        height: 4px;
-        vertical-align: middle;
-        width: 100%;
-        margin-right: -100%;
-        margin-left: 14px;
-        border-top: 3px solid $secondary_color;
-    }
 }
 
+.widget .widget-title h3:after {
+
+    content: "";
+    display: inline-block;
+    height: 4px;
+    vertical-align: middle;
+    width: 100%;
+    margin-right: -100%;
+    margin-left: 14px;
+    border-top: 3px solid $secondary_color;
+}
 
 .footer .widget,
 .footer.secondary-widget-area .widget  {
 
     padding:0;
     border:none;
+    background:none;
 }
 
 .footer .widget .widget-title h3 {
@@ -427,8 +430,8 @@
 */
 
 .widget_search,
-.widget_product_search,
-form.search-form {
+form.search-form,
+.widget_product_search{
     
     display:block;
     position:relative;
@@ -442,9 +445,9 @@ form.search-form {
     animation:none;
 }
 
+form.search-form,
 .widget_search form,
-.widget_product_search form,
-form.search-form {
+.widget_product_search form {
     
     display:block;
     position: relative;
@@ -455,9 +458,9 @@ form.search-form {
     background:transparent;
 }
 
-.widget_search form input[type="search"],
-.widget_product_search form input[type="search"],
-form.search-form label {
+form.search-form label,
+.widget_search form label,
+.widget_product_search form input[type="search"] {
 
     float:left;
     width:calc( 100% - 120px );
@@ -471,18 +474,22 @@ form.search-form label  {
     margin-right: -5px;
 }
 
-.widget_search form input[type="search"] {
+form.search-form input[type="search"],
+.widget_product_search form input[type="search"]  {
 
     border-right: none;
+    @include border-radius(0);
+    height:41px;
+    height: 41px;
+    padding-left: 15px;
 }
 
+form.search-form button[type="search"],
 .widget_search form button[type="submit"],
-.widget_product_search form button[type="submit"],
-form.search-form button[type="search"]  {
+.widget_product_search form button[type="submit"]  {
     
     float:left;
     width:120px;
-    height:43px;
 }
 
 

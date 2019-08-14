@@ -25,58 +25,60 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 ?>
 <li <?php wc_product_class( '', $product ); ?>>
-
-	<div class="product-thumb-wrap imghover">
-		<?php
-		/**
-		 * Hook: orchid_store_product_thumbnail.
-		 *
-		 * @hooked orchid_store_template_loop_product_thumbnail - 10
-		 */
-		do_action( 'orchid_store_product_thumbnail' );
-
-		/**
-		 * Hook: orchid_store_loop_sale_flash.
-		 *
-		 * @hooked woocommerce_show_product_loop_sale_flash - 10
-		 */
-		do_action( 'orchid_store_loop_sale_flash' );
-
-		/**
-		 * Hook: orchid_store_loop_product_quick_link.
-		 *
-		 * @hooked orchid_store_template_loop_product_quick_link - 10
-		 */
-		do_action( 'orchid_store_loop_product_quick_link' );
-		?>
-	</div>
-
-	<div class="product-info-wrap">
-		<?php
-		/**
-		 * Hook: orchid_store_shop_loop_item_title.
-		 *
-		 * @hooked orchid_store_template_loop_product_title - 10
-		 */
-		do_action( 'orchid_store_shop_loop_item_title' );
-
-		/**
-		 * Hook: woocommerce_after_shop_loop_item_title.
-		 *
-		 * @hooked woocommerce_template_loop_rating - 5
-		 * @hooked woocommerce_template_loop_price - 10
-		 */
-		do_action( 'woocommerce_after_shop_loop_item_title' );
-		?>
-		<div class="custom-cart-btn">
+	
+	<div class="bg-white product-main-wrap">
+		<div class="product-thumb-wrap imghover">
 			<?php
 			/**
-			 * Hook: orchid_store_loop_add_to_cart.
+			 * Hook: orchid_store_product_thumbnail.
 			 *
-			 * @hooked woocommerce_template_loop_add_to_cart - 10
+			 * @hooked orchid_store_template_loop_product_thumbnail - 10
 			 */
-			do_action( 'orchid_store_loop_add_to_cart' );
+			do_action( 'orchid_store_product_thumbnail' );
+
+			/**
+			 * Hook: orchid_store_loop_sale_flash.
+			 *
+			 * @hooked woocommerce_show_product_loop_sale_flash - 10
+			 */
+			do_action( 'orchid_store_loop_sale_flash' );
+
+			/**
+			 * Hook: orchid_store_loop_product_quick_link.
+			 *
+			 * @hooked orchid_store_template_loop_product_quick_link - 10
+			 */
+			do_action( 'orchid_store_loop_product_quick_link' );
 			?>
 		</div>
-	</div>
+
+		<div class="product-info-wrap">
+			<?php
+			/**
+			 * Hook: orchid_store_shop_loop_item_title.
+			 *
+			 * @hooked orchid_store_template_loop_product_title - 10
+			 */
+			do_action( 'orchid_store_shop_loop_item_title' );
+
+			/**
+			 * Hook: woocommerce_after_shop_loop_item_title.
+			 *
+			 * @hooked woocommerce_template_loop_rating - 5
+			 * @hooked woocommerce_template_loop_price - 10
+			 */
+			do_action( 'woocommerce_after_shop_loop_item_title' );
+			?>
+			<div class="custom-cart-btn">
+				<?php
+				/**
+				 * Hook: orchid_store_loop_add_to_cart.
+				 *
+				 * @hooked woocommerce_template_loop_add_to_cart - 10
+				 */
+				do_action( 'orchid_store_loop_add_to_cart' );
+				?>
+			</div>
+		</div>
+	</div><!-- .bg-white product-main-wrap -->
 </li>

@@ -165,10 +165,11 @@
 
         /*
         ===========================
-        = Main navigation
+        = Navigations
         ====================================
         */
 
+        // Main primary menu
 
         $('.menu-toggle').on('click', function(e) {
 
@@ -207,6 +208,20 @@
 
             e.preventDefault(); // prevent empty links clicks
         });
+
+
+
+        // Category Navigation at header 
+
+
+        $('.cat-nav-trigger').on('click', function(e) {
+
+            //$('.category-navigation-list').slideToggle('medium');
+
+            $('body').toggleClass('cat-nav-at-navigation-active'); // add class to body
+
+        });
+
 
         /*
         ===========================

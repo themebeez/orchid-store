@@ -16,18 +16,6 @@ if( ! function_exists( 'orchid_store_product_search_action' ) ) {
 		<div class="custom-search">
 	        <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) );?>">
 	            <div class="custom-search-entry">
-	                <div class="select-custom">
-	                	<?php 
-                        wp_dropdown_categories( array(
-                        	'taxonomy' 			=> 'product_cat',
-                            'show_option_all' 	=> esc_html__('Select Category','orchid-store'),
-                            'name' 				=> 'product_cat',
-                            'value_field' 		=> 'slug',
-                            'hide_empty'        => 1,
-                            'selected' 			=> isset( $_GET['product_cat'] ) ? $_GET['product_cat'] : '',
-                        ) );
-                        ?>
-	                </div><!-- .select-custom -->
 	                <input type="search" class="form-control" name="s" id="s" value="<?php echo get_search_query(); ?>" placeholder="<?php esc_attr_e( 'Search Product', 'orchid-store' ); ?>" />
 	                <input type="hidden" value="product" name="post_type" id="post_type"/>
 	                <button type="submit"><i class='bx bx-search'></i></button>

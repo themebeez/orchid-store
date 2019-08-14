@@ -31,11 +31,12 @@ $white:#ffffff;
 
 // General Color Variables 
 
-$primary_color 							: #333333; 		// Black
-$secondary_color						: #FFCA04; 		// Yellow
-$third_color							: #FBD7CA; 		// Orange
+$primary_color 							: #444444; 		// Grey
+$secondary_color						: #0286E7; 		// Blue #0286E7 & #0271C1
+$third_color							: #E26143; 		// Red
+$forth_color							: #FFBF3F;		// yellow
 $special_purpose_color					: #808080; 		// Light Grey
-$border_color							: #f3f3f3; 		// 
+$border_color							: #e8e8e8; 		// 
 $mask_background						: rgba(50,50,50,0.2); 
 
 
@@ -44,12 +45,11 @@ $mask_background						: rgba(50,50,50,0.2);
 $inner_page_master_bg					:#000;
 
 
-
 // woocommerce colors
 
 
 $woo-on-sale-color 						: red;
-$woo-success-bar						: #1fa67a;
+$woo-success-bar						: #ECF7ED; // Mild green
 $woo-info-bar							: #238ae6;
 $woo-error-bar							: #dc3545;
 $woo-warning-bar						: #ffc107;
