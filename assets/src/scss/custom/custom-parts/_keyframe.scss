@@ -35,3 +35,37 @@
   -webkit-animation-name: osfadeInUp;
   animation-name: osfadeInUp;
 }
+
+// Fade in down
+
+/* Chrome, Safari, Opera */
+
+@-webkit-keyframes OsfadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+
+/* Standard syntax */
+
+@keyframes OsfadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.OsfadeinUp {
+
+    -webkit-animation: fadeInUp 500ms ease-in-out; /* Chrome, Safari, Opera */
+    animation: fadeInUp 500ms ease-in-out;
+}

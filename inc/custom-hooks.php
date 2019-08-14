@@ -16,21 +16,21 @@ if( ! function_exists( 'orchid_store_header_action' ) ) {
 add_action( 'orchid_store_header', 'orchid_store_header_action', 10 ); 
 
 
-if( ! function_exists( 'orchid_store_secondary_navigation_action' ) ) {
+// if( ! function_exists( 'orchid_store_secondary_navigation_action' ) ) {
 
-	function orchid_store_secondary_navigation_action() {
+// 	function orchid_store_secondary_navigation_action() {
 
-		if( has_nav_menu( 'menu-2' ) ) {
- 			wp_nav_menu( array( 
- 				'theme_location' => 'menu-2',
- 				'container' => '', 
- 				'menu_class' => 'secondary-navigation',
- 				'depth' => 1,
- 			) );
- 		}
-	}
-}
-add_action( 'orchid_store_secondary_navigation', 'orchid_store_secondary_navigation_action', 10 );
+// 		if( has_nav_menu( 'menu-2' ) ) {
+//  			wp_nav_menu( array( 
+//  				'theme_location' => 'menu-2',
+//  				'container' => '', 
+//  				'menu_class' => 'secondary-navigation',
+//  				'depth' => 1,
+//  			) );
+//  		}
+// 	}
+// }
+// add_action( 'orchid_store_secondary_navigation', 'orchid_store_secondary_navigation_action', 10 );
 
 
 if( ! function_exists( 'orchid_store_site_identity_action' ) ) {

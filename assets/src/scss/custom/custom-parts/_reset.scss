@@ -180,3 +180,17 @@ iframe {
 
     margin-bottom: 30px;   // wp audio player
 }
+
+// Carousel scroll fix for mobile
+
+.owl-carousel .owl-stage,
+.owl-carousel.owl-drag .owl-item {
+
+   -ms-touch-action: auto;
+       touch-action: auto;
+}
+
+.owl-carousel .owl-item img {
+
+   max-height: max-content;
+}

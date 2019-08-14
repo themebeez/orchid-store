@@ -45,6 +45,13 @@
 
 // Mixins : drop shadow 
 
+
+@mixin mild_drop_shadow() {
+
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+}
+
 @mixin drop_shadow () {
 
 	box-shadow: 0 2px 6px rgba(0,0,0,.2);
@@ -67,7 +74,6 @@
     -moz-transform: translateY(-10px);
     transform: translateY(-10px);
 }
-
 
 //  Mixins : Position absolute top align 
 

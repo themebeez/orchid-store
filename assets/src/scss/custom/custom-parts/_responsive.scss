@@ -4,6 +4,14 @@
 // Font scaling : 1024px, 768px, 600px;
 
 
+@media ( min-width: 1400px ) {
+
+	.__os-container__ {
+
+		max-width:1300px;
+	}
+}
+
 @media ( max-width: 1200px ) {
 
 
