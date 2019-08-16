@@ -81,22 +81,22 @@ input[type="color"]  {
     -webkit-appearance: none;
 }
 
-select:focus ,
-textarea:focus , 
-input[type="text"]:focus ,
-input[type="email"]:focus ,
-input[type="url"]:focus ,
-input[type="password"]:focus ,
-input[type="search"]:focus ,
-input[type="number"]:focus ,
-input[type="tel"]:focus ,
-input[type="range"]:focus ,
-input[type="date"]:focus ,
-input[type="month"]:focus ,
-input[type="week"]:focus ,
-input[type="time"]:focus ,
-input[type="datetime"]:focus ,
-input[type="datetime-local"]:focus ,
+select:focus,
+textarea:focus, 
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
 input[type="color"]:focus {
     
     outline-color: transparent;
@@ -108,9 +108,10 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
-input[type="number"] {
+input[type="number"],
+input[type="tel"] {
 
-    padding-left:10px;
+    padding-left:15px;
 }
 
 textarea {

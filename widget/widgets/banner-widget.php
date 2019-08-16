@@ -34,7 +34,7 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
             <section class="general-banner banner-style-1 section-spacing">
                 <div class="section-inner">
                     <div class="__os-container__">
-                        <div class="os-row">                            
+                        <div class="os-row">
                             <?php
                             if( !empty( $slider_pages ) ) {
                                 ?>
