@@ -27,13 +27,70 @@
                     <div class="os-col right-col">
                          <div class="social-icons">
                             <ul class="social-icons-list">
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                                <?php
+                                $facebook_link = orchid_store_get_option( 'top_header_facebook_link' );
+                                if( !empty( $facebook_link ) ) :
+                                    ?>
+                                    <li>
+                                        <a href="<?php echo esc_url( $facebook_link ); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                    </li>
+                                    <?php
+                                endif;
+
+                                $twitter_link = orchid_store_get_option( 'top_header_twitter_link' );
+                                if( !empty( $twitter_link ) ) :
+                                    ?>
+                                    <li>
+                                        <a href="<?php echo esc_url( $twitter_link ); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    </li>
+                                    <?php
+                                endif;
+
+                                $instagram_link = orchid_store_get_option( 'top_header_instagram_link' );
+                                if( !empty( $instagram_link ) ) :
+                                    ?>
+                                    <li>
+                                        <a href="<?php echo esc_url( $instagram_link ); ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    </li>
+                                    <?php
+                                endif;
+
+                                $pinterest_link = orchid_store_get_option( 'top_header_pinterest_link' );
+                                if( !empty( $pinterest_link ) ) :
+                                    ?>
+                                    <li>
+                                        <a href="<?php echo esc_url( $pinterest_link ); ?>"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                    </li>
+                                    <?php
+                                endif;
+
+                                $youtube_link = orchid_store_get_option( 'top_header_youtube_link' );
+                                if( !empty( $youtube_link ) ) :
+                                    ?>
+                                    <li>
+                                        <a href="<?php echo esc_url( $youtube_link ); ?>"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                    </li>
+                                    <?php
+                                endif;
+
+                                $linkedin_link = orchid_store_get_option( 'top_header_linkedin_link' );
+                                if( !empty( $linkedin_link ) ) :
+                                    ?>
+                                    <li>
+                                        <a href="<?php echo esc_url( $linkedin_link ); ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                    </li>
+                                    <?php
+                                endif;
+
+                                $vk_link = orchid_store_get_option( 'top_header_vk_link' );
+                                if( !empty( $vk_link ) ) :
+                                    ?>
+                                    <li>
+                                        <a href="<?php echo esc_url( $vk_link ); ?>"><i class="fa fa-vk" aria-hidden="true"></i></a>
+                                    </li>
+                                    <?php
+                                endif;
+                                ?>
                             </ul>
                         </div><!-- // social-icons -->
                     </div><!-- .os-col.right-col -->

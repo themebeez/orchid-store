@@ -166,6 +166,14 @@ if( ! function_exists( 'orchid_store_control_rearrange' ) ) {
 *******************************************************************************************************/
 orchid_store_add_toggle_field( 'display_top_header', esc_html__( 'Display Top Header', 'orchid-store' ), '', '', 'top_header' );
 
+orchid_store_add_url_field( 'top_header_facebook_link', esc_html__( 'Facebook Link', 'orchid-store' ), '', 'orchid_store_active_top_header', 'top_header' );
+orchid_store_add_url_field( 'top_header_twitter_link', esc_html__( 'Twitter Link', 'orchid-store' ), '', 'orchid_store_active_top_header', 'top_header' );
+orchid_store_add_url_field( 'top_header_instagram_link', esc_html__( 'Instagram Link', 'orchid-store' ), '', 'orchid_store_active_top_header', 'top_header' );
+orchid_store_add_url_field( 'top_header_pinterest_link', esc_html__( 'Pinterest Link', 'orchid-store' ), '', 'orchid_store_active_top_header', 'top_header' );
+orchid_store_add_url_field( 'top_header_youtube_link', esc_html__( 'Youtube Link', 'orchid-store' ), '', 'orchid_store_active_top_header', 'top_header' );
+orchid_store_add_url_field( 'top_header_linkedin_link', esc_html__( 'Linkedin Link', 'orchid-store' ), '', 'orchid_store_active_top_header', 'top_header' );
+orchid_store_add_url_field( 'top_header_vk_link', esc_html__( 'VK Link', 'orchid-store' ), '', 'orchid_store_active_top_header', 'top_header' );
+
 
 
 /*******************************************************************************************************

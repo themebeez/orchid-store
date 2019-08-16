@@ -5,15 +5,15 @@
  * @package Orchid_Store
  */
 
-if( ! class_exists( 'Orchid_Store_Product_Categories_Slider_Widget' ) ) {
+if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
-    class Orchid_Store_Product_Categories_Slider_Widget extends WP_Widget {
+    class Orchid_Store_Banner_Widget extends WP_Widget {
      
         function __construct() { 
 
             parent::__construct(
                 'orchid-store-product-categories-slider-widget',
-                esc_html__( 'OS: Product Categories And Slider', 'orchid-store' ),
+                esc_html__( 'OS: Banner', 'orchid-store' ),
                 array(
                     'classname'     => 'general-banner banner-style-1 section-spacing',
                     'description'   => esc_html__( 'Displays product categories and slider', 'orchid-store' ), 
@@ -28,14 +28,17 @@ if( ! class_exists( 'Orchid_Store_Product_Categories_Slider_Widget' ) ) {
             $button_titles  = $instance['button_titles'];
             $button_links   = $instance['button_links'];
             $show_contents  = $instance['show_contents'];
+            $banner_image_1 = $instance['banner_img_1'];
+            $banner_image_2 = $instance['banner_img_2'];
             ?>
             <section class="general-banner banner-style-1 section-spacing">
                 <div class="section-inner">
                     <div class="__os-container__">
+                        <div class="os-row">
                             <?php
                             if( !empty( $slider_pages ) ) {
                                 ?>
-                                <div class="os-col slider-col right-col">
+                                <div class="os-col slider-col left-col">
                                     <div class="owl-carousel owl-carousel-1">
                                         <?php
                                         foreach( $slider_pages as $slider_index => $slider_page ) {
@@ -92,10 +95,31 @@ if( ! class_exists( 'Orchid_Store_Product_Categories_Slider_Widget' ) ) {
                                 </div><!-- .os-col -->
                                 <?php
                             }
+
+                            if( !empty( $banner_img_1 ) || !empty( $banner_img_2 ) ) {
+                                ?>
+                                <div class="os-col right-col">
+                                    <?php
+                                    if( !empty( $banner_img_1 ) ) {
+                                        ?>
+                                        <div class="banner-image-wrapper banner-image-one-wrapper">
+                                            <img src="<?php echo esc_url( $banner_img_1 ); ?>">
+                                        </div>
+                                        <?php
+                                    }
+
+                                    if( !empty( $banner_img_2 ) ) {
+                                        ?>
+                                        <div class="banner-image-wrapper banner-image-two-wrapper">
+                                            <img src="<?php echo esc_url( $banner_img_2 ); ?>">
+                                        </div>
+                                        <?php
+                                    }
+                                    ?>
+                                </div><!-- .os-col -->
+                                <?php
+                            }
                             ?>
-                            <div class="os-col nav-col">
-                                
-                            </div><!-- .os-col -->
                         </div><!-- .os-row -->
                     </div><!-- .__os-container__ -->
                 </div><!-- .section-inner -->
@@ -111,9 +135,13 @@ if( ! class_exists( 'Orchid_Store_Product_Categories_Slider_Widget' ) ) {
                 'button_titles'	=> array(),
                 'button_links'	=> array(),
                 'show_contents'	=> true,
+                'banner_img_1' => '',
+                'banner_img_2' => '',
             );
 
             $instance = wp_parse_args( (array) $instance, $defaults );
+            $banner_img_1 = $instance['banner_img_1'];
+            $banner_img_2 = $instance['banner_img_2'];
     		?>
     		<p>
                 <label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>">
@@ -225,8 +253,65 @@ if( ! class_exists( 'Orchid_Store_Product_Categories_Slider_Widget' ) ) {
                 <label for="<?php echo esc_attr( $this->get_field_id('show_contents') ); ?>">
                 	<input id="<?php echo esc_attr( $this->get_field_id('show_contents') ); ?>" name="<?php echo esc_attr( $this->get_field_name('show_contents') ); ?>" type="checkbox" value="<?php echo esc_attr( $instance['show_contents'] ); ?>" <?php if( $instance['show_contents'] == true ) { ?>checked<?php } ?> />  
                     <strong><?php esc_html_e( 'Show Slider Contents', 'orchid-store' ); ?></strong>
+                </label>                 
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr($this->get_field_id('banner_img_1')); ?>">
+                    <strong><?php esc_html_e('Banner Image One', 'orchid-store'); ?></strong>
                 </label>
-                 
+
+                <span class="os-image-uploader-container">
+
+                    <?php
+                    $upload_btn_class = 'button os-upload-btn';
+                    $remove_btn_class = 'button os-remove-btn';
+
+                    if( empty( $banner_img_1 ) ) {
+
+                        $remove_btn_class .= ' os-btn-hide';
+                        $upload_btn_class .= ' os-btn-show';
+                    } else {
+
+                        $remove_btn_class .= ' os-btn-show';
+                        $upload_btn_class .= ' os-btn-hide';
+                    }
+                    ?>
+                    
+                    <span class="os-upload-image-holder" style="background-image: url( <?php echo esc_url( $banner_img_1 ); ?> );"></span>
+                    <input type="hidden" class="widefat os-upload-image-url-holder" name="<?php echo esc_attr($this->get_field_name('banner_img_1')); ?>" id="<?php echo esc_attr($this->get_field_id('banner_img_1')); ?>" value="<?php echo esc_url( $banner_img_1 ); ?>">
+                    <button class="<?php echo esc_attr( $upload_btn_class ); ?>" id="os-upload-btn"><?php esc_html_e( 'Upload', 'orchid-store' ); ?></button>
+                    <button class="<?php echo esc_attr( $remove_btn_class ); ?>" id="os-remove-btn"><?php esc_html_e( 'Remove', 'orchid-store' ); ?></button>
+                </span>
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr($this->get_field_id('banner_img_2')); ?>">
+                    <strong><?php esc_html_e('Banner Image Two', 'orchid-store'); ?></strong>
+                </label>
+
+                <span class="os-image-uploader-container">
+
+                    <?php
+                    $upload_btn_class = 'button os-upload-btn';
+                    $remove_btn_class = 'button os-remove-btn';
+
+                    if( empty( $banner_img_2 ) ) {
+
+                        $remove_btn_class .= ' os-btn-hide';
+                        $upload_btn_class .= ' os-btn-show';
+                    } else {
+
+                        $remove_btn_class .= ' os-btn-show';
+                        $upload_btn_class .= ' os-btn-hide';
+                    }
+                    ?>
+                    
+                    <span class="os-upload-image-holder" style="background-image: url( <?php echo esc_url( $banner_img_2 ); ?> );"></span>
+                    <input type="hidden" class="widefat os-upload-image-url-holder" name="<?php echo esc_attr($this->get_field_name('banner_img_2')); ?>" id="<?php echo esc_attr($this->get_field_id('banner_img_2')); ?>" value="<?php echo esc_url( $banner_img_2 ); ?>">
+                    <button class="<?php echo esc_attr( $upload_btn_class ); ?>" id="os-upload-btn"><?php esc_html_e( 'Upload', 'orchid-store' ); ?></button>
+                    <button class="<?php echo esc_attr( $remove_btn_class ); ?>" id="os-remove-btn"><?php esc_html_e( 'Remove', 'orchid-store' ); ?></button>
+                </span>
             </p>
     		<?php
         }
@@ -244,6 +329,10 @@ if( ! class_exists( 'Orchid_Store_Product_Categories_Slider_Widget' ) ) {
             $instance['button_links'] 	= array_map( 'esc_url_raw', $new_instance['button_links'] );
 
             $instance['show_contents'] 	= wp_validate_boolean( $new_instance['show_contents'] );
+
+            $instance['banner_img_1']   = esc_url_raw( $new_instance['banner_img_1'] );
+
+            $instance['banner_img_2']   = esc_url_raw( $new_instance['banner_img_2'] );
 
             return $instance;
         } 

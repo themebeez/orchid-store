@@ -70,7 +70,7 @@ function orchid_store_widgets_init() {
 		'after_title'   => '</h3></div>',
 	) );
 
-	register_widget( 'Orchid_Store_Product_Categories_Slider_Widget' );	
+	register_widget( 'Orchid_Store_Banner_Widget' );	
 
 	register_widget( 'Orchid_Store_Post_Widget' );
 
@@ -96,22 +96,22 @@ add_action( 'widgets_init', 'orchid_store_widgets_init' );
 /**
  * Widget to display product categories and page slider.
  */
-require get_template_directory() . '/widget/widgets/product-categories-list-and-slider.php';
+require get_template_directory() . '/widget/widgets/banner-widget.php';
 
 /**
  * Widget to display recent blog posts.
  */
-require get_template_directory() . '/widget/widgets/blog-posts.php';
+require get_template_directory() . '/widget/widgets/posts-widget.php';
 
 /**
  * Widget to display offer advertisement.
  */
-require get_template_directory() . '/widget/widgets/advertisement.php';
+require get_template_directory() . '/widget/widgets/advertisement-widget.php';
 
 /**
  * Widget to display services offered.
  */
-require get_template_directory() . '/widget/widgets/services.php';
+require get_template_directory() . '/widget/widgets/services-widget.php';
 
 
 if( class_exists( 'Woocommerce' ) ) {
