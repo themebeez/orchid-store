@@ -54,6 +54,17 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
         $defaults = array(
 
             'display_top_header' => true,
+            'top_header_facebook_link' => '',
+            'top_header_twitter_link' => '',
+            'top_header_instagram_link' => '',
+            'top_header_pinterest_link' => '',
+            'top_header_youtube_link' => '',
+            'top_header_google_plus_link' => '',
+            'top_header_linkedin_link' => '',
+            'top_header_vk_link' => '',
+
+            'display_special_menu' => true,
+            'special_menu_title' => esc_html__( 'Special Menu', 'orchid-store' ),
 
             'blog_display_cats' => true,
             'blog_display_excerpt' => true,
