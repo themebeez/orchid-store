@@ -58,7 +58,8 @@ section .section-title h3,
 .woocommerce table.wishlist_table .yith-wcwl-share-title,
 .woocommerce .woocommerce-tabs h2,
 .woocommerce .related.products>h2,
-.woocommerce .up-sells>h2
+.woocommerce .up-sells.upsells.products>h2,
+.woocommerce .cross-sells>h2,
 .woocommerce-account .addresses .title h3,
 .woocommerce-page .woocommerce-MyAccount-content h3,
 .woocommerce div.product .woocommerce-tabs ul.tabs li a,
@@ -309,7 +310,8 @@ section .section-title h3,
 .woocommerce-page form.woocommerce-checkout h3,
 .woocommerce .woocommerce-tabs h2,
 .woocommerce .related.products>h2,
-.woocommerce .up-sells>h2 {
+.woocommerce .cross-sells>h2,
+.woocommerce .up-sells.upsells.products>h2 {
 
 	font-size:18px;
 }
