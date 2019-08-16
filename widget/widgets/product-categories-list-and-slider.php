@@ -32,17 +32,6 @@ if( ! class_exists( 'Orchid_Store_Product_Categories_Slider_Widget' ) ) {
             <section class="general-banner banner-style-1 section-spacing">
                 <div class="section-inner">
                     <div class="__os-container__">
-                        <div class="os-row">
-                            <div class="os-col nav-col left-col">
-                                <?php
-                                /**
-                                * Hook - orchid_store_product_categories_list.
-                                *
-                                * @hooked orchid_store_product_categories_list_action - 10
-                                */
-                                do_action( 'orchid_store_product_categories_list' );
-                                ?>
-                            </div><!-- .os-col -->
                             <?php
                             if( !empty( $slider_pages ) ) {
                                 ?>
@@ -104,6 +93,9 @@ if( ! class_exists( 'Orchid_Store_Product_Categories_Slider_Widget' ) ) {
                                 <?php
                             }
                             ?>
+                            <div class="os-col nav-col">
+                                
+                            </div><!-- .os-col -->
                         </div><!-- .os-row -->
                     </div><!-- .__os-container__ -->
                 </div><!-- .section-inner -->
@@ -128,16 +120,6 @@ if( ! class_exists( 'Orchid_Store_Product_Categories_Slider_Widget' ) ) {
                     <strong><?php esc_html_e( 'Title', 'orchid-store' ); ?></strong>
                 </label>
                 <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('title') ); ?>" name="<?php echo esc_attr( $this->get_field_name('title') ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />   
-            </p>
-
-            <p>
-            	<span class="sldr-elmnt-title"><strong><?php esc_html_e( 'Product Categories List', 'orchid-store' ); ?></strong></span>
-                <span class="sldr-elmnt-desc">
-                	<?php 
-                	/* translators: 1: admin menu page link, 2: menu location. */
-                	printf( esc_html__( 'Product categories list are managed via %1$s. Set menu location to %2$s.', 'orchid-store' ), '<i><b><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" target="_blank">' . esc_html__( 'Menus', 'orchid-store' ) . '</a></b></i>', '<i><b>' . esc_html__( 'Products Menu', 'orchid-store' ) . '</b></i>' );
-                	?>
-                </span>
             </p>
 
             <p>

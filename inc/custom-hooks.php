@@ -15,6 +15,23 @@ if( ! function_exists( 'orchid_store_header_action' ) ) {
 }
 add_action( 'orchid_store_header', 'orchid_store_header_action', 10 ); 
 
+
+if( ! function_exists( 'orchid_store_secondary_navigation_action' ) ) {
+
+	function orchid_store_secondary_navigation_action() {
+
+		wp_nav_menu( array( 
+			'theme_location' => 'menu-2',
+			'container' => '', 
+			'menu_class' => 'category-navigation-list',
+			'depth' => 2,
+			'fallback_cb' => 'orchid_store_special_menu_fallback',
+		) );
+	}
+}
+add_action( 'orchid_store_secondary_navigation', 'orchid_store_secondary_navigation_action', 10 );
+
+
 if( ! function_exists( 'orchid_store_site_identity_action' ) ) {
 
 	function orchid_store_site_identity_action() {

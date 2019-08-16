@@ -69,6 +69,45 @@ if ( !function_exists( 'orchid_store_navigation_fallback' ) ) {
     }
 }
 
+/**
+ * Fallback For Special Menu
+ */
+if ( !function_exists( 'orchid_store_special_menu_fallback' ) ) {
+
+    function orchid_store_special_menu_fallback() {
+
+        if( ! class_exists( 'Woocommerce' ) ) {
+            ?>
+            <ul class="category-navigation-list">
+                <?php 
+                wp_list_pages( array( 
+                    'title_li' => '', 
+                    'depth' => 2,
+                ) ); 
+                ?>
+            </ul><!-- .primary-menu -->
+            <?php
+        } else {
+
+            $product_categories = orchid_store_all_product_categories();
+
+            if( ! empty( $product_categories ) ) {
+                ?>
+                <ul class="category-navigation-list">
+                    <?php 
+                    foreach( $product_categories as $product_category ) {
+                        ?>
+                        <li><a href="<?php echo esc_url( get_term_link( $product_category->term_id, 'product_cat' ) ); ?>" title="<?php echo esc_attr( $product_category->name ); ?>"><?php echo esc_html( $product_category->name ); ?></a></li>
+                        <?php
+                    }
+                    ?>
+                </ul><!-- .primary-menu -->
+                <?php  
+            }
+        }  
+    }
+}
+
 
 /**
  * Function to get post thumbnail alt text value.
