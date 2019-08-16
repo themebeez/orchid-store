@@ -689,15 +689,40 @@ section .section-title h3:after {
 
 .header-style-1 .custom-search {
 
-    flex:0 0 calc( 100% - 200px );
-    max-width:calc( 100% - 200px );
-    padding-right: 20px;
+    flex:0 0 calc( 100% - 250px );
+    max-width:calc( 100% - 250px );
+    padding-right: 15px;
+}
+
+.header-style-1 .wishlist-minicart-wrapper {
+
+    flex: 0 0 250px;
+    max-width:250px;
+}
+
+.header-style-1 .wishlist-minicart-inner {
+
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-style-1 .wishlist-icon-container a {
+    
+    display: inline-block;
+    width: 45px;
+    line-height: 45px;
+    height: 45px;
+    font-size: 16px;
+    text-align:center;
+    @include border-radius(3px);
 }
 
 .header-style-1 .mini-cart {
-
-    flex:0 0 200px;
-    max-width:200px;
+    
+    min-width: 190px;
     line-height: 42px;
 }
 

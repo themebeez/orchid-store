@@ -105,7 +105,8 @@ input[type="submit"]:hover,
 #yith-quick-view-close:hover,
 .woocommerce-page #add_payment_method #payment div.payment_box, 
 .woocommerce-cart #payment div.payment_box, 
-.woocommerce-checkout #payment div.payment_box  {
+.woocommerce-checkout #payment div.payment_box,
+.header-style-1 .wishlist-icon-container a   {
 
 	color:$white;
 }
@@ -306,7 +307,8 @@ a.button-general,
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
 .woocommerce-page #add_payment_method #payment div.payment_box, 
 .woocommerce-cart #payment div.payment_box, 
-.woocommerce-checkout #payment div.payment_box  {
+.woocommerce-checkout #payment div.payment_box,
+.header-style-1 .wishlist-icon-container a   {
 
 	background:$secondary_color;
 }
@@ -338,6 +340,7 @@ a.button-general:hover,
 .owl-carousel .owl-nav button.owl-prev:hover,
 .woocommerce .added_to_cart.wc-forward:hover,
 .category-navigation .cat-nav-trigger,
+.header-style-1 .wishlist-icon-container a:hover,
 .woocommerce ul.products li .product-hover-items ul li a:hover,
 .woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist a:hover {
 

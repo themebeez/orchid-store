@@ -34,7 +34,7 @@ if( ! function_exists( 'orchid_store_wishlist_icon_action' ) ) {
         if( function_exists( 'YITH_WCWL' ) ) {
             ?>
             <div class="wishlist-icon-container">
-                <a href="<?php echo esc_url( home_url() . '/wishlist' ); ?>"><i class='bx bx-heart'></i></a>
+                <a href="<?php echo esc_url( home_url() . '/wishlist' ); ?>"><i class="fa fa-heart" aria-hidden="true"></i></a>
             </div><!-- .wishlist-icon-container -->
             <?php
         }
