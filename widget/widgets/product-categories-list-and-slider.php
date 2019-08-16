@@ -33,7 +33,7 @@ if( ! class_exists( 'Orchid_Store_Product_Categories_Slider_Widget' ) ) {
                 <div class="section-inner">
                     <div class="__os-container__">
                         <div class="os-row">
-                            <div class="os-col nav-col">
+                            <div class="os-col nav-col left-col">
                                 <?php
                                 /**
                                 * Hook - orchid_store_product_categories_list.
@@ -46,7 +46,7 @@ if( ! class_exists( 'Orchid_Store_Product_Categories_Slider_Widget' ) ) {
                             <?php
                             if( !empty( $slider_pages ) ) {
                                 ?>
-                                <div class="os-col slider-col">
+                                <div class="os-col slider-col right-col">
                                     <div class="owl-carousel owl-carousel-1">
                                         <?php
                                         foreach( $slider_pages as $slider_index => $slider_page ) {
