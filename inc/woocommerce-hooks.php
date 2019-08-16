@@ -27,6 +27,21 @@ if( ! function_exists( 'orchid_store_product_search_action' ) ) {
 }
 add_action( 'orchid_store_product_search', 'orchid_store_product_search_action', 10 );
 
+if( ! function_exists( 'orchid_store_wishlist_icon_action' ) ) {
+
+    function orchid_store_wishlist_icon_action() {
+
+        if( function_exists( 'YITH_WCWL' ) ) {
+            ?>
+            <div class="wishlist-icon-container">
+                <a href="<?php echo esc_url( home_url() . '/wishlist' ); ?>"><i class='bx bx-heart'></i></a>
+            </div><!-- .wishlist-icon-container -->
+            <?php
+        }
+    }
+}
+add_action( 'orchid_store_wishlist_icon', 'orchid_store_wishlist_icon_action', 10 );
+
 
 if( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
 

@@ -62,14 +62,24 @@
                             * @hooked orchid_store_product_search_action - 10
                             */
                             do_action( 'orchid_store_product_search' );
-
-                            /**
-                            * Hook - orchid_store_mini_cart.
-                            *
-                            * @hooked orchid_store_mini_cart_action - 10
-                            */
-                            do_action( 'orchid_store_mini_cart' );
                             ?>
+                            <div class="wishlist-minicart-wrapper">
+                                <?php
+                                /**
+                                * Hook - orchid_store_wishlist_icon.
+                                *
+                                * @hooked orchid_store_wishlist_icon_action - 10
+                                */
+                                do_action( 'orchid_store_wishlist_icon' );
+
+                                /**
+                                * Hook - orchid_store_mini_cart.
+                                *
+                                * @hooked orchid_store_mini_cart_action - 10
+                                */
+                                do_action( 'orchid_store_mini_cart' );
+                                ?>
+                            </div>
                         </div><!-- .aside-right -->
                     </div><!-- .os-col.extra-col -->
                 </div><!-- .os-row -->
@@ -88,17 +98,18 @@
                                         <span class="line"></span>
                                         <span class="line"></span>
                                     </span>
-                                </button><!-- // cat-nav-trigger -->
-                                <ul class="category-navigation-list">
-                                        <li><a href="#">Lifestyle</a></li>
-                                        <li><a href="#">Travel</a></li>
-                                        <li><a href="#">Kitchen</a></li>
-                                        <li><a href="#">Bag</a></li>
-                                        <li><a href="#">Women</a></li>
-                                        <li><a href="#">Man</a></li>
-                                </ul>
+                                </button><!-- . cat-nav-trigger -->
+                                
+                                <?php
+                                /**
+                                * Hook - orchid_store_secondary_navigation.
+                                *
+                                * @hooked orchid_store_secondary_navigation_action - 10
+                                */
+                                do_action( 'orchid_store_secondary_navigation' );
+                                ?>
                             </div><!-- .site-navigation category-navigation -->
-                        </div><!-- // os-col os-nav-col-left -->
+                        </div><!-- .os-col.os-nav-col-left -->
                         <div class="os-col os-nav-col-right">
                         <div class="menu-toggle">
                             <span class="hamburger-bar"></span>
