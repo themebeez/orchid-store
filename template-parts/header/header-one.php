@@ -64,6 +64,7 @@
                             do_action( 'orchid_store_product_search' );
                             ?>
                             <div class="wishlist-minicart-wrapper">
+                                <div class="wishlist-minicart-inner">
                                 <?php
                                 /**
                                 * Hook - orchid_store_wishlist_icon.
@@ -79,6 +80,7 @@
                                 */
                                 do_action( 'orchid_store_mini_cart' );
                                 ?>
+                                </div><!-- . wishlist-minicart-inner -->
                             </div>
                         </div><!-- .aside-right -->
                     </div><!-- .os-col.extra-col -->
