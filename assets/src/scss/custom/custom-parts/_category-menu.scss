@@ -150,13 +150,20 @@ body.cat-nav-at-navigation-active .category-navigation .cat-nav-trigger .icon .l
 }
 
 .category-navigation .category-navigation-list li {
-
+	
+	position: relative;
 	display:block;
 }
 
 .category-navigation .category-navigation-list li a {
-
+	
+	position: relative;
 	display:block;
 	padding:13px 0;
 	border-bottom: 1px solid $border_color;
+}
+
+.category-navigation .category-navigation-list li a .fa {
+
+	margin-right: 8px;
 }
