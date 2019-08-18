@@ -226,6 +226,39 @@ if ( ! function_exists( 'orchid_store_woocommerce_cart_link' ) ) {
 
 
 /**
+ * Change number of upsells output
+ */
+function orchid_store_upsell_products_args( $args ) {
+ 	
+ 	if( orchid_store_get_option( 'upsell_product_col_no' ) ) {
+
+ 		$args['columns'] = absint( orchid_store_get_option( 'upsell_product_col_no' ) );
+ 	} else {
+
+ 		$args['columns'] = 3; //change number of upsells here
+ 	}
+
+ 	return $args;
+}
+add_filter( 'woocommerce_upsell_display_args', 'orchid_store_upsell_products_args', 20 );
+
+
+/**
+ * Change number of cross sells column
+ */
+function orchid_store_cross_sells_columns( $columns ) {
+ 	
+ 	if( orchid_store_get_option( 'cross_sell_product_col_no' ) ) {
+
+ 		$columns = absint( orchid_store_get_option( 'cross_sell_product_col_no' ) );
+ 	}
+ 	
+ 	return $columns;
+}
+add_filter( 'woocommerce_cross_sells_columns', 'orchid_store_cross_sells_columns' );
+
+
+/**
  * Defining custom hooks from woocommerce functions
  */
 add_action( 'orchid_store_loop_product_link_open', 'woocommerce_template_loop_product_link_open', 10 );
