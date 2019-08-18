@@ -111,6 +111,8 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
             $defaults['orchid_store_field_shop_product_col_no'] = 3;
             $defaults['orchid_store_field_related_product_col_no'] = 3;
             $defaults['orchid_store_field_related_product_no'] = 3;
+            $defaults['orchid_store_field_upsell_product_col_no'] = 3;
+            $defaults['orchid_store_field_cross_sell_product_col_no'] = 3;
         }
 
         return $defaults;

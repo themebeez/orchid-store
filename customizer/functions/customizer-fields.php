@@ -351,4 +351,51 @@ if( class_exists( 'Woocommerce' ) ) {
 			'section' => 'woocommerce_product_catalog',
 		)
 	);
+
+
+	// Upsell Product Columns in Product Page
+	$wp_customize->add_setting( 'orchid_store_field_upsell_product_col_no', 
+		array(
+		'default' => $defaults['orchid_store_field_upsell_product_col_no'],
+		'sanitize_callback' => 'orchid_store_sanitize_range',
+		'capability'        => 'edit_theme_options',
+		)
+	);	
+
+	$wp_customize->add_control( 'orchid_store_field_upsell_product_col_no', 
+		array(
+			'label' => esc_html__( 'Upsell Product Columns', 'orchid-store' ),
+			'description' => esc_html__( 'Set number of columns to be displayed in upsell product section of product page. Maximum number of colums is 6 while minimum number of columns is 2.', 'orchid-store' ),
+			'type' => 'number',
+			'section' => 'woocommerce_product_catalog',
+			'input_attrs' => array(
+				'min' => 2,
+				'max' => 6,
+				'step' => 1
+			),
+		)
+	);
+
+	// Cross Sell Product Columns in Product Page
+	$wp_customize->add_setting( 'orchid_store_field_cross_sell_product_col_no', 
+		array(
+		'default' => $defaults['orchid_store_field_cross_sell_product_col_no'],
+		'sanitize_callback' => 'orchid_store_sanitize_range',
+		'capability'        => 'edit_theme_options',
+		)
+	);	
+
+	$wp_customize->add_control( 'orchid_store_field_cross_sell_product_col_no', 
+		array(
+			'label' => esc_html__( 'Cross Sell Product Columns', 'orchid-store' ),
+			'description' => esc_html__( 'Set number of columns to be displayed in cross sell product section of product page. Maximum number of colums is 6 while minimum number of columns is 2.', 'orchid-store' ),
+			'type' => 'number',
+			'section' => 'woocommerce_product_catalog',
+			'input_attrs' => array(
+				'min' => 2,
+				'max' => 6,
+				'step' => 1
+			),
+		)
+	);
 }
