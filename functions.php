@@ -167,6 +167,7 @@ require get_template_directory() . '/customizer/customizer.php';
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
+	
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
@@ -174,18 +175,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Load WooCommerce compatibility file.
  */
 if ( class_exists( 'WooCommerce' ) ) {
+
 	require get_template_directory() . '/inc/woocommerce.php';
+
+	require get_template_directory() . '/inc/woocommerce-hooks.php';
 }
 
 /**
  * Load breadcrumb trails.
  */
 require get_template_directory() . '/third-party/breadcrumbs.php';
-
-/**
- * Load custom hooks dependent on WooCommerce
- */
-require get_template_directory() . '/inc/woocommerce-hooks.php';
 
 /**
  * Load custom hooks necessary for theme.

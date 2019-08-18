@@ -3,15 +3,15 @@ Theme Name: Orchid Store
 Theme URI: http://themebeez.com/themes/orchid-store/
 Author: themebeez
 Author URI: https://themebeez.com
-Description: Description
+Description: Orchid Store is a clean, dynamic and highly customizable WordPress e-commerce theme. Orchid Store extends it's functionality with Woocommerce to create online stores, shops, marketplace etc.
 Version: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
+License: GNU General Public License v2 or Later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 Text Domain: orchid-store
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce
 
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+Orchid Store, WordPress Theme, Copyright (C) 2019, themebeez.
+Orchid Store is distributed under the terms of the GNU GPL
 
 Orchid Store is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
@@ -19,3 +19,13 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
+
+.wp-caption {
+
+	color: inherit;
+}
+
+.wp-caption-text {
+
+	color: inherit;
+}

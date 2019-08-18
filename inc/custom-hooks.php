@@ -362,9 +362,6 @@ if( ! function_exists( 'orchid_store_title_breadcrumb_action' ) ) {
 		                		?>
 		                		<h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>
 		                		<?php
-		                	}  else {
-
-		                		
 		                	}
 		                }
 		            }
