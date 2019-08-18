@@ -817,16 +817,35 @@ section .section-title h3:after {
 // banner style 1
 
 
-.banner-style-1 .nav-col {
+.banner-style-1 .left-col {
 
-    flex:0 0 25%;
-    max-width:25%;
+    flex:0 0 66.66%;
+    max-width: 66.66%;
 }
 
-.banner-style-1 .slider-col {
+.banner-style-1 .right-col {
 
-    flex:0 0 75%;
-    max-width:75%;
+    flex:0 0 33.33%;
+    max-width:33.33%;
+}
+
+.banner-style-1 .banner-image-wrapper {
+    
+    position: relative;
+    height:210px;
+    overflow:hidden;
+    margin-bottom: 30px;
+}
+
+.banner-style-1 .banner-image-wrapper img {
+
+    object-fit: cover;
+    object-position: center center;
+}
+
+.banner-style-1 .right-col .banner-image-wrapper:last-child {
+
+    margin-bottom: 0;
 }
 
 .category-nav ul {
