@@ -106,7 +106,7 @@ if( ! function_exists( 'orchid_store_content_entry_class' ) ) {
 
 		$content_entry_class = '';
 
-		if( class_exists( 'Woocommerce' ) || is_defined( 'YITH_WCWL' ) ) {
+		if( class_exists( 'Woocommerce' ) || defined( 'YITH_WCWL' ) ) {
 
             if( is_cart() || is_checkout() || is_account_page() || is_page( 'wishlist' ) || is_woocommerce() || is_shop() || is_product() ) {
 
