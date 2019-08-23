@@ -18,7 +18,7 @@ if( ! function_exists( 'orchid_store_product_search_action' ) ) {
 	            <div class="custom-search-entry">
 	                <input type="search" class="form-control" name="s" id="s" value="<?php echo get_search_query(); ?>" placeholder="<?php esc_attr_e( 'Search Product', 'orchid-store' ); ?>" />
 	                <input type="hidden" value="product" name="post_type" id="post_type"/>
-	                <button type="submit"><i class='bx bx-search'></i></button>
+	                <button type="submit"><i class='bx bx-search-alt'></i></button>
 	            </div><!-- .custom-search-entry -->
 	        </form><!-- #searchform -->
 	    </div><!-- .custom-search -->
@@ -54,7 +54,7 @@ if( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
 		?>
 		<div class="mini-cart">
             <button class="trigger-mini-cart">
-            	<i class="feather icon-shopping-bag" aria-hidden="true"></i>
+            	<i class='bx bxs-cart'></i>
             </button><!-- .trigger-mini-cart -->
             <span class="cart-amount"><?php esc_html_e( 'Total:', 'orchid-store' ); ?>
 	            <span class="price">

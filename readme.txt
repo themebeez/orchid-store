@@ -35,19 +35,13 @@ Orchid Store is distributed under the terms of the GNU GPL
 
 * Theia Sticky Sidebar https://github.com/WeCodePixels/theia-sticky-sidebar [MIT](http://opensource.org/licenses/MIT)
 
-* Retina https://github.com/strues/retinajs, Copyright (c) 2013-2017 Steven Truesdell, John Newman, Ben Atkin, and other contributors, [MIT](http://opensource.org/licenses/MIT)
-
 * TGM Plugin Activation http://tgmpluginactivation.com/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
 * Tippy https://github.com/atomiks/tippyjs, Copyright (c) 2017 atomiks, [MIT](http://opensource.org/licenses/MIT)
 
 * Font Awesome http://fontawesome.io/license/, [SIL OFL 1.1, MIT, CC](http://scripts.sil.org/OFL, http://opensource.org/licenses/mit-license.html, https://creativecommons.org/licenses/by/4.0/)
 
-* Feather Font https://github.com/AT-UI/feather-font, Copyright (c) 2013-2017 Cole Bemis, [MIT](http://opensource.org/licenses/MIT)
-
 * BoxIcons https://github.com/atisawd/boxicons, [SIL OFL 1.1, MIT, CC](http://scripts.sil.org/OFL, http://opensource.org/licenses/mit-license.html, https://creativecommons.org/licenses/by/4.0/)
-
-* Sticky https://github.com/garand/sticky, Copyright 2014-2016 Anthony Garand, [MIT](http://opensource.org/licenses/MIT)
 
 * WOW.js https://github.com/matthieua/WOW, [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
 
@@ -55,7 +49,6 @@ Orchid Store is distributed under the terms of the GNU GPL
 
 * Breadcrumbs Trail https://themehybrid.com/plugins/breadcrumb-trail, Copyright (c) 2008 - 2017, Justin Tadlock, [GPLv2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
-* Animate https://github.com/daneden/animate.css, Copyright (c) 2018 Daniel Eden, [MIT](http://opensource.org/licenses/MIT)
 
 * Select2 https://github.com/select2/select2, Copyright (c) 2012-2017 Kevin Brown, Igor Vaynberg, and Select2 contributors, [MIT](http://opensource.org/licenses/MIT)
 

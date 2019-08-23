@@ -1,4 +1,4 @@
-//  General Typo graphy setup
+//  General Typography setup
 
 body,
 button,
@@ -100,25 +100,15 @@ q {
     border:1px solid $primary_color;
 }
 
+q:before,
 blockquote:before,
-q:before {
+.wp-block-pullquote:before {
 
-    content: "\e67f";
-    font-family: 'themify';
+    content: "\ecff";
+    font-family: 'boxicons';
     position: absolute;
     left: 10px;
     top: 0px;
-    font-size: 24px;
-}
-
-blockquote:after,
-q:after {
-
-    content: "\e67e";
-    font-family: 'themify';
-    position: absolute;
-    right: 10px;
-    bottom: 0px;
     font-size: 24px;
 }
 
