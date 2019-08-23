@@ -113,15 +113,15 @@ body.boxed .__os-container__ {
 
 .entry-metas ul li.posted-by a:before {
 
-   content: "\eac7";
-   font-family: 'boxicons';
+   content: "\f007";
+   font-family: 'fontAwesome';
    padding-right:3px;
 }
 
 .entry-metas ul li.posted-date a:before {
     
-    content: "\eb16";
-    font-family: 'boxicons';
+    content: "\f017";
+    font-family: 'fontAwesome';
     padding-right:3px;
 }
 
@@ -771,7 +771,7 @@ section .section-title h3:after {
     line-height: 50px;
     width:60px;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 20px;
     border: 0;
     padding: 0;
     margin: 0;
@@ -1771,8 +1771,8 @@ body.no-sidebar .archive-entry article .content-col {
 .woocommerce-message:before,
 .woocommerce-error:before {
 
-    content: "\e81c";
-    font-family: "feather";
+    content: "\ea8d";
+    font-family: 'boxicons';
     display: inline-block;
     position: absolute;
     top: 15px;
@@ -1783,18 +1783,18 @@ body.no-sidebar .archive-entry article .content-col {
 
 .woocommerce-info::before {
     
-    content: "\e836";
+    content: "\ea8d";
     
 }
 
 .woocommerce-message::before {
 
-    content: "\e83e";
+    content: "\ebd6";
 }
 
 .woocommerce-error::before {
 
-    content: "\e81c";
+    content: "\ea3a";
 }
 
 .woocommerce-error a, 
@@ -1840,8 +1840,8 @@ body.no-sidebar .archive-entry article .content-col {
 
 .woocommerce-store-notice.demo_store:before {
 
-    content:'\e836';
-    font-family: "feather";
+    content: "\eafe";
+    font-family: 'boxicons';
     display:inline-block;
     margin-right: 10px;
 }

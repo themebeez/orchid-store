@@ -33,6 +33,17 @@ span.edit-link a:before {
     background:transparent; // wp recommeded classes, does nothing
 }
 
+// wp caption 
+
+.wp-caption {
+
+    color: inherit;
+}
+
+.wp-caption-text {
+
+    color: inherit;
+}
 
 
 /*
@@ -265,7 +276,7 @@ span.edit-link a:before {
 .comments-area .comment-body .comment-metadata a {
     
     display:inline-block;
-    font-style:italic;
+    font-style:normal;
     font-size:13px;
     font-weight:normal;
 }
@@ -278,15 +289,27 @@ span.edit-link a:before {
 
 .comments-area .comment-body .comment-metadata .edit-link {
 
-    padding-left:15px;
+    padding-left:3px;
 }
 
 .comments-area .comment-body .comment-metadata .edit-link:before {
 
-    content:'\f365';
-    font-family: "Ionicons";
+    content: "\f14b";
+    font-family: 'fontAwesome';
     padding-right:5px;
+    font-size: 13px;
 
+}
+
+.comments-area .comment-body .comment-metadata .edit-link a {
+
+    text-transform:capitalize;
+}
+
+.comments-area .comment-body .comment-metadata .edit-link a:before {
+
+    content:'';
+    display:none;
 }
 
 .comments-area .comment-body .reply a {
