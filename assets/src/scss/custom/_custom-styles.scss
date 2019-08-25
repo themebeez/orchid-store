@@ -423,12 +423,12 @@ section .section-title h3:after {
 .masterheader .mini-cart button {
     
     border:none;
-    font-size:18px;
+    font-size:23px;
     padding: 0;
     margin:0;
     width:35px;
     height:35px;
-    line-height:35px;
+    line-height:38px;
     @include border_radius(3px);
 
 }
@@ -713,9 +713,9 @@ section .section-title h3:after {
     
     display: inline-block;
     width: 45px;
-    line-height: 45px;
+    line-height: 50px;
     height: 45px;
-    font-size: 16px;
+    font-size: 22px;
     text-align:center;
     @include border-radius(3px);
 }
@@ -1740,8 +1740,8 @@ body.no-sidebar .archive-entry article .content-col {
     position:relative;
     border-top:none;
     margin:0;
-    padding: 15px 40px;
-    @include border-radius(3px);
+    padding: 12px 40px;
+    @include border-radius(1px);
 }
 
 .woocommerce-error {
@@ -1773,12 +1773,17 @@ body.no-sidebar .archive-entry article .content-col {
 
     content: "\ea8d";
     font-family: 'boxicons';
+    color:$white;
     display: inline-block;
     position: absolute;
-    top: 15px;
+    top: 50%;
     left: 15px;
     font-size: 15px;
-    color:$white;
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);    
 }
 
 .woocommerce-info::before {
@@ -1830,9 +1835,10 @@ body.no-sidebar .archive-entry article .content-col {
     margin: 0;
     width: 100%;
     list-style: none;
-    background-color: #1e9ff2;
-    line-height: 51px;
+    background-color: $woo-info-bar;
+    line-height:1.6;
     text-align:left;
+    padding: 14px 20px 14px 40px;
     -webkit-box-shadow: 0 2px 1px 0 rgba(0,0,0,.03);
     box-shadow: 0 2px 1px 0 rgba(0,0,0,.03);
 }
@@ -1840,10 +1846,17 @@ body.no-sidebar .archive-entry article .content-col {
 
 .woocommerce-store-notice.demo_store:before {
 
-    content: "\eafe";
+    content: "\e994";
     font-family: 'boxicons';
-    display:inline-block;
-    margin-right: 10px;
+    font-size: 20px;
+    position: absolute;
+    left:10px;
+    top:50%;
+    -webkit-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    -o-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    transform:translateY(-50%);
 }
 
 .woocommerce-store-notice.demo_store a {
@@ -1852,8 +1865,8 @@ body.no-sidebar .archive-entry article .content-col {
     display:inline-block;
     background-color: #0081D4;
     text-decoration:none;
-    padding-left:30px;
-    padding-right:30px;
+    padding: 14px 30px 14px 30px;
+    margin: -14px -20px -14px 20px;
 }
 
 .woocommerce .woocommerce-notice a.button,

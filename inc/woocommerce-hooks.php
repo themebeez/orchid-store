@@ -34,7 +34,7 @@ if( ! function_exists( 'orchid_store_wishlist_icon_action' ) ) {
         if( function_exists( 'YITH_WCWL' ) ) {
             ?>
             <div class="wishlist-icon-container">
-                <a href="<?php echo esc_url( home_url() . '/wishlist' ); ?>"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                <a href="<?php echo esc_url( home_url() . '/wishlist' ); ?>"><i class='bx bx-heart'></i></a>
             </div><!-- .wishlist-icon-container -->
             <?php
         }
@@ -54,7 +54,7 @@ if( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
 		?>
 		<div class="mini-cart">
             <button class="trigger-mini-cart">
-            	<i class='bx bxs-cart'></i>
+            	<i class='bx bx-cart'></i>
             </button><!-- .trigger-mini-cart -->
             <span class="cart-amount"><?php esc_html_e( 'Total:', 'orchid-store' ); ?>
 	            <span class="price">
