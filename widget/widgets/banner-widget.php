@@ -99,10 +99,11 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                             if( !empty( $banner_image_1 ) || !empty( $banner_image_2 ) ) {
                                 ?>
                                 <div class="os-col right-col">
+                                    <div class="banner-item-holder">
                                     <?php
                                     if( !empty( $banner_image_1 ) ) {
                                         ?>
-                                        <div class="banner-image-wrapper banner-image-one-wrapper imghover">
+                                        <div class="banner-image-wrapper banner-image-one-wrapper">
                                             <a href="#"><img src="<?php echo esc_url( $banner_image_1 ); ?>"></a>
                                         </div>
                                         <?php
@@ -110,12 +111,13 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
                                     if( !empty( $banner_image_2 ) ) {
                                         ?>
-                                        <div class="banner-image-wrapper banner-image-two-wrapper imghover">
+                                        <div class="banner-image-wrapper banner-image-two-wrapper">
                                             <a href="#"><img src="<?php echo esc_url( $banner_image_2 ); ?>"></a>
                                         </div>
                                         <?php
                                     }
                                     ?>
+                                    </div><!-- . banner-item-holder -->
                                 </div><!-- .os-col -->
                                 <?php
                             }
