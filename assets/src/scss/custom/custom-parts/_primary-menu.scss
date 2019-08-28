@@ -175,14 +175,69 @@
     border-bottom: none;
 }
 
-.sub-toggle,
-.menu-toggle {
 
-    display: none;
+// Menu drop down arrow 
+
+@media ( min-width: 992px) {
+
+
+    .sub-toggle {
+
+        display: block;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        right: 4px;
+        opacity: 0.8;
+        font-weight: normal;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        transform: translateY(-50%);
+        @include transation_delay();
+    }
+
+    .site-navigation>ul>li:hover .sub-toggle .fa {
+        
+        -moz-transform:rotate(-180deg);
+        -webkit-transform:rotate(-180deg);
+        transform:rotate(-180deg);
+        @include transation_delay();
+    }
+
+    .site-navigation ul li .sub-menu li .sub-toggle,
+    .site-navigation ul li .children li .sub-toggle {
+
+        color:$primary_color;
+        right:10px;
+        @include transation_delay_none();
+    }
+
+    .site-navigation ul li .sub-menu li:hover .sub-toggle,
+    .site-navigation ul li .children li:hover .sub-toggle {
+
+        color:$white;
+    }
+
+    .site-navigation ul li .sub-menu li .sub-toggle .fa,
+    .site-navigation ul li .children li .sub-toggle .fa {
+
+        -moz-transform:none;
+        -webkit-transform:none;
+        transform:none;
+    }
+
+    .site-navigation ul li .sub-menu li:hover .sub-toggle .fa,
+    .site-navigation ul li .children li:hover .sub-toggle .fa {
+
+        -moz-transform:rotate(-90deg);
+        -webkit-transform:rotate(-90deg);
+        transform:rotate(-90deg);
+    }
+
 }
 
 
-// mega menu
+// Mega Menu
 
 
 .site-navigation ul .menu-item-has-mega-children {
@@ -336,7 +391,3 @@ body.menu-toggle-active .menu-toggle span {
     width:30px;
 }
 
-.sub-toggle {
-
-    display: none; // large screen hide this
-}

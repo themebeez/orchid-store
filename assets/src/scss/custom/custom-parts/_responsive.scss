@@ -42,24 +42,6 @@
 	}
 }
 
-@media ( max-width:1050px ) { 
-
-
-	.header-style-1 .custom-search-entry .select-custom {
-
-		flex: 0 0 calc( 100% - 250px );
-    	max-width: calc( 100% - 250px );
-	}
-
-	.header-style-1 .custom-search-entry input {
-
-		flex:0 0 250px;
-		max-width:250px;
-	}
-
-
-}
-
 
 @media ( max-width:1024px ) { 
 
@@ -167,12 +149,15 @@
 
 
 	// Major spacing 
+	
+	.header-style-1 {
 
+		margin-bottom: 30px;
+	}
 
-	.section-spacing,
 	.os-breadcrumb-wrap {
 
-		padding:60px 0;
+		margin-top:-30px; // Same ratio as header
 	}
 
 	.footer.secondary-widget-area .widget {
@@ -412,7 +397,13 @@
     	line-height: 35px;
     	text-align: center;
     	background: #353535;
-    	cursor: pointer;  
+    	opacity:1;
+    	cursor: pointer;
+    	-webkit-transform:none;
+		-moz-transform:none;
+		-o-transform:none;
+		-ms-transform:none;
+		transform:none;  
 	}
 
 	.sub-toggle i {
@@ -428,6 +419,7 @@
    		-o-transition: all 0.8s ease;
     	transition: all 0.8s ease;
 	}
+	
 }
 
 
@@ -570,10 +562,22 @@
 		height:350px;
 	}
 
-	.section-spacing,
+	.section-spacing {
+
+		margin-bottom: 30px;
+	}
+
 	.cta-style-2.section-spacing {
 
 		padding:40px 0;
+	}
+
+	.cats-widget-style-1.section-spacing,
+	.product-widget-style-1.section-spacing,
+	.product-widget-style-3.section-spacing,
+	.os-blog-style-1.section-spacing {
+
+		margin-bottom: 0;
 	}
 
 	#yith-quick-view-modal.open .yith-wcqv-main {
@@ -777,11 +781,6 @@
 	.banner-style-1 .category-nav ul {
     
     	height: 225px;
-	}
-
-	.banner-style-1.section-spacing {
-    	
-    	padding: 30px 0;
 	}
 
 	.woocommerce ul.products[class*=columns-] li.product, 
@@ -1071,12 +1070,5 @@
 		padding:20px;
 	}
 
-	
-}
-
-@media ( max-width: 330px) {
-
-	
-	
 	
 }

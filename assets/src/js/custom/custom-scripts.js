@@ -110,43 +110,6 @@
         });
 
 
-
-        /*
-        =========================
-        = Nice scroll for category nav
-        ==================================
-        */
-
-
-        $("#menu-category-menu").removeClass("overflow-hidden");
-
-        $("#menu-category-menu").addClass("overflow-visible");
-
-
-        // nicescroll for category lists
-
-        $("#menu-category-menu").niceScroll({
-
-            cursorcolor: "#FFCA04",
-            cursorwidth: "2px",
-            cursorborder: "transparent",
-            cursorborderradius: "0px",
-        });
-
-
-        // nicescroll for niceselect header
-
-
-        $(".masterheader .nice-select .list").niceScroll({
-
-            cursorcolor: "transparent",
-            cursorwidth: "0px",
-            cursorborder: "transparent",
-            cursorborderradius: "0px",
-        });
-
-
-
         /*
         ============================
         = Mini cart toggle
@@ -179,9 +142,9 @@
 
         });
 
-        $('#site-navigation .menu-item-has-children').append('<span class="sub-toggle"> <i class="fa fa-caret-down" aria-hidden="true"></i> </span>');
+        $('#site-navigation .menu-item-has-children').append('<span class="sub-toggle"> <i class="fa fa-angle-down"></i> </span>');
 
-        $('#site-navigation .page_item_has_children').append('<span class="sub-toggle"> <i class="fa fa-caret-down" aria-hidden="true"></i> </span>');
+        $('#site-navigation .page_item_has_children').append('<span class="sub-toggle"> <i class="fa fa-angle-down"></i> </span>');
 
 
         $('#site-navigation .sub-toggle').on('click', function() {
@@ -194,11 +157,11 @@
 
             if ($(this).hasClass('active-submenu')) {
 
-                $(this).find('.fa').removeClass('fa-caret-down').addClass('fa-caret-up');
+                $(this).find('.fa').removeClass('fa-angle-down').addClass('fa-angle-up');
 
             } else {
 
-                $(this).find('.fa').removeClass('fa-caret-up').addClass('fa-caret-down');
+                $(this).find('.fa').removeClass('fa-angle-up').addClass('fa-angle-down');
             }
 
         });

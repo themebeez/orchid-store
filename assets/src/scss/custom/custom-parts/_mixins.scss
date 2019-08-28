@@ -20,6 +20,15 @@
     transition: all 1.5s ease;
 }
 
+@mixin transation_delay_none () {
+
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+   	-o-transition: none;
+    transition: none;
+}
+
 // hover scale 
 
 @mixin scale () {

@@ -29,7 +29,6 @@ Orchid Store is distributed under the terms of the GNU GPL
 
 * iziToast https://github.com/marcelodolza/iziToast, Marcelo Dolce, [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
-* nicescroll https://github.com/inuyaksa/jquery.nicescroll, Copyright (c) 2011-17 InuYaksa, [MIT](https://opensource.org/licenses/mit-license.php)
 
 * Owl Carousel https://github.com/OwlCarousel2/OwlCarousel2, Copyright 2013-2018 David Deutsch, [MIT](https://opensource.org/licenses/mit-license.php)
 
