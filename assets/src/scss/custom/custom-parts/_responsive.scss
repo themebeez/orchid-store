@@ -85,7 +85,8 @@
 	.woocommerce .entry-title,
 	.archive-page-wrap .entry-title,
 	.default-page-wrap .entry-title,
-	.default-post-wrap .entry-title  {
+	.default-post-wrap .entry-title,
+	.masterheader .site-title  {
 
 		font-size:28px;
 	}
@@ -225,7 +226,13 @@
 
 @media ( max-width: 991px) {
 
+	// font size 
 
+
+	.masterheader .site-title {
+
+		font-size: 24px;
+	}
 
 	// Layout 
 
@@ -522,21 +529,17 @@
 		font-size:22px;
 	}
 
+	.masterheader .site-title {
+
+		font-size: 20px;
+	}
+
 
 	// Layout 
 	
-	.header-style-1 .logo-col {
-
-		flex:0 0 40%;
-		max-width:40%;
-	}
-
-	.header-style-1 .extra-col {
-
-		flex:0 0 60%;
-		max-width:60%;
-	}
-
+	
+	.header-style-1 .logo-col,
+	.header-style-1 .extra-col,
 	.cta-style-1 [class*="col-"] {
 
 		flex:0 0 50%;
@@ -562,7 +565,8 @@
 		height:350px;
 	}
 
-	.section-spacing {
+	.section-spacing,
+	.product-widget-style-3 .owl-carousel .owl-dots {
 
 		margin-bottom: 30px;
 	}
@@ -741,6 +745,11 @@
 	section .section-title h3 {
 
 		font-size: 20px;
+	}
+
+	.masterheader .site-title {
+
+		font-size: 18px;
 	}
 	
 
@@ -945,6 +954,11 @@
 	.comment-respond .comment-reply-title {
 
 		 font-size: 18px;
+	}
+
+	.masterheader .site-title {
+
+		font-size: 17px;
 	}
 
 

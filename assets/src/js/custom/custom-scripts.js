@@ -185,6 +185,10 @@
 
         });
 
+        $('.category-navigation .menu-item-has-children').append('<span class="sub-toggle"> <i class="fa fa-angle-right"></i> </span>');
+
+        $('.category-navigation .page_item_has_children').append('<span class="sub-toggle"> <i class="fa fa-angle-right"></i> </span>');
+
 
         /*
         ===========================
