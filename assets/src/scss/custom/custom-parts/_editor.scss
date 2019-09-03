@@ -450,25 +450,32 @@
 
     // gutenberg widgets
 
+
+
+
     .wp-block-categories-list,
     .wp-block-latest-posts,
     .wp-block-archives,
-    .wp-block-latest-comments {
+    .wp-block-latest-comments,
+    .wc-block-product-categories.is-list {
 
         background:#333333;
         padding:30px 15px 30px 50px;
     }
+    
 
     .wp-block-categories-list,
     .wp-block-latest-posts li,
     .wp-block-archives li,
     .wp-block-latest-comments__comment-meta,
     .wp-block-latest-comments__comment-meta a,
-    .wp-block-latest-comments__comment-excerpt p {
+    .wp-block-latest-comments__comment-excerpt p,
+    .wc-block-product-categories ul li {
 
         color:#d8d8d8;
     }
-
+    
+    .wc-block-product-categories ul li a,
     .wp-block-categories .cat-item a,
     .wp-block-latest-posts li a,
     .wp-block-archives li a {
@@ -480,7 +487,8 @@
 
     .wp-block-categories .cat-item a:hover,
     .wp-block-latest-posts li a:hover,
-    .wp-block-archives li a:hover {
+    .wp-block-archives li a:hover,
+    .wc-block-product-categories ul li a:hover {
 
         color:#ffffff;
     }
@@ -537,6 +545,24 @@
         padding:18px 50px;
         line-height:1;
         font-size:16px;
+    }
+
+    // woocommerce category block
+    
+    .wc-block-product-categories {
+
+        margin-bottom: 30px;
+    }
+    
+    .wc-block-product-categories.is-list {
+
+        padding:30px 40px;
+    }
+
+    .wc-block-product-categories ul {
+
+        padding:0;
+        margin: 0;
     }
 }
 

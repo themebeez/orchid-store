@@ -89,6 +89,7 @@ section .section-title h3,
 .mini-cart-open .price,
 .woocommerce div.product p.price, 
 .woocommerce div.product span.price,
+.wc-block-grid .woocommerce-Price-amount,
 .mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list span.quantity,
 .mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list .woocommerce-Price-amount {
 
@@ -109,6 +110,10 @@ section .section-title h3,
 	line-height: 1.1;
 }
 
+.wc-block-grid__product-title {
+
+	line-height:1.6;
+}
 
 
 // font weights
