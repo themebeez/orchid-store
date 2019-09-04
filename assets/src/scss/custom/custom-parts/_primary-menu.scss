@@ -237,124 +237,6 @@
 }
 
 
-// Mega Menu
-
-
-.site-navigation ul .menu-item-has-mega-children {
-
-    position:static;
-}
-
-.site-navigation ul li .sub-menu.mega-sub-menu, 
-.site-navigation ul li .children.mega-sub-menu {
-
-    display:none;
-    flex-direction: row;
-    flex-wrap:wrap;
-    padding: 20px 15px 10px 15px;
-    max-width:1170px;
-    width:100%;
-    opacity:0;
-    margin:0 15px;
-} 
-
-.site-navigation ul li:hover>.sub-menu.mega-sub-menu, 
-.site-navigation ul li:hover>.children.mega-sub-menu {
-
-    display:flex;
-    opacity:1;
-}
-
-.site-navigation ul li .sub-menu.mega-sub-menu > li, 
-.site-navigation ul li .children.mega-sub-menu > li {
-
-    flex:0 0 33.33%;
-    max-width:33.33%;
-    padding-left:15px;
-    padding-right: 15px;
-}
-
-
-.site-navigation ul li .sub-menu.mega-sub-menu.column-1 > li, 
-.site-navigation ul li .children.mega-sub-menu.column-1 > li {
-
-    flex:0 0 100%;
-    max-width:100%;
-}
-
-.site-navigation ul li .sub-menu.mega-sub-menu.column-2 > li, 
-.site-navigation ul li .children.mega-sub-menu.column-2 > li {
-
-    flex:0 0 50%;
-    max-width:50%;
-}
-
-.site-navigation ul li .sub-menu.mega-sub-menu.column-3 > li, 
-.site-navigation ul li .children.mega-sub-menu.column-3 > li {
-
-    flex:0 0 33%;
-    max-width:33.33%;
-}
-
-.site-navigation ul li .sub-menu.mega-sub-menu.column-4 > li, 
-.site-navigation ul li .children.mega-sub-menu.column-4 > li {
-
-    flex:0 0 25%;
-    max-width:25%;
-}
-
-.site-navigation ul li .sub-menu.mega-sub-menu.column-5 > li, 
-.site-navigation ul li .children.mega-sub-menu.column-5 > li {
-
-    flex:0 0 20%;
-    max-width:20%;
-}
-
-.site-navigation .mega-title-title span {
-
-    display:block;
-    font-weight:bold;
-    text-transform:uppercase;
-    margin-bottom: 10px;
-    font-size:14px;
-    color:$special_purpose_color;
-}
-
-.site-navigation ul li .sub-menu.mega-sub-menu li a, 
-.site-navigation ul li .children.mega-sub-menu li a {
-
-    padding: 0;
-    border:none;
-}
-
-.site-navigation ul li .sub-menu.mega-sub-menu .mega-items-entry li a, 
-.site-navigation ul li .children.mega-sub-menu .mega-items-entry li a {
-    
-    padding:10px 0;
-    border-bottom: 1px solid $border_color;
-}
-
-.site-navigation ul li .sub-menu.mega-sub-menu .mega-items-entry li:last-child a, 
-.site-navigation ul li .children.mega-sub-menu .mega-items-entry li:last-child a {
-
-    border-bottom: none;
-}
-
-.site-navigation ul li .mega-sub-menu li a:hover {
-
-    background:transparent;
-    color:$secondary_color;
-}
-
-
-.site-navigation .menu-item-has-mega-children .divider {
-    
-    display:block;
-    height:1px;
-    background:#eeeeee;
-}
-
-
 // toggle menu 
 
 .menu-toggle {
@@ -390,4 +272,170 @@ body.menu-toggle-active .menu-toggle span {
 
     width:30px;
 }
+
+
+
+
+// Mega Menu Drop down
+
+
+.site-navigation ul .menu-item-has-mega-children {
+    
+    position: unset; // fallback for static
+    position:static;
+}
+
+
+// Common difference from other normal menu drop down
+
+
+.site-navigation ul li .sub-menu.mega-menu-sub-menu li a {
+
+    border:none;
+    padding:0;
+}
+
+.site-navigation ul li .sub-menu.mega-menu-sub-menu li a:hover {
+
+    background-color:transparent;
+    color:$third_color;
+}
+
+.site-navigation ul .menu-item-has-mega-children .sub-toggle {
+
+    display:none;
+}
+
+// 1st dept
+
+.site-navigation .menu-item-has-mega-children .mega-menu-sub-menu, 
+.site-navigation .menu-item-has-mega-children .mega-menu-sub-menu {
+
+    display:none;
+    opacity:0;
+    flex-direction: row;
+    flex-wrap:wrap;
+    visibility:hidden;
+    width:100%;
+    height: auto;
+    margin:0;
+    padding: 30px 15px 0 15px;
+    background-color:$white;
+    -ms-box-shadow: 0px 0px 65px rgba(0,0,0,0.1);
+    -o-box-shadow: 0px 0px 65px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 65px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0px 0px 65px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 65px rgba(0,0,0,0.1);
+
+    // Mega menu parent ul class name "mega-menu-sub-menu" drop down
+} 
+
+.site-navigation ul li:hover>.sub-menu.mega-menu-sub-menu, 
+.site-navigation ul li:hover>.children.mega-menu-sub-menu {
+
+    display:flex;
+    opacity:1;
+    visibility:visible;
+
+    // Mega menu parent ul class name "mega-menu-sub-menu" drop down
+}
+
+.site-navigation ul .mega-menu-sub-menu.menu-depth-1 > li.menu-item-has-children {
+
+    flex:0 0 25%;
+    max-width:25%;
+    padding-left:15px;
+    padding-right: 15px;
+    margin-bottom: 30px;
+
+    // Mega menu parent ul li class name "mega-sub-menu-group"
+}
+
+// Columns 
+
+.site-navigation ul .mega-menu-sub-menu.mega-menu-column-1 > li.menu-item-has-children {
+
+    flex:0 0 100%;
+    max-width:100%;
+}
+
+.site-navigation ul .mega-menu-sub-menu.mega-menu-column-2 > li.menu-item-has-children {
+
+    flex:0 0 50%;
+    max-width:50%;
+}
+
+.site-navigation ul .mega-menu-sub-menu.mega-menu-column-3 > li.menu-item-has-children {
+
+    flex:0 0 33.33%;
+    max-width:33.33%;
+}
+
+.site-navigation ul .mega-menu-sub-menu.mega-menu-column-4 > li.menu-item-has-children {
+
+    flex:0 0 25%;
+    max-width:25%;
+}
+
+.site-navigation ul .mega-menu-sub-menu.mega-menu-column-5 > li.menu-item-has-children {
+
+    flex:0 0 20%;
+    max-width:20%;
+}
+
+.site-navigation ul .mega-menu-sub-menu.mega-menu-column-6 > li.menu-item-has-children {
+
+    flex:0 0 16.66%;
+    max-width:16.66%;
+}
+
+// Mega item sub group title 
+
+.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group > a {
+
+    font-weight:500;
+    margin-bottom: 20px;
+}
+
+.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group .sub-toggle {
+
+    display:none;
+}
+
+// 2nd level drop down
+
+.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group ul.sub-menu {
+
+    position: relative;
+    display:block;
+    opacity:1;
+    visibility:visible;
+    left:unset;
+    right:unset;
+    bottom:unset;
+    top:unset;
+    box-shadow: none;
+    transition:none;
+    z-index:inherit;
+    background:transparent;
+    min-width:inherit;
+}
+
+
+.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group ul li a {
+
+    padding:8px 0;
+}
+
+.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group ul li:first-child a {
+
+    padding-top: 0;
+}
+
+.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group ul li:last-child a {
+
+    padding-bottom: 0;
+}
+
+
 
