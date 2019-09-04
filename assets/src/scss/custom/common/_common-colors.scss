@@ -151,7 +151,8 @@ input[type="password"],
 .search-form button,
 .entry-404 h1 span,
 .banner-style-1 .caption span,
-.product-widget-style-2 .tab-nav ul li a.active {
+.product-widget-style-2 .tab-nav ul li a.active,
+.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group > a {
 
 	color:$secondary_color;
 }
@@ -195,7 +196,8 @@ a:hover,
 .footer .widget_nav_menu ul li a:hover, 
 .footer .widget_rss .widget_title h3 a:hover, 
 .footer .widget_tag_cloud .tagcloud a:hover,
-.wc-block-grid .wc-block-grid__product-title:hover {
+.wc-block-grid .wc-block-grid__product-title:hover,
+.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group > a:hover {
 
 	color:$third_color; // Hover colour
 }
