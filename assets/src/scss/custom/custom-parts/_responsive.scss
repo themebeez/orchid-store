@@ -341,7 +341,9 @@
 	.site-navigation ul li .sub-menu, 
 	.site-navigation ul li .children,
 	.site-navigation ul li .sub-menu ul, 
-	.site-navigation ul li .children ul {
+	.site-navigation ul li .children ul,
+	.site-navigation .menu-item-has-mega-children .mega-menu-sub-menu, 
+	.site-navigation .menu-item-has-mega-children .mega-menu-sub-menu {
 		
 		position: relative;
 		z-index: inherit;
@@ -369,7 +371,12 @@
 	}
 
 	.site-navigation ul li .sub-menu li a, 
-	.site-navigation ul li .children li a {
+	.site-navigation ul li .children li a,
+	.site-navigation ul li .sub-menu.mega-menu-sub-menu li a,
+	.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group>a,
+	.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group ul li a,
+	.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group ul li:last-child a,
+	.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group ul li:first-child a {
 		
 		color:$white;
 		border-bottom: 1px solid rgba(255,255,255,0.3);
@@ -378,13 +385,16 @@
 	}
 
 	.site-navigation ul li .sub-menu li a:hover, 
-	.site-navigation ul li .children li a:hover {
+	.site-navigation ul li .children li a:hover,
+	.site-navigation .menu-item-has-mega-children .mega-menu-sub-menu li a:hover {
 
 		background-color:transparent;
 	}
 
 	.site-navigation ul li:hover>.sub-menu, 
-	.site-navigation ul li:hover>.children {
+	.site-navigation ul li:hover>.children,
+	.site-navigation ul li:hover>.sub-menu.mega-menu-sub-menu, 
+	.site-navigation ul li:hover>.children.mega-menu-sub-menu {
 		
 		display:none;
 		animation:none;
@@ -433,6 +443,50 @@
    		-o-transition: all 0.8s ease;
     	transition: all 0.8s ease;
 	}
+
+	// Mega menu 
+	
+	.site-navigation .menu-item-has-mega-children .mega-menu-sub-menu {
+		
+		display:none;
+		padding:0;
+	}
+
+	.site-navigation ul .menu-item-has-mega-children {
+
+		position: relative;
+	}
+
+	.site-navigation ul .mega-menu-sub-menu.menu-depth-1>li.menu-item-has-children {
+
+		margin-bottom: 0;
+	}
+
+	.site-navigation ul li .sub-menu.mega-menu-sub-menu li a {
+
+		margin:0;
+	}
+
+	.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group>a {
+
+		font-weight:normal;
+	}
+
+	.site-navigation ul .menu-item-has-mega-children .sub-toggle {
+
+		display:block;
+	}
+
+	.site-navigation ul .mega-menu-sub-menu.mega-menu-column-4>li.menu-item-has-children {
+
+		flex:unset;
+		max-width:100%;
+		width:100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	
 	
 }
 
