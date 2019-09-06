@@ -52,7 +52,6 @@ if ( ! function_exists( 'orchid_store_setup' ) ) :
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary Menu', 'orchid-store' ),
 			'menu-2' => esc_html__( 'Secondary Menu', 'orchid-store' ),
-			'menu-3' => esc_html__( 'Products Menu', 'orchid-store' ),
 		) );
 
 		/*
@@ -82,8 +81,9 @@ if ( ! function_exists( 'orchid_store_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 270,
-			'width'       => 80,
+
+			'height'      => 250,
+			'width'       => 70,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
