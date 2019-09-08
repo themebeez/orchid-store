@@ -1,22 +1,22 @@
 <?php
 /**
- * Display Products In Grid Widget Class
+ * Products Widget Class
  *
  * @package Orchid_Store
  */
 
-if( ! class_exists( 'Orchid_Store_Products_Grid_Widget' ) ) {
+if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
 
-    class Orchid_Store_Products_Grid_Widget extends WP_Widget {
+    class Orchid_Store_Products_Widget extends WP_Widget {
      
         function __construct() { 
 
             parent::__construct(
-                'orchid-store-products-grid-widget',
+                'orchid-store-products-widget',
                 esc_html__( 'OS: Products', 'orchid-store' ),
                 array(
                     'classname'     => '',
-                    'description'   => esc_html__( 'Displays products in grid.', 'orchid-store' ), 
+                    'description'   => esc_html__( 'Displays products.', 'orchid-store' ), 
                 )
             );     
         }
