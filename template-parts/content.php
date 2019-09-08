@@ -25,19 +25,25 @@ if( is_archive() ) {
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="os-row">
-        <div class="os-col thumb-col">
-            <div class="thumb imghover">
-                <a href="<?php the_permalink(); ?>">
-                	<?php 
-                	the_post_thumbnail( 'orchid-store-thumbnail-extra-large', array(
-						'alt' => the_title_attribute( array(
-							'echo' => false,
-						) ),
-					) ); 
-					?>
-			</a>
-            </div><!-- .thumb.imghover -->
-        </div><!-- .os-col.thumb-col -->
+        <?php
+        if( has_post_thumbnail() ) {
+            ?>
+            <div class="os-col thumb-col">
+                <div class="thumb imghover">
+                    <a href="<?php the_permalink(); ?>">
+                    	<?php 
+                    	the_post_thumbnail( 'orchid-store-thumbnail-extra-large', array(
+    						'alt' => the_title_attribute( array(
+    							'echo' => false,
+    						) ),
+    					) ); 
+    					?>
+    			</a>
+                </div><!-- .thumb.imghover -->
+            </div><!-- .os-col.thumb-col -->
+            <?php
+        }
+        ?>
         <div class="os-col content-col">
             <div class="box">
                 <?php

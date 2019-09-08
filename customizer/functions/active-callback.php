@@ -21,3 +21,22 @@ if( ! function_exists( 'orchid_store_active_top_header' ) ) {
 		}		
 	}
 }
+
+
+
+/**
+ * Active callback function for when static home page is set.
+ */
+if( ! function_exists( 'orchid_store_is_static_home_page_set' ) ) {
+
+	function orchid_store_is_static_home_page_set( $control ) {
+
+		if ( $control->manager->get_setting( 'show_on_front' )->value() == 'page' ) {
+
+			return true;
+		} else {
+			
+			return false;
+		}		
+	}
+}
