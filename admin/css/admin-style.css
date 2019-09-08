@@ -119,9 +119,9 @@ span.sldr-elmnt-cntnr span.sldr-elmnt-btn-wrapper-show .sldr-elmnt-btn-title {
 
 	display: block;
 	padding: 5px;
-	text-align: center;
 	background: #f5f5f5;
 	border: 1px solid #eeeeee;
+	overflow: auto;
 }
 
 .os-fields {

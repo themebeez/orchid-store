@@ -85,9 +85,7 @@ function orchid_store_widgets_init() {
 
 		register_widget( 'Orchid_Store_Products_Filter_Widget' );
 
-		register_widget( 'Orchid_Store_Products_Grid_Widget' );
-
-		register_widget( 'Orchid_Store_Products_Carousel_Widget' );
+		register_widget( 'Orchid_Store_Products_Widget' );
 	}
 }
 add_action( 'widgets_init', 'orchid_store_widgets_init' );
@@ -127,12 +125,7 @@ if( class_exists( 'Woocommerce' ) ) {
 	require get_template_directory() . '/widget/widgets/products-filter.php';
 
 	/**
-	 * Widget to display products in grid.
+	 * Widget to display products.
 	 */
-	require get_template_directory() . '/widget/widgets/products-grid.php';
-
-	/**
-	 * Widget to display products in carousel.
-	 */
-	require get_template_directory() . '/widget/widgets/products-slider.php';
+	require get_template_directory() . '/widget/widgets/products-widget.php';
 }
