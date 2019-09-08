@@ -115,6 +115,8 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
             $defaults['orchid_store_field_cross_sell_product_col_no'] = 3;
         }
 
+        $defaults['orchid_store_field_enable_home_content'] = false;
+
         return $defaults;
     }
 }

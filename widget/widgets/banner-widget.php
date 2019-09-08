@@ -12,11 +12,11 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
         function __construct() { 
 
             parent::__construct(
-                'orchid-store-product-categories-slider-widget',
+                'orchid-store-banner-widget',
                 esc_html__( 'OS: Banner', 'orchid-store' ),
                 array(
-                    'classname'     => 'general-banner banner-style-1 section-spacing',
-                    'description'   => esc_html__( 'Displays product categories and slider', 'orchid-store' ), 
+                    'classname'     => '',
+                    'description'   => esc_html__( 'Displays main slider', 'orchid-store' ), 
                 )
             );     
         }
@@ -152,101 +152,49 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
             <p>
                 <span class="sldr-elmnt-title"><strong><?php esc_html_e( 'Slider Elements', 'orchid-store' ); ?></strong></span>
-                <span class="sldr-elmnt-desc"><?php esc_html_e( 'Below are the list of pages. Check on a page to set is as slider item and set button title and button link.', 'orchid-store' ) ?></span>
 
-                <span class="widget_multicheck">
                 <?php
-
                 $page_choices = orchid_store_all_pages();
 
-                if( !empty( $page_choices ) ) {
-
-                    $total_pages_count = 0;
-
-                	if( !empty( $instance['slider_pages'] ) ) {
-
-                        $total_pages_count = count( $instance['slider_pages'] );
-                    }
-
-                    $loop_count = 0;
-
-                    foreach( $page_choices as $page_key => $page_value ) {
-
-                    	$btn_wrapper_class = 'sldr-elmnt-btn-wrapper';
-
-                    	if( !empty( $instance['slider_pages'] ) ) {
- 
-	                    	if( in_array( $page_key, $instance['slider_pages'] ) ) {
-	                    		$btn_wrapper_class .= ' sldr-elmnt-btn-wrapper-show';
-	                    	} else {
-	                    		$btn_wrapper_class .= ' sldr-elmnt-btn-wrapper-hide';
-	                    	}
-	                    } else {
-	                    	$btn_wrapper_class .= ' sldr-elmnt-btn-wrapper-hide';
-	                    }
-	                    ?>
-	                    <span class="sldr-elmnt-cntnr">
-                            <input class="sldr-elmnt-page" id="<?php echo esc_attr( $this->get_field_id( 'slider_pages' ) . $page_key ); ?>" name="<?php echo esc_attr( $this->get_field_name('slider_pages') ); ?>[]" type="checkbox" value="<?php echo esc_attr( $page_key ); ?>" <?php if( !empty( $instance['slider_pages'] ) ) { if( in_array( $page_key, $instance['slider_pages'] ) ) { ?>checked<?php } } ?>>
-	                    	<label for="<?php echo esc_attr( $this->get_field_id( 'slider_pages' ) . $page_key ); ?>">	                    		
-	                    		<strong><?php echo esc_html( $page_value ); ?></strong>
-	                    	</label>
-                            
-                            <?php
-                            if( in_array( $page_key, $instance['slider_pages'] ) ) {
-                                ?>
-                                <span class="<?php echo esc_attr( $btn_wrapper_class ); ?>">			                    
-                                    <span class="sldr-elmnt-btn-title">
-                                        <label for="<?php echo esc_attr( $this->get_field_id( 'button_titles' ) . $page_key ); ?>"><strong><?php esc_html_e( 'Button Title', 'orchid-store' ); ?></strong></label>
-                                        <input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'button_titles' ) . $page_key ); ?>" name="<?php echo esc_attr( $this->get_field_name('button_titles') ); ?>[]" value="<?php if( !empty( $instance['button_titles']) ) { echo esc_attr( $instance['button_titles'][$loop_count] ); } ?>">
-                                    </span><!-- .sldr-elmnt-btn-title -->
-
-                                    <span class="sldr-elmnt-btn-link">
-                                        <label for="<?php echo esc_attr( $this->get_field_id( 'button_links' ) . $page_key ); ?>"><strong><?php esc_html_e( 'Button Link', 'orchid-store' ); ?></strong></label>
-                                        <input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'button_links' ) . $page_key ); ?>" name="<?php echo esc_attr( $this->get_field_name('button_links') ); ?>[]" value="<?php if( !empty( $instance['button_links'] ) ) { echo esc_attr( $instance['button_links'][$loop_count] ); } ?>">
-                                    </span><!-- .sldr-elmnt-btn-link -->
-
-			                    </span><!-- sldr-elmnt-btn-wrapper -->  
-                                <?php
-                            } else {
-                                ?>
-                                <span class="<?php echo esc_attr( $btn_wrapper_class ); ?> os-temp-sldr-fields">  
-                                    <?php // Hidden fields to store original name attribute values of button title and link. ?>
-                                    <input type="hidden" class="original-button-title-name" value="<?php echo esc_attr( $this->get_field_name('button_titles') ); ?>[]">
-                                    <input type="hidden" class="original-button-link-name" value="<?php echo esc_attr( $this->get_field_name('button_links') ); ?>[]">
-                                    
-                                    <span class="sldr-elmnt-btn-title">
-                                        <label for="<?php echo esc_attr( $this->get_field_id( 'button_titles' ) . $page_key ); ?>"><strong><?php esc_html_e( 'Button Title', 'orchid-store' ); ?></strong></label>
-                                        <input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'button_titles' ) . $page_key ); ?>" name="temp_button_titles" value="">
-                                    </span><!-- .sldr-elmnt-btn-title -->
-
-                                    <span class="sldr-elmnt-btn-link">
-                                        <label for="<?php echo esc_attr( $this->get_field_id( 'button_links' ) . $page_key ); ?>"><strong><?php esc_html_e( 'Button Link', 'orchid-store' ); ?></strong></label>
-                                        <input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'button_links' ) . $page_key ); ?>" name="temp_button_links" value="">
-                                    </span><!-- .sldr-elmnt-btn-link -->
-                                </span><!-- sldr-elmnt-btn-wrapper -->  
-                                <?php
-                            }
-                            ?>                          
-		                </span><!-- .sldr-elmnt-cntnr -->
-		                <?php
-                        if( !empty( $instance['slider_pages'] ) ) {
-
-                            if( in_array( $page_key, $instance['slider_pages'] ) ) {
-
-                                $loop_count++;
-                            }
-                        }
-	                }                    
-                } else {
+                for( $i = 0; $i <= 2; $i++ ) {
                     ?>
-                    <input id="<?php echo esc_attr( $this->get_field_id( 'slider_pages' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name('slider_pages') ); ?>[]" type="hidden" value="" checked>
-                    <input id="<?php echo esc_attr( $this->get_field_id( 'button_titles' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name('button_titles') ); ?>[]" type="hidden" value="">
-                    <input id="<?php echo esc_attr( $this->get_field_id( 'button_links' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name('button_links') ); ?>[]" type="hidden" value="">
-                    <small><?php echo esc_html__( 'No pages to select.', 'orchid-store' ); ?></small>
+                    <p>
+                        <span class="os-fields-wrapper">
+                            <span class="os-fields-wrapper-title">
+                                <strong>
+                                    <?php
+                                    /* translatosr: %s: slider item number */
+                                    printf( esc_html__( 'Slider Item %s', 'orchid-store' ), $i+1 );
+                                    ?>
+                                </strong>
+                            </span>
+                            <span class="os-fields">
+                                <label for="<?php echo esc_attr( $this->get_field_id( 'slider_pages' ) . $i ); ?>"><strong><?php esc_html_e( 'Select Page', 'orchid-store' ); ?></strong></label>
+                                <select class="widefat" name="<?php echo esc_attr( $this->get_field_name('slider_pages') ); ?>[]" id="<?php echo esc_attr( $this->get_field_id( 'slider_pages' ) . $i ); ?>">
+                                    <?php
+                                    foreach( $page_choices as $page_slug => $page_title ) {
+                                        ?>
+                                        <option value="<?php echo esc_attr( $page_slug ); ?>" <?php selected( $page_slug, $instance['slider_pages'][$i] ); ?>><?php echo esc_html( $page_title ); ?></option>
+                                        <?php
+                                    }
+                                    ?>
+                                </select>
+
+                                <label for="<?php echo esc_attr( $this->get_field_id( 'button_titles' ) . $i ); ?>">
+                                    <strong><?php esc_html_e( 'Button Title', 'orchid-store' ); ?></strong>
+                                </label>
+                                <input class="widefat" type="text" id="<?php echo esc_attr( $this->get_field_id( 'button_titles' ) . $i ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_titles' ) ); ?>[]" value="<?php echo esc_attr( $instance['button_titles'][$i] ) ?>">
+
+                                 <label for="<?php echo esc_attr( $this->get_field_id( 'button_links' ) . $i ); ?>">
+                                    <strong><?php esc_html_e( 'Button Link', 'orchid-store' ); ?></strong>
+                                </label>
+                                <input class="widefat" type="text" id="<?php echo esc_attr( $this->get_field_id( 'button_links' ) . $i ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_links' ) ); ?>[]" value="<?php echo esc_attr( $instance['button_links'][$i] ) ?>">
+                            </span>
+                        </span>
+                    </p>
                     <?php
                 }
                 ?>
-                </span>
             </p>
 
             <p>

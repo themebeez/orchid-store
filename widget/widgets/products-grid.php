@@ -13,7 +13,7 @@ if( ! class_exists( 'Orchid_Store_Products_Grid_Widget' ) ) {
 
             parent::__construct(
                 'orchid-store-products-grid-widget',
-                esc_html__( 'OS: Product Grid', 'orchid-store' ),
+                esc_html__( 'OS: Products', 'orchid-store' ),
                 array(
                     'classname'     => '',
                     'description'   => esc_html__( 'Displays products in grid.', 'orchid-store' ), 
@@ -26,6 +26,8 @@ if( ! class_exists( 'Orchid_Store_Products_Grid_Widget' ) ) {
             $title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
             $product_category = $instance['product_category'];
             $no_of_products = $instance['no_of_products'];
+            $products_by = $instance['products_by'];
+            $display_layout = $instance['display_layout'];
 
             $product_query_args = array(
                 'post_type' => 'product',
@@ -37,56 +39,145 @@ if( ! class_exists( 'Orchid_Store_Products_Grid_Widget' ) ) {
                 $product_query_args['posts_per_page'] = 4;
             }
 
+            if( $products_by == 'onsale' ) {
+
+                $product_on_sale    = wc_get_product_ids_on_sale();
+
+
+            }
+
             if( $product_category != '0' ) {
-                $product_query_args['tax_query'] = array(
+                $product_query_args['tax_query'][] = array(
                     array(
                         'taxonomy'  => 'product_cat',
                         'field'     => 'slug',
-                        'terms'     => $product_category,
+                        'terms'     => $product_category
                     )
                 );
+            }
+
+            switch( $products_by ) {
+
+                case 'rated' :
+
+                        $product_query_args['meta_key']       = '_wc_average_rating';
+                        $product_query_args['orderby']        = 'meta_value_num';
+                        $product_query_args['order']          = 'DESC';
+
+                    break;
+
+                case 'featured' :
+
+                    $product_query_args['tax_query'][] = array(
+
+                        'taxonomy' => 'product_visibility',
+                        'field'    => 'name',
+                        'terms'    => 'featured',
+                        'operator' => 'AND',
+                    );
+
+                    break;
+
+                case 'onsale' :
+
+                    $product_on_sale    = wc_get_product_ids_on_sale();
+
+                    if( !empty( $product_on_sale ) ){
+
+                        $product_query_args['post__in'] = $product_on_sale;
+                    }
+                    break;
+
+                default :
+
+                    break;
             }
 
             $product_query = new WP_Query( $product_query_args );
 
             if( $product_query->have_posts() ) {
-                ?>
-                <section class="product-widget product-widget-style-1 section-spacing">
-                    <div class="section-inner">
-                        <div class="__os-container__">
-                            <div class="widget-entry">
+
+                if( $display_layout == 'grid' ) {
+                    ?>
+                    <section class="product-widget product-widget-style-1 section-spacing">
+                        <div class="section-inner">
+                            <div class="__os-container__">
+                                <div class="widget-entry">
+                                    <?php
+                                    if( !empty( $title ) ) {
+                                        ?>
+                                        <div class="section-title">
+                                            <h2><?php echo esc_html( $title ); ?></h2>
+                                        </div><!-- .section-title -->
+                                        <?php
+                                    }
+                                    ?>
+                                    <div class="product-entry">
+                                        <div class="woocommerce columns-4">
+                                            <ul class="products">
+                                                <?php
+                                                while( $product_query->have_posts() ) {
+
+                                                    $product_query->the_post();
+                                                    
+                                                    wc_get_template_part( 'content', 'product' );
+                                                }
+
+                                                woocommerce_reset_loop();
+
+                                                wp_reset_postdata();
+                                                ?>
+                                            </ul>
+                                        </div><!-- .woocommerce.columns-4 -->
+                                    </div><!-- .product-entry -->
+                                </div><!-- .widget-entry -->
+                            </div><!-- .__os-container__ -->
+                        </div><!-- .section-inner -->
+                    </section><!-- .product-widget.product-widget-style-1.section-spacing -->
+                    <?php    
+                }
+
+                if( $display_layout == 'slider' ) {
+                    ?>
+                    <section class="product-widget product-widget-style-3 section-spacing">
+                        <div class="section-inner">
+                            <div class="__os-container__">
                                 <?php
                                 if( !empty( $title ) ) {
                                     ?>
                                     <div class="section-title">
                                         <h2><?php echo esc_html( $title ); ?></h2>
-                                    </div><!-- .section-title -->
+                                    </div>
                                     <?php
                                 }
                                 ?>
                                 <div class="product-entry">
-                                    <div class="woocommerce columns-4">
-                                        <ul class="products">
-                                            <?php
-                                            while( $product_query->have_posts() ) {
+                                    <div class="owl-carousel owl-carousel-2">
+                                        <?php
+                                        while( $product_query->have_posts() ) {
 
-                                                $product_query->the_post();
-                                                
-                                                wc_get_template_part( 'content', 'product' );
-                                            }
-
-                                            woocommerce_reset_loop();
-
-                                            wp_reset_postdata();
+                                            $product_query->the_post();
                                             ?>
-                                        </ul>
-                                    </div><!-- .woocommerce.columns-4 -->
+                                            <div class="item">
+                                                <div class="woocommerce columns-1">
+                                                    <ul class="products">
+                                                        <?php wc_get_template_part( 'content', 'product' ); ?>
+                                                    </ul>
+                                                </div><!-- .woocommerce.columns-1 -->
+                                            </div>
+                                            <?php
+                                        }
+                                        woocommerce_reset_loop();
+
+                                        wp_reset_postdata();
+                                        ?>
+                                    </div><!-- .owl-carousel -->
                                 </div><!-- .product-entry -->
-                            </div><!-- .widget-entry -->
-                        </div><!-- .__os-container__ -->
-                    </div><!-- .section-inner -->
-                </section><!-- .product-widget.product-widget-style-1.section-spacing -->
-                <?php    
+                            </div><!-- .__os-container__ -->
+                        </div><!-- .section-inner -->
+                    </section><!-- .product-widget -->
+                    <?php
+                }
             } 
         }
      
@@ -96,6 +187,8 @@ if( ! class_exists( 'Orchid_Store_Products_Grid_Widget' ) ) {
                 'title'                 => '',
                 'product_category'      => '',
                 'no_of_products'        => 4,
+                'products_by'           => 'default',
+                'display_layout'        => 'slider',
             );
 
             $instance = wp_parse_args( (array) $instance, $defaults );
@@ -132,6 +225,50 @@ if( ! class_exists( 'Orchid_Store_Products_Grid_Widget' ) ) {
                 </label>
                 <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('no_of_products') ); ?>" name="<?php echo esc_attr( $this->get_field_name('no_of_products') ); ?>" type="number" value="<?php echo esc_attr( absint( $instance['no_of_products'] ) ); ?>" />   
             </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id('products_by') ); ?>">
+                    <strong><?php esc_html_e('Products By', 'orchid-store'); ?></strong>
+                </label>
+                <?php
+                $product_types = array(
+                    'default' => esc_html__( 'None', 'orchid-store' ),
+                    'rated' => esc_html__( 'Rated', 'orchid-store' ),
+                    'featured' => esc_html__( 'Featured', 'orchid-store' ),
+                    'onsale' => esc_html__( 'On Sale', 'orchid-store' ),
+                );
+                ?>
+                <select name="<?php echo esc_attr( $this->get_field_name('products_by') ); ?>" id="<?php echo esc_attr( $this->get_field_id('products_by') ); ?>">
+                    <?php
+                    foreach( $product_types as $key => $value ) {
+                        ?>
+                        <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $key, $instance['products_by'] ); ?>><?php echo esc_html( $value ); ?></option>
+                        <?php
+                    }
+                    ?>
+                </select>
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id('display_layout') ); ?>">
+                    <strong><?php esc_html_e('Display Layout', 'orchid-store'); ?></strong>
+                </label>
+                <?php
+                $product_types = array(
+                    'slider' => esc_html__( 'Slider', 'orchid-store' ),
+                    'grid' => esc_html__( 'Grid', 'orchid-store' ),
+                );
+                ?>
+                <select name="<?php echo esc_attr( $this->get_field_name('display_layout') ); ?>" id="<?php echo esc_attr( $this->get_field_id('display_layout') ); ?>">
+                    <?php
+                    foreach( $product_types as $key => $value ) {
+                        ?>
+                        <option value="<?php echo esc_attr( $key ); ?>" <?php selected( $key, $instance['display_layout'] ); ?>><?php echo esc_html( $value ); ?></option>
+                        <?php
+                    }
+                    ?>
+                </select>
+            </p>
     		<?php
         }
      
@@ -144,6 +281,10 @@ if( ! class_exists( 'Orchid_Store_Products_Grid_Widget' ) ) {
             $instance['product_category']       = sanitize_text_field( $new_instance['product_category'] );
 
             $instance['no_of_products']         = absint( $new_instance['no_of_products'] );
+
+            $instance['products_by']            = sanitize_text_field( $new_instance['products_by'] );
+
+            $instance['display_layout']         = sanitize_text_field( $new_instance['display_layout'] );
 
             return $instance;
         } 

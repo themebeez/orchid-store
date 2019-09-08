@@ -159,6 +159,28 @@ if( ! function_exists( 'orchid_store_control_rearrange' ) ) {
 	}
 }
 
+/*******************************************************************************************************
+********************************** Home Page Control Fields Declaration *********************************
+*******************************************************************************************************/
+$wp_customize->add_setting( 
+	'orchid_store_field_enable_home_content', 
+	array(
+		'sanitize_callback' => 'wp_validate_boolean',
+		'default' => $defaults['orchid_store_field_enable_home_content' ],
+	) 
+);
+
+$wp_customize->add_control( 
+	new Orchid_Store_Customizer_Toggle_Control( $wp_customize,
+		'orchid_store_field_enable_home_content', 
+		array(
+			'label' => esc_html__( 'Enable Home Content', 'masonry-blog' ),
+			'section' => 'static_front_page',
+			'type' => 'ios',
+			'active_callback' => 'orchid_store_is_static_home_page_set',
+		) 
+	) 
+);
 
 
 /*******************************************************************************************************
