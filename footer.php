@@ -15,44 +15,28 @@
         <div class="footer-inner">
             <div class="__os-container__">
                 <div class="footer-entry">
-                	<?php
-                	if( is_active_sidebar( 'sidebar-3' ) || is_active_sidebar( 'sidebar-4' ) || is_active_sidebar( 'sidebar-5' ) || is_active_sidebar( 'sidebar-6' ) ) {
-                		?>
-	                    <div class="footer-top columns-4">
-	                        <div class="row">
-	                            <div class="os-col column">
-	                                <?php 
-	                                if( is_active_sidebar( 'sidebar-3' ) ) {
-	                                	dynamic_sidebar( 'sidebar-3' );
-	                                }
-	                                ?>
-	                            </div><!-- .col -->
-	                            <div class="os-col column">
-	                                <?php 
-	                                if( is_active_sidebar( 'sidebar-4' ) ) {
-	                                	dynamic_sidebar( 'sidebar-4' );
-	                                }
-	                                ?>
-	                            </div><!-- // col -->
-	                            <div class="os-col column">
-	                                <?php 
-	                                if( is_active_sidebar( 'sidebar-5' ) ) {
-	                                	dynamic_sidebar( 'sidebar-5' );
-	                                }
-	                                ?>
-	                            </div><!-- // os-col -->
-	                            <div class="os-col column">
-	                                <?php 
-	                                if( is_active_sidebar( 'sidebar-6' ) ) {
-	                                	dynamic_sidebar( 'sidebar-6' );
-	                                }
-	                                ?>
-	                            </div><!-- // os-col -->
-	                        </div><!-- // row -->
-	                    </div><!-- // footer-top -->
-	                    <?php
-	                }
-	                ?>
+                	<?php $orchid_store_footer_widget_area_no = orchid_store_get_option( 'footer_widgets_area_columns' ); ?>
+                    <div class="footer-top columns-<?php echo esc_attr( $orchid_store_footer_widget_area_no ); ?>">
+                        <div class="row">
+                        	<?php
+                        	if( !empty( $orchid_store_footer_widget_area_no ) ) {
+
+                        		for( $orchid_store_count = 1; $orchid_store_count <= $orchid_store_footer_widget_area_no; $orchid_store_count++ ) {
+                        			$orchid_store_sidebar_id = 'footer-'.$orchid_store_count;
+                        			?>
+                        			<div class="os-col column">
+		                                <?php 
+		                                if( is_active_sidebar( $orchid_store_sidebar_id ) ) {
+		                                	dynamic_sidebar( $orchid_store_sidebar_id );
+		                                }
+		                                ?>
+		                            </div><!-- .col -->
+                        			<?php
+                        		}
+                        	}
+                        	?>
+                        </div><!-- // row -->
+                    </div><!-- // footer-top -->
                     <div class="footer-bottom">
                         <div class="os-row">
                             <div class="os-col copyrights-col">

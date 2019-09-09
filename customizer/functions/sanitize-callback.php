@@ -75,3 +75,30 @@ if( !function_exists( 'orchid_store_sanitize_multiple_select' ) ) {
         return $input;
     } 
 }
+
+
+if( ! function_exists( 'orchid_store_sanitize_urls' ) ) {
+
+    function orchid_store_sanitize_urls( $input ) {
+
+        if ( strpos( $input, ',' ) !== false) {
+
+            $input = explode( ',', $input );
+        }
+
+        if ( is_array( $input ) ) {
+
+            foreach ($input as $key => $value) {
+
+                $input[$key] = esc_url_raw( $value );
+            }
+
+            $input = implode( ',', $input );
+        } else {
+
+            $input = esc_url_raw( $input );
+        }
+
+        return $input;
+    }
+}

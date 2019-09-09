@@ -108,6 +108,23 @@ span.sldr-elmnt-cntnr span.sldr-elmnt-btn-wrapper-show .sldr-elmnt-btn-title {
  * Wrapped Fields Styles
  */
 
+.repeater-title {
+
+	display: block;
+	margin-bottom: 5px;
+}
+
+.repeater-elements-wrapper {
+
+	margin-bottom: 15px;
+}
+
+.add-repeater-item {
+
+	margin-top: 10px !important;
+	display: inline-block;
+}
+
 .os-fields-wrapper,
 .os-fields,
 .os-fields-wrapper-title {
@@ -124,9 +141,28 @@ span.sldr-elmnt-cntnr span.sldr-elmnt-btn-wrapper-show .sldr-elmnt-btn-title {
 	overflow: auto;
 }
 
+.os-fields-wrapper-title .os-collapse-icon {
+
+	float: right;
+}
+
+.os-fields-wrapper-title .os-collapse-icon:hover {
+
+	cursor: pointer;
+}
+
+.os-fields-wrapper {
+
+	margin-bottom: 15px;
+}
+
+.os-fields-wrapper:last-child {
+
+	margin-bottom: 0px;
+}
+
 .os-fields {
 
-	margin-top: 10px;
 	padding: 10px;
 	border: 1px solid #eeeeee;
 }
