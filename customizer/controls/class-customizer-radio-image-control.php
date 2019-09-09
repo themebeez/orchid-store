@@ -9,6 +9,14 @@ if( ! class_exists( 'Orchid_Store_Radio_Image_Control' ) ) {
         
         public $type = 'radio-image';
 
+        /**
+         * Enqueue our scripts and styles
+         */
+        public function enqueue() {
+
+            wp_enqueue_style( 'orchid-store-radio-image', get_template_directory_uri() . '/customizer/assets/css/radio-image.css' );
+        }
+
         public function render_content() {
             
             $name = '_customize-radio-' . $this->id;

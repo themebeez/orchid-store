@@ -8,10 +8,21 @@
 if( ! class_exists( 'Orchid_Store_Slider_Custom_Control' ) ) :
 
 	class Orchid_Store_Slider_Custom_Control extends WP_Customize_Control {
+
 		/**
 		 * The type of control being rendered
 		 */
-		public $type = 'slider_control';
+		public $type = 'slider-control';
+
+		/**
+		 * Enqueue our scripts and styles
+		 */
+		public function enqueue() {
+
+			wp_enqueue_script( 'orchid-store-slider', get_template_directory_uri() . '/customizer/assets/js/slider.js', array( 'jquery', 'jquery-ui-core' ), ORCHID_STORE_VERSION, true );
+
+			wp_enqueue_style( 'orchid-store-slider', get_template_directory_uri() . '/customizer/assets/css/slider.css' );
+		}
 
 		/**
 		 * Render the control in the customizer

@@ -113,5 +113,13 @@
 
             jQuery( this ).removeClass( 'os-btn-show' ).addClass( 'os-btn-hide' );
         } );
+
+        jQuery( 'body' ).on( 'click', '.os-collapse-icon', function(e) {
+
+            e.preventDefault();
+
+            jQuery( this ).parents( '.os-fields-wrapper' ).find( '.os-fields' ).slideToggle();
+        } );
+
 	} );
 } )( jQuery );

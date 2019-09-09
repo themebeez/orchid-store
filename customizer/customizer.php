@@ -38,6 +38,11 @@ function orchid_store_customize_register( $wp_customize ) {
 	require get_template_directory() . '/customizer/controls/class-customizer-slider-control.php';
 
 	/**
+	 * Load custom customizer control for slider control
+	 */
+	require get_template_directory() . '/customizer/controls/class-customizer-sortable-repeater-control.php';
+
+	/**
 	 * Load customizer functions for intializing theme upsell
 	 */
 	require get_template_directory() . '/customizer/controls/class-customizer-upsell.php';
@@ -74,8 +79,6 @@ function orchid_store_customize_register( $wp_customize ) {
 	 */
 	require get_template_directory() . '/customizer/functions/customizer-fields.php';
 
-	orchid_store_control_rearrange();
-
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -87,6 +90,21 @@ function orchid_store_customize_register( $wp_customize ) {
 			'render_callback' => 'orchid_store_customize_partial_blogdescription',
 		) );
 	}
+
+	$wp_customize->get_control( 'header_textcolor' )->label = esc_html__( 'Site Title Color', 'orchid-store' );
+	$wp_customize->get_control( 'header_textcolor' )->section = 'title_tagline';
+	$wp_customize->get_control( 'background_color' )->section = 'background_image';
+	$wp_customize->get_section( 'background_image' )->title = esc_html__( 'Site Background', 'orchid-store' );
+
+	$wp_customize->get_control( 'custom_logo' )->section = 'orchid_store_section_site_logo';
+	$wp_customize->get_control( 'blogname' )->section = 'orchid_store_section_site_logo';
+	$wp_customize->get_control( 'blogdescription' )->section = 'orchid_store_section_site_logo';
+	$wp_customize->get_control( 'header_textcolor' )->section = 'orchid_store_section_site_logo';
+	$wp_customize->get_control( 'display_header_text' )->section = 'orchid_store_section_site_logo';
+	$wp_customize->get_control( 'site_icon' )->section = 'orchid_store_section_site_favicon';
+	$wp_customize->get_control( 'header_image' )->section = 'orchid_store_section_header_image';
+	$wp_customize->get_control( 'header_image' )->description = esc_html__( 'Header is used as background image for breadcrumb', 'orchid-store' );
+	$wp_customize->get_control( 'header_image' )->priority = 20;
 }
 add_action( 'customize_register', 'orchid_store_customize_register' );
 
@@ -140,11 +158,7 @@ add_action( 'customize_preview_init', 'orchid_store_customize_preview_js' );
  */
 function orchid_store_enqueues() {
 
-	wp_enqueue_style( 'orchid-store-select2', get_template_directory_uri() . '/customizer/assets/css/select2.css' );
-
 	wp_enqueue_style( 'orchid-store-customizer-style', get_template_directory_uri() . '/customizer/assets/css/customizer-style.css' );
-
-	wp_enqueue_script( 'orchid-store-select2', get_template_directory_uri() . '/customizer/assets/js/select2.js', array( 'jquery' ), ORCHID_STORE_VERSION, true );
 
 	wp_enqueue_script( 'orchid-store-customizer-script', get_template_directory_uri() . '/customizer/assets/js/customizer-script.js', array( 'jquery' ), ORCHID_STORE_VERSION, true );
 }

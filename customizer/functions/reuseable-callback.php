@@ -285,46 +285,6 @@ if( ! function_exists( 'orchid_store_add_toggle_field' ) ) {
 
 
 /**
- *	Function to register new customizer select field
- */
-/*if( ! function_exists( 'orchid_store_add_select_field' ) ) {
-
-	function orchid_store_add_select_field( $id, $label, $desc, $choices, $active_callback, $section ) {
-
-		global $wp_customize;
-
-		$defaults = orchid_store_get_default_theme_options();
-
-		$field_id = 'orchid_store_field_'. $id;
-
-		$section_id = 'orchid_store_section_'. $section;
-
-		$control_args = array(
-			'label' => $label,
-			'description' => $desc,
-			'type' => 'select',
-			'choices' => $choices,
-			'section' => $section_id,
-		);
-
-		if( !empty( $active_callback ) ) {
-
-			$control_args['active_callback'] = $active_callback;
-		}
-
-		$wp_customize->add_setting( $field_id,
-			array(
-				'sanitize_callback'		=> 'orchid_store_sanitize_select',
-				'default'				=> $defaults[$id],
-				'capability'        => 'edit_theme_options',
-			)
-		);
-
-		$wp_customize->add_control( $field_id, $control_args );
-	}
-}*/
-
-/**
  *	Function to register new customizer slider field
  */
 if( ! function_exists( 'orchid_store_add_slider_field' ) ) {
@@ -461,5 +421,85 @@ if( ! function_exists( 'orchid_store_add_image_field' ) ) {
 		);
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $field_id, $control_args ) );
+	}
+}
+
+/**
+ *	Function to register new customizer sortable repeater field
+ */
+if( ! function_exists( 'orchid_store_add_sortable_repeater_field' ) ) {
+
+	function orchid_store_add_sortable_repeater_field( $id, $label, $desc, $active_callback, $section ) {
+
+		global $wp_customize;
+
+		$defaults = orchid_store_get_default_theme_options();
+
+		$field_id = 'orchid_store_field_'. $id;
+
+		$section_id = 'orchid_store_section_'. $section;
+
+		$control_args = array(
+			'label' => $label,
+			'desciption' => $desc,
+			'section' => $section_id,
+			'button_labels' => array(
+				'add' => esc_html__( 'Add Item' ), // Optional. Button label for Add button. Default: Add
+			)
+		);
+
+		if( !empty( $active_callback ) ) {
+
+			$control_args['active_callback'] = $active_callback;
+		}
+
+		$wp_customize->add_setting( $field_id, 
+			array(
+				'sanitize_callback'		=> 'orchid_store_sanitize_urls',
+				'default'				=> $defaults[$id],
+			)
+		);
+
+		$wp_customize->add_control( new Orchid_Store_Sortable_Repeater_Control( $wp_customize, $field_id, $control_args ) ); 
+	}
+}
+
+
+
+/**
+ *	Function to register new customizer color field
+ */
+if( ! function_exists( 'orchid_store_add_color_field' ) ) {
+
+	function orchid_store_add_color_field( $id, $label, $desc, $active_callback, $section ) {
+
+		global $wp_customize;
+
+		$defaults = orchid_store_get_default_theme_options();
+
+		$field_id = 'orchid_store_field_'. $id;
+
+		$section_id = 'orchid_store_section_'. $section;
+
+		$control_args = array(
+			'label' => $label,
+			'description' => $desc,
+			'section' => $section_id,
+		);
+
+		if( !empty( $active_callback ) ) {
+
+			$control_args['active_callback'] = $active_callback;
+		}
+
+		$wp_customize->add_setting( $field_id, 
+			array(
+				'sanitize_callback'		=> 'sanitize_hex_color',
+				'default'				=> $defaults[$id],
+				'capability'        => 'edit_theme_options',
+			) 
+		);	
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $field_id, $control_args ) );
 	}
 }

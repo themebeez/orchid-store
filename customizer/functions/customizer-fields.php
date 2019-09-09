@@ -122,6 +122,13 @@ if( ! function_exists( 'orchid_store_section_declaration' ) ) {
 				'panel' => '',
 				'priority' => 3,
 			),
+			array(
+				'id' => 'theme_color',
+				'title' => esc_html__( 'Theme Color', 'orchid-store' ),
+				'description' => '',
+				'panel' => '',
+				'priority' => 3,
+			),
 		);
 
 		if( !empty( $sections ) ) {
@@ -135,29 +142,6 @@ if( ! function_exists( 'orchid_store_section_declaration' ) ) {
 }
 orchid_store_section_declaration();
 
-
-if( ! function_exists( 'orchid_store_control_rearrange' ) ) {
-
-	function orchid_store_control_rearrange() {
-
-		global $wp_customize;
-
-		$wp_customize->get_control( 'header_textcolor' )->label = esc_html__( 'Site Title Color', 'orchid-store' );
-		$wp_customize->get_control( 'header_textcolor' )->section = 'title_tagline';
-		$wp_customize->get_control( 'background_color' )->section = 'background_image';
-		$wp_customize->get_section( 'background_image' )->title = esc_html__( 'Site Background', 'orchid-store' );
-
-		$wp_customize->get_control( 'custom_logo' )->section = 'orchid_store_section_site_logo';
-		$wp_customize->get_control( 'blogname' )->section = 'orchid_store_section_site_logo';
-		$wp_customize->get_control( 'blogdescription' )->section = 'orchid_store_section_site_logo';
-		$wp_customize->get_control( 'header_textcolor' )->section = 'orchid_store_section_site_logo';
-		$wp_customize->get_control( 'display_header_text' )->section = 'orchid_store_section_site_logo';
-		$wp_customize->get_control( 'site_icon' )->section = 'orchid_store_section_site_favicon';
-		$wp_customize->get_control( 'header_image' )->section = 'orchid_store_section_header_image';
-		$wp_customize->get_control( 'header_image' )->description = esc_html__( 'Header is used as background image for breadcrumb', 'orchid-store' );
-		$wp_customize->get_control( 'header_image' )->priority = 20;
-	}
-}
 
 /*******************************************************************************************************
 ********************************** Home Page Control Fields Declaration *********************************
@@ -188,13 +172,7 @@ $wp_customize->add_control(
 *******************************************************************************************************/
 orchid_store_add_toggle_field( 'display_top_header', esc_html__( 'Display Top Header', 'orchid-store' ), '', '', 'top_header' );
 
-orchid_store_add_url_field( 'top_header_facebook_link', esc_html__( 'Facebook Link', 'orchid-store' ), '', 'orchid_store_active_top_header', 'top_header' );
-orchid_store_add_url_field( 'top_header_twitter_link', esc_html__( 'Twitter Link', 'orchid-store' ), '', 'orchid_store_active_top_header', 'top_header' );
-orchid_store_add_url_field( 'top_header_instagram_link', esc_html__( 'Instagram Link', 'orchid-store' ), '', 'orchid_store_active_top_header', 'top_header' );
-orchid_store_add_url_field( 'top_header_pinterest_link', esc_html__( 'Pinterest Link', 'orchid-store' ), '', 'orchid_store_active_top_header', 'top_header' );
-orchid_store_add_url_field( 'top_header_youtube_link', esc_html__( 'Youtube Link', 'orchid-store' ), '', 'orchid_store_active_top_header', 'top_header' );
-orchid_store_add_url_field( 'top_header_linkedin_link', esc_html__( 'Linkedin Link', 'orchid-store' ), '', 'orchid_store_active_top_header', 'top_header' );
-orchid_store_add_url_field( 'top_header_vk_link', esc_html__( 'VK Link', 'orchid-store' ), '', 'orchid_store_active_top_header', 'top_header' );
+orchid_store_add_sortable_repeater_field( 'top_header_social_links', esc_html__( 'Social Links', 'orchid-store' ), '', 'orchid_store_active_top_header', 'top_header' );
 
 
 
@@ -263,6 +241,7 @@ orchid_store_add_radio_image_field( 'global_sidebar_position', esc_html__( 'Sele
 /*******************************************************************************************************
 ************************************ Footer Control Fields Declaration *********************************
 *******************************************************************************************************/
+orchid_store_add_select_field( 'footer_widgets_area_columns', esc_html__( 'Select Number of Widget Area Columns', 'orchid-store' ), '', array( '1' => esc_html__( '1', 'orchid-store' ), '2' => esc_html__( '2', 'orchid-store' ), '3' => esc_html__( '3', 'orchid-store' ), '4' => esc_html__( '4', 'orchid-store' ) ), '', 'site_footer', false );
 orchid_store_add_text_field( 'copyright_text', esc_html__( 'Copyright Text', 'orchid-store' ), '', '', 'site_footer' );
 orchid_store_add_image_field( 'payments_image', esc_html__( 'Image of Payment Processors', 'orchid-store' ), '', '', 'site_footer' );
 
@@ -271,6 +250,14 @@ orchid_store_add_image_field( 'payments_image', esc_html__( 'Image of Payment Pr
 ***************************************** Excerpt Fields Declaration ***********************************
 *******************************************************************************************************/
 orchid_store_add_number_field( 'excerpt_length', esc_html__( 'Excerpt Length', 'orchid-store' ), esc_html__( 'Excerpt is the short content of post or page.', 'orchid-store' ), '', 'post_excerpt', '', '', '' );
+
+
+
+/*******************************************************************************************************
+***************************************** Theme Color Declaration ***********************************
+*******************************************************************************************************/
+orchid_store_add_color_field( 'primary_color', esc_html__( 'Primary Color', 'orchid-store' ), '', '', 'theme_color' );
+orchid_store_add_color_field( 'secondary_color', esc_html__( 'Secondary Color', 'orchid-store' ), '', '', 'theme_color' );
 
 
 

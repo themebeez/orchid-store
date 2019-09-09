@@ -174,7 +174,7 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                                     <?php
                                     foreach( $page_choices as $page_slug => $page_title ) {
                                         ?>
-                                        <option value="<?php echo esc_attr( $page_slug ); ?>" <?php selected( $page_slug, $instance['slider_pages'][$i] ); ?>><?php echo esc_html( $page_title ); ?></option>
+                                        <option value="<?php echo esc_attr( $page_slug ); ?>" <?php selected( $page_slug, ( !empty( $instance['slider_pages'][$i] ) ? $instance['slider_pages'][$i] : '' ) ); ?>><?php echo esc_html( $page_title ); ?></option>
                                         <?php
                                     }
                                     ?>
@@ -183,12 +183,12 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                                 <label for="<?php echo esc_attr( $this->get_field_id( 'button_titles' ) . $i ); ?>">
                                     <strong><?php esc_html_e( 'Button Title', 'orchid-store' ); ?></strong>
                                 </label>
-                                <input class="widefat" type="text" id="<?php echo esc_attr( $this->get_field_id( 'button_titles' ) . $i ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_titles' ) ); ?>[]" value="<?php echo esc_attr( $instance['button_titles'][$i] ) ?>">
+                                <input class="widefat" type="text" id="<?php echo esc_attr( $this->get_field_id( 'button_titles' ) . $i ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_titles' ) ); ?>[]" value="<?php if( !empty( $instance['button_titles'][$i] ) ) { echo esc_attr( $instance['button_titles'][$i] ); } ?>">
 
                                  <label for="<?php echo esc_attr( $this->get_field_id( 'button_links' ) . $i ); ?>">
                                     <strong><?php esc_html_e( 'Button Link', 'orchid-store' ); ?></strong>
                                 </label>
-                                <input class="widefat" type="text" id="<?php echo esc_attr( $this->get_field_id( 'button_links' ) . $i ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_links' ) ); ?>[]" value="<?php echo esc_attr( $instance['button_links'][$i] ) ?>">
+                                <input class="widefat" type="text" id="<?php echo esc_attr( $this->get_field_id( 'button_links' ) . $i ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_links' ) ); ?>[]" value="<?php if( !empty( $instance['button_links'][$i] ) ) { echo esc_attr( $instance['button_links'][$i] ); } ?>">
                             </span>
                         </span>
                     </p>

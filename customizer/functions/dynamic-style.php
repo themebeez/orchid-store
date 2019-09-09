@@ -16,6 +16,10 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 
 		$carousel_height = orchid_store_get_option( 'carousel_height' );
 
+		$primary_color = orchid_store_get_option( 'primary_color' );
+
+		$secondary_color = orchid_store_get_option( 'secondary_color' );
+
 		if( $enabled_lazy_loading == true ) {
 			?>
 			<noscript>
@@ -81,6 +85,24 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 					.banner-style-1 .post-thumb {
 						height: <?php echo esc_attr( $carousel_height ); ?>px;
 					}
+				}
+				<?php
+			}
+
+
+			if( $primary_color ) {
+				?>
+				.header-style-1 .top-header,
+				.main-navigation {
+					background-color: <?php echo esc_attr( $primary_color ); ?>;
+				}
+				<?php
+			}
+
+			if( $secondary_color ) {
+				?>
+				.category-navigation .cat-nav-trigger {
+					background-color: <?php echo esc_attr( $secondary_color ); ?>;
 				}
 				<?php
 			}

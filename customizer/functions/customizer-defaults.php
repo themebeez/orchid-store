@@ -54,14 +54,7 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
         $defaults = array(
 
             'display_top_header' => true,
-            'top_header_facebook_link' => '',
-            'top_header_twitter_link' => '',
-            'top_header_instagram_link' => '',
-            'top_header_pinterest_link' => '',
-            'top_header_youtube_link' => '',
-            'top_header_google_plus_link' => '',
-            'top_header_linkedin_link' => '',
-            'top_header_vk_link' => '',
+            'top_header_social_links' => '',
 
             'display_special_menu' => true,
             'special_menu_title' => esc_html__( 'Special Menu', 'orchid-store' ),
@@ -99,10 +92,15 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
             'display_page_featured_image' => true,
             'page_sidebar_position' => 'right',
 
+            'footer_widgets_area_columns' => '4',
+
             'copyright_text' => '',
             'payments_image' => '',
 
             'excerpt_length' => 30,
+
+            'primary_color' => '#0286E7',
+            'secondary_color' => '#E26143',
         );
 
         if( class_exists( 'Woocommerce' ) ) {

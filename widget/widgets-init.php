@@ -30,45 +30,26 @@ function orchid_store_widgets_init() {
 		'after_title'   => '</h2></div>',
 	) );
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 1', 'orchid-store' ),
-		'id'            => 'sidebar-3',
-		'description'   => esc_html__( 'Add widgets here.', 'orchid-store' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<div class="widget-title"><h3>',
-		'after_title'   => '</h3></div>',
-	) );
+	$footer_widget_areas = orchid_store_get_option( 'footer_widgets_area_columns' );
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 2', 'orchid-store' ),
-		'id'            => 'sidebar-4',
-		'description'   => esc_html__( 'Add widgets here.', 'orchid-store' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<div class="widget-title"><h3>',
-		'after_title'   => '</h3></div>',
-	) );
+	if( !empty( $footer_widget_areas ) ) {
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 3', 'orchid-store' ),
-		'id'            => 'sidebar-5',
-		'description'   => esc_html__( 'Add widgets here.', 'orchid-store' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<div class="widget-title"><h3>',
-		'after_title'   => '</h3></div>',
-	) );
+		for( $i = 1; $i <= $footer_widget_areas; $i++ ) {
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 4', 'orchid-store' ),
-		'id'            => 'sidebar-6',
-		'description'   => esc_html__( 'Add widgets here.', 'orchid-store' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<div class="widget-title"><h3>',
-		'after_title'   => '</h3></div>',
-	) );
+			$sidebar_id = 'footer-'.$i;
+
+			register_sidebar( array(
+				/* translators: %s: number of footer widget area. */
+				'name'          => sprintf( esc_html__( 'Footer %s', 'orchid-store' ), $i ),
+				'id'            => $sidebar_id,
+				'description'   => esc_html__( 'Add widgets here.', 'orchid-store' ),
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<div class="widget-title"><h3>',
+				'after_title'   => '</h3></div>',
+			) );
+		}
+	}
 
 	register_widget( 'Orchid_Store_Banner_Widget' );	
 
