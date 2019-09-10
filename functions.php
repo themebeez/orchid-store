@@ -142,6 +142,11 @@ function orchid_store_admin_enqueue() {
 }
 add_action( 'admin_enqueue_scripts', 'orchid_store_admin_enqueue' );
 
+if( defined( 'ELEMENTOR_VERSION' ) ) {
+
+	add_action( 'elementor/editor/before_enqueue_scripts', 'orchid_store_admin_enqueue' );
+}
+
 
 /**
  * Implement the Custom Header feature.
