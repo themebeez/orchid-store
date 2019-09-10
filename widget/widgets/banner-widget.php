@@ -101,6 +101,7 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                             if( !empty( $banner_image_1 ) || !empty( $banner_image_2 ) ) {
                                 ?>
                                 <div class="os-col right-col">
+                                    <div class="banner-item-holder">
                                     <?php
                                     if( !empty( $banner_image_1 ) ) {
                                         ?>
@@ -146,6 +147,7 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                                         <?php
                                     }
                                     ?>
+                                    </div><!-- . banner-item-holder -->
                                 </div><!-- .os-col -->
                                 <?php
                             }

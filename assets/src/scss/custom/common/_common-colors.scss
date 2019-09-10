@@ -104,7 +104,10 @@ input[type="submit"]:hover,
 .woocommerce-page #add_payment_method #payment div.payment_box, 
 .woocommerce-cart #payment div.payment_box, 
 .woocommerce-checkout #payment div.payment_box,
-.header-style-1 .wishlist-icon-container a   {
+.header-style-1 .wishlist-icon-container a,
+.wc-block-grid .wp-block-button__link,
+.wc-block-grid .wp-block-button__link:hover,
+.wc-block-grid__product-onsale   {
 
 	color:$white;
 }
@@ -133,6 +136,7 @@ input[type="password"],
 .woocommerce div.product span.price ins,
 .header-style-1 .custom-search-entry input,
 .header-style-1 .custom-search-entry select,
+.wc-block-grid .wc-block-grid__product-title,
 .woocommerce .wishlist_table tr td.product-stock-status span.wishlist-in-stock {
 
 	color:$primary_color;
@@ -147,7 +151,8 @@ input[type="password"],
 .search-form button,
 .entry-404 h1 span,
 .banner-style-1 .caption span,
-.product-widget-style-2 .tab-nav ul li a.active {
+.product-widget-style-2 .tab-nav ul li a.active,
+.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group > a {
 
 	color:$secondary_color;
 }
@@ -190,7 +195,9 @@ a:hover,
 .footer .copyrights a:hover, 
 .footer .widget_nav_menu ul li a:hover, 
 .footer .widget_rss .widget_title h3 a:hover, 
-.footer .widget_tag_cloud .tagcloud a:hover {
+.footer .widget_tag_cloud .tagcloud a:hover,
+.wc-block-grid .wc-block-grid__product-title:hover,
+.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group > a:hover {
 
 	color:$third_color; // Hover colour
 }
@@ -199,7 +206,8 @@ a:hover,
 .woocommerce ul.products li.product .price del,
 .woocommerce div.product p.price del, 
 .woocommerce div.product span.price del,
-.site-navigation > ul > li > a:hover {
+.site-navigation > ul > li > a:hover,
+.wc-block-grid .wc-block-grid__product-price del {
 
 	color:$forth_color;
 }
@@ -308,7 +316,8 @@ a.button-general,
 .woocommerce-page #add_payment_method #payment div.payment_box, 
 .woocommerce-cart #payment div.payment_box, 
 .woocommerce-checkout #payment div.payment_box,
-.header-style-1 .wishlist-icon-container a   {
+.header-style-1 .wishlist-icon-container a,
+.wc-block-grid .wp-block-button__link   {
 
 	background:$secondary_color;
 }
@@ -340,6 +349,7 @@ a.button-general:hover,
 .owl-carousel .owl-nav button.owl-prev:hover,
 .woocommerce .added_to_cart.wc-forward:hover,
 .category-navigation .cat-nav-trigger,
+.wc-block-grid .wp-block-button__link:hover,
 .header-style-1 .wishlist-icon-container a:hover,
 .woocommerce ul.products li .product-hover-items ul li a:hover,
 .woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist a:hover {
@@ -358,6 +368,7 @@ a.button-general:hover,
 	background:$special_purpose_color;
 }
 
+.wc-block-grid__product-onsale,
 .woocommerce .product-sale span:before,
 .woocommerce ul.products li.product .onsale:before,
 .woocommerce span.onsale:before {
