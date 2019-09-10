@@ -125,6 +125,26 @@ span.sldr-elmnt-cntnr span.sldr-elmnt-btn-wrapper-show .sldr-elmnt-btn-title {
 	display: inline-block;
 }
 
+.repeater-clone-field {
+
+	display: none;
+}
+
+.os-fields-wrapper-title .os-collapse-icon {
+
+	text-align: right;
+}
+
+.os-show {
+
+	display: block;
+}
+
+.os-hide {
+
+	display: none;
+}
+
 .os-fields-wrapper,
 .os-fields,
 .os-fields-wrapper-title {

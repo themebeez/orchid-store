@@ -238,7 +238,7 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
                     'onsale' => esc_html__( 'On Sale', 'orchid-store' ),
                 );
                 ?>
-                <select name="<?php echo esc_attr( $this->get_field_name('products_by') ); ?>" id="<?php echo esc_attr( $this->get_field_id('products_by') ); ?>">
+                <select class="widefat" name="<?php echo esc_attr( $this->get_field_name('products_by') ); ?>" id="<?php echo esc_attr( $this->get_field_id('products_by') ); ?>">
                     <?php
                     foreach( $product_types as $key => $value ) {
                         ?>
@@ -259,7 +259,7 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
                     'grid' => esc_html__( 'Grid', 'orchid-store' ),
                 );
                 ?>
-                <select name="<?php echo esc_attr( $this->get_field_name('display_layout') ); ?>" id="<?php echo esc_attr( $this->get_field_id('display_layout') ); ?>">
+                <select class="widefat" name="<?php echo esc_attr( $this->get_field_name('display_layout') ); ?>" id="<?php echo esc_attr( $this->get_field_id('display_layout') ); ?>">
                     <?php
                     foreach( $product_types as $key => $value ) {
                         ?>

@@ -115,20 +115,21 @@ if( ! class_exists( 'Orchid_Store_Services_Widget' ) ) :
                                 printf( esc_html__( 'Service %s', 'orchid-store' ), $i + 1 ); 
                                 ?>
                             </strong>
+                            <span class="os-collapse-icon"><span class="dashicons dashicons-arrow-down"></span></span>
                         </span>
                         <span class="os-fields">
                             <label for="<?php echo esc_attr( $this->get_field_id('services_titles') . $i ); ?>">
-                                <strong><?php esc_html_e('Service Title', 'orchid-store'); ?></strong>
+                                <strong><?php esc_html_e('Title', 'orchid-store'); ?></strong>
                             </label>
                             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('services_titles') . $i ); ?>" name="<?php echo esc_attr( $this->get_field_name('services_titles') ); ?>[]" type="text" value="<?php if( !empty( $services_titles[$i] ) ) { echo esc_attr( $services_titles[$i] ); } ?>" /> 
 
                             <label for="<?php echo esc_attr( $this->get_field_id('services_descs') . $i ); ?>">
-                                <strong><?php esc_html_e('Service Description', 'orchid-store'); ?></strong>
+                                <strong><?php esc_html_e('Description', 'orchid-store'); ?></strong>
                             </label>
                             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('services_descs') . $i ); ?>" name="<?php echo esc_attr( $this->get_field_name('services_descs') ); ?>[]" type="text" value="<?php if( !empty( $services_descs[$i] ) ) { echo esc_attr( $services_descs[$i] ); } ?>" /> 
 
                             <label for="<?php echo esc_attr($this->get_field_id('services_imgs') . $i ); ?>">
-                                <strong><?php esc_html_e('Service Image', 'orchid-store'); ?></strong>
+                                <strong><?php esc_html_e('Icon Image', 'orchid-store'); ?></strong>
                             </label>
                             <span class="os-image-notice"><?php esc_html_e( 'Upload image having 1x1 aspect ratio.', 'orchid-store' ); ?></span>
 
