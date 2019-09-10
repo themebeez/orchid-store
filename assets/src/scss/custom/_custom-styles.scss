@@ -160,13 +160,148 @@ body.boxed .__os-container__ {
     
     display:inline-block;
     font-style: normal;
-    font-size:14px;
+    font-size:0;
     line-height: 40px;
     height: 40px;
     width:40px;
     text-align:center;
 }
 
+.social-icons ul li a:before {
+
+    content:'';
+    font-family: 'boxicons';
+    font-size: 15px;
+    font-style: normal;
+}
+
+
+// non brands icons
+
+.social-icons a[href*="mailto"]::before {
+
+    content: "\ea38";
+}
+
+.social-icons a[href*="/feed"]::before,
+.social-icons a[href*="rss"]::before {
+
+    content: "\eb24";
+}
+
+// brands icons
+
+.social-icons a[href*="fb.com"]::before,
+.social-icons a[href*="facebook.com"]::before {
+
+    content: "\e927";
+}
+
+.social-icons a[href*="twitter.com"]::before {
+
+    content: "\e961";
+}
+
+.social-icons a[href*="linkedin.com"]::before {
+
+     content: "\e93c";
+}
+
+.social-icons a[href*="instagram.com"]::before {
+
+     content: "\e933";
+}
+
+.social-icons a[href*="youtube.com"]::before {
+
+     content: "\e96f";
+}
+
+.social-icons a[href*="vk.com"]::before {
+
+     content: "\e965";
+}
+
+.social-icons a[href*="spotify.com"]::before {
+
+     content: "\e959";
+}
+
+.social-icons a[href*="reddit.com"]::before {
+
+     content: "\e950";
+}
+
+.social-icons a[href*="reddit.com"]::before {
+
+     content: "\e950";
+}
+
+.social-icons a[href*="snapchat.com"]::before {
+
+     content: "\e957";
+}
+
+.social-icons a[href*="soundcloud.com"]::before {
+
+     content: "\e958";
+}
+
+.social-icons a[href*="shopify.com"]::before {
+
+     content: "\e953";
+}
+
+.social-icons a[href*="skype.com"]::before {
+
+     content: "\e954";
+}
+
+.social-icons a[href*="quora.com"]::before {
+
+     content: "\e94e";
+}
+
+.social-icons a[href*="pinterest.com"]::before {
+
+     content: "\e90b";
+}
+
+.social-icons a[href*="vimeo.com"]::before {
+
+     content: "\e963";
+}
+
+.social-icons a[href*="wordpress.com"]::before,
+.social-icons a[href*="wordpress.org"]::before {
+
+     content: "\e96c";
+}
+
+.social-icons a[href*="twitch.com"]::before {
+
+    content: "\e960";
+}
+
+.social-icons a[href*="tumblr.com"]::before {
+
+    content: "\e95f";
+}
+
+.social-icons a[href*="etsy.com"]::before {
+
+    content: "\e905";
+}
+
+.social-icons a[href*="amazon"]::before {
+
+    content: "\e90e";
+}
+
+.social-icons a[href*="ebay.com"]::before {
+
+    content: "\e925";
+}
 
 
 /*
