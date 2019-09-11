@@ -1293,21 +1293,25 @@ section .section-title h3:after {
 .footer .columns-1 .os-col.column {
 
     flex:0 0 100%;
+    max-width:100%;
 }
 
 .footer .columns-2 .os-col.column {
 
     flex:0 0 50%;
+    max-width:50%;
 }
 
 .footer .columns-3 .os-col.column {
 
     flex:0 0 33.33%;
+    max-width:33.33%;
 }
 
 .footer .columns-4 .os-col.column {
 
     flex:0 0 25%;
+    max-width:25%;
 }
 
 .footer-bottom {
