@@ -27,11 +27,18 @@ if( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
             $title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
 
-			$store_description 		  = !empty( $instance['store_description'] ) ? $instance['store_description'] : '';
+			$store_description 	  = !empty( $instance['store_description'] ) ? $instance['store_description'] : '';
             $store_address 		  = !empty( $instance['store_address'] ) ? $instance['store_address'] : '';
             $store_phone   		  = !empty( $instance['store_phone'] ) ? $instance['store_phone'] : '';
             $store_email   		  = !empty( $instance['store_email'] ) ? $instance['store_email'] : '';
             $store_opening_time   = !empty( $instance['store_opening_time'] ) ? $instance['store_opening_time'] : '';
+            $facebook_url         = !empty( $instance['facebook_url'] ) ? $instance['facebook_url'] : '';
+            $twitter_url          = !empty( $instance['twitter_url'] ) ? $instance['twitter_url'] : '';
+            $instagram_url        = !empty( $instance['instagram_url'] ) ? $instance['instagram_url'] : '';
+            $youtube_url          = !empty( $instance['youtube_url'] ) ? $instance['youtube_url'] : '';
+            $pinterest_url        = !empty( $instance['pinterest_url'] ) ? $instance['pinterest_url'] : '';
+            $vimeo_url            = !empty( $instance['vimeo_url'] ) ? $instance['vimeo_url'] : '';
+            $vk_url               = !empty( $instance['vk_url'] ) ? $instance['vk_url'] : '';
 
             echo $args['before_widget'];
 
@@ -65,7 +72,7 @@ if( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 		            	 if( !empty($store_address)) {
 		            	?>
 		                <li class="location">
-		                    <p><span><i class='bx bx-store-alt'></i></span> <?php echo esc_html( $store_address ); ?></p>
+		                    <p><span><i class='bx bx-map-pin'></i></span> <?php echo esc_html( $store_address ); ?></p>
 		                </li>
 						<?php 
 
@@ -74,7 +81,7 @@ if( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 		            	 if( !empty($store_phone)) {
 		            	?>
 		                <li class="phone">
-		                    <p><span><i class='bx bx-headphone'></i></span> <?php echo esc_html( $store_phone ); ?></p>
+		                    <p><span><i class='bx bx-phone'></i></span> <?php echo esc_html( $store_phone ); ?></p>
 		                </li>
 		                <?php 
 		                }
@@ -103,11 +110,79 @@ if( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 		        </div><!-- // info -->
 		        <div class="social-icons">
 		            <ul class="social-icons-list">
-		                <li><a href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-		                <li><a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-		                <li><a href="#" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-		                <li><a href="#" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-		                <li><a href="#" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
+                        
+                        <?php 
+
+                        if( !empty($facebook_url)) {
+
+                        ?>
+		                <li><a href="<?php echo esc_url( $facebook_url ); ?>" target="_blank"><i class='bx bxl-facebook'></i></a></li>
+
+                        <?php 
+
+                        }
+
+                        if( !empty($twitter_url)) {
+
+                        ?>
+
+		                <li><a href="<?php echo esc_url( $twitter_url ); ?>" target="_blank"><i class='bx bxl-twitter'></i></a></li>
+
+                        <?php 
+
+                        }
+
+                        if( !empty($instagram_url)) {
+
+                        ?>
+
+		                <li><a href="<?php echo esc_url( $instagram_url ); ?>" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+                        
+                        <?php 
+
+                        }
+
+                        if( !empty($youtube_url)) {
+
+                        ?>
+
+		                <li><a href="<?php echo esc_url( $youtube_url ); ?>" target="_blank"><i class='bx bxl-youtube'></i></a></li>
+
+                        <?php 
+
+                        }
+
+                        if( !empty($pinterest_url)) {
+
+                        ?>
+
+		                <li><a href="<?php echo esc_url( $pinterest_url ); ?>" target="_blank"><i class='bx bxl-pinterest'></i></a></li>
+
+                        <?php 
+
+                        }
+
+                        if( !empty($vimeo_url)) {
+
+                        ?>
+
+                        <li><a href="<?php echo esc_url( $vimeo_url ); ?>" target="_blank"><i class='bx bxl-vimeo'></i></a></li>
+
+                        <?php 
+
+                        }
+
+                        if( !empty($vk_url)) {
+
+                        ?>
+
+                        <li><a href="<?php echo esc_url( $vk_url ); ?>" target="_blank"><i class='bx bxl-vk'></i></a></li>
+
+                        <?php 
+
+                        }
+
+                        ?>
 		            </ul>
 		        </div><!-- // social-icons -->
 		    </div><!-- // widget-entry -->
@@ -124,6 +199,13 @@ if( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
                 'store_phone'  => '',
                 'store_email'  => '',
                 'store_opening_time'  => '',
+                'facebook_url'  => '',
+                'twitter_url'  => '',
+                'instagram_url'  => '',
+                'youtube_url'  => '',
+                'pinterest_url'  => '',
+                'vimeo_url'  => '',
+                'vk_url'  => '',
             );
 
             $instance = wp_parse_args( (array) $instance, $defaults );
@@ -169,7 +251,56 @@ if( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
                     <strong><?php esc_html_e( 'Store opening time', 'orchid-store' ); ?></strong>
                 </label>
                 <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('store_opening_time') ); ?>" name="<?php echo esc_attr( $this->get_field_name('store_opening_time') ); ?>" type="text" value="<?php echo esc_attr( $instance['store_opening_time'] ); ?>" />   
-            </p>            
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_name('facebook_url') ); ?>">
+                    <strong><?php esc_html_e( 'Social: Facebook Link', 'orchid-store' ); ?></strong>
+                </label>
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('facebook_url') ); ?>" name="<?php echo esc_attr( $this->get_field_name('facebook_url') ); ?>" type="text" value="<?php echo esc_attr( $instance['facebook_url'] ); ?>" />   
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_name('twitter_url') ); ?>">
+                    <strong><?php esc_html_e( 'Social: Twitter Link', 'orchid-store' ); ?></strong>
+                </label>
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('twitter_url') ); ?>" name="<?php echo esc_attr( $this->get_field_name('twitter_url') ); ?>" type="text" value="<?php echo esc_attr( $instance['twitter_url'] ); ?>" />   
+            </p>  
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_name('instagram_url') ); ?>">
+                    <strong><?php esc_html_e( 'Social: Instagram Link', 'orchid-store' ); ?></strong>
+                </label>
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('instagram_url') ); ?>" name="<?php echo esc_attr( $this->get_field_name('instagram_url') ); ?>" type="text" value="<?php echo esc_attr( $instance['instagram_url'] ); ?>" />   
+            </p> 
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_name('pinterest_url') ); ?>">
+                    <strong><?php esc_html_e( 'Social: Pinterest Link', 'orchid-store' ); ?></strong>
+                </label>
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('pinterest_url') ); ?>" name="<?php echo esc_attr( $this->get_field_name('pinterest_url') ); ?>" type="text" value="<?php echo esc_attr( $instance['pinterest_url'] ); ?>" />   
+            </p>   
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_name('youtube_url') ); ?>">
+                    <strong><?php esc_html_e( 'Social: YouTube Link', 'orchid-store' ); ?></strong>
+                </label>
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('youtube_url') ); ?>" name="<?php echo esc_attr( $this->get_field_name('youtube_url') ); ?>" type="text" value="<?php echo esc_attr( $instance['youtube_url'] ); ?>" />   
+            </p>  
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_name('vimeo_url') ); ?>">
+                    <strong><?php esc_html_e( 'Social: Vimeo Link', 'orchid-store' ); ?></strong>
+                </label>
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('vimeo_url') ); ?>" name="<?php echo esc_attr( $this->get_field_name('vimeo_url') ); ?>" type="text" value="<?php echo esc_attr( $instance['vimeo_url'] ); ?>" />   
+            </p>  
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_name('vk_url') ); ?>">
+                    <strong><?php esc_html_e( 'Social: VK Link', 'orchid-store' ); ?></strong>
+                </label>
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('vk_url') ); ?>" name="<?php echo esc_attr( $this->get_field_name('vk_url') ); ?>" type="text" value="<?php echo esc_attr( $instance['vk_url'] ); ?>" />   
+            </p>                   
       
     		<?php
         }
@@ -189,6 +320,20 @@ if( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
             $instance['store_email'] 			= sanitize_text_field( $new_instance['store_email'] );
 
             $instance['store_opening_time'] 	= sanitize_text_field( $new_instance['store_opening_time'] );
+
+            $instance['facebook_url']           = sanitize_text_field( $new_instance['facebook_url'] );
+
+            $instance['twitter_url']            = sanitize_text_field( $new_instance['twitter_url'] );
+
+            $instance['instagram_url']          = sanitize_text_field( $new_instance['instagram_url'] );
+
+            $instance['youtube_url']            = sanitize_text_field( $new_instance['youtube_url'] );
+
+            $instance['pinterest_url']          = sanitize_text_field( $new_instance['pinterest_url'] );
+
+            $instance['vimeo_url']              = sanitize_text_field( $new_instance['vimeo_url'] );
+
+            $instance['vk_url']                 = sanitize_text_field( $new_instance['vk_url'] );
 
             return $instance;
         } 

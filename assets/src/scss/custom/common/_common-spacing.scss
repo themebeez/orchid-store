@@ -169,7 +169,9 @@
 .woocommerce-page .woocommerce-billing-fields,
 .woocommerce-page #customer_login h2,
 .woocommerce-account .addresses .title h3,
-.woocommerce .woocommerce-column__title {
+.woocommerce .woocommerce-column__title,
+.os-about-widget .intro,
+.os-about-widget .contact-info li  {
 
 	margin-bottom:30px;
 }
@@ -192,7 +194,8 @@
 .woocommerce .woocommerce-order-details, 
 .woocommerce .woocommerce-order-downloads,
 .woocommerce div.product .woocommerce-tabs,
-.woocommerce .cross-sells>h2 {
+.woocommerce .cross-sells>h2,
+.os-about-widget .info {
 
 	margin-bottom: 40px;
 }
