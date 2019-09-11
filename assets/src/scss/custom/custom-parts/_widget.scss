@@ -94,10 +94,10 @@ aside.secondary-widget-area .widget  {
 ==========================================
 */
 
+.os-about-widget img {
 
-.os-about-widget .info {
-
-    margin-bottom: 30px;
+    display:block;
+    margin-bottom: 20px;
 }
 
 .os-about-widget .contact-info {
@@ -108,17 +108,62 @@ aside.secondary-widget-area .widget  {
 .os-about-widget .contact-info li {
 
     display:block;
-    padding-bottom:15px;
 }
 
 .os-about-widget .contact-info li:last-child {
 
-    padding-bottom:0;
+    margin-bottom:0;
 }
 
-.os-about-widget .contact-info li p {
+.os-about-widget .contact-info p {
 
-    margin-bottom: 2px;
+    position: relative;
+    padding-left: 35px;
+    line-height: 1.6;
+}
+
+.os-about-widget .contact-info span {
+
+    position: absolute;
+    top:50%;
+    left:0;
+    -webkit-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    -o-transform:translateY(-50%);
+    transform:translateY(-50%);
+}
+
+.os-about-widget .contact-info span i {
+    
+    font-weight:normal;
+    font-size: 26px;
+    line-height: 1.6;
+}
+
+.os-about-widget .social-icons ul {
+
+    margin:-5px 0;
+}
+
+.os-about-widget .social-icons ul li {
+
+    margin:5px 2px;
+}
+
+.os-about-widget .social-icons ul li:first-child {
+
+    margin-left: 0;
+}
+
+.os-about-widget .social-icons ul li:last-child {
+
+    margin-right: 0;
+}
+
+.os-about-widget .social-icons ul li a {
+
+    font-size: 15px;
+    @include border-radius(100%);
 }
 
 
