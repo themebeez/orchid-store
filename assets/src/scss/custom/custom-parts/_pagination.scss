@@ -1,6 +1,15 @@
 
 // Pagination 
 
+.patigation .nav-links {
+
+	margin:-1px 0;
+}
+
+.patigation .page-numbers {
+
+	margin:1px;
+}
 
 .patigation .page-numbers,
 .woocommerce .woocommerce-pagination .page-numbers li,
@@ -12,13 +21,11 @@
 	width:45px;
 	line-height: 43px;
 	text-align: center;
-	margin:0 15px;
 }
 
 .patigation .page-numbers.current,
 .woocommerce .woocommerce-pagination .page-numbers li .current {
 	
-	margin: 0 5px;
 	padding:0;
 	width:45px;
 	@include border_radius(0);
@@ -40,17 +47,18 @@
 .patigation .page-numbers.prev:after {
 
 	font-family: 'boxicons';
-	font-size:16px;
+	font-size:14px;
+	line-height: 43px;
 }
 
 .patigation .page-numbers.next:after {
 
-	content: "\e95b";
+	content: "\e9e4";
 }
 
 .patigation .page-numbers.prev:after {
 
-	content: "\e95a";
+	content: "\e9e3";
 }
 
 .patigation .page-numbers:last-child {
