@@ -157,7 +157,7 @@ body.cat-nav-at-navigation-active .category-navigation .cat-nav-trigger .icon .l
 .category-navigation .category-navigation-list li a {
 	
 	position: relative;
-	display:inline-block;
+	display:block;
 	
 }
 
@@ -192,9 +192,15 @@ body.cat-nav-at-navigation-active .category-navigation .cat-nav-trigger .icon .l
 // Menu label 
 
 .category-navigation .menu-item-description {
-
-	top:0;
+	
+	padding: 2px 10px;
+    font-size: 8px;
+    top: 3px;
+    left: 100px;
+    right: auto;
+    font-weight:normal;
 }
+
 
 
 // 2nd level drop down 

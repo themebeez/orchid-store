@@ -110,7 +110,13 @@ input[type="submit"]:hover,
 .wc-block-grid__product-onsale,
 .os-about-widget .social-icons ul li a,
 .os-about-widget .social-icons ul li a:hover,
-.footer .os-about-widget .social-icons ul li a:hover   {
+.footer .os-about-widget .social-icons ul li a:hover,
+.patigation .page-numbers,
+.patigation .page-number:hover,
+.woocommerce nav.woocommerce-pagination ul li span.current,
+.woocommerce .woocommerce-pagination .page-numbers li span, 
+.woocommerce .woocommerce-pagination .page-numbers li a,
+.woocommerce .woocommerce-pagination .page-numbers li a:hover {
 
 	color:$white;
 }
@@ -325,7 +331,10 @@ a.button-general,
 .woocommerce-checkout #payment div.payment_box,
 .header-style-1 .wishlist-icon-container a,
 .wc-block-grid .wp-block-button__link,
-.os-about-widget .social-icons ul li a   {
+.os-about-widget .social-icons ul li a,
+.patigation .page-numbers,
+.woocommerce .woocommerce-pagination .page-numbers li span, 
+.woocommerce .woocommerce-pagination .page-numbers li a   {
 
 	background:$secondary_color;
 }
@@ -361,7 +370,11 @@ a.button-general:hover,
 .header-style-1 .wishlist-icon-container a:hover,
 .os-about-widget .social-icons ul li a:hover,
 .woocommerce ul.products li .product-hover-items ul li a:hover,
-.woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist a:hover {
+.woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist a:hover,
+.patigation .page-numbers.current,
+.patigation .page-numbers:hover,
+.woocommerce .woocommerce-pagination .page-numbers li a:hover, 
+.woocommerce .woocommerce-pagination .page-numbers li .current  {
 
 	background:$third_color;
 }
@@ -479,8 +492,7 @@ input[type="color"],
 	border-right:2px solid $secondary_color;
 }
 
-.category-nav ul,
-.patigation .page-numbers.current {
+.category-nav ul {
 
 	border:2px solid $secondary_color;
 }
