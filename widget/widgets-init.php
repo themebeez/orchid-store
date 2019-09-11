@@ -59,6 +59,8 @@ function orchid_store_widgets_init() {
 
 	register_widget( 'Orchid_Store_Services_Widget' );
 
+	register_widget( 'Orchid_Store_About_Widget' );
+
 
 	if( class_exists( 'Woocommerce' ) ) {
 
@@ -91,6 +93,12 @@ require get_template_directory() . '/widget/widgets/advertisement-widget.php';
  * Widget to display services offered.
  */
 require get_template_directory() . '/widget/widgets/services-widget.php';
+
+
+/**
+ * Widget to display about store information
+ */
+require get_template_directory() . '/widget/widgets/about-widget.php';
 
 
 if( class_exists( 'Woocommerce' ) ) {
