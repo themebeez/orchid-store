@@ -6,21 +6,21 @@
  *
  * @package Orchid_Store
  */
-$show_categories    = '';
-$show_excerpt       = '';
-$show_author        = '';
-$show_date          = '';
+$orchid_store_show_categories    = '';
+$orchid_store_show_excerpt       = '';
+$orchid_store_show_author        = '';
+$orchid_store_show_date          = '';
 
 if( is_archive() ) {
-    $show_categories    = orchid_store_get_option( 'archive_display_cats' );
-    $show_excerpt       = orchid_store_get_option( 'archive_display_excerpt' );
-    $show_author        = orchid_store_get_option( 'archive_display_author' );
-    $show_date          = orchid_store_get_option( 'archive_display_date' );
+    $orchid_store_show_categories    = orchid_store_get_option( 'archive_display_cats' );
+    $orchid_store_show_excerpt       = orchid_store_get_option( 'archive_display_excerpt' );
+    $orchid_store_show_author        = orchid_store_get_option( 'archive_display_author' );
+    $orchid_store_show_date          = orchid_store_get_option( 'archive_display_date' );
 } else {
-    $show_categories    = orchid_store_get_option( 'blog_display_cats' );
-    $show_excerpt       = orchid_store_get_option( 'blog_display_excerpt' );
-    $show_author        = orchid_store_get_option( 'blog_display_author' );
-    $show_date          = orchid_store_get_option( 'blog_display_date' );
+    $orchid_store_show_categories    = orchid_store_get_option( 'blog_display_cats' );
+    $orchid_store_show_excerpt       = orchid_store_get_option( 'blog_display_excerpt' );
+    $orchid_store_show_author        = orchid_store_get_option( 'blog_display_author' );
+    $orchid_store_show_date          = orchid_store_get_option( 'blog_display_date' );
 }
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -47,7 +47,7 @@ if( is_archive() ) {
         <div class="os-col content-col">
             <div class="box">
                 <?php
-                if( $show_categories == true ) {
+                if( $orchid_store_show_categories == true ) {
                     /**
                     * Hook - orchid_store_post_categories.
                     *
@@ -60,7 +60,7 @@ if( is_archive() ) {
                     <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                 </div><!-- .title -->
                 <?php
-                if( $show_excerpt == true ) {
+                if( $orchid_store_show_excerpt == true ) {
                     /**
                     * Hook - orchid_store_excerpt.
                     *
@@ -69,12 +69,12 @@ if( is_archive() ) {
                     do_action( 'orchid_store_excerpt' );
                 }
 
-                if( $show_author == true || $show_date == true ) {
+                if( $orchid_store_show_author == true || $orchid_store_show_date == true ) {
                     ?>
                     <div class="entry-metas">
                         <ul>
                             <?php
-                            if( $show_author == true ) {
+                            if( $orchid_store_show_author == true ) {
                                 /**
                                 * Hook - orchid_store_post_author.
                                 *
@@ -83,7 +83,7 @@ if( is_archive() ) {
                                 do_action( 'orchid_store_post_author' );
                             }
 
-                            if( $show_date == true ) {
+                            if( $orchid_store_show_date == true ) {
                                 /**
                                 * Hook - orchid_store_post_date.
                                 *

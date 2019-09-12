@@ -16,7 +16,7 @@ if( ! function_exists( 'orchid_store_product_search_action' ) ) {
 		<div class="custom-search">
 	        <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) );?>">
 	            <div class="custom-search-entry">
-	                <input type="search" class="form-control" name="s" id="s" value="<?php echo get_search_query(); ?>" placeholder="<?php esc_attr_e( 'Search Product', 'orchid-store' ); ?>" />
+	                <input type="search" class="form-control" name="s" id="s" placeholder="<?php esc_attr_e( 'Search Product', 'orchid-store' ); ?>" />
 	                <input type="hidden" value="product" name="post_type" id="post_type"/>
 	                <button type="submit"><i class='bx bx-search-alt'></i></button>
 	            </div><!-- .custom-search-entry -->

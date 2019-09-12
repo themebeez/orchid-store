@@ -23,6 +23,24 @@ if( ! function_exists( 'orchid_store_active_top_header' ) ) {
 }
 
 
+/**
+ * Active callback function for when special menu is active.
+ */
+if( ! function_exists( 'orchid_store_active_special_menu' ) ) {
+
+	function orchid_store_active_special_menu( $control ) {
+
+		if ( $control->manager->get_setting( 'orchid_store_field_display_special_menu' )->value() == true ) {
+
+			return true;
+		} else {
+			
+			return false;
+		}		
+	}
+}
+
+
 
 /**
  * Active callback function for when static home page is set.

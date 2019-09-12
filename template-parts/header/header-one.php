@@ -25,20 +25,20 @@
                         </div><!-- .topbar-items -->
                     </div><!-- .os-col.left-col -->
                     <?php
-                    $social_links = orchid_store_get_option( 'top_header_social_links' );
+                    $orchid_store_social_links = orchid_store_get_option( 'top_header_social_links' );
 
-                    if( !empty( $social_links ) ) {
+                    if( !empty( $orchid_store_social_links ) ) {
 
-                        $social_links_array = explode( ',', $social_links );
+                        $orchid_store_social_links_array = explode( ',', $orchid_store_social_links );
                         ?>
                         <div class="os-col right-col">
                              <div class="social-icons">
                                 <ul class="social-icons-list">
                                     <?php
-                                    foreach( $social_links_array as $social_link ) {
+                                    foreach( $orchid_store_social_links_array as $orchid_store_social_link ) {
                                         ?>
                                         <li>
-                                            <a href="<?php echo esc_url( $social_link ); ?>"></a>
+                                            <a href="<?php echo esc_url( $orchid_store_social_link ); ?>"></a>
                                         </li>
                                         <?php
                                     }
@@ -54,7 +54,7 @@
         </div><!-- .top-header -->
         <div class="mid-header">
             <div class="__os-container__">
-                <div class="os-row">
+                <div class="os-row <?php orchid_store_logo_row_class(); ?>">
                     <div class="os-col logo-col">
                         <?php
                         /**
@@ -65,81 +65,114 @@
                         do_action( 'orchid_store_site_identity' );
                         ?>
                     </div><!-- .os-col.logo-col -->
-                    <div class="os-col extra-col">
-                        <div class="aside-right">
-                            <?php
-                            /**
-                            * Hook - orchid_store_product_search.
-                            *
-                            * @hooked orchid_store_product_search_action - 10
-                            */
-                            do_action( 'orchid_store_product_search' );
-                            ?>
-                            <div class="wishlist-minicart-wrapper">
-                                <div class="wishlist-minicart-inner">
-                                <?php
-                                /**
-                                * Hook - orchid_store_wishlist_icon.
-                                *
-                                * @hooked orchid_store_wishlist_icon_action - 10
-                                */
-                                do_action( 'orchid_store_wishlist_icon' );
+                    <?php
+                    $orchid_store_display_product_search = orchid_store_get_option( 'display_product_search_form' );
+                    $orchid_store_display_wishlist_icon = orchid_store_get_option( 'display_wishlist' );
+                    $orchid_store_display_minicart = orchid_store_get_option( 'display_mini_cart' );
 
-                                /**
-                                * Hook - orchid_store_mini_cart.
-                                *
-                                * @hooked orchid_store_mini_cart_action - 10
-                                */
-                                do_action( 'orchid_store_mini_cart' );
+                    if( ( ( $orchid_store_display_product_search == true || $orchid_store_display_minicart == true ) && class_exists( 'Woocommerce' ) ) || ( $orchid_store_display_wishlist_icon == true && function_exists( 'YITH_WCWL' ) ) ) {
+                        ?>
+                        <div class="os-col extra-col">
+                            <div class="aside-right">
+                                <?php
+                                if( $orchid_store_display_product_search == true ) {
+
+                                    /**
+                                    * Hook - orchid_store_product_search.
+                                    *
+                                    * @hooked orchid_store_product_search_action - 10
+                                    */
+                                    do_action( 'orchid_store_product_search' );
+                                }
                                 ?>
-                                </div><!-- . wishlist-minicart-inner -->
-                            </div>
-                        </div><!-- .aside-right -->
-                    </div><!-- .os-col.extra-col -->
+                                <div class="wishlist-minicart-wrapper">
+                                    <div class="wishlist-minicart-inner">
+                                    <?php
+                                    if( $orchid_store_display_wishlist_icon == true ) {
+
+                                        /**
+                                        * Hook - orchid_store_wishlist_icon.
+                                        *
+                                        * @hooked orchid_store_wishlist_icon_action - 10
+                                        */
+                                        do_action( 'orchid_store_wishlist_icon' );
+                                    }
+
+                                    if( $orchid_store_display_minicart == true ) {
+
+                                        /**
+                                        * Hook - orchid_store_mini_cart.
+                                        *
+                                        * @hooked orchid_store_mini_cart_action - 10
+                                        */
+                                        do_action( 'orchid_store_mini_cart' );
+                                    }
+                                    ?>
+                                    </div><!-- . wishlist-minicart-inner -->
+                                </div>
+                            </div><!-- .aside-right -->
+                        </div><!-- .os-col.extra-col -->
+                        <?php
+                    }
+                    ?>
                 </div><!-- .os-row -->
             </div><!-- .__os-container__ -->
         </div><!-- .mid-header -->
         <div class="bottom-header">
             <div class="main-navigation"> 
                 <div class="__os-container__">
-                    <div class="os-row os-nav-row">
-                        <div class="os-col os-nav-col-left">
-                            <div class="category-navigation">
-                                <button class="cat-nav-trigger">
-                                    <span class="title">All departments</span>
-                                    <span class="icon">
-                                        <span class="line"></span>
-                                        <span class="line"></span>
-                                        <span class="line"></span>
-                                    </span>
-                                </button><!-- . cat-nav-trigger -->
-                                
-                                <?php
-                                /**
-                                * Hook - orchid_store_secondary_navigation.
-                                *
-                                * @hooked orchid_store_secondary_navigation_action - 10
-                                */
-                                do_action( 'orchid_store_secondary_navigation' );
-                                ?>
-                            </div><!-- .site-navigation category-navigation -->
-                        </div><!-- .os-col.os-nav-col-left -->
-                        <div class="os-col os-nav-col-right">
-                        <div class="menu-toggle">
-                            <span class="hamburger-bar"></span>
-                            <span class="hamburger-bar"></span>
-                            <span class="hamburger-bar"></span>
-                        </div><!-- .meu-toggle -->
+                    <div class="os-row os-nav-row <?php orchid_store_menu_row_class(); ?>">
                         <?php
-                        /**
-                        * Hook - orchid_store_primary_navigation.
-                        *
-                        * @hooked orchid_store_primary_navigation_action - 10
-                        */
-                        do_action( 'orchid_store_primary_navigation' );
+                        $orchid_store_display_special_menu = orchid_store_get_option( 'display_special_menu' );
+                        if( $orchid_store_display_special_menu == true ) {
+                            ?>
+                            <div class="os-col os-nav-col-left">
+                                <div class="category-navigation">
+                                    <button class="cat-nav-trigger">
+                                        <?php
+                                        $orchid_store_special_menu_title = orchid_store_get_option( 'special_menu_title' );
+                                        if( !empty( $orchid_store_special_menu_title ) ) {
+                                            ?>
+                                            <span class="title"><?php echo esc_html( $orchid_store_special_menu_title ); ?></span>
+                                            <?php
+                                        }
+                                        ?>
+                                        <span class="icon">
+                                            <span class="line"></span>
+                                            <span class="line"></span>
+                                            <span class="line"></span>
+                                        </span>
+                                    </button><!-- . cat-nav-trigger -->
+                                    
+                                    <?php
+                                    /**
+                                    * Hook - orchid_store_secondary_navigation.
+                                    *
+                                    * @hooked orchid_store_secondary_navigation_action - 10
+                                    */
+                                    do_action( 'orchid_store_secondary_navigation' );
+                                    ?>
+                                </div><!-- .site-navigation category-navigation -->
+                            </div><!-- .os-col.os-nav-col-left -->
+                            <?php
+                        }
                         ?>
-                    </div><!-- // os-col os-nav-col-right -->
-                </div><!-- // os-row os-nav-row -->
+                        <div class="os-col os-nav-col-right">
+                            <div class="menu-toggle">
+                                <span class="hamburger-bar"></span>
+                                <span class="hamburger-bar"></span>
+                                <span class="hamburger-bar"></span>
+                            </div><!-- .meu-toggle -->
+                            <?php
+                            /**
+                            * Hook - orchid_store_primary_navigation.
+                            *
+                            * @hooked orchid_store_primary_navigation_action - 10
+                            */
+                            do_action( 'orchid_store_primary_navigation' );
+                            ?>
+                        </div><!-- // os-col os-nav-col-right -->
+                    </div><!-- // os-row os-nav-row -->
                 </div><!-- .__os-container__ -->
             </div><!-- .main-navigation -->
         </div><!-- .bottom-header -->

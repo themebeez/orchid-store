@@ -35,7 +35,6 @@ add_action( 'orchid_store_secondary_navigation', 'orchid_store_secondary_navigat
 if( ! function_exists( 'orchid_store_site_identity_action' ) ) {
 
 	function orchid_store_site_identity_action() {
-
 		?>
 		<div class="site-branding">
 			<?php
@@ -134,7 +133,7 @@ if( ! function_exists( 'orchid_store_post_tags_action' ) ) {
 			?>
 			<div class="entry-tags">
 				<div class="post-tags">
-                	<?php orchid_store_post_categories_list(); ?>
+                	<?php orchid_store_post_tags_list(); ?>
                 </div><!-- .post-tags -->
             </div><!-- .entry-cats -->
 			<?php

@@ -28,10 +28,18 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
             $button_titles  = $instance['button_titles'];
             $button_links   = $instance['button_links'];
             $show_contents  = $instance['show_contents'];
+            $enable_mask    = $instance['enable_mask'];
             $banner_image_1 = $instance['banner_img_1'];
             $banner_image_2 = $instance['banner_img_2'];
             $banner_link_1  = $instance['banner_link_1'];
             $banner_link_2  = $instance['banner_link_2'];
+
+            $mask_layer_class = '';
+
+            if( $enable_mask == true ) {
+
+                $mask_layer_class = 'show-mask';
+            }
             ?>
             <section class="general-banner banner-style-1 section-spacing">
                 <div class="section-inner">
@@ -62,7 +70,7 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                                                             if( $show_contents == true ) {
                                                                 ?>
                                                                 <div class="item-entry">
-                                                                    <div class="content-holder">
+                                                                    <div class="content-holder <?php echo esc_attr( $mask_layer_class ); ?>">
                                                                         <div class="entry-contents">
                                                                             <div class="title">
                                                                                 <h2><?php the_title(); ?></h2>
@@ -167,6 +175,7 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                 'button_titles'	=> array(),
                 'button_links'	=> array(),
                 'show_contents'	=> true,
+                'enable_mask'   => false,
                 'banner_img_1' => '',
                 'banner_img_2' => '',
                 'banner_link_1'=> '',
@@ -234,6 +243,13 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                 <label for="<?php echo esc_attr( $this->get_field_id('show_contents') ); ?>">
                 	<input id="<?php echo esc_attr( $this->get_field_id('show_contents') ); ?>" name="<?php echo esc_attr( $this->get_field_name('show_contents') ); ?>" type="checkbox" value="<?php echo esc_attr( $instance['show_contents'] ); ?>" <?php if( $instance['show_contents'] == true ) { ?>checked<?php } ?> />  
                     <strong><?php esc_html_e( 'Show Slider Contents', 'orchid-store' ); ?></strong>
+                </label>                 
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id('enable_mask') ); ?>">
+                    <input id="<?php echo esc_attr( $this->get_field_id('enable_mask') ); ?>" name="<?php echo esc_attr( $this->get_field_name('enable_mask') ); ?>" type="checkbox" value="<?php echo esc_attr( $instance['enable_mask'] ); ?>" <?php if( $instance['enable_mask'] == true ) { ?>checked<?php } ?> />  
+                    <strong><?php esc_html_e( 'Enable Mask Layer', 'orchid-store' ); ?></strong>
                 </label>                 
             </p>
 
@@ -324,6 +340,8 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
             $instance['button_links'] 	= array_map( 'esc_url_raw', $new_instance['button_links'] );
 
             $instance['show_contents'] 	= wp_validate_boolean( $new_instance['show_contents'] );
+
+            $instance['enable_mask']    = wp_validate_boolean( $new_instance['enable_mask'] );
 
             $instance['banner_img_1']   = esc_url_raw( $new_instance['banner_img_1'] );
 

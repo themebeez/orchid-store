@@ -128,3 +128,62 @@ if( ! function_exists( 'orchid_store_content_entry_class' ) ) {
         }
 	}
 }
+
+
+if( ! function_exists( 'orchid_store_menu_row_class' ) ) {
+
+	function orchid_store_menu_row_class() {
+
+		$menu_row_class = '';
+
+		$display_special_menu = orchid_store_get_option( 'display_special_menu' );
+
+		if( $display_special_menu == false ) {
+
+			$menu_row_class = 'no-special-menu';
+		}
+
+		echo esc_attr( $menu_row_class );
+	}
+}
+
+if( ! function_exists( 'orchid_store_logo_row_class' ) ) {
+
+	function orchid_store_logo_row_class() {
+
+		$display_product_search = orchid_store_get_option( 'display_product_search_form' );
+        $display_wishlist_icon = orchid_store_get_option( 'display_wishlist' );
+        $display_minicart = orchid_store_get_option( 'display_mini_cart' );
+
+        $logo_row_class = '';
+
+        if( function_exists( 'YITH_WCWL' ) ) {
+
+        	if( $display_wishlist_icon == false ) {
+
+        		$logo_row_class = 'no-wishlist-icon';
+        	}
+        } else {
+
+        	$logo_row_class = 'no-wishlist-icon';
+        }
+
+        if( class_exists( 'Woocommerce' ) ) {
+
+        	if( $display_product_search == false ) {
+
+        		$logo_row_class .= ' no-product-search-form';
+        	}
+
+        	if( $display_minicart == false ) {
+
+        		$logo_row_class .= ' no-mini-cart';
+        	}
+        } else {
+
+        	$logo_row_class .= ' no-product-search-form no-mini-cart';
+        }
+
+        echo esc_attr( $logo_row_class );
+	}
+}

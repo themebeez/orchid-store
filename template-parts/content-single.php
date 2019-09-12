@@ -6,15 +6,15 @@
  *
  * @package Orchid_Store
  */
-$show_tags			= orchid_store_get_option( 'display_post_tags' );
-$show_categories    = orchid_store_get_option( 'display_post_cats' );
-$show_author        = orchid_store_get_option( 'display_post_author' );
-$show_date          = orchid_store_get_option( 'display_post_date' );
-$show_featured_img 	= orchid_store_get_option( 'display_page_featured_image' );
+$orchid_store_show_tags 		= orchid_store_get_option( 'display_post_tags' );
+$orchid_store_show_categories	= orchid_store_get_option( 'display_post_cats' );
+$orchid_store_show_author		= orchid_store_get_option( 'display_post_author' );
+$orchid_store_show_date			= orchid_store_get_option( 'display_post_date' );
+$orchid_store_show_featured_img	= orchid_store_get_option( 'display_page_featured_image' );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php 
-	if( $show_featured_img == true && has_post_thumbnail() ) {
+	if( $orchid_store_show_featured_img == true && has_post_thumbnail() ) {
 		?>
 		<div class="thumb featured-thumb">
 	       	<?php
@@ -34,7 +34,7 @@ $show_featured_img 	= orchid_store_get_option( 'display_page_featured_image' );
 
 	<?php 
 
-	if( $show_categories == true ) {
+	if( $orchid_store_show_categories == true ) {
         /**
         * Hook - orchid_store_post_categories.
         *
@@ -43,12 +43,12 @@ $show_featured_img 	= orchid_store_get_option( 'display_page_featured_image' );
         do_action( 'orchid_store_post_categories' );
     }
 
-    if( $show_date == true || $show_author == true ) {
+    if( $orchid_store_show_date == true || $orchid_store_show_author == true ) {
     	?>
         <div class="entry-metas">
             <ul>
                 <?php
-                if( $show_author == true ) {
+                if( $orchid_store_show_author == true ) {
                     /**
                     * Hook - orchid_store_post_author.
                     *
@@ -57,7 +57,7 @@ $show_featured_img 	= orchid_store_get_option( 'display_page_featured_image' );
                     do_action( 'orchid_store_post_author' );
                 }
 
-                if( $show_date == true ) {
+                if( $orchid_store_show_date == true ) {
                     /**
                     * Hook - orchid_store_post_date.
                     *
@@ -84,7 +84,7 @@ $show_featured_img 	= orchid_store_get_option( 'display_page_featured_image' );
 		?>
 	</div><!-- .editor-entry -->
 	<?php
-	if( $show_tags == true ) {
+	if( $orchid_store_show_tags == true ) {
 		/**
 	    * Hook - orchid_store_post_tags.
 	    *

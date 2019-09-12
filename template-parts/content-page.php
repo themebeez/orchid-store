@@ -7,11 +7,11 @@
  * @package Orchid_Store
  */
 
-$display_featured_image = orchid_store_get_option( 'display_page_featured_image' );
+$orchid_store_display_featured_image = orchid_store_get_option( 'display_page_featured_image' );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php 
-	if( $display_featured_image == true && has_post_thumbnail() ) {
+	if( $orchid_store_display_featured_image == true && has_post_thumbnail() ) {
 		?>
 		<div class="thumb featured-thumb">
 	       	<?php
