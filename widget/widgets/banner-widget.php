@@ -70,7 +70,7 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                                                             <?php
                                                             if( $enable_mask == true ) {
                                                                 ?>
-                                                                <div class="banner-mask"></div>
+                                                                <div class="mask"></div>
                                                                 <?php
                                                             }
                                                             if( $show_contents == true ) {
@@ -119,7 +119,7 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                                     <?php
                                     if( !empty( $banner_image_1 ) ) {
                                         ?>
-                                        <div class="banner-image-wrapper banner-image-one-wrapper imghover">
+                                        <div class="banner-image-wrapper banner-image-one-wrapper">
                                             <?php
                                             if( !empty( $banner_link_1 ) ) {
                                                 ?>
@@ -141,7 +141,7 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
                                     if( !empty( $banner_image_2 ) ) {
                                         ?>
-                                        <div class="banner-image-wrapper banner-image-two-wrapper imghover">
+                                        <div class="banner-image-wrapper banner-image-two-wrapper">
                                             <?php
                                             if( !empty( $banner_link_2 ) ) {
                                                 ?>

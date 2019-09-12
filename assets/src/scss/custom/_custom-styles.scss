@@ -920,6 +920,60 @@ section .section-title h3:after {
     outline:none;
 }
 
+
+// case: hidden search, hidden wishlist, hidden mini-cart 
+
+
+.header-style-1 .mid-header .no-product-search-form .aside-right,
+.header-style-1 .mid-header .no-mini-cart .wishlist-minicart-inner,
+.header-style-1 .mid-header .no-mini-cart .aside-right,
+.header-style-1 .mid-header .no-wishlist-icon .wishlist-minicart-inner {
+
+    justify-content: flex-end;
+}
+
+.header-style-1 .mid-header .no-mini-cart .logo-col,
+.header-style-1 .mid-header .no-mini-cart .extra-col {
+
+    flex:0 0 50%;
+    max-width:50%;
+}
+
+.header-style-1 .mid-header .no-mini-cart .custom-search {
+
+    flex:0 0 calc( 100% - 50px );
+    max-width:calc( 100% - 50px );
+}
+
+.header-style-1 .mid-header .no-mini-cart .wishlist-minicart-wrapper {
+
+    flex:0 0 50px;
+    max-width:50px;
+}
+
+.header-style-1 .mid-header .no-wishlist-icon .custom-search {
+
+    flex:0 0 calc( 100% - 190px );
+    max-width:calc( 100% - 190px );
+}
+
+.header-style-1 .mid-header .no-wishlist-icon .wishlist-minicart-wrapper {
+    
+    flex:0 0 190px;
+    max-width: 190px;
+}
+
+.header-style-1 .mid-header .no-wishlist-icon.no-mini-cart .custom-search {
+
+    flex:0 0 100%;
+    max-width:100%;
+    padding-right:0;
+}
+
+
+
+// Header primary navigation
+
 .header-style-1 .site-navigation {
 
     position: relative;
@@ -1062,6 +1116,26 @@ section .section-title h3:after {
     width:100%;
     padding:30px 0 30px 40px;
     max-width:500px;
+    z-index:3;
+}
+
+
+// mask 
+
+.banner-style-1 .thumb .mask {
+
+    z-index:-1;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.banner-style-1.show-mask .thumb .mask {
+
+    z-index:2;
+}
+
+.banner-style-1.show-mask .entry-contents {
+
+    color:$white;
 }
 
 
@@ -1382,6 +1456,15 @@ section .section-title h3:after {
     max-width:55%;
 }
 
+// if featured image is not set
+
+.search-entry article:not(.has-post-thumbnail) .content-col,
+.archive-entry article:not(.has-post-thumbnail) .content-col {
+
+    flex:0 0 100%;
+    max-width:100%;
+}
+
 body.no-sidebar .search-entry article .thumb-col,
 body.no-sidebar .search-entry article .content-col,
 body.no-sidebar .archive-entry article .thumb-col,
@@ -1451,12 +1534,6 @@ body.no-sidebar .archive-entry article .content-col {
     margin: 30px auto 0;
 }
 
-.error-404-wrap .search-form input[type="search"],
-.not-found .search-form input[type="search"] {
-
-    @include border-radius(0);
-    height:41px;
-}
 
 
 

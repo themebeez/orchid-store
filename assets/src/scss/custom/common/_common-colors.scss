@@ -146,6 +146,10 @@ input[type="password"],
 .header-style-1 .custom-search-entry input,
 .header-style-1 .custom-search-entry select,
 .wc-block-grid .wc-block-grid__product-title,
+.search-form button,
+form.search-form button[type="search"],
+.widget_search form button[type="submit"],
+.widget_product_search form button[type="submit"],
 .woocommerce .wishlist_table tr td.product-stock-status span.wishlist-in-stock {
 
 	color:$primary_color;
@@ -157,7 +161,6 @@ input[type="password"],
 
 
 .editor-entry a,
-.search-form button,
 .entry-404 h1 span,
 .banner-style-1 .caption span,
 .product-widget-style-2 .tab-nav ul li a.active,
