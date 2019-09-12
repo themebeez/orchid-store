@@ -759,9 +759,14 @@
 
 		text-align:center;
 	}
+
+	.product-widget.product-widget-style-2 .product-entry {
+
+		padding-top: 0;
+	}
 	
 	.product-widget-style-2 .tab-nav,
-	.product-widget-style-2 .section-title {
+	section.product-widget-style-2 .section-title {
 
 		margin-bottom: 30px;
 	}
@@ -925,7 +930,13 @@
 
 
 	// widget 
+	
+	.cta-style-2 .box-holder.box-holder-left-align,
+	.cta-style-2 .box-holder.box-holder-right-align {
 
+		float:none;
+		margin:0 auto;
+	}
 
 	.cta-style-2 .box-holder {
 
