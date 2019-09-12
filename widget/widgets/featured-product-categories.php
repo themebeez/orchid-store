@@ -125,7 +125,7 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
                         <span class="sldr-elmnt-cntnr">
 
                             <label for="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>">
-                                <input id="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>" name="<?php echo esc_attr( $this->get_field_name('product_categories') ); ?>[]" type="checkbox" value="<?php echo esc_attr( $product_category->slug ); ?>" <?php if( !empty( $instance['product_categories'] ) ) { if( in_array( $product_category->slug, $instance['product_categories'] ) ) { ?>checked<?php } } ?>>
+                                <input id="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>" name="<?php echo esc_attr( $this->get_field_name('product_categories') ); ?>[]" type="checkbox" value="<?php echo esc_attr( $product_category->slug ); ?>" <?php if( !empty( $instance['product_categories'] ) ) { checked( in_array( $product_category->slug, $instance['product_categories'] ), true ); } ?>>
                                 <strong><?php echo esc_html( $product_category->name ); ?></strong>
                             </label>
 
