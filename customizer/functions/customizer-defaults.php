@@ -59,6 +59,10 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
             'display_special_menu' => true,
             'special_menu_title' => esc_html__( 'Special Menu', 'orchid-store' ),
 
+            'display_product_search_form' => true,
+            'display_mini_cart' => true,
+            'display_wishlist' => true,
+
             'blog_display_cats' => true,
             'blog_display_excerpt' => true,
             'blog_display_date' => true,

@@ -29,9 +29,35 @@ if( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) :
             $offer_text         = !empty( $instance['offer_text'] ) ? $instance['offer_text'] : '';
             $button_title       = !empty( $instance['button_title'] ) ? $instance['button_title'] : '';
             $button_link        = !empty( $instance['button_link'] ) ? $instance['button_link'] : '';
+            $content_alignment  = !empty( $instance['content_alignment'] ) ? $instance['content_alignment'] : '';
             $offer_image        = !empty( $instance['offer_image'] ) ? $instance['offer_image'] : '';
             $img_as_bg          = $instance['set_image_in_background'];
             $show_contents      = $instance['show_offer_contents'];
+
+            $box_holder_class = 'box-holder';
+
+            switch ( $content_alignment ) {
+
+                case 'left':
+
+                    $box_holder_class .= ' box-holder-left-align';
+                    break;
+
+                case 'right' :
+
+                    $box_holder_class .= ' box-holder-right-align';
+                    break;
+
+                default:
+                    
+                    $box_holder_class .= ' box-holder-center-align';
+                    break;
+            }
+
+            if( $content_alignment == 'left' ) {
+
+                $box_holder_class = 'box-holder-left-align';
+            } else 
 
             if( !empty( $offer_image ) && $img_as_bg == true ) {
                 ?>
@@ -53,7 +79,7 @@ if( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) :
                     ?>
                     <div class="__os-container__">
                         <div class="cta-entry">
-                            <div class="box-holder">
+                            <div class="<?php echo esc_attr( $box_holder_class ); ?>">
                                 <?php
                                 if( $show_contents == true ) {
                                     ?>
@@ -96,6 +122,7 @@ if( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) :
         }
      
         public function form( $instance ) {
+
             $defaults = array(
                 'title'                     => '',
                 'show_offer_contents'       => true,
@@ -103,6 +130,7 @@ if( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) :
                 'offer_text'                => '',
                 'button_title'              => '',
                 'button_link'               => '',
+                'content_alignment'         => 'left',
                 'offer_image'               => '',
                 'set_image_in_background'   => true,
 
@@ -153,9 +181,29 @@ if( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) :
                     <label for="<?php echo esc_attr( $this->get_field_id('button_link') ); ?>">
                         <strong><?php esc_html_e('Button Link', 'orchid-store'); ?></strong>
                     </label>
-                    <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('button_link') ); ?>" name="<?php echo esc_attr( $this->get_field_name('button_link') ); ?>" type="url" value="<?php echo esc_attr( $instance['button_link'] ); ?>" />      
+                    <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('button_link') ); ?>" name="<?php echo esc_attr( $this->get_field_name('button_link') ); ?>" type="url" value="<?php echo esc_attr( $instance['button_link'] ); ?>" />   
+
+                    <label for="<?php echo esc_attr( $this->get_field_id('content_alignment') ); ?>">
+                        <strong><?php esc_html_e('Content Alignment', 'orchid-store'); ?></strong>
+                    </label>  
+                    <?php
+                    $alignments = array(
+                        'left' => esc_html__( 'Left', 'orchid-store' ),
+                        'center' => esc_html__( 'Center', 'orchid-store' ),
+                        'right' => esc_html__( 'Right', 'orchid-store' ),
+                    );
+                    ?>
+                    <select class="widefat" name="<?php echo esc_attr( $this->get_field_name('content_alignment') ); ?>" id="<?php echo esc_attr( $this->get_field_id('content_alignment') ); ?>">
+                        <?php
+                        foreach( $alignments as $key_value => $alignment ) {
+                            ?>
+                            <option value="<?php echo esc_attr( $key_value ); ?>" <?php selected( $key_value, $instance['content_alignment'] ); ?>><?php echo esc_html( $alignment ); ?></option>
+                            <?php
+                        }
+                        ?>
+                    </select> 
                 </span>
-            </p>  
+            </p>
 
             <p>
                 <label for="<?php echo esc_attr($this->get_field_id('offer_image')); ?>">
@@ -210,6 +258,8 @@ if( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) :
             $instance['button_title']               = sanitize_text_field( $new_instance['button_title'] );
 
             $instance['button_link']                = esc_url_raw( $new_instance['button_link'] );
+
+            $instance['content_alignment']          = sanitize_text_field( $new_instance['button_link'] );
 
             $instance['offer_image']                = esc_url_raw( $new_instance['offer_image'] );
 

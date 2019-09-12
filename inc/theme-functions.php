@@ -247,3 +247,19 @@ if( !function_exists( 'orchid_store_excerpt_more' ) ) :
     }
 endif;
 add_filter( 'excerpt_more', 'orchid_store_excerpt_more' );
+
+
+if( !function_exists( 'orchid_store_search_form' ) ) :
+    /**
+     * Search form of the theme.
+     *
+     * @since 1.0.0
+     */
+    function orchid_store_search_form( $form ) {
+
+        $form = '<form role="search" method="get" id="search-form" class="search-form" action="' . esc_url( home_url( '/' ) ) . '"><label class="screen-reader-text" for="s">' . esc_html__( 'Search for:', 'orchid-store' ) . '</label><input type="search" name="s" placeholder="' . esc_html_x( 'Type here to search', 'placeholder', 'orchid-store' ) . '" value="' . get_search_query() . '"><button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button></form>';
+
+        return $form;
+    }
+endif;
+add_filter( 'get_search_form', 'orchid_store_search_form', 10 );
