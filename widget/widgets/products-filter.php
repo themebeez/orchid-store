@@ -203,7 +203,7 @@ if( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_name('no_of_products') ); ?>">
-                    <strong><?php esc_html_e('No of Products For Each Category', 'orchid-store'); ?></strong>
+                    <strong><?php esc_html_e('Number of Products For Each Category', 'orchid-store'); ?></strong>
                 </label>
                 <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('no_of_products') ); ?>" name="<?php echo esc_attr( $this->get_field_name('no_of_products') ); ?>" type="number" value="<?php echo esc_attr( absint( $instance['no_of_products'] ) ); ?>" />   
             </p>

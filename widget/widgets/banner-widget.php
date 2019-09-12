@@ -41,7 +41,7 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                 $mask_layer_class = 'show-mask';
             }
             ?>
-            <section class="general-banner banner-style-1 section-spacing">
+            <section class="general-banner banner-style-1 section-spacing <?php echo esc_attr( $mask_layer_class ); ?>">
                 <div class="section-inner">
                     <div class="__os-container__">
                         <div class="os-row">
@@ -66,11 +66,17 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                                                     ?>
                                                     <div class="item">
                                                         <figure class="thumb" <?php if( has_post_thumbnail() ) { ?> style="background-image:url( <?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?> );" <?php } ?>>
+
                                                             <?php
+                                                            if( $enable_mask == true ) {
+                                                                ?>
+                                                                <div class="banner-mask"></div>
+                                                                <?php
+                                                            }
                                                             if( $show_contents == true ) {
                                                                 ?>
                                                                 <div class="item-entry">
-                                                                    <div class="content-holder <?php echo esc_attr( $mask_layer_class ); ?>">
+                                                                    <div class="content-holder">
                                                                         <div class="entry-contents">
                                                                             <div class="title">
                                                                                 <h2><?php the_title(); ?></h2>
@@ -241,14 +247,14 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id('show_contents') ); ?>">
-                	<input id="<?php echo esc_attr( $this->get_field_id('show_contents') ); ?>" name="<?php echo esc_attr( $this->get_field_name('show_contents') ); ?>" type="checkbox" value="<?php echo esc_attr( $instance['show_contents'] ); ?>" <?php if( $instance['show_contents'] == true ) { ?>checked<?php } ?> />  
+                	<input id="<?php echo esc_attr( $this->get_field_id('show_contents') ); ?>" name="<?php echo esc_attr( $this->get_field_name('show_contents') ); ?>" type="checkbox" <?php checked( true, $instance['show_contents'] ); ?> />  
                     <strong><?php esc_html_e( 'Show Slider Contents', 'orchid-store' ); ?></strong>
                 </label>                 
             </p>
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id('enable_mask') ); ?>">
-                    <input id="<?php echo esc_attr( $this->get_field_id('enable_mask') ); ?>" name="<?php echo esc_attr( $this->get_field_name('enable_mask') ); ?>" type="checkbox" value="<?php echo esc_attr( $instance['enable_mask'] ); ?>" <?php if( $instance['enable_mask'] == true ) { ?>checked<?php } ?> />  
+                    <input id="<?php echo esc_attr( $this->get_field_id('enable_mask') ); ?>" name="<?php echo esc_attr( $this->get_field_name('enable_mask') ); ?>" type="checkbox" <?php checked( true, $instance['enable_mask'] ); ?> />  
                     <strong><?php esc_html_e( 'Enable Mask Layer', 'orchid-store' ); ?></strong>
                 </label>                 
             </p>

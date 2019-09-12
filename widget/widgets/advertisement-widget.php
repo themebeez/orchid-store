@@ -54,11 +54,6 @@ if( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) :
                     break;
             }
 
-            if( $content_alignment == 'left' ) {
-
-                $box_holder_class = 'box-holder-left-align';
-            } else 
-
             if( !empty( $offer_image ) && $img_as_bg == true ) {
                 ?>
                 <section class="general-cta cta-style-2 section-spacing" style="background-image: url( <?php echo esc_url( $offer_image ); ?> );">
@@ -259,7 +254,7 @@ if( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) :
 
             $instance['button_link']                = esc_url_raw( $new_instance['button_link'] );
 
-            $instance['content_alignment']          = sanitize_text_field( $new_instance['button_link'] );
+            $instance['content_alignment']          = sanitize_text_field( $new_instance['content_alignment'] );
 
             $instance['offer_image']                = esc_url_raw( $new_instance['offer_image'] );
 
