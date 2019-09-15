@@ -203,6 +203,15 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 					background:<?php echo esc_attr( $secondary_color ); ?>;
 				}
 
+				@media ( min-width: 992px ) {
+
+					.site-navigation ul li .sub-menu li a:hover, 
+					.site-navigation ul li .children li a:hover {
+
+						background:<?php echo esc_attr( $secondary_color ); ?>;
+					}
+				}
+
 				.widget_tag_cloud .tagcloud a:hover,
 				.widget_product_tag_cloud .tagcloud a:hover {
 
