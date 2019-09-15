@@ -1175,72 +1175,50 @@ section .section-title h3:after {
 ==========================================
 */
 
-
-.cats-widget-styles .shadow {
-
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient(-90deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 100%);
-}
-
 .cats-widget-styles .thumb {
     
     position: relative;
     overflow:hidden;
-    @include bg_image(center center,cover,inherit);
-    @include border-radius(5px);
 }
 
-.cats-widget-styles .card-content {
+.cats-widget-style-1 .thumb a {
 
-    position:absolute;
-    top:50%;
-    left:0;
-    width:100%;
-    text-align:center;
-    -webkit-transform:translateY(-50%);
-    -moz-transform:translateY(-50%);
-    -ms-transform:translateY(-50%);
-    -o-transform:translateY(-50%);
-    transform:translateY(-50%);
+    display:block;
+}
+
+.cats-widget-style-1 .card {
     
+    padding:20px;
+    background-color:$white;
+    @include transation_delay();
 }
 
-.cats-widget-styles .title h3 {
-    
-    color:$white;
+.cats-widget-style-1 .card:hover {
+
+    @include hover_big_shadow();
 }
 
-.cats-widget-styles .card .permalink {
+.cats-widget-style-1 .box {
 
-    height:0;
+    @include flex_row_alt();
+    align-items: center; 
 }
 
-.cats-widget-styles .card:hover .permalink {
+.cats-widget-style-1 .box .left {
 
-    //height:auto;
+    @include flex_col(100px);
 }
 
-.cats-widget-styles .button-general {
-    
-    padding: 12px 25px;
-    @include border_radius(0);
+.cats-widget-style-1 .box .right {
+
+    @include flex_col(calc( 100% - 100px ));
+    padding-left: 30px;
 }
 
+.cats-widget-style-1 .right .title {
 
-
-// Category widget style 1
-
-
-.cats-widget-style-1 .thumb {
-    
-    height:250px;
+    margin-bottom: 5px;
 }
-
 
 
 /*
@@ -2072,6 +2050,7 @@ section.product-widget-style-2 .section-title {
 .woocommerce-store-notice.demo_store {
     
     position: sticky;
+    font-family: "Helvetica Neue", Helvetica, Arial, Roboto, 'sans-serif';
     padding:0;
     padding-left:20px;
     bottom: 0;
@@ -2082,7 +2061,7 @@ section.product-widget-style-2 .section-title {
     background-color: $woo-info-bar;
     line-height:1.6;
     text-align:left;
-    padding: 14px 20px 14px 40px;
+    padding: 14px 20px 14px 50px;
     -webkit-box-shadow: 0 2px 1px 0 rgba(0,0,0,.03);
     box-shadow: 0 2px 1px 0 rgba(0,0,0,.03);
 }
@@ -2092,7 +2071,7 @@ section.product-widget-style-2 .section-title {
 
     content: "\e994";
     font-family: 'boxicons';
-    font-size: 20px;
+    font-size: 26px;
     position: absolute;
     left:10px;
     top:50%;
