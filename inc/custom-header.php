@@ -17,7 +17,9 @@
  * @uses orchid_store_header_style()
  */
 function orchid_store_custom_header_setup() {
+
 	add_theme_support( 'custom-header', apply_filters( 'orchid_store_custom_header_args', array(
+
 		'default-image'          => '',
 		'default-text-color'     => '222222',
 		'width'                  => 1920,
@@ -35,6 +37,7 @@ if ( ! function_exists( 'orchid_store_header_style' ) ) :
 	 * @see orchid_store_custom_header_setup().
 	 */
 	function orchid_store_header_style() {
+		
 		$header_text_color = get_header_textcolor();
 
 		/*
