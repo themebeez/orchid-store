@@ -22,7 +22,6 @@
 .woocommerce #respond input#submit,
 .masterheader .topbar-items a,
 .banner-style-1 h2,
-.cats-widget-styles .title h3,
 .cats-widget-styles .permalink a,
 .banner-style-1 .button-general,
 .cta-style-1 .title h3,
@@ -63,7 +62,8 @@ section .section-title h3,
 .woocommerce-page .woocommerce-MyAccount-content h3,
 .woocommerce div.product .woocommerce-tabs ul.tabs li a,
 .woocommerce .woocommerce-column__title,
-.product-widget-style-2 .tab-nav ul li a  {
+.product-widget-style-2 .tab-nav ul li a,
+.cats-widget-styles .right .title h3  {
 
 	text-transform:uppercase;
 }
@@ -86,6 +86,7 @@ section .section-title h3,
 .mini-cart .cart-amount,
 .patigation .page-numbers,
 .mini-cart-open .price,
+.cats-widget-style-1 .box .count,
 .woocommerce div.product p.price, 
 .woocommerce div.product span.price,
 .wc-block-grid .woocommerce-Price-amount,
@@ -98,7 +99,7 @@ section .section-title h3,
 
 // line height 
 
-.cats-widget-styles .title h3,
+
 .product-widget-style-2 .tab-nav ul li a {
 
 	line-height:1;
@@ -145,7 +146,6 @@ a.button-general,
 .woocommerce input.button.alt,
 .woocommerce #respond input#submit, 
 .woocommerce .added_to_cart.wc-forward,
-.cats-widget-styles .title h3,
 .cats-widget-styles .permalink a,
 .banner-style-1 .button-general,
 .masterheader .topbar-items a,
@@ -191,6 +191,7 @@ section .section-title h3,
 .post-navigation .nav-previous span,
 .post-navigation .nav-next  span,
 .woocommerce ul.order_details li,
+.cats-widget-styles .right .title h3,
 .woocommerce-page table.wishlist_table thead th  {
 
 	font-weight:bold;
@@ -287,6 +288,11 @@ section .section-title h3,
 	font-size:15px;
 }
 
+.cats-widget-styles .title h3 {
+
+	font-size: 16px;
+}
+
 .woocommerce-loop-product__title,
 .woocommerce ul.products li.product h3,
 .woocommerce-page .woocommerce-order-details h2,
@@ -325,7 +331,7 @@ section .section-title h3,
 	font-size:20px;
 }
 
-.cats-widget-styles .title h3,
+
 .entry-404 .sub-title h2,
 .search-entry .entry-title,
 .not-found .page-title {

@@ -35,7 +35,7 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
                     <div class="section-inner">
                         <div class="__os-container__">
                             <div class="cats-widget-entry">
-                                <div class="row">
+                                <div class="os-row">
                                     <?php
                                     foreach( $product_categories as $product_category ) {
 
@@ -47,7 +47,8 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 
                                             $thumbnail_id   = get_term_meta( $category_term->term_id, 'thumbnail_id', true );
                                 
-                                            $image_url      = wp_get_attachment_image_src( $thumbnail_id, 'shop_catalog' );
+                                            $image_url      = wp_get_attachment_image_src( $thumbnail_id, 'thumbnail' );
+
 
                                             if( !empty( $image_url ) ){
 
@@ -60,24 +61,23 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
                                             } 
                                         }
                                         ?>
-                                        <div class="col col-lg-4 col-md-2 col-sm-2 col-12">
-                                            <div class="card thumb wow osfadeInUp" style="background-image: url(<?php echo esc_url( $term_img ); ?>);" data-wow-duration="1.5s" data-wow-delay="0.2s">
-                                                <div class="shadow">
-                                                    <div class="card-content">
+                                        <div class="os-col">
+                                            <div class="card wow osfadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
+                                                <div class="box">
+                                                    <div class="left">
+                                                        <div class="thumb">
+                                                            <a href="<?php echo esc_url( get_term_link( $category_term->term_id, 'product_cat' ) ); ?>"><img src="<?php echo esc_url( $term_img ); ?>" alt="<?php echo esc_attr( $category_term->name ); ?>"></a>
+                                                        </div><!-- // thumb -->
+                                                    </div><!-- // left -->
+                                                    <div class="right">
                                                         <div class="title">
-                                                            <h3><?php echo esc_html( $category_term->name ); ?></h3>
+                                                            <h3><a href="<?php echo esc_url( get_term_link( $category_term->term_id, 'product_cat' ) ); ?>"><?php echo esc_html( $category_term->name ); ?></a></h3>
                                                         </div><!-- .title -->
-                                                        <?php
-                                                        if( !empty( $button_title ) ) {
-                                                            ?>
-                                                            <div class="permalink">
-                                                                <a class="button-general" href="<?php echo esc_url( get_term_link( $category_term->term_id, 'product_cat' ) ); ?>"><?php echo esc_html( $button_title ); ?></a>
-                                                            </div><!-- .permalink -->
-                                                            <?php
-                                                        }
-                                                        ?>
-                                                    </div><!-- .card-content -->
-                                                </div><!-- shadow -->
+                                                        <div class="product-numbers">
+                                                            <p><span class="count">10</span> Products</p>
+                                                        </div><!-- // product-numbers -->
+                                                    </div><!-- .right -->
+                                                </div><!-- box -->
                                             </div><!-- // card -->
                                         </div><!-- .col -->
                                         <?php

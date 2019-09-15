@@ -119,11 +119,11 @@
     left: 0;
     opacity: 0;
     visibility: hidden;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    z-index: 999999;
     -webkit-transition: 0.3s ease;
     -o-transition: 0.3s ease;
     transition: 0.3s ease;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    z-index: 999999;
 }
 
 .site-navigation ul li .sub-menu ul, 
@@ -134,7 +134,9 @@
 } 
 
 .site-navigation ul li:hover > .sub-menu, 
-.site-navigation ul li:hover > .children {
+.site-navigation ul li:hover > .children,
+.site-navigation ul li:focus > .sub-menu, 
+.site-navigation ul li:focus > .children {
     
     display:block;
     opacity: 1;

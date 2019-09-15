@@ -164,6 +164,13 @@ aside.secondary-widget-area .widget  {
 
     font-size: 15px;
     @include border-radius(100%);
+    line-height:43px;
+}
+
+.os-about-widget .social-icons ul li a::before {
+
+    content:'';
+    display:none;
 }
 
 

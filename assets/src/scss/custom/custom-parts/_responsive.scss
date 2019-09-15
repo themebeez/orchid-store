@@ -243,6 +243,15 @@
 }
 
 
+@media ( max-width: 900px ) {
+
+	.cats-widget-style-1 .os-col {
+
+		flex:0 0 50%;
+		max-width:50%;
+	}
+}
+
 @media ( max-width: 991px) {
 
 	// font size 
@@ -805,6 +814,16 @@
 		width:90%;
 	}	
 	
+}
+
+
+@media ( max-width:650px ) {
+
+	.cats-widget-style-1 .os-col {
+
+		flex:0 0 100%;
+		max-width:100%;
+	}
 }
 
 
