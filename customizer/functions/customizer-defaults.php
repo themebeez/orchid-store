@@ -91,9 +91,11 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
             'display_post_date' => true,
             'display_post_author' => true,
             'display_post_tags' => true,
+            'enable_post_common_sidebar_position' => false,
             'post_sidebar_position' => 'right',
 
             'display_page_featured_image' => true,
+            'enable_page_common_sidebar_position' => false,
             'page_sidebar_position' => 'right',
 
             'footer_widgets_area_columns' => '4',

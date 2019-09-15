@@ -213,3 +213,9 @@ require get_template_directory() . '/inc/option-choices.php';
  * Load widgets and widget areas.
  */
 require get_template_directory() . '/widget/widgets-init.php';
+
+
+/**
+ * Load custom fields.
+ */
+require get_template_directory() . '/inc/custom-fields.php';

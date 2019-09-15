@@ -184,12 +184,34 @@ if( !function_exists( 'orchid_store_sidebar_position' ) ) {
 
         if( is_single() ) {
 
-            $sidebar_position = orchid_store_get_option( 'post_sidebar_position' );
+            if( orchid_store_get_option( 'enable_post_common_sidebar_position' ) == true ) {
+
+                $sidebar_position = orchid_store_get_option( 'post_sidebar_position' );
+            } else {
+
+                $sidebar_position = get_post_meta( get_the_ID(), 'orchid_store_sidebar_position', true );
+
+                if( empty( $sidebar_position ) ) {
+
+                    $sidebar_position = 'right';
+                }
+            }            
         }
 
         if( is_page() ) {
 
-            $sidebar_position = orchid_store_get_option( 'page_sidebar_position' );
+            if( orchid_store_get_option( 'enable_page_common_sidebar_position' ) == true ) {
+
+                $sidebar_position = orchid_store_get_option( 'page_sidebar_position' );
+            } else {
+
+                $sidebar_position = get_post_meta( get_the_ID(), 'orchid_store_sidebar_position', true );
+
+                if( empty( $sidebar_position ) ) {
+
+                    $sidebar_position = 'right';
+                }
+            }
         }
 
         if( class_exists( 'Woocommerce' ) ) {

@@ -58,7 +58,7 @@ function orchid_store_customize_register( $wp_customize ) {
 				'title'    => esc_html__( 'Orchid Store', 'orchid-store' ),
 				'pro_text' => esc_html__( 'Upgrade to Pro', 'orchid-store' ),
 				'pro_url'  => 'https://themebeez.com/themes/orchid-store-pro/?ref=upsell-btn',
-				'priority' => 1,
+				'priority' => 0,
 			)
 		)
 	);
@@ -105,6 +105,7 @@ function orchid_store_customize_register( $wp_customize ) {
 	$wp_customize->get_control( 'header_image' )->section = 'orchid_store_section_header_image';
 	$wp_customize->get_control( 'header_image' )->description = esc_html__( 'Header is used as background image for breadcrumb', 'orchid-store' );
 	$wp_customize->get_control( 'header_image' )->priority = 20;
+	$wp_customize->get_section( 'static_front_page' )->priority = 1;
 }
 add_action( 'customize_register', 'orchid_store_customize_register' );
 
