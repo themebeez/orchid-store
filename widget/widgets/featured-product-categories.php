@@ -27,8 +27,6 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 
             $product_categories = $instance['product_categories'];
 
-            $button_title = $instance['button_title'];
-
             if( !empty( $product_categories ) ) {
                 ?>
                 <section class="cats-widget-styles cats-widget-style-1 section-spacing">
@@ -41,7 +39,7 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 
                                         $category_term = get_term_by( 'slug', $product_category, 'product_cat' );
 
-                                        $term_img = '';
+                                        $term_img_url = '';
 
                                         if( !empty( $category_term ) ) {
 
@@ -52,11 +50,11 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 
                                             if( !empty( $image_url ) ){
 
-                                                $term_img = $image_url[0];
+                                                $term_img_url = $image_url[0];
 
                                             } else {
 
-                                                $term_img = wc_placeholder_img_src();
+                                                $term_img_url = wc_placeholder_img_src();
                                                 
                                             } 
                                         }
@@ -66,7 +64,7 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
                                                 <div class="box">
                                                     <div class="left">
                                                         <div class="thumb">
-                                                            <a href="<?php echo esc_url( get_term_link( $category_term->term_id, 'product_cat' ) ); ?>"><img src="<?php echo esc_url( $term_img ); ?>" alt="<?php echo esc_attr( $category_term->name ); ?>"></a>
+                                                            <a href="<?php echo esc_url( get_term_link( $category_term->term_id, 'product_cat' ) ); ?>"><img src="<?php echo esc_url( $term_img_url ); ?>" alt="<?php echo esc_attr( $category_term->name ); ?>"></a>
                                                         </div><!-- // thumb -->
                                                     </div><!-- // left -->
                                                     <div class="right">
@@ -74,7 +72,15 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
                                                             <h3><a href="<?php echo esc_url( get_term_link( $category_term->term_id, 'product_cat' ) ); ?>"><?php echo esc_html( $category_term->name ); ?></a></h3>
                                                         </div><!-- .title -->
                                                         <div class="product-numbers">
-                                                            <p><span class="count">10</span> Products</p>
+                                                            <p>
+                                                                <?php
+                                                                printf(
+                                                                    /* translators: %s: products count */
+                                                                    _n( '%s Product', '%s Products', $category_term->count, 'orchid-store' ), '<span class="count">' .
+                                                                    esc_html( number_format_i18n( $category_term->count ) ) . '</span>'
+                                                                );
+                                                                ?>   
+                                                            </p>
                                                         </div><!-- // product-numbers -->
                                                     </div><!-- .right -->
                                                 </div><!-- box -->
@@ -94,13 +100,9 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
      
         public function form( $instance ) {
 
-            $defaults = array(
-                'title'                 => '',
-                'product_categories'    => '',
-                'button_title'          => '',
-            );
+            $instance['title'] = isset( $instance['title'] ) ? $instance['title'] : '';
 
-            $instance = wp_parse_args( (array) $instance, $defaults );
+            $instance['product_categories'] = isset( $instance['product_categories'] ) ? $instance['product_categories'] : array();
     		?>
     		<p>
                 <label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>">
@@ -120,7 +122,7 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 
                 if( !empty( $product_categories ) ) {
 
-                    foreach( $product_categories as $product_category ) {
+                    foreach( $product_categories as $index => $product_category ) {
                         ?>
                         <span class="sldr-elmnt-cntnr">
 
@@ -128,26 +130,17 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
                                 <input id="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>" name="<?php echo esc_attr( $this->get_field_name('product_categories') ); ?>[]" type="checkbox" value="<?php echo esc_attr( $product_category->slug ); ?>" <?php if( !empty( $instance['product_categories'] ) ) { checked( in_array( $product_category->slug, $instance['product_categories'] ), true ); } ?>>
                                 <strong><?php echo esc_html( $product_category->name ); ?></strong>
                             </label>
-
                         </span><!-- .sldr-elmnt-cntnr -->
                         <?php
                     }
                 } else {
                     ?>
-                    <input id="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name('product_categories') ); ?>" type="hidden" value="" checked>
+                    <input id="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name('product_categories') ); ?>[]" type="hidden" value="" checked>
                     <small><?php echo esc_html__( 'There are no product categories to select.', 'orchid-store' ); ?></small>
-                    <?php
-                }
+                    <?php                        
+                }   
                 ?>
                 </span>
-            </p>
-
-            <p>
-                <label for="<?php echo esc_attr( $this->get_field_id('button_title') ); ?>">
-                    <strong><?php esc_html_e( 'Button Title', 'orchid-store' ); ?></strong>
-                </label>
-                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('button_title') ); ?>" name="<?php echo esc_attr( $this->get_field_name('button_title') ); ?>" type="text" value="<?php echo esc_attr( $instance['button_title'] ); ?>" />   
-                <small><?php echo esc_html__( 'To hide the button, do not set this field.', 'orchid-store' ); ?></small>
             </p>
     		<?php
         }
@@ -158,9 +151,7 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 
             $instance['title']                  = sanitize_text_field( $new_instance['title'] );
 
-            $instance['product_categories'] 	= array_map( 'sanitize_key', $new_instance['product_categories'] );
-
-            $instance['button_title']           = sanitize_text_field( $new_instance['button_title'] );
+            $instance['product_categories'] 	= isset( $new_instance['product_categories'] ) ? array_map( 'sanitize_text_field', $new_instance['product_categories'] ) : array();
 
             return $instance;
         } 

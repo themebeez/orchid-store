@@ -216,7 +216,7 @@ if( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 
             $instance['title']                  = sanitize_text_field( $new_instance['title'] );
 
-            $instance['product_categories'] 	= array_map( 'sanitize_key', $new_instance['product_categories'] );
+            $instance['product_categories'] 	= isset( $new_instance['product_categories'] ) ? array_map( 'sanitize_text_field', $new_instance['product_categories'] ) : array();
 
             $instance['no_of_products']         = absint( $new_instance['no_of_products'] );
 
