@@ -109,6 +109,7 @@ input[type="submit"]:hover,
 .wc-block-grid__product-onsale,
 .os-about-widget .social-icons ul li a,
 .os-about-widget .social-icons ul li a:hover,
+.footer .os-about-widget .social-icons ul li a,
 .footer .os-about-widget .social-icons ul li a:hover,
 .patigation .page-numbers,
 .patigation .page-number:hover,
@@ -519,8 +520,7 @@ input[type="color"],
 .footer a,
 .footer .footer-bottom p,
 .footer .widget_rss ul li a,
-.footer .widget_tag_cloud .tagcloud a,
-.footer .os-about-widget .social-icons ul li a {
+.footer .widget_tag_cloud .tagcloud a {
 
 	color:$dark_footer_links_color;
 }

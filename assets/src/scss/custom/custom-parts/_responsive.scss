@@ -281,6 +281,12 @@
     	max-width: 33.33%;
 	}
 
+	.footer [class*=columns-] .os-col.column {
+
+		flex:0 0 100%;
+		max-width:100%;
+	}
+
 
 	// height 
 
@@ -628,7 +634,6 @@
 		max-width:50%;
 	}
 
-	.footer .columns-4 .os-col.column,
 	.woocommerce .col2-set .col-1, 
 	.woocommerce-page .col2-set .col-1, 
 	.woocommerce .col2-set .col-2, 
