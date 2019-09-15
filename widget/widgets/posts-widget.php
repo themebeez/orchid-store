@@ -229,13 +229,13 @@ if( ! class_exists( 'Orchid_Store_Post_Widget' ) ) :
 
             $instance['no_of_posts']        = absint( $new_instance['no_of_posts'] );
 
-            $instance['show_excerpt']       = wp_validate_boolean( $new_instance['show_excerpt'] );
+            $instance['show_excerpt']       = isset( $new_instance['show_excerpt'] ) ? wp_validate_boolean( $new_instance['show_excerpt'] ) : false;
 
-            $instance['show_categories']    = wp_validate_boolean( $new_instance['show_categories'] );
+            $instance['show_categories']    = isset( $new_instance['show_categories'] ) ? wp_validate_boolean( $new_instance['show_categories'] ) : false;
 
-            $instance['show_author']        = wp_validate_boolean( $new_instance['show_author'] );
+            $instance['show_author']        = isset( $new_instance['show_author'] ) ? wp_validate_boolean( $new_instance['show_author'] ) : false;
 
-            $instance['show_date']          = wp_validate_boolean( $new_instance['show_date'] );
+            $instance['show_date']          = isset( $new_instance['show_date'] ) ? wp_validate_boolean( $new_instance['show_date'] ) : false;
 
             return $instance;
         } 

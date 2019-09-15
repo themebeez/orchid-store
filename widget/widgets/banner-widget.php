@@ -254,7 +254,7 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id('enable_mask') ); ?>">
-                    <input id="<?php echo esc_attr( $this->get_field_id('enable_mask') ); ?>" name="<?php echo esc_attr( $this->get_field_name('enable_mask') ); ?>" type="checkbox" <?php checked( true, $instance['enable_mask'] ); ?> />  
+                    <input id="<?php echo esc_attr( $this->get_field_id('enable_mask') ); ?>" name="<?php echo esc_attr( $this->get_field_name('enable_mask') ); ?>" type="checkbox" <?php checked( true, $instance['enable_mask'] ); ?> />
                     <strong><?php esc_html_e( 'Enable Mask Layer', 'orchid-store' ); ?></strong>
                 </label>                 
             </p>
@@ -345,9 +345,9 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
             $instance['button_links'] 	= array_map( 'esc_url_raw', $new_instance['button_links'] );
 
-            $instance['show_contents'] 	= wp_validate_boolean( $new_instance['show_contents'] );
+            $instance['show_contents'] 	= isset( $new_instance['show_contents'] ) ? wp_validate_boolean( $new_instance['show_contents'] ) : false;
 
-            $instance['enable_mask']    = wp_validate_boolean( $new_instance['enable_mask'] );
+            $instance['enable_mask']    = isset( $new_instance['enable_mask'] ) ? wp_validate_boolean( $new_instance['enable_mask'] ) : false;
 
             $instance['banner_img_1']   = esc_url_raw( $new_instance['banner_img_1'] );
 
