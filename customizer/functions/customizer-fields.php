@@ -19,6 +19,12 @@ if( ! function_exists( 'orchid_store_panel_declaration' ) ) {
 				'description' => '',
 				'priority' => 2,
 			),
+			array(
+				'id' => 'site_colors',
+				'title' => esc_html__( 'Site Colors', 'orchid-store' ),
+				'description' => '',
+				'priority' => 2,
+			),
 		);
 
 		if( !empty( $panels ) ) {
@@ -133,7 +139,7 @@ if( ! function_exists( 'orchid_store_section_declaration' ) ) {
 				'id' => 'theme_color',
 				'title' => esc_html__( 'Theme Color', 'orchid-store' ),
 				'description' => '',
-				'panel' => '',
+				'panel' => 'site_colors',
 				'priority' => 3,
 			),
 		);
@@ -222,7 +228,7 @@ if( class_exists( 'Woocommerce' ) && function_exists( 'YITH_WCWL' ) ) {
 orchid_store_add_toggle_field( 'blog_display_cats', esc_html__( 'Display Post Categories', 'orchid-store' ), '', '', 'blog_page' );
 orchid_store_add_toggle_field( 'blog_display_date', esc_html__( 'Display Post Date', 'orchid-store' ), '', '', 'blog_page' );
 orchid_store_add_toggle_field( 'blog_display_author', esc_html__( 'Display Post Author', 'orchid-store' ), '', '', 'blog_page' );
-orchid_store_add_radio_image_field( 'blog_sidebar_position', esc_html__( 'Select Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), '', 'blog_page' );
+orchid_store_add_radio_image_field( 'blog_sidebar_position', esc_html__( 'Select Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), 'orchid_store_is_not_global_sidebar_position_active', 'blog_page' );
 
 
 
@@ -233,7 +239,7 @@ orchid_store_add_radio_image_field( 'blog_sidebar_position', esc_html__( 'Select
 orchid_store_add_toggle_field( 'archive_display_cats', esc_html__( 'Display Post Categories', 'orchid-store' ), '', '', 'archive_page' );
 orchid_store_add_toggle_field( 'archive_display_date', esc_html__( 'Display Post Date', 'orchid-store' ), '', '', 'archive_page' );
 orchid_store_add_toggle_field( 'archive_display_author', esc_html__( 'Display Post Author', 'orchid-store' ), '', '', 'archive_page' );
-orchid_store_add_radio_image_field( 'archive_sidebar_position', esc_html__( 'Select Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), '', 'archive_page' );
+orchid_store_add_radio_image_field( 'archive_sidebar_position', esc_html__( 'Select Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), 'orchid_store_is_not_global_sidebar_position_active', 'archive_page' );
 
 
 
@@ -243,7 +249,7 @@ orchid_store_add_radio_image_field( 'archive_sidebar_position', esc_html__( 'Sel
 orchid_store_add_toggle_field( 'search_display_cats', esc_html__( 'Display Post Categories', 'orchid-store' ), '', '', 'search_page' );
 orchid_store_add_toggle_field( 'search_display_date', esc_html__( 'Display Post Date', 'orchid-store' ), '', '', 'search_page' );
 orchid_store_add_toggle_field( 'search_display_author', esc_html__( 'Display Post Author', 'orchid-store' ), '', '', 'search_page' );
-orchid_store_add_radio_image_field( 'search_sidebar_position', esc_html__( 'Select Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), '', 'search_page' );
+orchid_store_add_radio_image_field( 'search_sidebar_position', esc_html__( 'Select Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), 'orchid_store_is_not_global_sidebar_position_active', 'search_page' );
 
 
 
@@ -255,7 +261,9 @@ orchid_store_add_toggle_field( 'display_post_cats', esc_html__( 'Display Categor
 orchid_store_add_toggle_field( 'display_post_date', esc_html__( 'Display Posted Date', 'orchid-store' ), '', '', 'post_single' );
 orchid_store_add_toggle_field( 'display_post_author', esc_html__( 'Display Author Name', 'orchid-store' ), '', '', 'post_single' );
 orchid_store_add_toggle_field( 'display_post_tags', esc_html__( 'Display Tags', 'orchid-store' ), '', '', 'post_single' );
-orchid_store_add_radio_image_field( 'post_sidebar_position', esc_html__( 'Select Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), '', 'post_single' );
+
+orchid_store_add_toggle_field( 'enable_post_common_sidebar_position', esc_html__( 'Enable Common Sidebar Position', 'orchid-store' ), '', 'orchid_store_is_not_global_sidebar_position_active', 'post_single' );
+orchid_store_add_radio_image_field( 'post_sidebar_position', esc_html__( 'Select Common Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), 'orchid_store_is_post_common_sidebar_position_active', 'post_single' );
 
 
 
@@ -263,7 +271,8 @@ orchid_store_add_radio_image_field( 'post_sidebar_position', esc_html__( 'Select
 *********************************** Page Single Control Fields Declaration *****************************
 *******************************************************************************************************/
 orchid_store_add_toggle_field( 'display_page_featured_image', esc_html__( 'Display Featured Image', 'orchid-store' ), '', '', 'page_single' );
-orchid_store_add_radio_image_field( 'page_sidebar_position', esc_html__( 'Select Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), '', 'page_single' );
+orchid_store_add_toggle_field( 'enable_page_common_sidebar_position', esc_html__( 'Enable Common Sidebar Position', 'orchid-store' ), '', 'orchid_store_is_not_global_sidebar_position_active', 'page_single' );
+orchid_store_add_radio_image_field( 'page_sidebar_position', esc_html__( 'Select Common Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), 'orchid_store_is_page_common_sidebar_position_active', 'page_single' );
 
 
 
@@ -274,7 +283,7 @@ orchid_store_add_radio_image_field( 'page_sidebar_position', esc_html__( 'Select
 orchid_store_add_toggle_field( 'enable_sticky_sidebar', esc_html__( 'Enable Sticky Sidebar', 'orchid-store' ), '', '', 'site_sidebar' );
 orchid_store_add_toggle_field( 'enable_sidebar_small_devices', esc_html__( 'Enable Sidebar For Small Devices', 'orchid-store' ), esc_html__( 'This option lets you to display or do not display sidebar for devices with width smaller than 768px.', 'orchid-store' ), '', 'site_sidebar' );
 orchid_store_add_toggle_field( 'enable_global_sidebar_position', esc_html__( 'Enable Global Sidebar Position', 'orchid-store' ), esc_html__( 'On checking this option, all the page templates of your website will have same sidebar position.', 'orchid-store' ), '', 'site_sidebar' );
-orchid_store_add_radio_image_field( 'global_sidebar_position', esc_html__( 'Select Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), '', 'site_sidebar' );
+orchid_store_add_radio_image_field( 'global_sidebar_position', esc_html__( 'Select Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), 'orchid_store_is_global_sidebar_position_active', 'site_sidebar' );
 
 
 

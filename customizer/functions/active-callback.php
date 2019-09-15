@@ -58,3 +58,74 @@ if( ! function_exists( 'orchid_store_is_static_home_page_set' ) ) {
 		}		
 	}
 }
+
+
+/**
+ * Active callback function for when global sidebar position is not active.
+ */
+if( ! function_exists( 'orchid_store_is_not_global_sidebar_position_active' ) ) {
+
+	function orchid_store_is_not_global_sidebar_position_active( $control ) {
+
+		if ( $control->manager->get_setting( 'orchid_store_field_enable_global_sidebar_position' )->value() == true ) {
+
+			return false;
+		} else {
+			
+			return true;
+		}		
+	}
+}
+
+/**
+ * Active callback function for when global sidebar position is active.
+ */
+if( ! function_exists( 'orchid_store_is_global_sidebar_position_active' ) ) {
+
+	function orchid_store_is_global_sidebar_position_active( $control ) {
+
+		if ( $control->manager->get_setting( 'orchid_store_field_enable_global_sidebar_position' )->value() == true ) {
+
+			return true;
+		} else {
+			
+			return false;
+		}		
+	}
+}
+
+
+/**
+ * Active callback function for when common sidebar position for posts is active.
+ */
+if( ! function_exists( 'orchid_store_is_post_common_sidebar_position_active' ) ) {
+
+	function orchid_store_is_post_common_sidebar_position_active( $control ) {
+
+		if ( $control->manager->get_setting( 'orchid_store_field_enable_global_sidebar_position' )->value() == false && $control->manager->get_setting( 'orchid_store_field_enable_post_common_sidebar_position' )->value() == true ) {
+
+			return true;
+		} else {
+			
+			return false;
+		}		
+	}
+}
+
+
+/**
+ * Active callback function for when common sidebar position for pages is active.
+ */
+if( ! function_exists( 'orchid_store_is_page_common_sidebar_position_active' ) ) {
+
+	function orchid_store_is_page_common_sidebar_position_active( $control ) {
+
+		if ( $control->manager->get_setting( 'orchid_store_field_enable_global_sidebar_position' )->value() == false && $control->manager->get_setting( 'orchid_store_field_enable_page_common_sidebar_position' )->value() == true ) {
+
+			return true;
+		} else {
+			
+			return false;
+		}		
+	}
+}
