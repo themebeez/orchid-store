@@ -1,4 +1,59 @@
-// Text meant only for screen readers
+/*
+* Package: Orchid store
+* Contributor: Themebeez
+* Author Url: https://themebeez.com/
+* Licence: https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+*/
+
+
+// ancours, links, images, 
+
+a:focus,
+img:focus {
+
+    outline: thin dotted;
+}
+
+
+// input types 
+
+button:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+
+    outline: thin dotted;
+    background-color:$black;
+} 
+
+select {
+
+    outline: thin dotted;
+}
+
+textarea:focus, 
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus {
+
+    border: 1px solid #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6)
+}
+
+// Screen reader text
 
 .screen-reader-text {
     
@@ -35,5 +90,44 @@
 
 .screen-reader-text:focus {
 
-    outline:none;
+    outline: thin dotted blue;
+}
+
+
+// navigation 
+
+@media ( min-width: 992px ) {
+
+
+    .site-navigation ul li .sub-menu, 
+    .site-navigation ul li .children,
+    .site-navigation .menu-item-has-mega-children .mega-menu-sub-menu, 
+    .site-navigation .menu-item-has-mega-children .mega-menu-sub-menu {
+
+        display:block;
+        clip: rect(1px, 1px, 1px, 1px);
+        visibility: visible;
+        opacity:1;
+    }
+
+    .site-navigation .menu-item-has-mega-children .mega-menu-sub-menu, 
+    .site-navigation .menu-item-has-mega-children .mega-menu-sub-menu {
+
+        display:flex;
+    }
+
+    .site-navigation ul li:hover > .sub-menu, 
+    .site-navigation ul li:hover > .children,
+    .site-navigation ul li:focus > .sub-menu, 
+    .site-navigation ul li:focus > .children,
+    .site-navigation ul li:focus-within > .sub-menu, 
+    .site-navigation ul li:focus-within > .children,
+    .site-navigation ul li:hover>.sub-menu.mega-menu-sub-menu,
+    .site-navigation ul li:focus>.sub-menu.mega-menu-sub-menu,
+    .site-navigation ul li:focus-within>.sub-menu.mega-menu-sub-menu {
+        
+        clip: auto;
+        visibility: visible;
+        opacity:1;
+    }
 }

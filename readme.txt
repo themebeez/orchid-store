@@ -4,15 +4,15 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce
 Requires PHP: 5.6
 Requires at least: 4.5
-Tested up to: 5.2.2
-Stable tag: 1.0.1
+Tested up to: 5.2.3
+Stable tag: 1.0.2
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
 
 == Description ==
 
-Orchid Store is a clean, dynamic and highly customizable WordPress e-commerce theme. Orchid Store extends it's functionality with Woocommerce to create online stores, shops, marketplace etc.
+Orchid Store is a clean, flexible, stylish & dynamic e-commerce WordPress theme. It is totally based on WooCommerce WordPress Plugin. Orchid Store WordPress theme can be used to build a wide range of online stores ranging from a fashion store, mobile and gadget store, furniture shop, sports shop, home décor store, jewellery store or any kind of multi-category online shop. Orchid Store WordPress Theme has adequate built-in features that are required to build an online shop or stores. Orchid Store gives users the flexible customization experience for crafting their online shop with ease. Customization & features at Orchid Store WordPress theme is so simple that can be easily be tuned from WordPress live customizer. Orchid Store is fully widgetized where one can easily drag & drop widgets to their respective widget areas to display website sections at front-end. If you are looking to extend your online store with the page builder, you can easily do it using Elementor page builder. If you are wondering how Orchid Store looks, please do kindly visit https://themebeez.com/themes/orchid-store/ for live demo preview. Do kindly visit https://themebeez.com/docs/orchid-store-theme-documentation/ if you would need a theme setup documentation guide.
 
 
 == License ==
@@ -56,13 +56,14 @@ Orchid Store is distributed under the terms of the GNU GPL
 
 == Screen Shot ==
 * All the images that are used in the screenshot are from, https://pxhere.com/ and are licensed under CC0 Public Domain(http://creativecommons.org/publicdomain/zero/1.0 - CC0). The links of images are listed below:
-- https://pxhere.com/en/photo/1437315
-- https://pxhere.com/en/photo/791454
-- https://pxhere.com/en/photo/527791
+- https://pxhere.com/en/photo/65049
+- https://pxhere.com/en/photo/1516277
+- https://pxhere.com/en/photo/1105758
+- https://pxhere.com/en/photo/790753
+- https://pxhere.com/en/photo/790727
 - https://pxhere.com/en/photo/598314
 - https://pxhere.com/en/photo/1101189
-- https://pxhere.com/en/photo/598315
-- https://pxhere.com/en/photo/598312
+
 
 
 == Installation ==
@@ -81,10 +82,18 @@ Orchid Store includes support for Woocommerce, YITH Wishlist and YITH Quickview.
 
 == Changelog ==
 
+== 1.0.2 - 16 September, 2019 ==
+
+- Added: Accessibility keyboard navigation
+- Added: Options at customizer
+- Fixed: Styling issues
+- Changed: Theme screenshot 
+
+
 == 1.0.1 - 19 August, 2019 ==
 
-- Removed Theme URI
-- Fatal error fixed
+- Removed: Theme URI
+- Fixed: Fatal error fixed
 
 
 == 1.0.0 - 18 August, 2019 ==
