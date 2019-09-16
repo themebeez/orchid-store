@@ -179,8 +179,6 @@
 
         $('.cat-nav-trigger').on('click', function(e) {
 
-            //$('.category-navigation-list').slideToggle('medium');
-
             $('body').toggleClass('cat-nav-at-navigation-active'); // add class to body
 
         });
