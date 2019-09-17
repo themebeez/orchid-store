@@ -46,6 +46,24 @@
     background:transparent; 
 }
 
+body.elementor-page .__os-container__ {
+
+    max-width: 1170px;
+}
+
+body.elementor-page .elementor-section-boxed>.elementor-container {
+    
+    max-width: 1170px !important;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+body.elementor-page .elementor-section-boxed>.elementor-container .__os-container__ {
+
+    padding-left: 0;
+    padding-right: 0;
+}
+
 body.boxed .__os-container__ {
 
     padding-left:30px;
