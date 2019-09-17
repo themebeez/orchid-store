@@ -10,6 +10,11 @@
 
 		max-width:1300px;
 	}
+
+	body.elementor-page .__os-container__ {
+
+		max-width:1170px;
+	}
 }
 
 @media ( max-width: 1300px ) {
@@ -24,7 +29,8 @@
 
 
 	.__os-container__,
-	body.boxed .__os-container__  {
+	body.boxed .__os-container__,
+	body.elementor-page .__os-container__  {
 
 		width: 99%;
 		padding-left:15px;
