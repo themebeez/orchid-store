@@ -54,7 +54,7 @@
 
         /*
         ====================
-        = Woocommerce cart events
+        = WooCommerce  cart events
         ============================
         */
 
@@ -79,37 +79,43 @@
 
         };
 
-        $(document.body).on('added_to_cart', function() {
+        if( orchid_store_obj.added_to_cart_message ) {
 
-            iziToast.success({
+            $(document.body).on('added_to_cart', function() {
 
-                message: 'Product successfully added to cart!',
+                iziToast.success({
 
-            });
+                    message: orchid_store_obj.added_to_cart_message,
 
-        });
-
-
-        $(document.body).on('updated_cart_totals', function() {
-
-            iziToast.info({
-
-                message: 'Cart items has been updated successfully!',
+                });
 
             });
-        });
+        }
 
+        if( orchid_store_obj.cart_updated_message ) {
 
-        $(document.body).on('removed_from_cart', function() {
+             $(document.body).on('updated_cart_totals', function() {
 
-            iziToast.success({
+                iziToast.info({
 
-                message: 'Product has been removed from your cart!',
+                    message: orchid_store_obj.cart_updated_message,
 
+                });
             });
-        });
+        } 
 
+        if( orchid_store_obj.removed_from_cart_message ) {
 
+            $(document.body).on('removed_from_cart', function() {
+
+                iziToast.success({
+
+                    message: orchid_store_obj.removed_from_cart_message,
+
+                });
+            });
+        }      
+        
         /*
         ============================
         = Mini cart toggle

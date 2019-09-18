@@ -232,7 +232,7 @@ msgid "Excerpt is the short content of post or page."
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:263
-msgid "Woocommerce Sidebar"
+msgid "WooCommerce  Sidebar"
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:280

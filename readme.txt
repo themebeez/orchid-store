@@ -3,7 +3,7 @@
 Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce
 Requires PHP: 5.6
-Requires at least: 4.5
+Requires at least: 5.0
 Tested up to: 5.2.3
 Stable tag: 1.0.2
 License: GNU General Public License v2 or Later
@@ -12,7 +12,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
 == Description ==
 
-Orchid Store is a clean, flexible, stylish & dynamic e-commerce WordPress theme. It is totally based on WooCommerce WordPress Plugin. Orchid Store WordPress theme can be used to build a wide range of online stores ranging from a fashion store, mobile and gadget store, furniture shop, sports shop, home décor store, jewellery store or any kind of multi-category online shop. Orchid Store WordPress Theme has adequate built-in features that are required to build an online shop or stores. Orchid Store gives users the flexible customization experience for crafting their online shop with ease. Customization & features at Orchid Store WordPress theme is so simple that can be easily be tuned from WordPress live customizer. Orchid Store is fully widgetized where one can easily drag & drop widgets to their respective widget areas to display website sections at front-end. If you are looking to extend your online store with the page builder, you can easily do it using Elementor page builder. If you are wondering how Orchid Store looks, please do kindly visit https://themebeez.com/themes/orchid-store/ for live demo preview. Do kindly visit https://themebeez.com/docs/orchid-store-theme-documentation/ if you would need a theme setup documentation guide.
+Orchid Store is a clean, flexible, stylish & dynamic e-commerce WordPress theme. It is totally based on WooCommerce, WordPress plugin. Orchid Store can be used to build a wide range of online stores ranging from a fashion store, mobile and gadget store, furniture shop, sports shop, home décor store, jewellery store or any kind of multi-category online shop. Orchid Store has adequate built-in features that are required to build an online shop or stores. Orchid Store gives users the flexible customization experience for crafting their online shop with ease. Customization in Orchid Store is so simple that it can easily be tuned from WordPress live customizer. Orchid Store is fully widgetized where one can easily drag & drop widgets to their respective widget areas to display website sections at front-end. If you are looking to extend your online store with the page builder, you can easily do it using Elementor page builder. If you are wondering how Orchid Store looks, please do kindly visit https://themebeez.com/themes/orchid-store/ for live demo preview. Do kindly visit https://themebeez.com/docs/orchid-store-theme-documentation/ if you would need a theme setup documentation guide.
 
 
 == License ==
@@ -27,14 +27,19 @@ Orchid Store is distributed under the terms of the GNU GPL
 
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
 
-* iziToast https://github.com/marcelodolza/iziToast, Marcelo Dolce, [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+* Customizer Custom Controls https://github.com/maddisondesigns/customizer-custom-controls, Anthony Hortin, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
+* TGM Plugin Activation http://tgmpluginactivation.com/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+
+* WPTRT Customize Pro https://github.com/WPTRT/wptrt-customize-pro, 2019 WPTRT, [GPLv2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+
+* Breadcrumbs Trail https://themehybrid.com/plugins/breadcrumb-trail, Copyright (c) 2008 - 2017, Justin Tadlock, [GPLv2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+
+* iziToast https://github.com/marcelodolza/iziToast, Marcelo Dolce, [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 * Owl Carousel https://github.com/OwlCarousel2/OwlCarousel2, Copyright 2013-2018 David Deutsch, [MIT](https://opensource.org/licenses/mit-license.php)
 
 * Theia Sticky Sidebar https://github.com/WeCodePixels/theia-sticky-sidebar [MIT](http://opensource.org/licenses/MIT)
-
-* TGM Plugin Activation http://tgmpluginactivation.com/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
 * Tippy https://github.com/atomiks/tippyjs, Copyright (c) 2017 atomiks, [MIT](http://opensource.org/licenses/MIT)
 
@@ -42,19 +47,19 @@ Orchid Store is distributed under the terms of the GNU GPL
 
 * BoxIcons https://github.com/atisawd/boxicons, [SIL OFL 1.1, MIT, CC](http://scripts.sil.org/OFL, http://opensource.org/licenses/mit-license.html, https://creativecommons.org/licenses/by/4.0/)
 
-* WOW.js https://github.com/matthieua/WOW, [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
+* WOW https://github.com/graingert/WOW, Copyright (c) 2016 Thomas Grainger, [MIT](http://opensource.org/licenses/MIT)
 
 * Bootstrap https://github.com/twbs/bootstrap/blob/master/LICENSE, Copyright (c) 2011-2018 Twitter, Inc,, [MIT](http://opensource.org/licenses/MIT)
 
-* Breadcrumbs Trail https://themehybrid.com/plugins/breadcrumb-trail, Copyright (c) 2008 - 2017, Justin Tadlock, [GPLv2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
-
-
 * Select2 https://github.com/select2/select2, Copyright (c) 2012-2017 Kevin Brown, Igor Vaynberg, and Select2 contributors, [MIT](http://opensource.org/licenses/MIT)
 
-* Images Included, sidebar_left.png, sidebar_right.png, and sidebar_none.png, self created GPLv2
+* Google fonts, Lato [SIL OFL](http://scripts.sil.org/OFL), Roboto [Apache License v2](http://www.apache.org/licenses/LICENSE-2.0), Poppins [SIL OFL](http://scripts.sil.org/OFL)
+
+* Images Included, sidebar_left.png, sidebar_right.png, and sidebar_none.png, self created GPLv2 or later
 
 
 == Screen Shot ==
+
 * All the images that are used in the screenshot are from, https://pxhere.com/ and are licensed under CC0 Public Domain(http://creativecommons.org/publicdomain/zero/1.0 - CC0). The links of images are listed below:
 - https://pxhere.com/en/photo/65049
 - https://pxhere.com/en/photo/1516277
@@ -63,7 +68,6 @@ Orchid Store is distributed under the terms of the GNU GPL
 - https://pxhere.com/en/photo/790727
 - https://pxhere.com/en/photo/598314
 - https://pxhere.com/en/photo/1101189
-
 
 
 == Installation ==
@@ -77,7 +81,7 @@ Orchid Store is distributed under the terms of the GNU GPL
 
 = Does this theme support any plugins? =
 
-Orchid Store includes support for Woocommerce, YITH Wishlist and YITH Quickview.
+Orchid Store includes support for WooCommerce , YITH Wishlist and YITH Quickview.
 
 
 == Changelog ==
@@ -85,7 +89,7 @@ Orchid Store includes support for Woocommerce, YITH Wishlist and YITH Quickview.
 == 1.0.2 - 16 September, 2019 ==
 
 - Added: Accessibility keyboard navigation
-- Added: Options at customizer
+- Added: Options in customizer
 - Fixed: Styling issues
 - Changed: Theme screenshot 
 
@@ -99,4 +103,3 @@ Orchid Store includes support for Woocommerce, YITH Wishlist and YITH Quickview.
 == 1.0.0 - 18 August, 2019 ==
 
 - Initial release
-

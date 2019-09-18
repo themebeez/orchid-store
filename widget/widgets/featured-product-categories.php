@@ -76,8 +76,8 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
                                                                 <?php
                                                                 printf(
                                                                     /* translators: %s: products count */
-                                                                    _n( '%s Product', '%s Products', $category_term->count, 'orchid-store' ), '<span class="count">' .
-                                                                    esc_html( number_format_i18n( $category_term->count ) ) . '</span>'
+                                                                    wp_kses_post( _n( '%s Product', '%s Products', $category_term->count, 'orchid-store' ), '<span class="count">' .
+                                                                    esc_html( number_format_i18n( $category_term->count ) ) . '</span>' )
                                                                 );
                                                                 ?>   
                                                             </p>

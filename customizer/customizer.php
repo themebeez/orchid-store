@@ -35,33 +35,7 @@ function orchid_store_customize_register( $wp_customize ) {
 	/**
 	 * Load custom customizer control for slider control
 	 */
-	require get_template_directory() . '/customizer/controls/class-customizer-slider-control.php';
-
-	/**
-	 * Load custom customizer control for slider control
-	 */
 	require get_template_directory() . '/customizer/controls/class-customizer-sortable-repeater-control.php';
-
-	/**
-	 * Load customizer functions for intializing theme upsell
-	 */
-	require get_template_directory() . '/customizer/controls/class-customizer-upsell.php';
-
-	$wp_customize->register_section_type( 'Orchid_Store_Customize_Section_Upsell' );
-
-	// Register theme upsell section
-	$wp_customize->add_section(
-		new Orchid_Store_Customize_Section_Upsell(
-			$wp_customize,
-			'theme_upsell',
-			array(
-				'title'    => esc_html__( 'Orchid Store', 'orchid-store' ),
-				'pro_text' => esc_html__( 'Upgrade to Pro', 'orchid-store' ),
-				'pro_url'  => 'https://themebeez.com/themes/orchid-store-pro/?ref=upsell-btn',
-				'priority' => 0,
-			)
-		)
-	);
 
 	/**
 	 * Load customizer functions for sanitization of input values of contol fields
@@ -94,15 +68,15 @@ function orchid_store_customize_register( $wp_customize ) {
 	$wp_customize->get_control( 'header_textcolor' )->label = esc_html__( 'Site Title Color', 'orchid-store' );
 	$wp_customize->get_control( 'header_textcolor' )->section = 'title_tagline';
 	$wp_customize->get_control( 'background_color' )->section = 'background_image';
-	$wp_customize->get_section( 'background_image' )->title = esc_html__( 'Site Background', 'orchid-store' );
+	$wp_customize->get_section( 'background_image' )->title = esc_html__( 'Background', 'orchid-store' );
 
 	$wp_customize->get_control( 'custom_logo' )->section = 'orchid_store_section_site_logo';
 	$wp_customize->get_control( 'blogname' )->section = 'orchid_store_section_site_logo';
 	$wp_customize->get_control( 'blogdescription' )->section = 'orchid_store_section_site_logo';
 	$wp_customize->get_control( 'header_textcolor' )->section = 'orchid_store_section_site_logo';
 	$wp_customize->get_control( 'display_header_text' )->section = 'orchid_store_section_site_logo';
-	$wp_customize->get_control( 'site_icon' )->section = 'orchid_store_section_site_favicon';
-	$wp_customize->get_control( 'header_image' )->section = 'orchid_store_section_header_image';
+	$wp_customize->get_control( 'site_icon' )->section = 'orchid_store_section_site_logo';
+	$wp_customize->get_control( 'header_image' )->section = 'orchid_store_section_page_header';
 	$wp_customize->get_control( 'header_image' )->description = esc_html__( 'Header is used as background image for breadcrumb', 'orchid-store' );
 	$wp_customize->get_control( 'header_image' )->priority = 20;
 	$wp_customize->get_section( 'static_front_page' )->priority = 1;
@@ -131,6 +105,7 @@ require get_template_directory() . '/customizer/functions/dynamic-style.php';
  * @return void
  */
 function orchid_store_customize_partial_blogname() {
+
 	bloginfo( 'name' );
 }
 
@@ -140,6 +115,7 @@ function orchid_store_customize_partial_blogname() {
  * @return void
  */
 function orchid_store_customize_partial_blogdescription() {
+
 	bloginfo( 'description' );
 }
 
@@ -161,6 +137,20 @@ function orchid_store_enqueues() {
 
 	wp_enqueue_style( 'orchid-store-customizer-style', get_template_directory_uri() . '/customizer/assets/css/customizer-style.css' );
 
-	wp_enqueue_script( 'orchid-store-customizer-script', get_template_directory_uri() . '/customizer/assets/js/customizer-script.js', array( 'jquery' ), ORCHID_STORE_VERSION, true );
+	wp_register_script( 'orchid-store-customizer-script', get_template_directory_uri() . '/customizer/assets/js/customizer-script.js', array( 'jquery' ), ORCHID_STORE_VERSION, true );
+
+	$headers = array(
+		'logo_setup' => esc_html__( 'Logo Setup', 'orchid-store' ),
+		'favicon' => esc_html__( 'Favicon', 'orchid-store' ),
+		'home_content' => esc_html__( 'Homepage Content', 'orchid-store' ),
+		'post_meta' => esc_html__( 'Post Metas', 'orchid-store' ),
+		'sidebar' => esc_html__( 'Sidebar Position', 'orchid-store' ),
+		'breadcrumb_background' => esc_html__( 'Background', 'orchid-store' ),
+		'body_background' => esc_html__( 'Body Background', 'orchid-store' ),
+	);
+
+	wp_localize_script( 'orchid-store-customizer-script', 'fieldHeaders', $headers );
+	 
+	wp_enqueue_script( 'orchid-store-customizer-script' );
 }
 add_action( 'customize_controls_enqueue_scripts', 'orchid_store_enqueues' );

@@ -211,7 +211,7 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                         <span class="os-fields-wrapper-title">
                             <strong>
                                 <?php
-                                /* translatosr: %s: slider item number */
+                                /* translators: %s: slider item number */
                                 printf( esc_html__( 'Slider Item %s', 'orchid-store' ), $i+1 );
                                 ?>
                             </strong>

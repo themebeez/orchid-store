@@ -70,7 +70,7 @@
                     $orchid_store_display_wishlist_icon = orchid_store_get_option( 'display_wishlist' );
                     $orchid_store_display_minicart = orchid_store_get_option( 'display_mini_cart' );
 
-                    if( ( ( $orchid_store_display_product_search == true || $orchid_store_display_minicart == true ) && class_exists( 'Woocommerce' ) ) || ( $orchid_store_display_wishlist_icon == true && function_exists( 'YITH_WCWL' ) ) ) {
+                    if( ( ( $orchid_store_display_product_search == true || $orchid_store_display_minicart == true ) && class_exists( 'WooCommerce' ) ) || ( $orchid_store_display_wishlist_icon == true && function_exists( 'YITH_WCWL' ) ) ) {
                         ?>
                         <div class="os-col extra-col">
                             <div class="aside-right">

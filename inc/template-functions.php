@@ -12,13 +12,16 @@
  * @return array
  */
 function orchid_store_body_classes( $classes ) {
+
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
+
 		$classes[] = 'hfeed';
 	}
 
 	// Adds a class of no-sidebar when there is no sidebar present.
 	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+
 		$classes[] = 'no-sidebar';
 	}
 
@@ -30,11 +33,50 @@ add_filter( 'body_class', 'orchid_store_body_classes' );
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
 function orchid_store_pingback_header() {
+
 	if ( is_singular() && pings_open() ) {
+
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
 add_action( 'wp_head', 'orchid_store_pingback_header' );
+
+
+/**
+ * Adds custom classes to the array of post classes.
+ *
+ * @param array $classes Classes for the post article element.
+ * @return array
+ */
+function orchid_store_post_classes( $classes ) {
+
+	$show_featured_image = '';
+
+	if( is_home() && ! is_front_page() ) {
+
+		$show_featured_image = orchid_store_get_option( 'blog_featured_image' );
+	}
+
+	if( is_archive() ) {
+
+		$show_featured_image = orchid_store_get_option( 'archive_featured_image' );
+	}
+
+	if( is_search() ) {
+
+		$show_featured_image = orchid_store_get_option( 'search_featured_image' );
+	}
+
+	if( $show_featured_image == false ) {
+
+		$class_key = array_search( 'has-post-thumbnail', $classes );
+
+		unset( $classes[$class_key] );
+	}
+
+	return $classes;
+}
+add_filter( 'post_class', 'orchid_store_post_classes' );
 
 
 if( ! function_exists( 'orchid_store_sidebar_class' ) ) {
@@ -106,7 +148,7 @@ if( ! function_exists( 'orchid_store_content_entry_class' ) ) {
 
 		$content_entry_class = '';
 
-		if( class_exists( 'Woocommerce' ) || defined( 'YITH_WCWL' ) ) {
+		if( class_exists( 'WooCommerce' ) || defined( 'YITH_WCWL' ) ) {
 
             if( is_cart() || is_checkout() || is_account_page() || is_page( 'wishlist' ) || is_woocommerce() || is_shop() || is_product() ) {
 
@@ -168,7 +210,7 @@ if( ! function_exists( 'orchid_store_logo_row_class' ) ) {
         	$logo_row_class = 'no-wishlist-icon';
         }
 
-        if( class_exists( 'Woocommerce' ) ) {
+        if( class_exists( 'WooCommerce' ) ) {
 
         	if( $display_product_search == false ) {
 

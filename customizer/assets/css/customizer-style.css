@@ -1,4 +1,43 @@
 /* Customizer UI */
+.customize-control {
+
+    position: relative;
+    margin-bottom: 0;
+    padding: 10px 10px;
+    box-sizing: border-box;
+}
+
+.customize-control label {
+
+  display: inline-block;
+}
+
+#customize-theme-controls .customize-pane-child.accordion-section-content {
+
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.customize-control-pro_options+.option-group-title,
+.customize-section-description-container+.option-group-title {
+
+    margin-top: 0 !important;
+}
+
+.option-group-title {
+
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    font-size: 13px;
+    font-weight: 500;
+    display: block;
+    text-align: center;
+    background: #555555;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
 .customize-control.customize-control-ios label {
   width: 100%;
   display: inline-block;
@@ -7,6 +46,18 @@
 .customize-control-description {
     display: inline-block;
     margin-top: 5px;
+}
+
+.customize-control input[type=email], 
+.customize-control input[type=number], 
+.customize-control input[type=password], 
+.customize-control input[type=search], 
+.customize-control input[type=tel], 
+.customize-control input[type=text], 
+.customize-control input[type=url],
+.customize-control select {
+
+  height: 30px;
 }
 
 /****************************************************************************************************

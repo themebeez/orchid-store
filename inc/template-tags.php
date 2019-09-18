@@ -25,7 +25,7 @@ if ( ! function_exists( 'orchid_store_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'; // WPCS: XSS OK.
+		echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'; // phpcs:ignore.
 	}
 endif;
 
@@ -35,7 +35,7 @@ if ( ! function_exists( 'orchid_store_posted_by' ) ) :
 	 */
 	function orchid_store_posted_by() {
 
-		echo '<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a>'; // WPCS: XSS OK.
+		echo '<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a>'; // phpcs:ignore.
 	}
 endif;
 
@@ -48,7 +48,7 @@ if( ! function_exists( 'orchid_store_post_categories_list' ) ) {
 
 		if ( $categories_list ) {
 
-			echo $categories_list; // WPCS: XSS OK.
+			echo $categories_list; // phpcs:ignore.
 		}
 	}
 }
@@ -62,7 +62,7 @@ if( ! function_exists( 'orchid_store_post_tags_list' ) ) {
 
 		if ( $tags_list ) {
 
-			echo $tags_list; // WPCS: XSS OK.
+			echo $tags_list; // phpcs:ignore.
 		}
 	}
 }

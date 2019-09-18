@@ -6,15 +6,16 @@
  *
  * @package Orchid_Store
  */
-$orchid_store_show_categories    = orchid_store_get_option( 'search_display_cats' );
-$orchid_store_show_excerpt       = orchid_store_get_option( 'search_display_excerpt' );
-$orchid_store_show_author        = orchid_store_get_option( 'search_display_author' );
-$orchid_store_show_date          = orchid_store_get_option( 'search_display_date' );
+$orchid_store_show_featured_image   = orchid_store_get_option( 'search_featured_image' );
+$orchid_store_show_categories       = orchid_store_get_option( 'search_display_cats' );
+$orchid_store_show_excerpt          = orchid_store_get_option( 'search_display_excerpt' );
+$orchid_store_show_author           = orchid_store_get_option( 'search_display_author' );
+$orchid_store_show_date             = orchid_store_get_option( 'search_display_date' );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="os-row">
         <?php
-        if( has_post_thumbnail() ) {
+        if( has_post_thumbnail() && $orchid_store_show_featured_image == true ) {
             ?>
             <div class="os-col thumb-col">
                 <div class="thumb imghover">

@@ -9,7 +9,7 @@ if( ! function_exists( 'orchid_store_product_search_action' ) ) {
 
 	function orchid_store_product_search_action() {
 
-		if( ! class_exists( 'Woocommerce' ) ) {
+		if( ! class_exists( 'WooCommerce' ) ) {
 			return;
 		}
 		?>
@@ -47,7 +47,7 @@ if( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
 
 	function orchid_store_mini_cart_action() {
 
-		if( ! class_exists( 'Woocommerce' ) ) {
+		if( ! class_exists( 'WooCommerce' ) ) {
 
 			return;
 		}
@@ -63,16 +63,22 @@ if( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
 	            	</span><!-- woocommerce-Price-amount.amount -->
 	            </span><!-- .price -->
             </span><!-- .cart-amount -->
-            <div class="mini-cart-open">
-                <div class="mini-cart-items">
-                    <?php
+            <?php
+            if( ! is_cart() && ! is_checkout() ) {
+                ?>
+                <div class="mini-cart-open">
+                    <div class="mini-cart-items">
+                        <?php
 
-                    $instance = array( 'title' => '' );
+                        $instance = array( 'title' => '' );
 
-                    the_widget( 'WC_Widget_Cart', $instance );
-                    ?>
-                </div><!-- .mini-cart-tems -->
-            </div><!-- .mini-cart-open -->
+                        the_widget( 'WC_Widget_Cart', $instance );
+                        ?>
+                    </div><!-- .mini-cart-tems -->
+                </div><!-- .mini-cart-open -->
+                <?php
+            }
+            ?>
         </div><!-- .mini-cart -->
 		<?php
 	}
@@ -117,7 +123,7 @@ if( ! function_exists( 'orchid_store_user_links_action' ) ) {
 
 	function orchid_store_user_links_action() {
 
-		if( ! class_exists( 'Woocommerce' ) && ! function_exists( 'YITH_WCWL' ) ) {
+		if( ! class_exists( 'WooCommerce' ) && ! function_exists( 'YITH_WCWL' ) ) {
 
 			return;
 		}
@@ -125,7 +131,7 @@ if( ! function_exists( 'orchid_store_user_links_action' ) ) {
         <nav>
             <ul>
             	<?php
-            	if( class_exists( 'Woocommerce' ) ) {
+            	if( class_exists( 'WooCommerce' ) ) {
             		?>
                     <li>
                     	<?php
@@ -197,7 +203,7 @@ if ( ! function_exists( 'orchid_store_template_loop_product_thumbnail' ) ) {
          */
         do_action( 'orchid_store_loop_product_link_open' );
 
-        echo woocommerce_get_product_thumbnail(); // WPCS: XSS ok.
+        echo woocommerce_get_product_thumbnail(); // phpcs:ignore.
 
         /**
          * Hook: orchid_store_loop_product_link_close.
@@ -269,7 +275,7 @@ if( ! function_exists( 'orchid_store_woocommerce_title_breadcrumb_action' ) ) {
 
     function orchid_store_woocommerce_title_breadcrumb_action() {
 
-        if( ! class_exists( 'Woocommerce' ) ) {
+        if( ! class_exists( 'WooCommerce' ) ) {
 
             return;
         }
@@ -295,7 +301,7 @@ if( ! function_exists( 'orchid_store_woocommerce_title_breadcrumb_action' ) ) {
                     do_action( 'orchid_store_woocommerce_breadcrumb' );
                     ?>
                 </div><!-- .os-breadcrumb -->
-                </div><!-- // breadcrumb-inner -->
+                </div><!-- .breadcrumb-inner -->
             </div><!-- .os-container -->
              <div class="mask"></div>
         </div><!-- .os-breadcrumb-wrap -->

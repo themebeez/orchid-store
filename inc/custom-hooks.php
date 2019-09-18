@@ -47,7 +47,7 @@ if( ! function_exists( 'orchid_store_site_identity_action' ) ) {
 				$site_description = get_bloginfo( 'description', 'display' );
 				if ( $site_description || is_customize_preview() ) {
 					?>
-					<p class="site-description"><?php echo esc_html( $site_description ); /* WPCS: xss ok. */ ?></p> 
+					<p class="site-description"><?php echo esc_html( $site_description ); // phpcs:ignore. ?></p> 
 					<?php
 				}
 			}
@@ -355,7 +355,7 @@ if( ! function_exists( 'orchid_store_title_breadcrumb_action' ) ) {
 		                	<?php
 		                }
 
-		                if( class_exists( 'Woocommerce' ) ) {
+		                if( class_exists( 'WooCommerce' ) ) {
 
 		                	if( is_shop() || is_woocommerce() ) {
 		                		?>
@@ -366,16 +366,24 @@ if( ! function_exists( 'orchid_store_title_breadcrumb_action' ) ) {
 		            }
 	                ?>
 	            </div><!-- .title -->
-	            <div class="os-breadcrumb">
-	            	<?php
-                    $breadcrumb_args = array(
-                        'show_browse' => false,
-                    );
+	            <?php
+	            $display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
 
-                    orchid_store_breadcrumb_trail( $breadcrumb_args );
-                    ?>
-	            </div><!-- .os-breadcrumb -->
-	         	</div><!-- // breadcrumb-inner -->
+	            if( $display_breadcrumb == true ) {
+	            	?>
+		            <div class="os-breadcrumb">
+		            	<?php
+	                    $breadcrumb_args = array(
+	                        'show_browse' => false,
+	                    );
+
+	                    orchid_store_breadcrumb_trail( $breadcrumb_args );
+	                    ?>
+		            </div><!-- .os-breadcrumb -->
+		            <?php
+		        }
+		        ?>
+	         	</div><!-- .breadcrumb-inner -->
 	        </div><!-- .os-container -->
 	         <div class="mask"></div>
 	    </div><!-- .os-breadcrumb-wrap -->
