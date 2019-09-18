@@ -69,7 +69,7 @@ if( ! function_exists( 'orchid_store_all_product_categories' ) ) {
      */
 	function orchid_store_all_product_categories() {
 
-		if( ! class_exists( 'Woocommerce' ) ) {
+		if( ! class_exists( 'WooCommerce' ) ) {
 
 			return;
 		}

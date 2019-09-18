@@ -4,29 +4,22 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 
 	function orchid_store_dynamic_style() {
 
-
 		$primary_color = orchid_store_get_option( 'primary_color' );
 
 		$secondary_color = orchid_store_get_option( 'secondary_color' );
-
 		?>
-
 		<style>
-
-		<?php 
-
+			<?php 
 			if( $primary_color ) {
 				?>
-
 				.editor-entry a,
 				.entry-404 h1 span,
 				.banner-style-1 .caption span,
 				.product-widget-style-2 .tab-nav ul li a.active,
 				.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group > a {
 
-					color:<?php echo esc_attr( $primary_color ); ?>;
+					color: <?php echo esc_attr( $primary_color ); ?>;
 				}
-
 
 				button,
 				input[type="button"],
@@ -111,13 +104,11 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 
 					border-color:<?php echo esc_attr( $primary_color ); ?>;
 				}
-
 				<?php
 			}
 
 			if( $secondary_color ) {
-				?>
-				
+				?>				
 				a:hover,
 				.entry-metas ul li a:hover,
 				.footer a:hover,
@@ -160,7 +151,7 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 				.site-navigation ul li .sub-menu.mega-menu-sub-menu li a:hover,
 				.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group > a:hover {
 
-					color:<?php echo esc_attr( $secondary_color ); ?>;
+					color: <?php echo esc_attr( $secondary_color ); ?>;
 				}
 
 				button:hover,
@@ -200,7 +191,7 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 				.woocommerce .woocommerce-pagination .page-numbers li a:hover, 
 				.woocommerce .woocommerce-pagination .page-numbers li .current {
 
-					background:<?php echo esc_attr( $secondary_color ); ?>;
+					background-color: <?php echo esc_attr( $secondary_color ); ?>;
 				}
 
 				@media ( min-width: 992px ) {
@@ -208,18 +199,25 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 					.site-navigation ul li .sub-menu li a:hover, 
 					.site-navigation ul li .children li a:hover {
 
-						background:<?php echo esc_attr( $secondary_color ); ?>;
+						background-color: <?php echo esc_attr( $secondary_color ); ?>;
 					}
 				}
 
 				.widget_tag_cloud .tagcloud a:hover,
 				.widget_product_tag_cloud .tagcloud a:hover {
 
-					border-color:<?php echo esc_attr( $secondary_color ); ?>;
+					border-color: <?php echo esc_attr( $secondary_color ); ?>;
 				}
+				<?php
+			}
 
+			if( orchid_store_get_option( 'enable_parallax_page_header_background' ) == true ) {
+				?>
+				.os-breadcrumb-wrap {
 
-			<?php
+					background-attachment: fixed;
+				}
+				<?php
 			}
 			?>
 		</style>

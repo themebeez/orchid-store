@@ -1,24 +1,22 @@
 .customize-control select,
 .select2-container--default .selection .select2-selection--single {
 
-	border: none;
+	border: 1px solid #eeeeee;
 	background: #fcfcff;
 	position: relative;
 	border-radius: 0;
 	height: 27px;
 	line-height: 27px;
-	outline: none;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
 
 .wp-customizer .select2-container--default .selection .select2-selection--multiple {
 
-	border: none;
+	border: 1px solid #eeeeee;
 	background: #fcfcff;
 	border-radius: 0;
 	height: auto;
-	outline: none;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }

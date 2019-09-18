@@ -28,7 +28,7 @@ if( ! class_exists( 'Orchid_Store_Customizer_Toggle_Control' ) ) {
 		public function render_content() {
 			?>
 			<label>
-				<div style="display:flex;flex-direction: row;justify-content: flex-start;">
+				<div style="display:flex;flex-direction: row;justify-content: space-between;">
 					<span class="customize-control-title" style="flex: 2 0 0; vertical-align: middle;"><?php echo esc_html( $this->label ); ?></span>
 					<input id="cb<?php echo esc_attr( $this->instance_number ); ?>" type="checkbox" class="tgl tgl-<?php echo esc_attr( $this->type ); ?>" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); checked( $this->value() ); ?> />
 					<label for="cb<?php echo esc_attr( $this->instance_number ); ?>" class="tgl-btn"></label>

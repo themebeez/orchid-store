@@ -1,3 +1,8 @@
+.customize-control-flat label {
+
+  width: 100%;
+}
+
 input[type=checkbox].tgl {
 
   	display: none;

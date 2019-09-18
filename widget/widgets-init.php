@@ -62,7 +62,7 @@ function orchid_store_widgets_init() {
 	register_widget( 'Orchid_Store_About_Widget' );
 
 
-	if( class_exists( 'Woocommerce' ) ) {
+	if( class_exists( 'WooCommerce' ) ) {
 
 		register_widget( 'Orchid_Store_Featured_Product_Categories_Widget' );
 
@@ -101,7 +101,7 @@ require get_template_directory() . '/widget/widgets/services-widget.php';
 require get_template_directory() . '/widget/widgets/about-widget.php';
 
 
-if( class_exists( 'Woocommerce' ) ) {
+if( class_exists( 'WooCommerce' ) ) {
 
 	/**
 	 * Widget to display featured product categories.

@@ -76,7 +76,9 @@ if( !function_exists( 'orchid_store_sanitize_multiple_select' ) ) {
     } 
 }
 
-
+/**
+ * Sanitization callback function for sanitizing urls.
+ */
 if( ! function_exists( 'orchid_store_sanitize_urls' ) ) {
 
     function orchid_store_sanitize_urls( $input ) {

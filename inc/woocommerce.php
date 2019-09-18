@@ -103,7 +103,7 @@ add_filter( 'woocommerce_product_thumbnails_columns', 'orchid_store_woocommerce_
  */
 function orchid_store_woocommerce_loop_columns() {
 	
-	if( !empty( orchid_store_get_option( 'shop_product_col_no' ) ) ) { // Field id does not contain prefix
+	if( !empty( orchid_store_get_option( 'shop_product_col_no' ) ) ) { 
 
 		return absint( orchid_store_get_option( 'shop_product_col_no' ) ); 
 	} else {
@@ -123,7 +123,7 @@ function orchid_store_woocommerce_related_products_args( $args ) {
 
 	$defaults = array();
 
-	if( !empty( orchid_store_get_option( 'related_product_col_no' ) ) && !empty( orchid_store_get_option( 'related_product_no' ) ) ) { // Field id does not contain prefix
+	if( !empty( orchid_store_get_option( 'related_product_col_no' ) ) && !empty( orchid_store_get_option( 'related_product_no' ) ) ) { 
 
 		$defaults['columns'] = absint( orchid_store_get_option( 'related_product_col_no' ) );
 		$defaults['posts_per_page'] = absint( orchid_store_get_option( 'related_product_no' ) );

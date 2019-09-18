@@ -118,7 +118,31 @@ function orchid_store_scripts() {
 
 	wp_enqueue_style( 'orchid-store-main-style', get_template_directory_uri() . '/assets/dist/css/main-style.css' );
 	
-	wp_enqueue_script( 'orchid-store-bundle', get_template_directory_uri() . '/assets/dist/js/bundle.min.js', array('jquery'), ORCHID_STORE_VERSION, true );
+	wp_register_script( 'orchid-store-bundle', get_template_directory_uri() . '/assets/dist/js/bundle.min.js', array('jquery'), ORCHID_STORE_VERSION, true );
+
+	if( class_exists( 'WooCommerce' ) ) {
+
+		$script_obj = array();
+
+		if( orchid_store_get_option( 'orchid_store_field_product_added_to_cart_message' ) ) {
+
+			$script_obj['added_to_cart_message'] = orchid_store_get_option( 'orchid_store_field_product_added_to_cart_message' );
+		}
+
+		if( orchid_store_get_option( 'orchid_store_field_product_removed_from_cart_message' ) ) {
+
+			$script_obj['removed_from_cart_message'] = orchid_store_get_option( 'orchid_store_field_product_removed_from_cart_message' );
+		}
+
+		if( orchid_store_get_option( 'orchid_store_field_cart_update_message' ) ) {
+
+			$script_obj['cart_updated_message'] = orchid_store_get_option( 'orchid_store_field_cart_update_message' );
+		}
+
+		wp_localize_script( 'orchid-store-bundle', 'orchid_store_obj', $script_obj );
+	}
+
+	wp_enqueue_script( 'orchid-store-bundle' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
