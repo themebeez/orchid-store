@@ -225,17 +225,15 @@
         = Owl carousels 
         ====================================
         */
-
-        var owlrtl;     
-
-
+        var owlrtl;
+      
         if (jQuery('body').hasClass('rtl')) {
 
             owlrtl = true
 
         }else{
         
-            owlrtl = false
+            owlrtl = false;
         }
 
         // banner style 1 
