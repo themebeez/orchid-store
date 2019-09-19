@@ -226,12 +226,12 @@
         ====================================
         */
         var owlrtl;
+      
+        if (jQuery('body').hasClass('rtl')) {
 
-        if ( jQuery('body').hasClass('rtl') ) {
+            owlrtl = true
 
-            owlrtl = true;
-
-        } else {
+        }else{
         
             owlrtl = false;
         }
