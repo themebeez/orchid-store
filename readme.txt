@@ -90,6 +90,7 @@ Orchid Store includes support for WooCommerce , YITH Wishlist and YITH Quickview
 
 - Added: Accessibility keyboard navigation
 - Added: Options in customizer
+- Added: RTL css
 - Fixed: Styling issues
 - Changed: Theme screenshot 
 
