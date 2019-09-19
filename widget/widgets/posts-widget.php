@@ -23,11 +23,16 @@ if( ! class_exists( 'Orchid_Store_Post_Widget' ) ) :
         public function widget( $args, $instance ) {
 
             $title              = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
-            $no_of_posts        = !empty( $instance['no_of_posts'] ) ? $instance['no_of_posts'] : 3;
-            $show_excerpt       = $instance['show_excerpt'];
-            $show_categories    = $instance['show_categories'];
-            $show_author        = $instance['show_author'];
-            $show_date          = $instance['show_date'];
+
+            $no_of_posts        = isset( $instance['no_of_posts'] ) ? $instance['no_of_posts'] : 3;
+
+            $show_excerpt       = isset( $instance['show_excerpt'] ) ? $instance['show_excerpt'] : true;
+
+            $show_categories    = isset( $instance['show_categories'] ) ? $instance['show_categories'] : true;
+
+            $show_author        = isset( $instance['show_author'] ) ? $instance['show_author'] : true;
+
+            $show_date          = isset( $instance['show_date'] ) ? $instance['show_date'] : true;
 
             $blog_posts = new WP_Query( array(
                 'post_type'         => 'post',
