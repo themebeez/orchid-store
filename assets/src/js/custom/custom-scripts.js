@@ -77,9 +77,9 @@
                 position: 'topLeft',
             });
 
-        };
+        }
 
-        if( orchid_store_obj.added_to_cart_message ) {
+        if (orchid_store_obj.added_to_cart_message) {
 
             $(document.body).on('added_to_cart', function() {
 
@@ -92,9 +92,9 @@
             });
         }
 
-        if( orchid_store_obj.cart_updated_message ) {
+        if (orchid_store_obj.cart_updated_message) {
 
-             $(document.body).on('updated_cart_totals', function() {
+            $(document.body).on('updated_cart_totals', function() {
 
                 iziToast.info({
 
@@ -102,9 +102,9 @@
 
                 });
             });
-        } 
+        }
 
-        if( orchid_store_obj.removed_from_cart_message ) {
+        if (orchid_store_obj.removed_from_cart_message) {
 
             $(document.body).on('removed_from_cart', function() {
 
@@ -114,8 +114,8 @@
 
                 });
             });
-        }      
-        
+        }
+
         /*
         ============================
         = Mini cart toggle
@@ -226,12 +226,24 @@
         ====================================
         */
 
+        var owldirection = $("html").attr("dir");
+
+
+        if (owldirection == 'rtl') {
+
+            owlrtl = true
+
+        }else{
+        
+            owlrtl = false
+        }
 
         // banner style 1 
 
 
         jQuery('.owl-carousel-1').owlCarousel({
 
+            rtl: owlrtl,
             items: 1,
             loop: true,
             lazyLoad: false,
@@ -249,6 +261,7 @@
 
         jQuery('.owl-carousel-2').owlCarousel({
 
+            rtl: owlrtl,
             items: 4,
             loop: true,
             lazyLoad: false,

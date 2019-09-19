@@ -1,0 +1,94 @@
+/*
+* Theme Name: Orchid store
+* Package: Orchid store
+* Contributor: Themebeez
+* Author url: https://themebeez.com/
+* File: RTL css 
+* Since v1.0.3
+*/
+
+
+/*
+====================================
+=
+= RTL direction
+=
+==========================
+*/
+
+body.rtl {
+
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+
+/*
+====================================
+=
+= General styles
+=
+==========================
+*/
+
+/* post metas */
+
+body.rtl .entry-metas ul li.posted-by a:before {
+
+	padding-left: 0;
+    padding-right: 5px;
+}
+
+/* back to top */
+
+body.rtl .orchid-backtotop {
+
+	right: 20px;
+	left: auto;
+}
+
+/* carousel */
+
+body.rtl .owl-carousel {
+
+    direction: rtl; 
+}
+
+body.rtl .owl-carousel .owl-item {
+
+	float: right; 
+}
+
+.owl-carousel.owl-rtl {
+
+    direction: rtl;
+}
+
+.owl-carousel.owl-rtl .owl-item {
+
+    float: right;
+}
+
+
+/*
+====================================
+=
+= Header styles
+=
+==========================
+*/
+
+
+
+/*
+====================================
+=
+= RTL Responsive
+=
+==========================
+*/
+
+
+
+
+
