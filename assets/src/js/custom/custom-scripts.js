@@ -226,10 +226,10 @@
         ====================================
         */
 
-        var owldirection = $("html").attr("dir");
+        var owlrtl;     
 
 
-        if (owldirection == 'rtl') {
+        if (jQuery('body').hasClass('rtl')) {
 
             owlrtl = true
 
