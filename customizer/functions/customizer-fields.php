@@ -59,8 +59,15 @@ if( ! function_exists( 'orchid_store_section_declaration' ) ) {
 				'priority' => '',
 			),
 			array(
-				'id' => 'special_menu',
-				'title' => esc_html__( 'Special Menu', 'orchid-store' ),
+				'id' => 'middle_header',
+				'title' => esc_html__( 'Middle Header', 'orchid-store' ),
+				'description' => '',
+				'panel' => 'site_header',
+				'priority' => '',
+			),
+			array(
+				'id' => 'bottom_header',
+				'title' => esc_html__( 'Bottom Header', 'orchid-store' ),
 				'description' => '',
 				'panel' => 'site_header',
 				'priority' => '',
@@ -195,9 +202,9 @@ orchid_store_add_sortable_repeater_field( 'top_header_social_links', esc_html__(
 /*******************************************************************************************************
 ********************************** Special Menu Control Fields Declaration *********************************
 *******************************************************************************************************/
-orchid_store_add_toggle_field( 'display_special_menu', esc_html__( 'Display special menu', 'orchid-store' ), '', '', 'special_menu' );
+orchid_store_add_toggle_field( 'display_special_menu', esc_html__( 'Display special menu', 'orchid-store' ), '', '', 'bottom_header' );
 
-orchid_store_add_text_field( 'special_menu_title', esc_html__( 'Special menu title', 'orchid-store' ), '', 'orchid_store_active_special_menu', 'special_menu' );
+orchid_store_add_text_field( 'special_menu_title', esc_html__( 'Special menu title', 'orchid-store' ), '', 'orchid_store_active_special_menu', 'bottom_header' );
 
 
 /*******************************************************************************************************
