@@ -854,7 +854,7 @@ msgstr "أضف إلى قائمة الامنيات"
 
 #: woocommerce/loop/sale-flash.php:27
 msgid "Sale!"
-msgstr ""
+msgstr "عرض!"
 
 #: woocommerce/wishlist-view.php:55
 msgid "Product Name"

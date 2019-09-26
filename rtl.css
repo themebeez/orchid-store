@@ -31,6 +31,11 @@ body.rtl {
 ==========================
 */
 
+.pswp--zoom-allowed .pswp__img {
+
+	background-color: #fff;
+}
+
 /* post metas */
 
 body.rtl .entry-metas ul li.posted-by a:before {
