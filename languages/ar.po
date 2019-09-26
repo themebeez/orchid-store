@@ -32,7 +32,7 @@ msgstr "صفر"
 
 #: 404.php:31
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "عفوا! لا يمكن العثور علي هذه الصفحة."
 
 #: 404.php:34
 msgid ""
@@ -61,7 +61,7 @@ msgstr[5] ""
 
 #: comments.php:66
 msgid "Comments are closed."
-msgstr ""
+msgstr "التعليقات مغلقة."
 
 #: customizer/customizer.php:53
 msgid "Orchid Store"
@@ -478,12 +478,14 @@ msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"عذرا، ولكن لا شيء يطابق عبارات البحث. أرجو المحاولة مرة أخرى بإستخدام كلمات "
+"أخرى."
 
 #: template-parts/content-none.php:44
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr ""
+msgstr "يبدو أنه لا يمكننا العثور على ما تبحث عنه. ربما البحث يمكن أن يساعد."
 
 #: template-parts/content-page.php:33, template-parts/content-single.php:81
 msgid "Pages:"
@@ -504,7 +506,7 @@ msgstr ""
 
 #: third-party/breadcrumbs.php:267
 msgid "404 Not Found"
-msgstr ""
+msgstr "لم يتم العثور علي الصفحة"
 
 #: third-party/breadcrumbs.php:268
 msgid "Archives"
