@@ -223,6 +223,16 @@ if ( class_exists( 'WooCommerce' ) ) {
 require get_template_directory() . '/third-party/breadcrumbs.php';
 
 /**
+ * Load TGM plugin activation.
+ */
+require get_template_directory() . '/third-party/class-tgm-plugin-activation.php';
+
+/**
+ * Load plugin recommendations.
+ */
+require get_template_directory() . '/inc/plugin-recommendation.php';
+
+/**
  * Load custom hooks necessary for theme.
  */
 require get_template_directory() . '/inc/custom-hooks.php';
