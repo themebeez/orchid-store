@@ -53,6 +53,8 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
 
         $defaults = array(
 
+            'site_layout' => 'fullwidth',
+
             'display_top_header' => true,
             'top_header_social_links' => '',
 
@@ -104,6 +106,7 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
             'display_breadcrumb' => true,
             'enable_parallax_page_header_background' => false,
 
+            'display_footer_widget_area' => false,
             'footer_widgets_area_columns' => '4',
 
             'copyright_text' => '',

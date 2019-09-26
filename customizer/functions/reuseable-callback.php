@@ -245,11 +245,11 @@ if( ! function_exists( 'orchid_store_add_toggle_field' ) ) {
 
 
 /**
- *	Function to register new customizer multiple select field
+ *	Function to register new customizer select field
  */
 if( ! function_exists( 'orchid_store_add_select_field' ) ) {
 
-	function orchid_store_add_select_field( $id, $label, $desc, $choices, $active_callback, $section, $multiple ) {
+	function orchid_store_add_select_field( $id, $label, $desc, $choices, $active_callback, $section ) {
 
 		global $wp_customize;
 
@@ -262,43 +262,25 @@ if( ! function_exists( 'orchid_store_add_select_field' ) ) {
 		$control_args = array(
 			'label' => $label,
 			'description' => $desc,
+			'type' => 'select',
 			'choices' => $choices,
 			'section' => $section_id,
 		);
-
-		if( $multiple == true ) {
-			$control_args['input_attrs'] = array(
-				'multiselect' => true,
-			);
-		}
 
 		if( !empty( $active_callback ) ) {
 
 			$control_args['active_callback'] = $active_callback;
 		}
 
-		if( $multiple == true ) {
+		$wp_customize->add_setting( $field_id,
+			array(
+				'sanitize_callback'		=> 'orchid_store_sanitize_select',
+				'default'				=> $defaults[$id],
+				'capability'        	=> 'edit_theme_options',
+			)
+		);
 
-			$wp_customize->add_setting( $field_id,
-				array(
-					'sanitize_callback'		=> 'orchid_store_sanitize_multiple_select',
-					'default'				=> $defaults[$id],
-					'transport' 			=> 'refresh',
-					'capability'        	=> 'edit_theme_options',
-				)
-			);
-		} else {
-			$wp_customize->add_setting( $field_id,
-				array(
-					'sanitize_callback'		=> 'orchid_store_sanitize_select',
-					'default'				=> $defaults[$id],
-					'transport' 			=> 'refresh',
-					'capability'        	=> 'edit_theme_options',
-				)
-			);
-		}
-
-		$wp_customize->add_control( new Orchid_Store_Select_Control( $wp_customize, $field_id, $control_args ) );
+		$wp_customize->add_control( $field_id, $control_args );
 	}
 }
 

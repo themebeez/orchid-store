@@ -25,6 +25,12 @@ function orchid_store_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
+	// Adds a class of boxed.
+	if( orchid_store_get_option( 'site_layout' ) == 'boxed' ) {
+
+		$classes[] = 'boxed';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'orchid_store_body_classes' );
