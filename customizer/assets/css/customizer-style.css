@@ -3,13 +3,18 @@
 
     position: relative;
     margin-bottom: 0;
-    padding: 10px 10px;
+    padding: 10px 10px 0px;
     box-sizing: border-box;
 }
 
 .customize-control label {
 
   display: inline-block;
+}
+
+.customize-control-title {
+
+  font-size: 14px;
 }
 
 #customize-theme-controls .customize-pane-child.accordion-section-content {
@@ -26,14 +31,14 @@
 
 .option-group-title {
 
-    padding: 10px 15px;
+    padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #eee;
+    margin-top: 35px;
     font-size: 13px;
     font-weight: 500;
     display: block;
     text-align: center;
-    background: #555555;
+    background: #2196F3;
     color: #ffffff;
     text-transform: uppercase;
 }

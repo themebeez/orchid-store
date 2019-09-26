@@ -15,28 +15,35 @@
         <div class="footer-inner">
             <div class="__os-container__">
                 <div class="footer-entry">
-                	<?php $orchid_store_footer_widget_area_no = orchid_store_get_option( 'footer_widgets_area_columns' ); ?>
-                    <div class="footer-top columns-<?php echo esc_attr( $orchid_store_footer_widget_area_no ); ?>">
-                        <div class="row">
-                        	<?php
-                        	if( !empty( $orchid_store_footer_widget_area_no ) ) {
+                	<?php 
+                    if( orchid_store_get_option( 'display_footer_widget_area' ) == true ) {
 
-                        		for( $orchid_store_count = 1; $orchid_store_count <= $orchid_store_footer_widget_area_no; $orchid_store_count++ ) {
-                        			$orchid_store_sidebar_id = 'footer-'.$orchid_store_count;
-                        			?>
-                        			<div class="os-col column">
-		                                <?php 
-		                                if( is_active_sidebar( $orchid_store_sidebar_id ) ) {
-		                                	dynamic_sidebar( $orchid_store_sidebar_id );
-		                                }
-		                                ?>
-		                            </div><!-- .col -->
-                        			<?php
-                        		}
-                        	}
-                        	?>
-                        </div><!-- // row -->
-                    </div><!-- // footer-top -->
+                        $orchid_store_footer_widget_area_no = orchid_store_get_option( 'footer_widgets_area_columns' ); 
+                        ?>
+                        <div class="footer-top columns-<?php echo esc_attr( $orchid_store_footer_widget_area_no ); ?>">
+                            <div class="row">
+                            	<?php
+                            	if( !empty( $orchid_store_footer_widget_area_no ) ) {
+
+                            		for( $orchid_store_count = 1; $orchid_store_count <= $orchid_store_footer_widget_area_no; $orchid_store_count++ ) {
+                            			$orchid_store_sidebar_id = 'footer-'.$orchid_store_count;
+                            			?>
+                            			<div class="os-col column">
+    		                                <?php 
+    		                                if( is_active_sidebar( $orchid_store_sidebar_id ) ) {
+    		                                	dynamic_sidebar( $orchid_store_sidebar_id );
+    		                                }
+    		                                ?>
+    		                            </div><!-- .col -->
+                            			<?php
+                            		}
+                            	}
+                            	?>
+                            </div><!-- .row -->
+                        </div><!-- .footer-top -->
+                        <?php
+                    }
+                    ?>
                     <div class="footer-bottom">
                         <div class="os-row">
                             <div class="os-col copyrights-col">

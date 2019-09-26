@@ -129,3 +129,21 @@ if( ! function_exists( 'orchid_store_is_page_common_sidebar_position_active' ) )
 		}		
 	}
 }
+
+
+/**
+ * Active callback function for when footer widget area is displayed.
+ */
+if( ! function_exists( 'orchid_store_is_footer_widget_area_enabled' ) ) {
+
+	function orchid_store_is_footer_widget_area_enabled( $control ) {
+
+		if ( $control->manager->get_setting( 'orchid_store_field_display_footer_widget_area' )->value() == true ) {
+
+			return true;
+		} else {
+			
+			return false;
+		}		
+	}
+}
