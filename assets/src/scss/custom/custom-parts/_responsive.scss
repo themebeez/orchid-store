@@ -11,7 +11,15 @@
 		max-width:1300px;
 	}
 
-	body.elementor-page .__os-container__ {
+	body.elementor-page .__os-container__,
+	body.boxed .__os-page-wrap__,
+	body.boxed .__os-container__ {
+
+		max-width:1170px;
+	}
+	
+	body.boxed.elementor-page .__os-container__,
+	body.boxed.elementor-page .elementor-section-boxed>.elementor-container {
 
 		max-width:1170px;
 	}
@@ -27,6 +35,10 @@
 
 @media ( max-width: 1200px ) {
 
+	body.boxed .__os-page-wrap__ {
+
+		max-width:100%;
+	}
 
 	.__os-container__,
 	body.boxed .__os-container__,
