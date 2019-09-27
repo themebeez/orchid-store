@@ -10,7 +10,8 @@
  */
 
 ?>
-	<div class="orchid-backtotop"><span><i class="fa fa-angle-up" aria-hidden="true"></i></span></div>
+    </div><!-- #content.site-title -->
+
 	<footer class="footer secondary-widget-area">
         <div class="footer-inner">
             <div class="__os-container__">
@@ -72,6 +73,8 @@
             </div><!-- .__os-container__ -->
         </div><!-- .footer-inner -->
     </footer><!-- .footer -->
+
+    <div class="orchid-backtotop"><span><i class="fa fa-angle-up" aria-hidden="true"></i></span></div>
 </div><!-- .__os-page-wrap__ -->
 
 <?php wp_footer(); ?>

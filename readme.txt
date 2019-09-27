@@ -93,6 +93,8 @@ Orchid Store includes support for WooCommerce , YITH Wishlist and YITH Quickview
 - Added: RTL css
 - Fixed: Styling issues
 - Changed: Theme screenshot 
+- Added: wp_body_open() funtion
+- Added: Target for skip link
 
 
 == 1.0.1 - 19 August, 2019 ==

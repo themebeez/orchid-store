@@ -419,7 +419,7 @@ msgstr ""
 msgid "Secondary Menu"
 msgstr ""
 
-#: header.php:26
+#: header.php:31
 msgid "Skip to content"
 msgstr ""
 
@@ -435,34 +435,34 @@ msgstr ""
 msgid "Fullwidth"
 msgstr ""
 
-#: inc/custom-hooks.php:168
+#: inc/custom-hooks.php:178
 msgid "Previous"
 msgstr ""
 
-#: inc/custom-hooks.php:169
+#: inc/custom-hooks.php:179
 msgid "Next"
 msgstr ""
 
-#: inc/custom-hooks.php:194
+#: inc/custom-hooks.php:204
 msgid "Prev post"
 msgstr ""
 
-#: inc/custom-hooks.php:204
+#: inc/custom-hooks.php:214
 msgid "Next post"
 msgstr ""
 
 #. translators: 1: copyright text, 2: theme name, 3: theme author
-#: inc/custom-hooks.php:274
+#: inc/custom-hooks.php:284
 msgid "%1$s %2$s Theme by %3$s"
 msgstr ""
 
 #. translators: 1: theme name, 2: theme author
-#: inc/custom-hooks.php:277
+#: inc/custom-hooks.php:287
 msgid "%1$s Theme by %2$s"
 msgstr ""
 
 #. translators: %s: search query.
-#: inc/custom-hooks.php:324
+#: inc/custom-hooks.php:339
 msgid "Search Results for: %s"
 msgstr ""
 

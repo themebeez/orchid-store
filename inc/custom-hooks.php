@@ -41,9 +41,19 @@ if( ! function_exists( 'orchid_store_site_identity_action' ) ) {
 			if( has_custom_logo() ) {
 				the_custom_logo();
 			} else {
-				?>
-				<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-				<?php
+				if ( is_front_page() || is_home() ) :
+	    			?>
+	    			<h1 class="site-title">
+	        			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+	        		</h1><!-- .site-title -->
+	    			<?php
+	    		else :
+	        		?>
+	        		<span class="site-title">
+	        			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+	        		</span><!-- .site-title -->
+	        		<?php
+	        	endif;
 				$site_description = get_bloginfo( 'description', 'display' );
 				if ( $site_description || is_customize_preview() ) {
 					?>
@@ -304,6 +314,11 @@ add_action( 'orchid_store_footer_right', 'orchid_store_footer_right_action', 10 
 if( ! function_exists( 'orchid_store_title_breadcrumb_action' ) ) {
 
 	function orchid_store_title_breadcrumb_action() {
+
+		if( is_front_page() ) {
+
+			return;
+		}
 		?>
 		<div class="os-breadcrumb-wrap" <?php if( has_header_image() ) { ?>style="background-image: url(<?php header_image(); ?>);" <?php } ?>>
 	        <div class="__os-container__">
@@ -347,12 +362,6 @@ if( ! function_exists( 'orchid_store_title_breadcrumb_action' ) ) {
 			                	<h1 class="entry-title page-title"><?php the_title(); ?></h1>
 			                	<?php
 			                }
-		                }
-
-		                if( is_home() && ! is_front_page() ) {
-		                	?>
-		                	<h1 class="entry-title page-title"><?php single_post_title(); ?></h1>
-		                	<?php
 		                }
 
 		                if( class_exists( 'WooCommerce' ) ) {
