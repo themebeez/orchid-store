@@ -839,6 +839,17 @@
 	
 }
 
+@media ( max-width: 767px ) {
+
+	// Hide at small device 
+
+
+	.hide-in-small {
+
+		display:none;
+	}
+}
+
 
 @media ( max-width:650px ) {
 
