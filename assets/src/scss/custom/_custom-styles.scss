@@ -2658,10 +2658,38 @@ section.product-widget-style-2 .section-title {
     margin-bottom: 15px;
 }
 
-.woocommerce div.product .entry-summary p.stock.in-stock {
+.woocommerce div.product form.cart .variations {
 
-
+    margin-bottom: 10px;
 }
+
+.woocommerce div.product form.cart .variations td.label {
+
+    padding:0;
+    padding-right: 10px;
+    margin:0;
+}
+
+.woocommerce div.product form.cart .variations td.label label {
+
+    line-height:41px;
+    margin-bottom: 0;
+}
+
+.woocommerce div.product form.cart .variations td, 
+.woocommerce div.product form.cart .variations th {
+
+    line-height:1;
+    padding:0;
+    margin:0;
+}
+
+.woocommerce div.product form.cart .variations select {
+
+    margin:0;
+    height:41px;
+}
+
 
 
 // tabs 
@@ -3312,6 +3340,17 @@ section.product-widget-style-2 .section-title {
 
     margin-bottom: 15px;
 }
+
+
+
+/*
+====================================================
+=
+= 3rd party plugin integration
+=
+==========================================
+*/
+
 
 
 
