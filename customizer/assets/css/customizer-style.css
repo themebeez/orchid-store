@@ -30,7 +30,8 @@
 }
 
 .option-group-title {
-
+    
+    position: relative;
     padding: 10px;
     margin-bottom: 15px;
     margin-top: 15px;
@@ -39,11 +40,27 @@
     display: block;
     text-align: center;
     background: #2196F3;
-	background: #ff00cc;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #333399, #ff00cc);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #333399, #ff00cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	  background: #ff00cc;  /* fallback for old browsers */
+	  background: -webkit-linear-gradient(to right, #333399, #ff00cc);  /* Chrome 10-25, Safari 5.1-6 */
+	  background: linear-gradient(to right, #333399, #ff00cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #ffffff;
     text-transform: uppercase;
+}
+
+.option-group-title::before {
+
+    content: '\f228';
+    font-family: 'dashicons';
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1;
+    position: absolute;
+    z-index: 5;
+    left: 10px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .customize-control.customize-control-ios label {
