@@ -33,12 +33,15 @@
 
     padding: 10px;
     margin-bottom: 15px;
-    margin-top: 35px;
+    margin-top: 15px;
     font-size: 13px;
     font-weight: 500;
     display: block;
     text-align: center;
     background: #2196F3;
+	background: #ff00cc;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #333399, #ff00cc);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #333399, #ff00cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #ffffff;
     text-transform: uppercase;
 }
