@@ -127,9 +127,9 @@ function orchid_store_scripts() {
 	
 	wp_register_script( 'orchid-store-bundle', get_template_directory_uri() . '/assets/dist/js/bundle.min.js', array('jquery'), ORCHID_STORE_VERSION, true );
 
-	if( class_exists( 'WooCommerce' ) ) {
+	$script_obj = array();
 
-		$script_obj = array();
+	if( class_exists( 'WooCommerce' ) ) {		
 
 		if( orchid_store_get_option( 'orchid_store_field_product_added_to_cart_message' ) ) {
 
@@ -145,9 +145,9 @@ function orchid_store_scripts() {
 
 			$script_obj['cart_updated_message'] = orchid_store_get_option( 'orchid_store_field_cart_update_message' );
 		}
-
-		wp_localize_script( 'orchid-store-bundle', 'orchid_store_obj', $script_obj );
 	}
+
+	wp_localize_script( 'orchid-store-bundle', 'orchid_store_obj', $script_obj );
 
 	wp_enqueue_script( 'orchid-store-bundle' );
 

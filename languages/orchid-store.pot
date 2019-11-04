@@ -466,6 +466,26 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
+#: inc/plugin-recommendation.php:16
+msgid "Themebeez Toolkit"
+msgstr ""
+
+#: inc/plugin-recommendation.php:21
+msgid "WooCommerce"
+msgstr ""
+
+#: inc/plugin-recommendation.php:26
+msgid "YITH WooCommerce Wishlist"
+msgstr ""
+
+#: inc/plugin-recommendation.php:31
+msgid "YITH WooCommerce Quick View"
+msgstr ""
+
+#: inc/plugin-recommendation.php:36
+msgid "Elementor Page Builder"
+msgstr ""
+
 #. translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language.
 #: inc/theme-functions.php:28
 msgctxt "Lato font: on or off"
