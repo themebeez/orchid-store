@@ -161,12 +161,15 @@ a:active {
     outline: 0;
 }
 
-
 a img {
     
     border: 0;
 }
 
+img:focus {
+
+    outline:none;
+}
 
 iframe {
 
