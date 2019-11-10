@@ -58,11 +58,21 @@ if( ! function_exists( 'orchid_store_post_tags_list' ) ) {
 
 	function orchid_store_post_tags_list() {
 
+		if( 'post' != get_post_type() ) {
+
+			return;
+		}
+
 		$tags_list = get_the_tag_list();
 
 		if ( $tags_list ) {
-
-			echo $tags_list; // phpcs:ignore.
+			?>
+			<div class="entry-tags">
+				<div class="post-tags">
+					<?php echo $tags_list; // phpcs:ignore. ?>
+				</div>
+			</div>
+			<?php
 		}
 	}
 }

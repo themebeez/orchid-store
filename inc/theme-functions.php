@@ -150,9 +150,9 @@ if( !function_exists( 'orchid_store_sidebar_position' ) ) {
             return $sidebar_position;
         }  
 
-        if( class_exists( 'WooCommerce' ) || defined( 'YITH_WCWL' ) ) {
+        if( class_exists( 'WooCommerce' ) ) {
 
-            if( is_cart() || is_checkout() || is_account_page() || is_page( 'wishlist' ) ) {
+            if( is_cart() || is_checkout() || is_account_page() || ( defined( 'YITH_WCWL' ) && is_page( 'wishlist' ) ) ) {
 
                 $sidebar_position = 'none';
 
