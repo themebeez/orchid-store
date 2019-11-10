@@ -55,10 +55,10 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
 
             'site_layout' => 'fullwidth',
 
-            'display_top_header' => true,
+            'display_top_header' => false,
             'top_header_social_links' => '',
 
-            'display_special_menu' => true,
+            'display_special_menu' => false,
             'special_menu_title' => esc_html__( 'Special Menu', 'orchid-store' ),
 
             'display_product_search_form' => true,

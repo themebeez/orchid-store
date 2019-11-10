@@ -154,9 +154,9 @@ if( ! function_exists( 'orchid_store_content_entry_class' ) ) {
 
 		$content_entry_class = '';
 
-		if( class_exists( 'WooCommerce' ) || defined( 'YITH_WCWL' ) ) {
+		if( class_exists( 'WooCommerce' ) ) {
 
-            if( is_cart() || is_checkout() || is_account_page() || is_page( 'wishlist' ) || is_woocommerce() || is_shop() || is_product() ) {
+            if( is_cart() || is_checkout() || is_account_page() || ( is_page( 'wishlist' ) && defined( 'YITH_WCWL' ) ) || is_woocommerce() || is_shop() || is_product() ) {
 
                 $content_entry_class = '__os-woo-entry__';
 

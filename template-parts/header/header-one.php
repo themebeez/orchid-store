@@ -9,49 +9,56 @@
 ?>
 <header class="masterheader header-style-1">
     <div class="header-inner">
-        <div class="top-header">
-            <div class="__os-container__">
-                <div class="os-row">
-                    <div class="os-col left-col">
-                       <div class="topbar-items">
-                            <?php
-                            /**
-                            * Hook - orchid_store_user_links.
-                            *
-                            * @hooked orchid_store_user_links_action - 10
-                            */
-                            do_action( 'orchid_store_user_links' );
-                            ?>
-                        </div><!-- .topbar-items -->
-                    </div><!-- .os-col.left-col -->
-                    <?php
-                    $orchid_store_social_links = orchid_store_get_option( 'top_header_social_links' );
-
-                    if( !empty( $orchid_store_social_links ) ) {
-
-                        $orchid_store_social_links_array = explode( ',', $orchid_store_social_links );
-                        ?>
-                        <div class="os-col right-col">
-                             <div class="social-icons">
-                                <ul class="social-icons-list">
-                                    <?php
-                                    foreach( $orchid_store_social_links_array as $orchid_store_social_link ) {
-                                        ?>
-                                        <li>
-                                            <a href="<?php echo esc_url( $orchid_store_social_link ); ?>"></a>
-                                        </li>
-                                        <?php
-                                    }
-                                    ?>
-                                </ul>
-                            </div><!-- // social-icons -->
-                        </div><!-- .os-col.right-col -->
+        <?php
+        $orchid_store_display_top_header = orchid_store_get_option( 'display_top_header' );
+        if( $orchid_store_display_top_header == true ) {
+            ?>
+            <div class="top-header">
+                <div class="__os-container__">
+                    <div class="os-row">
+                        <div class="os-col left-col">
+                           <div class="topbar-items">
+                                <?php
+                                /**
+                                * Hook - orchid_store_user_links.
+                                *
+                                * @hooked orchid_store_user_links_action - 10
+                                */
+                                do_action( 'orchid_store_user_links' );
+                                ?>
+                            </div><!-- .topbar-items -->
+                        </div><!-- .os-col.left-col -->
                         <?php
-                    }
-                    ?>
-                </div><!-- .os-row -->
-            </div><!-- .__os-container__ -->
-        </div><!-- .top-header -->
+                        $orchid_store_social_links = orchid_store_get_option( 'top_header_social_links' );
+
+                        if( !empty( $orchid_store_social_links ) ) {
+
+                            $orchid_store_social_links_array = explode( ',', $orchid_store_social_links );
+                            ?>
+                            <div class="os-col right-col">
+                                 <div class="social-icons">
+                                    <ul class="social-icons-list">
+                                        <?php
+                                        foreach( $orchid_store_social_links_array as $orchid_store_social_link ) {
+                                            ?>
+                                            <li>
+                                                <a href="<?php echo esc_url( $orchid_store_social_link ); ?>"></a>
+                                            </li>
+                                            <?php
+                                        }
+                                        ?>
+                                    </ul>
+                                </div><!-- // social-icons -->
+                            </div><!-- .os-col.right-col -->
+                            <?php
+                        }
+                        ?>
+                    </div><!-- .os-row -->
+                </div><!-- .__os-container__ -->
+            </div><!-- .top-header -->
+            <?php
+        }
+        ?>
         <div class="mid-header">
             <div class="__os-container__">
                 <div class="os-row <?php orchid_store_logo_row_class(); ?>">

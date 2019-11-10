@@ -139,15 +139,7 @@ if( ! function_exists( 'orchid_store_post_tags_action' ) ) {
 
 	function orchid_store_post_tags_action() {
 
-		if( 'post' === get_post_type() ) {
-			?>
-			<div class="entry-tags">
-				<div class="post-tags">
-                	<?php orchid_store_post_tags_list(); ?>
-                </div><!-- .post-tags -->
-            </div><!-- .entry-cats -->
-			<?php
-		}
+		orchid_store_post_tags_list();
 	}
 }
 add_action( 'orchid_store_post_tags', 'orchid_store_post_tags_action', 10 );
