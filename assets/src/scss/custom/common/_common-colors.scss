@@ -151,7 +151,8 @@ input[type="password"],
 form.search-form button[type="search"],
 .widget_search form button[type="submit"],
 .widget_product_search form button[type="submit"],
-.woocommerce .wishlist_table tr td.product-stock-status span.wishlist-in-stock {
+.woocommerce .wishlist_table tr td.product-stock-status span.wishlist-in-stock,
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
 
 	color:$primary_color;
 }

@@ -817,6 +817,50 @@ form.search-form button[type="search"]:focus,
 }
 
 
+// woocommerce drop down widget 
+
+.widget .select2-container--default .select2-selection--single {
+
+    height: 43px;
+    padding: 0 20px 0 10px;
+    -webkit-border-radius:0;
+    -o-border-radius:0;
+    -ms-border-radius:0;
+    border-radius:0;
+}
+
+.widget .select2-container--default .select2-selection--single .select2-selection__rendered {
+
+    line-height:44px;
+    padding:0;
+    margin:0;
+}
+
+.widget .select2-container--default .select2-selection--single .select2-selection__placeholder {
+
+    font-size: 16px;
+    color:$primary_color;
+}
+
+.widget .select2-container--default .select2-selection--single .select2-selection__arrow {
+
+    top:50%;
+    right:5px;
+    -o-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    transform:translateY(-50%);
+}
+
+.widget .select2-container--default .select2-search--dropdown .select2-search__field {
+
+    border-color:$border_color;
+}
+
+.widget .select2-dropdown {
+
+    border-color:$border_color;
+}
+
 /*
 ========================================
 =

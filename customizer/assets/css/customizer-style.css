@@ -47,21 +47,6 @@
     text-transform: uppercase;
 }
 
-.option-group-title::before {
-
-    content: '\f228';
-    font-family: 'dashicons';
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 1;
-    position: absolute;
-    z-index: 5;
-    left: 10px;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
 
 .customize-control.customize-control-ios label {
   width: 100%;

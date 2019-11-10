@@ -16,10 +16,12 @@
 }
 
 .image img {
+    
     display: block;
     border: 2px solid #F6F6F6;
 }
 
 .image input:checked+img {
-    border: 2px solid #777777;
+
+    border: 2px solid #e26143;
 }
