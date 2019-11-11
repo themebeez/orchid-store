@@ -131,19 +131,19 @@ function orchid_store_scripts() {
 
 	if( class_exists( 'WooCommerce' ) ) {		
 
-		if( orchid_store_get_option( 'orchid_store_field_product_added_to_cart_message' ) ) {
+		if( get_theme_mod( 'orchid_store_field_product_added_to_cart_message', esc_html__( 'Product successfully added to cart!', 'orchid-store' ) ) ) {
 
-			$script_obj['added_to_cart_message'] = orchid_store_get_option( 'orchid_store_field_product_added_to_cart_message' );
+			$script_obj['added_to_cart_message'] = get_theme_mod( 'orchid_store_field_product_added_to_cart_message', esc_html__( 'Product successfully added to cart!', 'orchid-store' ) );
 		}
 
-		if( orchid_store_get_option( 'orchid_store_field_product_removed_from_cart_message' ) ) {
+		if( get_theme_mod( 'orchid_store_field_product_removed_from_cart_message', esc_html__( 'Product has been removed from your cart!', 'orchid-store' ) ) ) {
 
-			$script_obj['removed_from_cart_message'] = orchid_store_get_option( 'orchid_store_field_product_removed_from_cart_message' );
+			$script_obj['removed_from_cart_message'] = get_theme_mod( 'orchid_store_field_product_removed_from_cart_message', esc_html__( 'Product has been removed from your cart!', 'orchid-store' ) );
 		}
 
-		if( orchid_store_get_option( 'orchid_store_field_cart_update_message' ) ) {
+		if( get_theme_mod( 'orchid_store_field_cart_update_message', esc_html__( 'Cart items has been updated successfully!', 'orchid-store' ) ) ) {
 
-			$script_obj['cart_updated_message'] = orchid_store_get_option( 'orchid_store_field_cart_update_message' );
+			$script_obj['cart_updated_message'] = get_theme_mod( 'orchid_store_field_cart_update_message', esc_html__( 'Cart items has been updated successfully!', 'orchid-store' ) );
 		}
 	}
 
