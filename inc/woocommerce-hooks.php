@@ -291,16 +291,24 @@ if( ! function_exists( 'orchid_store_woocommerce_title_breadcrumb_action' ) ) {
                     <div class="title">
                         <h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>
                     </div><!-- .title -->
-                    <div class="os-breadcrumb">
-                        <?php
-                        /**
-                        * Hook - orchid_store_woocommerce_breadcrumb.
-                        *
-                        * @hooked woocommerce_breadcurmb - 20
-                        */
-                        do_action( 'orchid_store_woocommerce_breadcrumb' );
+                    <?php
+                    $display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
+
+                    if( $display_breadcrumb == true ) {
                         ?>
-                    </div><!-- .os-breadcrumb -->
+                        <div class="os-breadcrumb">
+                            <?php
+                            /**
+                            * Hook - orchid_store_woocommerce_breadcrumb.
+                            *
+                            * @hooked woocommerce_breadcurmb - 20
+                            */
+                            do_action( 'orchid_store_woocommerce_breadcrumb' );
+                            ?>
+                        </div><!-- .os-breadcrumb -->
+                        <?php
+                    }
+                    ?>
                 </div><!-- .breadcrumb-inner -->
             </div><!-- .os-container -->
              <div class="mask"></div>

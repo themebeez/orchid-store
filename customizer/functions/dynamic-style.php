@@ -224,4 +224,4 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 		<?php
 	}
 }
-add_action( 'wp_head', 'orchid_store_dynamic_style' );
+add_action( 'wp_head', 'orchid_store_dynamic_style', 10 );
