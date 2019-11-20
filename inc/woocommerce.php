@@ -258,6 +258,21 @@ function orchid_store_cross_sells_columns( $columns ) {
 add_filter( 'woocommerce_cross_sells_columns', 'orchid_store_cross_sells_columns' );
 
 
+if( ! function_exists( 'orchid_store_add_to_cart_fragments' ) ) {
+
+	function orchid_store_add_to_cart_fragments( $fragments ) {
+
+		ob_start();
+	    ?>
+	    <span class="woocommerce-Price-amount amount"><?php echo WC()->cart->get_cart_total(); ?></span>
+	    <?php
+	    $fragments['span.woocommerce-Price-amount.amount'] = ob_get_clean();
+
+	    return $fragments;
+	}
+}
+add_filter( 'woocommerce_add_to_cart_fragments', 'orchid_store_add_to_cart_fragments' );
+
 /**
  * Defining custom hooks from woocommerce functions
  */
