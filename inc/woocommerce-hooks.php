@@ -57,10 +57,8 @@ if( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
             	<i class='bx bx-cart'></i>
             </button><!-- .trigger-mini-cart -->
             <span class="cart-amount"><?php esc_html_e( 'Total:', 'orchid-store' ); ?>
-	            <span class="price">
-	                <span class="woocommerce-Price-amount amount">
-	                	<?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?>
-	            	</span><!-- woocommerce-Price-amount.amount -->
+	            <span class="price">	                
+                    <span class="woocommerce-Price-amount amount"><?php echo WC()->cart->get_cart_total(); ?></span>
 	            </span><!-- .price -->
             </span><!-- .cart-amount -->
             <?php
