@@ -50,6 +50,12 @@
     bottom: -4px;
 }
 
+.sub-menu .menu-item-description,
+.sub-menu .menu-item-description:before {
+
+    display:none; // menu item description (label) is hidden for submenu items
+}
+
 .site-navigation ul {
 
     margin: 0;

@@ -63,20 +63,16 @@ section .section-title h3,
 .woocommerce div.product .woocommerce-tabs ul.tabs li a,
 .woocommerce .woocommerce-column__title,
 .product-widget-style-2 .tab-nav ul li a,
-.cats-widget-styles .right .title h3  {
+.cats-widget-styles .right .title h3,
+.woocommerce-account .woocommerce > h2,
+.woocommerce-account .woocommerce > h3  {
 
 	text-transform:uppercase;
 }
 
 
-.hello {
-
-	font-style: italic;
-}
-
-
-
 // font family 
+
 
 .woocommerce span.price,
 .woocommerce ul.products li.product .price,
@@ -122,7 +118,8 @@ section .section-title h3,
 .woocommerce .woocommerce-breadcrumb,
 .woocommerce-NoticeGroup ul li strong,
 .woocommerce ul.order_details li strong,
-.woocommerce ul.cart_list li a, 
+.woocommerce ul.cart_list li a,
+.woocommerce-store-notice.demo_store, 
 .woocommerce ul.product_list_widget li a,
 .woocommerce div.product form.cart .variations label,
 .woocommerce div.product form.cart .variations td.label,
@@ -337,7 +334,9 @@ section .section-title h3,
 
 .entry-404 .sub-title h2,
 .search-entry .entry-title,
-.not-found .page-title {
+.not-found .page-title,
+.woocommerce-account .woocommerce > h2,
+.woocommerce-account .woocommerce > h3 {
 
 	font-size:21px;
 }
