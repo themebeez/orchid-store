@@ -39,13 +39,6 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
                 $product_query_args['posts_per_page'] = 4;
             }
 
-            if( $products_by == 'onsale' ) {
-
-                $product_on_sale    = wc_get_product_ids_on_sale();
-
-
-            }
-
             if( $product_category != '0' ) {
                 $product_query_args['tax_query'][] = array(
                     array(
@@ -63,7 +56,7 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
                         $product_query_args['meta_key']       = '_wc_average_rating';
                         $product_query_args['orderby']        = 'meta_value_num';
                         $product_query_args['order']          = 'DESC';
-
+                        $product_query_args['meta_query']     = WC()->query->get_meta_query();
                     break;
 
                 case 'featured' :
@@ -80,12 +73,11 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
 
                 case 'onsale' :
 
-                    $product_on_sale    = wc_get_product_ids_on_sale();
+                    $product_query_args['meta_key']       = '_sale_price';
+                    $product_query_args['meta_value']     = '0';
+                    $product_query_args['meta_compare']   = '>=';
+                    $product_query_args['order']          = 'DESC';
 
-                    if( !empty( $product_on_sale ) ){
-
-                        $product_query_args['post__in'] = $product_on_sale;
-                    }
                     break;
 
                 default :
