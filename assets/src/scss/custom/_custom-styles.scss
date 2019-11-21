@@ -2675,24 +2675,24 @@ section.product-widget-style-2 .section-title {
     
     float:none;
     flex:0 0 80px;
-    max-width:60px;
+    max-width:80px;
     margin:0;
+    padding-right:5px;
 }
 
-.woocommerce div.product .entry-summary form.cart div.quantity input {
+.woocommerce div.product .entry-summary .quantity-nav {
 
-    padding:0;
-    padding-left: 10px;
-    width:100%;
+    position:absolute;
+    right:0;
 }
 
 .woocommerce div.product .entry-summary form.cart .button,
 .woocommerce div.product .entry-summary .woocommerce-variation-add-to-cart .button {
     
     float:none;
-    margin-left: 5px;
-    flex:0 0 calc( 100% - 70px );
-    max-width:calc( 100% - 70px );
+    margin:0;
+    flex:0 0 calc( 100% - 80px );
+    max-width:calc( 100% - 80px );
 }
 
 .woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist {
