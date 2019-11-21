@@ -13,6 +13,7 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			if( $primary_color ) {
 				?>
 				.editor-entry a,
+				.quantity-button,
 				.entry-404 h1 span,
 				.banner-style-1 .caption span,
 				.product-widget-style-2 .tab-nav ul li a.active {
@@ -122,6 +123,7 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			if( $secondary_color ) {
 				?>				
 				a:hover,
+				.quantity-button:hover,
 				.entry-metas ul li a:hover,
 				.footer a:hover,
 				.editor-entry a:hover,

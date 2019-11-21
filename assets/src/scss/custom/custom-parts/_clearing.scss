@@ -1,6 +1,8 @@
 
 // Clearing
 
+.quantity-nav:before,
+.quantity-nav:after,
 .clearfix:before,
 .clearfix:after,
 .entry-content:before,
@@ -34,7 +36,9 @@ form.search-form:after,
     display: table;
 }
 
+
 .clearfix:after,
+.quantity-nav:after,
 .entry-content:after,
 .comment-content:after,
 .site-header:after,
