@@ -235,7 +235,6 @@ a:hover,
 .post-navigation .nav-previous span,
 .post-navigation .nav-next  span,
 .woocommerce .woocommerce-form-coupon p,
-.woocommerce div.product p.stock.in-stock,
 .header-style-1 .nice-select,
 .select2-container--default .select2-selection--single .select2-selection__rendered  {
 
@@ -278,7 +277,8 @@ aside.secondary-widget-area .widget,
 .woocommerce ul.products li.product a img, 
 .woocommerce ul.product_list_widget li img,
 .os-about-widget .social-icons ul li a,
-.pswp--zoom-allowed .pswp__img,
+.woocommerce img.pswp__img, 
+.woocommerce-page img.pswp__img,
 .woocommerce div.product div.images.woocommerce-product-gallery,
 .woocommerce ul.products li.product .woocommerce-loop-category__title {
 

@@ -33,6 +33,20 @@
 
 
         /*
+        ===================================================
+        = Remove tooltip from woocommerce product single 
+        ===============================================================
+        */
+
+       if($('body').hasClass('single-product') ) {
+
+            $('.entry-summary .wish-list-button').removeAttr('data-tippy-content');
+            $('.entry-summary .wish-list-button').removeClass('os-tooltip');
+
+        }
+
+
+        /*
         =========================
         = Tooltip
         ==================================
@@ -134,7 +148,7 @@
 
         /*
         ===========================
-        = 
+        = Woocommerce input type number
         =======================================
         */
 
@@ -184,14 +198,6 @@
             });
 
         });
-
-
-        /*
-        ===================================================
-        = Remove tooltip from woocommerce product single 
-        ===============================================================
-        */
-
 
 
         /*

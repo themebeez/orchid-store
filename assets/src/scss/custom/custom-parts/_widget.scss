@@ -749,9 +749,11 @@ form.search-form button[type="search"]:focus,
 }
 
 
-.woocommerce.widget_shopping_cart .cart_list li a.remove {
+.woocommerce.widget_shopping_cart .cart_list li a.remove,
+.mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list li a.remove {
 
     @include position_absolute(50%,unset,0,unset);
+    z-index: 5;
 
 }
 

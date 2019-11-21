@@ -136,7 +136,9 @@
 .product-widget-style-1.section-spacing,
 .product-widget-style-3.section-spacing,
 .os-blog-style-1.section-spacing,
-.woocommerce .woocommerce-result-count, {
+.woocommerce .woocommerce-result-count,
+.woocommerce div.product .entry-summary p.stock,
+.woocommerce div.product .entry-summary .yith-wcwl-wishlistexistsbrowse  {
 
 	margin-bottom: 20px;
 }
