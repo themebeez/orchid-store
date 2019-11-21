@@ -86,11 +86,19 @@ Orchid Store includes support for WooCommerce , YITH Wishlist and YITH Quickview
 
 == Changelog ==
 
-== 1.0.3 - 4 November, 2019 ==
+== 1.0.3 - 21 November, 2019 ==
 
+- Fix: Banner right side small images in mobile device
+- Fix: Post navigation in mobile device
+- Fix: Space after footer when header 2 is set.
+- Fix: Problem with tab in product detail page
+- Fix: Text alignment in table of wishlist page
+- Tweak: Quick view icon and wishlist icon when hovered on product
+- Fix: Issue with menu link description in header layout 2
+- Tweak: Colour of megamenu submenu item first child
+- Tweak: Design of store notice (WooCommerce default notice at customizer) 
 - Fixed: Enqueue of scripts
 - Removed: Unused files
-
 
 == 1.0.2 - 16 September, 2019 ==
 

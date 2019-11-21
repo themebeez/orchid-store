@@ -15,8 +15,7 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 				.editor-entry a,
 				.entry-404 h1 span,
 				.banner-style-1 .caption span,
-				.product-widget-style-2 .tab-nav ul li a.active,
-				.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group > a {
+				.product-widget-style-2 .tab-nav ul li a.active {
 
 					color: <?php echo esc_attr( $primary_color ); ?>;
 				}
@@ -66,7 +65,20 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 				.patigation .page-numbers,
 				.woocommerce .woocommerce-pagination .page-numbers li span, 
 				.woocommerce .woocommerce-pagination .page-numbers li a,
-				.woocommerce ul.products li .product-hover-items ul li a {
+				.woocommerce ul.products li .product-hover-items ul li a,
+				.woocommerce #respond input#submit.alt.disabled,
+				.woocommerce #respond input#submit.alt:disabled,
+				.woocommerce #respond input#submit.alt:disabled[disabled],
+				.woocommerce a.button.alt.disabled,
+				.woocommerce a.button.alt:disabled,
+				.woocommerce a.button.alt:disabled[disabled],
+				.woocommerce button.button.alt.disabled,
+				.woocommerce button.button.alt:disabled,
+				.woocommerce button.button.alt:disabled[disabled],
+				.woocommerce input.button.alt.disabled,
+				.woocommerce input.button.alt:disabled,
+				.woocommerce input.button.alt:disabled:hover,
+				.woocommerce input.button.alt:disabled[disabled] {
 
 					background-color: <?php echo esc_attr( $primary_color ); ?>;
 				}
@@ -148,8 +160,7 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 				.footer .widget_rss .widget_title h3 a:hover, 
 				.footer .widget_tag_cloud .tagcloud a:hover,
 				.wc-block-grid .wc-block-grid__product-title:hover,
-				.site-navigation ul li .sub-menu.mega-menu-sub-menu li a:hover,
-				.site-navigation ul .mega-menu-sub-menu .mega-sub-menu-group > a:hover {
+				.site-navigation ul li .sub-menu.mega-menu-sub-menu li a:hover {
 
 					color: <?php echo esc_attr( $secondary_color ); ?>;
 				}
@@ -189,7 +200,18 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 				.patigation .page-numbers.current,
 				.patigation .page-numbers:hover,
 				.woocommerce .woocommerce-pagination .page-numbers li a:hover, 
-				.woocommerce .woocommerce-pagination .page-numbers li .current {
+				.woocommerce .woocommerce-pagination .page-numbers li .current,
+				.woocommerce a.button.alt:disabled:hover,
+				.woocommerce a.button.alt.disabled:hover,
+				.woocommerce button.button.alt:disabled:hover,
+				.woocommerce button.button.alt.disabled:hover,
+				.woocommerce input.button.alt.disabled:hover,
+				.woocommerce a.button.alt:disabled[disabled]:hover,
+				.woocommerce #respond input#submit.alt:disabled:hover,
+				.woocommerce #respond input#submit.alt.disabled:hover,
+				.woocommerce button.button.alt:disabled[disabled]:hover,
+				.woocommerce input.button.alt:disabled[disabled]:hover,
+				.woocommerce #respond input#submit.alt:disabled[disabled]:hover {
 
 					background-color: <?php echo esc_attr( $secondary_color ); ?>;
 				}

@@ -8,6 +8,11 @@
 
 // ancours, links, images, 
 
+a:focus {
+
+    outline:1px dotted;
+}
+
 // input types 
 
 button:focus,
