@@ -318,6 +318,13 @@ if( ! function_exists( 'orchid_store_title_breadcrumb_action' ) ) {
 	            <div class="title">
 	            	<?php
 	            	if( have_posts() ) {
+
+	            		if( is_home() ) {
+	            			?>
+	            			<h1 class="entry-title page-title"><?php single_post_title(); ?></h1>
+	            			<?php
+	            		}
+
 		            	if( is_archive() ) {
 
 		            		the_archive_title( '<h1 class="entry-title page-title">', '</h1>' );
@@ -358,7 +365,7 @@ if( ! function_exists( 'orchid_store_title_breadcrumb_action' ) ) {
 
 		                if( class_exists( 'WooCommerce' ) ) {
 
-		                	if( is_shop() || is_woocommerce() ) {
+		                	if( is_shop() ) {
 		                		?>
 		                		<h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>
 		                		<?php
