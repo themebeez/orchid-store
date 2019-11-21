@@ -2655,14 +2655,19 @@ section.product-widget-style-2 .section-title {
     margin-bottom: 20px;
 }
 
-.woocommerce div.product .entry-summary form.cart,
+.woocommerce div.product form.cart {
+
+    margin-bottom: 20px;
+}
+
+.woocommerce div.product form.cart,
 .woocommerce div.product .entry-summary .woocommerce-variation-add-to-cart {
     
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    margin-bottom: 10px;
+    justify-content: space-between;
 }
 
 .woocommerce div.product .entry-summary .single_variation_wrap {
@@ -2676,8 +2681,7 @@ section.product-widget-style-2 .section-title {
     float:none;
     flex:0 0 80px;
     max-width:80px;
-    margin:0;
-    padding-right:5px;
+    margin-right: 10px;
 }
 
 .woocommerce div.product .entry-summary .quantity-nav {
@@ -2691,13 +2695,8 @@ section.product-widget-style-2 .section-title {
     
     float:none;
     margin:0;
-    flex:0 0 calc( 100% - 80px );
-    max-width:calc( 100% - 80px );
-}
-
-.woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist {
-
-    margin:0;
+    flex:0 0 calc( 100% - 100px );
+    max-width:calc( 100% - 100px );
 }
 
 .woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist .wish-list-button {
@@ -2711,7 +2710,7 @@ section.product-widget-style-2 .section-title {
 
 .woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist .wish-list-button .icon {
 
-    margin:0;
+    margin-right:5px;
     padding:0;
 }
 
@@ -2728,9 +2727,31 @@ section.product-widget-style-2 .section-title {
     margin-bottom: 10px;
 }
 
-.woocommerce div.product .entry-summary p.stock {
+.woocommerce div.product .entry-summary p.in-stock {
 
-    margin-bottom: 15px;
+    color:#02af3f;
+}
+
+.woocommerce div.product .entry-summary p.stock::before {
+
+    content:'';
+    display:inline-block;
+    margin-right: 5px;
+    height: 10px;
+    width:10px;
+    background-color:#02af3f;
+    @include border-radius(100%);
+}
+
+.woocommerce div.product .entry-summary p.stock.out-of-stock {
+
+    color:red;
+}
+
+.woocommerce div.product .entry-summary p.stock.out-of-stock::before {
+
+    content:'';
+    background-color: red;
 }
 
 .woocommerce div.product form.cart .variations {
