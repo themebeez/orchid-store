@@ -23,23 +23,25 @@ global $product;
 	    </div>
 
 	    <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
-	        <a href="<?php echo esc_url( $wishlist_url )?>" rel="nofollow">
-	            <i class='bx bxs-heart'></i>
+	        <a class="button-general wish-list-button os-tooltip" href="<?php echo esc_url( $wishlist_url ); ?>" rel="nofollow" data-tippy-content="<?php echo esc_attr( $product_added_text ); ?>">
+	            <span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+	            <span class="text"><?php echo esc_html( apply_filters( 'yith-wcwl-browse-wishlist-label', $browse_wishlist_text, $product_id, $icon ) ); ?></span>
 	        </a>
 	    </div>
 
 	    <div class="yith-wcwl-wishlistexistsbrowse <?php echo ( $exists && ! $available_multi_wishlist ) ? 'show' : 'hide' ?>" style="display:<?php echo ( $exists && ! $available_multi_wishlist ) ? 'block' : 'none' ?>">
-	        <a href="<?php echo esc_url( $wishlist_url ) ?>" rel="nofollow">
-	            <i class='bx bxs-heart'></i>
+	        <a class="button-general wish-list-button os-tooltip" href="<?php echo esc_url( $wishlist_url ); ?>" rel="nofollow" data-tippy-content="<?php echo esc_attr( $already_in_wishslist_text ); ?>">
+	            <span class="icon"><i class="fa fa-heart" aria-hidden="true"></i></span>
+	            <span class="text"><?php echo esc_html( apply_filters( 'yith-wcwl-browse-wishlist-label', $browse_wishlist_text, $product_id, $icon ) ); ?></span>
 	        </a>
 	    </div>
 
 	    <div style="clear:both"></div>
 	    <div class="yith-wcwl-wishlistaddresponse"></div>
 	<?php else: ?>
-		<a href="<?php echo esc_url( add_query_arg( array( 'wishlist_notice' => 'true', 'add_to_wishlist' => $product_id ), get_permalink( wc_get_page_id( 'myaccount' ) ) ) )?>" rel="nofollow" class="<?php echo esc_attr( str_replace( 'add_to_wishlist', '', $link_classes ) ); ?>" >
-			<?php echo wp_kses_post( $icon ); ?>
-			<?php echo wp_kses_post( $label ); ?>
+		<a href="<?php echo esc_url( add_query_arg( array( 'wishlist_notice' => 'true', 'add_to_wishlist' => $product_id ), get_permalink( wc_get_page_id( 'myaccount' ) ) ) )?>" rel="nofollow" class="<?php echo esc_attr( str_replace( 'add_to_wishlist', '', $link_classes ) ); ?> button-general wish-list-button os-tooltip" data-tippy-content="<?php echo esc_attr( $label ); ?>">
+			<span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+			<span class="text"><?php echo esc_html( $label ); ?></span>
 		</a>
 	<?php endif; ?>
 
