@@ -18,7 +18,7 @@ if( ! function_exists( 'orchid_store_product_search_action' ) ) {
 	            <div class="custom-search-entry">
 	                <input type="search" class="form-control" name="s" id="s" placeholder="<?php esc_attr_e( 'Search Product', 'orchid-store' ); ?>" />
 	                <input type="hidden" value="product" name="post_type" id="post_type"/>
-	                <button type="submit"><i class='bx bx-search-alt'></i></button>
+	                <button type="submit"><i class='bx bx-search'></i></button>
 	            </div><!-- .custom-search-entry -->
 	        </form><!-- #searchform -->
 	    </div><!-- .custom-search -->
