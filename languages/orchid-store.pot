@@ -51,55 +51,55 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: customizer/customizer.php:68
+#: customizer/customizer.php:69
 msgid "Site Title Color"
 msgstr ""
 
-#: customizer/customizer.php:71, customizer/customizer.php:148
+#: customizer/customizer.php:72, customizer/customizer.php:149
 msgid "Background"
 msgstr ""
 
-#: customizer/customizer.php:80
+#: customizer/customizer.php:81
 msgid "Header is used as background image for breadcrumb"
 msgstr ""
 
-#: customizer/customizer.php:143
+#: customizer/customizer.php:144
 msgid "Logo Setup"
 msgstr ""
 
-#: customizer/customizer.php:144
+#: customizer/customizer.php:145
 msgid "Favicon"
 msgstr ""
 
-#: customizer/customizer.php:145
+#: customizer/customizer.php:146
 msgid "Homepage Content"
 msgstr ""
 
-#: customizer/customizer.php:146
+#: customizer/customizer.php:147
 msgid "Post Metas"
 msgstr ""
 
-#: customizer/customizer.php:147, customizer/functions/customizer-fields.php:383, inc/custom-fields.php:26
+#: customizer/customizer.php:148, customizer/functions/customizer-fields.php:383, inc/custom-fields.php:26
 msgid "Sidebar Position"
 msgstr ""
 
-#: customizer/customizer.php:149
+#: customizer/customizer.php:150
 msgid "Body Background"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:62
+#: customizer/functions/customizer-defaults.php:62, customizer/functions/customizer-fields.php:77
 msgid "Special Menu"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:129
+#: customizer/functions/customizer-defaults.php:129, functions.php:136, functions.php:134
 msgid "Product successfully added to cart!"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:130
+#: customizer/functions/customizer-defaults.php:130, functions.php:141, functions.php:139
 msgid "Product has been removed from your cart!"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:131
+#: customizer/functions/customizer-defaults.php:131, functions.php:146, functions.php:144
 msgid "Cart items has been updated successfully!"
 msgstr ""
 
@@ -129,10 +129,6 @@ msgstr ""
 
 #: customizer/functions/customizer-fields.php:70
 msgid "Middle Header"
-msgstr ""
-
-#: customizer/functions/customizer-fields.php:77
-msgid "Menu"
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:84
@@ -216,7 +212,7 @@ msgid "Display Special Menu"
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:241
-msgid "Menu Title"
+msgid "Special Menu Title"
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:247
@@ -435,55 +431,35 @@ msgstr ""
 msgid "Fullwidth"
 msgstr ""
 
-#: inc/custom-hooks.php:178
+#: inc/custom-hooks.php:170
 msgid "Previous"
 msgstr ""
 
-#: inc/custom-hooks.php:179
+#: inc/custom-hooks.php:171
 msgid "Next"
 msgstr ""
 
-#: inc/custom-hooks.php:204
+#: inc/custom-hooks.php:196
 msgid "Prev post"
 msgstr ""
 
-#: inc/custom-hooks.php:214
+#: inc/custom-hooks.php:206
 msgid "Next post"
 msgstr ""
 
 #. translators: 1: copyright text, 2: theme name, 3: theme author
-#: inc/custom-hooks.php:284
+#: inc/custom-hooks.php:276
 msgid "%1$s %2$s Theme by %3$s"
 msgstr ""
 
 #. translators: 1: theme name, 2: theme author
-#: inc/custom-hooks.php:287
+#: inc/custom-hooks.php:279
 msgid "%1$s Theme by %2$s"
 msgstr ""
 
 #. translators: %s: search query.
-#: inc/custom-hooks.php:339
+#: inc/custom-hooks.php:338
 msgid "Search Results for: %s"
-msgstr ""
-
-#: inc/plugin-recommendation.php:16
-msgid "Themebeez Toolkit"
-msgstr ""
-
-#: inc/plugin-recommendation.php:21
-msgid "WooCommerce"
-msgstr ""
-
-#: inc/plugin-recommendation.php:26
-msgid "YITH WooCommerce Wishlist"
-msgstr ""
-
-#: inc/plugin-recommendation.php:31
-msgid "YITH WooCommerce Quick View"
-msgstr ""
-
-#: inc/plugin-recommendation.php:36
-msgid "Elementor Page Builder"
 msgstr ""
 
 #. translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language.
@@ -521,20 +497,16 @@ msgstr ""
 msgid "Total:"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:140
+#: inc/woocommerce-hooks.php:138
 msgid "My account"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:144
+#: inc/woocommerce-hooks.php:142
 msgid "Login / Register"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:153
+#: inc/woocommerce-hooks.php:151
 msgid "My Wishlist"
-msgstr ""
-
-#: inc/woocommerce-hooks.php:257
-msgid "Quick view"
 msgstr ""
 
 #: inc/woocommerce.php:213
@@ -678,7 +650,7 @@ msgstr ""
 msgid "Displays Store About Information"
 msgstr ""
 
-#: widget/widgets/about-widget.php:199, widget/widgets/advertisement-widget.php:141, widget/widgets/banner-widget.php:197, widget/widgets/featured-product-categories.php:109, widget/widgets/posts-widget.php:187, widget/widgets/products-filter.php:166, widget/widgets/products-widget.php:198, widget/widgets/services-widget.php:101, widget/widgets/services-widget.php:122
+#: widget/widgets/about-widget.php:199, widget/widgets/advertisement-widget.php:141, widget/widgets/banner-widget.php:197, widget/widgets/featured-product-categories.php:109, widget/widgets/posts-widget.php:187, widget/widgets/products-filter.php:166, widget/widgets/products-widget.php:190, widget/widgets/services-widget.php:101, widget/widgets/services-widget.php:122
 msgid "Title"
 msgstr ""
 
@@ -910,51 +882,51 @@ msgstr ""
 msgid "Displays products."
 msgstr ""
 
-#: widget/widgets/products-widget.php:205
+#: widget/widgets/products-widget.php:197
 msgid "Product Category"
 msgstr ""
 
-#: widget/widgets/products-widget.php:210
+#: widget/widgets/products-widget.php:202
 msgid "Select Category"
 msgstr ""
 
-#: widget/widgets/products-widget.php:219
+#: widget/widgets/products-widget.php:211
 msgid "If no category is selected, then latest products are displayed."
 msgstr ""
 
-#: widget/widgets/products-widget.php:224
+#: widget/widgets/products-widget.php:216
 msgid "No of Products"
 msgstr ""
 
-#: widget/widgets/products-widget.php:231
+#: widget/widgets/products-widget.php:223
 msgid "Products By"
 msgstr ""
 
-#: widget/widgets/products-widget.php:235
+#: widget/widgets/products-widget.php:227
 msgid "None"
 msgstr ""
 
-#: widget/widgets/products-widget.php:236
+#: widget/widgets/products-widget.php:228
 msgid "Rated"
 msgstr ""
 
-#: widget/widgets/products-widget.php:237
+#: widget/widgets/products-widget.php:229
 msgid "Featured"
 msgstr ""
 
-#: widget/widgets/products-widget.php:238
+#: widget/widgets/products-widget.php:230
 msgid "On Sale"
 msgstr ""
 
-#: widget/widgets/products-widget.php:254
+#: widget/widgets/products-widget.php:246
 msgid "Display Layout"
 msgstr ""
 
-#: widget/widgets/products-widget.php:258
+#: widget/widgets/products-widget.php:250
 msgid "Slider"
 msgstr ""
 
-#: widget/widgets/products-widget.php:259
+#: widget/widgets/products-widget.php:251
 msgid "Grid"
 msgstr ""
 
@@ -981,10 +953,6 @@ msgstr ""
 
 #: widget/widgets/services-widget.php:134
 msgid "Upload image having 1x1 aspect ratio."
-msgstr ""
-
-#: woocommerce/add-to-wishlist-button.php:17
-msgid "Add to wishlist"
 msgstr ""
 
 #: woocommerce/loop/sale-flash.php:27

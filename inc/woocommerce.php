@@ -264,7 +264,7 @@ if( ! function_exists( 'orchid_store_add_to_cart_fragments' ) ) {
 
 		ob_start();
 	    ?>
-	    <span class="woocommerce-Price-amount amount os-minicart-amount"><?php echo WC()->cart->get_cart_total(); ?></span>
+	    <span class="woocommerce-Price-amount amount os-minicart-amount"><?php echo wp_kses_post( WC()->cart->get_cart_total() ); ?></span>
 	    <?php
 	    $fragments['.os-minicart-amount'] = ob_get_clean();
 

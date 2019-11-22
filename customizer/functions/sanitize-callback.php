@@ -53,30 +53,6 @@ if ( !function_exists('orchid_store_sanitize_select') ) {
 
 
 /**
- * Sanitization function for multiple select.
- */
-if( !function_exists( 'orchid_store_sanitize_multiple_select' ) ) {
-
-    function orchid_store_sanitize_multiple_select( $input, $setting ) {
-
-        $choices = $setting->manager->get_control( $setting->id )->choices;
-
-        if( !empty( $input ) ) {
-
-            foreach( $input as $key ) {
-
-                if( !array_key_exists( $key, $choices ) ) {
-
-                    return $setting->default;
-                }
-            }
-        }
-
-        return $input;
-    } 
-}
-
-/**
  * Sanitization callback function for sanitizing urls.
  */
 if( ! function_exists( 'orchid_store_sanitize_urls' ) ) {

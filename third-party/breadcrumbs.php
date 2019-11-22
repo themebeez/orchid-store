@@ -205,7 +205,7 @@ class Orchid_Store_Breadcrumb_Trail {
 				// Wrap the item with its itemprop.
 				$item = ! empty( $matches )
 					? preg_replace( '/(<a.*?)([\'"])>/i', '$1$2 itemprop=$2item$2>', $item )
-					: sprintf( '<span itemprop="item">%s</span>', $item );
+					: sprintf( '<a href="#" itemprop="item">%s</a>', $item );
 
 				// Add list item classes.
 				$item_class = 'trail-item';

@@ -59,6 +59,7 @@ function orchid_store_customize_register( $wp_customize ) {
 			'selector'        => '.site-title a',
 			'render_callback' => 'orchid_store_customize_partial_blogname',
 		) );
+		
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 			'selector'        => '.site-description',
 			'render_callback' => 'orchid_store_customize_partial_blogdescription',

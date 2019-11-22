@@ -41,8 +41,8 @@ if ( !function_exists( 'orchid_store_lite_fonts_url' ) ) {
 
         if ($fonts) {
             $fonts_url = add_query_arg(array(
-                'family' => urldecode(implode('|', $fonts)),
-                'subset' => urldecode($subsets),
+                'family' => urlencode(implode('|', $fonts)),
+                'subset' => urlencode($subsets),
             ), 'https://fonts.googleapis.com/css');
         }
         return $fonts_url;

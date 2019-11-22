@@ -231,7 +231,7 @@ if( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
                             ?>
                             
                             <span class="os-upload-image-holder" style="background-image: url( <?php echo esc_url( $instance['store_logo'] ); ?> );"></span>
-                            <input type="hidden" class="widefat os-upload-image-url-holder" name="<?php echo esc_attr($this->get_field_name('store_logo')); ?>" id="<?php echo esc_attr($this->get_field_id('store_logo')); ?>" value="<?php echo esc_url( $instance['store_logo'] ); ?>">
+                            <input type="hidden" class="widefat os-upload-image-url-holder" name="<?php echo esc_attr($this->get_field_name('store_logo')); ?>" id="<?php echo esc_attr($this->get_field_id('store_logo')); ?>" value="<?php echo esc_attr( $instance['store_logo'] ); ?>">
                             <button class="<?php echo esc_attr( $upload_btn_class ); ?>" id="os-upload-btn"><?php esc_html_e( 'Upload', 'orchid-store' ); ?></button>
                             <button class="<?php echo esc_attr( $remove_btn_class ); ?>" id="os-remove-btn"><?php esc_html_e( 'Remove', 'orchid-store' ); ?></button>
                         </span>
