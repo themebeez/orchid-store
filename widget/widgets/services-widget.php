@@ -149,7 +149,7 @@ if( ! class_exists( 'Orchid_Store_Services_Widget' ) ) :
                                 }
                                 ?>                                
                                 <span class="os-upload-image-holder" style="background-image: url( <?php if( !empty( $services_imgs[$i] ) ) { echo esc_url( $services_imgs[$i] ); } ?> );"></span>
-                                <input type="hidden" class="widefat os-upload-image-url-holder" name="<?php echo esc_attr($this->get_field_name('services_imgs') ); ?>[]" id="<?php echo esc_attr($this->get_field_id('services_imgs') . $i ); ?>" value="<?php if( !empty( $services_imgs[$i] ) ) { echo esc_url( $services_imgs[$i] ); } ?>">
+                                <input type="hidden" class="widefat os-upload-image-url-holder" name="<?php echo esc_attr($this->get_field_name('services_imgs') ); ?>[]" id="<?php echo esc_attr($this->get_field_id('services_imgs') . $i ); ?>" value="<?php if( !empty( $services_imgs[$i] ) ) { echo esc_attr( $services_imgs[$i] ); } ?>">
                                 <button class="<?php echo esc_attr( $upload_btn_class ); ?>" id="os-upload-btn"><?php esc_html_e( 'Upload', 'orchid-store' ); ?></button>
                                 <button class="<?php echo esc_attr( $remove_btn_class ); ?>" id="os-remove-btn"><?php esc_html_e( 'Remove', 'orchid-store' ); ?></button>
                             </span>  

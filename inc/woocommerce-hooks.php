@@ -58,7 +58,7 @@ if( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
             </button><!-- .trigger-mini-cart -->
             <span class="cart-amount"><?php esc_html_e( 'Total:', 'orchid-store' ); ?>
 	            <span class="price">	                
-                    <span class="woocommerce-Price-amount amount os-minicart-amount"><?php echo WC()->cart->get_cart_total(); ?></span>
+                    <span class="woocommerce-Price-amount amount os-minicart-amount"><?php echo wp_kses_post( WC()->cart->get_cart_total() ); ?></span>
 	            </span><!-- .price -->
             </span><!-- .cart-amount -->
             <?php
@@ -224,7 +224,7 @@ if( ! function_exists( 'orchid_store_template_loop_product_title' ) ) {
          */
         do_action( 'orchid_store_loop_product_link_open' );
 
-        echo '<h2 class="' . esc_attr( apply_filters( 'woocommerce_product_loop_title_classes', 'woocommerce-loop-product__title' ) ) . '">' . get_the_title() . '</h2>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo '<h2 class="' . esc_attr( apply_filters( 'woocommerce_product_loop_title_classes', 'woocommerce-loop-product__title' ) ) . '">' . wp_kses_post( get_the_title() ) . '</h2>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
         /**
          * Hook: orchid_store_loop_product_link_close.
@@ -252,7 +252,7 @@ if( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
                 if( class_exists( 'YITH_WCQV' ) ) {
                     ?>
                     <li>
-                        <a class="os-tooltip view-product yith-wcqv-button" data-product_id="<?php echo absint( $product->get_id() );?>" data-tippy-content="<?php echo esc_attr( get_option( 'yith-wcqv-button-label' ) ); ?>" href="#"><i class="bx bx-search"></i></a>
+                        <a class="os-tooltip view-product yith-wcqv-button" data-product_id="<?php echo esc_attr( $product->get_id() );?>" data-tippy-content="<?php echo esc_attr( get_option( 'yith-wcqv-button-label' ) ); ?>" href="#"><i class="bx bx-search"></i></a>
                     </li>
                     <?php
                 }

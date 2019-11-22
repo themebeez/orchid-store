@@ -48,7 +48,7 @@ if( ! function_exists( 'orchid_store_post_categories_list' ) ) {
 
 		if ( $categories_list ) {
 
-			echo $categories_list; // phpcs:ignore.
+			echo wp_kses_post( $categories_list ); // phpcs:ignore.
 		}
 	}
 }
@@ -69,7 +69,7 @@ if( ! function_exists( 'orchid_store_post_tags_list' ) ) {
 			?>
 			<div class="entry-tags">
 				<div class="post-tags">
-					<?php echo $tags_list; // phpcs:ignore. ?>
+					<?php echo wp_kses_post( $tags_list ); // phpcs:ignore. ?>
 				</div>
 			</div>
 			<?php

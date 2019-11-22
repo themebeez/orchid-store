@@ -282,7 +282,7 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                     ?>
                     
                     <span class="os-upload-image-holder" style="background-image: url( <?php echo esc_url( $banner_img_1 ); ?> );"></span>
-                    <input type="hidden" class="widefat os-upload-image-url-holder" name="<?php echo esc_attr($this->get_field_name('banner_img_1')); ?>" id="<?php echo esc_attr($this->get_field_id('banner_img_1')); ?>" value="<?php echo esc_url( $banner_img_1 ); ?>">
+                    <input type="hidden" class="widefat os-upload-image-url-holder" name="<?php echo esc_attr($this->get_field_name('banner_img_1')); ?>" id="<?php echo esc_attr($this->get_field_id('banner_img_1')); ?>" value="<?php echo esc_attr( $banner_img_1 ); ?>">
                     <button class="<?php echo esc_attr( $upload_btn_class ); ?>" id="os-upload-btn"><?php esc_html_e( 'Upload', 'orchid-store' ); ?></button>
                     <button class="<?php echo esc_attr( $remove_btn_class ); ?>" id="os-remove-btn"><?php esc_html_e( 'Remove', 'orchid-store' ); ?></button>
                 </span>
@@ -318,7 +318,7 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                     ?>
                     
                     <span class="os-upload-image-holder" style="background-image: url( <?php echo esc_url( $banner_img_2 ); ?> );"></span>
-                    <input type="hidden" class="widefat os-upload-image-url-holder" name="<?php echo esc_attr($this->get_field_name('banner_img_2')); ?>" id="<?php echo esc_attr($this->get_field_id('banner_img_2')); ?>" value="<?php echo esc_url( $banner_img_2 ); ?>">
+                    <input type="hidden" class="widefat os-upload-image-url-holder" name="<?php echo esc_attr($this->get_field_name('banner_img_2')); ?>" id="<?php echo esc_attr($this->get_field_id('banner_img_2')); ?>" value="<?php echo esc_attr( $banner_img_2 ); ?>">
                     <button class="<?php echo esc_attr( $upload_btn_class ); ?>" id="os-upload-btn"><?php esc_html_e( 'Upload', 'orchid-store' ); ?></button>
                     <button class="<?php echo esc_attr( $remove_btn_class ); ?>" id="os-remove-btn"><?php esc_html_e( 'Remove', 'orchid-store' ); ?></button>
                 </span>
