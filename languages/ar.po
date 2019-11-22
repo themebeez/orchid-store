@@ -16,7 +16,7 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.2.4\n"
 "Last-Translator: \n"
 "Language: ar\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -338,23 +338,23 @@ msgstr ""
 
 #: header.php:26
 msgid "Skip to content"
-msgstr ""
+msgstr "تخطى الى المحتوى"
 
 #: inc/custom-hooks.php:169
 msgid "Previous"
-msgstr ""
+msgstr "سابق"
 
 #: inc/custom-hooks.php:170
 msgid "Next"
-msgstr ""
+msgstr "التالى"
 
 #: inc/custom-hooks.php:195
 msgid "Prev post"
-msgstr "المقال السابق"
+msgstr "المقال السابقالسابق بوست"
 
 #: inc/custom-hooks.php:205
 msgid "Next post"
-msgstr "المادة التالية"
+msgstr "المادة التاليةالمشاركة التالية"
 
 #. translators: 1: copyright text, 2: theme name, 3: theme author
 #: inc/custom-hooks.php:275
@@ -369,7 +369,7 @@ msgstr "%1$s وورد الموضوع من قبل %2$s"
 #. translators: %s: search query.
 #: inc/custom-hooks.php:325
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "نتائج البحث عن: %s"
 
 #. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:79
@@ -502,7 +502,7 @@ msgstr ""
 
 #: third-party/breadcrumbs.php:266
 msgid "Home"
-msgstr ""
+msgstr "الرئيسية"
 
 #: third-party/breadcrumbs.php:267
 msgid "404 Not Found"
@@ -515,7 +515,7 @@ msgstr "أرشيف"
 #. translators: %s is the search query.
 #: third-party/breadcrumbs.php:270
 msgid "Search results for: %s"
-msgstr ""
+msgstr "نتائج البحث عن: %s"
 
 #. translators: %s is the page number.
 #: third-party/breadcrumbs.php:272
