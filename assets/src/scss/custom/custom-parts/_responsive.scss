@@ -197,7 +197,7 @@
 
     .os-breadcrumb-wrap {
 
-        margin-top: -30px; // Same ratio as header
+        margin-top: -30px;
     }
 
     .footer.secondary-widget-area .widget {
@@ -288,11 +288,6 @@
     aside.secondary-widget-area {
 
         margin-top: 30px;
-    }
-
-    .inner-page-wrap {
-
-        padding-bottom: 30px;
     }
 
     .cats-widget-styles .col {
@@ -932,7 +927,7 @@
 
 
     // spacing & height
-
+    
 
     .banner-style-1 .category-nav ul {
 
@@ -945,20 +940,15 @@
         margin-bottom: 40px;
     }
 
-    .inner-page-wrap {
+    .entry-tags {
 
-        padding-top: 30px;
+        padding-top: 0;
     }
 
     .search-entry article .thumb,
     .archive-entry article .thumb {
 
         margin-bottom: 30px;
-    }
-
-    .os-breadcrumb-wrap {
-
-        margin-top: -30px;
     }
 
     .cta-style-2 .title h3 {
