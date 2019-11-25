@@ -69,3 +69,41 @@
     -webkit-animation: fadeInUp 500ms ease-in-out; /* Chrome, Safari, Opera */
     animation: fadeInUp 500ms ease-in-out;
 }
+
+
+// scaleout
+
+@-webkit-keyframes scaleout {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes scaleout {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+
+@keyframes shine-lines {
+    0% {
+        background-position: -100px;
+    }
+    40%,
+    100% {
+        background-position: 140px;
+    }
+}

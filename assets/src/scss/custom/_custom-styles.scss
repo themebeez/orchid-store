@@ -1049,7 +1049,7 @@ section .section-title h3:after {
 
 
 .banner-style-1 .left-col {
-
+    
     flex:0 0 66.66%;
     max-width: 66.66%;
 }
@@ -1196,6 +1196,50 @@ section .section-title h3:after {
     
     @include border_radius(0);
 }
+
+// preloader ( on window load till document is ready )
+
+.carousel-preloader {
+
+    position:relative;
+}
+
+.carousel-preloader .init-preloader {
+
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    width: 100%;
+    max-width:100%;
+    height: 100%;
+    z-index:100;
+    height: 453px;
+    background: whitesmoke;
+    overflow:hidden;
+    @include transation_delay();
+}
+
+.carousel-preloader .init-preloader::before {
+
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  z-index:100;
+  width: 100%;
+  max-width:100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px);
+  background-size: 100%;
+  animation: shine-lines 1.6s infinite linear;
+}
+
+
+
 
 
 /*

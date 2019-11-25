@@ -49,6 +49,9 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                             if( !empty( $slider_pages ) ) {
                                 ?>
                                 <div class="os-col slider-col left-col">
+                                    <div class="carousel-preloader">
+                                        <div class="init-preloader"></div>
+                                    </div>
                                     <div class="owl-carousel owl-carousel-1">
                                         <?php
                                         foreach( $slider_pages as $slider_index => $slider_page ) {
