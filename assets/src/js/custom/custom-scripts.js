@@ -7,7 +7,6 @@
     $(document).ready(function() {
 
 
-
         /*
         ====================
         = Init wow js
@@ -306,6 +305,7 @@
 
         // banner style 1 
 
+        $('.carousel-preloader').fadeOut("slow");
 
         jQuery('.owl-carousel-1').owlCarousel({
 
