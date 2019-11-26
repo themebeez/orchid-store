@@ -24,10 +24,10 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
         public function widget( $args, $instance ) {
 
             $title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
-            $product_category = $instance['product_category'];
-            $no_of_products = $instance['no_of_products'];
-            $products_by = $instance['products_by'];
-            $display_layout = $instance['display_layout'];
+            $product_category = isset( $instance['product_category'] ) ? $instance['product_category'] : '';
+            $no_of_products = isset( $instance['no_of_products'] ) ? $instance['no_of_products'] : 4;
+            $products_by = isset( $instance['products_by'] ) ? $instance['products_by'] :'default';
+            $display_layout = isset( $instance['display_layout'] ) ? $instance['display_layout'] : 'slider';
 
             $product_query_args = array(
                 'post_type' => 'product',

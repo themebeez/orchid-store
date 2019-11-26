@@ -24,8 +24,8 @@ if( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
         public function widget( $args, $instance ) {
 
             $title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
-            $product_categories = $instance['product_categories'];
-            $no_of_products = $instance['no_of_products'];
+            $product_categories = isset( $instance['product_categories'] ) ? $instance['product_categories'] : array();
+            $no_of_products = isset( $instance['no_of_products'] ) ? $instance['no_of_products'] : 4;
 
             if( empty( $product_categories ) ) {
                 $all_product_caregories = orchid_store_all_product_categories();
