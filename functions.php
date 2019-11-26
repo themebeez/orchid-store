@@ -118,11 +118,14 @@ function orchid_store_scripts() {
 
 	if( is_rtl() ) {
 
-			wp_enqueue_style( 'orchid-store-main-style-rtl', get_template_directory_uri() . '/assets/dist/css/main-style-rtl.css' );
+		wp_enqueue_style( 'orchid-store-main-style-rtl', get_template_directory_uri() . '/assets/dist/css/main-style-rtl.css' );
 
-		} else {
+		wp_add_inline_style( 'orchid-store-main-style-rtl', orchid_store_dynamic_style() );
+	} else {
 
-			wp_enqueue_style( 'orchid-store-main-style', get_template_directory_uri() . '/assets/dist/css/main-style.css' );
+		wp_enqueue_style( 'orchid-store-main-style', get_template_directory_uri() . '/assets/dist/css/main-style.css' );
+
+		wp_add_inline_style( 'orchid-store-main-style', orchid_store_dynamic_style() );
 	}
 	
 	wp_register_script( 'orchid-store-bundle', get_template_directory_uri() . '/assets/dist/js/bundle.min.js', array('jquery'), ORCHID_STORE_VERSION, true );
@@ -161,7 +164,12 @@ add_action( 'wp_enqueue_scripts', 'orchid_store_scripts' );
 /**
  * Enqueue scripts and styles for admin.
  */
-function orchid_store_admin_enqueue() {
+function orchid_store_admin_enqueue( $hook ) {
+
+	if( $hook != 'widgets.php' ) {
+
+		return;
+	}
 
 	wp_enqueue_script( 'media-upload' );
 

@@ -25,9 +25,9 @@ if( ! class_exists( 'Orchid_Store_Services_Widget' ) ) :
 
             $title              = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
-            $services_titles    = !empty( $instance['services_titles'] ) ? $instance['services_titles'] : array();
-            $services_descs     = !empty( $instance['services_descs'] ) ? $instance['services_descs'] : array();
-            $services_imgs      = !empty( $instance['services_imgs'] ) ? $instance['services_imgs'] : array();
+            $services_titles    = isset( $instance['services_titles'] ) ? $instance['services_titles'] : array();
+            $services_descs     = isset( $instance['services_descs'] ) ? $instance['services_descs'] : array();
+            $services_imgs      = isset( $instance['services_imgs'] ) ? $instance['services_imgs'] : array();
 
             if( !empty( $services_titles ) && !empty( $services_descs ) && !empty( $services_imgs ) ) {
                 ?>

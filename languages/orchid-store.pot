@@ -91,15 +91,15 @@ msgstr ""
 msgid "Special Menu"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:129, functions.php:136, functions.php:134
+#: customizer/functions/customizer-defaults.php:129, functions.php:139, functions.php:137
 msgid "Product successfully added to cart!"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:130, functions.php:141, functions.php:139
+#: customizer/functions/customizer-defaults.php:130, functions.php:144, functions.php:142
 msgid "Product has been removed from your cart!"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:131, functions.php:146, functions.php:144
+#: customizer/functions/customizer-defaults.php:131, functions.php:149, functions.php:147
 msgid "Cart items has been updated successfully!"
 msgstr ""
 
@@ -480,7 +480,7 @@ msgctxt "Poppins font: on or off"
 msgid "on"
 msgstr ""
 
-#: inc/theme-functions.php:282, woocommerce/product-searchform.php:24
+#: inc/theme-functions.php:282
 msgid "Search for:"
 msgstr ""
 
@@ -489,32 +489,28 @@ msgctxt "placeholder"
 msgid "Type here to search"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:19
-msgid "Search Product"
-msgstr ""
-
-#: inc/woocommerce-hooks.php:59
+#: inc/woocommerce-hooks.php:53
 msgid "Total:"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:138
+#: inc/woocommerce-hooks.php:132
 msgid "My account"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:142
+#: inc/woocommerce-hooks.php:136
 msgid "Login / Register"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:151
+#: inc/woocommerce-hooks.php:145
 msgid "My Wishlist"
 msgstr ""
 
-#: inc/woocommerce.php:213
+#: inc/woocommerce.php:202
 msgid "View your shopping cart"
 msgstr ""
 
 #. translators: number of items in the mini cart.
-#: inc/woocommerce.php:217
+#: inc/woocommerce.php:206
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
@@ -650,7 +646,7 @@ msgstr ""
 msgid "Displays Store About Information"
 msgstr ""
 
-#: widget/widgets/about-widget.php:199, widget/widgets/advertisement-widget.php:141, widget/widgets/banner-widget.php:197, widget/widgets/featured-product-categories.php:109, widget/widgets/posts-widget.php:187, widget/widgets/products-filter.php:166, widget/widgets/products-widget.php:190, widget/widgets/services-widget.php:101, widget/widgets/services-widget.php:122
+#: widget/widgets/about-widget.php:199, widget/widgets/advertisement-widget.php:141, widget/widgets/banner-widget.php:200, widget/widgets/featured-product-categories.php:109, widget/widgets/posts-widget.php:187, widget/widgets/products-filter.php:166, widget/widgets/products-widget.php:190, widget/widgets/services-widget.php:101, widget/widgets/services-widget.php:122
 msgid "Title"
 msgstr ""
 
@@ -662,11 +658,11 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: widget/widgets/about-widget.php:235, widget/widgets/advertisement-widget.php:227, widget/widgets/banner-widget.php:286, widget/widgets/banner-widget.php:322, widget/widgets/services-widget.php:153
+#: widget/widgets/about-widget.php:235, widget/widgets/advertisement-widget.php:227, widget/widgets/banner-widget.php:289, widget/widgets/banner-widget.php:325, widget/widgets/services-widget.php:153
 msgid "Upload"
 msgstr ""
 
-#: widget/widgets/about-widget.php:236, widget/widgets/advertisement-widget.php:228, widget/widgets/banner-widget.php:287, widget/widgets/banner-widget.php:323, widget/widgets/services-widget.php:154, woocommerce/wishlist-view.php:206
+#: widget/widgets/about-widget.php:236, widget/widgets/advertisement-widget.php:228, widget/widgets/banner-widget.php:290, widget/widgets/banner-widget.php:326, widget/widgets/services-widget.php:154, woocommerce/wishlist-view.php:206
 msgid "Remove"
 msgstr ""
 
@@ -738,11 +734,11 @@ msgstr ""
 msgid "Offer Text"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:172, widget/widgets/banner-widget.php:233
+#: widget/widgets/advertisement-widget.php:172, widget/widgets/banner-widget.php:236
 msgid "Button Title"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:177, widget/widgets/banner-widget.php:238
+#: widget/widgets/advertisement-widget.php:177, widget/widgets/banner-widget.php:241
 msgid "Button Link"
 msgstr ""
 
@@ -770,40 +766,40 @@ msgstr ""
 msgid "Displays main slider"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:203
+#: widget/widgets/banner-widget.php:206
 msgid "Slider Elements"
 msgstr ""
 
 #. translators: %s: slider item number
-#: widget/widgets/banner-widget.php:215
+#: widget/widgets/banner-widget.php:218
 msgid "Slider Item %s"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:221
+#: widget/widgets/banner-widget.php:224
 msgid "Select Page"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:251
+#: widget/widgets/banner-widget.php:254
 msgid "Show Slider Contents"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:258
+#: widget/widgets/banner-widget.php:261
 msgid "Enable Mask Layer"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:264
+#: widget/widgets/banner-widget.php:267
 msgid "Banner Image One"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:293
+#: widget/widgets/banner-widget.php:296
 msgid "Banner Link One"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:300
+#: widget/widgets/banner-widget.php:303
 msgid "Banner Image Two"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:329
+#: widget/widgets/banner-widget.php:332
 msgid "Banner Link Two"
 msgstr ""
 

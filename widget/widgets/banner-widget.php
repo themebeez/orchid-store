@@ -24,15 +24,15 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
         public function widget( $args, $instance ) {
 
             $title          = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
-            $slider_pages   = $instance['slider_pages'];
-            $button_titles  = $instance['button_titles'];
-            $button_links   = $instance['button_links'];
-            $show_contents  = $instance['show_contents'];
-            $enable_mask    = $instance['enable_mask'];
-            $banner_image_1 = $instance['banner_img_1'];
-            $banner_image_2 = $instance['banner_img_2'];
-            $banner_link_1  = $instance['banner_link_1'];
-            $banner_link_2  = $instance['banner_link_2'];
+            $slider_pages   = isset( $instance['slider_pages'] ) ? $instance['slider_pages'] : array();
+            $button_titles  = isset( $instance['button_titles'] ) ? $instance['button_titles'] : array();
+            $button_links   = isset( $instance['button_links'] ) ? $instance['button_links'] : array();
+            $show_contents  = isset( $instance['show_contents'] ) ? $instance['show_contents'] : true;
+            $enable_mask    = isset( $instance['enable_mask'] ) ? $instance['enable_mask'] : false;
+            $banner_image_1 = isset( $instance['banner_img_1'] ) ? $instance['banner_img_1'] : '';
+            $banner_image_2 = isset( $instance['banner_img_2'] ) ? $instance['banner_img_2'] : '';
+            $banner_link_1  = isset( $instance['banner_link_1'] ) ? $instance['banner_link_1'] : '';
+            $banner_link_2  = isset( $instance['banner_link_2'] ) ? $instance['banner_link_2'] : '';
 
             $mask_layer_class = '';
 

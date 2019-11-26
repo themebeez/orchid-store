@@ -25,7 +25,7 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 
             $title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
-            $product_categories = $instance['product_categories'];
+            $product_categories = isset( $instance['product_categories'] ) ? $instance['product_categories'] : array();
 
             if( !empty( $product_categories ) ) {
                 ?>
