@@ -25,14 +25,14 @@ if( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) :
         public function widget( $args, $instance ) {
 
             $title              = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
-            $offer_title        = !empty( $instance['offer_title'] ) ? $instance['offer_title'] : '';
-            $offer_text         = !empty( $instance['offer_text'] ) ? $instance['offer_text'] : '';
-            $button_title       = !empty( $instance['button_title'] ) ? $instance['button_title'] : '';
-            $button_link        = !empty( $instance['button_link'] ) ? $instance['button_link'] : '';
-            $content_alignment  = !empty( $instance['content_alignment'] ) ? $instance['content_alignment'] : '';
-            $offer_image        = !empty( $instance['offer_image'] ) ? $instance['offer_image'] : '';
-            $img_as_bg          = $instance['set_image_in_background'];
-            $show_contents      = $instance['show_offer_contents'];
+            $offer_title        = isset( $instance['offer_title'] ) ? $instance['offer_title'] : '';
+            $offer_text         = isset( $instance['offer_text'] ) ? $instance['offer_text'] : '';
+            $button_title       = isset( $instance['button_title'] ) ? $instance['button_title'] : '';
+            $button_link        = isset( $instance['button_link'] ) ? $instance['button_link'] : '';
+            $content_alignment  = isset( $instance['content_alignment'] ) ? $instance['content_alignment'] : '';
+            $offer_image        = isset( $instance['offer_image'] ) ? $instance['offer_image'] : '';
+            $img_as_bg          = isset( $instance['set_image_in_background'] ) ? $instance['set_image_in_background'] : true;
+            $show_contents      = isset( $instance['show_offer_contents'] ) ? $instance['show_offer_contents'] : true;
 
             $box_holder_class = 'box-holder';
 
