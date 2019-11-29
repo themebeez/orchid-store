@@ -89,6 +89,7 @@ Orchid Store includes support for WooCommerce , YITH Wishlist and YITH Quickview
 == 1.0.6 - 29 November, 2019 ==
 
 - Fix: Sidebar position in blog page
+- Fix: JS loaded for elementor page
 - Added: Upsell in customizer
 
 
