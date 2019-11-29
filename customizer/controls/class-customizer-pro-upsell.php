@@ -10,9 +10,9 @@
  * @link      https://github.com/WPTRT/wptrt-customize-pro
  */
 
-if( ! class_exists( 'Orchid_Store_Pro' ) ) {
+if( ! class_exists( 'Orchid_Store_Pro_Upsell' ) ) {
 
-	class Orchid_Store_Pro extends WP_Customize_Section {
+	class Orchid_Store_Pro_Upsell extends WP_Customize_Section {
 
 		/**
 		 * The type of customize section being rendered.

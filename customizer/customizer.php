@@ -56,12 +56,12 @@ function orchid_store_customize_register( $wp_customize ) {
 	/**
 	 * Load customizer functions for intializing theme upsell
 	 */
-	require get_template_directory() . '/customizer/controls/class-customizer-pro.php';
+	require get_template_directory() . '/customizer/controls/class-customizer-pro-upsell.php';
 
-	$wp_customize->register_section_type( 'Orchid_Store_Pro' );
+	$wp_customize->register_section_type( 'Orchid_Store_Pro_Upsell' );
 
 	$wp_customize->add_section(
-		new Orchid_Store_Pro( $wp_customize, 'orchid_store_pro', array(
+		new Orchid_Store_Pro_Upsell( $wp_customize, 'orchid_store_pro_upsell', array(
 			'title'       	=> esc_html__( 'Orchid Store Pro', 'orchid-store' ),
 			'button_text' 	=> esc_html__( 'Go Pro',        'orchid-store' ),
 			'button_url'  	=> 'https://themebeez.com/themes/orchid-store-pro/?ref=upsell-btn',
