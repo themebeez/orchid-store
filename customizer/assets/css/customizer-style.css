@@ -73,20 +73,18 @@
 /****************************************************************************************************
  **************************************** Upsell Control Styles *************************************
  ****************************************************************************************************/
-#customize-controls .control-section-upsell .accordion-section-title:hover,
-#customize-controls .control-section-upsell .accordion-section-title:focus {
-  background-color: #fff;
-}
+.control-section-wptrt-customize-pro .accordion-section-title .button {
 
-.control-section-upsell .accordion-section-title .button {
   margin-top:  -4px;
-  font-weight: 700;
   margin-left: 8px;
-  border-color: #f44332;
-  background-color: #f44332;
-  color: #fff;
+  background-color: #ffffff;
+  color: #0286e7;
+  transition-duration: 0.3s;
 }
 
-.control-section-upsell .accordion-section-title .button:hover {
-  background-color: #f44332;
+.control-section-wptrt-customize-pro .accordion-section-title .button:hover {
+
+  background-color: #0286e7;
+  border-color: #0286e7;
+  color: #ffffff;
 }
