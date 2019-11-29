@@ -166,11 +166,6 @@ add_action( 'wp_enqueue_scripts', 'orchid_store_scripts' );
  */
 function orchid_store_admin_enqueue( $hook ) {
 
-	if( $hook != 'widgets.php' ) {
-
-		return;
-	}
-
 	wp_enqueue_script( 'media-upload' );
 
 	wp_enqueue_media();
