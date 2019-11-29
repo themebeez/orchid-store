@@ -24,4 +24,15 @@
 		customizer_label( 'background_color', fieldHeaders.body_background );
 	} );
 
+	wp.customize.sectionConstructor['wptrt-customize-pro'] = wp.customize.Section.extend( {
+
+		// No events for this type of section.
+		attachEvents: function () {},
+
+		// Always make the section active.
+		isContextuallyActive: function () {
+			return true;
+		}
+	} );
+
 } ) ( jQuery );

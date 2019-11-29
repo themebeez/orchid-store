@@ -167,7 +167,7 @@ if( !function_exists( 'orchid_store_sidebar_position' ) ) {
             return $sidebar_position;
         }
 
-        if( is_home() && !is_front_page() ) {
+        if( is_home() ) {
 
             $sidebar_position = orchid_store_get_option( 'blog_sidebar_position' );
         }

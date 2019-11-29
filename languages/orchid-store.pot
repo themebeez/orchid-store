@@ -51,39 +51,47 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: customizer/customizer.php:69
+#: customizer/customizer.php:65
+msgid "Orchid Store Pro"
+msgstr ""
+
+#: customizer/customizer.php:66
+msgid "Go Pro"
+msgstr ""
+
+#: customizer/customizer.php:85
 msgid "Site Title Color"
 msgstr ""
 
-#: customizer/customizer.php:72, customizer/customizer.php:149
+#: customizer/customizer.php:88, customizer/customizer.php:165
 msgid "Background"
 msgstr ""
 
-#: customizer/customizer.php:81
+#: customizer/customizer.php:97
 msgid "Header is used as background image for breadcrumb"
 msgstr ""
 
-#: customizer/customizer.php:144
+#: customizer/customizer.php:160
 msgid "Logo Setup"
 msgstr ""
 
-#: customizer/customizer.php:145
+#: customizer/customizer.php:161
 msgid "Favicon"
 msgstr ""
 
-#: customizer/customizer.php:146
+#: customizer/customizer.php:162
 msgid "Homepage Content"
 msgstr ""
 
-#: customizer/customizer.php:147
+#: customizer/customizer.php:163
 msgid "Post Metas"
 msgstr ""
 
-#: customizer/customizer.php:148, customizer/functions/customizer-fields.php:383, inc/custom-fields.php:26
+#: customizer/customizer.php:164, customizer/functions/customizer-fields.php:383, inc/custom-fields.php:26
 msgid "Sidebar Position"
 msgstr ""
 
-#: customizer/customizer.php:150
+#: customizer/customizer.php:166
 msgid "Body Background"
 msgstr ""
 
