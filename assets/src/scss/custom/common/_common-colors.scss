@@ -480,6 +480,15 @@ input[type="color"],
 	border: 1px solid $border_color;
 }
 
+body .select2-container--default .select2-selection--single {
+
+	border-color:$border_color;
+}
+
+body .select2-container--default .select2-selection--single .select2-selection__arrow b {
+
+	border-color:$border_color transparent transparent transparent;
+}
 
 .woocommerce .widget_shopping_cart .cart_list li, 
 .woocommerce.widget_shopping_cart .cart_list li,
@@ -491,7 +500,8 @@ input[type="color"],
 .widget_recent_comments li,
 .widget_rss li,
 .widget_pages li,
-.widget_nav_menu li a,
+.widget_nav_menu li,
+.widget_product_categories ul li,
 .woocommerce-widget-layered-nav ul li,
 .comments-area .comment-body .comment-meta,
 .woocommerce .cart_totals h2,
@@ -500,10 +510,18 @@ input[type="color"],
 .woocommerce-page .cart-collaterals table.shop_table th,
 .woocommerce-cart .cart-collaterals .cart_totals tr td,
 .woocommerce-page form.woocommerce-checkout h3,
-.woocommerce-checkout #payment ul.payment_methods li, 
+.woocommerce-checkout #payment ul.payment_methods li,
+.woocommerce .widget_rating_filter ul li, 
 .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item {
 
     border-bottom: 1px solid $border_color;
+}
+
+.widget_pages ul.children,
+.widget_nav_menu ul.sub-menu,
+.widget_product_categories ul.children  {
+
+	border-top: 1px solid $border_color;
 }
 
 #add_payment_method #payment div.payment_box::before, 
@@ -587,7 +605,7 @@ input[type="color"],
 .footer .widget_recent_comments li, 
 .footer .widget_rss li, 
 .footer .widget_pages li, 
-.footer .widget_nav_menu li a,
+.footer .widget_nav_menu li,
 .footer .widget_tag_cloud a, 
 .footer .widget_product_tag_cloud a,
 .footer .woocommerce-widget-layered-nav ul li,

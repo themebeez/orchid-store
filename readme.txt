@@ -5,7 +5,7 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 5.6
 Requires at least: 5.0
 Tested up to: 5.3
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -85,6 +85,10 @@ Orchid Store includes support for WooCommerce , YITH Wishlist and YITH Quickview
 
 
 == Changelog ==
+
+== 1.0.7 - 02 December, 2019 ==
+
+- Fix: Default widget base styling
 
 == 1.0.6 - 29 November, 2019 ==
 

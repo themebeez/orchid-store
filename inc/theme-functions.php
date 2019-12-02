@@ -285,3 +285,30 @@ if( !function_exists( 'orchid_store_search_form' ) ) :
     }
 endif;
 add_filter( 'get_search_form', 'orchid_store_search_form', 10 );
+
+
+/**
+* Filter for default archive widget
+*/
+
+function orchid_store_default_archive_widget($links) {
+
+    $links = str_replace('</a>&nbsp;(', '</a> <span class="count">(', $links);
+    $links = str_replace(')', ')</span>', $links);
+    return $links;
+}
+
+add_filter('get_archives_link', 'orchid_store_default_archive_widget');
+
+
+/**
+ * Filter the default categories widget
+ */
+
+function orchid_store_cat_count_span( $links ) {
+
+    $links = str_replace( '</a> (', '</a><span class="count">(', $links );
+    $links = str_replace( ')', ')</span>', $links );
+    return $links;
+}
+add_filter( 'wp_list_categories', 'orchid_store_cat_count_span' );
