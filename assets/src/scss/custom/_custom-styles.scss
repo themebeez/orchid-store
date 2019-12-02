@@ -1215,7 +1215,6 @@ section .section-title h3:after {
     max-width:100%;
     height: 100%;
     z-index:100;
-    height: 453px;
     background: whitesmoke;
     overflow:hidden;
     @include transation_delay();
@@ -1238,7 +1237,10 @@ section .section-title h3:after {
   animation: shine-lines 1.6s infinite linear;
 }
 
+.banner-style-1 .carousel-preloader {
 
+    height: 453px;
+}
 
 
 

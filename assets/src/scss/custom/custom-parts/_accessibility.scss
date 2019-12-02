@@ -10,7 +10,7 @@
 
 a:focus {
 
-    outline:1px dotted;
+    outline:none;
 }
 
 // input types 
@@ -19,8 +19,7 @@ button:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus {
 
-    outline: thin dotted;
-    background-color:$black;
+    outline: none;
 } 
 
 
@@ -41,10 +40,7 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus {
 
-    border: 1px solid #66afe9;
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6)
+    outline: none;
 }
 
 // Screen reader text

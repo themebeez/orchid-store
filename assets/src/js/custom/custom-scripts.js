@@ -37,7 +37,7 @@
         ===============================================================
         */
 
-       if($('body').hasClass('single-product') ) {
+        if ($('body').hasClass('single-product')) {
 
             $('.entry-summary .wish-list-button').removeAttr('data-tippy-content');
             $('.entry-summary .wish-list-button').removeClass('os-tooltip');
@@ -151,16 +151,16 @@
         =======================================
         */
 
-        jQuery('<div class="quantity-nav"><span class="quantity-button quantity-up"><i class="fa fa-plus" aria-hidden="true"></i></span><span class="quantity-button quantity-down"><i class="fa fa-minus" aria-hidden="true"></i></span></div>').insertAfter('.quantity input');
+        $('<div class="quantity-nav"><span class="quantity-button quantity-up"><i class="fa fa-plus" aria-hidden="true"></i></span><span class="quantity-button quantity-down"><i class="fa fa-minus" aria-hidden="true"></i></span></div>').insertAfter('.quantity input');
 
-        jQuery('.quantity').each(function() {
+        $('.quantity').each(function() {
 
-            var spinner = jQuery(this),
-            input   = spinner.find('input[type="number"]'),
-            btnUp   = spinner.find('.quantity-up'),
-            btnDown = spinner.find('.quantity-down'),
-            min     = input.attr('min'),
-            max     = input.attr('max');
+            var spinner = $(this),
+                input = spinner.find('input[type="number"]'),
+                btnUp = spinner.find('.quantity-up'),
+                btnDown = spinner.find('.quantity-down'),
+                min = input.attr('min'),
+                max = input.attr('max');
 
             btnUp.click(function() {
 
@@ -292,6 +292,9 @@
         = Owl carousels 
         ====================================
         */
+
+        $('.carousel-preloader').hide();
+
         var owlrtl;
 
         if (jQuery('body').hasClass('rtl')) {
@@ -304,8 +307,6 @@
         }
 
         // banner style 1 
-
-        $('.carousel-preloader').fadeOut("slow");
 
         jQuery('.owl-carousel-1').owlCarousel({
 
