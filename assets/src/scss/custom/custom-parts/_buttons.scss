@@ -2,6 +2,7 @@
 
 button,
 .button-general,
+.woo-quantity-btn,
 input[type="submit"],
 input[type="reset"], 
 .woocommerce a.button, 
@@ -84,4 +85,20 @@ input[type="reset"],
 .woocommerce .custom-cart-btn .add_to_cart_button {
 
    padding:10px 20px;
+}
+
+
+// better woocommmerce input type number 
+
+.woo-quantity-btn {
+
+    font-size: 9px;
+    font-weight:normal;
+    padding: 0;
+    margin:0;
+    height:41px;
+    width: 40px;
+    line-height: 45px;
+    color:#555555;
+    background-color:$border_color;
 }

@@ -2713,7 +2713,6 @@ section.product-widget-style-2 .section-title {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
 }
 
 .woocommerce div.product .entry-summary .single_variation_wrap {
@@ -2725,24 +2724,17 @@ section.product-widget-style-2 .section-title {
 .woocommerce div.product .entry-summary .woocommerce-variation-add-to-cart div.quantity {
     
     float:none;
-    flex:0 0 80px;
-    max-width:80px;
-    margin-right: 10px;
-}
-
-.woocommerce div.product .entry-summary .quantity-nav {
-
-    position:absolute;
-    right:0;
+    flex:0 0 auto;
+    margin:0;
 }
 
 .woocommerce div.product .entry-summary form.cart .button,
 .woocommerce div.product .entry-summary .woocommerce-variation-add-to-cart .button {
     
+    flex:0 0 auto;
     float:none;
-    margin:0;
-    flex:0 0 calc( 100% - 100px );
-    max-width:calc( 100% - 100px );
+    margin-left:20px;
+    
 }
 
 .woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist .wish-list-button {
