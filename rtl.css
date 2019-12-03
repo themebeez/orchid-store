@@ -4,7 +4,9 @@
 * Contributor: Themebeez
 * Author url: https://themebeez.com/
 * File: RTL css 
-* Since v1.0.3
+* Since: 1.0.3
+* Version: 1.0.7
+* Last Updated: 02 Dec,  2019
 */
 
 
@@ -30,6 +32,27 @@ body.rtl {
 =
 ==========================
 */
+
+
+/* menu */ 
+
+body.rtl .sub-toggle .fa-angle-right {
+	
+	-webkit-transform: rotate(-180deg);
+	-moz-transform: rotate(-180deg);
+	-ms-transform: rotate(-180deg);
+	-o-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+}
+
+body.rtl .sub-toggle .fa-angle-left {
+	
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
 
 
 /* post metas */
@@ -79,6 +102,20 @@ body.rtl .owl-carousel .owl-item {
     transform: scaleX(-1);
 }
 
+
+/*
+==================================================
+=
+= Base default widget styles
+=
+====================================
+*/
+
+body.rtl .widget_product_categories ul.children li a::before {
+
+	content: '\f104';
+}
+
 /*
 ====================================
 =
@@ -87,6 +124,11 @@ body.rtl .owl-carousel .owl-item {
 ==========================
 */
 
+
+body.rtl .yith-wcwl-add-button > a i {
+
+	margin-right: 0;
+}
 
 body.rtl #yith-quick-view-close {
 
@@ -103,6 +145,13 @@ body.rtl.woocommerce ul.products li .product-hover-items .add_to_wishlist i {
 body.rtl.woocommerce-page .woocommerce-MyAccount-navigation ul li::before {
 
 	content: '\f104';
+}
+
+body.rtl .woocommerce div.product div.images .woocommerce-product-gallery__trigger::before,
+body.rtl .woocommerce div.product div.images .woocommerce-product-gallery__trigger::after {
+
+	content: '';
+	display: none;
 }
 
 

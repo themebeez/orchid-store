@@ -37,7 +37,7 @@
         ===============================================================
         */
 
-       if($('body').hasClass('single-product') ) {
+        if ($('body').hasClass('single-product')) {
 
             $('.entry-summary .wish-list-button').removeAttr('data-tippy-content');
             $('.entry-summary .wish-list-button').removeClass('os-tooltip');
@@ -150,6 +150,7 @@
         = Woocommerce input type number
         =======================================
         */
+
 
         if( $('body').hasClass('single-product') ) {
 
@@ -280,6 +281,9 @@
         = Owl carousels 
         ====================================
         */
+
+        $('.carousel-preloader').hide();
+
         var owlrtl;
 
         if (jQuery('body').hasClass('rtl')) {
@@ -292,8 +296,6 @@
         }
 
         // banner style 1 
-
-        $('.carousel-preloader').fadeOut("slow");
 
         jQuery('.owl-carousel-1').owlCarousel({
 
