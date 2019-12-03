@@ -139,72 +139,24 @@ select:focus {
     outline: none;
 }
 
-// better woocommmerce input type number 
-
-.quantity {
-
-    position: relative;
-}
-
-.quantity input[type=number]::-webkit-inner-spin-button,
-.quantity input[type=number]::-webkit-outer-spin-button {
+.woocommerce .quantity input[type=number]::-webkit-inner-spin-button,
+.woocommerce .quantity input[type=number]::-webkit-outer-spin-button {
 
     -webkit-appearance: none;
     margin: 0;
 }
 
-.quantity input[type=number] {
+.woocommerce .quantity input[type=number] {
 
-    -moz-appearance: textfield;
+    -moz-appearance:textfield;
 }
 
+.woocommerce .quantity .qty,
+.woocommerce-page .quantity .qty {
 
-.quantity input,
-.woocommerce .quantity .qty {
-
-    float: left;
-    display: block;
-    padding: 0;
-    margin: 0;
-    width:50px;
-    padding: 0 5px;
-    text-align:right;
-    border: 1px solid $border_color;
-}
-
-.quantity input:focus {
-
-    outline: 0;
-}
-
-.quantity-nav {
-    
-    position: relative;
-    display: block;
-    float: left;
-    height: 41px;
-    width: 30px;
-}
-
-.quantity-button {
-
-    position: relative;
-    display: block;
-    cursor: pointer;
-    width: 30px;
-    font-size: 8px;
-    font-weight:normal;
+    width: 50px;
     text-align: center;
-    line-height: 19px;
+    padding: 0;
+    margin:0;
 }
 
-.quantity-button.quantity-up {
-
-    border-bottom:none;
-    border-left:none;
-}
-
-.quantity-button.quantity-down {
-
-    border-left:none;
-}

@@ -315,7 +315,7 @@ if( ! function_exists( 'orchid_store_quantity_plus' ) ) {
 
     function orchid_store_quantity_plus() {
         ?>
-        <button type="button" class="plus" >+</button>
+        <button type="button" class="woo-quantity-btn woo-quantity-plus" ><i class="fa fa-plus" aria-hidden="true"></i></button>
        <?php
     }
 }
@@ -324,7 +324,7 @@ if( ! function_exists( 'orchid_store_quantity_minus' ) ) {
 
     function orchid_store_quantity_minus() {
         ?>
-        <button type="button" class="minus" >-</button>
+        <button type="button" class="woo-quantity-btn woo-quantity-minus" ><i class="fa fa-minus" aria-hidden="true"></i></button>
        <?php
     }
 }

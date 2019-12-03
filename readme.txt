@@ -86,10 +86,11 @@ Orchid Store includes support for WooCommerce , YITH Wishlist and YITH Quickview
 
 == Changelog ==
 
-== 1.0.7 - 02 December, 2019 ==
+== 1.0.7 - 03 December, 2019 ==
 
 - Fix: Default widget base styling
 - Fix: RTL CSS
+- Added: Custom buttons for quantity input for woocommerce
 
 
 == 1.0.6 - 29 November, 2019 ==
