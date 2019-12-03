@@ -151,52 +151,40 @@
         =======================================
         */
 
-        jQuery('<div class="quantity-nav"><span class="quantity-button quantity-up"><i class="fa fa-plus" aria-hidden="true"></i></span><span class="quantity-button quantity-down"><i class="fa fa-minus" aria-hidden="true"></i></span></div>').insertAfter('.quantity input');
+        if( $('body').hasClass('single-product') ) {
 
-        jQuery('.quantity').each(function() {
+            $('form.cart').on( 'click', 'button.plus, button.minus', function() {
+  
+                // Get current quantity values
+                var qty = $(this).closest( 'form.cart' ).find( '.qty' );
+                var val   = parseFloat(qty.val());
+                var max = parseFloat(qty.attr( 'max' ));
+                var min = parseFloat(qty.attr( 'min' ));
+                var step = parseFloat(qty.attr( 'step' ));
+      
+                // Change the value if plus or minus
+                if( $(this).is('.plus') ) {
 
-            var spinner = jQuery(this),
-            input   = spinner.find('input[type="number"]'),
-            btnUp   = spinner.find('.quantity-up'),
-            btnDown = spinner.find('.quantity-down'),
-            min     = input.attr('min'),
-            max     = input.attr('max');
+                    if( max && ( max <= val ) ) {
 
-            btnUp.click(function() {
+                        qty.val( max );
+                    } else {
 
-                var oldValue = parseFloat(input.val());
-
-                if (oldValue >= max) {
-
-                    var newVal = oldValue;
-
+                        qty.val( val + step );
+                    }
                 } else {
 
-                    var newVal = oldValue + 1;
+                    if( min && ( min >= val ) ) {
+
+                        qty.val( min );
+                    } else if( val > 1 ) {
+
+                        qty.val( val - step );
+                    }
                 }
-
-                spinner.find("input").val(newVal);
-                spinner.find("input").trigger("change");
+                  
             });
-
-            btnDown.click(function() {
-
-                var oldValue = parseFloat(input.val());
-
-                if (oldValue <= min) {
-
-                    var newVal = oldValue;
-
-                } else {
-
-                    var newVal = oldValue - 1;
-                }
-
-                spinner.find("input").val(newVal);
-                spinner.find("input").trigger("change");
-            });
-
-        });
+        }
 
 
         /*
