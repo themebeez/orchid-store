@@ -309,3 +309,22 @@ if( ! function_exists( 'orchid_store_woocommerce_title_breadcrumb_action' ) ) {
     }
 }
 add_action( 'orchid_store_woocommerce_title_breadcrumb', 'orchid_store_woocommerce_title_breadcrumb_action', 10 );
+
+
+if( ! function_exists( 'orchid_store_quantity_plus' ) ) {
+
+    function orchid_store_quantity_plus() {
+        ?>
+        <button type="button" class="plus" >+</button>
+       <?php
+    }
+}
+
+if( ! function_exists( 'orchid_store_quantity_minus' ) ) {
+
+    function orchid_store_quantity_minus() {
+        ?>
+        <button type="button" class="minus" >-</button>
+       <?php
+    }
+}
