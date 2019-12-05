@@ -5,7 +5,7 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 5.6
 Requires at least: 5.0
 Tested up to: 5.3
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -85,6 +85,12 @@ Orchid Store includes support for WooCommerce , YITH Wishlist and YITH Quickview
 
 
 == Changelog ==
+
+== 1.0.8 - 05 December, 2019 ==
+
+- Fix: quantity input for woocommerce on quick view popup
+- Fix: Quick view at responsive
+- Tweak: Quick view icon 
 
 == 1.0.7 - 03 December, 2019 ==
 

@@ -2509,7 +2509,9 @@ section.product-widget-style-2 .section-title {
 }
 
 #yith-quick-view-close {
-
+    
+    font-size: 0;
+    font-weight:normal;
     top: 15px;
     right: 15px;
     width: 30px;
@@ -2517,7 +2519,16 @@ section.product-widget-style-2 .section-title {
     line-height: 30px;
     border:none;
     opacity:1;
+    text-align:center;
     @include border-radius(100%);
+}
+
+#yith-quick-view-close::before {
+    
+    content:'\f00d';
+    font-family:'fontAwesome';
+    font-size:11px;
+    font-weight:normal;
 }
 
 #yith-quick-view-content .product.type-product {
