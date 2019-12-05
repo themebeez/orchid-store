@@ -152,7 +152,7 @@
         */
 
 
-        $('form.cart').on('click', 'button.woo-quantity-plus, button.woo-quantity-minus', function() {
+        $('body').on('click', 'button.woo-quantity-plus, button.woo-quantity-minus', function() {
 
             // Get current quantity values
             var qty = $(this).closest('form.cart').find('.qty');
