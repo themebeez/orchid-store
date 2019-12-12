@@ -5,7 +5,7 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 5.6
 Requires at least: 5.0
 Tested up to: 5.3
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -51,8 +51,6 @@ Orchid Store is distributed under the terms of the GNU GPL
 
 * Bootstrap https://github.com/twbs/bootstrap/blob/master/LICENSE, Copyright (c) 2011-2018 Twitter, Inc,, [MIT](http://opensource.org/licenses/MIT)
 
-* Select2 https://github.com/select2/select2, Copyright (c) 2012-2017 Kevin Brown, Igor Vaynberg, and Select2 contributors, [MIT](http://opensource.org/licenses/MIT)
-
 * Google fonts, Lato [SIL OFL](http://scripts.sil.org/OFL), Roboto [Apache License v2](http://www.apache.org/licenses/LICENSE-2.0), Poppins [SIL OFL](http://scripts.sil.org/OFL)
 
 * Images Included, sidebar_left.png, sidebar_right.png, and sidebar_none.png, self created GPLv2 or later
@@ -85,6 +83,11 @@ Orchid Store includes support for WooCommerce , YITH Wishlist and YITH Quickview
 
 
 == Changelog ==
+
+== 1.0.9 - 12 December, 2019 ==
+
+- Fix: Compatibility with YITH Wishlist
+
 
 == 1.0.8 - 05 December, 2019 ==
 

@@ -13,6 +13,9 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 
 global $product;
 ?>
-
-<a class="button-general wish-list-button os-tooltip" href="<?php echo esc_url( add_query_arg( 'add_to_wishlist', $product_id ) )?>" rel="nofollow" data-product-id="<?php echo esc_attr( $product_id ); ?>" data-product-type="<?php echo esc_attr( $product_type ); ?>" data-tippy-content="<?php echo esc_attr( $label ); ?>"><span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span><span class="text"><?php echo esc_html( $label ); ?></span></a>
-<img src="<?php echo esc_url( YITH_WCWL_URL . 'assets/images/wpspin_light.gif' ) ?>" class="ajax-loading" alt="loading" width="16" height="16" style="visibility:hidden" />
+<div class="yith-wcwl-add-button">
+    <a href="<?php echo esc_url( add_query_arg( 'add_to_wishlist', $product_id, $base_url ) )?>" rel="nofollow" data-product-id="<?php echo esc_attr( $product_id ); ?>" data-product-type="<?php echo esc_attr( $product_type ); ?>" data-original-product-id="<?php echo esc_attr( $parent_product_id ); ?>" class="button-general wish-list-button os-tooltip <?php echo esc_attr( $link_classes ); ?>" data-title="<?php echo esc_attr( apply_filters( 'yith_wcwl_add_to_wishlist_title', $label ) ); ?>" data-tippy-content="<?php echo esc_attr( $label ); ?>">
+        <span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+        <span class="text"><?php echo esc_html( $label ); ?></span>
+    </a>
+</div>

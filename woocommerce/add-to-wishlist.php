@@ -14,37 +14,27 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 global $product;
 ?>
 
-<div class="yith-wcwl-add-to-wishlist add-to-wishlist-<?php echo esc_attr( $product_id ); ?>">
-	<?php if( ! ( $disable_wishlist && ! is_user_logged_in() ) ): ?>
-	    <div class="yith-wcwl-add-button <?php echo ( $exists && ! $available_multi_wishlist ) ? 'hide': 'show' ?>" style="display:<?php echo ( $exists && ! $available_multi_wishlist ) ? 'none': 'block' ?>">
+<div class="yith-wcwl-add-to-wishlist add-to-wishlist-<?php echo esc_attr( $product_id ); ?> <?php echo esc_attr( $container_classes ); ?> wishlist-fragment on-first-load" data-fragment-ref="<?php echo esc_attr( $product_id ); ?>" data-fragment-options="<?php echo esc_attr( json_encode( $fragment_options ) )?>">
+    <?php if( ! $ajax_loading ): ?>
+        <?php if( ! ( $disable_wishlist && ! is_user_logged_in() ) ): ?>
 
-	        <?php yith_wcwl_get_template( 'add-to-wishlist-' . $template_part . '.php', $atts ); ?>
+            <!-- ADD TO WISHLIST -->
+            <?php yith_wcwl_get_template( 'add-to-wishlist-' . $template_part . '.php', $var ); ?>
 
-	    </div>
+            <!-- COUNT TEXT -->
+            <?php
+            if( $show_count ):
+                echo yith_wcwl_get_count_text( $product_id );
+            endif;
+            ?>
 
-	    <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
-	        <a class="button-general wish-list-button os-tooltip" href="<?php echo esc_url( $wishlist_url ); ?>" rel="nofollow" data-tippy-content="<?php echo esc_attr( $product_added_text ); ?>">
-	            <span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-	            <span class="text"><?php echo esc_html( apply_filters( 'yith-wcwl-browse-wishlist-label', $browse_wishlist_text, $product_id, $icon ) ); ?></span>
-	        </a>
-	    </div>
+        <?php else: ?>
 
-	    <div class="yith-wcwl-wishlistexistsbrowse <?php echo ( $exists && ! $available_multi_wishlist ) ? 'show' : 'hide' ?>" style="display:<?php echo ( $exists && ! $available_multi_wishlist ) ? 'block' : 'none' ?>">
-	        <a class="button-general wish-list-button os-tooltip" href="<?php echo esc_url( $wishlist_url ); ?>" rel="nofollow" data-tippy-content="<?php echo esc_attr( $already_in_wishslist_text ); ?>">
-	            <span class="icon"><i class="fa fa-heart" aria-hidden="true"></i></span>
-	            <span class="text"><?php echo esc_html( apply_filters( 'yith-wcwl-browse-wishlist-label', $browse_wishlist_text, $product_id, $icon ) ); ?></span>
-	        </a>
-	    </div>
+            <a href="<?php echo esc_url( add_query_arg( array( 'wishlist_notice' => 'true', 'add_to_wishlist' => $product_id ), get_permalink( wc_get_page_id( 'myaccount' ) ) ) ); ?>" rel="nofollow" class="disabled_item <?php echo str_replace( array( 'add_to_wishlist', 'single_add_to_wishlist' ), '', $link_classes ); ?> button-general wish-list-button os-tooltip" data-tippy-content="<?php echo esc_attr( $already_in_wishslist_text ); ?>">
+                <span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+                <span class="text"><?php echo esc_html( $label ); ?></span>
+            </a>
 
-	    <div style="clear:both"></div>
-	    <div class="yith-wcwl-wishlistaddresponse"></div>
-	<?php else: ?>
-		<a href="<?php echo esc_url( add_query_arg( array( 'wishlist_notice' => 'true', 'add_to_wishlist' => $product_id ), get_permalink( wc_get_page_id( 'myaccount' ) ) ) )?>" rel="nofollow" class="<?php echo esc_attr( str_replace( 'add_to_wishlist', '', $link_classes ) ); ?> button-general wish-list-button os-tooltip" data-tippy-content="<?php echo esc_attr( $label ); ?>">
-			<span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-			<span class="text"><?php echo esc_html( $label ); ?></span>
-		</a>
+        <?php endif; ?>
 	<?php endif; ?>
-
 </div>
-
-<div class="clear"></div>
