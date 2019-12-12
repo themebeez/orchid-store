@@ -1854,11 +1854,6 @@ section.product-widget-style-2 .section-title {
 }
 
 
-// product widget 3 ( carousel )
-
-
-
-
 
 /*
 ====================================================
@@ -1883,6 +1878,14 @@ section.product-widget-style-2 .section-title {
     @include hover_big_shadow();
 }
 
+.woocommerce .products .imghover:hover img {
+    
+    -webkit-transform:none;
+    -ms-transform:none;
+    -o-transform:none;
+    -moz-transform:none;
+    transform:none;
+}
 
 
 // inputs 
@@ -2569,7 +2572,7 @@ section.product-widget-style-2 .section-title {
 /*
 ====================================================
 =
-= Wishlist page [ yytr ]
+= Wishlist page [ yith ]
 =
 ==========================================
 */
@@ -2621,9 +2624,6 @@ section.product-widget-style-2 .section-title {
 
     color:red;
 }
-
-
-
 
 
 /*
