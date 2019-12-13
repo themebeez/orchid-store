@@ -2611,7 +2611,12 @@ section.product-widget-style-2 .section-title {
 
 .woocommerce table.wishlist_table tbody td.product-name a.button {
 
-    margin-left:20px;
+    margin-left:5px;
+}
+
+.woocommerce table.wishlist_table tbody td.product-name a.button.yith-wcqv-button  {
+
+    padding:7px 10px;
 }
 
 .woocommerce table.wishlist_table tbody td .dateadded {
@@ -2748,12 +2753,23 @@ section.product-widget-style-2 .section-title {
     
 }
 
+.woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist .yith-wcwl-add-button {
+
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist .view-wishlist,
 .woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist .wish-list-button {
     
-    display:block;
+    flex:auto;
     text-align:center;
-    padding: 13px 0;
+    padding: 13px 15px;
     line-height:0;
+    width:auto;
     @include border-radius(0);
 }
 

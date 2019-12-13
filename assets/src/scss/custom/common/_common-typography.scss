@@ -65,7 +65,9 @@ section .section-title h3,
 .product-widget-style-2 .tab-nav ul li a,
 .cats-widget-styles .right .title h3,
 .woocommerce-account .woocommerce > h2,
-.woocommerce-account .woocommerce > h3  {
+.woocommerce-account .woocommerce > h3,
+.woocommerce .wishlist-title h2,
+.yith-wcwl-share h4.yith-wcwl-share-title  {
 
 	text-transform:uppercase;
 }
@@ -212,6 +214,11 @@ section .section-title h3,
 // Font sizes
 
 
+.woocommerce table.wishlist_table tbody td.product-name a.button.yith-wcqv-button  {
+
+	font-size: 11px;
+}
+
 .button-general,
 .entry-cats ul li a,
 .woocommerce #respond input#submit,
@@ -312,6 +319,7 @@ section .section-title h3,
 .woocommerce .woocommerce-tabs h2,
 .woocommerce .related.products>h2,
 .woocommerce .cross-sells>h2,
+.yith-wcwl-share h4.yith-wcwl-share-title,
 .woocommerce .up-sells.upsells.products>h2 {
 
 	font-size:18px;
@@ -334,6 +342,7 @@ section .section-title h3,
 	font-size:21px;
 }
 
+.woocommerce .wishlist-title h2,
 .banner-style-1 .caption span,
 .woocommerce div.product .product_title {
 
