@@ -58,7 +58,7 @@ function orchid_store_post_classes( $classes ) {
 
 	$show_featured_image = '';
 
-	if( is_home() && ! is_front_page() ) {
+	if( is_home() ) {
 
 		$show_featured_image = orchid_store_get_option( 'blog_featured_image' );
 	}
