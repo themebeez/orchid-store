@@ -4,8 +4,8 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 5.6
 Requires at least: 5.0
-Tested up to: 5.3
-Stable tag: 1.0.9
+Tested up to: 5.3.1
+Stable tag: 1.1.0
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -83,6 +83,11 @@ Orchid Store includes support for WooCommerce , YITH Wishlist and YITH Quickview
 
 
 == Changelog ==
+
+== 1.1.0 - 17 December, 2019 ==
+
+- Fix: Blog page posts layout. Added 'has-post-thumbnail' class for posts having featured image
+
 
 == 1.0.9 - 13 December, 2019 ==
 
