@@ -249,7 +249,6 @@ a:hover,
 .comment-respond,
 .woocommerce form.login, 
 .woocommerce form.register,
-.woocommerce table.shop_table,
 .os-blog-style-1 .card-content,
 aside.secondary-widget-area .widget,
 .woocommerce .cart-collaterals .cart_totals, 
@@ -261,7 +260,6 @@ aside.secondary-widget-area .widget,
 .default-post-wrap .page-head .entry-cats ul li a,
 .woocommerce-page #add_payment_method #payment, 
 .woocommerce-cart #payment, 
-.woocommerce-checkout #payment,
 .post-navigation .nav-links,
 .woocommerce-page .woocommerce ul.order_details,
 .woocommerce-page .woocommerce-order-details,
@@ -279,10 +277,49 @@ aside.secondary-widget-area .widget,
 .os-about-widget .social-icons ul li a,
 .woocommerce img.pswp__img, 
 .woocommerce-page img.pswp__img,
+.woocommerce .woocommerce-cart-form,
+.woocommerce-page .woocommerce-cart-form,
+.woocommerce form.checkout_coupon, 
+.woocommerce form.login, 
+.woocommerce form.register,
+.woocommerce-page .woocommerce-checkout-review-order,
 .woocommerce div.product div.images.woocommerce-product-gallery,
 .woocommerce ul.products li.product .woocommerce-loop-category__title {
 
 	background-color:$white;
+}
+
+.comment-respond,
+.product-main-wrap,
+.cats-widget-style-1 .card,
+.post-navigation .nav-links,
+.os-blog-style-1 .card-content,
+.default-page-wrap .editor-entry,
+aside.secondary-widget-area .widget,
+.default-page-wrap .inner-content-metas,
+.archive-page-wrap .archive-entry article,
+.woocommerce form.checkout_coupon, 
+.woocommerce form.login, 
+.woocommerce form.register,
+.woocommerce div.product div.summary,
+.woocommerce .woocommerce-cart-form,
+.woocommerce-page .woocommerce-cart-form,
+.woocommerce-page div.product .woocommerce-tabs,
+.woocommerce .cart-collaterals .cart_totals, 
+.woocommerce-page .cart-collaterals .cart_totals,
+.woocommerce-page .woocommerce-billing-fields,
+.woocommerce-page .woocommerce-shipping-fields,
+.woocommerce-page .woocommerce-additional-fields,
+.woocommerce-page .woocommerce-checkout-review-order,
+.woocommerce-page .woocommerce-MyAccount-navigation,
+.woocommerce-account .woocommerce-MyAccount-content,
+.woocommerce div.product div.images.woocommerce-product-gallery {
+	
+	border: 1px solid #eef1fd;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	-ms-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
 }
 
 .category-navigation .cat-nav-trigger .icon .line:before {
@@ -471,7 +508,6 @@ input[type="color"],
 .calendar_wrap table th,
 .calendar_wrap table td,
 .category-description,
-.woocommerce form.checkout_coupon, 
 .widget_tag_cloud .tagcloud a,
 .widget_product_tag_cloud .tagcloud a,
 .select2-container--default .select2-selection--single,

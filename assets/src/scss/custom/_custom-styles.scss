@@ -1385,16 +1385,6 @@ section .section-title h3:after {
     margin-bottom: 30px;
 }
 
-.os-blog-style-1 .card-content {
-
-    -webkit-border-bottom-right-radius: 5px;
-    -webkit-border-bottom-left-radius: 5px;
-    -moz-border-radius-bottomright: 5px;
-    -moz-border-radius-bottomleft: 5px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
 .os-blog-style-1 .thumb .entry-cats {
     
     position:absolute;
@@ -1556,7 +1546,6 @@ body.no-sidebar .archive-entry article .content-col {
 .archive-page-wrap .archive-entry article  {
 
     padding:30px;
-    @include border-radius(5px);
 }
 
 /*
@@ -1707,12 +1696,11 @@ body.no-sidebar .archive-entry article .content-col {
 .default-page-wrap .editor-entry {
 
     padding:30px;    
-    @include border-radius(5px);
 }
 
 .entry-tags {
 
-    padding:30px 0;
+    padding-bottom:30px;
 }
 
 .entry-tags ul {
@@ -1749,7 +1737,6 @@ body.no-sidebar .archive-entry article .content-col {
     flex-direction:row;
     flex-wrap:wrap;
     align-items: center;
-    @include border-radius(5px);
 }
 
 .post-navigation .nav-previous,
@@ -1869,7 +1856,6 @@ section.product-widget-style-2 .section-title {
 
 .product-main-wrap {
     
-    @include border-radius(5px);
     @include transation_delay();
 }
 
@@ -1974,8 +1960,6 @@ section.product-widget-style-2 .section-title {
 
     border:none;
     margin: 0;
-    padding:30px;
-    @include border-radius(5px);
 }
 
 .woocommerce table.shop_table th {
@@ -2140,7 +2124,6 @@ section.product-widget-style-2 .section-title {
     padding:30px;
     margin:0;
     text-align:left;
-    @include border-radius(3px);
     -ms-box-shadow: 0px 0px 65px rgba(0,0,0,0.1);
     -o-box-shadow: 0px 0px 65px rgba(0,0,0,0.1);
     -moz-box-shadow: 0px 0px 65px rgba(0,0,0,0.1);
@@ -2704,7 +2687,6 @@ section.product-widget-style-2 .section-title {
 
     background-color:$white;
     padding:30px;
-    @include border-radius(5px);
 }
 
 .woocommerce div.product .entry-summary .price {
@@ -2854,10 +2836,6 @@ section.product-widget-style-2 .section-title {
 
 // tabs 
 
-.woocommerce-page div.product .woocommerce-tabs {
-
-    @include border-radius(5px);
-}
 
 .woocommerce div.product .woocommerce-tabs .panel {
 
@@ -3063,6 +3041,11 @@ section.product-widget-style-2 .section-title {
 ==========================================
 */
 
+.woocommerce .woocommerce-cart-form,
+.woocommerce-page .woocommerce-cart-form {
+
+    padding:30px;
+}
 
 #add_payment_method table.cart td.actions .coupon .input-text, 
 .woocommerce-cart table.cart td.actions .coupon .input-text, 
@@ -3086,7 +3069,6 @@ section.product-widget-style-2 .section-title {
     float:right;
     width:100%;
     padding:30px;
-    @include border-radius(5px);
 }
 
 #add_payment_method .cart-collaterals .cart_totals table, 
@@ -3215,7 +3197,6 @@ section.product-widget-style-2 .section-title {
 .woocommerce-page .woocommerce-additional-fields {
 
     padding:30px;
-    @include border-radius(5px);
 }
 
 .woocommerce form.checkout_coupon .form-row-first, 
@@ -3228,18 +3209,13 @@ section.product-widget-style-2 .section-title {
 
 .woocommerce form.checkout_coupon, 
 .woocommerce form.login, 
-.woocommerce form.register {
+.woocommerce form.register,
+.woocommerce-page .woocommerce-checkout-review-order {
 
     padding:30px;
     @include border-radius(0);
 }
 
-.woocommerce form.login, 
-.woocommerce form.register {
-
-    @include border-radius(5px);
-    border:none;
-}
 
 .woocommerce-page table.woocommerce-checkout-review-order-table th,
 .woocommerce-page table.woocommerce-checkout-review-order-table tfoot th,
@@ -3256,7 +3232,7 @@ section.product-widget-style-2 .section-title {
 
 .woocommerce-page table.woocommerce-checkout-review-order-table {
 
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .woocommerce-page table.woocommerce-checkout-review-order-table tfoot td, 
@@ -3451,7 +3427,6 @@ section.product-widget-style-2 .section-title {
 
     padding:30px;
     border:none;
-    @include border-radius(5px);
 }
 
 .woocommerce-page .woocommerce-MyAccount-navigation ul {
@@ -3490,7 +3465,6 @@ section.product-widget-style-2 .section-title {
 .woocommerce-account .woocommerce-MyAccount-content {
 
     padding:30px;
-    @include border-radius(5px);
 }
 
 .woocommerce-account .woocommerce-MyAccount-content  table.shop_table {
