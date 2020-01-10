@@ -120,7 +120,6 @@
 .woocommerce-loop-product__title,
 .woocommerce ul.products li.product .woocommerce-loop-product__title, 
 .woocommerce ul.products li.product h3,
-.woocommerce-page .woocommerce-shipping-fields,
 .woocommerce div.product .product_title,
 .woocommerce-page .woocommerce-MyAccount-content h3 {
 
@@ -170,7 +169,8 @@
 .woocommerce-account .addresses .title h3,
 .woocommerce .woocommerce-column__title,
 .os-about-widget .intro,
-.os-about-widget .contact-info li  {
+.os-about-widget .contact-info li,
+.woocommerce-page .woocommerce-shipping-fields  {
 
 	margin-bottom:30px;
 }
