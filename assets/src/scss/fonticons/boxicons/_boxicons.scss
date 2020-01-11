@@ -1,10 +1,10 @@
 // Licence MIT : https://github.com/atisawd/boxicons
 
 @font-face {
+
     font-family: 'boxicons';
     font-weight: normal;
     font-style: normal;
-
     src: url('../fonts/boxicons/boxicons.eot');
     src: url('../fonts/boxicons/boxicons.eot') format('embedded-opentype'),
         url('../fonts/boxicons/boxicons.woff2') format('woff2'),
@@ -13,16 +13,14 @@
 }
 
 .bx {
+
     font-family: 'boxicons' !important;
     font-weight: normal;
     font-style: normal;
     font-variant: normal;
-    line-height: 1;
-
+    //line-height: 1;
     display: inline-block;
-
     text-transform: none;
-
     speak: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

@@ -1,4 +1,3 @@
-
 // All common typohraphy & fonts 
 // Will be scaling font size on media query ( 1024px, 768px & 574px )
 
@@ -10,14 +9,14 @@
 .not-found .page-title,
 .woocommerce-page a.edit,
 .woocommerce input#submit,
-.woocommerce .add_to_cart_button, 
-.woocommerce a.button, 
-.woocommerce button.button, 
-.woocommerce input.button, 
-.woocommerce .cart .button, 
-.woocommerce .cart input.button, 
-.woocommerce button.button.alt, 
-.woocommerce a.button.alt, 
+.woocommerce .add_to_cart_button,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce .cart .button,
+.woocommerce .cart input.button,
+.woocommerce button.button.alt,
+.woocommerce a.button.alt,
 .woocommerce input.button.alt,
 .woocommerce #respond input#submit,
 .masterheader .topbar-items a,
@@ -27,9 +26,6 @@
 .cta-style-1 .title h3,
 section .section-title h2,
 section .section-title h3,
-.woocommerce .product-sale span,
-.woocommerce span.onsale,
-.woocommerce ul.products li.product .onsale,
 .cta-style-2 .title h3,
 .cta-style-2 .sub-title h4,
 .entry-metas ul li.posted-date span,
@@ -42,7 +38,7 @@ section .section-title h3,
 .default-page-wrap .entry-title,
 .default-post-wrap .entry-title,
 .post-navigation .nav-previous span,
-.post-navigation .nav-next  span,
+.post-navigation .nav-next span,
 .woocommerce .cart_totals h2,
 .woocommerce .woocommerce-billing-fields h3,
 .woocommerce .woocommerce-shipping-fields h3,
@@ -64,17 +60,25 @@ section .section-title h3,
 .woocommerce .woocommerce-column__title,
 .product-widget-style-2 .tab-nav ul li a,
 .cats-widget-styles .right .title h3,
-.woocommerce-account .woocommerce > h2,
-.woocommerce-account .woocommerce > h3,
+.woocommerce-account .woocommerce>h2,
+.woocommerce-account .woocommerce>h3,
 .woocommerce .wishlist-title h2,
-.yith-wcwl-share h4.yith-wcwl-share-title  {
+.yith-wcwl-share h4.yith-wcwl-share-title {
 
-	text-transform:uppercase;
+    text-transform: uppercase;
 }
 
 
 // font family 
 
+
+.woocommerce-loop-product__title,
+.woocommerce ul.products li.product .woocommerce-loop-category__title,
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product h3 {
+
+	font-family:$secondary_font_family; // Poppins
+}
 
 .woocommerce span.price,
 .woocommerce ul.products li.product .price,
@@ -85,13 +89,13 @@ section .section-title h3,
 .patigation .page-numbers,
 .mini-cart-open .price,
 .cats-widget-style-1 .box .count,
-.woocommerce div.product p.price, 
+.woocommerce div.product p.price,
 .woocommerce div.product span.price,
 .wc-block-grid .woocommerce-Price-amount,
 .mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list span.quantity,
 .mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list .woocommerce-Price-amount {
 
-	font-family: $special_font; // lato, Roboto
+    font-family: $special_font; // lato, Roboto
 }
 
 
@@ -100,72 +104,70 @@ section .section-title h3,
 
 .product-widget-style-2 .tab-nav ul li a {
 
-	line-height:1;
+    line-height: 1;
 }
 
 .site-title {
 
-	line-height: 1.1;
+    line-height: 1.1;
 }
 
 .wc-block-grid__product-title {
 
-	line-height:1.6;
+    line-height: 1.6;
 }
 
 
 // font weights
 
-
+.woocommerce-loop-product__title,
 .woocommerce .woocommerce-breadcrumb,
 .woocommerce-NoticeGroup ul li strong,
 .woocommerce ul.order_details li strong,
 .woocommerce ul.cart_list li a,
-.woocommerce-store-notice.demo_store, 
+.woocommerce-store-notice.demo_store,
 .woocommerce ul.product_list_widget li a,
 .woocommerce div.product form.cart .variations label,
 .woocommerce div.product form.cart .variations td.label,
 .mini-cart-open .woocommerce.widget_shopping_cart .total strong,
 .mini-cart-open .woocommerce.widget_shopping_cart .total,
 .mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list span.quantity,
-.mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list .woocommerce-Price-amount  {
+.mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list .woocommerce-Price-amount {
 
-	font-weight:normal;
+    font-weight: normal;
 }
 
 .button-general,
 a.button-general,
 .menu-item-description,
-.woocommerce input#submit, 
-.woocommerce a.button, 
-.woocommerce button.button, 
-.woocommerce input.button, 
-.woocommerce .cart .button, 
-.woocommerce .cart input.button, 
-.woocommerce button.button.alt, 
-.woocommerce a.button.alt, 
+.woocommerce input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce .cart .button,
+.woocommerce .cart input.button,
+.woocommerce button.button.alt,
+.woocommerce a.button.alt,
 .woocommerce input.button.alt,
-.woocommerce #respond input#submit, 
+.woocommerce #respond input#submit,
 .woocommerce .added_to_cart.wc-forward,
 .cats-widget-styles .permalink a,
 .banner-style-1 .button-general,
 .masterheader .topbar-items a,
-.woocommerce-loop-product__title,
 .woocommerce .product-sale span,
 .woocommerce span.onsale,
-.woocommerce ul.products li.product .onsale,
 .os-blog .title h3,
 .search-entry .entry-title,
 .search-entry article .title h3,
 .woocommerce .product .product_title,
-.woocommerce table.shop_table tbody th, 
-.woocommerce table.shop_table tfoot td, 
+.woocommerce table.shop_table tbody th,
+.woocommerce table.shop_table tfoot td,
 .woocommerce table.shop_table tfoot th,
 .woocommerce table.shop_attributes th,
 .woocommerce .cart-collaterals .cart_totals strong,
 .woocommerce ul.products li.product .woocommerce-loop-category__title {
 
-	font-weight:500;
+    font-weight: 500;
 }
 
 .woocommerce b,
@@ -175,27 +177,27 @@ a.button-general,
 .woocommerce-page a.edit,
 .product-widget-style-2 .tab-nav ul li a {
 
-	font-weight:600;
-} 
+    font-weight: 600;
+}
 
 
 .cta-style-1 .title h3,
 section .section-title h2,
 section .section-title h3,
 .woocommerce span.price,
-.woocommerce ul.products li.product .price, 
+.woocommerce ul.products li.product .price,
 .woocommerce .add_to_cart_button,
 .woocommerce .woocommerce-Price-amount,
-.woocommerce div.product p.price, 
+.woocommerce div.product p.price,
 .woocommerce div.product span.price,
 .widget .widget-title h3,
 .post-navigation .nav-previous span,
-.post-navigation .nav-next  span,
+.post-navigation .nav-next span,
 .woocommerce ul.order_details li,
 .cats-widget-styles .right .title h3,
-.woocommerce-page table.wishlist_table thead th  {
+.woocommerce-page table.wishlist_table thead th {
 
-	font-weight:bold;
+    font-weight: bold;
 }
 
 .banner-style-1 h2,
@@ -205,32 +207,32 @@ section .section-title h3,
 .entry-404 h1,
 .search-entry .entry-title,
 .default-page-wrap .entry-title,
-.default-post-wrap .entry-title  {
+.default-post-wrap .entry-title {
 
-	font-weight:900;
+    font-weight: 900;
 }
 
 
 // Font sizes
 
 
-.woocommerce table.wishlist_table tbody td.product-name a.button.yith-wcqv-button  {
+.woocommerce table.wishlist_table tbody td.product-name a.button.yith-wcqv-button {
 
-	font-size: 11px;
+    font-size: 11px;
 }
 
 .button-general,
 .entry-cats ul li a,
 .woocommerce #respond input#submit,
-.woocommerce .add_to_cart_button, 
-.woocommerce input#submit, 
-.woocommerce a.button, 
-.woocommerce button.button, 
-.woocommerce input.button, 
-.woocommerce .cart .button, 
-.woocommerce .cart input.button, 
-.woocommerce button.button.alt, 
-.woocommerce a.button.alt, 
+.woocommerce .add_to_cart_button,
+.woocommerce input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce .cart .button,
+.woocommerce .cart input.button,
+.woocommerce button.button.alt,
+.woocommerce a.button.alt,
 .woocommerce input.button.alt,
 .masterheader .topbar-items a,
 .cats-widget-styles .permalink a,
@@ -238,7 +240,6 @@ section .section-title h3,
 .woocommerce .product-sale span,
 .woocommerce span.onsale,
 .woocommerce .added_to_cart.wc-forward,
-.woocommerce ul.products li.product .onsale,
 .woocommerce .widget_price_filter .price_slider_amount .button {
 
     font-size: 12px;
@@ -247,15 +248,16 @@ section .section-title h3,
 .woocommerce-page a.edit,
 .entry-metas ul li a,
 .entry-tags a,
-.woocommerce #payment #place_order, 
+.woocommerce #payment #place_order,
 .woocommerce-page #payment #place_order,
 .woocommerce ul.order_details li,
 .product-widget-style-2 .tab-nav ul li a,
 .woocommerce-page table.wishlist_table thead th,
 .product-widget-style-2 .tab-nav ul li a,
-.woocommerce div.product .woocommerce-tabs ul.tabs li a  {
+.woocommerce ul.products li.product .onsale,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
 
-	font-size:13px;
+    font-size: 13px;
 }
 
 
@@ -266,46 +268,48 @@ section .section-title h3,
 .woocommerce ul.products li.product .price ins,
 .woocommerce ul.products li.product .price,
 .woocommerce .woocommerce-Price-amount,
-.woocommerce div.product p.price, 
+.woocommerce div.product p.price,
 .woocommerce div.product span.price,
 .patigation .page-numbers,
 .woocommerce .woocommerce-breadcrumb,
-.woocommerce table.wishlist_table tbody td .dateadded  {
+.woocommerce table.wishlist_table tbody td .dateadded {
 
-	font-size:14px;
+    font-size: 14px;
 }
 
 .excerpt p,
 .os-about-widget .contact-info li span,
 .woocommerce ul.order_details li strong,
-.woocommerce ul.cart_list li a, 
+.woocommerce ul.cart_list li a,
 .woocommerce ul.product_list_widget li a,
 .woocommerce table.wishlist_table tbody td,
 .woocommerce div.product p.stock,
 .woocommerce table.my_account_orders,
-.woocommerce-store-notice.demo_store  {
+.woocommerce-store-notice.demo_store,
+.woocommerce-loop-product__title,
+.woocommerce ul.products li.product h3,
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
 
-	font-size:15px;
+    font-size: 15px;
 }
 
 .cats-widget-styles .title h3 {
 
-	font-size: 16px;
+    font-size: 16px;
 }
 
-.woocommerce-loop-product__title,
-.woocommerce ul.products li.product h3,
+
 .woocommerce-page .woocommerce-order-details h2,
 .woocommerce-page #customer_login h2,
 .woocommerce-account .addresses .title h3,
-.woocommerce ul.products li.product .woocommerce-loop-category__title, 
-.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product .woocommerce-loop-category__title,
 .woocommerce table.wishlist_table .yith-wcwl-share-title,
 .woocommerce-page .woocommerce-MyAccount-content h3,
 .woocommerce .woocommerce-column__title {
 
-	font-size:17px;
+    font-size: 17px;
 }
+
 
 section .section-title h2,
 section .section-title h3,
@@ -320,40 +324,42 @@ section .section-title h3,
 .woocommerce .related.products>h2,
 .woocommerce .cross-sells>h2,
 .yith-wcwl-share h4.yith-wcwl-share-title,
-.woocommerce .up-sells.upsells.products>h2 {
+.woocommerce .up-sells.upsells.products>h2,
+.product-widget-style-3 .owl-carousel .owl-nav button.owl-next,
+.product-widget-style-3 .owl-carousel .owl-nav button.owl-prev {
 
-	font-size:18px;
+    font-size: 18px;
 }
 
 .os-blog .title h3,
 .search-entry article .title h3,
-.archive-entry article .title h3  {
+.archive-entry article .title h3 {
 
-	font-size:20px;
+    font-size: 20px;
 }
 
 
 .entry-404 .sub-title h2,
 .search-entry .entry-title,
 .not-found .page-title,
-.woocommerce-account .woocommerce > h2,
-.woocommerce-account .woocommerce > h3 {
+.woocommerce-account .woocommerce>h2,
+.woocommerce-account .woocommerce>h3 {
 
-	font-size:21px;
+    font-size: 21px;
 }
 
 .woocommerce .wishlist-title h2,
 .banner-style-1 .caption span,
 .woocommerce div.product .product_title {
 
-	font-size:24px;
+    font-size: 24px;
 }
 
 .cta-style-2 .sub-title h4,
 .entry-nothing-found h1,
 .archive-entry .entry-title {
 
-	font-size:28px;
+    font-size: 28px;
 }
 
 .banner-style-1 h2,
@@ -361,15 +367,7 @@ section .section-title h3,
 .woocommerce .entry-title,
 .archive-page-wrap .entry-title,
 .default-page-wrap .entry-title,
-.default-post-wrap .entry-title  {
+.default-post-wrap .entry-title {
 
-	font-size:32px;
+    font-size: 32px;
 }
-
-
-
-
-
-
-
-

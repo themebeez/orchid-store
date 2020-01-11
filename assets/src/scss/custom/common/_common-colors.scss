@@ -117,7 +117,12 @@ input[type="submit"]:hover,
 .woocommerce nav.woocommerce-pagination ul li span.current,
 .woocommerce .woocommerce-pagination .page-numbers li span, 
 .woocommerce .woocommerce-pagination .page-numbers li a,
-.woocommerce .woocommerce-pagination .page-numbers li a:hover {
+.woocommerce .woocommerce-pagination .page-numbers li a:hover,
+.product-widget-style-3 .owl-carousel .owl-nav button.owl-next, 
+.product-widget-style-3 .owl-carousel .owl-nav button.owl-prev,
+.product-widget-style-3 .owl-carousel .owl-nav button.owl-next:hover, 
+.product-widget-style-3 .owl-carousel .owl-nav button.owl-prev:hover,
+.mobile-navigation .trigger-mob-nav-close {
 
 	color:$white;
 }
@@ -313,6 +318,9 @@ aside.secondary-widget-area .widget,
 .woocommerce-page .woocommerce-checkout-review-order,
 .woocommerce-page .woocommerce-MyAccount-navigation,
 .woocommerce-account .woocommerce-MyAccount-content,
+.woocommerce-page .woocommerce ul.order_details,
+.woocommerce-page .woocommerce-order-details,
+.woocommerce .woocommerce-customer-details address,
 .woocommerce div.product div.images.woocommerce-product-gallery {
 	
 	border: 1px solid #eef1fd;
@@ -342,6 +350,7 @@ input[type="submit"],
 .entry-cats ul li a,
 .button-general,
 a.button-general,
+.mobile-navigation,
 #yith-quick-view-close,
 .woocommerce .add_to_cart_button,
 .woocommerce #respond input#submit, 
@@ -392,7 +401,7 @@ a.button-general,
 .woocommerce input.button.alt.disabled,
 .woocommerce input.button.alt:disabled,
 .woocommerce input.button.alt:disabled:hover,
-.woocommerce input.button.alt:disabled[disabled]   {
+.woocommerce input.button.alt:disabled[disabled] {
 
 	background:$secondary_color;
 }

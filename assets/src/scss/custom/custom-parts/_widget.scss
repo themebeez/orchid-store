@@ -157,8 +157,8 @@
 .os-about-widget .social-icons ul li a {
 
     font-size: 15px;
-    @include border-radius(100%);
-    line-height: 43px;
+    line-height: 40px;
+    @include border-radius(50%);
 }
 
 .os-about-widget .social-icons ul li a::before {
@@ -567,7 +567,7 @@ form.search-form button[type="search"],
 .widget_product_search form button[type="submit"] {
 
     float: none;
-    @include position_absolute(52%, auto, auto, 15px);
+    @include position_absolute(50%, auto, auto, 15px);
     font-size: 16px;
     background-color: transparent;
     border: none;
