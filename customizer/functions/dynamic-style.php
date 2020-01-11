@@ -23,6 +23,7 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			}
 
 			button,
+			.mobile-navigation,
 			input[type='button'],
 			input[type='reset'],
 			input[type='submit'],
@@ -80,7 +81,9 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.woocommerce input.button.alt.disabled,
 			.woocommerce input.button.alt:disabled,
 			.woocommerce input.button.alt:disabled:hover,
-			.woocommerce input.button.alt:disabled[disabled] {
+			.woocommerce input.button.alt:disabled[disabled],
+			.product-widget-style-3 .owl-carousel .owl-nav button.owl-next, 
+			.product-widget-style-3 .owl-carousel .owl-nav button.owl-prev {
 
 				background-color: {$primary_color};
 			}
@@ -214,7 +217,9 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.woocommerce #respond input#submit.alt.disabled:hover,
 			.woocommerce button.button.alt:disabled[disabled]:hover,
 			.woocommerce input.button.alt:disabled[disabled]:hover,
-			.woocommerce #respond input#submit.alt:disabled[disabled]:hover {
+			.woocommerce #respond input#submit.alt:disabled[disabled]:hover,
+			.product-widget-style-3 .owl-carousel .owl-nav button.owl-next:hover, 
+			.product-widget-style-3 .owl-carousel .owl-nav button.owl-prev:hover {
 
 				background-color: {$secondary_color};
 			}

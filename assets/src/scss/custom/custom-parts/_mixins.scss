@@ -58,6 +58,8 @@
 @mixin mild_drop_shadow() {
 
 	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+	-ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
 }
 

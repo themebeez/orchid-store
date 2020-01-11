@@ -194,17 +194,15 @@
 
         // Main primary menu
 
-        $('.menu-toggle').on('click', function(e) {
+        // add to anchour
+        $('#site-navigation .menu-item-has-children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-down"></i> </span>');
 
-            $('#site-navigation').slideToggle('medium');
+        $('#site-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-down"></i> </span>');
 
-            $('body').toggleClass('menu-toggle-active'); // add class to body
+        // add to li
+        $('#site-navigation .menu-item-has-children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
 
-        });
-
-        $('#site-navigation .menu-item-has-children').append('<span class="sub-toggle"> <i class="fa fa-angle-down"></i> </span>');
-
-        $('#site-navigation .page_item_has_children').append('<span class="sub-toggle"> <i class="fa fa-angle-down"></i> </span>');
+        $('#site-navigation .page_item_has_children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
 
 
         $('#site-navigation .sub-toggle').on('click', function() {
@@ -215,7 +213,7 @@
 
             $(this).parent('.page_item_has_children').children('ul.children').first().slideToggle('medium');
 
-            if ($(this).hasClass('active-submenu')) {
+            if($(this).hasClass('active-submenu')) {
 
                 $(this).find('.fa').removeClass('fa-angle-down').addClass('fa-angle-up');
 
@@ -224,6 +222,16 @@
                 $(this).find('.fa').removeClass('fa-angle-up').addClass('fa-angle-down');
             }
 
+        });
+
+        $('.masterheader .menu-toggle').on('click', function(e){
+
+            $('body').toggleClass('menu-toggle-active'); // add class to body
+        });
+
+        $('.mobile-navigation-mask, .trigger-mob-nav-close').on('click', function(e){
+
+            $('body').removeClass('menu-toggle-active'); // remove class from body
         });
 
 
@@ -243,9 +251,9 @@
 
         });
 
-        $('.category-navigation .menu-item-has-children').append('<span class="sub-toggle"> <i class="fa fa-angle-right"></i> </span>');
+        $('.category-navigation .menu-item-has-children > .menu-link').append('<span class="sub-toggle"> <i class="fa fa-angle-right"></i> </span>');
 
-        $('.category-navigation .page_item_has_children').append('<span class="sub-toggle"> <i class="fa fa-angle-right"></i> </span>');
+        $('.category-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle"> <i class="fa fa-angle-right"></i> </span>');
 
 
         /*
@@ -321,8 +329,8 @@
             lazyLoad: false,
             margin: 30,
             smartSpeed: 1000,
-            nav: false,
-            dots: true,
+            nav: true,
+            dots: false,
             autoplay: true,
             autoplayTimeout: 4000,
             autoplayHoverPause: true,
