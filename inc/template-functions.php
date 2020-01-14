@@ -89,7 +89,7 @@ if( ! function_exists( 'orchid_store_sidebar_class' ) ) {
 
 	function orchid_store_sidebar_class() {
 
-		$sidebar_class = 'col-lg-4 col-md-12 col-sm-12 col-12';
+		$sidebar_class = 'col-desktop-4 sidebar-col col-tab-100 col-mob-100';
 
 		$sidebar_position = orchid_store_sidebar_position();
 
@@ -128,7 +128,7 @@ if( ! function_exists( 'orchid_store_content_container_class' ) ) {
 
 		} else {
 
-			$container_class = 'col-lg-8 col-md-12 col-sm-12 col-12';
+			$container_class = 'col-desktop-8 content-col col-tab-100 col-mob-100';
 
 			$is_sticky = orchid_store_get_option( 'enable_sticky_sidebar' );
 

@@ -35,11 +35,11 @@ if( ! class_exists( 'Orchid_Store_Services_Widget' ) ) :
                     <div class="section-inner">
                         <div class="__os-container__">
                             <div class="cta-entry">
-                                <div class="row">
+                                <div class="os-row">
                                     <?php
                                     for( $i = 0; $i < 3; $i++ ) {
                                         ?>
-                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                        <div class="os-col">
                                             <div class="box">
                                                 <div class="left-col">
                                                     <?php

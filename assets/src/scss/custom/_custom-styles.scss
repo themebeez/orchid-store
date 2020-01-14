@@ -7,8 +7,9 @@
 */
 
 
-// Row 
+// Row & Grids
 
+.row,
 .os-row {
 
     @include flex_row();
@@ -19,6 +20,49 @@
     @include flex_col(33.33%);
     padding-right: 15px;
     padding-left: 15px;
+}
+
+.content-col,
+.col-desktop-8 {
+
+    @include flex_col(66.666667%);
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.sidebar-col,
+.col-desktop-4 {
+
+    @include flex_col(33.333333%);
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-12,
+.col-lg-12 {
+
+    @include flex_col(100%);
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media(max-width:991px) {
+    
+    .col-tab-100 {
+
+        flex:0 0 100%;
+        max-width:100%;
+    }
+}
+
+@media(max-width: 575px) {
+    
+    .col-12,
+    .col-mob-100 {
+
+        flex:0 0 100%;
+        max-width:100%;
+    }
 }
 
 
@@ -837,6 +881,15 @@ section .section-title h3:after {
     flex: 1;
 }
 
+.header-style-1 .custom-search-entry input:-webkit-autofill,
+.header-style-1 .custom-search-entry input:-webkit-autofill:hover, 
+.header-style-1 .custom-search-entry input:-webkit-autofill:focus, 
+.header-style-1 .custom-search-entry input:-webkit-autofill:active  {
+
+    -webkit-box-shadow: none;
+    background-color:transparent;
+}
+
 .header-style-1 .custom-search-entry .select-custom select:focus {
 
     outline: none;
@@ -1312,6 +1365,10 @@ section .section-title h3:after {
 
 // cta section style 1
 
+.cta-style-1 .os-row .os-col:last-child .box {
+
+    margin-bottom: 0;
+} 
 
 .cta-style-1 .box {
 
@@ -1582,8 +1639,6 @@ body.no-sidebar .archive-entry article .content-col {
 }
 
 
-
-
 /*
 ====================================================
 =
@@ -1615,7 +1670,6 @@ body.no-sidebar .archive-entry article .content-col {
 =
 ==========================================
 */
-
 
 
 .inner-page-wrap.page-full-bg-thumbnail {
@@ -1999,6 +2053,7 @@ section.product-widget-style-2 .section-title {
 
     border: none;
     margin: 0;
+    @include border-radius(0);
 }
 
 .woocommerce table.shop_table th {
@@ -2565,7 +2620,6 @@ section.product-widget-style-2 .section-title {
 #yith-quick-view-content .product.type-product {
 
     @include flex_row_alt();
-    align-items: center;
 }
 
 #yith-quick-view-content div.images {
@@ -2582,7 +2636,8 @@ section.product-widget-style-2 .section-title {
     flex: 55%;
     max-width: 55%;
     width: 55%;
-    padding: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
     border:none;
     -webkit-box-shadow:none;
     -moz-box-shadow:none;
@@ -2608,6 +2663,18 @@ section.product-widget-style-2 .section-title {
 =
 ==========================================
 */
+
+.woocommerce-page .wishlist_table {
+
+    padding:30px;
+}
+
+.wishlist_table tr td, 
+.wishlist_table tr th.product-checkbox, 
+.wishlist_table tr th.wishlist-delete {
+
+    background-color:transparent;
+}
 
 .wishlist_table tr td,
 .wishlist_table tr th.wishlist-delete,
@@ -3302,7 +3369,7 @@ section.product-widget-style-2 .section-title {
 .woocommerce-checkout #payment {
 
     padding: 30px;
-    background: #F3F4F8;
+    background: #F0F0F0;
     @include border-radius(5px);
 }
 
@@ -3531,4 +3598,13 @@ section.product-widget-style-2 .section-title {
 .woocommerce-page .woocommerce-MyAccount-content p {
 
     margin-bottom: 15px;
+}
+
+
+// password reset 
+
+.woocommerce .lost_reset_password,
+.woocommerce .woocommerce-ResetPassword {
+
+    padding:30px;
 }
