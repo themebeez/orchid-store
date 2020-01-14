@@ -32,7 +32,7 @@ if( get_theme_mod( 'orchid_store_field_enable_home_content', true ) == true && i
     	do_action( 'orchid_store_title_breadcrumb' );
     	?>
         <div class="__os-container__">
-            <div class="row">
+            <div class="os-row">
                 <div class="<?php orchid_store_content_container_class(); ?>">
                     <div id="primary" class="content-area">
                         <main id="main" class="site-main">

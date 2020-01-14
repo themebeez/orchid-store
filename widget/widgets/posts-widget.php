@@ -52,7 +52,7 @@ if( ! class_exists( 'Orchid_Store_Post_Widget' ) ) :
                         }
                         ?>
                         <div class="blog-entry">
-                            <div class="row">
+                            <div class="os-row">
                                 <?php
                                 if( $blog_posts->have_posts() ) {
 
@@ -60,7 +60,7 @@ if( ! class_exists( 'Orchid_Store_Post_Widget' ) ) :
 
                                         $blog_posts->the_post();
                                         ?>
-                                        <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                        <div class="os-col blog-col">
                                             <div class="card wow osfadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
                                                 <div class="thumb imghover">
                                                     <?php

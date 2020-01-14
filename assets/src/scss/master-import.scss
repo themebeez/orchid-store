@@ -11,18 +11,22 @@
 
 - Since : 17 jan, 2018
 
-- Scss version: 1.1.0
+- Scss version: 1.1.2
 
-- Last updated: 17 Dec, 2019
+- Last updated: 15 Jan, 2020
 
 ======================================================================================
 */
 
+// Import font icons 
+
+@import 'fonticons/boxicons/boxicons';
+@import 'fonticons/fontawesome/fontawesome';
 
 // Import framework
 
 @import 'framework/bootstrap-reboot';
-@import 'framework/bootstrap-grid';
+@import 'custom/custom-parts/reset';         		// Our custom reset
 
 // Import variables 
 
@@ -39,15 +43,9 @@
 @import 'libraries/owlcarousel';
 @import 'libraries/izi-toast';
 
-// Import font icons 
-
-@import 'fonticons/boxicons/boxicons';
-@import 'fonticons/fontawesome/fontawesome';
-
 
 // Import custom parts & custom style file 
 
-@import 'custom/custom-parts/reset';         		// Our custom reset
 @import 'custom/custom-parts/forms';				// forms
 @import 'custom/custom-parts/links';				// links
 @import 'custom/custom-parts/aligment'; 			// aligment
@@ -63,7 +61,6 @@
 @import 'custom/custom-parts/primary-menu';			// primary menu
 @import 'custom/custom-parts/category-menu';		// Category menu
 @import 'custom/custom-parts/editor';				// Editor styles for front-end
-
 @import 'custom/custom-parts/wordpress';			// wp styles
 @import 'custom/custom-parts/woocommerce-blocks';	// Styles for woocommece blocks
 

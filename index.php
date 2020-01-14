@@ -25,7 +25,7 @@ get_header();
 	?>
     <div class="inner-entry">
         <div class="__os-container__">
-            <div class="row">
+            <div class="os-row">
                 <div class="<?php orchid_store_content_container_class(); ?>">
                     <div id="primary" class="content-area">
                         <div id="main" class="site-main">
