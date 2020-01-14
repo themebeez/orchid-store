@@ -81,14 +81,23 @@ Orchid Store is distributed under the terms of the GNU GPL
 
 Orchid Store includes support for WooCommerce , YITH Wishlist and YITH Quickview.
 
+= Do you have issue tracker? =
+
+We do have issue tracker at Github https://github.com/themebeez/orchid-store
+
 
 == Changelog ==
 
-== 1.1.2 - 03 January, 2020 ==
+== 1.1.2 - 15 January, 2020 ==
 
 - Added: Search icon in mobile view
 - Added: Minicart icon in mobile view
 - Added: My account & wishlist link in mobile view
+- Tweak: WooCommerce on sale badge
+- Tweak: CSS grid system
+- Tweak: Header search, mini-cart & icons
+- Tweak: Basic spacing & aligment
+- Removed: Bootstrap 4 grid scss file. (Getting rid of 2500 lines of CSS code for grid system)
 
 == 1.1.1 - 30 December, 2019 ==
 
