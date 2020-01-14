@@ -195,11 +195,7 @@ section .section-title h3,
 .post-navigation .nav-next span,
 .woocommerce ul.order_details li,
 .cats-widget-styles .right .title h3,
-.woocommerce-page table.wishlist_table thead th {
-
-    font-weight: bold;
-}
-
+.woocommerce-page table.wishlist_table thead th,
 .banner-style-1 h2,
 .cta-style-2 h3,
 .cta-style-2 h4,
@@ -209,8 +205,9 @@ section .section-title h3,
 .default-page-wrap .entry-title,
 .default-post-wrap .entry-title {
 
-    font-weight: 900;
+    font-weight: bold;
 }
+
 
 
 // Font sizes

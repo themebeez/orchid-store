@@ -4,6 +4,7 @@
 * Contributor: Themebeez
 * Author url: https://themebeez.com/
 * File: RTL css 
+* Uses: We generate RTL CSS file using gulp. Generated RTL CSS is located at assets/dist/css/. This RTL CSS file overwrites generated RTL CSS file.
 */
 
 
