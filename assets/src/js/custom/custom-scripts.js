@@ -256,6 +256,17 @@
         $('.category-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle"> <i class="fa fa-angle-right"></i> </span>');
 
 
+        // Count & add class in Mega Menu Orchid store Theme
+
+        var megaSubMenu = $('.masterheader .menu-item-has-mega-children > ul');
+
+        megaSubMenu.addClass('mega-menu-sub-menu');
+
+        var MegaMenuColumnCount = $(".masterheader .menu-item-has-mega-children > ul.mega-menu-sub-menu > li").length;
+
+        megaSubMenu.addClass('mega-menu-column-'+MegaMenuColumnCount);
+        
+
         /*
         ===========================
         = Sticky sidebar

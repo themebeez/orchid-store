@@ -91,8 +91,6 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 == 1.1.2 - 15 January, 2020 ==
 
 - Added: Search icon in mobile view
-- Added: Minicart icon in mobile view
-- Added: My account & wishlist link in mobile view
 - Tweak: WooCommerce on sale badge
 - Tweak: CSS grid system
 - Tweak: Header search, mini-cart & icons
