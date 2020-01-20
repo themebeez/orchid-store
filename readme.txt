@@ -88,8 +88,9 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.1.3 - January, 2020 ==
+== 1.1.3 - 20 January, 2020 ==
 
+- Fix: Quick view product summary spacing in mobile device
 - Removed: ID from WooCommerce search form
 
 
@@ -119,7 +120,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == 1.0.8 - 05 December, 2019 ==
 
-- Fix: quantity input for woocommerce on quick view popup
+- Fix: Quantity input for woocommerce on quick view popup
 - Fix: Quick view at responsive
 - Tweak: Quick view icon 
 
@@ -145,9 +146,9 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 == 1.0.4 - 26 November, 2019 ==
 
 - Fix: PHP errors
-- wp_add_inline_style used for dynamic styles
+- Tweak: wp_add_inline_style used for dynamic styles
+- Tweak: Styles and scripts enqueued for widgets.php in admin
 - Removed: Unused codes
-- Styles and scripts enqueued for widgets.php in admin
 
 
 == 1.0.3 - 21 November, 2019 ==
