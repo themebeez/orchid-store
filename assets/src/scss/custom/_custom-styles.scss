@@ -65,6 +65,16 @@
     }
 }
 
+.order-first {
+
+    @include order(1);
+}
+
+.order-last {
+
+    @include order(2);
+}
+
 
 // page wrap 
 
