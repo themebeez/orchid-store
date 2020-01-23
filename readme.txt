@@ -91,6 +91,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 == 1.1.4 - 23 January, 2020 ==
 
 - Fix: Sidebar position
+- Added: Option to select login/register link or top header menu
 
 == 1.1.3 - 20 January, 2020 ==
 

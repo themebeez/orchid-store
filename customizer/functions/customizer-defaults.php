@@ -56,6 +56,7 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
             'site_layout' => 'fullwidth',
 
             'display_top_header' => false,
+            'display_menu_or_login_register_link' => 'login_register',
             'top_header_social_links' => '',
 
             'display_special_menu' => false,

@@ -19,12 +19,24 @@
                         <div class="os-col left-col">
                            <div class="topbar-items">
                                 <?php
-                                /**
-                                * Hook - orchid_store_user_links.
-                                *
-                                * @hooked orchid_store_user_links_action - 10
-                                */
-                                do_action( 'orchid_store_user_links' );
+
+                                $orchid_store_top_header_left_item = orchid_store_get_option( 'display_menu_or_login_register_link' );
+
+                                if( $orchid_store_top_header_left_item == 'login_register' ) {
+                                    /**
+                                    * Hook - orchid_store_user_links.
+                                    *
+                                    * @hooked orchid_store_user_links_action - 10
+                                    */
+                                    do_action( 'orchid_store_user_links' );
+                                } else {
+                                    /**
+                                    * Hook - orchid_store_top_header_menu.
+                                    *
+                                    * @hooked orchid_store_top_header_menu_action - 10
+                                    */
+                                    do_action( 'orchid_store_top_header_menu' );
+                                }
                                 ?>
                             </div><!-- .topbar-items -->
                         </div><!-- .os-col.left-col -->

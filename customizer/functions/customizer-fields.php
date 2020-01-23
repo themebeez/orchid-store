@@ -230,6 +230,8 @@ orchid_store_add_select_field( 'site_layout', esc_html__( 'Select Site Layout', 
 *******************************************************************************************************/
 orchid_store_add_toggle_field( 'display_top_header', esc_html__( 'Display Top Header', 'orchid-store' ), '', '', 'top_header' );
 
+orchid_store_add_select_field( 'display_menu_or_login_register_link', esc_html__( 'Select Top Header Left Element', 'orchid-store' ), '', array( 'header_menu' => esc_html__( 'Top Header Menu', 'orchid-store' ), 'login_register' => esc_html__( 'Login/Register Link', 'orchid-store' ) ), '', 'top_header' );
+
 orchid_store_add_sortable_repeater_field( 'top_header_social_links', esc_html__( 'Social Links', 'orchid-store' ), '', 'orchid_store_active_top_header', 'top_header' );
 
 
