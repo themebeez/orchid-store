@@ -16,6 +16,28 @@ if( ! function_exists( 'orchid_store_header_action' ) ) {
 add_action( 'orchid_store_header', 'orchid_store_header_action', 10 ); 
 
 
+if( ! function_exists( 'orchid_store_top_header_menu_action' ) ) {
+
+	function orchid_store_top_header_menu_action() {
+
+		if( has_nav_menu( 'menu-3' ) ) {
+			?>
+			<nav id="top-header-menu" class="top-header-menu">
+				<?php
+				$menu_args = array(
+		 			'theme_location' => 'menu-3',
+		 			'container' => '',
+		 		);
+				wp_nav_menu( $menu_args );
+				?>
+			</nav><!-- .site-navigation.site-navigation -->
+			<?php
+		}
+	}
+}
+add_action( 'orchid_store_top_header_menu', 'orchid_store_top_header_menu_action', 10 );
+
+
 if( ! function_exists( 'orchid_store_secondary_navigation_action' ) ) {
 
 	function orchid_store_secondary_navigation_action() {

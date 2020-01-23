@@ -52,6 +52,7 @@ if ( ! function_exists( 'orchid_store_setup' ) ) :
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary Menu', 'orchid-store' ),
 			'menu-2' => esc_html__( 'Secondary Menu', 'orchid-store' ),
+			'menu-3' => esc_html__( 'Top Header Menu', 'orchid-store' ),
 		) );
 
 		/*

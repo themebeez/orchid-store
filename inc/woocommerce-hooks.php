@@ -120,7 +120,7 @@ if( ! function_exists( 'orchid_store_user_links_action' ) ) {
 			return;
 		}
 		?>
-        <nav>
+        <nav class="login_register_link">
             <ul>
             	<?php
             	if( class_exists( 'WooCommerce' ) ) {
