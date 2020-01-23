@@ -5,7 +5,7 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 5.6
 Requires at least: 5.0
 Tested up to: 5.3.2
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -88,11 +88,14 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
+== 1.1.4 - 23 January, 2020 ==
+
+- Fix: Sidebar position
+
 == 1.1.3 - 20 January, 2020 ==
 
 - Fix: Quick view product summary spacing in mobile device
 - Removed: ID from WooCommerce search form
-
 
 == 1.1.2 - 15 January, 2020 ==
 
