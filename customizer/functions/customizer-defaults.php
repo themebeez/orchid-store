@@ -87,6 +87,8 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
             'search_display_author' => true,
             'search_sidebar_position' => 'right',
 
+            'blog_archive_search_col_align' => 'feat_img_content',
+
             'enable_sticky_sidebar' => true,
             'enable_sidebar_small_devices' => true,
             'enable_global_sidebar_position' => false,

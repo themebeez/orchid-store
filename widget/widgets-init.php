@@ -51,6 +51,16 @@ function orchid_store_widgets_init() {
 		}
 	}
 
+	register_sidebar( array(
+		'name'          => esc_html__( 'Woocommerce Sidebar', 'orchid-store' ),
+		'id'            => 'woocommerce-sidebar',
+		'description'   => esc_html__( 'Add woocommerce widgets here.', 'orchid-store' ),
+		'before_widget' => '<section id="%1$s" class="section-spacing %2$s"><div class="section-inner"><div class="__os-container__">',
+		'after_widget'  => '</div></div></section>',
+		'before_title'  => '<div class="section-title"><h2>',
+		'after_title'   => '</h2></div>',
+	) );
+
 	register_widget( 'Orchid_Store_Banner_Widget' );	
 
 	register_widget( 'Orchid_Store_Post_Widget' );
