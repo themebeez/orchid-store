@@ -279,3 +279,5 @@ add_action( 'orchid_store_woocommerce_breadcrumb', 'woocommerce_breadcrumb', 20,
 
 add_action( 'woocommerce_before_add_to_cart_quantity', 'orchid_store_quantity_plus' );
 add_action( 'woocommerce_after_add_to_cart_quantity', 'orchid_store_quantity_minus' );
+
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );

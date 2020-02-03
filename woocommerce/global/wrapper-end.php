@@ -23,7 +23,14 @@ if ( ! defined( 'ABSPATH' ) ) {
                         </div><!-- #main.site-main -->
                     </div><!-- #primary.content-area -->
                 </div><!-- .col -->
-                <?php get_sidebar(); ?>
+                <?php 
+                if( is_active_sidebar( 'woocommerce-sidebar' ) ) {
+
+                	orchid_store_get_woocommerce_sidebar();
+                } else {
+                	get_sidebar();
+                } 
+                ?>
             </div><!-- .row -->
         </div><!-- .__os-container__ -->
     </div><!-- .inner-entry -->

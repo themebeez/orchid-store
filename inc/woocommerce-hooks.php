@@ -328,3 +328,24 @@ if( ! function_exists( 'orchid_store_quantity_minus' ) ) {
        <?php
     }
 }
+
+
+if( ! function_exists( 'orchid_store_get_woocommerce_sidebar' ) ) {
+
+    function orchid_store_get_woocommerce_sidebar() {
+        
+        $sidebar_position = orchid_store_sidebar_position();
+
+        if( $sidebar_position == 'none' ) {
+
+            return;
+        }
+        ?>
+        <div class="<?php orchid_store_sidebar_class(); ?>">
+            <aside id="secondary" class="secondary-widget-area os-woocommerce-sidebar">
+                <?php dynamic_sidebar( 'woocommerce-sidebar' ); ?>
+            </aside><!-- #secondary -->
+        </div><!-- .col -->
+        <?php
+    }
+}

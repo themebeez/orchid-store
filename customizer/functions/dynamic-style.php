@@ -249,6 +249,22 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			}";
 		}
 
+		if( orchid_store_get_option( 'blog_archive_search_col_align' ) == 'content_feat_img' ) {
+
+			$custom_style .= "
+			.search-entry article .thumb-col, 
+			.archive-entry .thumb-col {
+				
+				order: 2;
+			}
+
+			.search-entry article .content-col, 
+			.archive-entry article .content-col {
+
+				order: 1;
+			}";
+		}
+
 		return $custom_style;
 	}
 }

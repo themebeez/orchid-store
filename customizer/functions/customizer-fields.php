@@ -108,6 +108,13 @@ if( ! function_exists( 'orchid_store_section_declaration' ) ) {
 				'priority' => 3,
 			),
 			array(
+				'id' => 'blog_archive_search_page',
+				'title' => esc_html__( 'Blog/Archive/Search Common', 'orchid-store' ),
+				'description' => '',
+				'panel' => 'site_pages',
+				'priority' => 3,
+			),
+			array(
 				'id' => 'post_single',
 				'title' => esc_html__( 'Post Single', 'orchid-store' ),
 				'description' => '',
@@ -298,6 +305,11 @@ orchid_store_add_toggle_field( 'search_display_author', esc_html__( 'Display Aut
 orchid_store_add_radio_image_field( 'search_sidebar_position', esc_html__( 'Select Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), 'orchid_store_is_not_global_sidebar_position_active', 'search_page' );
 
 
+
+/*******************************************************************************************************
+***************************** Blog/Archive/Search Page Control Fields Declaration **********************
+*******************************************************************************************************/
+orchid_store_add_select_field( 'blog_archive_search_col_align', esc_html__( 'Select Post Column Alignment', 'orchid-store' ), '', array( 'feat_img_content' => esc_html__( 'Featured Image/Content', 'orchid-store' ), 'content_feat_img' => esc_html__( 'Content/Featured Image', 'orchid-store' ) ), '', 'blog_archive_search_page' );
 
 /*******************************************************************************************************
 *********************************** Blog Single Control Fields Declaration *****************************
