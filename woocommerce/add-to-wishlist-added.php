@@ -37,7 +37,7 @@ global $product;
 <!-- ADDED TO WISHLIST MESSAGE -->
 <div class="yith-wcwl-wishlistaddedbrowse">
     <a class="button-general wish-list-button os-tooltip" href="<?php echo esc_url( $wishlist_url ); ?>" rel="nofollow" data-tippy-content="<?php echo esc_attr( $product_added_text ); ?>">
-        <span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+        <span class="icon"><i class="fa fa-heart" aria-hidden="true"></i></span>
         <span class="text"><?php echo esc_html( apply_filters( 'yith-wcwl-browse-wishlist-label', $browse_wishlist_text, $product_id, $icon ) ); ?></span>
     </a>
 </div>

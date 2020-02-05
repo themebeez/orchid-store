@@ -55,10 +55,10 @@ function orchid_store_widgets_init() {
 		'name'          => esc_html__( 'Woocommerce Sidebar', 'orchid-store' ),
 		'id'            => 'woocommerce-sidebar',
 		'description'   => esc_html__( 'Add woocommerce widgets here.', 'orchid-store' ),
-		'before_widget' => '<section id="%1$s" class="section-spacing %2$s"><div class="section-inner"><div class="__os-container__">',
-		'after_widget'  => '</div></div></section>',
-		'before_title'  => '<div class="section-title"><h2>',
-		'after_title'   => '</h2></div>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="widget-title"><h3>',
+		'after_title'   => '</h3></div>',
 	) );
 
 	register_widget( 'Orchid_Store_Banner_Widget' );	
