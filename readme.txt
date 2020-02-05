@@ -92,6 +92,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 - Added: Sidebar for WooCommerce Pages
 - Added: Option to change alignment of featured image column and post content column of blog, archive and search pages
+- Fix: Change in icon when product added to wishlist
 
 == 1.1.4 - 23 January, 2020 ==
 
