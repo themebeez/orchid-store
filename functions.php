@@ -119,12 +119,12 @@ function orchid_store_scripts() {
 
 	if( is_rtl() ) {
 
-		wp_enqueue_style( 'orchid-store-main-style-rtl', get_template_directory_uri() . '/assets/dist/css/main-style-rtl.css' );
+		wp_enqueue_style( 'orchid-store-main-style-rtl', get_template_directory_uri() . '/assets/dist/css/main-style-rtl.css' , ORCHID_STORE_VERSION);
 
 		wp_add_inline_style( 'orchid-store-main-style-rtl', orchid_store_dynamic_style() );
 	} else {
 
-		wp_enqueue_style( 'orchid-store-main-style', get_template_directory_uri() . '/assets/dist/css/main-style.css' );
+		wp_enqueue_style( 'orchid-store-main-style', get_template_directory_uri() . '/assets/dist/css/main-style.css' , ORCHID_STORE_VERSION);
 
 		wp_add_inline_style( 'orchid-store-main-style', orchid_store_dynamic_style() );
 	}
