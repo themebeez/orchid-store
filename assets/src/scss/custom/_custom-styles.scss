@@ -610,34 +610,18 @@ section .section-title h3:after {
     text-align: right;
 }
 
-
 .mini-cart-open {
 
     display: none;
     position: absolute;
     z-index: 99999;
-    top: 70px;
-    left: 0;
+    top: 65px;
+    right: 0;
     width: 400px;
     padding: 20px;
-    background-color: #444444;
+    background-color: #272727;
     color: $white;
-    @include border_radius(5px);
-    transform: translateX(-50%);
-}
-
-.mini-cart-open:before {
-
-    content: "";
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    top: -8px;
-    left: 55%;
-    background-color: #444444;
-    transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+    @include border_radius(4px);
 }
 
 .masterheader .mini-cart button {
@@ -726,6 +710,7 @@ section .section-title h3:after {
     border: 1px solid rgba(255, 255, 255, 0.2);
     height: 48px;
     padding-left: 6px;
+    padding-right: 6px;
     @include border_radius(3px);
 }
 

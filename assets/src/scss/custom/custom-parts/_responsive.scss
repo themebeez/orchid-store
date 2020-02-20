@@ -878,8 +878,6 @@
         max-width: 100%;
     }
 
-    .header-style-1 .extra-col,
-    .header-style-1 .logo-col,
     .woocommerce.columns-3 ul.products li,
     .woocommerce.columns-3 ul.products li.product,
     .woocommerce.columns-4 ul.products li,
@@ -892,6 +890,19 @@
         flex: 0 0 50%;
         max-width: 50%;
         float: none;
+    }
+    
+    .header-style-1 .logo-col {
+
+        flex:1;
+        max-width:inherit;
+    }
+
+    .header-style-1 .extra-col,
+    .header-style-1 .wishlist-minicart-wrapper {
+
+        flex:0 0 80px;
+        max-width:80px;
     }
 
 
@@ -957,6 +968,17 @@
     .header-style-1 .wishlist-icon-container {
 
         display: none;
+    }
+
+    .header-style-1 .mini-cart {
+
+        min-width: auto;
+        @include border-radius(2px);
+    }
+
+    .header-style-1 .mini-cart .cart-amount {
+
+        display:none;
     }
 
 
@@ -1054,7 +1076,7 @@
     }
 
 
-    .header-style-1 .logo-col,
+    
     .cats-widget-styles .col,
     .cta-style-1 .row [class*="col-"],
     .woocommerce.columns-3 ul.products li,
@@ -1082,11 +1104,6 @@
     .mobile-navigation  {
 
         width:350px;
-    }
-
-    .header-style-1 .extra-col {
-
-        display: none;
     }
 
     .masterheader .top-header .right-col ul {
@@ -1163,7 +1180,20 @@
 
 }
 
+@media ( max-width: 420px) {
+
+    .header-style-1 .mini-cart-open {
+
+        width: 350px;
+    }
+}
+
 @media (max-width: 380px) {
+
+    .header-style-1 .mini-cart-open {
+
+        width: 300px;
+    }
 
     .mobile-navigation {
 
