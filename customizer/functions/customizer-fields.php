@@ -427,6 +427,25 @@ if( class_exists( 'WooCommerce' ) ) {
 	);
 
 
+	// No of Rows per page
+	$wp_customize->add_setting( 'orchid_store_field_row_per_page', 
+		array(
+			'default' => $orchid_store_defaults['orchid_store_field_row_per_page'],
+			'sanitize_callback' => 'orchid_store_sanitize_number',
+			'capability'        => 'edit_theme_options',
+		)
+	);	
+
+	$wp_customize->add_control( 'orchid_store_field_row_per_page', 
+		array(
+			'label' => esc_html__( 'Rows per page', 'orchid-store' ),
+			'description' => esc_html__( 'How many rows of products should be shown per page?', 'orchid-store' ),
+			'type' => 'number',
+			'section' => 'woocommerce_product_catalog',
+		)
+	);
+
+
 	// No of Related Product Columns in Product Page
 	$wp_customize->add_setting( 'orchid_store_field_related_product_col_no', 
 		array(

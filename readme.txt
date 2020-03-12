@@ -5,7 +5,7 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 5.6
 Requires at least: 5.0
 Tested up to: 5.3.2
-Stable tag: 1.1.6
+Stable tag: 1.1.7
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -87,6 +87,12 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.1.7 - 12 March, 2020 ==
+
+- Added: Option to set rows per page for WooCommerce pages
+- Change: Default upsell and crosssell products columns value
+
 
 == 1.1.6 - 20 February, 2020 ==
 

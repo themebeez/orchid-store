@@ -31,8 +31,6 @@ add_action( 'after_setup_theme', 'orchid_store_woocommerce_setup' );
  */
 function orchid_store_woocommerce_scripts() {
 
-	//wp_enqueue_style( 'orchid-store-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
-
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
 			font-family: "star";
@@ -70,9 +68,15 @@ add_filter( 'body_class', 'orchid_store_woocommerce_active_body_class' );
  */
 function orchid_store_woocommerce_products_per_page() {
 
-	return 12;
+	$no_of_rows = intval( get_theme_mod( 'orchid_store_field_row_per_page', 4 ) );
+
+	$no_of_cols = intval( get_theme_mod( 'orchid_store_field_shop_product_col_no', 3 ) );
+
+	$items = intval( $no_of_cols * $no_of_rows );
+
+	return $items;
 }
-add_filter( 'loop_shop_per_page', 'orchid_store_woocommerce_products_per_page' );
+add_filter( 'loop_shop_per_page', 'orchid_store_woocommerce_products_per_page', 20 );
 
 /**
  * Product gallery thumnbail columns.
@@ -91,14 +95,10 @@ add_filter( 'woocommerce_product_thumbnails_columns', 'orchid_store_woocommerce_
  * @return integer products per row.
  */
 function orchid_store_woocommerce_loop_columns() {
-	
-	if( !empty( orchid_store_get_option( 'shop_product_col_no' ) ) ) { 
 
-		return absint( orchid_store_get_option( 'shop_product_col_no' ) ); 
-	} else {
+	$no_of_cols = intval( get_theme_mod( 'orchid_store_field_shop_product_col_no', 3 ) );
 
-		return 3; 
-	}
+	return $no_of_cols;
 }
 add_filter( 'loop_shop_columns', 'orchid_store_woocommerce_loop_columns' );
 
@@ -111,16 +111,9 @@ add_filter( 'loop_shop_columns', 'orchid_store_woocommerce_loop_columns' );
 function orchid_store_woocommerce_related_products_args( $args ) {
 
 	$defaults = array();
-
-	if( !empty( orchid_store_get_option( 'related_product_col_no' ) ) && !empty( orchid_store_get_option( 'related_product_no' ) ) ) { 
-
-		$defaults['columns'] = absint( orchid_store_get_option( 'related_product_col_no' ) );
-		$defaults['posts_per_page'] = absint( orchid_store_get_option( 'related_product_no' ) );
-	} else {
 		
-		$defaults['columns'] = 3;
-		$defaults['posts_per_page'] = 3; 
-	}
+	$defaults['columns'] = intval( get_theme_mod( 'orchid_store_field_related_product_col_no', 3 ) );
+	$defaults['posts_per_page'] = intval( get_theme_mod( 'orchid_store_field_related_product_no', 3 ) );
 
 	$args = wp_parse_args( $defaults, $args );
 
@@ -218,14 +211,8 @@ if ( ! function_exists( 'orchid_store_woocommerce_cart_link' ) ) {
  * Change number of upsells output
  */
 function orchid_store_upsell_products_args( $args ) {
- 	
- 	if( orchid_store_get_option( 'upsell_product_col_no' ) ) {
 
- 		$args['columns'] = absint( orchid_store_get_option( 'upsell_product_col_no' ) );
- 	} else {
-
- 		$args['columns'] = 3; //change number of upsells here
- 	}
+	$args['columns'] = intval( get_theme_mod( 'orchid_store_field_upsell_product_col_no', 4 ) ); 	
 
  	return $args;
 }
@@ -236,11 +223,8 @@ add_filter( 'woocommerce_upsell_display_args', 'orchid_store_upsell_products_arg
  * Change number of cross sells column
  */
 function orchid_store_cross_sells_columns( $columns ) {
- 	
- 	if( orchid_store_get_option( 'cross_sell_product_col_no' ) ) {
 
- 		$columns = absint( orchid_store_get_option( 'cross_sell_product_col_no' ) );
- 	}
+	$columns = intval( get_theme_mod( 'orchid_store_field_cross_sell_product_col_no', 4 ) );
  	
  	return $columns;
 }
