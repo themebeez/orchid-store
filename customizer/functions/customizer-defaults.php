@@ -125,10 +125,11 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
             
             $defaults['orchid_store_field_woocommerce_sidebar_position'] = 'right';
             $defaults['orchid_store_field_shop_product_col_no'] = 3;
+            $defaults['orchid_store_field_row_per_page'] = 4;
             $defaults['orchid_store_field_related_product_col_no'] = 3;
             $defaults['orchid_store_field_related_product_no'] = 3;
-            $defaults['orchid_store_field_upsell_product_col_no'] = 3;
-            $defaults['orchid_store_field_cross_sell_product_col_no'] = 3;
+            $defaults['orchid_store_field_upsell_product_col_no'] = 4;
+            $defaults['orchid_store_field_cross_sell_product_col_no'] = 4;
             $defaults['orchid_store_field_product_added_to_cart_message'] = esc_html__( 'Product successfully added to cart!', 'orchid-store' );
             $defaults['orchid_store_field_product_removed_from_cart_message'] = esc_html__( 'Product has been removed from your cart!', 'orchid-store' );
             $defaults['orchid_store_field_cart_update_message'] = esc_html__( 'Cart items has been updated successfully!', 'orchid-store' );
