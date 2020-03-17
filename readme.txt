@@ -92,7 +92,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 - Added: Option to set sidebar position for product single
 - Changed: Position of controls to increase and decrease product quantity
-- Fix: Minor fix
+- Fix: Spacing for add to cart button when quantity input is disabled
 
 
 == 1.1.7 - 12 March, 2020 ==

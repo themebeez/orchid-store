@@ -2851,6 +2851,12 @@ section.product-widget-style-2 .section-title {
 
 }
 
+.woocommerce div.product.sold-individually .entry-summary form.cart .button,
+.woocommerce div.product.sold-individually .entry-summary .woocommerce-variation-add-to-cart .button {
+    
+    margin-left: 0;
+}
+
 .woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist .yith-wcwl-add-button {
 
     display: flex;
