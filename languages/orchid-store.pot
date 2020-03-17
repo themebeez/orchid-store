@@ -86,7 +86,7 @@ msgstr ""
 msgid "Post Metas"
 msgstr ""
 
-#: customizer/customizer.php:164, customizer/functions/customizer-fields.php:397, inc/custom-fields.php:26
+#: customizer/customizer.php:164, inc/custom-fields.php:26
 msgid "Sidebar Position"
 msgstr ""
 
@@ -98,15 +98,15 @@ msgstr ""
 msgid "Special Menu"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:133, functions.php:140, functions.php:138
+#: customizer/functions/customizer-defaults.php:134, functions.php:140, functions.php:138
 msgid "Product successfully added to cart!"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:134, functions.php:145, functions.php:143
+#: customizer/functions/customizer-defaults.php:135, functions.php:145, functions.php:143
 msgid "Product has been removed from your cart!"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:135, functions.php:150, functions.php:148
+#: customizer/functions/customizer-defaults.php:136, functions.php:150, functions.php:148
 msgid "Cart items has been updated successfully!"
 msgstr ""
 
@@ -382,67 +382,75 @@ msgstr ""
 msgid "Secondary Color"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:417
+#: customizer/functions/customizer-fields.php:397
+msgid "Product Archive - Sidebar Position"
+msgstr ""
+
+#: customizer/functions/customizer-fields.php:419
+msgid "Product Single - Sidebar Position"
+msgstr ""
+
+#: customizer/functions/customizer-fields.php:439
 msgid "Shop - Product Columns"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:418
+#: customizer/functions/customizer-fields.php:440
 msgid "Set number of columns to be displayed in shop page for displaying products. Maximum number of colums is 6 while minimum number of columns is 2."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:441
+#: customizer/functions/customizer-fields.php:463
 msgid "Rows per page"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:442
+#: customizer/functions/customizer-fields.php:464
 msgid "How many rows of products should be shown per page?"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:460
+#: customizer/functions/customizer-fields.php:482
 msgid "Related Product Columns"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:461
+#: customizer/functions/customizer-fields.php:483
 msgid "Set number of columns to be displayed in related product section of product page. Maximum number of colums is 6 while minimum number of columns is 2."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:484
+#: customizer/functions/customizer-fields.php:506
 msgid "No of Related Product"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:485
+#: customizer/functions/customizer-fields.php:507
 msgid "Set number of products to be displayed in related product section of product page."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:503
+#: customizer/functions/customizer-fields.php:525
 msgid "Upsell Product Columns"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:504
+#: customizer/functions/customizer-fields.php:526
 msgid "Set number of columns to be displayed in upsell product section of product page. Maximum number of colums is 6 while minimum number of columns is 2."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:526
+#: customizer/functions/customizer-fields.php:548
 msgid "Cross Sell Product Columns"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:527
+#: customizer/functions/customizer-fields.php:549
 msgid "Set number of columns to be displayed in cross sell product section of product page. Maximum number of colums is 6 while minimum number of columns is 2."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:542
+#: customizer/functions/customizer-fields.php:564
 msgid "Cart Messages"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:558
+#: customizer/functions/customizer-fields.php:580
 msgid "Product Added To Cart"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:576
+#: customizer/functions/customizer-fields.php:598
 msgid "Product Removed From Cart"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:594
+#: customizer/functions/customizer-fields.php:616
 msgid "Cart Updated"
 msgstr ""
 
@@ -523,11 +531,11 @@ msgctxt "Poppins font: on or off"
 msgid "on"
 msgstr ""
 
-#: inc/theme-functions.php:282
+#: inc/theme-functions.php:287
 msgid "Search for:"
 msgstr ""
 
-#: inc/theme-functions.php:282
+#: inc/theme-functions.php:287
 msgctxt "placeholder"
 msgid "Type here to search"
 msgstr ""

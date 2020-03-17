@@ -216,9 +216,14 @@ if( !function_exists( 'orchid_store_sidebar_position' ) ) {
 
         if( class_exists( 'WooCommerce' ) ) {
 
-            if( is_product() || is_woocommerce() || is_shop() ) {
+            if( is_shop() || is_product_taxonomy() ) {
 
                 $sidebar_position = get_theme_mod( 'orchid_store_field_woocommerce_sidebar_position', 'right' );
+            }
+
+            if( is_product() ) {
+
+                $sidebar_position = get_theme_mod( 'orchid_store_field_woocommerce_product_sidebar_position', 'right' );
             }
         }
 

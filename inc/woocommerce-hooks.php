@@ -314,6 +314,13 @@ add_action( 'orchid_store_woocommerce_title_breadcrumb', 'orchid_store_woocommer
 if( ! function_exists( 'orchid_store_quantity_plus' ) ) {
 
     function orchid_store_quantity_plus() {
+
+        global $product;
+
+        if( $product->is_sold_individually() ) {
+
+            return;
+        }
         ?>
         <button type="button" class="woo-quantity-btn woo-quantity-plus" ><i class="fa fa-plus" aria-hidden="true"></i></button>
        <?php
@@ -323,6 +330,13 @@ if( ! function_exists( 'orchid_store_quantity_plus' ) ) {
 if( ! function_exists( 'orchid_store_quantity_minus' ) ) {
 
     function orchid_store_quantity_minus() {
+        
+        global $product;
+
+        if( $product->is_sold_individually() ) {
+
+            return;
+        }
         ?>
         <button type="button" class="woo-quantity-btn woo-quantity-minus" ><i class="fa fa-minus" aria-hidden="true"></i></button>
        <?php
