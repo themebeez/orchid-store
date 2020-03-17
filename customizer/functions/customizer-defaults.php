@@ -124,6 +124,7 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
         if( class_exists( 'WooCommerce' ) ) {
             
             $defaults['orchid_store_field_woocommerce_sidebar_position'] = 'right';
+            $defaults['orchid_store_field_woocommerce_product_sidebar_position'] = 'right';
             $defaults['orchid_store_field_shop_product_col_no'] = 3;
             $defaults['orchid_store_field_row_per_page'] = 4;
             $defaults['orchid_store_field_related_product_col_no'] = 3;

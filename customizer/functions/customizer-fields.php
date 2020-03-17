@@ -394,7 +394,29 @@ if( class_exists( 'WooCommerce' ) ) {
 	$wp_customize->add_control( 
 		new Orchid_Store_Radio_Image_Control( $wp_customize, 'orchid_store_field_woocommerce_sidebar_position', 
 			array(
-				'label' => esc_html__( 'Sidebar Position', 'orchid-store' ),
+				'label' => esc_html__( 'Product Archive - Sidebar Position', 'orchid-store' ),
+				'description' => '',
+				'type'	=> 'select',
+				'choices' => orchid_store_all_sidebar_positions(),
+				'section' => 'orchid_store_section_woocommerce_sidebar',
+			)
+		) 
+	);
+
+
+	// WooCommerce  Pages Sidebar Postion
+	$wp_customize->add_setting( 'orchid_store_field_woocommerce_product_sidebar_position', 
+		array(
+			'sanitize_callback'		=> 'orchid_store_sanitize_select',
+			'default'				=> $orchid_store_defaults['orchid_store_field_woocommerce_product_sidebar_position'],
+			'capability'        => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_control( 
+		new Orchid_Store_Radio_Image_Control( $wp_customize, 'orchid_store_field_woocommerce_product_sidebar_position', 
+			array(
+				'label' => esc_html__( 'Product Single - Sidebar Position', 'orchid-store' ),
 				'description' => '',
 				'type'	=> 'select',
 				'choices' => orchid_store_all_sidebar_positions(),
