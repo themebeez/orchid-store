@@ -4,8 +4,8 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 5.6
 Requires at least: 5.0
-Tested up to: 5.3.2
-Stable tag: 1.1.8
+Tested up to: 5.4
+Stable tag: 1.1.9
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -87,6 +87,12 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+
+== 1.1.9 - 16 April, 2020 ==
+
+- Removed: empty function window on load
+
 
 == 1.1.8 - 17 March, 2020 ==
 
