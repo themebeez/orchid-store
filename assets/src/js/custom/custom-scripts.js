@@ -444,15 +444,6 @@
             }
         });
 
-
-        // window load function
-
-        $(window).load(function() {
-
-
-
-        });
-
     });
 
 })(jQuery);
