@@ -12,12 +12,12 @@ wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
 /node_modules/
 
-/gulpfile.js
-/gruntfile.js
-/package-lock.json
+gulpfile.js
+gruntfile.js
+package-lock.json
 /.htaccess
-/license.txt
-/readme.html
+license.txt
+readme.html
 /sitemap.xml
 /sitemap.xml.gz
 
