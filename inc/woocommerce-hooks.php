@@ -274,20 +274,12 @@ if( ! function_exists( 'orchid_store_woocommerce_title_breadcrumb_action' ) ) {
 
         if( is_product() ) {
 
-            return;
-        }
-        ?>
-        <div class="os-breadcrumb-wrap" <?php if( has_header_image() ) { ?>style="background-image: url(<?php header_image(); ?>);" <?php } ?>>
-            <div class="__os-container__">
-                <div class="breadcrumb-inner">                    
-                    <div class="title">
-                        <h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>
-                    </div><!-- .title -->
-                    <?php
-                    $display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
+            $display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
 
-                    if( $display_breadcrumb == true ) {
-                        ?>
+            if( $display_breadcrumb == true ) {
+                ?>
+                <div class="os-product-single-breadcrumb-wrap">
+                    <div class="__os-container__">
                         <div class="os-breadcrumb">
                             <?php
                             /**
@@ -298,14 +290,43 @@ if( ! function_exists( 'orchid_store_woocommerce_title_breadcrumb_action' ) ) {
                             do_action( 'orchid_store_woocommerce_breadcrumb' );
                             ?>
                         </div><!-- .os-breadcrumb -->
+                    </div><!-- .__os-container__ -->
+                </div><!-- .os-product-single-breadcrumb-wrap -->
+                <?php
+            }
+
+        } else {
+            ?>
+            <div class="os-breadcrumb-wrap" <?php if( has_header_image() ) { ?>style="background-image: url(<?php header_image(); ?>);" <?php } ?>>
+                <div class="__os-container__">
+                    <div class="breadcrumb-inner">                    
+                        <div class="title">
+                            <h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>
+                        </div><!-- .title -->
                         <?php
-                    }
-                    ?>
-                </div><!-- .breadcrumb-inner -->
-            </div><!-- .os-container -->
-             <div class="mask"></div>
-        </div><!-- .os-breadcrumb-wrap -->
-        <?php
+                        $display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
+
+                        if( $display_breadcrumb == true ) {
+                            ?>
+                            <div class="os-breadcrumb">
+                                <?php
+                                /**
+                                * Hook - orchid_store_woocommerce_breadcrumb.
+                                *
+                                * @hooked woocommerce_breadcurmb - 20
+                                */
+                                do_action( 'orchid_store_woocommerce_breadcrumb' );
+                                ?>
+                            </div><!-- .os-breadcrumb -->
+                            <?php
+                        }
+                        ?>
+                    </div><!-- .breadcrumb-inner -->
+                </div><!-- .os-container -->
+                 <div class="mask"></div>
+            </div><!-- .os-breadcrumb-wrap -->
+            <?php
+        }
     }
 }
 add_action( 'orchid_store_woocommerce_title_breadcrumb', 'orchid_store_woocommerce_title_breadcrumb_action', 10 );
