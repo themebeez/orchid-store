@@ -91,6 +91,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 == 1.2.1 - 9 May, 2020 ==
 
 - Added: Breadcrumb in single product page
+- Fix: H1 issue for homepage(static or default)
 
 
 == 1.2.0 - 24 April, 2020 ==
