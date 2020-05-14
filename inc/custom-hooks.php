@@ -61,9 +61,23 @@ if( ! function_exists( 'orchid_store_site_identity_action' ) ) {
 		<div class="site-branding">
 			<?php
 			if( has_custom_logo() ) {
+
+				if( is_front_page() ) {
+					?>
+					<h1 class="site-logo">
+					<?php
+				}
+
 				the_custom_logo();
+
+				if( is_front_page() ) {
+					?>
+					</h1>
+					<?php
+				}
 			} else {
-				if ( is_front_page() || is_home() ) :
+
+				if ( is_front_page() ) :
 	    			?>
 	    			<h1 class="site-title">
 	        			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>

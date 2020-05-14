@@ -482,34 +482,34 @@ msgstr ""
 msgid "Fullwidth"
 msgstr ""
 
-#: inc/custom-hooks.php:192
+#: inc/custom-hooks.php:206
 msgid "Previous"
 msgstr ""
 
-#: inc/custom-hooks.php:193
+#: inc/custom-hooks.php:207
 msgid "Next"
 msgstr ""
 
-#: inc/custom-hooks.php:218
+#: inc/custom-hooks.php:232
 msgid "Prev post"
 msgstr ""
 
-#: inc/custom-hooks.php:228
+#: inc/custom-hooks.php:242
 msgid "Next post"
 msgstr ""
 
 #. translators: 1: copyright text, 2: theme name, 3: theme author
-#: inc/custom-hooks.php:298
+#: inc/custom-hooks.php:312
 msgid "%1$s %2$s Theme by %3$s"
 msgstr ""
 
 #. translators: 1: theme name, 2: theme author
-#: inc/custom-hooks.php:301
+#: inc/custom-hooks.php:315
 msgid "%1$s Theme by %2$s"
 msgstr ""
 
 #. translators: %s: search query.
-#: inc/custom-hooks.php:360
+#: inc/custom-hooks.php:374
 msgid "Search Results for: %s"
 msgstr ""
 
