@@ -89,6 +89,10 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
 
             if( $product_query->have_posts() ) {
 
+                $mobile_cols_no = get_theme_mod( 'orchid_store_field_product_cols_in_mobile', 1 );
+
+                $mobile_col_class = 'os-mobile-col-' . $mobile_cols_no;
+
                 if( $display_layout == 'grid' ) {
                     ?>
                     <section class="product-widget product-widget-style-1 section-spacing">
@@ -105,7 +109,7 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
                                     }
                                     ?>
                                     <div class="product-entry">
-                                        <div class="woocommerce columns-4">
+                                        <div class="woocommerce columns-4 <?php echo esc_attr( $mobile_col_class ); ?>">
                                             <ul class="products">
                                                 <?php
                                                 while( $product_query->have_posts() ) {
@@ -151,7 +155,7 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
                                             $product_query->the_post();
                                             ?>
                                             <div class="item">
-                                                <div class="woocommerce columns-1">
+                                                <div class="woocommerce columns-1 <?php echo esc_attr( $mobile_col_class ); ?>">
                                                     <ul class="products">
                                                         <?php wc_get_template_part( 'content', 'product' ); ?>
                                                     </ul>

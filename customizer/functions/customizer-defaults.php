@@ -63,6 +63,7 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
             'special_menu_title' => esc_html__( 'Special Menu', 'orchid-store' ),
 
             'display_product_search_form' => true,
+            'display_product_search_form_on_mobile' => false,
             'display_mini_cart' => true,
             'display_wishlist' => true,
 
@@ -134,6 +135,9 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
             $defaults['orchid_store_field_product_added_to_cart_message'] = esc_html__( 'Product successfully added to cart!', 'orchid-store' );
             $defaults['orchid_store_field_product_removed_from_cart_message'] = esc_html__( 'Product has been removed from your cart!', 'orchid-store' );
             $defaults['orchid_store_field_cart_update_message'] = esc_html__( 'Cart items has been updated successfully!', 'orchid-store' );
+
+            // New
+            $defaults['orchid_store_field_product_cols_in_mobile'] = 1;
         }
 
         $defaults['orchid_store_field_enable_home_content'] = false;

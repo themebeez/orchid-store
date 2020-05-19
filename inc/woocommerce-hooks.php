@@ -12,8 +12,15 @@ if( ! function_exists( 'orchid_store_product_search_action' ) ) {
 		if( ! class_exists( 'WooCommerce' ) ) {
 			return;
 		}
+
+        $mobile_product_search_class = '';
+
+        if( orchid_store_get_option( 'display_product_search_form_on_mobile' ) ) {
+
+            $mobile_product_search_class = 'os-mobile-show';
+        }
 		?>
-		<div class="custom-search">
+		<div class="custom-search <?php echo esc_attr( $mobile_product_search_class ); ?>">
 	        <?php get_product_search_form(); ?>
 	    </div><!-- .custom-search -->
 		<?php
