@@ -115,9 +115,13 @@ if( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
                                                 $product_query = new WP_Query( $product_query_args );
 
                                                 if( $product_query->have_posts() ) {
+
+                                                    $mobile_cols_no = get_theme_mod( 'orchid_store_field_product_cols_in_mobile', 1 );
+
+                                                    $mobile_col_class = 'os-mobile-col-' . $mobile_cols_no;
                                                     ?>
                                                     <div id="tab<?php echo esc_attr( $index ); ?>" class="tab-content">
-                                                        <div class="woocommerce columns-4">
+                                                        <div class="woocommerce columns-4 <?php echo esc_attr( $mobile_col_class ); ?>">
                                                             <ul class="products">
                                                                 <?php
                                                                 while( $product_query->have_posts() ) {

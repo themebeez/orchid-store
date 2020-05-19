@@ -263,6 +263,7 @@ orchid_store_add_toggle_field( 'enable_parallax_page_header_background', esc_htm
 if( class_exists( 'WooCommerce' ) ) {
 
 	orchid_store_add_toggle_field( 'display_product_search_form', esc_html__( 'Display Search Form', 'orchid-store' ), '', '', 'product_search' );
+	orchid_store_add_toggle_field( 'display_product_search_form_on_mobile', esc_html__( 'Display Search Form On Mobile Devices', 'orchid-store' ), '', 'orchid_store_is_product_search_form_enabled', 'product_search' );
 	orchid_store_add_toggle_field( 'display_mini_cart', esc_html__( 'Display Mini Cart', 'orchid-store' ), '', '', 'mini_cart' );	
 }
 
@@ -553,6 +554,28 @@ if( class_exists( 'WooCommerce' ) ) {
 				'min' => 2,
 				'max' => 6,
 				'step' => 1
+			),
+		)
+	);
+
+	// Number of Product Columns in mobile devices
+	$wp_customize->add_setting( 'orchid_store_field_product_cols_in_mobile', 
+		array(
+			'default' => $orchid_store_defaults['orchid_store_field_product_cols_in_mobile'],
+			'sanitize_callback' => 'orchid_store_sanitize_select',
+			'capability'        => 'edit_theme_options',
+		)
+	);	
+
+	$wp_customize->add_control( 'orchid_store_field_product_cols_in_mobile', 
+		array(
+			'label' => esc_html__( 'Mobile - Product Columns', 'orchid-store' ),
+			'description' => esc_html__( 'This option sets number of product columns to be displayed mobile devices.', 'orchid-store' ),
+			'type' => 'select',
+			'section' => 'woocommerce_product_catalog',
+			'choices' => array(
+				1 => __( '1', 'orchid-store' ),
+				2 => __( '2', 'orchid-store' ),
 			),
 		)
 	);
