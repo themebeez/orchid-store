@@ -25,18 +25,13 @@ if ( !function_exists( 'orchid_store_lite_fonts_url' ) ) {
         $subsets = 'latin,latin-ext';
 
         /* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-        if ('off' !== _x('on', 'Lato font: on or off', 'orchid-store')) {
-            $fonts[] = 'Lato:400,700,900';
-        }
-
-        /* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-        if ('off' !== _x('on', 'Roboto font: on or off', 'orchid-store')) {
-            $fonts[] = 'Roboto:400,500,500i,700,700i,900';
+        if ('off' !== _x('on', 'Inter font: on or off', 'orchid-store')) {
+            $fonts[] = 'Inter:400,400i,500,600,700,700i';
         }
 
         /* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
         if ('off' !== _x('on', 'Poppins font: on or off', 'orchid-store')) {
-            $fonts[] = 'Poppins:400,400i,500,600,700';
+            $fonts[] = 'Poppins:400,400i,500,600,700,700i';
         }
 
         if ($fonts) {

@@ -71,7 +71,6 @@ section .section-title h3,
 
 // font family 
 
-
 .woocommerce-loop-product__title,
 .woocommerce ul.products li.product .woocommerce-loop-category__title,
 .woocommerce ul.products li.product .woocommerce-loop-product__title,
@@ -95,7 +94,8 @@ section .section-title h3,
 .mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list span.quantity,
 .mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list .woocommerce-Price-amount {
 
-    font-family: $special_font; // lato, Roboto
+    font-family: $system_font;
+    letter-spacing:0;
 }
 
 
@@ -261,12 +261,12 @@ section .section-title h3,
 .woocommerce span.price,
 .woocommerce span.price del,
 .woocommerce span.price ins,
+.woocommerce div.product p.price,
+.woocommerce div.product span.price,
 .woocommerce ul.products li.product .price del,
 .woocommerce ul.products li.product .price ins,
 .woocommerce ul.products li.product .price,
 .woocommerce .woocommerce-Price-amount,
-.woocommerce div.product p.price,
-.woocommerce div.product span.price,
 .patigation .page-numbers,
 .woocommerce .woocommerce-breadcrumb,
 .woocommerce table.wishlist_table tbody td .dateadded {
