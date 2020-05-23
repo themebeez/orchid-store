@@ -1,9 +1,9 @@
 
 // Variables for font family
 
-$primary_font_family 			: 'Roboto', sans-serif;
-$secondary_font_family 			: 'Poppins', 'Roboto', sans-serif;
-$special_font					: 'Lato', 'Roboto', sans-serif;
+$primary_font_family 			: "Inter", sans-serif;
+$secondary_font_family 			: "Poppins", "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+$system_font 					: -apple-system, BlinkMacSystemFont, "Noto Sans", "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 
 // Variables line-height 
@@ -15,7 +15,7 @@ $body_heading_line_height		: 1.2;  // Refers to h1,h2,h3,h4,h5,h6
 // Variables for font weight
 
 $body_font_weight				: normal;
-$body_heading_font_weight		: 600;
+$body_heading_font_weight		: bold;
 
 
 // Variables for font sizes

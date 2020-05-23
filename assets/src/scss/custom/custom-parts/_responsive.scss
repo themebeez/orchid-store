@@ -81,41 +81,6 @@
 
 @media (max-width:1024px) {
 
-
-    // fonts rescale 
-
-
-    h1 {
-
-        font-size: 36px;
-    }
-
-    h2 {
-
-        font-size: 32px;
-    }
-
-    h3 {
-
-        font-size: 28px;
-    }
-
-    h4 {
-
-        font-size: 24px;
-    }
-
-    h5 {
-
-        font-size: 20px;
-    }
-
-    h6 {
-
-        font-size: 17px;
-    }
-
-
     .banner-style-1 h2,
     .cta-style-2 .title h3,
     .woocommerce .entry-title,
@@ -134,7 +99,6 @@
 
 
     // layout 
-
 
     .woocommerce.columns-4 ul.products li,
     .woocommerce.columns-4 ul.products li.product,
@@ -172,8 +136,8 @@
         max-width: 50%;
     }
 
-    // height 
 
+    // height 
 
     .banner-style-1 .thumb,
     .banner-style-1 .item-entry,
@@ -780,9 +744,8 @@
 
 @media (max-width: 767px) {
 
-    // Hide at small device 
 
-    
+    // Hide at small device 
 
     .hide-in-small {
 
@@ -1074,8 +1037,6 @@
         margin-left: -15px;
         margin-right: -15px;
     }
-
-
     
     .cats-widget-styles .col,
     .cta-style-1 .row [class*="col-"],
@@ -1176,8 +1137,7 @@
         bottom: 0px;
         text-align: left;
     }
-
-
+    
 }
 
 @media ( max-width: 420px) {
