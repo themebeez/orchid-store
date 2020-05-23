@@ -26,6 +26,17 @@ get_header();
                         <div id="main" class="site-main">
                         	<?php
                         	if( have_posts() ) :
+                        		
+							    if( orchid_store_get_option( 'display_page_header' ) == false ) {
+							        ?>
+							        <h1 class="entry-title page-title">
+							            <?php
+							            /* translators: %s: search query. */
+							            printf( esc_html__( 'Search Results for: %s', 'orchid-store' ), '<span>' . get_search_query() . '</span>' );
+							            ?>
+							        </h1><!-- .entry-title -->
+							        <?php
+							    } 
                         		?>
 	                            <div class="search-entry">
 	                                <?php

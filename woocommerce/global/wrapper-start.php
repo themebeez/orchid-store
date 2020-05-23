@@ -35,3 +35,11 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <div id="primary" class="content-area">
                         <div id="main" class="site-main">
                             <div class="<?php orchid_store_content_entry_class(); ?>">
+                            	<?php
+                            	if( is_shop() ) {
+									if( orchid_store_get_option( 'display_page_header' ) == false ) {
+				                		?>
+				                		<h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>
+				                		<?php
+				                	}
+								} 
