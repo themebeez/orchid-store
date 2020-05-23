@@ -27,7 +27,12 @@ get_header();
                             <div class="archive-entry">
                             	<?php
                             	if( have_posts() ) :
-                            		
+
+								    if( orchid_store_get_option( 'display_page_header' ) == false ) {
+
+								    	the_archive_title( '<h1 class="entry-title page-title">', '</h1>' );
+								    } 
+
 	                                $archive_description = get_the_archive_description();
 	                                if( !empty( $archive_description ) ) {
 	                                	?>

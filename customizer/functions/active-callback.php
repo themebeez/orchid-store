@@ -165,3 +165,21 @@ if( ! function_exists( 'orchid_store_is_product_search_form_enabled' ) ) {
 		}	
 	}
 }
+
+
+/**
+ * Active callback function for when page header is enabled.
+ */
+if( ! function_exists( 'orchid_store_is_page_header_enabled' ) ) {
+
+	function orchid_store_is_page_header_enabled( $control ) {
+
+		if ( $control->manager->get_setting( 'orchid_store_field_display_page_header' )->value() == true ) {
+
+			return true;
+		} else {
+			
+			return false;
+		}	
+	}
+}

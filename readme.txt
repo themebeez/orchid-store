@@ -93,6 +93,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 - Added: Option to display number of product columns for mobile devices
 - Added: Option to display product search for mobile devices
 - Added: Breadcrumb in single product page
+- Added: Option to display page header
 - Fix: H1 issue for homepage(static or default)
 
 

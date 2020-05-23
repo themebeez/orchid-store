@@ -33,6 +33,12 @@ get_header();
                             	<?php
                             	if( have_posts() ) :
 
+                            		if( orchid_store_get_option( 'display_page_header' ) == false ) {
+                            			?>
+                            			<h1 class="entry-title page-title"><?php single_post_title(); ?></h1>
+                            			<?php
+								    }
+
 		                            /* Start the Loop */
 									while ( have_posts() ) :
 

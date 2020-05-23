@@ -347,91 +347,114 @@ if( ! function_exists( 'orchid_store_title_breadcrumb_action' ) ) {
 
 			return;
 		}
-		?>
-		<div class="os-breadcrumb-wrap" <?php if( has_header_image() ) { ?>style="background-image: url(<?php header_image(); ?>);" <?php } ?>>
-	        <div class="__os-container__">
-	        	<div class="breadcrumb-inner">
-	            <div class="title">
-	            	<?php
-	            	if( have_posts() ) {
 
-	            		if( is_home() ) {
-	            			?>
-	            			<h1 class="entry-title page-title"><?php single_post_title(); ?></h1>
-	            			<?php
-	            		}
-
-		            	if( is_archive() ) {
-
-		            		the_archive_title( '<h1 class="entry-title page-title">', '</h1>' );
-		                }
-
-		                if( is_search() ) {
-		                	?>
-		                	<h1 class="entry-title page-title">
-	                        	<?php
-								/* translators: %s: search query. */
-								printf( esc_html__( 'Search Results for: %s', 'orchid-store' ), '<span>' . get_search_query() . '</span>' );
-								?>
-							</h1><!-- .entry-title -->
-		                	<?php
-		                }
-
-		                if( is_page() ) {
-
-		                	while( have_posts() ) {
-
-		                		the_post();
-			                	?>
-			                	<h1 class="entry-title page-title"><?php the_title(); ?></h1>
-			                	<?php
-			                }
-		                }
-
-		                if( is_single() ) {
-
-		                	while( have_posts() ) {
-
-		                		the_post();
-			                	?>
-			                	<h1 class="entry-title page-title"><?php the_title(); ?></h1>
-			                	<?php
-			                }
-		                }
-
-		                if( class_exists( 'WooCommerce' ) ) {
-
-		                	if( is_shop() ) {
-		                		?>
-		                		<h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>
-		                		<?php
-		                	}
-		                }
-		            }
-	                ?>
-	            </div><!-- .title -->
-	            <?php
-	            $display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
-
-	            if( $display_breadcrumb == true ) {
-	            	?>
-		            <div class="os-breadcrumb">
+		if( orchid_store_get_option( 'display_page_header' ) == true ) {
+			?>
+			<div class="os-breadcrumb-wrap" <?php if( has_header_image() ) { ?>style="background-image: url(<?php header_image(); ?>);" <?php } ?>>
+		        <div class="__os-container__">
+		        	<div class="breadcrumb-inner">
+		            <div class="title">
 		            	<?php
-	                    $breadcrumb_args = array(
-	                        'show_browse' => false,
-	                    );
+		            	if( have_posts() ) {
 
-	                    orchid_store_breadcrumb_trail( $breadcrumb_args );
-	                    ?>
-		            </div><!-- .os-breadcrumb -->
+		            		if( is_home() ) {
+		            			?>
+		            			<h1 class="entry-title page-title"><?php single_post_title(); ?></h1>
+		            			<?php
+		            		}
+
+			            	if( is_archive() ) {
+
+			            		the_archive_title( '<h1 class="entry-title page-title">', '</h1>' );
+			                }
+
+			                if( is_search() ) {
+			                	?>
+			                	<h1 class="entry-title page-title">
+		                        	<?php
+									/* translators: %s: search query. */
+									printf( esc_html__( 'Search Results for: %s', 'orchid-store' ), '<span>' . get_search_query() . '</span>' );
+									?>
+								</h1><!-- .entry-title -->
+			                	<?php
+			                }
+
+			                if( is_page() ) {
+
+			                	while( have_posts() ) {
+
+			                		the_post();
+				                	?>
+				                	<h1 class="entry-title page-title"><?php the_title(); ?></h1>
+				                	<?php
+				                }
+			                }
+
+			                if( is_single() ) {
+
+			                	while( have_posts() ) {
+
+			                		the_post();
+				                	?>
+				                	<h1 class="entry-title page-title"><?php the_title(); ?></h1>
+				                	<?php
+				                }
+			                }
+
+			                if( class_exists( 'WooCommerce' ) ) {
+
+			                	if( is_shop() ) {
+			                		?>
+			                		<h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>
+			                		<?php
+			                	}
+			                }
+			            }
+		                ?>
+		            </div><!-- .title -->
 		            <?php
-		        }
-		        ?>
-	         	</div><!-- .breadcrumb-inner -->
-	        </div><!-- .os-container -->
-	         <div class="mask"></div>
-	    </div><!-- .os-breadcrumb-wrap -->
-		<?php
+		            $display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
+
+		            if( $display_breadcrumb == true ) {
+		            	?>
+			            <div class="os-breadcrumb">
+			            	<?php
+		                    $breadcrumb_args = array(
+		                        'show_browse' => false,
+		                    );
+
+		                    orchid_store_breadcrumb_trail( $breadcrumb_args );
+		                    ?>
+			            </div><!-- .os-breadcrumb -->
+			            <?php
+			        }
+			        ?>
+		         	</div><!-- .breadcrumb-inner -->
+		        </div><!-- .os-container -->
+		         <div class="mask"></div>
+		    </div><!-- .os-breadcrumb-wrap -->
+			<?php
+		} else {
+			$display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
+
+            if( $display_breadcrumb == true ) {
+                ?>
+                <div class="os-page-breadcrumb-wrap">
+                    <div class="__os-container__">
+                        <div class="os-breadcrumb">
+                            <?php
+		                    $breadcrumb_args = array(
+		                        'show_browse' => false,
+		                    );
+
+		                    orchid_store_breadcrumb_trail( $breadcrumb_args );
+		                    ?>
+                        </div><!-- .os-breadcrumb -->
+                    </div><!-- .__os-container__ -->
+                </div><!-- .os-product-single-breadcrumb-wrap -->
+                <?php
+            }
+		}
 	}
 }
 add_action( 'orchid_store_title_breadcrumb', 'orchid_store_title_breadcrumb_action', 10 );

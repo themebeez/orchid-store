@@ -253,8 +253,9 @@ orchid_store_add_text_field( 'special_menu_title', esc_html__( 'Special Menu Tit
 /*******************************************************************************************************
 ********************************** Page Header Control Fields Declaration *********************************
 *******************************************************************************************************/
+orchid_store_add_toggle_field( 'display_page_header', esc_html__( 'Display Page Header', 'orchid-store' ), '', '', 'page_header' );
 orchid_store_add_toggle_field( 'display_breadcrumb', esc_html__( 'Display Breadcrumbs', 'orchid-store' ), '', '', 'page_header' );
-orchid_store_add_toggle_field( 'enable_parallax_page_header_background', esc_html__( 'Enable Parallax Background Image', 'orchid-store' ), '', '', 'page_header' );
+orchid_store_add_toggle_field( 'enable_parallax_page_header_background', esc_html__( 'Enable Parallax Background Image', 'orchid-store' ), '', 'orchid_store_is_page_header_enabled', 'page_header' );
 
 
 /*******************************************************************************************************

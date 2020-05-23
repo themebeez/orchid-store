@@ -10,7 +10,14 @@
 $orchid_store_display_featured_image = orchid_store_get_option( 'display_page_featured_image' );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php 
+	<?php
+
+	if( orchid_store_get_option( 'display_page_header' ) == false ) {
+		?>
+		<h1 class="entry-title page-title"><?php the_title(); ?></h1>
+		<?php
+	} 
+
 	if( $orchid_store_display_featured_image == true && has_post_thumbnail() ) {
 		?>
 		<div class="thumb featured-thumb">

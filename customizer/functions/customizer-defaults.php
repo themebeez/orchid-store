@@ -107,6 +107,7 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
             'enable_page_common_sidebar_position' => false,
             'page_sidebar_position' => 'right',
 
+            'display_page_header' => true,
             'display_breadcrumb' => true,
             'enable_parallax_page_header_background' => false,
 
