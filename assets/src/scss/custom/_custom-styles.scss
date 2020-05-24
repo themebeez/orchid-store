@@ -783,6 +783,10 @@
     margin-bottom: 5px;
 }
 
+.cats-widget-styles .title h3 {
+
+    margin-bottom: 0;
+}
 
 /*
 ===================================
@@ -1752,19 +1756,6 @@ section.product-widget-style-2 .section-title {
     background-color: transparent;
 }
 
-.woocommerce span.price del {
-
-    margin-right: 3px;
-}
-
-.woocommerce span.price del,
-.woocommerce ul.products li.product .price del,
-.woocommerce div.product p.price del,
-.woocommerce div.product span.price del {
-
-    opacity: 1;
-}
-
 .woocommerce .product-sale span,
 .woocommerce ul.products li.product .onsale,
 .woocommerce span.onsale {
@@ -2010,6 +2001,12 @@ section.product-widget-style-2 .section-title {
 =
 ==========================================
 */
+
+.woocommerce.single-product .header-style-1,
+.woocommerce.single-product .woocommerce-breadcrumb {
+
+    margin-bottom: 20px;
+}
 
 .woocommerce div.product {
 

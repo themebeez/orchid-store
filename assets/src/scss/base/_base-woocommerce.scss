@@ -123,13 +123,22 @@ input[type="reset"],
     -moz-appearance:textfield;
 }
 
+.woocommerce form .form-row textarea {
+
+	padding: 20px;
+    height: 150px;
+    vertical-align: middle;
+    resize: vertical;
+}
+
 .woocommerce .quantity .qty,
 .woocommerce-page .quantity .qty {
 
-    width: 50px;
-    text-align: center;
     padding: 0;
     margin:0;
+    height:41px;
+    width: 50px;
+    text-align: center;
 }
 
 .woo-quantity-btn {
@@ -142,7 +151,7 @@ input[type="reset"],
     width: 40px;
     line-height: 45px;
     color:#555555;
-    background-color:$border_color;
+    background-color:#f1f1f1;
 }
 
 
@@ -154,20 +163,39 @@ input[type="reset"],
 ==========================================
 */
 
-.woocommmerce table {
+.woocommmerce table,
+.woocommerce table.shop_table {
 	
-	font-size: 15px;
-	border: 0.1rem solid $border_color;
+	padding:0;
+	line-height: 1.4;
+	border-collapse: collapse;
+	font-weight:normal;
+	border: 1px solid $border_color;
+	@include border-radius(0);
 }
 
 .woocommerce th,
-.woocommerce td {
+.woocommerce td,
+.woocommerce table.shop_table th,
+.woocommerce table.shop_table td {
 	
-	padding:20px;
-	font-weight:normal;
-	border: 0.1rem solid $border_color;
+	padding: 10px 20px;
+    line-height: 1.4;
+    font-weight:normal;
+	border: 1px solid $border_color;
 }
 
+.woocommerce th,
+.woocommerce table.shop_table th {
+
+	padding:20px 15px;
+	font-weight: bold;
+}
+
+.woocommerce table thead th {
+
+	background-color:#f5f5f5;
+}
 
 /*
 ====================================================
@@ -308,6 +336,92 @@ input[type="reset"],
     border: none;
     @include border-radius(100%);
 }
+
+
+/*
+====================================================
+=
+= WooCommerce sale
+=
+==========================================
+*/
+
+
+
+
+
+/*
+====================================================
+=
+= WooCommerce price
+=
+==========================================
+*/
+
+.woocommerce span.price del,
+.woocommerce div.product p.price del, 
+.woocommerce div.product span.price del,
+.woocommerce ul.products li.product .price del,
+.wc-block-grid .wc-block-grid__product-price del  {
+
+	color:#ffb41d;
+	opacity:1;
+}
+
+.woocommerce div.product .price,
+.woocommerce div.product p.price, 
+.woocommerce div.product span.price {
+
+	font-size: 22px;
+}
+
+.woocommerce div.product .price,
+.woocommerce ul.products li.product .price {
+
+	line-height:1;
+}
+
+
+.woocommerce ul.products li.product .price,
+.woocommerce ul.products li.product .price ins  {
+
+	font-size: 15px;
+	margin-bottom: 0;
+}
+
+.widget .woocommerce-Price-amount,
+.woocommerce div.product .price del,
+.woocommerce div.product p.price del,
+.woocommerce div.product span.price del, 
+.woocommerce ul.products li.product .price del {
+	
+	font-size: 13px;
+}
+
+.woocommerce div.product .price ins,
+.woocommerce div.product p.price ins,
+.woocommerce div.product span.price ins {
+
+	font-size: 22px;
+}
+
+
+/*
+====================================================
+=
+= WooCommerce Products
+=
+==========================================
+*/
+
+.woocommerce .products ul {
+	
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+
+
 
 
 

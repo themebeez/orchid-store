@@ -79,24 +79,24 @@ section .section-title h3,
 	font-family:$secondary_font_family; // Poppins
 }
 
-.woocommerce span.price,
-.woocommerce ul.products li.product .price,
-.woocommerce .woocommerce-Price-amount,
-.cta-style-2 .sub-title h4,
-.entry-metas ul li.posted-date span,
-.mini-cart .cart-amount,
-.patigation .page-numbers,
-.mini-cart-open .price,
-.cats-widget-style-1 .box .count,
-.woocommerce div.product p.price,
-.woocommerce div.product span.price,
-.wc-block-grid .woocommerce-Price-amount,
-.mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list span.quantity,
-.mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list .woocommerce-Price-amount {
+// .woocommerce span.price,
+// .woocommerce ul.products li.product .price,
+// .woocommerce .woocommerce-Price-amount,
+// .cta-style-2 .sub-title h4,
+// .entry-metas ul li.posted-date span,
+// .mini-cart .cart-amount,
+// .patigation .page-numbers,
+// .mini-cart-open .price,
+// .cats-widget-style-1 .box .count,
+// .woocommerce div.product p.price,
+// .woocommerce div.product span.price,
+// .wc-block-grid .woocommerce-Price-amount,
+// .mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list span.quantity,
+// .mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list .woocommerce-Price-amount {
 
-    font-family: $system_font;
-    letter-spacing:0;
-}
+//     font-family: $system_font;
+//     letter-spacing:0;
+// }
 
 
 // line height 
@@ -170,26 +170,11 @@ a.button-general,
     font-weight: 500;
 }
 
-.woocommerce b,
-.woocommerce strong,
-.woocommerce-page b,
-.woocommerce-page strong,
-.woocommerce-page a.edit,
-.product-widget-style-2 .tab-nav ul li a {
-
-    font-weight: 600;
-}
-
-
 .cta-style-1 .title h3,
 section .section-title h2,
 section .section-title h3,
-.woocommerce span.price,
 .woocommerce ul.products li.product .price,
 .woocommerce .add_to_cart_button,
-.woocommerce .woocommerce-Price-amount,
-.woocommerce div.product p.price,
-.woocommerce div.product span.price,
 .widget .widget-title h3,
 .post-navigation .nav-previous span,
 .post-navigation .nav-next span,
@@ -203,7 +188,11 @@ section .section-title h3,
 .entry-404 h1,
 .search-entry .entry-title,
 .default-page-wrap .entry-title,
-.default-post-wrap .entry-title {
+.default-post-wrap .entry-title,
+.product-widget-style-2 .tab-nav ul li a,
+.woocommerce div.product p.price, 
+.woocommerce div.product span.price,
+.woocommerce ul.products li.product .price {
 
     font-weight: bold;
 }
@@ -219,7 +208,6 @@ section .section-title h3,
 }
 
 .button-general,
-.entry-cats ul li a,
 .woocommerce #respond input#submit,
 .woocommerce .add_to_cart_button,
 .woocommerce input#submit,
@@ -242,6 +230,7 @@ section .section-title h3,
     font-size: 12px;
 }
 
+.entry-cats ul li a,
 .woocommerce-page a.edit,
 .entry-metas ul li a,
 .entry-tags a,
@@ -258,15 +247,6 @@ section .section-title h3,
 }
 
 
-.woocommerce span.price,
-.woocommerce span.price del,
-.woocommerce span.price ins,
-.woocommerce div.product p.price,
-.woocommerce div.product span.price,
-.woocommerce ul.products li.product .price del,
-.woocommerce ul.products li.product .price ins,
-.woocommerce ul.products li.product .price,
-.woocommerce .woocommerce-Price-amount,
 .patigation .page-numbers,
 .woocommerce .woocommerce-breadcrumb,
 .woocommerce table.wishlist_table tbody td .dateadded {
@@ -290,6 +270,7 @@ section .section-title h3,
     font-size: 15px;
 }
 
+
 .cats-widget-styles .title h3 {
 
     font-size: 16px;
@@ -308,6 +289,7 @@ section .section-title h3,
 }
 
 
+.widget .widget-title h3,
 section .section-title h2,
 section .section-title h3,
 .cta-style-1 .title h3,
