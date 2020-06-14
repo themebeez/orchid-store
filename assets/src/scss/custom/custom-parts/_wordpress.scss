@@ -15,7 +15,7 @@ span.edit-link a {
     text-transform:uppercase;
     font-weight:bold;
     letter-spacing:0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family:$system_font;
 }
 
 span.edit-link a:before {

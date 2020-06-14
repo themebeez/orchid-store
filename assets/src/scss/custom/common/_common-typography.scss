@@ -156,7 +156,6 @@ a.button-general,
 .masterheader .topbar-items a,
 .woocommerce .product-sale span,
 .woocommerce span.onsale,
-.os-blog .title h3,
 .search-entry .entry-title,
 .search-entry article .title h3,
 .woocommerce .product .product_title,
@@ -233,7 +232,6 @@ section .section-title h3,
 .entry-cats ul li a,
 .woocommerce-page a.edit,
 .entry-metas ul li a,
-.entry-tags a,
 .woocommerce #payment #place_order,
 .woocommerce-page #payment #place_order,
 .woocommerce ul.order_details li,
@@ -246,7 +244,7 @@ section .section-title h3,
     font-size: 13px;
 }
 
-
+.entry-tags a,
 .patigation .page-numbers,
 .woocommerce .woocommerce-breadcrumb,
 .woocommerce table.wishlist_table tbody td .dateadded {
@@ -312,7 +310,8 @@ section .section-title h3,
 
 .os-blog .title h3,
 .search-entry article .title h3,
-.archive-entry article .title h3 {
+.archive-entry article .title h3,
+.woocommerce div.product .product_title {
 
     font-size: 20px;
 }
@@ -328,8 +327,7 @@ section .section-title h3,
 }
 
 .woocommerce .wishlist-title h2,
-.banner-style-1 .caption span,
-.woocommerce div.product .product_title {
+.banner-style-1 .caption span {
 
     font-size: 24px;
 }

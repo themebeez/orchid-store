@@ -164,7 +164,7 @@ body.boxed .__os-page-wrap__ {
 
 .entry-cats ul li a {
 
-    padding: 7px 15px;
+    padding: 5px 10px;
     margin: 3px 0px;
 }
 
@@ -446,6 +446,7 @@ section .section-title h2,
 section .section-title h3 {
 
     position: relative;
+    margin-bottom: 0;
     padding-bottom: 10px;
 }
 
@@ -514,7 +515,6 @@ section .section-title h3:after {
 
 
 // Tooltip content
-
 
 .tippy-content {
 
