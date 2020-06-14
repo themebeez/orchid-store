@@ -1,0 +1,65 @@
+
+.woocommerce-page .wishlist_table {
+
+    padding:30px;
+}
+
+.wishlist_table tr td, 
+.wishlist_table tr th.product-checkbox, 
+.wishlist_table tr th.wishlist-delete {
+
+    background-color:transparent;
+}
+
+.wishlist_table tr td,
+.wishlist_table tr th.wishlist-delete,
+.wishlist_table tr th.product-checkbox {
+
+    text-align: left;
+}
+
+.woocommerce table.wishlist_table thead th {
+
+    padding: 15px;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.woocommerce table.wishlist_table tbody td {
+
+    padding: 30px 15px;
+}
+
+.woocommerce table.wishlist_table tbody tr:last-child td {
+
+    border-bottom: none;
+}
+
+.woocommerce table.wishlist_table thead th,
+.woocommerce table.wishlist_table tbody td,
+.woocommerce table.shop_table tfoot td,
+.woocommerce table.shop_table tfoot th {
+
+    border-color: $border_color;
+}
+
+.woocommerce table.wishlist_table tbody td.product-name a.button {
+
+    margin-left: 5px;
+}
+
+.woocommerce table.wishlist_table tbody td.product-name a.button.yith-wcqv-button {
+
+    padding: 7px 10px;
+}
+
+.woocommerce table.wishlist_table tbody td .dateadded {
+
+    display: block;
+    margin-bottom: 5px;
+}
+
+.woocommerce .wishlist_table tr td.product-stock-status span.wishlist-out-of-stock {
+
+    color: red;
+}

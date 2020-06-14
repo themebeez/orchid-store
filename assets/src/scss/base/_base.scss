@@ -643,19 +643,25 @@ input[type="number"],
 input[type="search"],
 input[type="tel"],
 input[type="color"] {
-    
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
     display: block;
     margin: 0;
-    font-size: 14px;
-    padding: 12px 15px;
-    height: 43px;
+    font-size: 15px;
+    height:43px;
+    padding: 13px 15px;
     border: 2px solid $border_color;
     width: 100%;
     max-width: 100%;
     @include border-radius(0);
+    box-sizing: border-box;
+    transition: all 0.2s linear;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+    box-sizing: border-box;
 }
 
 select:focus,
@@ -674,7 +680,8 @@ input[type="number"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus {
-
+    
+    outline:none;
     border-color: #3da6ff;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -700,7 +707,7 @@ input:-ms-input-placeholder {
 
 input::-moz-placeholder {
 
-    line-height: normal;
+    line-height: revert; /* Reset to the value from the user-agent stylesheet. */
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -735,7 +742,8 @@ button,
 .btn-general,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+input[type="file"] {
 
     display: inline-block;
     font-size: $body_font_size;
@@ -750,9 +758,9 @@ input[type="submit"] {
     cursor: pointer;
     color: #ffffff;
     background-color: $secondary_color;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    @include border-radius(2px);
+    -webkit-appearance: button;
+    box-sizing: border-box;
+    @include border-radius(0);
     @include transation_delay();
 }
 
@@ -788,16 +796,23 @@ input[type="radio"] {
 }
 
 select {
-
+    
+    display:block;
     position: relative;
-    font-size: 14px;
-    padding: 10px 15px;
+    font-size: 15px;
     height: 43px;
+    padding: 10px 15px;
+    line-height:1.6;
     margin: 0;
     width: 100%;
     max-width: 100%;
     border: 1px solid $border_color;
     cursor: pointer;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-word-break: normal;
+    word-break: normal;
     @include border-radius(0);
 }
 

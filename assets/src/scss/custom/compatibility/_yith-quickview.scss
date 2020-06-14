@@ -1,0 +1,98 @@
+
+#yith-wcwl-popup-message {
+
+    font-weight:normal;
+    padding: 15px 50px;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(158, 158, 158, 0.5);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(158, 158, 158, 0.5);
+    box-shadow: 0px 0px 20px 0px rgba(158, 158, 158, 0.5);
+}
+
+#yith-quick-view-modal div.product div.images.woocommerce-product-gallery {
+
+    box-shadow: none;
+    border:none;
+}
+
+#yith-quick-view-modal .yith-wcqv-main {
+
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+}
+
+#yith-quick-view-modal #yith-quick-view-content {
+
+    padding:30px;
+}
+
+#yith-quick-view-close {
+
+    font-size: 0;
+    font-weight: normal;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    opacity: 1;
+    text-align: center;
+    @include border-radius(50%);
+}
+
+#yith-quick-view-close::before {
+
+    content: '\ebae';
+    font-family: 'boxicons';
+    font-size: 11px;
+    font-weight: normal;
+}
+
+#yith-quick-view-content .product.type-product {
+
+    @include flex_row_alt();
+}
+
+#yith-quick-view-content div.images {
+
+    float: none;
+    flex: 0 0 45%;
+    width: 45%;
+    max-width: 45%;
+}
+
+#yith-quick-view-content div.summary {
+
+    float: none;
+    flex: 55%;
+    max-width: 55%;
+    width: 55%;
+    padding-right: 30px;
+    padding-left: 30px;
+    border:none;
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    box-shadow:none;
+}
+
+.woocommerce#yith-quick-view-content div.product .entry-summary form.cart {
+
+    float: none;
+    width: 100%;
+    margin-right: 0;
+}
+
+.yith-wcwl-add-button>a i {
+
+    margin-right: 0;
+}
+
+#yith-quick-view-content .onsale {
+
+    position: absolute;
+    top: 0;
+    right: auto;
+    left: 0;
+}
