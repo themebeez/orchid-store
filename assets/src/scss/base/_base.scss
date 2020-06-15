@@ -627,7 +627,7 @@ input:-webkit-autofill:focus {
 
     -webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }
-
+ 
 textarea,
 input[type="text"],
 input[type="password"],
@@ -649,10 +649,10 @@ input[type="color"] {
 
     display: block;
     margin: 0;
-    font-size: 15px;
-    height:43px;
-    padding: 13px 15px;
-    border: 2px solid $border_color;
+    font-size: 14px;
+    height:41px;
+    padding: 10px 15px;
+    border: 1px solid $border_color;
     width: 100%;
     max-width: 100%;
     @include border-radius(0);
@@ -698,16 +698,19 @@ input::-moz-focus-inner {
 input::-webkit-input-placeholder {
 
     line-height: normal;
+    color:$primary_color;
 }
 
 input:-ms-input-placeholder {
 
     line-height: normal;
+    color:$primary_color;
 }
 
 input::-moz-placeholder {
 
     line-height: revert; /* Reset to the value from the user-agent stylesheet. */
+    color:$primary_color;
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -742,12 +745,12 @@ button,
 .btn-general,
 input[type="button"],
 input[type="reset"],
-input[type="submit"],
-input[type="file"] {
+input[type="submit"] {
 
     display: inline-block;
     font-size: $body_font_size;
     font-weight: normal;
+    height:auto;
     padding: 13px 30px;
     height: auto;
     text-align: center;
@@ -762,6 +765,26 @@ input[type="file"] {
     box-sizing: border-box;
     @include border-radius(0);
     @include transation_delay();
+}
+
+.button-general.medium,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+    
+    padding:20px 50px;
+    letter-spacing:0.5px;
+    margin:5px 10px;
+}
+
+.button-general.large {
+    
+    padding:23px 80px;
+    letter-spacing:0.5px;
+    margin:5px 10px;
+}
+
+.button-general.shadow {
+
+    @include drop_shadow();
 }
 
 button:hover,

@@ -10,7 +10,7 @@
 
 a:focus {
 
-    outline:none;
+    outline:thin dotted;
 }
 
 // input types 
@@ -19,7 +19,7 @@ button:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus {
 
-    outline: none;
+    outline: thin dotted;
 } 
 
 
