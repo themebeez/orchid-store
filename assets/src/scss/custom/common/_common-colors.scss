@@ -71,10 +71,6 @@ input[type="submit"]:hover,
 .masterheader .social-icons ul li a,
 .default-page-wrap .page-head .entry-metas ul li a,
 .default-post-wrap .page-head .entry-metas ul li a,
-.woocommerce-error li, 
-.woocommerce-info li, 
-.woocommerce-message li,
-.woocommerce-page .woocommerce-notice,
 .os-breadcrumb-wrap .breadcrumb-inner .page-title,
 .mini-cart-open .woocommerce.widget_shopping_cart .cart_list li a,
 .woocommerce .woocommerce-breadcrumb,
@@ -141,7 +137,6 @@ input[type="password"],
 #yith-wcwl-popup-message,
 .quantity-button,
 .woocommerce-message,
-.woocommerce-message:before,
 .menu-item-description,
 .woocommerce ul.products li.product .price,
 .woocommerce div.product p.price, 
@@ -174,7 +169,9 @@ form.search-form button[type="search"],
 .quantity-button,
 .entry-404 h1 span,
 .banner-style-1 .caption span,
-.product-widget-style-2 .tab-nav ul li a.active {
+.product-widget-style-2 .tab-nav ul li a.active,
+.woocommerce-page .woocommerce-info a.showcoupon,
+.woocommerce-page .woocommerce-info a.showlogin {
 
 	color:$secondary_color;
 }
@@ -220,7 +217,9 @@ a:hover,
 .footer .widget_rss .widget_title h3 a:hover, 
 .footer .widget_tag_cloud .tagcloud a:hover,
 .wc-block-grid .wc-block-grid__product-title:hover,
-.woocommerce.single-product .woocommerce-breadcrumb a:hover {
+.woocommerce.single-product .woocommerce-breadcrumb a:hover,
+.woocommerce-page .woocommerce-info a.showcoupon:hover,
+.woocommerce-page .woocommerce-info a.showlogin:hover {
 
 	color:$third_color; // Hover colour
 }
@@ -286,7 +285,8 @@ aside.secondary-widget-area .widget,
 .woocommerce form.register,
 .woocommerce-page .woocommerce-checkout-review-order,
 .woocommerce div.product div.images.woocommerce-product-gallery,
-.woocommerce ul.products li.product .woocommerce-loop-category__title {
+.woocommerce ul.products li.product .woocommerce-loop-category__title,
+.woocommerce-page form .form-row.create-account {
 
 	background-color:$white;
 }
@@ -322,7 +322,8 @@ aside.secondary-widget-area .widget,
 .woocommerce-page .woocommerce ul.order_details,
 .woocommerce-page .woocommerce-order-details,
 .woocommerce .woocommerce-customer-details address,
-.woocommerce div.product div.images.woocommerce-product-gallery {
+.woocommerce div.product div.images.woocommerce-product-gallery,
+.woocommerce-page form .form-row.create-account {
 	
 	border: 1px solid #eef1fd;
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);

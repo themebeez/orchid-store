@@ -89,6 +89,11 @@
 	margin-top: 5px;
 }
 
+.woocommerce-Tabs-panel--description p:last-child {
+
+	margin-bottom: 0;
+}
+
 .woocommerce ul.product_list_widget li a,
 .woocommerce .os-breadcrumb-wrap .page-title,
 .os-breadcrumb-wrap .breadcrumb-inner .page-title {
@@ -101,7 +106,6 @@
 .search-entry article .excerpt p,
 .archive-entry article .title h3,
 .archive-entry article .excerpt p,
-.woocommerce .cart_totals h2,
 .woocommerce .woocommerce-billing-fields h3,
 .woocommerce-page form.woocommerce-checkout h3,
 .woocommerce-page .woocommerce-order-details h2,
@@ -179,7 +183,8 @@
 }
 
 .os-blog .blog-entry,
-.product-widget .product-entry {
+.product-widget .product-entry,
+.woocommerce-cart .wc-proceed-to-checkout {
 
 	margin-top:30px;
 }
@@ -204,7 +209,6 @@
 
 .woocommerce .cart-collaterals, 
 .woocommerce-page .cart-collaterals,
-.woocommerce-cart .wc-proceed-to-checkout,
 .woocommerce-page .woocommerce-order-details {
 
 	margin-top: 40px;

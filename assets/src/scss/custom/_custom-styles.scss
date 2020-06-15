@@ -133,15 +133,28 @@
 }
 
 .masterheader .mini-cart {
-
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    padding:5px;
     position: relative;
     text-align: left;
-    background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    height: 48px;
-    padding-left: 6px;
-    padding-right: 6px;
+    background-color:transparent;
     @include border_radius(3px);
+}
+
+.masterheader .mini-cart .trigger-mini-cart {
+
+    margin-right: 5px;
+}
+
+.masterheader .mini-cart .cart-amount {
+
+    font-size: 14px;
 }
 
 .mini-cart-open.display-block {
@@ -367,7 +380,6 @@
 .header-style-1 .mini-cart {
 
     min-width: 245px;
-    line-height: 42px;
     @include border-radius(30px);
 }
 
@@ -382,7 +394,6 @@
     position: relative;
     overflow: visible;
     border: none;
-    height: 48px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     @include border_radius(30px);
 }
@@ -399,10 +410,9 @@
     border: none;
     box-shadow: none;
     font-size: 15px;
-    height: 48px;
-    background: transparent;
+    height: 46px;
     background-color: transparent;
-    overflow:hidden;
+    vertical-align:middle;
 }
 
 .header-style-1 .custom-search-entry button {
@@ -412,7 +422,7 @@
     left: auto;
     right: 0;
     width: 60px;
-    top: 3px;
+    top: 4px;
     height: 38px;
     right: 3px;
     margin: 0;
@@ -426,11 +436,11 @@
     @include border_radius(30px);
 }
 
-.header-style-1 .custom-search-entry button:focus,
-.header-style-1 .custom-search-entry input:focus {
+// .header-style-1 .custom-search-entry button:focus,
+// .header-style-1 .custom-search-entry input:focus {
 
-    outline: none;
-}
+//     outline: none;
+// }
 
 
 // case: hidden search, hidden wishlist, hidden mini-cart 
@@ -564,6 +574,11 @@
 .banner-style-1 .banner-image-wrapper a {
 
     display: block;
+}
+
+.banner-style-1 .button-general {
+
+    padding:15px 30px;
 }
 
 .category-nav ul {
@@ -1777,11 +1792,6 @@ section.product-widget-style-2 .section-title {
     font-size: 17px;
 }
 
-.woocommerce #reviews .nice-select {
-
-    width: 250px;
-}
-
 .woocommerce p.stars a {
 
     font-size: 17px;
@@ -1877,8 +1887,7 @@ section.product-widget-style-2 .section-title {
 .woocommerce-checkout table.cart td.actions .coupon .input-text {
 
     border-color: $border_color;
-    padding: 0;
-    padding-left: 15px;
+    padding: 10px 15px;
     margin: 0;
     width: 200px;
 }
@@ -1886,6 +1895,11 @@ section.product-widget-style-2 .section-title {
 .woocommerce-cart table.cart td.actions .coupon .input-text#coupon_code {
 
     width: 200px;
+}
+
+.woocommerce-cart .cart_totals h2 {
+
+    margin-bottom: 30px;
 }
 
 .woocommerce .cart-collaterals .cart_totals,
@@ -1900,23 +1914,18 @@ section.product-widget-style-2 .section-title {
 .woocommerce-cart .cart-collaterals .cart_totals table,
 .woocommerce-checkout .cart-collaterals .cart_totals table {
 
+    border-collapse: collapse;
     margin: 0;
     padding: 0;
     background-color: transparent;
 }
 
-.woocommerce-page .cart-collaterals .cart_totals table th {
+.woocommerce-cart .cart-collaterals .cart_totals table td, 
+.woocommerce-cart .cart-collaterals .cart_totals table th {
 
-    padding-left: 0;
-    width: 50%;
-}
-
-
-.woocommerce-cart .cart-collaterals .cart_totals tr td,
-.woocommerce-cart .cart-collaterals .cart_totals tr th {
-
-    border: none;
-    border-bottom: 1px solid $border_color;
+    padding: 20px 15px;
+    line-height:1.4;
+    vertical-align:middle;
 }
 
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
@@ -1963,7 +1972,6 @@ section.product-widget-style-2 .section-title {
 
     padding: 30px;
     margin-bottom: 40px;
-    border: 1px solid $border_color;
 }
 
 .woocommerce .cart-collaterals .cross-sells,
@@ -1995,7 +2003,6 @@ section.product-widget-style-2 .section-title {
 
     display: none;
 }
-
 
 .woocommerce .col2-set,
 .woocommerce .col2-set,
@@ -2033,6 +2040,11 @@ section.product-widget-style-2 .section-title {
     width: 50%;
 }
 
+.woocommerce-page form.checkout_coupon p:first-child {
+
+    margin-bottom: 0;
+}
+
 .woocommerce form.checkout_coupon,
 .woocommerce form.login,
 .woocommerce form.register,
@@ -2061,12 +2073,6 @@ section.product-widget-style-2 .section-title {
     margin-bottom: 30px;
 }
 
-.woocommerce-page table.woocommerce-checkout-review-order-table tfoot td,
-.woocommerce-page table.woocommerce-checkout-review-order-table tfoot th {
-
-    padding: 20px 15px;
-}
-
 .woocommerce ul#shipping_method li {
 
     margin-bottom: 0;
@@ -2090,19 +2096,18 @@ section.product-widget-style-2 .section-title {
     padding: 0;
 }
 
-
-.woocommerce-page #add_payment_method #payment ul.payment_methods label,
 .woocommerce-cart #payment ul.payment_methods label,
-.woocommerce-checkout #payment ul.payment_methods label {
+.woocommerce-checkout #payment ul.payment_methods label,
+.woocommerce-page #add_payment_method #payment ul.payment_methods label {
 
     line-height: 1;
     margin: 0;
     color: $primary_color;
 }
 
-.woocommerce-page #add_payment_method #payment div.payment_box,
 .woocommerce-cart #payment div.payment_box,
-.woocommerce-checkout #payment div.payment_box {
+.woocommerce-checkout #payment div.payment_box,
+.woocommerce-page #add_payment_method #payment div.payment_box {
 
     margin: 0;
     margin-bottom: 30px;
@@ -2121,7 +2126,6 @@ section.product-widget-style-2 .section-title {
     padding-top: 30px;
 }
 
-
 .woocommerce #payment #place_order,
 .woocommerce-page #payment #place_order {
 
@@ -2131,7 +2135,6 @@ section.product-widget-style-2 .section-title {
     padding: 20px 50px;
     height: auto;
     @include border-radius(30px);
-    @include mild_drop_shadow();
 }
 
 #add_payment_method #payment div.payment_box::before,
@@ -2159,6 +2162,13 @@ section.product-widget-style-2 .section-title {
 
     margin-bottom: 0;
     border-bottom-color: transparent;
+}
+
+#add_payment_method #payment ul.payment_methods li, 
+.woocommerce-cart #payment ul.payment_methods li, 
+.woocommerce-checkout #payment ul.payment_methods li {
+
+    line-height:1.6;
 }
 
 .woocommerce-checkout #payment ul.payment_methods li {

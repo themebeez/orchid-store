@@ -47,16 +47,16 @@ $inner_page_master_bg					:#000;
 
 // woocommerce colors
 
-
 $woo-on-sale-color 						: red;
 $woo-rating-color						: #FFB606;
-$woo-success-bar						: #cdffd2; // Mild green
-$woo-info-bar							: #238ae6;
-$woo-error-bar							: #dc3545;
-$woo-warning-bar						: #ffc107;
 
+$woo-alert-bg							: #eaeaea;
 
-
+$woo-alert-message-border				: #1CA345; // green
+$woo-alert-success-border				: #0081FF; // blue
+$woo-alert-info-border					: #01A1B9; // blue variation
+$woo-alert-warning-border				: #FFC001; // yellow
+$woo-alert-error-border					: #DE3F44; // red
 
 //  Footer ( Dark )
 

@@ -145,6 +145,12 @@
 
 // Mixis for custom row ( Flex row)
 
+@mixin flex () {
+
+	display:flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
 
 @mixin flex_row () {
 

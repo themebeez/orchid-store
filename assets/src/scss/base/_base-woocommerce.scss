@@ -44,6 +44,26 @@
     @include border-radius(0);
 }
 
+.button-general.medium,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+    
+    padding:20px 50px;
+    letter-spacing:0.5px;
+    margin:5px 10px;
+}
+
+.button-general.large {
+    
+    padding:23px 80px;
+    letter-spacing:0.5px;
+    margin:5px 10px;
+}
+
+.button-general.shadow {
+
+    @include drop_shadow();
+}
+
 .woocommerce .woocommerce-notice a.button,
 .woocommerce-page .woocommerce-notice a.button,
 .woocommerce .woocommerce-message a.button,
@@ -58,32 +78,6 @@
     padding: 5px 20px;
 }
 
-.woocommerce .custom-cart-btn a, 
-.woocommerce .custom-cart-btn .add_to_cart_button {
-
-    padding:10px 20px;
-}
-
-.button-general.medium,
-.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
-	
-	padding:20px 50px;
-	letter-spacing:0.5px;
-	margin:5px 10px;
-}
-
-.button-general.large {
-    
-    padding:23px 80px;
-    letter-spacing:0.5px;
-    margin:5px 10px;
-}
-
-.button-general.shadow {
-
-	@include drop_shadow();
-}
-
 
 // custom cart button 
 
@@ -92,12 +86,15 @@
     margin-top: 10px;
 }
 
+
 .woocommerce .custom-cart-btn a,
-.woocommerce .custom-cart-btn .add_to_cart_button {
+.woocommerce-page .custom-cart-btn a,
+.woocommerce ul.products li.product .button,
+.woocommerce .custom-cart-btn .add_to_cart_button,
+.woocommerce ul.products li.product .added_to_cart.wc-forward {
 
-   padding:10px 20px;
+   padding:10px 30px; 
 }
-
 
 
 /*
@@ -116,8 +113,18 @@
 
 .woocommerce form .form-row {
 
-    padding: 10px 0;
-    margin: 0;
+    padding:0;
+    margin:15px 0;
+}
+
+.woocommerce form .form-row:last-child {
+
+    margin-top: 0;
+}
+
+.woocommerce form .form-row:last-child {
+
+    margin-bottom: 0;
 }
 
 // better woocommmerce input type number 
@@ -217,10 +224,10 @@
 .woocommmerce table,
 .woocommerce table.shop_table {
 	
+    border-collapse: collapse;
 	padding:0;
-	line-height: 1.4;
-	border-collapse: collapse;
 	font-weight:normal;
+    line-height: 1.4;
 	border: 1px solid $border_color;
 	@include border-radius(0);
 }
@@ -230,16 +237,17 @@
 .woocommerce table.shop_table th,
 .woocommerce table.shop_table td {
 	
-	padding: 10px 20px;
+	padding: 15px;
     line-height: 1.4;
     font-weight:normal;
 	border: 1px solid $border_color;
+    vertical-align: middle;
 }
 
 .woocommerce th,
 .woocommerce table.shop_table th {
 
-	padding:20px 15px;
+	padding:15px;
 	font-weight: bold;
 }
 
@@ -268,6 +276,16 @@
     border-color: rgba(157, 222, 255, 1);
 }
 
+ul.woocommerce-notice,
+ul.woocommerce-error,
+ul.woocommerce-info,
+ul.woocommerce-message,
+ul.woocommerce-page .woocommerce-notice {
+
+    padding:20px;
+}
+
+.woocommerce-notice,
 .woocommerce-error,
 .woocommerce-info,
 .woocommerce-message,
@@ -277,32 +295,36 @@
     border-top: none;
     margin: 0;
     padding: 12px 40px;
-    @include border-radius(1px);
+    @include border-radius(0);
+}
+
+.woocommerce-info,
+.woocommerce-message,
+.woocommerce-warning,
+.woocommerce-error,
+.woocommerce-page .woocommerce-notice {
+
+    color: $primary_color;
+    border:none;
+    border-left:3px solid $woo-alert-info-border;
+    background-color: $woo-alert-bg;
+}
+
+.woocommerce-warning {
+
+    border-color:$woo-alert-message-border;
+}
+
+.woocommerce-warning {
+
+    border-color:$woo-alert-warning-border;
 }
 
 .woocommerce-error {
 
-    background-color: $woo-error-bar;
+    border-color:$woo-alert-error-border;
 }
-
-.woocommerce-info,
-.woocommerce-page .woocommerce-notice {
-
-    background-color: $woo-info-bar;
-    color: $white;
-}
-
-.woocommerce-page .woocommerce-info a.showcoupon,
-.woocommerce-page .woocommerce-info a.showlogin {
-
-    color: #c0f1fd;
-}
-
-.woocommerce-message {
-
-    background-color: $woo-success-bar;
-}
-
+ 
 .woocommerce-info:before,
 .woocommerce-message:before,
 .woocommerce-error:before,
@@ -310,7 +332,7 @@
 
     content: "\ea8d";
     font-family: 'boxicons';
-    color: $white;
+    color: $primary_color;
     display: inline-block;
     position: absolute;
     top: 50%;
@@ -326,12 +348,14 @@
 .woocommerce-info::before {
 
     content: "\ea8d";
+    color:$woo-alert-info-border;
 
 }
 
 .woocommerce-message::before {
 
     content: "\ebd6";
+    color:$woo-alert-message-border;
 }
 
 .woocommerce-error::before {
@@ -342,6 +366,7 @@
 .woocommerce-error li::before {
 
     content: "\ea3a";
+    color:$woo-alert-error-border;
     position: relative;
     left:0;
     top:0;
