@@ -132,13 +132,23 @@
 
 .wc-block-grid__product-onsale {
 	
-	top: 0;
-    left: 16px;
+	position: absolute;
+    top: 0;
+    left: 15px;
+    z-index: 1;
 	font-size: 12px;
 	font-weight:normal;
 	text-transform:capitalize;
 	line-height:1;
 	padding: 3px 10px;
+	margin: 0 0 20px 0;
+}
+
+.wc-block-grid__product-onsale,
+.editor-styles-wrapper .wc-block-grid__products .wc-block-grid__product .wc-block-grid__product-onsale {
+
+	border:none;
+	@include border-radius(0);
 }
 
 // rating 

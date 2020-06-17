@@ -644,15 +644,15 @@ input[type="search"],
 input[type="tel"],
 input[type="color"] {
 
-    -webkit-appearance: none;
+    -webkit-appearance: none; /* safari fix */
     -moz-appearance: none;
 
     display: block;
     margin: 0;
-    font-size: 14px;
-    height:41px;
+    font-size: 15px;
+    height:46px;
     padding: 10px 15px;
-    border: 1px solid $border_color;
+    border: 2px solid $border_color;
     width: 100%;
     max-width: 100%;
     @include border-radius(0);
@@ -686,6 +686,11 @@ input[type="color"]:focus {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+}
+
+input::placeholder {
+
+    color:$primary_color;
 }
 
 button::-moz-focus-inner,
@@ -743,6 +748,7 @@ select:-webkit-autofill:focus {
 button,
 .button,
 .btn-general,
+.button-general,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -823,9 +829,9 @@ select {
     display:block;
     position: relative;
     font-size: 15px;
-    height: 43px;
+    height: 46px;
     padding: 10px 15px;
-    line-height:1.6;
+    line-height:46px;
     margin: 0;
     width: 100%;
     max-width: 100%;
