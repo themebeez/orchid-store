@@ -128,15 +128,8 @@ input[type="submit"]:hover,
 
 a,
 body,
-textarea,
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"], 
-::-webkit-input-placeholder,
 #yith-wcwl-popup-message,
 .quantity-button,
-.woocommerce-message,
 .menu-item-description,
 .woocommerce ul.products li.product .price,
 .woocommerce div.product p.price, 
@@ -228,17 +221,6 @@ a:hover,
 
 	color:$forth_color;
 }
-
-// color special ( grey light )
-
-.woocommerce-page a.edit,
-.post-navigation .nav-previous span,
-.post-navigation .nav-next  span,
-.select2-container--default .select2-selection--single .select2-selection__rendered  {
-
-	color:$special_purpose_color; // #8e8e8e
-}
-
 
 // background color
 
@@ -497,23 +479,6 @@ a.button-general:hover,
 	border-bottom:1px solid $secondary_color;
 }
 
-select,
-textarea, 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
 .quantity-button,
 .select2-dropdown,
 .calendar_wrap table th,
@@ -521,21 +486,10 @@ input[type="color"],
 .category-description,
 .widget_tag_cloud .tagcloud a,
 .widget_product_tag_cloud .tagcloud a,
-.select2-container--default .select2-selection--single,
 .select2-container--default .select2-search--dropdown .select2-search__field,
 #yith-quick-view-content div.product div.images .woocommerce-product-gallery__wrapper   {
 
 	border: 1px solid $border_color;
-}
-
-body .select2-container--default .select2-selection--single {
-
-	border-color:$border_color;
-}
-
-body .select2-container--default .select2-selection--single .select2-selection__arrow b {
-
-	border-color:$border_color transparent transparent transparent;
 }
 
 .woocommerce .widget_shopping_cart .cart_list li, 

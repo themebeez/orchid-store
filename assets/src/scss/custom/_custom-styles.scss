@@ -1,14 +1,12 @@
 /*
 ====================================================
 =
-= Header styles 
+= Header styles
 =
 ==========================================
 */
 
-
 // Default header styles
-
 
 .masterheader .site-title {
 
@@ -133,7 +131,7 @@
 }
 
 .masterheader .mini-cart {
-    
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -236,7 +234,7 @@
 
 .mini-cart-open .woocommerce .woocommerce-mini-cart__total.total {
 
-    padding: 0;
+    padding: 10px 0;
     margin: 30px 0;
     border-top: 1px solid #4e4e4e;
     border-bottom: 1px solid #4e4e4e;
@@ -320,8 +318,8 @@
 }
 
 .header-style-1 .custom-search-entry input:-webkit-autofill,
-.header-style-1 .custom-search-entry input:-webkit-autofill:hover, 
-.header-style-1 .custom-search-entry input:-webkit-autofill:focus, 
+.header-style-1 .custom-search-entry input:-webkit-autofill:hover,
+.header-style-1 .custom-search-entry input:-webkit-autofill:focus,
 .header-style-1 .custom-search-entry input:-webkit-autofill:active  {
 
     -webkit-box-shadow: none;
@@ -443,7 +441,7 @@
 // }
 
 
-// case: hidden search, hidden wishlist, hidden mini-cart 
+// case: hidden search, hidden wishlist, hidden mini-cart
 
 
 .header-style-1 .mid-header .no-product-search-form .aside-right,
@@ -501,7 +499,7 @@
     position: relative;
 }
 
-// Category menu 
+// Category menu
 
 .os-nav-row .os-nav-col-left {
 
@@ -515,7 +513,7 @@
     max-width: 75%;
 }
 
-// no special menu 
+// no special menu
 
 .os-nav-row.no-special-menu .os-nav-col-right {
 
@@ -526,13 +524,13 @@
 /*
 ====================================================
 =
-= Banner styles 
+= Banner styles
 =
 ==========================================
 */
 
 
-// general banner 
+// general banner
 
 
 
@@ -652,7 +650,7 @@
 }
 
 
-// mask 
+// mask
 
 .banner-style-1 .thumb .mask {
 
@@ -671,7 +669,7 @@
 }
 
 
-// animation 
+// animation
 
 .banner-style-1 .owl-item.active .caption span {
 
@@ -748,7 +746,7 @@
 /*
 ====================================================
 =
-= category layout styles 
+= category layout styles
 =
 ==========================================
 */
@@ -817,7 +815,7 @@
 .cta-style-1 .os-row .os-col:last-child .box {
 
     margin-bottom: 0;
-} 
+}
 
 .cta-style-1 .box {
 
@@ -851,7 +849,7 @@
 }
 
 
-// cta style 2 
+// cta style 2
 
 .cta-style-2 {
 
@@ -994,7 +992,7 @@
 /*
 ====================================================
 =
-= Search page styles 
+= Search page styles
 =
 ==========================================
 */
@@ -1048,13 +1046,13 @@ body.no-sidebar .archive-entry article .content-col {
 /*
 ====================================================
 =
-= Archive page styles 
+= Archive page styles
 =
 ==========================================
 */
 
 
-// category description 
+// category description
 
 .category-description p:last-child {
 
@@ -1070,7 +1068,7 @@ body.no-sidebar .archive-entry article .content-col {
 /*
 ====================================================
 =
-= 404 page styles 
+= 404 page styles
 =
 ==========================================
 */
@@ -1101,7 +1099,7 @@ body.no-sidebar .archive-entry article .content-col {
 /*
 ====================================================
 =
-= Nothing found page styles 
+= Nothing found page styles
 =
 ==========================================
 */
@@ -1125,7 +1123,7 @@ body.no-sidebar .archive-entry article .content-col {
 /*
 ====================================================
 =
-= Page single styles 
+= Page single styles
 =
 ==========================================
 */
@@ -1192,7 +1190,7 @@ body.no-sidebar .archive-entry article .content-col {
 /*
 ====================================================
 =
-= Blog single styles 
+= Blog single styles
 =
 ==========================================
 */
@@ -1318,7 +1316,7 @@ section.product-widget-style-2 .section-title {
 }
 
 .product-widget-style-2 .tab-nav ul {
-    
+
     padding:0;
     margin:0;
     list-style: none;
@@ -1376,7 +1374,7 @@ section.product-widget-style-2 .section-title {
     margin-bottom:0;
 }
 
-.product-widget-style-3 .owl-carousel .owl-nav button.owl-next, 
+.product-widget-style-3 .owl-carousel .owl-nav button.owl-next,
 .product-widget-style-3 .owl-carousel .owl-nav button.owl-prev {
 
     position: absolute;
@@ -1427,7 +1425,7 @@ section.product-widget-style-2 .section-title {
     transform: none;
 }
 
-// woocommerce layout break down 
+// woocommerce layout break down
 
 .woocommerce-page .page-full-bg-thumbnail .page-head {
 
@@ -1451,7 +1449,7 @@ section.product-widget-style-2 .section-title {
 */
 
 
-// sorting select dropdown 
+// sorting select dropdown
 
 .woocommerce .woocommerce-ordering {
 
@@ -1570,7 +1568,7 @@ section.product-widget-style-2 .section-title {
 
 .woocommerce div.product.sold-individually .entry-summary form.cart .button,
 .woocommerce div.product.sold-individually .entry-summary .woocommerce-variation-add-to-cart .button {
-    
+
     margin-left: 0;
 }
 
@@ -1641,7 +1639,7 @@ section.product-widget-style-2 .section-title {
 }
 
 .woocommerce div.product form.cart .variations {
-    
+
     border:none;
     margin-top: 0;
     margin-bottom: 30px;
@@ -1674,7 +1672,7 @@ section.product-widget-style-2 .section-title {
 }
 
 
-// tabs 
+// tabs
 
 
 .woocommerce div.product .woocommerce-tabs .panel {
@@ -1760,7 +1758,7 @@ section.product-widget-style-2 .section-title {
 }
 
 
-// reviews 
+// reviews
 
 
 .woocommerce #review_form_wrapper {
@@ -1857,7 +1855,7 @@ section.product-widget-style-2 .section-title {
 }
 
 
-// related 
+// related
 
 
 .woocommerce ul.products.columns-3 li.product,
@@ -1871,7 +1869,7 @@ section.product-widget-style-2 .section-title {
 /*
 ====================================================
 =
-= Cart page styles 
+= Cart page styles
 =
 ==========================================
 */
@@ -1886,10 +1884,11 @@ section.product-widget-style-2 .section-title {
 .woocommerce-cart table.cart td.actions .coupon .input-text,
 .woocommerce-checkout table.cart td.actions .coupon .input-text {
 
-    border-color: $border_color;
-    padding: 10px 15px;
-    margin: 0;
     width: 200px;
+    margin: 0;
+    padding: 10px 15px;
+    border-width:1px;
+    border-color:$border_color;
 }
 
 .woocommerce-cart table.cart td.actions .coupon .input-text#coupon_code {
@@ -1920,7 +1919,7 @@ section.product-widget-style-2 .section-title {
     background-color: transparent;
 }
 
-.woocommerce-cart .cart-collaterals .cart_totals table td, 
+.woocommerce-cart .cart-collaterals .cart_totals table td,
 .woocommerce-cart .cart-collaterals .cart_totals table th {
 
     padding: 20px 15px;
@@ -1985,7 +1984,7 @@ section.product-widget-style-2 .section-title {
 /*
 ====================================================
 =
-= Checkout page styles 
+= Checkout page styles
 =
 ==========================================
 */
@@ -2164,8 +2163,8 @@ section.product-widget-style-2 .section-title {
     border-bottom-color: transparent;
 }
 
-#add_payment_method #payment ul.payment_methods li, 
-.woocommerce-cart #payment ul.payment_methods li, 
+#add_payment_method #payment ul.payment_methods li,
+.woocommerce-cart #payment ul.payment_methods li,
 .woocommerce-checkout #payment ul.payment_methods li {
 
     line-height:1.6;
@@ -2231,7 +2230,7 @@ section.product-widget-style-2 .section-title {
 }
 
 
-// billing & shipping 
+// billing & shipping
 
 
 .woocommerce .woocommerce-customer-details address {
@@ -2248,7 +2247,7 @@ section.product-widget-style-2 .section-title {
 /*
 ====================================================
 =
-= My account page styles 
+= My account page styles
 =
 ==========================================
 */
@@ -2320,7 +2319,7 @@ section.product-widget-style-2 .section-title {
 }
 
 
-// password reset 
+// password reset
 
 .woocommerce .lost_reset_password,
 .woocommerce .woocommerce-ResetPassword {

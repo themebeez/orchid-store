@@ -18,16 +18,15 @@
 ======================================================================================
 */
 
-// Import variables 
+// Import variables
 
 @import 'variables/var-typography';
 @import 'variables/var-colors';
 @import 'variables/var-spacing';
 
-
 // Import mixins
 
-@import 'custom/custom-parts/mixins'; 
+@import 'custom/custom-parts/mixins';
 
 
 // Import Base styling & reset CSS
@@ -37,13 +36,13 @@
 @import 'base/base-woocommerce'; // base styling for WooCommerce specific elements
 
 
-// Import libraries 
+// Import libraries
 
 @import 'libraries/owlcarousel';
 @import 'libraries/izi-toast';
 
 
-// Import custom parts & custom style file 
+// Import custom parts & custom style file
 
 @import 'custom/custom-parts/helper-class';			// helper class
 @import 'custom/custom-parts/accessibility';		// assibility
@@ -77,19 +76,16 @@
 @import 'custom/common/common-spacing';				// custom common spacing
 
 
-// Import media query for responsive 
+// Import media query for responsive
 
-@import 'custom/custom-parts/responsive'; 
+@import 'custom/custom-parts/responsive';
 
 
 // Import accessibility
 
-@import 'custom/custom-parts/accessibility'; 
+@import 'custom/custom-parts/accessibility';
 
 
 // Import keyframes
 
-@import 'custom/custom-parts/keyframe'; 
-
-
-
+@import 'custom/custom-parts/keyframe';
