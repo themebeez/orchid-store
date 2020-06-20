@@ -767,7 +767,8 @@ input[type="submit"] {
     cursor: pointer;
     color: #ffffff;
     background-color: $secondary_color;
-    -webkit-appearance: button;
+    -webkit-appearance: none; /* safari fix */
+    -moz-appearance: none;
     box-sizing: border-box;
     @include border-radius(0);
     @include transation_delay();
