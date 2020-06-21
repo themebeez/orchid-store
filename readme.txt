@@ -88,13 +88,14 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.2.1 - 19 May, 2020 ==
+== 1.2.1 - 25 June, 2020 ==
 
 - Added: Option to display number of product columns for mobile devices
 - Added: Option to display product search for mobile devices
 - Added: Breadcrumb in single product page
 - Added: Option to display page header
 - Fix: H1 issue for homepage(static or default)
+- Fix: Tab issue when multiple tab widgets are present
 
 
 == 1.2.0 - 24 April, 2020 ==
