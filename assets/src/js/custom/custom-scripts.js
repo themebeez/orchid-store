@@ -399,7 +399,9 @@
 
             var activeARel = activeA.attr('rel');
 
-            $('.tab-wrapper').find('div#' + activeARel).hide();
+            console.log( activeARel );
+
+            $(this).parents('div.tab-wrapper').find('div#' + activeARel).hide();
 
             activeA.removeClass('active');
 
@@ -407,7 +409,7 @@
 
             var currentARel = $(this).attr('rel');
 
-            $('.tab-wrapper').find('div#' + currentARel).show();
+            $(this).parents('div.tab-wrapper').find('div#' + currentARel).show();
 
         });
 
