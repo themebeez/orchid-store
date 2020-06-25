@@ -20,7 +20,7 @@ $orchid_store_show_featured_img	= orchid_store_get_option( 'display_page_feature
 		<?php
 	} 
 
-	if( $orchid_store_show_featured_img == true && has_post_thumbnail() ) {
+	if( $orchid_store_show_featured_img == true && has_post_thumbnail() && ! post_password_required() ) {
 		?>
 		<div class="thumb featured-thumb">
 	       	<?php

@@ -80,6 +80,13 @@ if( ! function_exists( 'orchid_store_section_declaration' ) ) {
 				'priority' => '',
 			),
 			array(
+				'id' => 'product_search',
+				'title' => esc_html__( 'Search Form', 'orchid-store' ),
+				'description' => '',
+				'panel' => 'site_header',
+				'priority' => '',
+			),
+			array(
 				'id' => 'page_header',
 				'title' => esc_html__( 'Page Header', 'orchid-store' ),
 				'description' => '',
@@ -157,17 +164,6 @@ if( ! function_exists( 'orchid_store_section_declaration' ) ) {
 				'priority' => 3,
 			),
 		);
-
-		if( class_exists( 'WooCommerce' ) ) {
-
-			$sections[] = array(
-				'id' => 'product_search',
-				'title' => esc_html__( 'Product Search', 'orchid-store' ),
-				'description' => '',
-				'panel' => 'site_header',
-				'priority' => '',
-			);
-		}
 
 		if( class_exists( 'WooCommerce' ) && class_exists( 'YITH_WCWL' ) ) {
 
@@ -261,10 +257,13 @@ orchid_store_add_toggle_field( 'enable_parallax_page_header_background', esc_htm
 /*******************************************************************************************************
 ********************************** WooCommerce  Elements Control Fields Declaration *********************************
 *******************************************************************************************************/
+orchid_store_add_toggle_field( 'display_product_search_form', esc_html__( 'Display Search Form', 'orchid-store' ), '', '', 'product_search' );
 if( class_exists( 'WooCommerce' ) ) {
+	orchid_store_add_select_field( 'select_search_form', esc_html__( 'Select Search Form', 'orchid-store' ), '', array( 'product_search' => esc_html__( 'Product Search Form', 'orchid-store' ), 'default_search' => esc_html__( 'Default Search Form', 'orchid-store' ) ), 'orchid_store_is_product_search_form_enabled', 'product_search' );
+}
+orchid_store_add_toggle_field( 'display_product_search_form_on_mobile', esc_html__( 'Display Search Form On Mobile Devices', 'orchid-store' ), '', 'orchid_store_is_product_search_form_enabled', 'product_search' );
 
-	orchid_store_add_toggle_field( 'display_product_search_form', esc_html__( 'Display Search Form', 'orchid-store' ), '', '', 'product_search' );
-	orchid_store_add_toggle_field( 'display_product_search_form_on_mobile', esc_html__( 'Display Search Form On Mobile Devices', 'orchid-store' ), '', 'orchid_store_is_product_search_form_enabled', 'product_search' );
+if( class_exists( 'WooCommerce' ) ) {
 	orchid_store_add_toggle_field( 'display_mini_cart', esc_html__( 'Display Mini Cart', 'orchid-store' ), '', '', 'mini_cart' );	
 }
 
@@ -580,6 +579,26 @@ if( class_exists( 'WooCommerce' ) ) {
 			),
 		)
 	);
+
+
+	// Display Product Out of Stock Notice
+	$wp_customize->add_setting( 'orchid_store_field_display_out_of_stock_notice', 
+		array(
+			'sanitize_callback'		=> 'wp_validate_boolean',
+			'default'				=> $orchid_store_defaults['orchid_store_field_display_out_of_stock_notice'],
+			'capability'        => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_control( new Orchid_Store_Customizer_Toggle_Control( 
+		$wp_customize, 
+		'orchid_store_field_display_out_of_stock_notice',
+		array(
+			'label' => esc_html__( 'Display Product Out of Stock Notice', 'orchid-store' ),
+			'section' => 'woocommerce_product_catalog',
+			'type'	=> 'flat', // ios, light, flat
+		) 
+	) );
 
 
 	$wp_customize->add_section( 

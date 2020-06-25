@@ -63,6 +63,7 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
             'special_menu_title' => esc_html__( 'Special Menu', 'orchid-store' ),
 
             'display_product_search_form' => true,
+            'select_search_form' => 'product_search',
             'display_product_search_form_on_mobile' => false,
             'display_mini_cart' => true,
             'display_wishlist' => true,
@@ -139,6 +140,7 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
 
             // New
             $defaults['orchid_store_field_product_cols_in_mobile'] = 1;
+            $defaults['orchid_store_field_display_out_of_stock_notice'] = false;
         }
 
         $defaults['orchid_store_field_enable_home_content'] = false;
