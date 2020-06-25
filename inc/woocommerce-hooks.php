@@ -9,10 +9,6 @@ if( ! function_exists( 'orchid_store_product_search_action' ) ) {
 
 	function orchid_store_product_search_action() {
 
-		if( ! class_exists( 'WooCommerce' ) ) {
-			return;
-		}
-
         $mobile_product_search_class = '';
 
         if( orchid_store_get_option( 'display_product_search_form_on_mobile' ) ) {
@@ -194,6 +190,16 @@ if ( ! function_exists( 'orchid_store_template_loop_product_thumbnail' ) ) {
      * Get the product thumbnail for the loop.
      */
     function orchid_store_template_loop_product_thumbnail() {
+
+        global $product;
+
+        if( get_theme_mod( 'orchid_store_field_display_out_of_stock_notice', false ) == true ) {
+
+            if( ! $product->is_in_stock() ) {
+
+                echo wc_get_stock_html( $product );
+            }
+        }
 
         /**
          * Hook: orchid_store_loop_product_link_open.

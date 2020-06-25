@@ -458,3 +458,24 @@ if( ! function_exists( 'orchid_store_title_breadcrumb_action' ) ) {
 	}
 }
 add_action( 'orchid_store_title_breadcrumb', 'orchid_store_title_breadcrumb_action', 10 );
+
+
+
+if( ! function_exists( 'orchid_store_default_search_action' ) ) {
+
+	function orchid_store_default_search_action() {
+
+		$mobile_product_search_class = '';
+
+        if( orchid_store_get_option( 'display_product_search_form_on_mobile' ) ) {
+
+            $mobile_product_search_class = 'os-mobile-show';
+        }
+		?>
+		<div class="custom-search <?php echo esc_attr( $mobile_product_search_class ); ?>">
+	        <?php get_search_form(); ?>
+	    </div><!-- .custom-search -->
+		<?php
+	}
+}
+add_action( 'orchid_store_default_search', 'orchid_store_default_search_action', 10 );

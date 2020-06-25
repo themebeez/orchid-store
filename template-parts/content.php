@@ -31,7 +31,7 @@ if( is_archive() ) {
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="os-row">
         <?php
-        if( has_post_thumbnail() && $orchid_store_show_featured_image == true ) {
+        if( has_post_thumbnail() && $orchid_store_show_featured_image == true && ! post_password_required() ) {
             ?>
             <div class="os-col thumb-col">
                 <div class="thumb imghover">
