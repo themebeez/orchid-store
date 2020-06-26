@@ -428,8 +428,50 @@ ul.woocommerce-page .woocommerce-notice {
 ==========================================
 */
 
+.woocommerce span.onsale,
+.woocommerce .product-sale span,
+.woocommerce ul.products li.product .onsale {
 
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    min-height: 1px;
+    min-width: 1px;
+    padding: 2px 10px;
+    font-weight: normal;
+    font-style:normal;
+    background-color: red;
+    @include border-radius(0);
+}
 
+/*
+====================================================
+=
+= WooCommerce out of stock
+=
+==========================================
+*/
+
+.woocommerce .products .product .out-of-stock,
+.woocommerce-page .products .product .out-of-stock {
+
+    @include pos_absolute_topnleft();
+    z-index: 100;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1;
+    min-height: 1px;
+    min-width: 1px;
+    padding: 10px 15px;
+    background:transparent;
+    background-color: red;
+    @include border-radius(2px);
+}
 
 
 /*
@@ -451,26 +493,6 @@ ul.woocommerce-page .woocommerce-notice {
 
     background: transparent;
     background-color: transparent;
-}
-
-.woocommerce span.onsale,
-.woocommerce .product-sale span,
-.woocommerce ul.products li.product .onsale {
-
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: auto;
-    z-index: 1;
-    padding: 0;
-    margin: 0;
-    line-height: 1;
-    min-height: 1px;
-    min-width: 1px;
-    padding: 2px 10px;
-    font-weight: normal;
-    background-color: red;
-    @include border-radius(0);
 }
 
 .woocommerce span.price del,

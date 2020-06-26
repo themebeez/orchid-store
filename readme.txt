@@ -100,6 +100,19 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 - Fix: H1 issue for homepage(static or default)
 - Fix: Tab issue when multiple tab widgets are present
 - Fix: Password protected post issue
+- Tweak: WooCommerce default category widget (Added toggle for child categories)
+
+# CSS STYLES SPECIFIC - 1.2.1
+
+- Tweak: Headsup - Base styling & reset CSS heavily modified
+- Tweak: Headsup - WooCommerce base styling
+- Tweak: Headsup - Mobile breakpoint changed to 575px
+- Tweak: Responsive styles
+- Tweak: Spacing for elements & sections
+- Tweak: Typography font (Poppins to Inter)
+- Tweak: Minor font size, line height & weights
+- Tweak: Post category meta design
+- Added: WordPress default header search form
 
 
 == 1.2.0 - 24 April, 2020 ==

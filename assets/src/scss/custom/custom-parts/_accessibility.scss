@@ -17,11 +17,19 @@ a:focus {
 
 button:focus,
 input[type="reset"]:focus,
-input[type="submit"]:focus {
+input[type="submit"]:focus,
+.category-navigation .cat-nav-trigger:focus,
+.masterheader .mini-cart .trigger-mini-cart:focus {
 
     outline: thin dotted;
 } 
 
+.header-style-1 .wishlist-icon-container a:focus,
+.masterheader .mini-cart .trigger-mini-cart:focus,
+.header-style-1 .custom-search-entry button:focus {
+
+    outline:thin dotted blue;
+}
 
 textarea:focus, 
 input[type="text"]:focus,

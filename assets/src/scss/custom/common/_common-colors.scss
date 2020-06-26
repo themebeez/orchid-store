@@ -66,11 +66,11 @@ input[type="submit"]:hover,
 .cta-style-2 .promo-box,
 .footer .widget .widget-title h3,
 .masterheader .topbar-items a,
-.default-page-wrap .entry-title,
-.default-post-wrap .entry-title,
+.inner-page-wrap .os-breadcrumb-wrap .entry-title,
+.inner-page-wrap .os-breadcrumb-wrap .entry-title,
 .masterheader .social-icons ul li a,
-.default-page-wrap .page-head .entry-metas ul li a,
-.default-post-wrap .page-head .entry-metas ul li a,
+.inner-page-wrap .page-head .entry-metas ul li a,
+.inner-page-wrap .page-head .entry-metas ul li a,
 .os-breadcrumb-wrap .breadcrumb-inner .page-title,
 .mini-cart-open .woocommerce.widget_shopping_cart .cart_list li a,
 .woocommerce .woocommerce-breadcrumb,
@@ -82,6 +82,7 @@ input[type="submit"]:hover,
 .cta-style-1 .excerpt,
 .breadcrumb-trail li.trail-item:after,
 .header-style-1 .custom-search-entry button,
+.header-style-1 .custom-search .search-form button,
 .woocommerce-MyAccount-content .woocommerce-message a.button,
 .category-nav li a:hover,
 .orchid-backtotop,
@@ -118,7 +119,9 @@ input[type="submit"]:hover,
 .product-widget-style-3 .owl-carousel .owl-nav button.owl-prev,
 .product-widget-style-3 .owl-carousel .owl-nav button.owl-next:hover, 
 .product-widget-style-3 .owl-carousel .owl-nav button.owl-prev:hover,
-.mobile-navigation .trigger-mob-nav-close {
+.mobile-navigation .trigger-mob-nav-close,
+.woocommerce .products .product .out-of-stock,
+.woocommerce-page .products .product .out-of-stock {
 
 	color:$white;
 }
@@ -139,7 +142,6 @@ body,
 .woocommerce div.product p.price ins, 
 .woocommerce div.product span.price ins,
 .header-style-1 .custom-search-entry input,
-.header-style-1 .custom-search-entry select,
 .wc-block-grid .wc-block-grid__product-title,
 .search-form button,
 form.search-form button[type="search"],
@@ -147,6 +149,10 @@ form.search-form button[type="search"],
 .widget_product_search form button[type="submit"],
 .woocommerce.single-product .woocommerce-breadcrumb,
 .woocommerce.single-product .woocommerce-breadcrumb a,
+.os-page-breadcrumb-wrap .breadcrumb-trail ul li a,
+.woocommerce .os-page-breadcrumb-wrap .woocommerce-breadcrumb,
+.woocommerce .os-page-breadcrumb-wrap .woocommerce-breadcrumb a,
+.os-page-breadcrumb-wrap .breadcrumb-trail li.trail-item:after,
 .woocommerce .wishlist_table tr td.product-stock-status span.wishlist-in-stock,
 .select2-container--default .select2-selection--single .select2-selection__placeholder {
 
@@ -198,8 +204,8 @@ a:hover,
 .comments-area .comment-body .comment-metadata a:hover,
 .comments-area .comment-body .comment-metadata .edit-link:hover,
 .masterheader .topbar-items a:hover,
-.default-page-wrap .page-head .entry-metas ul li a:hover,
-.default-post-wrap .page-head .entry-metas ul li a:hover,
+.inner-page-wrap .page-head .entry-metas ul li a:hover,
+.inner-page-wrap .page-head .entry-metas ul li a:hover,
 .mini-cart-open .woocommerce.widget_shopping_cart .cart_list li a:hover,
 .woocommerce .woocommerce-breadcrumb a:hover,
 .breadcrumb-trail ul li a:hover,
@@ -212,7 +218,9 @@ a:hover,
 .wc-block-grid .wc-block-grid__product-title:hover,
 .woocommerce.single-product .woocommerce-breadcrumb a:hover,
 .woocommerce-page .woocommerce-info a.showcoupon:hover,
-.woocommerce-page .woocommerce-info a.showlogin:hover {
+.woocommerce-page .woocommerce-info a.showlogin:hover,
+.os-page-breadcrumb-wrap .breadcrumb-trail ul li a:hover,
+.woocommerce .os-page-breadcrumb-wrap .woocommerce-breadcrumb a:hover {
 
 	color:$third_color; // Hover colour
 }
@@ -237,7 +245,7 @@ aside.secondary-widget-area .widget,
 .woocommerce-page .woocommerce-shipping-fields,
 .woocommerce-page .woocommerce-additional-fields,
 .woocommerce div.product .woocommerce-tabs,
-.default-post-wrap .page-head .entry-cats ul li a,
+.inner-page-wrap .page-head .entry-cats ul li a,
 .woocommerce-page #add_payment_method #payment, 
 .woocommerce-cart #payment, 
 .post-navigation .nav-links,
@@ -251,8 +259,8 @@ aside.secondary-widget-area .widget,
 .woocommerce .woocommerce-ResetPassword,
 .archive-page-wrap .archive-entry article,
 .search-page-wrap .search-entry article,
-.default-page-wrap .editor-entry,
-.default-page-wrap .inner-content-metas,
+.inner-page-wrap .editor-entry,
+.inner-page-wrap .inner-content-metas,
 .comments-area .comment-body,
 .woocommerce ul.cart_list li img,
 .woocommerce ul.products li.product a img, 
@@ -279,9 +287,9 @@ aside.secondary-widget-area .widget,
 .cats-widget-style-1 .card,
 .post-navigation .nav-links,
 .os-blog-style-1 .card-content,
-.default-page-wrap .editor-entry,
+.inner-page-wrap .editor-entry,
 aside.secondary-widget-area .widget,
-.default-page-wrap .inner-content-metas,
+.inner-page-wrap .inner-content-metas,
 .archive-page-wrap .archive-entry article,
 .woocommerce form.checkout_coupon, 
 .woocommerce form.login, 
@@ -355,11 +363,12 @@ a.button-general,
 #yith-wcwl-popup-message,
 .header-style-1 .custom-search-entry button,
 .header-style-1 .custom-search-entry button:hover,
+.header-style-1 .custom-search .search-form button,
 .masterheader .mini-cart button,
 .owl-carousel button.owl-dot.active,
 .woocommerce .added_to_cart.wc-forward,
 .woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist a,
-.default-post-wrap .page-head .entry-cats ul li a:hover,
+.inner-page-wrap .page-head .entry-cats ul li a:hover,
 .woocommerce nav.woocommerce-pagination ul li a:hover,
 .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
@@ -540,15 +549,11 @@ a.button-general:hover,
 	border:2px solid $secondary_color;
 }
 
-.header-style-1 .custom-search-entry .select-custom {
-
-	border-right:2px solid $secondary_color;
-}
-
 .category-nav ul {
 
 	border:2px solid $secondary_color;
 }
+
 
 .widget_tag_cloud .tagcloud a:hover,
 .widget_product_tag_cloud .tagcloud a:hover {

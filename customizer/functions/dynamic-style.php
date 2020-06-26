@@ -6,9 +6,30 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 
 		$primary_color = orchid_store_get_option( 'primary_color' );
 
-		$secondary_color = orchid_store_get_option( 'secondary_color' );		
+		$secondary_color = orchid_store_get_option( 'secondary_color' );
+
+		$disable_outline_focus = orchid_store_get_option( 'disable_ouline_on_focus' );		
 
 		$custom_style = '';
+
+		if( orchid_store_get_option( 'disable_ouline_on_focus' ) == true ) {
+
+			$custom_style .= "
+			a:focus,
+			button:focus,
+			select:focus,
+			input[type='reset']:focus,
+			input[type='submit']:focus,
+			.category-navigation .cat-nav-trigger:focus,
+			.masterheader .mini-cart .trigger-mini-cart:focus,
+			.header-style-1 .wishlist-icon-container a:focus,
+			.masterheader .mini-cart .trigger-mini-cart:focus,
+			.header-style-1 .custom-search-entry button:focus  {
+				
+				outline:none;
+			}";
+		}
+
 
 		if( $primary_color ) {
 			
