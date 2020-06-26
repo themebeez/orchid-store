@@ -163,6 +163,13 @@ if( ! function_exists( 'orchid_store_section_declaration' ) ) {
 				'panel' => 'site_colors',
 				'priority' => 3,
 			),
+			array(
+				'id' => 'theme_accessibility',
+				'title' => esc_html__( 'Accessibility', 'orchid-store' ),
+				'description' => '',
+				'panel' => '',
+				'priority' => 3,
+			),
 		);
 
 		if( class_exists( 'WooCommerce' ) && class_exists( 'YITH_WCWL' ) ) {
@@ -360,6 +367,10 @@ orchid_store_add_image_field( 'payments_image', esc_html__( 'Image of payment pr
 *******************************************************************************************************/
 orchid_store_add_number_field( 'excerpt_length', esc_html__( 'Excerpt Length', 'orchid-store' ), esc_html__( 'Excerpt is the short content of post or page.', 'orchid-store' ), '', 'post_excerpt', '', '', '' );
 
+/*******************************************************************************************************
+***************************************** Accessibility Fields Declaration ***********************************
+*******************************************************************************************************/
+orchid_store_add_toggle_field( 'disable_ouline_on_focus', esc_html__( 'Display Outline On Focus', 'orchid-store' ), '', '', 'theme_accessibility' );
 
 
 /*******************************************************************************************************

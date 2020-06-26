@@ -122,6 +122,8 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
 
             'primary_color' => '#0286E7',
             'secondary_color' => '#E26143',
+
+            'disable_ouline_on_focus' => false,
         );
 
         if( class_exists( 'WooCommerce' ) ) {

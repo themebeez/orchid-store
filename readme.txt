@@ -96,9 +96,10 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 - Added: Breadcrumb in single product page
 - Added: Option to select search form on header
 - Added: Option to display page header
+- Added: Accessibility option
 - Fix: H1 issue for homepage(static or default)
 - Fix: Tab issue when multiple tab widgets are present
-- Removed: Extra markup checking the device
+- Fix: Password protected post issue
 
 
 == 1.2.0 - 24 April, 2020 ==
