@@ -473,7 +473,9 @@ if( ! function_exists( 'orchid_store_default_search_action' ) ) {
         }
 		?>
 		<div class="custom-search <?php echo esc_attr( $mobile_product_search_class ); ?>">
-	        <?php get_search_form(); ?>
+			<div class="custom-search-entry">
+	       	 	<?php get_search_form(); ?>
+	    	</div><!-- // custom-search-entry -->
 	    </div><!-- .custom-search -->
 		<?php
 	}

@@ -79,6 +79,7 @@
 .os-about-widget .contact-info,
 .masterheader .topbar-items ul,
 .archive-entry article:last-child,
+.woocommerce-mini-cart__empty-message,
 .woocommerce ul.products li.product .woocommerce-loop-category__title {
 
 	margin: 0;
@@ -95,8 +96,8 @@
 }
 
 .woocommerce ul.product_list_widget li a,
-.woocommerce .os-breadcrumb-wrap .page-title,
-.os-breadcrumb-wrap .breadcrumb-inner .page-title {
+.inner-page-wrap .os-breadcrumb-wrap .page-title,
+.woocommerce .os-breadcrumb-wrap .page-title{
 
 	margin-bottom: 5px;
 }
@@ -177,7 +178,8 @@
 .woocommerce .woocommerce-column__title,
 .os-about-widget .intro,
 .os-about-widget .contact-info li,
-.woocommerce-page .woocommerce-shipping-fields  {
+.woocommerce-page .woocommerce-shipping-fields,
+.inner-page-wrap .page-title  {
 
 	margin-bottom:30px;
 }

@@ -35,7 +35,7 @@ section .section-title h3,
 .widget .widget-title h3,
 .search-entry .entry-title,
 .archive-entry .entry-title,
-.default-page-wrap .entry-title,
+.inner-page-wrap .entry-title:not(.product_title),
 .default-post-wrap .entry-title,
 .post-navigation .nav-previous span,
 .post-navigation .nav-next span,
@@ -186,7 +186,7 @@ section .section-title h3,
 .entry-metas ul li.posted-date span,
 .entry-404 h1,
 .search-entry .entry-title,
-.default-page-wrap .entry-title,
+.inner-page-wrap .entry-title,
 .default-post-wrap .entry-title,
 .product-widget-style-2 .tab-nav ul li a,
 .woocommerce div.product p.price, 
@@ -239,7 +239,7 @@ section .section-title h3,
 .woocommerce-page table.wishlist_table thead th,
 .product-widget-style-2 .tab-nav ul li a,
 .woocommerce ul.products li.product .onsale,
-.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+.woocommerce div.product .woocommerce-tabs ul.tabs li a  {
 
     font-size: 13px;
 }
@@ -247,6 +247,8 @@ section .section-title h3,
 .entry-tags a,
 .patigation .page-numbers,
 .woocommerce .woocommerce-breadcrumb,
+.woocommerce .products .product .out-of-stock,
+.woocommerce-page .products .product .out-of-stock,
 .woocommerce table.wishlist_table tbody td .dateadded {
 
     font-size: 14px;
@@ -343,7 +345,7 @@ section .section-title h3,
 .cta-style-2 .title h3,
 .woocommerce .entry-title,
 .archive-page-wrap .entry-title,
-.default-page-wrap .entry-title,
+.inner-page-wrap .entry-title,
 .default-post-wrap .entry-title {
 
     font-size: 32px;

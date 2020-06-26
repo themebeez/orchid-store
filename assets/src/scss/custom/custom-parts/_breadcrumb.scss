@@ -47,6 +47,18 @@ body.home .os-breadcrumb-wrap {
     padding:0;
 }
 
+.os-page-breadcrumb-wrap .breadcrumbs,
+.woocommerce .os-page-breadcrumb-wrap .woocommerce-breadcrumb {
+
+    margin-bottom: 10px;
+}
+
+.os-page-breadcrumb-wrap .breadcrumb-trail ul {
+    
+    justify-content:flex-start;
+    text-align: left; // case when page header is disabled. Since - 1.2.1
+}
+
 .breadcrumb-trail ul li,
 .breadcrumb-trail ul li a,
 .breadcrumb-trail ul li span {
@@ -68,14 +80,14 @@ body.home .os-breadcrumb-wrap {
 }
 
 
-.os-breadcrumb-wrap li.trail-item:after {
+.breadcrumb-trail li.trail-item:after {
 
     content:'/';
     font-size: 10px;
     padding-left:10px;
 }
 
-.os-breadcrumb-wrap li.trail-item.trail-end:after {
+.breadcrumb-trail li.trail-item.trail-end:after {
 
     content:'';
     display:none;
