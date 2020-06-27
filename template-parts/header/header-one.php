@@ -207,9 +207,11 @@
                         ?>
                         <div class="os-col os-nav-col-right">
                             <div class="menu-toggle">
-                                <span class="hamburger-bar"></span>
-                                <span class="hamburger-bar"></span>
-                                <span class="hamburger-bar"></span>
+                                <button class="mobile-menu-toggle-btn">
+                                    <span class="hamburger-bar"></span>
+                                    <span class="hamburger-bar"></span>
+                                    <span class="hamburger-bar"></span>
+                                </button>
                             </div><!-- .meu-toggle -->
                             <?php
                             /**

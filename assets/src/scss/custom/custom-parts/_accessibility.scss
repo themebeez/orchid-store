@@ -8,47 +8,21 @@
 
 // ancours, links, images, 
 
-a:focus {
+a:focus,
+.mobile-menu-toggle-btn:focus,
+.category-navigation .cat-nav-trigger:focus,
+.masterheader .mini-cart .trigger-mini-cart:focus  {
 
-    outline:thin dotted;
+    outline:thin dotted #00f;
 }
 
 // input types 
-
-button:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-.category-navigation .cat-nav-trigger:focus,
-.masterheader .mini-cart .trigger-mini-cart:focus {
-
-    outline: thin dotted;
-} 
 
 .header-style-1 .wishlist-icon-container a:focus,
 .masterheader .mini-cart .trigger-mini-cart:focus,
 .header-style-1 .custom-search-entry button:focus {
 
-    outline:thin dotted blue;
-}
-
-textarea:focus, 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="range"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="color"]:focus {
-
-    outline: none;
+    outline:thin dotted #00f;
 }
 
 // Screen reader text

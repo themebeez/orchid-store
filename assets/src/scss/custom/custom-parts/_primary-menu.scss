@@ -430,10 +430,29 @@
 .menu-toggle {
 
     display: none;
-    padding: 15px 0;
     font-size: 0;
-    font-weight: normal;
+    padding: 13px 0;
+}
+
+.menu-toggle .mobile-menu-toggle-btn {
+    
+    padding:0;
+    margin:0;
+    color:transparent;
+    border-color:transparent;
+    background:transparent;
+    background-color:transparent;
     cursor: pointer;
+    font-weight: normal;
+    @include border-radius(0);
+}
+
+.mobile-menu-toggle-btn:hover {
+
+    color:transparent;
+    background:transparent;
+    border-color:transparent;
+    background-color:transparent;
 }
 
 .menu-toggle span {
@@ -445,7 +464,6 @@
     background-color: $white;
     @include transation_delay();
 }
-
 .menu-toggle span:last-child {
 
     margin-bottom: 0;
