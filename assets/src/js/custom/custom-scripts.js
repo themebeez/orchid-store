@@ -224,7 +224,7 @@
 
         });
 
-        $('.masterheader .menu-toggle').on('click', function(e){
+        $('.masterheader .mobile-menu-toggle-btn').on('click', function(e){
 
             $('body').toggleClass('menu-toggle-active'); // add class to body
         });
