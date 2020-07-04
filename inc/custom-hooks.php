@@ -10,7 +10,15 @@ if( ! function_exists( 'orchid_store_header_action' ) ) {
 
 	function orchid_store_header_action() {
 
-		get_template_part( 'template-parts/header/header', 'one' );
+		if( ! wp_is_mobile() || is_customize_preview() ) {
+
+			get_template_part( 'template-parts/header/header', 'one' );
+		}
+
+		if( wp_is_mobile() || is_customize_preview() ) {
+
+			get_template_part( 'template-parts/header/header', 'mobile' );
+		}
 	}
 }
 add_action( 'orchid_store_header', 'orchid_store_header_action', 10 ); 
