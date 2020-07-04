@@ -6,8 +6,6 @@
  *
  * @package Orchid_Store
  */
-
-
 ?>
 <header class="masterheader header-style-1">
     <div class="header-inner">
@@ -228,3 +226,59 @@
         </div><!-- .bottom-header -->
     </div><!-- .header-inner -->
 </header><!-- .masterheader.header-style-1 -->
+
+<aside class="mobile-navigation canvas">
+    <div class="canvas-inner">
+        <div class="canvas-container-entry">
+            <div class="canvas-close-container">
+                <button class="trigger-mob-nav-close"><i class='bx bx-x'></i></button>
+            </div><!-- // canvas-close-container -->
+            <div class="search-form">
+                <?php
+                    if( $orchid_store_display_product_search == true ) {
+
+                    if( class_exists( 'WooCommerce' ) ) {
+
+                        if( orchid_store_get_option( 'select_search_form' ) == 'product_search' ) {
+
+                            /**
+                            * Hook - orchid_store_product_search.
+                            *
+                            * @hooked orchid_store_product_search_action - 10
+                            */
+                            do_action( 'orchid_store_product_search' );
+                        } else {
+
+                            /**
+                            * Hook - orchid_store_default_search.
+                            *
+                            * @hooked orchid_store_default_search_action - 10
+                            */
+                            do_action( 'orchid_store_default_search' );
+                        }
+                    } else {
+
+                        /**
+                        * Hook - orchid_store_default_search.
+                        *
+                        * @hooked orchid_store_default_search_action - 10
+                        */
+                        do_action( 'orchid_store_default_search' );
+                    }  
+                }
+                ?>
+            </div><!-- // search-form -->
+            <div class="mobile-nav-entry">
+                <?php
+                   /**
+                    * Hook - orchid_store_secondary_navigation.
+                    *
+                    * @hooked orchid_store_secondary_navigation_action - 10
+                    */
+                    do_action( 'orchid_store_primary_navigation' );
+                ?>
+            </div><!-- // mobile-nav-entry -->
+        </div><!-- // canvas-container-entry -->
+    </div><!-- // canvas-inner -->
+</aside><!-- // mobile-navigation-canvas -->
+<div class="mobile-navigation-mask"></div><!-- // mobile-navigation-mask -->
