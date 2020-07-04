@@ -201,7 +201,7 @@ a:hover {
 
 a:focus {
 
-    outline: 1px dotted;
+    outline: 1px dotted #FFBF3F;
     text-decoration: none;
 }
 
@@ -814,7 +814,7 @@ input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus {
 
-    outline: 1px dotted blue;
+    outline: 1px dotted #FFBF3F;
     text-decoration: none;
 }
 

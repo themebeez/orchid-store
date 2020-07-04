@@ -324,20 +324,15 @@
     flex: 1;
 }
 
-.header-style-1 .custom-search-entry input:-webkit-autofill,
-.header-style-1 .custom-search-entry input:-webkit-autofill:hover,
-.header-style-1 .custom-search-entry input:-webkit-autofill:focus,
-.header-style-1 .custom-search-entry input:-webkit-autofill:active  {
+// .header-style-1 .custom-search-entry input:-webkit-autofill,
+// .header-style-1 .custom-search-entry input:-webkit-autofill:hover,
+// .header-style-1 .custom-search-entry input:-webkit-autofill:focus,
+// .header-style-1 .custom-search-entry input:-webkit-autofill:active  {
 
-    -webkit-box-shadow: none;
-    background-color:transparent;
-}
+//     -webkit-box-shadow: none;
+//     background-color:transparent;
+// }
 
-.header-style-1 .custom-search-entry .select-custom select:focus {
-
-    outline: none;
-    border: none;
-}
 
 .header-style-1 .aside-right {
 
@@ -410,7 +405,7 @@
     max-width: 100%;
     padding-left: 20px;
     padding-right: 60px;
-    color: #8d8d8d;
+    color: $primary_color;
     margin: 0;
     border-radius: 0;
     border: none;
@@ -419,6 +414,13 @@
     height: 46px;
     background-color: transparent;
     vertical-align:middle;
+}
+
+.header-style-1 .custom-search-entry input[type="search"]::-moz-placeholder,
+.header-style-1 .custom-search-entry .search-form input[type="search"]::-moz-placeholder {
+
+    color: $primary_color;
+    opacity:1;
 }
 
 .header-style-1 .custom-search-entry button,
