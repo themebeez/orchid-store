@@ -9,7 +9,7 @@
 
 
 ?>
-<header class="masterheader header-style-1">
+<header class="masterheader desktop-header header-style-1">
     <div class="header-inner">
         <?php
         $orchid_store_display_top_header = orchid_store_get_option( 'display_top_header' );

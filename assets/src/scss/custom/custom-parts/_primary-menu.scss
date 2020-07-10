@@ -543,13 +543,18 @@
 }
 
 .mobile-navigation .canvas-container-entry {
-
+    
+    position:relative;
     padding: 30px 20px;
 }
 
 .mobile-navigation .canvas-close-container {
 
-    margin-bottom:20px;
+    position:absolute;
+    top:0;
+    right:0;
+    left:auto;
+    z-index:10000;
 }
 
 .mobile-navigation .trigger-mob-nav-close {
@@ -559,20 +564,39 @@
     font-size: 21px;
     width: 40px;
     height: 40px;
-    line-height: 36px;
+    line-height: 40px;
     cursor: pointer;
     text-align: center;
     background-color: transparent;
-    border: 2px solid rgba(255,255,255,0.2);
-    @include border-radius(50%);
 }
 
-.mobile-navigation .trigger-mob-nav-close:hover {
+// Top header navigation
 
-    border: 2px solid rgba(255,255,255,0.2);
-    background-color: transparent;
+.mobile-navigation .top-header-menu-entry nav > ul {
+    
+    padding:0;
+    margin:0;
+    list-style:none;
 }
 
+.mobile-navigation .top-header-menu-entry nav > ul > li,
+.mobile-navigation .top-header-menu-entry nav > ul > li > a {
+
+    display:block;
+}
+
+.mobile-navigation .top-header-menu-entry nav > ul > li > a {
+    
+    font-size: 15px;
+    padding: 15px 0;
+    line-height:1;
+    border-bottom: 1px solid hsla(0,0%,100%,.2);
+}
+
+.mobile-navigation .top-header-menu-entry nav > ul > li > a:hover {
+    
+    color:#ffbf3f;
+}
 
 // navigation in mobile device 
 
@@ -772,68 +796,68 @@
 }
 
 
-/*
-====================================================
-=
-= Search at mobile navigation
-=
-==========================================
-*/
+// /*
+// ====================================================
+// =
+// = Search at mobile navigation
+// =
+// ==========================================
+// */
 
-.mobile-navigation .custom-search  {
+// .mobile-navigation .custom-search  {
     
-    position:relative;
-    margin-bottom: 15px
-}
+//     position:relative;
+//     margin-bottom: 15px
+// }
 
-.mobile-navigation .woocommerce-product-search {
+// .mobile-navigation .woocommerce-product-search {
 
-    position:relative;
-}
+//     position:relative;
+// }
 
-.mobile-navigation .search-form input[type=search] {
+// .mobile-navigation .search-form input[type=search] {
     
-    font-weight:normal;
-    font-size:14px;
-    padding-left:15px;
-    padding-right: 35px;
-    border:2px solid rgba(255,255,255,0.2);
-    background-color:transparent;
-    @include border-radius(3px);
-}
+//     font-weight:normal;
+//     font-size:14px;
+//     padding-left:15px;
+//     padding-right: 35px;
+//     border:2px solid rgba(255,255,255,0.2);
+//     background-color:transparent;
+//     @include border-radius(3px);
+// }
 
-.mobile-navigation .search-form ::placeholder {
+// .mobile-navigation .search-form ::placeholder {
 
-    color:rgba(255,255,255,0.9);
-}
+//     color:rgba(255,255,255,0.9);
+// }
 
-.mobile-navigation .search-form ::-webkit-input-placeholder {
+// .mobile-navigation .search-form ::-webkit-input-placeholder {
 
-    color:rgba(255,255,255,0.9);
-}
+//     color:rgba(255,255,255,0.9);
+// }
 
-.mobile-navigation .search-form ::-moz-placeholder {
+// .mobile-navigation .search-form ::-moz-placeholder {
 
-    color:rgba(255,255,255,0.9);
-}
+//     color:rgba(255,255,255,0.9);
+// }
 
-.mobile-navigation .search-form input {
+// .mobile-navigation .search-form input {
 
-    color:rgba(255,255,255,0.9);
-}
+//     color:rgba(255,255,255,0.9);
+// }
 
-.mobile-navigation .search-form button {
+// .mobile-navigation .search-form button {
     
-    top: 5px;
-    right: 5px;
-    line-height: 30px;
-    background-color:$white;
-    -ms-transform: none;
-    -moz-transform: none;
-    -webkit-transform: none;
-    transform: none;
-    opacity: 0.9;
-   @include border-radius(3px);
-   @include mild_drop_shadow();
-}
+//     top: 5px;
+//     right: 5px;
+//     line-height: 30px;
+//     background-color:$white;
+//     -ms-transform: none;
+//     -moz-transform: none;
+//     -webkit-transform: none;
+//     transform: none;
+//     opacity: 0.9;
+//    @include border-radius(3px);
+//    @include mild_drop_shadow();
+// }
 
