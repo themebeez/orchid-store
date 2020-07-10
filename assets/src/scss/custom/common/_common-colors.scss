@@ -121,7 +121,8 @@ input[type="submit"]:hover,
 .product-widget-style-3 .owl-carousel .owl-nav button.owl-prev:hover,
 .mobile-navigation .trigger-mob-nav-close,
 .woocommerce .products .product .out-of-stock,
-.woocommerce-page .products .product .out-of-stock {
+.woocommerce-page .products .product .out-of-stock,
+.mobile-navigation .top-header-menu-entry nav > ul > li > a  {
 
 	color:$white;
 }
@@ -359,6 +360,7 @@ a.button-general,
 .category-nav li a:hover,
 .cta-style-1,
 .main-navigation,
+.mobile-header-style-1 .bottom-block,
 .header-style-1 .top-header,
 #yith-wcwl-popup-message,
 .header-style-1 .custom-search-entry button,

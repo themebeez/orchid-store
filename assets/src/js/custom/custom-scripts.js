@@ -195,6 +195,7 @@
         // Main primary menu
 
         // add to anchour
+
         $('#site-navigation .menu-item-has-children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-down"></i> </span>');
 
         $('#site-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-down"></i> </span>');
@@ -241,9 +242,7 @@
         });
 
 
-
         // Category Navigation at header 
-
 
         $('.cat-nav-trigger').on('click', function(e) {
 
@@ -265,6 +264,14 @@
         var MegaMenuColumnCount = $(".masterheader .menu-item-has-mega-children > ul.mega-menu-sub-menu > li").length;
 
         megaSubMenu.addClass('mega-menu-column-'+MegaMenuColumnCount);
+
+
+        // mobile header search 
+
+        $('.mobile-header .search-toggle').on('click', function(e){
+
+            $('body').toggleClass('mobile-header-search-active'); // toggle class to display & hide mobile header search
+        });
         
 
         /*
