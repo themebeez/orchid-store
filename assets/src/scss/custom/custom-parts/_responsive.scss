@@ -887,7 +887,7 @@
         float: none;
     }
 
-    // WooCommerce: product columns for mobile. Since 1.2.1
+    // WooCommerce: product columns for mobile. Since version 1.2.1
     
     .woocommerce[class*="columns-"].os-mobile-col-1 ul.products li,
     .woocommerce-page [class*="columns-"].os-mobile-col-1 ul.products li.product {
@@ -895,12 +895,21 @@
         flex:0 0 100%; 
         max-width:100%;
     }
-    
+
+    .woocommerce[class*="columns-"].os-mobile-col-2 ul.products, 
+    .woocommerce[class*="columns-"].os-mobile-col-2 ul.products {
+
+        margin-right:-5px;
+        margin-left:-5px;
+    }
+
     .woocommerce[class*="columns-"].os-mobile-col-2 ul.products li,
     .woocommerce-page [class*="columns-"].os-mobile-col-2 ul.products li.product {
-
+        
         flex:0 0 50%;
         max-width:50%;
+        padding-right: 5px;
+        padding-left: 5px;
     }
     
     .header-style-1 .logo-col {
@@ -954,11 +963,6 @@
 
 
     // Header
-
-    .header-style-1 .branding {
-
-        max-width:220px;
-    } 
 
     .header-style-1 .top-header .os-col.left-col {
 
@@ -1046,7 +1050,6 @@
 
 
     // font 
-
 
     .comments-area .comments-title,
     .comment-respond .comment-reply-title {
