@@ -466,8 +466,9 @@ ul.woocommerce-page .woocommerce-notice {
     font-weight: 400;
     line-height: 1;
     min-height: 1px;
-    min-width: 1px;
+    width: 130px;
     padding: 10px 15px;
+    text-align: center;
     background:transparent;
     background-color: red;
     @include border-radius(2px);
@@ -755,8 +756,7 @@ ul.woocommerce-page .woocommerce-notice {
 
 .woocommerce ul.products li .product-hover-items ul li .yith-wcwl-add-to-wishlist .wish-list-button {
 
-    line-height: 38px;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .woocommerce ul.products li .product-hover-items ul li a .text {
