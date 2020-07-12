@@ -11,9 +11,9 @@
 .masterheader .site-title {
 
     display: block;
+    margin:0;
     font-size: 32px;
     font-weight: bold;
-    text-transform: uppercase;
 }
 
 .masterheader .site-logo,
@@ -572,7 +572,7 @@
 
 .header-style-1 .branding {
 
-    max-width:250px;
+    max-width:400px;
 }
 
 .mobile-header .mid-block .header-items.flex-col {
@@ -793,7 +793,7 @@
     transition-delay: 0.1s;
 }
 
-@media(max-width:991px) {
+@media(max-width:1024px) {
 
     body.menu-toggle-active .mobile-navigation {
 
