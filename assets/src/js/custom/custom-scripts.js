@@ -249,7 +249,6 @@
 
         $('#site-navigation .page_item_has_children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
 
-
         $('#site-navigation .sub-toggle').on('click', function() {
 
             $(this).toggleClass('active-submenu');
@@ -294,10 +293,17 @@
 
         });
 
-        $('.category-navigation .menu-item-has-children > .menu-link').append('<span class="sub-toggle"> <i class="fa fa-angle-right"></i> </span>');
+        // add to anchour
 
-        $('.category-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle"> <i class="fa fa-angle-right"></i> </span>');
+        $('.category-navigation .menu-item-has-children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-right"></i> </span>');
 
+        $('.category-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-right"></i> </span>');
+
+        // add to li 
+
+        $('.category-navigation .menu-item-has-children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
+
+        $('.category-navigation .page_item_has_children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
 
         // Count & add class in Mega Menu Orchid store Theme
 
@@ -308,6 +314,26 @@
         var MegaMenuColumnCount = $(".masterheader .menu-item-has-mega-children > ul.mega-menu-sub-menu > li").length;
 
         megaSubMenu.addClass('mega-menu-column-'+MegaMenuColumnCount);
+
+
+        $('.mobile-header .sub-toggle').on('click', function() {
+
+            $(this).toggleClass('active-submenu');
+
+            $(this).parent('.menu-item-has-children').children('ul.sub-menu').first().slideToggle('medium');
+
+            $(this).parent('.page_item_has_children').children('ul.children').first().slideToggle('medium');
+
+            if($(this).hasClass('active-submenu')) {
+
+                $(this).find('.fa').removeClass('fa-angle-down').addClass('fa-angle-up');
+
+            } else {
+
+                $(this).find('.fa').removeClass('fa-angle-up').addClass('fa-angle-down');
+            }
+
+        });
 
 
         // mobile header search 
@@ -405,9 +431,9 @@
                 400: {
                     items: mobile_products_col
                 },
-                500: {
+                575: {
 
-                    items: 2
+                    items: mobile_products_col
                 },
                 600: {
                     items: 2
