@@ -153,7 +153,14 @@ function orchid_store_scripts() {
 
 			$script_obj['cart_updated_message'] = get_theme_mod( 'orchid_store_field_cart_update_message', esc_html__( 'Cart items has been updated successfully!', 'orchid-store' ) );
 		}
+
+		if( get_theme_mod( 'orchid_store_field_product_cols_in_mobile' ) ) {
+			$script_obj['product_cols_on_mobile'] = get_theme_mod( 'orchid_store_field_product_cols_in_mobile' );
+		}
 	}
+
+	$script_obj['ajax_url'] = esc_url( admin_url( 'admin-ajax.php' ) );
+	$script_obj['nonce'] = wp_create_nonce( 'orchid-store-ajax-nonce' );
 
 	wp_localize_script( 'orchid-store-bundle', 'orchid_store_obj', $script_obj );
 
