@@ -215,11 +215,9 @@
         ===================================
         */
 
-        var miniCart = $('.trigger-mini-cart');
-
         var openCart = $('.mini-cart-open');
 
-        miniCart.on('click', function(e) {
+        $('body').on('click', '.trigger-mini-cart', function(e) {
 
             openCart.toggleClass('display-block');
         });
