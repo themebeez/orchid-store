@@ -12,6 +12,28 @@
         $('#site-navigation .menu-item-has-children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
 
         $('#site-navigation .page_item_has_children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
+
+        // add to anchour
+
+        $('.category-navigation .menu-item-has-children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-right"></i> </span>');
+
+        $('.category-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-right"></i> </span>');
+
+        // add to li 
+
+        $('.category-navigation .menu-item-has-children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
+
+        $('.category-navigation .page_item_has_children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
+
+        // Count & add class in Mega Menu Orchid store Theme
+
+        var megaSubMenu = $('.masterheader .menu-item-has-mega-children > ul');
+
+        megaSubMenu.addClass('mega-menu-sub-menu');
+
+        var MegaMenuColumnCount = $(".masterheader .menu-item-has-mega-children > ul.mega-menu-sub-menu > li").length;
+
+        megaSubMenu.addClass('mega-menu-column-'+MegaMenuColumnCount);
     }
 
     function orchid_store_header() {
@@ -298,30 +320,8 @@
 
         });
 
-        // add to anchour
 
-        $('.category-navigation .menu-item-has-children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-right"></i> </span>');
-
-        $('.category-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-right"></i> </span>');
-
-        // add to li 
-
-        $('.category-navigation .menu-item-has-children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
-
-        $('.category-navigation .page_item_has_children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
-
-        // Count & add class in Mega Menu Orchid store Theme
-
-        var megaSubMenu = $('.masterheader .menu-item-has-mega-children > ul');
-
-        megaSubMenu.addClass('mega-menu-sub-menu');
-
-        var MegaMenuColumnCount = $(".masterheader .menu-item-has-mega-children > ul.mega-menu-sub-menu > li").length;
-
-        megaSubMenu.addClass('mega-menu-column-'+MegaMenuColumnCount);
-
-
-        $('.mobile-header .sub-toggle').on('click', function() {
+        $('body').on('click', '.mobile-header .sub-toggle', function() {
 
             $(this).toggleClass('active-submenu');
 
