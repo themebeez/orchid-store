@@ -79,11 +79,11 @@
                     <div class="os-col logo-col">
                         <?php
                         /**
-                        * Hook - orchid_store_site_identity.
+                        * Hook - orchid_store_desktop_site_identity.
                         *
-                        * @hooked orchid_store_site_identity_action - 10
+                        * @hooked orchid_store_desktop_site_identity_action - 10
                         */
-                        do_action( 'orchid_store_site_identity' );
+                        do_action( 'orchid_store_desktop_site_identity' );
                         ?>
                     </div><!-- .os-col.logo-col -->
                     <?php

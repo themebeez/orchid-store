@@ -51,11 +51,11 @@
                     <div class="branding flex-col">
                         <?php
                         /**
-                        * Hook - orchid_store_site_identity.
+                        * Hook - orchid_store_mobile_site_identity.
                         *
-                        * @hooked orchid_store_site_identity_action - 10
+                        * @hooked orchid_store_mobile_site_identity_action - 10
                         */
-                        do_action( 'orchid_store_site_identity' );
+                        do_action( 'orchid_store_mobile_site_identity' );
                         ?>
                     </div><!-- .branding flex-col -->
                     <?php 
