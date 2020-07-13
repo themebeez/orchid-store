@@ -2,6 +2,18 @@
 
     'use strict';
 
+    function orchid_store_menu() {
+
+        $('#site-navigation .menu-item-has-children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-down"></i> </span>');
+
+        $('#site-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-down"></i> </span>');
+
+        // add to li
+        $('#site-navigation .menu-item-has-children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
+
+        $('#site-navigation .page_item_has_children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
+    }
+
     function orchid_store_header() {
 
         if( window.matchMedia("(max-width: 1024px)").matches) {
@@ -18,7 +30,7 @@
                         $('.os-site-header').append( data );  
                     }
 
-                                                          
+                    orchid_store_menu();                                    
                 }
             });
 
@@ -35,7 +47,9 @@
 
                     if($('.desktop-header').length == 0 ) {
                         $('.os-site-header').append( data );  
-                    }                
+                    }    
+
+                    orchid_store_menu();            
                 }
             });
         }
@@ -237,19 +251,10 @@
         */
 
         // Main primary menu
-
+        orchid_store_menu();
         // add to anchour
 
-        $('#site-navigation .menu-item-has-children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-down"></i> </span>');
-
-        $('#site-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-down"></i> </span>');
-
-        // add to li
-        $('#site-navigation .menu-item-has-children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
-
-        $('#site-navigation .page_item_has_children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
-
-        $('#site-navigation .sub-toggle').on('click', function() {
+        $('body').on('click', '#site-navigation .sub-toggle', function() {
 
             $(this).toggleClass('active-submenu');
 
@@ -414,7 +419,6 @@
         jQuery('.owl-carousel-2').owlCarousel({
 
             rtl: owlrtl,
-            items: 4,
             loop: true,
             lazyLoad: false,
             margin: 30,
