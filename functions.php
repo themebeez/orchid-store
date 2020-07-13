@@ -159,9 +159,6 @@ function orchid_store_scripts() {
 		}
 	}
 
-	$script_obj['ajax_url'] = esc_url( admin_url( 'admin-ajax.php' ) );
-	$script_obj['nonce'] = wp_create_nonce( 'orchid-store-ajax-nonce' );
-
 	wp_localize_script( 'orchid-store-bundle', 'orchid_store_obj', $script_obj );
 
 	wp_enqueue_script( 'orchid-store-bundle' );

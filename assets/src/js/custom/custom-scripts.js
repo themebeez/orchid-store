@@ -2,90 +2,7 @@
 
     'use strict';
 
-    function orchid_store_menu() {
-
-        $('#site-navigation .menu-item-has-children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-down"></i> </span>');
-
-        $('#site-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-down"></i> </span>');
-
-        // add to li
-        $('#site-navigation .menu-item-has-children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
-
-        $('#site-navigation .page_item_has_children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
-
-        // add to anchour
-
-        $('.category-navigation .menu-item-has-children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-right"></i> </span>');
-
-        $('.category-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-right"></i> </span>');
-
-        // add to li 
-
-        $('.category-navigation .menu-item-has-children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
-
-        $('.category-navigation .page_item_has_children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
-
-        // Count & add class in Mega Menu Orchid store Theme
-
-        var megaSubMenu = $('.masterheader .menu-item-has-mega-children > ul');
-
-        megaSubMenu.addClass('mega-menu-sub-menu');
-
-        var MegaMenuColumnCount = $(".masterheader .menu-item-has-mega-children > ul.mega-menu-sub-menu > li").length;
-
-        megaSubMenu.addClass('mega-menu-column-'+MegaMenuColumnCount);
-    }
-
-    function orchid_store_header() {
-
-        if( window.matchMedia("(max-width: 1024px)").matches) {
-
-            $.ajax({
-                url: orchid_store_obj.ajax_url,
-                type:'post',
-                data: { action: 'orchid_store_load_mobile_header', nonce: orchid_store_obj.nonce },
-                success:function( data ) {
-                    if( $('.desktop-header') ) {
-                        $('.desktop-header').remove();
-                    }
-                    if($('.mobile-header').length == 0 ) {
-                        $('.os-site-header').append( data );  
-                    }
-
-                    orchid_store_menu();                                    
-                }
-            });
-
-        } else {             
-
-            $.ajax({
-                url: orchid_store_obj.ajax_url,
-                type:'post',
-                data: { action: 'orchid_store_load_desktop_header', nonce: orchid_store_obj.nonce },
-                success:function( data ) {
-                    if( $('.mobile-header') ) {
-                        $('.mobile-header').remove();
-                    }
-
-                    if($('.desktop-header').length == 0 ) {
-                        $('.os-site-header').append( data );  
-                    }    
-
-                    orchid_store_menu();            
-                }
-            });
-        }
-    }
-
-    // Document ready function
-    $(window).resize( function() {
-
-        orchid_store_header();
-    } );
-
     $(document).ready(function() {
-
-        orchid_store_header();
 
         /*
         ====================
@@ -131,7 +48,6 @@
         ==================================
         */
 
-
         tippy('.os-tooltip', {
 
             content: "",
@@ -150,7 +66,6 @@
         = WooCommerce  cart events
         ============================
         */
-
 
         iziToast.settings({
 
@@ -270,9 +185,36 @@
         ====================================
         */
 
-        // Main primary menu
-        orchid_store_menu();
+        $('#site-navigation .menu-item-has-children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-down"></i> </span>');
+
+        $('#site-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-down"></i> </span>');
+
+        // add to li
+        $('#site-navigation .menu-item-has-children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
+
+        $('#site-navigation .page_item_has_children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
+
         // add to anchour
+
+        $('.category-navigation .menu-item-has-children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-right"></i> </span>');
+
+        $('.category-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-right"></i> </span>');
+
+        // add to li 
+
+        $('.category-navigation .menu-item-has-children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
+
+        $('.category-navigation .page_item_has_children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
+
+        // Count & add class in Mega Menu Orchid store Theme
+
+        var megaSubMenu = $('.masterheader .menu-item-has-mega-children > ul');
+
+        megaSubMenu.addClass('mega-menu-sub-menu');
+
+        var MegaMenuColumnCount = $(".masterheader .menu-item-has-mega-children > ul.mega-menu-sub-menu > li").length;
+
+        megaSubMenu.addClass('mega-menu-column-'+MegaMenuColumnCount);
 
         $('body').on('click', '#site-navigation .sub-toggle', function() {
 
@@ -525,11 +467,7 @@
 
                 $('.orchid-backtotop').fadeOut('slow');
             }
-        });
-
-
-        /* Ajax request for header template */
-        
+        });       
 
     });
 
