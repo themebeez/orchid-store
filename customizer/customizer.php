@@ -88,6 +88,7 @@ function orchid_store_customize_register( $wp_customize ) {
 	$wp_customize->get_section( 'background_image' )->title = esc_html__( 'Background', 'orchid-store' );
 
 	$wp_customize->get_control( 'custom_logo' )->section = 'orchid_store_section_site_logo';
+	$wp_customize->get_control( 'custom_logo' )->priority = 5;
 	$wp_customize->get_control( 'blogname' )->section = 'orchid_store_section_site_logo';
 	$wp_customize->get_control( 'blogdescription' )->section = 'orchid_store_section_site_logo';
 	$wp_customize->get_control( 'header_textcolor' )->section = 'orchid_store_section_site_logo';

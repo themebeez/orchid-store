@@ -102,7 +102,7 @@ if( ! function_exists( 'orchid_store_desktop_site_identity_action' ) ) {
 
 				the_custom_logo();
 
-				if( is_front_page() ) {
+				if( is_front_page() && ! wp_is_mobile() ) {
 					?>
 					</h1>
 					<?php
@@ -143,7 +143,10 @@ if( ! function_exists( 'orchid_store_mobile_site_identity_action' ) ) {
 		?>
 		<div class="site-branding">
 			<?php
-			if( has_custom_logo() ) {
+
+			$mobile_logo = orchid_store_get_option( 'logo_mobile' );
+
+			if( has_custom_logo() || $mobile_logo ) {
 
 				if( is_front_page() && wp_is_mobile() ) {
 					?>
@@ -151,9 +154,17 @@ if( ! function_exists( 'orchid_store_mobile_site_identity_action' ) ) {
 					<?php
 				}
 
-				the_custom_logo();
+				if( $mobile_logo ) {
+					?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+						<img class="mobile-logo" src="<?php echo esc_url( $mobile_logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+					</a>
+					<?php
+				} else {
+					the_custom_logo();
+				}
 
-				if( is_front_page() ) {
+				if( is_front_page() && wp_is_mobile() ) {
 					?>
 					</h1>
 					<?php

@@ -29,16 +29,14 @@
 	<div id="page" class="site __os-page-wrap__">
 
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'orchid-store' ); ?></a>
-		
-		<div class="os-site-header">
-			<?php
-			/**
-	        * Hook - orchid_store_header.
-	        *
-	        * @hooked orchid_store_header_action - 10
-	        */
-	        do_action( 'orchid_store_header' );
-	        ?>
-	    </div>
+
+		<?php
+		/**
+        * Hook - orchid_store_header.
+        *
+        * @hooked orchid_store_header_action - 10
+        */
+        do_action( 'orchid_store_header' );
+        ?>
         
         <div id="content" class="site-content">

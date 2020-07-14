@@ -206,6 +206,10 @@ if( ! function_exists( 'orchid_store_section_declaration' ) ) {
 orchid_store_section_declaration();
 
 
+orchid_store_add_image_field( 'logo_mobile', esc_html__( 'Logo - For Mobile', 'orchid-store' ), '', '', 'site_logo' );
+$wp_customize->get_control( 'orchid_store_field_logo_mobile' )->priority = 5;
+
+
 /*******************************************************************************************************
 ********************************** Home Page Control Fields Declaration *********************************
 *******************************************************************************************************/
