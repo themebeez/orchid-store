@@ -102,6 +102,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 - Fix: Password protected post issue
 - Tweak: WooCommerce default category widget (Added toggle for child categories)
 - Added: Mobile header
+- Added: Logo option for mobile
 
 # CSS STYLES SPECIFIC - 1.2.1
 
