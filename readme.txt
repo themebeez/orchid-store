@@ -33,6 +33,9 @@ Orchid Store is distributed under the terms of the GNU GPL
 
 * WPTRT Customize Pro https://github.com/WPTRT/wptrt-customize-pro, 2019 WPTRT, [GPLv2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
+* WPTRT Admin-Notices, https://github.com/WPTT/admin-notices, [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
+
+
 * Breadcrumbs Trail https://themehybrid.com/plugins/breadcrumb-trail, Copyright (c) 2008 - 2017, Justin Tadlock, [GPLv2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
 * iziToast https://github.com/marcelodolza/iziToast, Marcelo Dolce, [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
@@ -103,6 +106,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 - Tweak: WooCommerce default category widget (Added toggle for child categories)
 - Added: Mobile header
 - Added: Logo option for mobile
+- Added: WPTRT Admin Notices library
 
 # CSS STYLES SPECIFIC - 1.2.1
 
