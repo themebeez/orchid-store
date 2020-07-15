@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <div id="main" class="site-main">
                             <div class="<?php orchid_store_content_entry_class(); ?>">
                             	<?php
-								if( orchid_store_get_option( 'display_page_header' ) == false ) {
+								if( orchid_store_get_option( 'display_page_header' ) == false && ! is_product() ) {
 			                		?>
 			                		<h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>
 			                		<?php
