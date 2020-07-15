@@ -20,4 +20,6 @@ license.txt
 readme.html
 /sitemap.xml
 /sitemap.xml.gz
+composer.json
+composer.lock
 

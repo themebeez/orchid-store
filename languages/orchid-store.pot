@@ -510,6 +510,15 @@ msgstr ""
 msgid "Secondary Menu"
 msgstr ""
 
+#. translators: 1: link
+#: functions.php:290
+msgid "Are you having problem with the recent theme update? Please read the %1$s that we have published to have more information about the update."
+msgstr ""
+
+#: functions.php:290
+msgid "blog post"
+msgstr ""
+
 #: header.php:31
 msgid "Skip to content"
 msgstr ""
