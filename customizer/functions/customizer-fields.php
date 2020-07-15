@@ -374,7 +374,7 @@ orchid_store_add_number_field( 'excerpt_length', esc_html__( 'Excerpt Length', '
 /*******************************************************************************************************
 ***************************************** Accessibility Fields Declaration ***********************************
 *******************************************************************************************************/
-orchid_store_add_toggle_field( 'disable_ouline_on_focus', esc_html__( 'Display Outline On Focus', 'orchid-store' ), '', '', 'theme_accessibility' );
+orchid_store_add_toggle_field( 'disable_ouline_on_focus', esc_html__( 'Disable Outline On Focus', 'orchid-store' ), '', '', 'theme_accessibility' );
 
 
 /*******************************************************************************************************

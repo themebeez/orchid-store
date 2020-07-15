@@ -403,7 +403,7 @@ msgid "Excerpt is the short content of post or page."
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:377
-msgid "Display Outline On Focus"
+msgid "Disable Outline On Focus"
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:383

@@ -21,7 +21,6 @@
                         <div class="os-col left-col">
                            <div class="topbar-items">
                                 <?php
-
                                 $orchid_store_top_header_left_item = orchid_store_get_option( 'display_menu_or_login_register_link' );
 
                                 if( $orchid_store_top_header_left_item == 'login_register' ) {
