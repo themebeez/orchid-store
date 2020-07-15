@@ -526,7 +526,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 */
 		public function overload_textdomain_mofile( $mofile, $domain ) {
 			// Exit early if not our domain, not a WP_LANG_DIR load or if the file exists and is readable.
-			if ( 'tgmpa' !== $domain || false === strpos( $mofile, WP_LANG_DIR ) || @is_readable( $mofile ) ) {
+			if ( 'tgmpa' !== $domain || false === strpos( $mofile, WP_LANG_DIR ) || is_readable( $mofile ) ) {
 				return $mofile;
 			}
 
