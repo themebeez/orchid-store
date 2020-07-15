@@ -110,7 +110,8 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.woocommerce input.button.alt:disabled:hover,
 			.woocommerce input.button.alt:disabled[disabled],
 			.product-widget-style-3 .owl-carousel .owl-nav button.owl-next, 
-			.product-widget-style-3 .owl-carousel .owl-nav button.owl-prev {
+			.product-widget-style-3 .owl-carousel .owl-nav button.owl-prev,
+			.mobile-header-style-1 .bottom-block {
 
 				background-color: {$primary_color};
 			}
