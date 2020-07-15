@@ -139,38 +139,41 @@
                         <div class="flex-col right">
                             <div class="flex-row">
                                 <?php 
-                                    $orchid_store_display_special_menu = orchid_store_get_option( 'display_special_menu' );
-                                    if( $orchid_store_display_special_menu == true ) {
-                                ?>
-                                <div class="cat-menu-col flex-col">
-                                     <div class="special-cat-menu">
-                                         <button class="cat-nav-trigger">
-                                            <span class="icon">
-                                                <span class="line"></span>
-                                                <span class="line"></span>
-                                                <span class="line"></span>
-                                            </span>
-                                        </button>
-                                    </div><!-- // special-cat-menu -->
-                                </div><!-- // cat-menu-col -->
-                            <?php 
+                                $orchid_store_display_special_menu = orchid_store_get_option( 'display_special_menu' );
+                                if( $orchid_store_display_special_menu == true ) {
+                                    ?>
+                                    <div class="cat-menu-col flex-col">
+                                         <div class="special-cat-menu">
+                                             <button class="cat-nav-trigger">
+                                                <span class="icon">
+                                                    <span class="line"></span>
+                                                    <span class="line"></span>
+                                                    <span class="line"></span>
+                                                </span>
+                                            </button>
+                                        </div><!-- // special-cat-menu -->
+                                    </div><!-- // cat-menu-col -->
+                                    <?php 
                                 }
-                            ?>
-                             <div class="search-col flex-col">
-                                    <button class="search-toggle"><i class='bx bx-search'></i></button>
-                                </div><!-- // search-col flex-col -->
+
+                                if( orchid_store_get_option( 'display_product_search_form_on_mobile' ) == true && orchid_store_get_option( 'display_product_search_form' ) == true ) {
+                                    ?>
+                                    <div class="search-col flex-col">
+                                        <button class="search-toggle"><i class='bx bx-search'></i></button>
+                                    </div><!-- // search-col flex-col -->
+                                    <?php
+                                }
+                                ?>
                             </div><!-- // flex-row -->
                         </div><!-- // flex-col right -->
                     </div><!-- // fex-row -->
                 </div><!-- // block-entry -->
             </div><!-- // __os-container__ -->
-             <div class="mobile-header-search">
-                <?php
-
-                $orchid_store_display_product_search = orchid_store_get_option( 'display_product_search_form' );
-
-                if( $orchid_store_display_product_search == true ) {
-
+            <?php
+            if( orchid_store_get_option( 'display_product_search_form' ) == true && orchid_store_get_option( 'display_product_search_form_on_mobile' ) == true ) {
+                ?>
+                <div class="mobile-header-search">
+                    <?php
                     if( class_exists( 'WooCommerce' ) ) {
 
                         if( orchid_store_get_option( 'select_search_form' ) == 'product_search' ) {
@@ -199,19 +202,26 @@
                         */
                         do_action( 'orchid_store_default_search' );
                     }  
-                }
-                ?>
-            </div><!-- // mobile-header-search -->
-            <nav class="category-navigation special-navigation">
+                    ?>
+                </div><!-- // mobile-header-search -->
                 <?php
+            }
+
+            if( orchid_store_get_option( 'display_special_menu' ) ==  true ) {
+                ?>
+                <nav class="category-navigation special-navigation">
+                    <?php
                     /**
                     * Hook - orchid_store_secondary_navigation.
                     *
                     * @hooked orchid_store_secondary_navigation_action - 10
                     */
                     do_action( 'orchid_store_secondary_navigation' );
-                ?>
-            </nav><!-- // special-navigation -->
+                    ?>
+                </nav><!-- // special-navigation -->
+                <?php
+            }
+            ?>
         </div><!-- // bottom-block -->
     </div><!-- // header-inner -->
 </header><!-- .mobile-header header-style-1 -->
