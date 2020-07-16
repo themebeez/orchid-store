@@ -888,6 +888,7 @@
     // WooCommerce: product columns for mobile. Since version 1.2.1
     
     .woocommerce[class*="columns-"].os-mobile-col-1 ul.products li,
+    .woocommerce ul.products[class*=columns-].os-mobile-col-1 li.product,
     .woocommerce-page [class*="columns-"].os-mobile-col-1 ul.products li.product {
 
         flex:0 0 100%; 
@@ -895,13 +896,15 @@
     }
 
     .woocommerce[class*="columns-"].os-mobile-col-2 ul.products, 
-    .woocommerce[class*="columns-"].os-mobile-col-2 ul.products {
+    .woocommerce[class*="columns-"].os-mobile-col-2 ul.products,
+    .woocommerce ul.products[class*=columns-].os-mobile-col-2 li.product {
 
         margin-right:-5px;
         margin-left:-5px;
     }
 
     .woocommerce[class*="columns-"].os-mobile-col-2 ul.products li,
+    .woocommerce ul.products[class*=columns-].os-mobile-col-2 li.product,
     .woocommerce-page [class*="columns-"].os-mobile-col-2 ul.products li.product {
         
         flex:0 0 50%;
