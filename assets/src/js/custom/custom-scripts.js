@@ -370,13 +370,15 @@
             autoplayHoverPause: true,
             responsive: {
                 0: {
+                    margin: 5,
                     items: mobile_products_col
                 },
                 400: {
+                    margin: 5,
                     items: mobile_products_col
                 },
                 575: {
-
+                    margin: 5,
                     items: mobile_products_col
                 },
                 600: {
