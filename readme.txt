@@ -91,7 +91,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.2.1 - 25 June, 2020 ==
+== 1.2.1 - 16 July, 2020 ==
 
 - Added: Option to display number of product columns for mobile devices
 - Added: Option to display product search for mobile devices
@@ -100,13 +100,14 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 - Added: Option to select search form on header
 - Added: Option to display page header
 - Added: Accessibility option
+- Added: Mobile header
+- Added: Logo option for mobile
+- Added: WPTRT Admin Notices library
+- Added: WordPress default header search form
 - Fix: H1 issue for homepage(static or default)
 - Fix: Tab issue when multiple tab widgets are present
 - Fix: Password protected post issue
 - Tweak: WooCommerce default category widget (Added toggle for child categories)
-- Added: Mobile header
-- Added: Logo option for mobile
-- Added: WPTRT Admin Notices library
 
 # CSS STYLES SPECIFIC - 1.2.1
 
@@ -118,7 +119,6 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 - Tweak: Typography font (Poppins to Inter)
 - Tweak: Minor font size, line height & weights
 - Tweak: Post category meta design
-- Added: WordPress default header search form
 
 
 == 1.2.0 - 24 April, 2020 ==
