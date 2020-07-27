@@ -32,6 +32,12 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.header-style-1 .custom-search-entry button:focus  {
 				
 				outline:none;
+			}
+			
+			.site-navigation ul li a:hover,
+			.category-navigation ul li a:hover {
+
+				text-decoration:none;
 			}";
 		}
 
@@ -111,7 +117,8 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.woocommerce input.button.alt:disabled[disabled],
 			.product-widget-style-3 .owl-carousel .owl-nav button.owl-next, 
 			.product-widget-style-3 .owl-carousel .owl-nav button.owl-prev,
-			.mobile-header-style-1 .bottom-block {
+			.mobile-header-style-1 .bottom-block,
+			.woocommerce-store-notice.demo_store {
 
 				background-color: {$primary_color};
 			}
