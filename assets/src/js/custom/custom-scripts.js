@@ -185,26 +185,26 @@
         ====================================
         */
 
-        $('#site-navigation .menu-item-has-children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-down"></i> </span>');
+        $('#site-navigation .menu-item-has-children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="bx bx-chevron-down"></i> </span>');
 
-        $('#site-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-down"></i> </span>');
+        $('#site-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="bx bx-chevron-down"></i> </span>');
 
         // add to li
-        $('#site-navigation .menu-item-has-children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
+        $('#site-navigation .menu-item-has-children').append('<span class="sub-toggle visible-tablet"> <i class="bx bx-chevron-down"></i> </span>');
 
-        $('#site-navigation .page_item_has_children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
+        $('#site-navigation .page_item_has_children').append('<span class="sub-toggle visible-tablet"> <i class="bx bx-chevron-down"></i> </span>');
 
         // add to anchour
 
-        $('.category-navigation .menu-item-has-children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-right"></i> </span>');
+        $('.category-navigation .menu-item-has-children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="bx bx-chevron-right"></i> </span>');
 
-        $('.category-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="fa fa-angle-right"></i> </span>');
+        $('.category-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="bx bx-chevron-right"></i> </span>');
 
         // add to li 
 
-        $('.category-navigation .menu-item-has-children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
+        $('.category-navigation .menu-item-has-children').append('<span class="sub-toggle visible-tablet"> <i class="bx bx-chevron-down"></i> </span>');
 
-        $('.category-navigation .page_item_has_children').append('<span class="sub-toggle visible-tablet"> <i class="fa fa-angle-down"></i> </span>');
+        $('.category-navigation .page_item_has_children').append('<span class="sub-toggle visible-tablet"> <i class="bx bx-chevron-down"></i> </span>');
 
         // Count & add class in Mega Menu Orchid store Theme
 
@@ -226,11 +226,11 @@
 
             if($(this).hasClass('active-submenu')) {
 
-                $(this).find('.fa').removeClass('fa-angle-down').addClass('fa-angle-up');
+                $(this).find('.bx').removeClass('bx-chevron-down').addClass('bx bx-chevron-up');
 
             } else {
 
-                $(this).find('.fa').removeClass('fa-angle-up').addClass('fa-angle-down');
+                $(this).find('.bx').removeClass('bx-chevron-up').addClass('bx-chevron-down');
             }
 
         });
@@ -271,11 +271,11 @@
 
             if($(this).hasClass('active-submenu')) {
 
-                $(this).find('.fa').removeClass('fa-angle-down').addClass('fa-angle-up');
+                $(this).find('.bx').removeClass('bx-chevron-down').addClass('bx-chevron-up');
 
             } else {
 
-                $(this).find('.fa').removeClass('fa-angle-up').addClass('fa-angle-down');
+                $(this).find('.bx').removeClass('bx-chevron-up').addClass('bx-chevron-down');
             }
 
         });
@@ -457,19 +457,22 @@
 
         // Window scroll event
 
-        $(window).scroll(function() {
+        if( orchid_store_obj.scroll_top == '1' ) {
 
-            var height = $(window).scrollTop();
+            $(window).scroll(function() {
 
-            if (height > 600) {
+                var height = $(window).scrollTop();
 
-                $('.orchid-backtotop').fadeIn('slow');
+                if (height > 600) {
 
-            } else {
+                    $('.orchid-backtotop').fadeIn('slow');
 
-                $('.orchid-backtotop').fadeOut('slow');
-            }
-        });       
+                } else {
+
+                    $('.orchid-backtotop').fadeOut('slow');
+                }
+            });    
+        }   
 
     });
 

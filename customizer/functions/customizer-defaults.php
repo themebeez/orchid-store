@@ -116,6 +116,7 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
 
             'display_footer_widget_area' => false,
             'footer_widgets_area_columns' => '4',
+            'display_scroll_top_button' => true,
 
             'copyright_text' => '',
             'payments_image' => '',

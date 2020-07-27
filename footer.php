@@ -75,8 +75,15 @@
             </div><!-- .footer-mask -->
         </div><!-- .footer-inner -->
     </footer><!-- .footer -->
+    
+    <?php  
+    if( orchid_store_get_option( 'display_scroll_top_button' ) == true ) {
+        ?>
+        <div class="orchid-backtotop"><span><i class="bx bx-chevron-up"></i></span></div>
+        <?php
+    }
+    ?>
 
-    <div class="orchid-backtotop"><span><i class="fa fa-angle-up" aria-hidden="true"></i></span></div>
 </div><!-- .__os-page-wrap__ -->
 
 <?php wp_footer(); ?>
