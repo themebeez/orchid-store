@@ -94,7 +94,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 == 1.2.2 - 27 July, 2020 ==
 
 - Added: Option to display scroll top button.
-- Tweak: Changed FontAwesome icon to Box icons.
+- Tweak: Changed FontAwesome icon to Box icons (Menu dropdown).
 
 == 1.2.1 - 16 July, 2020 ==
 
