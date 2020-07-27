@@ -381,7 +381,7 @@ if( ! function_exists( 'orchid_store_quantity_plus' ) ) {
             return;
         }
         ?>
-        <button type="button" class="woo-quantity-btn woo-quantity-plus" ><i class="fa fa-plus" aria-hidden="true"></i></button>
+        <button type="button" class="woo-quantity-btn woo-quantity-plus" ><i class='bx bx-plus'></i></button>
        <?php
     }
 }
@@ -397,7 +397,7 @@ if( ! function_exists( 'orchid_store_quantity_minus' ) ) {
             return;
         }
         ?>
-        <button type="button" class="woo-quantity-btn woo-quantity-minus" ><i class="fa fa-minus" aria-hidden="true"></i></button>
+        <button type="button" class="woo-quantity-btn woo-quantity-minus" ><i class='bx bx-minus' ></i></button>
        <?php
     }
 }

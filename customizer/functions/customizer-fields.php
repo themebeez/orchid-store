@@ -360,6 +360,7 @@ orchid_store_add_radio_image_field( 'global_sidebar_position', esc_html__( 'Sele
 /*******************************************************************************************************
 ************************************ Footer Control Fields Declaration *********************************
 *******************************************************************************************************/
+orchid_store_add_toggle_field( 'display_scroll_top_button', esc_html__( 'Display Scroll Top Button', 'orchid-store' ), '', '', 'site_footer' );
 orchid_store_add_toggle_field( 'display_footer_widget_area', esc_html__( 'Display Footer Widgets', 'orchid-store' ), '', '', 'site_footer' );
 orchid_store_add_select_field( 'footer_widgets_area_columns', esc_html__( 'Select Footer Widget Area Columns', 'orchid-store' ), '', array( '1' => esc_html__( '1', 'orchid-store' ), '2' => esc_html__( '2', 'orchid-store' ), '3' => esc_html__( '3', 'orchid-store' ), '4' => esc_html__( '4', 'orchid-store' ) ), 'orchid_store_is_footer_widget_area_enabled', 'site_footer' );
 orchid_store_add_text_field( 'copyright_text', esc_html__( 'Copyright Text', 'orchid-store' ), '', '', 'site_footer' );

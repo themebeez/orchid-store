@@ -5,7 +5,7 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 5.6
 Requires at least: 5.0
 Tested up to: 5.4.2
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -90,6 +90,11 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.2.2 - 27 July, 2020 ==
+
+- Added: Option to display scroll top button.
+- Tweak: Changed FontAwesome icon to Box icons.
 
 == 1.2.1 - 16 July, 2020 ==
 

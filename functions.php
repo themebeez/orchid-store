@@ -117,18 +117,18 @@ function orchid_store_scripts() {
 
 	wp_enqueue_style( 'orchid-store-fonts', orchid_store_lite_fonts_url() );
 
-	wp_enqueue_style( 'orchid-store-boxicons', get_template_directory_uri() . '/assets/fonts/boxicons/boxicons.css' , ORCHID_STORE_VERSION);
+	wp_enqueue_style( 'orchid-store-boxicons', get_template_directory_uri() . '/assets/fonts/boxicons/boxicons.css' , array(), ORCHID_STORE_VERSION, 'all' );
 
-	wp_enqueue_style( 'orchid-store-fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome/fontawesome.css' , ORCHID_STORE_VERSION);
+	wp_enqueue_style( 'orchid-store-fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome/fontawesome.css' , array(), ORCHID_STORE_VERSION, 'all' );
 
 	if( is_rtl() ) {
 
-		wp_enqueue_style( 'orchid-store-main-style-rtl', get_template_directory_uri() . '/assets/dist/css/main-style-rtl.css' , ORCHID_STORE_VERSION);
+		wp_enqueue_style( 'orchid-store-main-style-rtl', get_template_directory_uri() . '/assets/dist/css/main-style-rtl.css' , array(), ORCHID_STORE_VERSION, 'all');
 
 		wp_add_inline_style( 'orchid-store-main-style-rtl', orchid_store_dynamic_style() );
 	} else {
 
-		wp_enqueue_style( 'orchid-store-main-style', get_template_directory_uri() . '/assets/dist/css/main-style.css' , ORCHID_STORE_VERSION);
+		wp_enqueue_style( 'orchid-store-main-style', get_template_directory_uri() . '/assets/dist/css/main-style.css' , array(), ORCHID_STORE_VERSION, 'all' );
 
 		wp_add_inline_style( 'orchid-store-main-style', orchid_store_dynamic_style() );
 	}
@@ -136,6 +136,8 @@ function orchid_store_scripts() {
 	wp_register_script( 'orchid-store-bundle', get_template_directory_uri() . '/assets/dist/js/bundle.min.js', array('jquery'), ORCHID_STORE_VERSION, true );
 
 	$script_obj = array();
+
+	$script_obj['scroll_top'] = orchid_store_get_option( 'display_scroll_top_button' );
 
 	if( class_exists( 'WooCommerce' ) ) {		
 
@@ -154,9 +156,11 @@ function orchid_store_scripts() {
 			$script_obj['cart_updated_message'] = get_theme_mod( 'orchid_store_field_cart_update_message', esc_html__( 'Cart items has been updated successfully!', 'orchid-store' ) );
 		}
 
-		if( get_theme_mod( 'orchid_store_field_product_cols_in_mobile' ) ) {
-			$script_obj['product_cols_on_mobile'] = get_theme_mod( 'orchid_store_field_product_cols_in_mobile' );
+		if( get_theme_mod( 'orchid_store_field_product_cols_in_mobile', 1 ) ) {
+			$script_obj['product_cols_on_mobile'] = get_theme_mod( 'orchid_store_field_product_cols_in_mobile', 1 );
 		}
+
+
 	}
 
 	wp_localize_script( 'orchid-store-bundle', 'orchid_store_obj', $script_obj );
