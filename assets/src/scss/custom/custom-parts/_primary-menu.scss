@@ -85,9 +85,8 @@
     position: relative;
 }
 
-.site-navigation ul li a .fa {
+.site-navigation ul li a .bx {
 
-    margin-right: 5px;
     font-weight: normal;
 }
 
@@ -214,7 +213,7 @@
         display: none;
     }
 
-    .site-navigation>ul>li:hover .sub-toggle .fa {
+    .site-navigation>ul>li:hover .sub-toggle .bx {
 
         -moz-transform: rotate(-180deg);
         -webkit-transform: rotate(-180deg);
@@ -236,16 +235,16 @@
         color: $white;
     }
 
-    .site-navigation ul li .sub-menu li .sub-toggle .fa,
-    .site-navigation ul li .children li .sub-toggle .fa {
+    .site-navigation ul li .sub-menu li .sub-toggle .bx,
+    .site-navigation ul li .children li .sub-toggle .bx {
 
         -moz-transform: none;
         -webkit-transform: none;
         transform: none;
     }
 
-    .site-navigation ul li .sub-menu li:hover .sub-toggle .fa,
-    .site-navigation ul li .children li:hover .sub-toggle .fa {
+    .site-navigation ul li .sub-menu li:hover .sub-toggle .bx,
+    .site-navigation ul li .children li:hover .sub-toggle .bx {
 
         -moz-transform: rotate(-90deg);
         -webkit-transform: rotate(-90deg);
