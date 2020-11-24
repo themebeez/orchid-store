@@ -586,19 +586,19 @@ msgctxt "placeholder"
 msgid "Type here to search"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:56
+#: inc/woocommerce-hooks.php:62
 msgid "Total:"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:135
+#: inc/woocommerce-hooks.php:141
 msgid "My account"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:139
+#: inc/woocommerce-hooks.php:145
 msgid "Login / Register"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:148
+#: inc/woocommerce-hooks.php:157
 msgid "My Wishlist"
 msgstr ""
 
