@@ -28,10 +28,16 @@ if( ! function_exists( 'orchid_store_wishlist_icon_action' ) ) {
 
     function orchid_store_wishlist_icon_action() {
 
-        if( class_exists( 'YITH_WCWL' ) ) {
+        if ( ! class_exists( 'YITH_WCWL' ) ) {
+            return;
+        }
+
+        $wishlist_page_url = orchid_store_get_yith_wishlist_page_url();
+
+        if ( $wishlist_page_url ) {
             ?>
             <div class="wishlist-icon-container">
-                <a href="<?php echo esc_url( home_url() . '/wishlist' ); ?>"><i class='bx bx-heart'></i></a>
+                <a href="<?php echo esc_url( $wishlist_page_url ); ?>"><i class='bx bx-heart'></i></a>
             </div><!-- .wishlist-icon-container -->
             <?php
         }
@@ -144,9 +150,13 @@ if( ! function_exists( 'orchid_store_user_links_action' ) ) {
                     <?php
                 }
             	if( class_exists( 'YITH_WCWL' ) ) {
-            		?>
-                	<li><a href="<?php echo esc_url( home_url() . '/wishlist' ); ?>"><i class='bx bx-heart'></i> <?php esc_html_e( 'My Wishlist', 'orchid-store' ); ?></a></li>
-                	<?php
+
+                    $wishlist_page_url = orchid_store_get_yith_wishlist_page_url();
+                    if ( $wishlist_page_url ) {
+                		?>
+                    	<li><a href="<?php echo esc_url( $wishlist_page_url ); ?>"><i class='bx bx-heart'></i> <?php esc_html_e( 'My Wishlist', 'orchid-store' ); ?></a></li>
+                       	<?php
+                    }
                 }
                 ?>
             </ul>
@@ -420,5 +430,23 @@ if( ! function_exists( 'orchid_store_get_woocommerce_sidebar' ) ) {
             </aside><!-- #secondary -->
         </div><!-- .col -->
         <?php
+    }
+}
+
+
+if ( ! function_exists( 'orchid_store_get_yith_wishlist_page_url' ) ) {
+
+    function orchid_store_get_yith_wishlist_page_url() {
+
+        if ( ! class_exists( 'YITH_WCWL' ) ) {
+            return;
+        }
+
+        $wishlist_page_id = get_option( 'yith_wcwl_wishlist_page_id' );
+
+        if ( $wishlist_page_id ) {
+
+            return get_page_link( absint( $wishlist_page_id ) );
+        }
     }
 }
