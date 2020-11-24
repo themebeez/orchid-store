@@ -281,26 +281,3 @@ require get_template_directory() . '/inc/custom-fields.php';
  * Load theme dependecies
  */
 require get_template_directory() . '/vendor/autoload.php';
-
-if( ! function_exists( 'orchid_store_admin_notice' ) ) {
-
-	function orchid_store_admin_notice() {
-
-		$theme_notice = new \WPTRT\AdminNotices\Notices();
-
-		// Add a notice.
-		$notice_content = sprintf( 
-			/* translators: 1: link */
-			__( 'Are you having problem with the recent theme update? Please read the %1$s that we have published to have more information about the update.', 'orchid-store' ), '<a href="https://themebeez.com/blog/orchid-store-version-1-2-1-pro-version-1-0-4-major-update-new-features">' . __( 'blog post', 'orchid-store' ) . '</a>'
-		);
-
-		$theme_notice->add( 'orchid-store-theme-notice', 
-			'', 
-			$notice_content, 
-			[ 'type' => 'warning' ]
-		);
-
-		$theme_notice->boot();
-	}
-}  
-orchid_store_admin_notice();
