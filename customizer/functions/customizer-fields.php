@@ -45,6 +45,13 @@ if( ! function_exists( 'orchid_store_section_declaration' ) ) {
 
 		$sections = array(
 			array(
+				'id' => 'site_general',
+				'title' => esc_html__( 'General', 'orchid-store' ),
+				'description' => '',
+				'panel' => '',
+				'priority' => 1,
+			),
+			array(
 				'id' => 'site_layout',
 				'title' => esc_html__( 'Site Layout', 'orchid-store' ),
 				'description' => '',
@@ -231,6 +238,21 @@ $wp_customize->add_control(
 			'active_callback' => 'orchid_store_is_static_home_page_set',
 		) 
 	) 
+);
+
+/*******************************************************************************************************
+********************************** General Control Fields Declaration *********************************
+*******************************************************************************************************/
+orchid_store_add_select_field( 
+	'value_as', 
+	esc_html__( 'Save Dropdown Value As', 'orchid-store' ), 
+	esc_html__( 'This option lets you save value of category dropdown, page dropdown, post dropdown, etc. either as slug or id. Select ID if your site language is other than English.', 'orchid-store' ), 
+	array( 
+		'slug' => esc_html__( 'Slug', 'orchid-store' ), 
+		'id' => esc_html__( 'ID', 'orchid-store' ) 
+	), 
+	'', 
+	'site_general' 
 );
 
 /*******************************************************************************************************

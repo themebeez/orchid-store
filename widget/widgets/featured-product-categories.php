@@ -8,6 +8,8 @@
 if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 
     class Orchid_Store_Featured_Product_Categories_Widget extends WP_Widget {
+
+        public $value_as; 
      
         function __construct() { 
 
@@ -18,7 +20,9 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
                     'classname'     => '',
                     'description'   => esc_html__( 'Displays featured product categories.', 'orchid-store' ), 
                 )
-            );     
+            );   
+
+            $this->value_as = orchid_store_get_option( 'value_as' );   
         }
      
         public function widget( $args, $instance ) {
@@ -37,7 +41,15 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
                                     <?php
                                     foreach( $product_categories as $product_category ) {
 
-                                        $category_term = get_term_by( 'slug', $product_category, 'product_cat' );
+                                        $category_term = '';
+
+                                        if ( $this->value_as == 'slug' ) {
+
+                                            $category_term = get_term_by( 'slug', $product_category, 'product_cat' );
+                                        } else {
+
+                                            $category_term = get_term_by( 'id', absint( $product_category ), 'product_cat' );
+                                        }
 
                                         $term_img_url = '';
 
@@ -122,16 +134,28 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 
                 if( !empty( $product_categories ) ) {
 
-                    foreach( $product_categories as $index => $product_category ) {
-                        ?>
-                        <span class="sldr-elmnt-cntnr">
-
-                            <label for="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>">
-                                <input id="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>" name="<?php echo esc_attr( $this->get_field_name('product_categories') ); ?>[]" type="checkbox" value="<?php echo esc_attr( $product_category->slug ); ?>" <?php if( !empty( $instance['product_categories'] ) ) { checked( in_array( $product_category->slug, $instance['product_categories'] ), true ); } ?>>
-                                <strong><?php echo esc_html( $product_category->name ); ?></strong>
-                            </label>
-                        </span><!-- .sldr-elmnt-cntnr -->
-                        <?php
+                    if ( $this->value_as == 'slug' ) {
+                        foreach( $product_categories as $index => $product_category ) {
+                            ?>
+                            <span class="sldr-elmnt-cntnr">
+                                <label for="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>">
+                                    <input id="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>" name="<?php echo esc_attr( $this->get_field_name('product_categories') ); ?>[]" type="checkbox" value="<?php echo esc_attr( $product_category->slug ); ?>" <?php if( !empty( $instance['product_categories'] ) ) { checked( in_array( $product_category->slug, $instance['product_categories'] ), true ); } ?>>
+                                    <strong><?php echo esc_html( $product_category->name ); ?></strong>
+                                </label>
+                            </span><!-- .sldr-elmnt-cntnr -->
+                            <?php
+                        }
+                    } else {
+                        foreach( $product_categories as $index => $product_category ) {
+                            ?>
+                            <span class="sldr-elmnt-cntnr">
+                                <label for="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>">
+                                    <input id="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>" name="<?php echo esc_attr( $this->get_field_name('product_categories') ); ?>[]" type="checkbox" value="<?php echo esc_attr( $product_category->term_id ); ?>" <?php if( !empty( $instance['product_categories'] ) ) { checked( in_array( $product_category->term_id, $instance['product_categories'] ), true ); } ?>>
+                                    <strong><?php echo esc_html( $product_category->name ); ?></strong>
+                                </label>
+                            </span><!-- .sldr-elmnt-cntnr -->
+                            <?php
+                        }
                     }
                 } else {
                     ?>
@@ -151,7 +175,11 @@ if( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 
             $instance['title']                  = sanitize_text_field( $new_instance['title'] );
 
-            $instance['product_categories'] 	= isset( $new_instance['product_categories'] ) ? array_map( 'sanitize_text_field', $new_instance['product_categories'] ) : array();
+            if ( $this->value_as == 'slug' ) {
+                $instance['product_categories'] 	= isset( $new_instance['product_categories'] ) ? array_map( 'sanitize_text_field', $new_instance['product_categories'] ) : array();
+            } else {
+                $instance['product_categories']     = isset( $new_instance['product_categories'] ) ? array_map( 'absint', $new_instance['product_categories'] ) : array();
+            }
 
             return $instance;
         } 

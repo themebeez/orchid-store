@@ -53,6 +53,8 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
 
         $defaults = array(
 
+            'value_as' => 'slug',
+
             'site_layout' => 'fullwidth',
 
             'logo_mobile' => '',

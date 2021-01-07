@@ -8,6 +8,8 @@
 if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
     class Orchid_Store_Banner_Widget extends WP_Widget {
+
+        public $value_as; 
      
         function __construct() { 
 
@@ -18,7 +20,9 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                     'classname'     => '',
                     'description'   => esc_html__( 'Displays main slider', 'orchid-store' ), 
                 )
-            );     
+            );
+
+            $this->value_as = orchid_store_get_option( 'value_as' ); 
         }
      
         public function widget( $args, $instance ) {
@@ -56,10 +60,17 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                                         <?php
                                         foreach( $slider_pages as $slider_index => $slider_page ) {
 
-                                            $slider_item = new WP_Query( array(
-                                                'post_type'     => 'page',
-                                                'pagename'      => $slider_page,
-                                            ) ); 
+                                            $slider_item_query_args = array(
+                                                'post_type' => 'page'
+                                            );
+
+                                            if ( $this->value_as == 'slug' ) {
+                                                $slider_item_query_args['pagename'] = $slider_page;
+                                            } else {
+                                                $slider_item_query_args['page_id'] = $slider_page;
+                                            }
+
+                                            $slider_item = new WP_Query( $slider_item_query_args );
 
                                             if( $slider_item->have_posts() ) {
 
@@ -224,10 +235,18 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                             <label for="<?php echo esc_attr( $this->get_field_id( 'slider_pages' ) . $i ); ?>"><strong><?php esc_html_e( 'Select Page', 'orchid-store' ); ?></strong></label>
                             <select class="widefat" name="<?php echo esc_attr( $this->get_field_name('slider_pages') ); ?>[]" id="<?php echo esc_attr( $this->get_field_id( 'slider_pages' ) . $i ); ?>">
                                 <?php
-                                foreach( $page_choices as $page_slug => $page_title ) {
-                                    ?>
-                                    <option value="<?php echo esc_attr( $page_slug ); ?>" <?php selected( $page_slug, ( !empty( $instance['slider_pages'][$i] ) ? $instance['slider_pages'][$i] : '' ) ); ?>><?php echo esc_html( $page_title ); ?></option>
-                                    <?php
+                                if ( $this->value_as == 'slug' ) {
+                                    foreach( $page_choices as $page_slug => $page_title ) {
+                                        ?>
+                                        <option value="<?php echo esc_attr( $page_slug ); ?>" <?php selected( $page_slug, ( !empty( $instance['slider_pages'][$i] ) ? $instance['slider_pages'][$i] : '' ) ); ?>><?php echo esc_html( $page_title ); ?></option>
+                                        <?php
+                                    }
+                                } else {
+                                    foreach( $page_choices as $page_id => $page_title ) {
+                                        ?>
+                                        <option value="<?php echo esc_attr( $page_id ); ?>" <?php selected( $page_id, ( !empty( $instance['slider_pages'][$i] ) ? $instance['slider_pages'][$i] : '' ) ); ?>><?php echo esc_html( $page_title ); ?></option>
+                                        <?php
+                                    }
                                 }
                                 ?>
                             </select>
@@ -342,7 +361,13 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
             $instance['title']  		= sanitize_text_field( $new_instance['title'] );
 
-            $instance['slider_pages'] 	= array_map( 'sanitize_text_field', $new_instance['slider_pages'] );
+            if ( $this->value_as == 'slug' ) {
+
+                $instance['slider_pages'] 	= array_map( 'sanitize_text_field', $new_instance['slider_pages'] );
+            } else {
+
+                $instance['slider_pages']   = array_map( 'absint', $new_instance['slider_pages'] );
+            }
 
             $instance['button_titles'] 	= array_map( 'sanitize_text_field', $new_instance['button_titles'] );
 
