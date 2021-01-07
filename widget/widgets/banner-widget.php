@@ -363,15 +363,15 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
             if ( $this->value_as == 'slug' ) {
 
-                $instance['slider_pages'] 	= array_map( 'sanitize_text_field', $new_instance['slider_pages'] );
+                $instance['slider_pages'] 	= isset( $new_instance['slider_pages'] ) ? array_map( 'sanitize_text_field', $new_instance['slider_pages'] ) : array();
             } else {
 
-                $instance['slider_pages']   = array_map( 'absint', $new_instance['slider_pages'] );
+                $instance['slider_pages']   = isset( $new_instance['slider_pages'] ) ? array_map( 'absint', $new_instance['slider_pages'] ) : array();
             }
 
-            $instance['button_titles'] 	= array_map( 'sanitize_text_field', $new_instance['button_titles'] );
+            $instance['button_titles'] 	= isset( $new_instance['button_titles'] ) ? array_map( 'sanitize_text_field', $new_instance['button_titles'] ) : array();
 
-            $instance['button_links'] 	= array_map( 'esc_url_raw', $new_instance['button_links'] );
+            $instance['button_links'] 	= isset( $new_instance['button_links'] ) ? array_map( 'esc_url_raw', $new_instance['button_links'] ) : array();
 
             $instance['show_contents'] 	= isset( $new_instance['show_contents'] ) ? wp_validate_boolean( $new_instance['show_contents'] ) : false;
 

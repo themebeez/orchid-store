@@ -168,11 +168,11 @@ if( ! class_exists( 'Orchid_Store_Services_Widget' ) ) :
 
             $instance['title']              = sanitize_text_field( $new_instance['title'] );
 
-            $instance['services_titles']    = array_map( 'sanitize_text_field', $new_instance['services_titles'] );
+            $instance['services_titles']    = isset( $new_instance['services_titles'] ) ? array_map( 'sanitize_text_field', $new_instance['services_titles'] ) : array();
 
-            $instance['services_descs']     = array_map( 'sanitize_text_field', $new_instance['services_descs'] );
+            $instance['services_descs']     = isset( $new_instance['services_descs'] ) ? array_map( 'sanitize_text_field', $new_instance['services_descs'] ) : array();
 
-            $instance['services_imgs']      = array_map( 'esc_url_raw', $new_instance['services_imgs'] );
+            $instance['services_imgs']      = isset( $new_instance['services_imgs'] ) ? array_map( 'esc_url_raw', $new_instance['services_imgs'] ) : array();
 
             return $instance;
         } 
