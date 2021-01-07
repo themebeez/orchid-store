@@ -304,6 +304,12 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			}";
 		}
 
+		$custom_style .= "
+		.excerpt a,
+		.editor-entry a {
+			text-decoration: underline;
+		}";
+
 		return $custom_style;
 	}
 }

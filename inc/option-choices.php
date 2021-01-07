@@ -20,9 +20,19 @@ if( ! function_exists( 'orchid_store_all_post_categories' ) ) {
 
 		if( ! empty( $post_terms ) ) {
 
-			foreach( $post_terms as $post_term ) {
+			$value_as = orchid_store_get_option( 'value_as' );
 
-				$post_categories[$post_term->slug] = $post_term->name;
+			if ( $value_as == 'slug' ) {
+
+				foreach( $post_terms as $post_term ) {
+
+					$post_categories[$post_term->slug] = $post_term->name;
+				}
+			} else {
+				foreach( $post_terms as $post_term ) {
+
+					$post_categories[$post_term->term_id] = $post_term->name;
+				}
 			}
 		}
 
@@ -48,9 +58,19 @@ if( ! function_exists( 'orchid_store_all_pages' ) ) {
 
 		if( !empty( $pages ) ) {
 
-			foreach( $pages as $page ) {
+			$value_as = orchid_store_get_option( 'value_as' );
 
-				$page_list[ $page->post_name ] = $page->post_title;
+			if ( $value_as == 'slug' ) {
+
+				foreach( $pages as $page ) {
+
+					$page_list[ $page->post_name ] = $page->post_title;
+				}
+			} else {
+				foreach( $pages as $page ) {
+
+					$page_list[ $page->ID ] = $page->post_title;
+				}
 			}
 		}
 

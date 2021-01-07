@@ -8,7 +8,9 @@
 if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
 
     class Orchid_Store_Products_Widget extends WP_Widget {
-     
+        
+        public $value_as;
+
         function __construct() { 
 
             parent::__construct(
@@ -18,7 +20,9 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
                     'classname'     => '',
                     'description'   => esc_html__( 'Displays products.', 'orchid-store' ), 
                 )
-            );     
+            ); 
+
+            $this->value_as = orchid_store_get_option( 'value_as' );    
         }
      
         public function widget( $args, $instance ) {
@@ -40,13 +44,23 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
             }
 
             if( $product_category != '0' ) {
-                $product_query_args['tax_query'][] = array(
-                    array(
-                        'taxonomy'  => 'product_cat',
-                        'field'     => 'slug',
-                        'terms'     => $product_category
-                    )
-                );
+                if ( $this->value_as == 'slug'  ) {
+                    $product_query_args['tax_query'] = array(
+                        array(
+                            'taxonomy'  => 'product_cat',
+                            'field'     => 'slug',
+                            'terms'     => $product_category,
+                        )
+                    );
+                } else {
+                    $product_query_args['tax_query'] = array(
+                        array(
+                            'taxonomy'  => 'product_cat',
+                            'field'     => 'term_id',
+                            'terms'     => $product_category,
+                        )
+                    );
+                }
             }
 
             switch( $products_by ) {
@@ -201,16 +215,23 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
                     <strong><?php esc_html_e( 'Product Category', 'orchid-store' ); ?></strong>
                 </label>
                 <?php 
-                wp_dropdown_categories( array(
+                $dropdown_args = array(
                     'taxonomy'          => 'product_cat',
                     'show_option_all'   => esc_html__('Select Category','orchid-store'),
                     'name'              => $this->get_field_name('product_category'),
                     'id'                => $this->get_field_id('product_category'),
                     'class'             => 'widefat',
-                    'value_field'       => 'slug',
                     'hide_empty'        => 1,
                     'selected'          => isset( $instance['product_category'] ) ? $instance['product_category'] : '',
-                ) );
+                );
+
+                if ( $this->value_as == 'slug' ) {
+                    $dropdown_args['value_field'] = 'slug';
+                } else {
+                    $dropdown_args['value_field'] = 'term_id';
+                }
+
+                wp_dropdown_categories( $dropdown_args );
                 ?>
                 <span class="sldr-elmnt-desc"><?php esc_html_e( 'If no category is selected, then latest products are displayed.', 'orchid-store' ); ?></span>
             </p>
@@ -274,7 +295,11 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
 
             $instance['title']                  = sanitize_text_field( $new_instance['title'] );
 
-            $instance['product_category']       = sanitize_text_field( $new_instance['product_category'] );
+            if ( $this->value_as == 'slug' ) {
+                $instance['product_category']       = sanitize_text_field( $new_instance['product_category'] );
+            } else {
+                $instance['product_category']       = absint( $new_instance['product_category'] );
+            }
 
             $instance['no_of_products']         = absint( $new_instance['no_of_products'] );
 
