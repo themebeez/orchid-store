@@ -5,7 +5,7 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 5.6
 Requires at least: 5.0
 Tested up to: 5.6
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -90,6 +90,12 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.2.5 - Jan 20, 2021 ==
+
+- Added: Option to hide products out of stock for products widget
+- Added: Option to set image as background for banner widget
+- Fix: Minor Issues
 
 == 1.2.4 - Jan 7, 2021 ==
 

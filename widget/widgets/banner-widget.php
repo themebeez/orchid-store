@@ -38,14 +38,21 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
             $banner_link_1  = isset( $instance['banner_link_1'] ) ? $instance['banner_link_1'] : '';
             $banner_link_2  = isset( $instance['banner_link_2'] ) ? $instance['banner_link_2'] : '';
 
-            $mask_layer_class = '';
+            $img_in_bg      = isset( $instance['set_image_in_background'] ) ? $instance['set_image_in_background'] : true;
+
+            $banner_class = '';
 
             if( $enable_mask == true ) {
 
-                $mask_layer_class = 'show-mask';
+                $banner_class = 'show-mask';
+            }
+
+            if ( ! $img_in_bg ) {
+
+                $banner_class .= ' banner-img-not-as-bg';
             }
             ?>
-            <section class="general-banner banner-style-1 section-spacing <?php echo esc_attr( $mask_layer_class ); ?>">
+            <section class="general-banner banner-style-1 section-spacing <?php echo esc_attr( $banner_class ); ?>">
                 <div class="section-inner">
                     <div class="__os-container__">
                         <div class="os-row">
@@ -79,9 +86,17 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                                                     $slider_item->the_post();
                                                     ?>
                                                     <div class="item">
-                                                        <figure class="thumb" <?php if( has_post_thumbnail() ) { ?> style="background-image:url( <?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?> );" <?php } ?>>
-
+                                                        <?php
+                                                        if ( $img_in_bg == true ) {
+                                                            ?>
+                                                            <figure class="thumb" <?php if( has_post_thumbnail() ) { ?> style="background-image:url( <?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?> );" <?php } ?>>
                                                             <?php
+                                                        } else {
+                                                            ?>
+                                                            <figure class="thumb">
+                                                                <img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'orchid-store-thumbnail-extra-large' ) ); ?>">
+                                                            <?php
+                                                        }
                                                             if( $enable_mask == true ) {
                                                                 ?>
                                                                 <div class="mask"></div>
@@ -200,6 +215,7 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                 'banner_img_2' => '',
                 'banner_link_1'=> '',
                 'banner_link_2'=> '',
+                'set_image_in_background' => true,
             );
 
             $instance = wp_parse_args( (array) $instance, $defaults );
@@ -352,6 +368,13 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                 </label>
                 <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('banner_link_2') ); ?>" name="<?php echo esc_attr( $this->get_field_name('banner_link_2') ); ?>" type="text" value="<?php echo esc_attr( $instance['banner_link_2'] ); ?>" />   
             </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id('set_image_in_background') ); ?>">
+                    <input id="<?php echo esc_attr( $this->get_field_id('set_image_in_background') ); ?>" name="<?php echo esc_attr( $this->get_field_name('set_image_in_background') ); ?>" type="checkbox" <?php checked( true, $instance['set_image_in_background'] ); ?> />  
+                    <strong><?php esc_html_e( 'Set Image In Background', 'orchid-store' ); ?></strong>
+                </label>                 
+            </p>
     		<?php
         }
      
@@ -363,15 +386,15 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
             if ( $this->value_as == 'slug' ) {
 
-                $instance['slider_pages'] 	= array_map( 'sanitize_text_field', $new_instance['slider_pages'] );
+                $instance['slider_pages'] 	= isset( $new_instance['slider_pages'] ) ? array_map( 'sanitize_text_field', $new_instance['slider_pages'] ) : array();
             } else {
 
-                $instance['slider_pages']   = array_map( 'absint', $new_instance['slider_pages'] );
+                $instance['slider_pages']   = isset( $new_instance['slider_pages'] ) ? array_map( 'absint', $new_instance['slider_pages'] ) : array();
             }
 
-            $instance['button_titles'] 	= array_map( 'sanitize_text_field', $new_instance['button_titles'] );
+            $instance['button_titles'] 	= isset( $new_instance['button_titles'] ) ? array_map( 'sanitize_text_field', $new_instance['button_titles'] ) : array();
 
-            $instance['button_links'] 	= array_map( 'esc_url_raw', $new_instance['button_links'] );
+            $instance['button_links'] 	= isset( $new_instance['button_links'] ) ? array_map( 'esc_url_raw', $new_instance['button_links'] ) : array();
 
             $instance['show_contents'] 	= isset( $new_instance['show_contents'] ) ? wp_validate_boolean( $new_instance['show_contents'] ) : false;
 
@@ -384,6 +407,8 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
             $instance['banner_link_1']  = esc_url_raw( $new_instance['banner_link_1'] );
 
             $instance['banner_link_2']  = esc_url_raw( $new_instance['banner_link_2'] );
+
+            $instance['set_image_in_background']  = isset( $new_instance['set_image_in_background'] ) ? wp_validate_boolean( $new_instance['set_image_in_background'] ) : true;
 
             return $instance;
         } 

@@ -33,6 +33,8 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
             $products_by = isset( $instance['products_by'] ) ? $instance['products_by'] :'default';
             $display_layout = isset( $instance['display_layout'] ) ? $instance['display_layout'] : 'slider';
 
+            $hide_out_of_stock_products = isset( $instance['hide_out_of_stock_products'] ) ? $instance['hide_out_of_stock_products'] : false;
+
             $product_query_args = array(
                 'post_type' => 'product',
             );
@@ -97,6 +99,15 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
                 default :
 
                     break;
+            }
+
+            if ( $hide_out_of_stock_products == true ) {
+
+                $product_query_args['meta_query'][] = array(
+                    'key'       => '_stock_status',
+                    'value'     => 'outofstock',
+                    'compare'   => '!=',
+                );
             }
 
             $product_query = new WP_Query( $product_query_args );
@@ -199,6 +210,7 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
                 'no_of_products'        => 4,
                 'products_by'           => 'default',
                 'display_layout'        => 'slider',
+                'hide_out_of_stock_products' => false,
             );
 
             $instance = wp_parse_args( (array) $instance, $defaults );
@@ -267,6 +279,13 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
             </p>
 
             <p>
+                <label for="<?php echo esc_attr( $this->get_field_id('hide_out_of_stock_products') ); ?>">
+                    <input id="<?php echo esc_attr( $this->get_field_id('hide_out_of_stock_products') ); ?>" name="<?php echo esc_attr( $this->get_field_name('hide_out_of_stock_products') ); ?>" type="checkbox" <?php checked( true, $instance['hide_out_of_stock_products'] ); ?> />  
+                    <strong><?php esc_html_e( 'Hide Products Out of Stock', 'orchid-store' ); ?></strong>
+                </label>                 
+            </p>
+
+            <p>
                 <label for="<?php echo esc_attr( $this->get_field_id('display_layout') ); ?>">
                     <strong><?php esc_html_e('Display Layout', 'orchid-store'); ?></strong>
                 </label>
@@ -306,6 +325,8 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
             $instance['products_by']            = sanitize_text_field( $new_instance['products_by'] );
 
             $instance['display_layout']         = sanitize_text_field( $new_instance['display_layout'] );
+
+            $instance['hide_out_of_stock_products']  = isset( $new_instance['hide_out_of_stock_products'] ) ? wp_validate_boolean( $new_instance['hide_out_of_stock_products'] ) : false;
 
             return $instance;
         } 
