@@ -408,7 +408,7 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
             $instance['banner_link_2']  = esc_url_raw( $new_instance['banner_link_2'] );
 
-            $instance['set_image_in_background']  = isset( $new_instance['set_image_in_background'] ) ? wp_validate_boolean( $new_instance['set_image_in_background'] ) : true;
+            $instance['set_image_in_background']  = isset( $new_instance['set_image_in_background'] ) ? wp_validate_boolean( $new_instance['set_image_in_background'] ) : false;
 
             return $instance;
         } 
