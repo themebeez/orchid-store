@@ -762,7 +762,7 @@ msgstr ""
 msgid "Displays Store About Information"
 msgstr ""
 
-#: widget/widgets/about-widget.php:199, widget/widgets/advertisement-widget.php:141, widget/widgets/banner-widget.php:211, widget/widgets/featured-product-categories.php:121, widget/widgets/posts-widget.php:187, widget/widgets/products-filter.php:191, widget/widgets/products-widget.php:208, widget/widgets/services-widget.php:101, widget/widgets/services-widget.php:122
+#: widget/widgets/about-widget.php:199, widget/widgets/advertisement-widget.php:141, widget/widgets/banner-widget.php:227, widget/widgets/featured-product-categories.php:121, widget/widgets/posts-widget.php:187, widget/widgets/products-filter.php:203, widget/widgets/products-widget.php:220, widget/widgets/services-widget.php:101, widget/widgets/services-widget.php:122
 msgid "Title"
 msgstr ""
 
@@ -774,11 +774,11 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: widget/widgets/about-widget.php:235, widget/widgets/advertisement-widget.php:227, widget/widgets/banner-widget.php:308, widget/widgets/banner-widget.php:344, widget/widgets/services-widget.php:153
+#: widget/widgets/about-widget.php:235, widget/widgets/advertisement-widget.php:227, widget/widgets/banner-widget.php:324, widget/widgets/banner-widget.php:360, widget/widgets/services-widget.php:153
 msgid "Upload"
 msgstr ""
 
-#: widget/widgets/about-widget.php:236, widget/widgets/advertisement-widget.php:228, widget/widgets/banner-widget.php:309, widget/widgets/banner-widget.php:345, widget/widgets/services-widget.php:154
+#: widget/widgets/about-widget.php:236, widget/widgets/advertisement-widget.php:228, widget/widgets/banner-widget.php:325, widget/widgets/banner-widget.php:361, widget/widgets/services-widget.php:154
 msgid "Remove"
 msgstr ""
 
@@ -850,11 +850,11 @@ msgstr ""
 msgid "Offer Text"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:172, widget/widgets/banner-widget.php:255
+#: widget/widgets/advertisement-widget.php:172, widget/widgets/banner-widget.php:271
 msgid "Button Title"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:177, widget/widgets/banner-widget.php:260
+#: widget/widgets/advertisement-widget.php:177, widget/widgets/banner-widget.php:276
 msgid "Button Link"
 msgstr ""
 
@@ -870,7 +870,7 @@ msgstr ""
 msgid "Offer Image"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:235
+#: widget/widgets/advertisement-widget.php:235, widget/widgets/banner-widget.php:375
 msgid "Set Image In Background"
 msgstr ""
 
@@ -882,40 +882,40 @@ msgstr ""
 msgid "Displays main slider"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:217
+#: widget/widgets/banner-widget.php:233
 msgid "Slider Elements"
 msgstr ""
 
 #. translators: %s: slider item number
-#: widget/widgets/banner-widget.php:229
+#: widget/widgets/banner-widget.php:245
 msgid "Slider Item %s"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:235
+#: widget/widgets/banner-widget.php:251
 msgid "Select Page"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:273
+#: widget/widgets/banner-widget.php:289
 msgid "Show Slider Contents"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:280
+#: widget/widgets/banner-widget.php:296
 msgid "Enable Mask Layer"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:286
+#: widget/widgets/banner-widget.php:302
 msgid "Banner Image One"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:315
+#: widget/widgets/banner-widget.php:331
 msgid "Banner Link One"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:322
+#: widget/widgets/banner-widget.php:338
 msgid "Banner Image Two"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:351
+#: widget/widgets/banner-widget.php:367
 msgid "Banner Link Two"
 msgstr ""
 
@@ -934,15 +934,15 @@ msgid_plural "%s Products"
 msgstr[0] ""
 msgstr[1] ""
 
-#: widget/widgets/featured-product-categories.php:127, widget/widgets/products-filter.php:197
+#: widget/widgets/featured-product-categories.php:127, widget/widgets/products-filter.php:209
 msgid "Product Categories"
 msgstr ""
 
-#: widget/widgets/featured-product-categories.php:128, widget/widgets/products-filter.php:198
+#: widget/widgets/featured-product-categories.php:128, widget/widgets/products-filter.php:210
 msgid "Below are the list of product categories. Check on a category to set is as a filter item."
 msgstr ""
 
-#: widget/widgets/featured-product-categories.php:163, widget/widgets/products-filter.php:236
+#: widget/widgets/featured-product-categories.php:163, widget/widgets/products-filter.php:248
 msgid "There are no product categories to select."
 msgstr ""
 
@@ -982,8 +982,12 @@ msgstr ""
 msgid "Displays products by category filter."
 msgstr ""
 
-#: widget/widgets/products-filter.php:245
+#: widget/widgets/products-filter.php:257
 msgid "Number of Products For Each Category"
+msgstr ""
+
+#: widget/widgets/products-filter.php:265, widget/widgets/products-widget.php:284
+msgid "Hide Products Out of Stock"
 msgstr ""
 
 #: widget/widgets/products-widget.php:18
@@ -994,51 +998,51 @@ msgstr ""
 msgid "Displays products."
 msgstr ""
 
-#: widget/widgets/products-widget.php:215
+#: widget/widgets/products-widget.php:227
 msgid "Product Category"
 msgstr ""
 
-#: widget/widgets/products-widget.php:220
+#: widget/widgets/products-widget.php:232
 msgid "Select Category"
 msgstr ""
 
-#: widget/widgets/products-widget.php:236
+#: widget/widgets/products-widget.php:248
 msgid "If no category is selected, then latest products are displayed."
 msgstr ""
 
-#: widget/widgets/products-widget.php:241
+#: widget/widgets/products-widget.php:253
 msgid "No of Products"
 msgstr ""
 
-#: widget/widgets/products-widget.php:248
+#: widget/widgets/products-widget.php:260
 msgid "Products By"
 msgstr ""
 
-#: widget/widgets/products-widget.php:252
+#: widget/widgets/products-widget.php:264
 msgid "None"
 msgstr ""
 
-#: widget/widgets/products-widget.php:253
+#: widget/widgets/products-widget.php:265
 msgid "Rated"
 msgstr ""
 
-#: widget/widgets/products-widget.php:254
+#: widget/widgets/products-widget.php:266
 msgid "Featured"
 msgstr ""
 
-#: widget/widgets/products-widget.php:255
+#: widget/widgets/products-widget.php:267
 msgid "On Sale"
 msgstr ""
 
-#: widget/widgets/products-widget.php:271
+#: widget/widgets/products-widget.php:290
 msgid "Display Layout"
 msgstr ""
 
-#: widget/widgets/products-widget.php:275
+#: widget/widgets/products-widget.php:294
 msgid "Slider"
 msgstr ""
 
-#: widget/widgets/products-widget.php:276
+#: widget/widgets/products-widget.php:295
 msgid "Grid"
 msgstr ""
 

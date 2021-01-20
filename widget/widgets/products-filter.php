@@ -31,6 +31,8 @@ if( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
             $product_categories = isset( $instance['product_categories'] ) ? $instance['product_categories'] : array();
             $no_of_products = isset( $instance['no_of_products'] ) ? $instance['no_of_products'] : 4;
 
+            $hide_out_of_stock_products = isset( $instance['hide_out_of_stock_products'] ) ? $instance['hide_out_of_stock_products'] : false;
+
             if( empty( $product_categories ) ) {
                 $all_product_caregories = orchid_store_all_product_categories();
 
@@ -133,6 +135,15 @@ if( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
                                                     }
                                                 }
 
+                                                if ( $hide_out_of_stock_products == true ) {
+
+                                                    $product_query_args['meta_query'][] = array(
+                                                        'key'       => '_stock_status',
+                                                        'value'     => 'outofstock',
+                                                        'compare'   => '!=',
+                                                    );
+                                                }
+
                                                 $product_query = new WP_Query( $product_query_args );
 
                                                 if( $product_query->have_posts() ) {
@@ -182,6 +193,7 @@ if( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
                 'title'                 => '',
                 'product_categories'    => '',
                 'no_of_products'        => 4,
+                'hide_out_of_stock_products' => false,
             );
 
             $instance = wp_parse_args( (array) $instance, $defaults );
@@ -246,6 +258,13 @@ if( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
                 </label>
                 <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('no_of_products') ); ?>" name="<?php echo esc_attr( $this->get_field_name('no_of_products') ); ?>" type="number" value="<?php echo esc_attr( absint( $instance['no_of_products'] ) ); ?>" />   
             </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id('hide_out_of_stock_products') ); ?>">
+                    <input id="<?php echo esc_attr( $this->get_field_id('hide_out_of_stock_products') ); ?>" name="<?php echo esc_attr( $this->get_field_name('hide_out_of_stock_products') ); ?>" type="checkbox" <?php checked( true, $instance['hide_out_of_stock_products'] ); ?> />  
+                    <strong><?php esc_html_e( 'Hide Products Out of Stock', 'orchid-store' ); ?></strong>
+                </label>                 
+            </p>
     		<?php
         }
      
@@ -262,6 +281,8 @@ if( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
             }
 
             $instance['no_of_products']         = absint( $new_instance['no_of_products'] );
+
+            $instance['hide_out_of_stock_products']  = isset( $new_instance['hide_out_of_stock_products'] ) ? wp_validate_boolean( $new_instance['hide_out_of_stock_products'] ) : false;
 
             return $instance;
         } 
