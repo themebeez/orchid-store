@@ -795,11 +795,18 @@
 
 @media(max-width:1024px) {
 
+
+    body.menu-toggle-active {
+
+        overflow:hidden;
+    }
+
     body.menu-toggle-active .mobile-navigation {
 
         left: 0;
         opacity: 1;
         visibility: visible;
+        overflow: scroll;
         -webkit-transform: translateX(0);
         transform: translateX(0);
     }
