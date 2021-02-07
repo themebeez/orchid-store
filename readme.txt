@@ -4,7 +4,7 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 7.0.0
 Requires at least: 5.0
-Tested up to: 5.6
+Tested up to: 5.6.1
 Stable tag: 1.2.5
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
@@ -91,9 +91,8 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.2.5 - Jan 23, 2021 ==
+== 1.2.5 - Feb 07, 2021 ==
 
-- Added: Option to hide products out of stock for products widget
 - Added: Option to avoid out of stock products in the query.
 - Fix: Off-canvas menu not scrollable on tablet devices
 - Fix: Minor Issues
