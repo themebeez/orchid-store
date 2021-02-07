@@ -762,7 +762,7 @@ msgstr ""
 msgid "Displays Store About Information"
 msgstr ""
 
-#: widget/widgets/about-widget.php:199, widget/widgets/advertisement-widget.php:141, widget/widgets/banner-widget.php:227, widget/widgets/featured-product-categories.php:121, widget/widgets/posts-widget.php:187, widget/widgets/products-filter.php:203, widget/widgets/products-widget.php:220, widget/widgets/services-widget.php:101, widget/widgets/services-widget.php:122
+#: widget/widgets/about-widget.php:199, widget/widgets/advertisement-widget.php:141, widget/widgets/banner-widget.php:210, widget/widgets/featured-product-categories.php:121, widget/widgets/posts-widget.php:187, widget/widgets/products-filter.php:203, widget/widgets/products-widget.php:220, widget/widgets/services-widget.php:101, widget/widgets/services-widget.php:122
 msgid "Title"
 msgstr ""
 
@@ -774,11 +774,11 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: widget/widgets/about-widget.php:235, widget/widgets/advertisement-widget.php:227, widget/widgets/banner-widget.php:324, widget/widgets/banner-widget.php:360, widget/widgets/services-widget.php:153
+#: widget/widgets/about-widget.php:235, widget/widgets/advertisement-widget.php:227, widget/widgets/banner-widget.php:307, widget/widgets/banner-widget.php:343, widget/widgets/services-widget.php:153
 msgid "Upload"
 msgstr ""
 
-#: widget/widgets/about-widget.php:236, widget/widgets/advertisement-widget.php:228, widget/widgets/banner-widget.php:325, widget/widgets/banner-widget.php:361, widget/widgets/services-widget.php:154
+#: widget/widgets/about-widget.php:236, widget/widgets/advertisement-widget.php:228, widget/widgets/banner-widget.php:308, widget/widgets/banner-widget.php:344, widget/widgets/services-widget.php:154
 msgid "Remove"
 msgstr ""
 
@@ -850,11 +850,11 @@ msgstr ""
 msgid "Offer Text"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:172, widget/widgets/banner-widget.php:271
+#: widget/widgets/advertisement-widget.php:172, widget/widgets/banner-widget.php:254
 msgid "Button Title"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:177, widget/widgets/banner-widget.php:276
+#: widget/widgets/advertisement-widget.php:177, widget/widgets/banner-widget.php:259
 msgid "Button Link"
 msgstr ""
 
@@ -870,7 +870,7 @@ msgstr ""
 msgid "Offer Image"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:235, widget/widgets/banner-widget.php:375
+#: widget/widgets/advertisement-widget.php:235
 msgid "Set Image In Background"
 msgstr ""
 
@@ -882,40 +882,40 @@ msgstr ""
 msgid "Displays main slider"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:233
+#: widget/widgets/banner-widget.php:216
 msgid "Slider Elements"
 msgstr ""
 
 #. translators: %s: slider item number
-#: widget/widgets/banner-widget.php:245
+#: widget/widgets/banner-widget.php:228
 msgid "Slider Item %s"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:251
+#: widget/widgets/banner-widget.php:234
 msgid "Select Page"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:289
+#: widget/widgets/banner-widget.php:272
 msgid "Show Slider Contents"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:296
+#: widget/widgets/banner-widget.php:279
 msgid "Enable Mask Layer"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:302
+#: widget/widgets/banner-widget.php:285
 msgid "Banner Image One"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:331
+#: widget/widgets/banner-widget.php:314
 msgid "Banner Link One"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:338
+#: widget/widgets/banner-widget.php:321
 msgid "Banner Image Two"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:367
+#: widget/widgets/banner-widget.php:350
 msgid "Banner Link Two"
 msgstr ""
 
