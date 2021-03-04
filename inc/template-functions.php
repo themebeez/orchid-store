@@ -20,7 +20,7 @@ function orchid_store_body_classes( $classes ) {
 	}
 
 	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+	if ( orchid_store_sidebar_position() == 'none' ) {
 
 		$classes[] = 'no-sidebar';
 	}
