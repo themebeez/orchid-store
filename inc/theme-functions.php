@@ -139,7 +139,7 @@ if( !function_exists( 'orchid_store_sidebar_position' ) ) {
                 $sidebar_position = 'none';
             } else {
 
-                if( $is_global_sidebar == true ) {
+                if ( $is_global_sidebar == true ) {
                     $sidebar_position = orchid_store_get_option( 'global_sidebar_position' );
                 } else {
                     if ( is_shop() || is_product_category() || is_product_tag() ) {
@@ -152,16 +152,14 @@ if( !function_exists( 'orchid_store_sidebar_position' ) ) {
             }
         } else {
 
-            if ( class_exists( 'WooCommerce' ) ) {
-                if( is_cart() || is_checkout() || is_account_page() || ( defined( 'YITH_WCWL' ) && is_page( get_option( 'yith_wcwl_wishlist_page_id' ) ) ) ) {
-                    $sidebar_position = 'none';
-                }
+            if ( class_exists( 'WooCommerce' ) && ( is_cart() || is_checkout() || is_account_page() || ( defined( 'YITH_WCWL' ) && is_page( get_option( 'yith_wcwl_wishlist_page_id' ) ) ) ) ) {
+                $sidebar_position = 'none';
             } else {
 
                 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
                     $sidebar_position = 'none';
                 } else {
-                    if( $is_global_sidebar == true ) {
+                    if ( $is_global_sidebar == true ) {
 
                         $sidebar_position = orchid_store_get_option( 'global_sidebar_position' );
                     } else {
@@ -170,17 +168,17 @@ if( !function_exists( 'orchid_store_sidebar_position' ) ) {
                             $sidebar_position = orchid_store_get_option( 'blog_sidebar_position' );
                         }
 
-                        if( is_archive() ) {
+                        if ( is_archive() ) {
                             $sidebar_position = orchid_store_get_option( 'archive_sidebar_position' );
                         }
 
-                        if( is_search() ) {
+                        if ( is_search() ) {
                             $sidebar_position = orchid_store_get_option( 'search_sidebar_position' );
                         }
 
-                        if( is_single() ) {
+                        if ( is_single() ) {
 
-                            if( orchid_store_get_option( 'enable_post_common_sidebar_position' ) == true ) {
+                            if ( orchid_store_get_option( 'enable_post_common_sidebar_position' ) == true ) {
 
                                 $sidebar_position = orchid_store_get_option( 'post_sidebar_position' );
                             } else {
@@ -194,7 +192,7 @@ if( !function_exists( 'orchid_store_sidebar_position' ) ) {
                             }            
                         }
 
-                        if( is_page() ) {
+                        if ( is_page() ) {
 
                             if( orchid_store_get_option( 'enable_page_common_sidebar_position' ) == true ) {
 

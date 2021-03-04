@@ -588,11 +588,11 @@ msgctxt "Inter font: on or off"
 msgid "on"
 msgstr ""
 
-#: inc/theme-functions.php:274
+#: inc/theme-functions.php:272
 msgid "Search for:"
 msgstr ""
 
-#: inc/theme-functions.php:274
+#: inc/theme-functions.php:272
 msgctxt "placeholder"
 msgid "Type here to search"
 msgstr ""
