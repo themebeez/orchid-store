@@ -4,8 +4,8 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 7.0.0
 Requires at least: 5.0
-Tested up to: 5.6.1
-Stable tag: 1.2.5
+Tested up to: 5.6.2
+Stable tag: 1.2.6
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -90,6 +90,10 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.2.6 - March 04, 2021 ==
+
+- Fix: Sidebar position issue
 
 == 1.2.5 - Feb 07, 2021 ==
 

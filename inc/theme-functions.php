@@ -133,87 +133,84 @@ if( !function_exists( 'orchid_store_sidebar_position' ) ) {
 
         $is_global_sidebar = orchid_store_get_option( 'enable_global_sidebar_position' );
 
-        if( !is_active_sidebar( 'sidebar-1' ) ) {
+        if ( class_exists( 'WooCommerce' ) && is_woocommerce() ) {
 
-            $sidebar_position = 'none';
-
-            return $sidebar_position;
-        }  
-
-        if( class_exists( 'WooCommerce' ) ) {
-
-            if( is_cart() || is_checkout() || is_account_page() || ( defined( 'YITH_WCWL' ) && is_page( 'wishlist' ) ) ) {
-
+            if ( ! is_active_sidebar( 'woocommerce-sidebar' ) ) {
                 $sidebar_position = 'none';
-
-                return $sidebar_position;
-            }
-        }
-
-        if( $is_global_sidebar == true ) {
-
-            $sidebar_position = orchid_store_get_option( 'global_sidebar_position' );
-
-            return $sidebar_position;
-        }
-
-        if( is_home() ) {
-
-            $sidebar_position = orchid_store_get_option( 'blog_sidebar_position' );
-        }
-
-        if( is_archive() ) {
-
-            $sidebar_position = orchid_store_get_option( 'archive_sidebar_position' );
-        }
-
-        if( is_search() ) {
-
-            $sidebar_position = orchid_store_get_option( 'search_sidebar_position' );
-        }
-
-        if( is_single() ) {
-
-            if( orchid_store_get_option( 'enable_post_common_sidebar_position' ) == true ) {
-
-                $sidebar_position = orchid_store_get_option( 'post_sidebar_position' );
             } else {
 
-                $sidebar_position = get_post_meta( get_the_ID(), 'orchid_store_sidebar_position', true );
-
-                if( empty( $sidebar_position ) ) {
-
-                    $sidebar_position = 'right';
+                if( $is_global_sidebar == true ) {
+                    $sidebar_position = orchid_store_get_option( 'global_sidebar_position' );
+                } else {
+                    if ( is_shop() || is_product_category() || is_product_tag() ) {
+                        $sidebar_position = get_theme_mod( 'orchid_store_field_woocommerce_sidebar_position', 'right' );
+                    }
+                    if ( is_product() ) {
+                        $sidebar_position = get_theme_mod( 'orchid_store_field_woocommerce_product_sidebar_position', 'right' );
+                    }
                 }
-            }            
-        }
+            }
+        } else {
 
-        if( is_page() ) {
-
-            if( orchid_store_get_option( 'enable_page_common_sidebar_position' ) == true ) {
-
-                $sidebar_position = orchid_store_get_option( 'page_sidebar_position' );
+            if ( class_exists( 'WooCommerce' ) ) {
+                if( is_cart() || is_checkout() || is_account_page() || ( defined( 'YITH_WCWL' ) && is_page( get_option( 'yith_wcwl_wishlist_page_id' ) ) ) ) {
+                    $sidebar_position = 'none';
+                }
             } else {
 
-                $sidebar_position = get_post_meta( get_the_ID(), 'orchid_store_sidebar_position', true );
+                if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+                    $sidebar_position = 'none';
+                } else {
+                    if( $is_global_sidebar == true ) {
 
-                if( empty( $sidebar_position ) ) {
+                        $sidebar_position = orchid_store_get_option( 'global_sidebar_position' );
+                    } else {
 
-                    $sidebar_position = 'right';
+                        if( is_home() ) {
+                            $sidebar_position = orchid_store_get_option( 'blog_sidebar_position' );
+                        }
+
+                        if( is_archive() ) {
+                            $sidebar_position = orchid_store_get_option( 'archive_sidebar_position' );
+                        }
+
+                        if( is_search() ) {
+                            $sidebar_position = orchid_store_get_option( 'search_sidebar_position' );
+                        }
+
+                        if( is_single() ) {
+
+                            if( orchid_store_get_option( 'enable_post_common_sidebar_position' ) == true ) {
+
+                                $sidebar_position = orchid_store_get_option( 'post_sidebar_position' );
+                            } else {
+
+                                $sidebar_position = get_post_meta( get_the_ID(), 'orchid_store_sidebar_position', true );
+
+                                if( empty( $sidebar_position ) ) {
+
+                                    $sidebar_position = 'right';
+                                }
+                            }            
+                        }
+
+                        if( is_page() ) {
+
+                            if( orchid_store_get_option( 'enable_page_common_sidebar_position' ) == true ) {
+
+                                $sidebar_position = orchid_store_get_option( 'page_sidebar_position' );
+                            } else {
+
+                                $sidebar_position = get_post_meta( get_the_ID(), 'orchid_store_sidebar_position', true );
+
+                                if( empty( $sidebar_position ) ) {
+
+                                    $sidebar_position = 'right';
+                                }
+                            }
+                        }
+                    }
                 }
-            }
-        }
-
-        if( class_exists( 'WooCommerce' ) ) {
-
-            if( is_shop() || is_product_taxonomy() ) {
-
-                $sidebar_position = get_theme_mod( 'orchid_store_field_woocommerce_sidebar_position', 'right' );
-            }
-
-            if( is_product() ) {
-
-                $sidebar_position = get_theme_mod( 'orchid_store_field_woocommerce_product_sidebar_position', 'right' );
             }
         }
 
