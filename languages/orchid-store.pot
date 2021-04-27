@@ -29,11 +29,6 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr ""
 
-#. translators: 1: title.
-#: comments.php:35
-msgid "One thought on &ldquo;%1$s&rdquo;"
-msgstr ""
-
 #. translators: 1: comment count number, 2: title.
 #: comments.php:41
 msgctxt "comments title"
@@ -41,6 +36,10 @@ msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
+
+#: comments.php:35
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
 
 #: comments.php:66
 msgid "Comments are closed."
@@ -98,15 +97,15 @@ msgstr ""
 msgid "Special Menu"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:144, functions.php:146, functions.php:144
+#: customizer/functions/customizer-defaults.php:144, functions.php:146
 msgid "Product successfully added to cart!"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:145, functions.php:151, functions.php:149
+#: customizer/functions/customizer-defaults.php:145, functions.php:151
 msgid "Product has been removed from your cart!"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:146, functions.php:156, functions.php:154
+#: customizer/functions/customizer-defaults.php:146, functions.php:156
 msgid "Cart items has been updated successfully!"
 msgstr ""
 
@@ -506,19 +505,27 @@ msgstr ""
 msgid "Display Product Out of Stock Notice"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:645
+#: customizer/functions/customizer-fields.php:655
+msgid "Display Plus &amp; Minus Buttons"
+msgstr ""
+
+#: customizer/functions/customizer-fields.php:656
+msgid "This option adds plus and minus buttons before and after quantity field respectively."
+msgstr ""
+
+#: customizer/functions/customizer-fields.php:666
 msgid "Cart Messages"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:661
+#: customizer/functions/customizer-fields.php:682
 msgid "Product Added To Cart"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:679
+#: customizer/functions/customizer-fields.php:700
 msgid "Product Removed From Cart"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:697
+#: customizer/functions/customizer-fields.php:718
 msgid "Cart Updated"
 msgstr ""
 
@@ -566,26 +573,19 @@ msgstr ""
 msgid "Next post"
 msgstr ""
 
-#. translators: 1: copyright text, 2: theme name, 3: theme author
-#: inc/custom-hooks.php:406
-msgid "%1$s %2$s Theme by %3$s"
-msgstr ""
-
 #. translators: 1: theme name, 2: theme author
 #: inc/custom-hooks.php:409
 msgid "%1$s Theme by %2$s"
+msgstr ""
+
+#: inc/custom-hooks.php:406
+msgid "%1$s %2$s Theme by %3$s"
 msgstr ""
 
 #. translators: %s: search query.
 #. translators: %s: search query.
 #: inc/custom-hooks.php:470, search.php:35
 msgid "Search Results for: %s"
-msgstr ""
-
-#. translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language.
-#: inc/theme-functions.php:28
-msgctxt "Inter font: on or off"
-msgid "on"
 msgstr ""
 
 #: inc/theme-functions.php:272
@@ -601,12 +601,12 @@ msgstr ""
 msgid "Total:"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:141
-msgid "My account"
-msgstr ""
-
 #: inc/woocommerce-hooks.php:145
 msgid "Login / Register"
+msgstr ""
+
+#: inc/woocommerce-hooks.php:141
+msgid "My account"
 msgstr ""
 
 #: inc/woocommerce-hooks.php:157
@@ -628,18 +628,17 @@ msgstr[1] ""
 msgid "Nothing Found"
 msgstr ""
 
-#. translators: 1: link to WP admin new post page.
-#. translators: 1: link to WP admin new post page.
-#: template-parts/content-none.php:24, widget/widgets/posts-widget.php:147
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+#: template-parts/content-none.php:44
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
 #: template-parts/content-none.php:37
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:44
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:24, widget/widgets/posts-widget.php:147
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: template-parts/content-page.php:40, template-parts/content-single.php:87

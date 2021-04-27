@@ -144,39 +144,40 @@
         =======================================
         */
 
+        if ( orchid_store_obj.displayPlusMinusBtns == '1' ) {
+            $('body').on('click', 'button.woo-quantity-plus, button.woo-quantity-minus', function() {
 
-        $('body').on('click', 'button.woo-quantity-plus, button.woo-quantity-minus', function() {
+                // Get current quantity values
+                var qty = $(this).closest('form.cart').find('.qty');
+                var val = parseInt(qty.val());
+                var max = parseInt(qty.attr('max'));
+                var min = parseInt(qty.attr('min'));
+                var step = parseInt(qty.attr('step'));
 
-            // Get current quantity values
-            var qty = $(this).closest('form.cart').find('.qty');
-            var val = parseFloat(qty.val());
-            var max = parseFloat(qty.attr('max'));
-            var min = parseFloat(qty.attr('min'));
-            var step = parseFloat(qty.attr('step'));
+                // Change the value if plus or minus
+                
+                if ($(this).is('.woo-quantity-plus')) {
 
-            // Change the value if plus or minus
-            
-            if ($(this).is('.woo-quantity-plus')) {
+                    if (max && (max <= val)) {
 
-                if (max && (max <= val)) {
+                        qty.val(max);
+                    } else {
 
-                    qty.val(max);
+                        qty.val(val + step);
+                    }
                 } else {
 
-                    qty.val(val + step);
+                    if (min && (min >= val)) {
+
+                        qty.val(min);
+                    } else if (val > 1) {
+
+                        qty.val(val - step);
+                    }
                 }
-            } else {
 
-                if (min && (min >= val)) {
-
-                    qty.val(min);
-                } else if (val > 1) {
-
-                    qty.val(val - step);
-                }
-            }
-
-        });
+            });
+        }
 
 
         /*

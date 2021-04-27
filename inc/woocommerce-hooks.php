@@ -380,21 +380,6 @@ if( ! function_exists( 'orchid_store_woocommerce_title_breadcrumb_action' ) ) {
 add_action( 'orchid_store_woocommerce_title_breadcrumb', 'orchid_store_woocommerce_title_breadcrumb_action', 10 );
 
 
-if( ! function_exists( 'orchid_store_quantity_plus' ) ) {
-
-    function orchid_store_quantity_plus() {
-
-        global $product;
-
-        if( $product->is_sold_individually() ) {
-
-            return;
-        }
-        ?>
-        <button type="button" class="woo-quantity-btn woo-quantity-plus" ><i class='bx bx-plus'></i></button>
-       <?php
-    }
-}
 
 if( ! function_exists( 'orchid_store_quantity_minus' ) ) {
 
@@ -407,7 +392,27 @@ if( ! function_exists( 'orchid_store_quantity_minus' ) ) {
             return;
         }
         ?>
-        <button type="button" class="woo-quantity-btn woo-quantity-minus" ><i class='bx bx-minus' ></i></button>
+        <div class="os-quantity-wrapper">
+            <button type="button" class="woo-quantity-btn woo-quantity-minus" ><i class='bx bx-minus' ></i></button>
+       <?php
+    }
+}
+
+
+if( ! function_exists( 'orchid_store_quantity_plus' ) ) {
+
+    function orchid_store_quantity_plus() {
+
+        global $product;
+
+        if( $product->is_sold_individually() ) {
+
+            return;
+        }
+        ?>
+        
+            <button type="button" class="woo-quantity-btn woo-quantity-plus" ><i class='bx bx-plus'></i></button>
+        </div>
        <?php
     }
 }
