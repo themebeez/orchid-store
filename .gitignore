@@ -15,6 +15,7 @@ wp-content/plugins/hello.php
 gulpfile.js
 gruntfile.js
 package-lock.json
+package.json
 /.htaccess
 license.txt
 readme.html

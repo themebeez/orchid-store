@@ -144,10 +144,9 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
             $defaults['orchid_store_field_product_added_to_cart_message'] = esc_html__( 'Product successfully added to cart!', 'orchid-store' );
             $defaults['orchid_store_field_product_removed_from_cart_message'] = esc_html__( 'Product has been removed from your cart!', 'orchid-store' );
             $defaults['orchid_store_field_cart_update_message'] = esc_html__( 'Cart items has been updated successfully!', 'orchid-store' );
-
-            // New
             $defaults['orchid_store_field_product_cols_in_mobile'] = 1;
             $defaults['orchid_store_field_display_out_of_stock_notice'] = false;
+            $defaults['orchid_store_field_display_plus_minus_btns'] = true; // @since 1.2.7
         }
 
         $defaults['orchid_store_field_enable_home_content'] = false;

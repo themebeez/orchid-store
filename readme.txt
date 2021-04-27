@@ -4,8 +4,8 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 7.0.0
 Requires at least: 5.0
-Tested up to: 5.6.2
-Stable tag: 1.2.6
+Tested up to: 5.7.1
+Stable tag: 1.2.7
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -17,7 +17,7 @@ Orchid Store is a clean, flexible, stylish & dynamic e-commerce WordPress theme.
 
 == License ==
 
-Orchid Store, WordPress Theme, Copyright (C) 2020, themebeez.
+Orchid Store, WordPress Theme, Copyright (C) 2021, themebeez.
 Orchid Store is distributed under the terms of the GNU GPL
 
 
@@ -90,6 +90,11 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.2.7 - April 27, 2021 ==
+
+- Added: Option to display plus and minus button before and after quantity field respectively
+- Fix: Increment and decrement issue when plus and minus buttons are clicked
 
 == 1.2.6 - March 04, 2021 ==
 

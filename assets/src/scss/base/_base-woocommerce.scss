@@ -122,14 +122,19 @@
 
 // better woocommmerce input type number 
 
-.woocommerce .quantity input[type=number]::-webkit-inner-spin-button,
-.woocommerce .quantity input[type=number]::-webkit-outer-spin-button {
+.woocommerce .os-quantity-wrapper .quantity input[type=number]::-webkit-inner-spin-button,
+.woocommerce .os-quantity-wrapper .quantity input[type=number]::-webkit-outer-spin-button {
 
     -webkit-appearance: none;
     margin: 0;
 }
 
-.woocommerce .quantity input[type=number] {
+.os-quantity-wrapper {
+    
+    @include flex();
+}
+
+.woocommerce .os-quantity-wrapper .quantity input[type=number] {
 
     -moz-appearance: textfield;
 }
@@ -149,7 +154,6 @@
     margin: 0;
     height: 41px;
     min-height: 41px;
-    width: 50px;
     text-align: center;
     border-width: 1px;
 }

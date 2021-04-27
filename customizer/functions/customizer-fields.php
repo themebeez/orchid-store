@@ -639,6 +639,27 @@ if( class_exists( 'WooCommerce' ) ) {
 	) );
 
 
+	// Display plus and minus buttons @since 1.2.7
+	$wp_customize->add_setting( 'orchid_store_field_display_plus_minus_btns', 
+		array(
+			'sanitize_callback'		=> 'wp_validate_boolean',
+			'default'				=> $orchid_store_defaults['orchid_store_field_display_plus_minus_btns'],
+			'capability'        => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_control( new Orchid_Store_Customizer_Toggle_Control( 
+		$wp_customize, 
+		'orchid_store_field_display_plus_minus_btns',
+		array(
+			'label' => esc_html__( 'Display Plus &amp; Minus Buttons', 'orchid-store' ),
+			'description' => __( 'This option adds plus and minus buttons before and after quantity field respectively.', 'orchid-store' ),
+			'section' => 'woocommerce_product_catalog',
+			'type'	=> 'flat', // ios, light, flat
+		) 
+	) );
+
+
 	$wp_customize->add_section( 
 		'orchid_store_section_woocommerce_message', 
 		array(

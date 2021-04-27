@@ -160,7 +160,9 @@ function orchid_store_scripts() {
 			$script_obj['product_cols_on_mobile'] = get_theme_mod( 'orchid_store_field_product_cols_in_mobile', 1 );
 		}
 
-
+		if ( get_theme_mod( 'orchid_store_field_display_plus_minus_btns', true ) ) {
+			$script_obj['displayPlusMinusBtns'] = get_theme_mod( 'orchid_store_field_display_plus_minus_btns', true );
+		}
 	}
 
 	wp_localize_script( 'orchid-store-bundle', 'orchid_store_obj', $script_obj );
