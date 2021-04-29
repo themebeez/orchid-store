@@ -5,7 +5,7 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 7.0.0
 Requires at least: 5.0
 Tested up to: 5.7.1
-Stable tag: 1.2.7
+Stable tag: 1.2.8
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -90,6 +90,10 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.2.8 - April 29, 2021 ==
+
+- Fix: Increment and decrement issue when plus and minus buttons are clicked
 
 == 1.2.7 - April 27, 2021 ==
 
