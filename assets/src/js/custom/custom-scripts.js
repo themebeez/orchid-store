@@ -145,37 +145,62 @@
         */
 
         if ( orchid_store_obj.displayPlusMinusBtns == '1' ) {
+
+            var quantityFieldEle = $('form.cart .qty');
+            var qtyVal = parseFloat(quantityFieldEle.val());
+            var qtyStep = parseFloat(quantityFieldEle.attr('step'));
+
+            var qtyValSplit = String(qtyVal).split('.');
+            var qtyStepSplit = String(qtyStep).split('.');
+
+            var qtyValPrecision = ( qtyValSplit[1] ) ? qtyValSplit[1].length : 0;
+            var qtyStepPrecision = ( qtyStepSplit[1] ) ? qtyStepSplit[1].length : 0;
+
+            var precision = ( qtyValPrecision > qtyStepPrecision ) ? qtyValPrecision : qtyStepPrecision;
+
             $('body').on('click', 'button.woo-quantity-plus, button.woo-quantity-minus', function() {
 
-                // Get current quantity values
-                var qty = $(this).closest('form.cart').find('.qty');
-                var val = parseInt(qty.val());
-                var max = parseInt(qty.attr('max'));
-                var min = parseInt(qty.attr('min'));
-                var step = parseInt(qty.attr('step'));
+                var val = parseFloat(quantityFieldEle.val());
+                var max = parseFloat(quantityFieldEle.attr('max'));
+                var min = parseFloat(quantityFieldEle.attr('min'));
 
                 // Change the value if plus or minus
-                
-                if ($(this).is('.woo-quantity-plus')) {
 
-                    if (max && (max <= val)) {
+                if ( $(this).is('.woo-quantity-plus') ) {
 
-                        qty.val(max);
+                    if ( isNaN(max)) {
+                        quantityFieldEle.val( parseFloat(( val + qtyStep )).toFixed(precision) );
                     } else {
+                        if ( val < max ) {
+                            var increVal = parseFloat( val + qtyStep ).toFixed(precision);
+                            if ( increVal >= max ) {
+                                increVal = max;
+                            }
+                            quantityFieldEle.val( increVal );
+                        } 
 
-                        qty.val(val + step);
-                    }
-                } else {
-
-                    if (min && (min >= val)) {
-
-                        qty.val(min);
-                    } else if (val > 1) {
-
-                        qty.val(val - step);
+                        if ( max === val ) {
+                            quantityFieldEle.val(max);
+                        }
                     }
                 }
+                
 
+                if ( $(this).is('.woo-quantity-minus') ) {
+                    if ( min > 0 && val >= min ) {
+                        if ( val == min ) {
+                            quantityFieldEle.val(min);
+                        }
+
+                        if ( val > min ) {
+                            var decreVal = parseFloat( val - qtyStep ).toFixed(precision);
+                            if ( decreVal <= min ) {
+                                decreVal = min;
+                            }
+                            quantityFieldEle.val( decreVal );
+                        }
+                    }
+                }
             });
         }
 
