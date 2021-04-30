@@ -91,9 +91,9 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.2.8 - April 29, 2021 ==
+== 1.2.8 - April 30, 2021 ==
 
-- Fix: Increment and decrement issue when plus and minus buttons are clicked
+- Fix: Increment and decrement issue when plus and minus buttons are clicked for fraction units
 
 == 1.2.7 - April 27, 2021 ==
 

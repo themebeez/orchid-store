@@ -144,58 +144,57 @@
         =======================================
         */
 
-        if ( orchid_store_obj.displayPlusMinusBtns == '1' ) {
-
-            var quantityFieldEle = $('form.cart .qty');
-            var qtyVal = parseFloat(quantityFieldEle.val());
-            var qtyStep = parseFloat(quantityFieldEle.attr('step'));
-
-            var qtyValSplit = String(qtyVal).split('.');
-            var qtyStepSplit = String(qtyStep).split('.');
-
-            var qtyValPrecision = ( qtyValSplit[1] ) ? qtyValSplit[1].length : 0;
-            var qtyStepPrecision = ( qtyStepSplit[1] ) ? qtyStepSplit[1].length : 0;
-
-            var precision = ( qtyValPrecision > qtyStepPrecision ) ? qtyValPrecision : qtyStepPrecision;
+        if ( orchid_store_obj.displayPlusMinusBtns == '1' ) {            
 
             $('body').on('click', 'button.woo-quantity-plus, button.woo-quantity-minus', function() {
 
-                var val = parseFloat(quantityFieldEle.val());
-                var max = parseFloat(quantityFieldEle.attr('max'));
-                var min = parseFloat(quantityFieldEle.attr('min'));
+                var quantityFieldEle = $(this).closest('form.cart').find('.qty');
+
+                var qtyVal = parseFloat(quantityFieldEle.val());
+                var qtyMax = parseFloat(quantityFieldEle.attr('max'));
+                var qtyMin = parseFloat(quantityFieldEle.attr('min'));
+                var qtyStep = parseFloat(quantityFieldEle.attr('step'));
+
+                var qtyValSplit = String(qtyVal).split('.');
+                var qtyStepSplit = String(qtyStep).split('.');
+
+                var qtyValPrecision = ( qtyValSplit[1] ) ? qtyValSplit[1].length : 0;
+                var qtyStepPrecision = ( qtyStepSplit[1] ) ? qtyStepSplit[1].length : 0;
+
+                var precision = ( qtyValPrecision > qtyStepPrecision ) ? qtyValPrecision : qtyStepPrecision;
 
                 // Change the value if plus or minus
 
                 if ( $(this).is('.woo-quantity-plus') ) {
 
-                    if ( isNaN(max)) {
-                        quantityFieldEle.val( parseFloat(( val + qtyStep )).toFixed(precision) );
+                    if ( isNaN(qtyMax)) {
+                        quantityFieldEle.val( parseFloat(( qtyVal + qtyStep )).toFixed(precision) );
                     } else {
-                        if ( val < max ) {
-                            var increVal = parseFloat( val + qtyStep ).toFixed(precision);
-                            if ( increVal >= max ) {
-                                increVal = max;
+                        if ( qtyVal < qtyMax ) {
+                            var increVal = parseFloat( qtyVal + qtyStep ).toFixed(precision);
+                            if ( increVal >= qtyMax ) {
+                                increVal = qtyMax;
                             }
                             quantityFieldEle.val( increVal );
                         } 
 
-                        if ( max === val ) {
-                            quantityFieldEle.val(max);
+                        if ( qtyMax === qtyVal ) {
+                            quantityFieldEle.val(qtyMax);
                         }
                     }
                 }
                 
 
                 if ( $(this).is('.woo-quantity-minus') ) {
-                    if ( min > 0 && val >= min ) {
-                        if ( val == min ) {
-                            quantityFieldEle.val(min);
+                    if ( qtyMin > 0 && qtyVal >= qtyMin ) {
+                        if ( qtyVal == qtyMin ) {
+                            quantityFieldEle.val(qtyMin);
                         }
 
-                        if ( val > min ) {
-                            var decreVal = parseFloat( val - qtyStep ).toFixed(precision);
-                            if ( decreVal <= min ) {
-                                decreVal = min;
+                        if ( qtyVal > qtyMin ) {
+                            var decreVal = parseFloat( qtyVal - qtyStep ).toFixed(precision);
+                            if ( decreVal <= qtyMin ) {
+                                decreVal = qtyMin;
                             }
                             quantityFieldEle.val( decreVal );
                         }
