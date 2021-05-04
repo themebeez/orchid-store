@@ -558,7 +558,7 @@ cite {
 
 ins,
 mark {
-    
+
     background-color: #fffbae; // light yellow
     text-decoration: none;
 }
@@ -626,7 +626,7 @@ input:-webkit-autofill:focus {
 
     -webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }
- 
+
 textarea,
 input[type="text"],
 input[type="password"],
@@ -643,13 +643,14 @@ input[type="search"],
 input[type="tel"],
 input[type="color"] {
 
-    -webkit-appearance: none; /* safari fix */
+    -webkit-appearance: none;
+    /* safari fix */
     -moz-appearance: none;
 
     display: block;
     margin: 0;
     font-size: 15px;
-    height:46px;
+    height: 46px;
     padding: 10px 15px;
     border: 2px solid $border_color;
     width: 100%;
@@ -679,8 +680,8 @@ input[type="number"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus {
-    
-    outline:none;
+
+    outline: none;
     border-color: #3da6ff;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -689,7 +690,7 @@ input[type="color"]:focus {
 
 input::placeholder {
 
-    color:$primary_color;
+    color: $primary_color;
 }
 
 button::-moz-focus-inner,
@@ -702,19 +703,20 @@ input::-moz-focus-inner {
 input::-webkit-input-placeholder {
 
     line-height: normal;
-    color:$primary_color;
+    color: $primary_color;
 }
 
 input:-ms-input-placeholder {
 
     line-height: normal;
-    color:$primary_color;
+    color: $primary_color;
 }
 
 input::-moz-placeholder {
 
-    line-height: revert; /* Reset to the value from the user-agent stylesheet. */
-    color:$primary_color;
+    line-height: revert;
+    /* Reset to the value from the user-agent stylesheet. */
+    color: $primary_color;
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -755,8 +757,8 @@ input[type="submit"] {
     display: inline-block;
     font-size: $body_font_size;
     font-weight: normal;
-    height:auto;
-    padding: 13px 30px;
+    height: auto;
+    padding: 16px 20px;
     height: auto;
     text-align: center;
     border: none;
@@ -766,26 +768,27 @@ input[type="submit"] {
     cursor: pointer;
     color: #ffffff;
     background-color: $secondary_color;
-    -webkit-appearance: none; /* safari fix */
+    -webkit-appearance: none;
+    /* safari fix */
     -moz-appearance: none;
     box-sizing: border-box;
-    @include border-radius(0);
+    @include border-radius(2px);
     @include transation_delay();
 }
 
 .button-general.medium,
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
-    
-    padding:20px 50px;
-    letter-spacing:0.5px;
-    margin:5px 10px;
+
+    padding: 20px 50px;
+    letter-spacing: 0.5px;
+    margin: 5px 10px;
 }
 
 .button-general.large {
-    
-    padding:23px 80px;
-    letter-spacing:0.5px;
-    margin:5px 10px;
+
+    padding: 23px 80px;
+    letter-spacing: 0.5px;
+    margin: 5px 10px;
 }
 
 .button-general.shadow {
@@ -825,13 +828,13 @@ input[type="radio"] {
 }
 
 select {
-    
-    display:block;
+
+    display: block;
     position: relative;
     font-size: 15px;
     height: 46px;
     padding: 10px 15px;
-    line-height:46px;
+    line-height: 46px;
     margin: 0;
     width: 100%;
     max-width: 100%;
@@ -901,12 +904,12 @@ table {
     border: 1px solid $border_color;
 }
 
-.alignleft > table {
+.alignleft>table {
 
     margin: 0;
 }
 
-.alignright > table {
+.alignright>table {
 
     margin: 0;
 }
@@ -922,7 +925,7 @@ td {
 
 
 th {
-    
+
     font-weight: bold;
 }
 
@@ -934,7 +937,7 @@ thead {
 
 caption {
 
-    font-weight:normal;
+    font-weight: normal;
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: left;
