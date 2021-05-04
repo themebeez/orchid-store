@@ -76,28 +76,8 @@ section .section-title h3,
 .woocommerce ul.products li.product .woocommerce-loop-product__title,
 .woocommerce ul.products li.product h3 {
 
-	font-family:$secondary_font_family; // Poppins
+    font-family: $secondary_font_family; // Poppins
 }
-
-// .woocommerce span.price,
-// .woocommerce ul.products li.product .price,
-// .woocommerce .woocommerce-Price-amount,
-// .cta-style-2 .sub-title h4,
-// .entry-metas ul li.posted-date span,
-// .mini-cart .cart-amount,
-// .patigation .page-numbers,
-// .mini-cart-open .price,
-// .cats-widget-style-1 .box .count,
-// .woocommerce div.product p.price,
-// .woocommerce div.product span.price,
-// .wc-block-grid .woocommerce-Price-amount,
-// .mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list span.quantity,
-// .mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list .woocommerce-Price-amount {
-
-//     font-family: $system_font;
-//     letter-spacing:0;
-// }
-
 
 // line height 
 
@@ -189,9 +169,10 @@ section .section-title h3,
 .inner-page-wrap .entry-title,
 .default-post-wrap .entry-title,
 .product-widget-style-2 .tab-nav ul li a,
-.woocommerce div.product p.price, 
+.woocommerce div.product p.price,
 .woocommerce div.product span.price,
-.woocommerce ul.products li.product .price {
+.woocommerce ul.products li.product .price,
+.woocommerce .woocommerce-grouped-product-list-item__price ins {
 
     font-weight: bold;
 }
@@ -239,7 +220,7 @@ section .section-title h3,
 .woocommerce-page table.wishlist_table thead th,
 .product-widget-style-2 .tab-nav ul li a,
 .woocommerce ul.products li.product .onsale,
-.woocommerce div.product .woocommerce-tabs ul.tabs li a  {
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
 
     font-size: 13px;
 }

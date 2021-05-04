@@ -1,7 +1,6 @@
-
 #yith-wcwl-popup-message {
 
-    font-weight:normal;
+    font-weight: normal;
     padding: 15px 50px;
     -webkit-box-shadow: 0px 0px 20px 0px rgba(158, 158, 158, 0.5);
     -moz-box-shadow: 0px 0px 20px 0px rgba(158, 158, 158, 0.5);
@@ -11,7 +10,7 @@
 #yith-quick-view-modal div.product div.images.woocommerce-product-gallery {
 
     box-shadow: none;
-    border:none;
+    border: none;
 }
 
 #yith-quick-view-modal .yith-wcqv-main {
@@ -24,7 +23,7 @@
 
 #yith-quick-view-modal #yith-quick-view-content {
 
-    padding:30px;
+    padding: 30px;
 }
 
 #yith-quick-view-close {
@@ -50,7 +49,7 @@
     font-weight: normal;
 }
 
-#yith-quick-view-content .product.type-product {
+#yith-quick-view-content div.product {
 
     @include flex_row_alt();
 }
@@ -71,10 +70,10 @@
     width: 55%;
     padding-right: 30px;
     padding-left: 30px;
-    border:none;
-    -webkit-box-shadow:none;
-    -moz-box-shadow:none;
-    box-shadow:none;
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
 
 .woocommerce#yith-quick-view-content div.product .entry-summary form.cart {
