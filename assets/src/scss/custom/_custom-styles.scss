@@ -1056,8 +1056,8 @@ section.product-widget-style-2 .section-title {
 
     flex: auto;
     text-align: center;
-    padding: 20px 15px;
-    line-height: 0;
+    padding: 16px 20px;
+    line-height: 1;
     width: auto;
     @include border-radius(0);
 }
@@ -1414,6 +1414,10 @@ section.product-widget-style-2 .section-title {
 .woocommerce-cart table.cart td.actions .coupon .input-text#coupon_code {
 
     width: 200px;
+    padding-left: 0;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
 }
 
 .woocommerce-cart .cart_totals h2 {
@@ -1562,6 +1566,12 @@ section.product-widget-style-2 .section-title {
 .woocommerce-page form.checkout_coupon p:first-child {
 
     margin-bottom: 0;
+}
+
+.woocommerce-page form.checkout_coupon p .button {
+
+    margin-left: 10px;
+    padding: 16px 20px;
 }
 
 .woocommerce form.checkout_coupon,
