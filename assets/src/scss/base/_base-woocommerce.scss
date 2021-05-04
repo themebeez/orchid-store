@@ -130,8 +130,10 @@
 }
 
 .os-quantity-wrapper {
-    
+
     @include flex();
+    position: relative;
+    width: 100px;
 }
 
 .woocommerce .os-quantity-wrapper .quantity input[type=number] {
@@ -158,19 +160,41 @@
     border-width: 1px;
 }
 
+.os-quantity-wrapper .quantity .qty {
+
+    width: 100px;
+    height: 50px;
+    padding: 10px 20px;
+    border-color: #e0e0e0;
+    @include border_radius(3px);
+}
+
 .woo-quantity-btn {
 
+    position: absolute;
+    z-index: 10;
+    top: 15px;
+    left: 7px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     font-size: 12px;
     font-weight: normal;
     padding: 0;
     margin: 0;
-    height: 41px;
-    width: 40px;
-    line-height: 45px;
-    color: #555555;
-    background-color: #f1f1f1;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    color: #616161;
+    background-color: #e0e0e0;
+    @include border_radius(50%);
 }
 
+.woo-quantity-btn.woo-quantity-plus {
+
+    left: auto;
+    right: 8px;
+}
 
 .select2-container .select2-selection--single {
 
@@ -448,7 +472,7 @@ ul.woocommerce-page .woocommerce-notice {
     min-width: 1px;
     padding: 2px 10px;
     font-weight: normal;
-    font-style:normal;
+    font-style: normal;
     background-color: red;
     @include border-radius(0);
 }
@@ -473,7 +497,7 @@ ul.woocommerce-page .woocommerce-notice {
     width: 130px;
     padding: 10px 15px;
     text-align: center;
-    background:transparent;
+    background: transparent;
     background-color: red;
     @include border-radius(2px);
 }
@@ -494,7 +518,8 @@ ul.woocommerce-page .woocommerce-notice {
 }
 
 .woocommerce span.price ins,
-.woocommerce span.price del {
+.woocommerce span.price del,
+.woocommerce .woocommerce-grouped-product-list-item__price ins {
 
     background: transparent;
     background-color: transparent;
@@ -504,7 +529,8 @@ ul.woocommerce-page .woocommerce-notice {
 .woocommerce div.product p.price del,
 .woocommerce div.product span.price del,
 .woocommerce ul.products li.product .price del,
-.wc-block-grid .wc-block-grid__product-price del {
+.wc-block-grid .wc-block-grid__product-price del,
+.woocommerce .woocommerce-grouped-product-list-item__price del {
 
     color: #ffb41d;
     opacity: 1;
@@ -518,7 +544,8 @@ ul.woocommerce-page .woocommerce-notice {
 }
 
 .woocommerce div.product .price,
-.woocommerce ul.products li.product .price {
+.woocommerce ul.products li.product .price,
+.woocommerce .woocommerce-grouped-product-list-item__price .amount {
 
     line-height: 1;
 }
@@ -535,7 +562,8 @@ ul.woocommerce-page .woocommerce-notice {
 .woocommerce div.product .price del,
 .woocommerce div.product p.price del,
 .woocommerce div.product span.price del,
-.woocommerce ul.products li.product .price del {
+.woocommerce ul.products li.product .price del,
+.woocommerce .woocommerce-grouped-product-list-item__price del {
 
     font-size: 13px;
 }
