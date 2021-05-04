@@ -194,11 +194,11 @@
 
 .wc-block-grid .wc-block-grid__products .wc-block-grid__product .wp-block-button__link {
 
-	padding: 10px 20px;
+	padding: 16px 20px;
 	line-height: 1;
 	font-size: 14px;
 	font-weight: normal;
-	@include border-radius(0);
+	@include border-radius(2px);
 }
 
 .wc-block-grid .wc-block-grid__products .wc-block-grid__product .wc-block-grid__product-add-to-cart>a:hover {
