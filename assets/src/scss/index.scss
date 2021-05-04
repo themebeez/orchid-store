@@ -1,0 +1,92 @@
+/**
+=======================================================
+
+- File: Master importer ( Imports all scss files )
+
+- Project : Orchid-store
+
+- Since : 17 Jan, 2018
+
+- Author: Themebeez
+
+- Author url : https://themebeez.com/
+
+- Scss version: 1.2.8
+
+- Last updated: 04 March, 2021
+
+======================================================================================
+*/
+
+// Import variables
+
+@import 'variables/var-typography';
+@import 'variables/var-colors';
+@import 'variables/var-spacing';
+
+// Import mixins
+
+@import 'custom/custom-parts/mixins';
+
+
+// Import Base styling & reset CSS
+
+@import 'base/normalize'; // CSS normalize
+@import 'base/base'; // base styling
+@import 'base/base-woocommerce'; // base styling for WooCommerce specific elements
+
+
+// Import libraries
+
+@import 'libraries/owlcarousel';
+@import 'libraries/izi-toast';
+
+
+// Import custom parts & custom style file
+
+@import 'custom/custom-parts/helper-class'; // helper class
+@import 'custom/custom-parts/accessibility'; // assibility
+@import 'custom/custom-parts/clearing'; // clearing
+@import 'custom/custom-parts/widget'; // custom widgets
+@import 'custom/custom-parts/pagination'; // pagination
+@import 'custom/custom-parts/breadcrumb'; // breadcrumb
+@import 'custom/custom-parts/back-to-top'; // back to top
+@import 'custom/custom-parts/primary-menu'; // primary menu
+@import 'custom/custom-parts/header'; // header styles (including mobile header)
+@import 'custom/custom-parts/category-menu'; // Category menu / special menu
+@import 'custom/custom-parts/block'; // Gutenberg block
+@import 'custom/custom-parts/editor'; // Editor styles for front-end
+@import 'custom/custom-parts/wordpress'; // wp styles
+
+
+// compatibility
+
+@import 'custom/compatibility/yith-quickview'; // YITH quickview
+@import 'custom/compatibility/yith-wishlist'; // YITH wishlist
+
+
+// custom styles
+
+@import 'custom/custom-styles'; // [ we code custom style here ]
+
+
+// common colors, typo & spacing
+
+@import 'custom/common/common-colors'; // custom common colors
+@import 'custom/common/common-typography'; // custom common typography
+@import 'custom/common/common-spacing'; // custom common spacing
+
+
+// Import media query for responsive
+
+@import 'custom/custom-parts/responsive';
+
+
+// Import accessibility
+
+@import 'custom/custom-parts/accessibility';
+
+
+// Import keyframes
+
+@import 'custom/custom-parts/keyframe';

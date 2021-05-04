@@ -12,15 +12,10 @@ wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
 /node_modules/
 
-gulpfile.js
 gruntfile.js
-package-lock.json
-package.json
 /.htaccess
 license.txt
 readme.html
 /sitemap.xml
 /sitemap.xml.gz
-composer.json
-composer.lock
 
