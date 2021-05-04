@@ -147,10 +147,13 @@
         if ( orchid_store_obj.displayPlusMinusBtns == '1' ) {            
 
             $('body').on('click', 'button.woo-quantity-plus, button.woo-quantity-minus', function() {
-
-                var quantityFieldEle = $(this).closest('form.cart').find('.qty');
+                
+                var quantityFieldEle = $(this).siblings('.quantity').find('.qty');
 
                 var qtyVal = parseFloat(quantityFieldEle.val());
+
+                qtyVal = ( ! isNaN(qtyVal) ) ? qtyVal : parseFloat(0);
+
                 var qtyMax = parseFloat(quantityFieldEle.attr('max'));
                 var qtyMin = parseFloat(quantityFieldEle.attr('min'));
                 var qtyStep = parseFloat(quantityFieldEle.attr('step'));
@@ -158,8 +161,8 @@
                 var qtyValSplit = String(qtyVal).split('.');
                 var qtyStepSplit = String(qtyStep).split('.');
 
-                var qtyValPrecision = ( qtyValSplit[1] ) ? qtyValSplit[1].length : 0;
-                var qtyStepPrecision = ( qtyStepSplit[1] ) ? qtyStepSplit[1].length : 0;
+                var qtyValPrecision = ( qtyValSplit[1] ) ? qtyValSplit[1].length : parseFloat(0);
+                var qtyStepPrecision = ( qtyStepSplit[1] ) ? qtyStepSplit[1].length : parseFloat(0);
 
                 var precision = ( qtyValPrecision > qtyStepPrecision ) ? qtyValPrecision : qtyStepPrecision;
 
@@ -177,7 +180,6 @@
                             }
                             quantityFieldEle.val( increVal );
                         } 
-
                         if ( qtyMax === qtyVal ) {
                             quantityFieldEle.val(qtyMax);
                         }
@@ -186,18 +188,15 @@
                 
 
                 if ( $(this).is('.woo-quantity-minus') ) {
-                    if ( qtyMin > 0 && qtyVal >= qtyMin ) {
-                        if ( qtyVal == qtyMin ) {
-                            quantityFieldEle.val(qtyMin);
+                    if ( qtyVal == qtyMin ) {
+                        quantityFieldEle.val(qtyMin);
+                    }
+                    if ( qtyVal > qtyMin ) {
+                        var decreVal = parseFloat( qtyVal - qtyStep ).toFixed(precision);
+                        if ( decreVal <= qtyMin ) {
+                            decreVal = qtyMin;
                         }
-
-                        if ( qtyVal > qtyMin ) {
-                            var decreVal = parseFloat( qtyVal - qtyStep ).toFixed(precision);
-                            if ( decreVal <= qtyMin ) {
-                                decreVal = qtyMin;
-                            }
-                            quantityFieldEle.val( decreVal );
-                        }
+                        quantityFieldEle.val( decreVal );
                     }
                 }
             });

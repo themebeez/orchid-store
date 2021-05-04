@@ -5,7 +5,7 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 7.0.0
 Requires at least: 5.0
 Tested up to: 5.7.1
-Stable tag: 1.2.8
+Stable tag: 1.2.9
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -90,6 +90,10 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.2.9 - May 4, 2021 ==
+
+- Fix: Minor CSS fixes.
 
 == 1.2.8 - April 30, 2021 ==
 
