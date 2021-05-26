@@ -105,6 +105,7 @@
 .woocommerce input.button.loading:after,
 .woocommerce #respond input#submit.loading:after {
 
+    display: inline-flex;
     position: relative;
     top: unset;
     bottom: unset;
