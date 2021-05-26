@@ -1,22 +1,22 @@
 
 // gulp file to generate Orchid store WP POT, compile assets & zip Production files
 
-const gulp 		        = require('gulp');
-const zip		        = require('gulp-zip');
-const wpPot             = require('gulp-wp-pot');
-const sourcemaps        = require('gulp-sourcemaps');
-const sass              = require('gulp-sass');
-const concat            = require('gulp-concat');
-const uglify            = require('gulp-uglify');
-const postcss           = require('gulp-postcss');
-const autoprefixer      = require('autoprefixer');
-const cssnano           = require('cssnano');
-const replace           = require('gulp-replace');
-const notify            = require('gulp-notify');
-const plumber           = require('gulp-plumber');
-const rtlcss            = require('gulp-rtlcss');
-const rename            = require('gulp-rename');
-const shell             = require('gulp-shell');
+const gulp = require('gulp');
+const zip = require('gulp-zip');
+const wpPot = require('gulp-wp-pot');
+const sourcemaps = require('gulp-sourcemaps');
+const sass = require('gulp-sass');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const replace = require('gulp-replace');
+const notify = require('gulp-notify');
+const plumber = require('gulp-plumber');
+const rtlcss = require('gulp-rtlcss');
+const rename = require('gulp-rename');
+const shell = require('gulp-shell');
 
 /*
 *
@@ -38,16 +38,16 @@ const shell             = require('gulp-shell');
 
 // #1.1 project name 
 
-const output_filename	= 'orchid-store.zip';
+const output_filename = 'orchid-store.zip';
 
 // #1.2 files & folders to zip
 const files_folders = {
 
     filefolders_src: [
 
-    	'./*',
+        './*',
         './*/**',
-    
+
         '!./node_modules/**',
         '!./assets/src/**',
         '!./gulpfile.js',
@@ -75,14 +75,17 @@ const files_folders = {
 
 const php_files = {
 
-	php_files_path:[
+    php_files_path: [
 
-		'./**/*.php',
-	],
+        './**/*.php',
+        '!./inc/plugin-recommendation.php',
+        '!./third-party/class-tgm-plugin-activation.php',
+    ],
 }
 
 // #2.2 project text domain
 
+const project_name = 'Orchid Store';
 const project_text_domain = 'orchid-store';
 
 /*
@@ -98,12 +101,12 @@ const orchidScriptsPath = {
 
     orchid_scripts_path: [
 
-        './assets/src/js/libs/*.js',
+        './assets/src/js/libraries/*.js',
         './assets/src/js/scripts/*.js',
         '!./assets/src/js/conditional/**'
     ],
 
-    orchid_script_dist: "orchid/assets/dist/js/",
+    orchid_script_dist: "./assets/dist/js/",
 }
 const orchid_build_js_file_name = "bundle.js"; // what would you like to name your minified bundled js file
 
@@ -156,9 +159,9 @@ gulp.task('WordpressPot', function () {
     return gulp.src(php_files.php_files_path)
         .pipe(wpPot({
             domain: project_text_domain,
-            package: project_text_domain
+            package: project_name,
         }))
-        .pipe(gulp.dest('languages/orchid-store.pot'));
+        .pipe(gulp.dest('languages/' + project_text_domain + '.pot'));
 });
 
 /*
@@ -169,7 +172,7 @@ gulp.task('WordpressPot', function () {
 ====================================================
 */
 
-gulp.task('ZipProductionFiles',  function() {
+gulp.task('ZipProductionFiles', function () {
     return gulp.src(files_folders.filefolders_src)
         .pipe(zip(output_filename))
         .pipe(gulp.dest(files_folders.production_zip_file_path))
@@ -183,7 +186,7 @@ gulp.task('ZipProductionFiles',  function() {
 ====================================================
 */
 
-gulp.task('orchidScriptsTask',  function() {
+gulp.task('orchidScriptsTask', function () {
     return gulp.src(orchidScriptsPath.orchid_scripts_path)
         .pipe(concat(orchid_build_js_file_name))
         .pipe(rename({ suffix: '.min' }))
@@ -191,15 +194,15 @@ gulp.task('orchidScriptsTask',  function() {
         .pipe(gulp.dest(orchidScriptsPath.orchid_script_dist));
 });
 
-gulp.task('orchidConditionalScriptsTask',  function() {
+gulp.task('orchidConditionalScriptsTask', function () {
     return gulp.src(orchidConditionalScriptsPath.orchid_con_scripts_src)
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
         .pipe(gulp.dest(orchidConditionalScriptsPath.orchid_con_scripts_dist));
 });
 
-gulp.task('orchidSassTask', function() {
-    var onError = function(err) {
+gulp.task('orchidSassTask', function () {
+    var onError = function (err) {
         notify.onError({
             title: "Gulp",
             subtitle: "Failure!",
@@ -218,8 +221,8 @@ gulp.task('orchidSassTask', function() {
         .pipe(gulp.dest(orchidSassPath.orchid_sass_dist)); // put final CSS in dist folder
 });
 
-gulp.task('orchidConditionalSassTask', function() {
-    var onError = function(err) {
+gulp.task('orchidConditionalSassTask', function () {
+    var onError = function (err) {
         notify.onError({
             title: "Gulp",
             subtitle: "Failure!",
@@ -238,7 +241,7 @@ gulp.task('orchidConditionalSassTask', function() {
 });
 
 // task to convert LTR css to RTL
-gulp.task('orchidDortlTask', function() {
+gulp.task('orchidDortlTask', function () {
     return gulp.src(orchidRtlCssPath.orchid_rtlcss_src)
         .pipe(rtlcss()) // Convert to RTL.
         .pipe(rename({ suffix: '-rtl' })) // Append "-rtl" to the filename.
@@ -267,8 +270,8 @@ gulp.task('orchidDortlTask', function() {
 // Run Task: none, just echo message for default command
 
 gulp.task('default', shell.task(
-    
-    'echo ====================== ⛔️ Hello Stranger, gulp default command is disabled in this project. These are the available commands gulp zipprod, gulp assets, gulp makepot. If you need additional info refer gulpfile.js L269. Cheers 😜 ======================',
+
+    'echo ====================== ⛔️ Hello Folks, gulp default command is disabled in this project. These are the available commands gulp zipprod, gulp assets, gulp makepot. If you need additional info refer gulpfile.js L269. Cheers 😜 ======================',
 
 ));
 
