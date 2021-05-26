@@ -488,7 +488,7 @@ ul.woocommerce-page .woocommerce-notice {
     width: 30px;
     height: 30px;
     line-height: 30px;
-    font-size: 24px;
+    font-size: 0;
     background-color: transparent;
     @include border-radius(50%);
 }
@@ -508,6 +508,7 @@ ul.woocommerce-page .woocommerce-notice {
 
     content: "\ea5e";
     font-family: "boxicons";
+    font-size: 24px;
     border: none;
     border-radius: 0;
     position: relative;

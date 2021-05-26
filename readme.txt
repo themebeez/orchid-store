@@ -2,9 +2,9 @@
 
 Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
-Requires PHP: 7.0.0
+Requires PHP: 7.4.0
 Requires at least: 5.0
-Tested up to: 5.7.1
+Tested up to: 5.7.2
 Stable tag: 1.2.9
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
@@ -34,7 +34,6 @@ Orchid Store is distributed under the terms of the GNU GPL
 * WPTRT Customize Pro https://github.com/WPTRT/wptrt-customize-pro, 2019 WPTRT, [GPLv2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
 * WPTRT Admin-Notices, https://github.com/WPTT/admin-notices, [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
-
 
 * Breadcrumbs Trail https://themehybrid.com/plugins/breadcrumb-trail, Copyright (c) 2008 - 2017, Justin Tadlock, [GPLv2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
@@ -90,6 +89,12 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.3.0 - May 26, 2021 ==
+
+- Fix: WooCommerce gallery trigger icon font size
+- Tested: up to WordPress version 5.7.2
+- Bumped: required PHP version to 7.4.0
 
 == 1.2.9 - May 4, 2021 ==
 
