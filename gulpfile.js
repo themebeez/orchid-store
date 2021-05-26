@@ -102,7 +102,7 @@ const orchidScriptsPath = {
     orchid_scripts_path: [
 
         './assets/src/js/libraries/*.js',
-        './assets/src/js/scripts/*.js',
+        './assets/src/js/custom/*.js',
         '!./assets/src/js/conditional/**'
     ],
 
