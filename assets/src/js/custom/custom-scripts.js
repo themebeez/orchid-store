@@ -241,9 +241,9 @@
         if ( megaMenus.length > 0 ) {
             megaMenus.each( function( index ) {
                 var currentMegaMenu = $(this);
-                var megaSubmenu = $(this).find('ul.mega-menu-sub-menu');
+                var megaSubmenu = currentMegaMenu.find('ul.mega-menu-sub-menu');
                 if ( megaSubmenu.length > 0 ) {
-                    var submenuLi = $(this).find('li.mega-sub-menu-group');
+                    var submenuLi = megaSubmenu.find('li.mega-sub-menu-group');
                     if ( submenuLi.length > 0 ) {
                         megaSubMenu.addClass('mega-menu-column-' + submenuLi.length);
                     }
