@@ -5,7 +5,7 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 7.4.0
 Requires at least: 5.0
 Tested up to: 5.7.2
-Stable tag: 1.2.9
+Stable tag: 1.3.0
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -94,6 +94,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 - Fix: WooCommerce gallery trigger icon font size
 - Fix: Ajax add to cart spinner icon
+- Fix: Simple mega menu columns issue
 - Tested: up to WordPress version 5.7.2
 - Bumped: required PHP version to 7.4.0
 
