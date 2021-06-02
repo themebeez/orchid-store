@@ -90,11 +90,12 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.3.0 - May 26, 2021 ==
+== 1.3.0 - June 02, 2021 ==
 
 - Fix: WooCommerce gallery trigger icon font size
 - Fix: Ajax add to cart spinner icon
 - Fix: Simple mega menu columns issue
+- Fix: Basic CSS style
 - Tested: up to WordPress version 5.7.2
 - Bumped: required PHP version to 7.4.0
 
