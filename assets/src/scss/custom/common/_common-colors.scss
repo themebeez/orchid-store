@@ -496,6 +496,7 @@ a.button-general:hover,
 .category-description,
 .widget_tag_cloud .tagcloud a,
 .widget_product_tag_cloud .tagcloud a,
+.widget_tag_cloud .wp-block-tag-cloud a,
 .select2-container--default .select2-search--dropdown .select2-search__field {
 
 	border: 1px solid $border_color;
@@ -511,6 +512,7 @@ a.button-general:hover,
 .widget_recent_comments li,
 .widget_rss li,
 .widget_pages li,
+.widget_block .wp-block-page-list li,
 .widget_nav_menu li,
 .widget_product_categories ul li,
 .woocommerce-widget-layered-nav ul li,

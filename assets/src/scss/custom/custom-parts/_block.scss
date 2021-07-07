@@ -217,7 +217,72 @@
 	margin-left: 5px;
 }
 
-// media query 
+
+/*
+====================================================
+=
+= Added: WordPress 5.8 styles
+=
+==========================================
+*/
+
+// Widget/Block: Latest posts
+
+.widget_block.widget_recent_entries .wp-block-latest-posts.is-grid {
+
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.widget_block.widget_recent_entries .wp-block-latest-posts.is-grid li {
+
+	border-bottom: none;
+	padding: 0;
+}
+
+.widget_block .wp-block-latest-posts .wp-block-latest-posts__featured-image {
+
+	margin-bottom: 10px;
+}
+
+.widget_block .wp-block-latest-posts .wp-block-latest-posts__featured-image > img {
+
+	border-radius: 3px;
+}
+
+.widget_block .wp-block-latest-posts .wp-block-latest-posts__post-excerpt {
+
+	margin-top: 10px;
+}
+
+.widget_block .wp-block-latest-posts .wp-block-latest-posts__post-date {
+
+	margin-left: 10px;
+}
+
+// Widget/Block: RSS
+
+.widget_block.widget_rss .wp-block-rss__item-title {
+
+	margin-bottom: 5px;
+}
+.widget_block.widget_rss .wp-block-rss__item-excerpt {
+
+ margin-top: 10px;
+}
+
+.widget_block.widget_rss .wp-block-rss__item-author {
+
+	margin-left: 10px;
+}
+
+/*
+====================================================
+=
+= Media query
+=
+==========================================
+*/
 
 // [class*="has-"]
 

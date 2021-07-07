@@ -186,7 +186,8 @@
 .widget_recent_entries ul,
 .widget_recent_comments ul,
 .widget_product_categories ul,
-.woocommerce-widget-layered-nav ul {
+.woocommerce-widget-layered-nav ul,
+.widget_block .wp-block-page-list{
     
     list-style:none;
     padding:0;
@@ -210,7 +211,8 @@
 .woocommerce-widget-layered-nav ul li,
 .widget_recent_comments ul li,
 .widget_recent_entries li,
-.widget_rss li {
+.widget_rss li,
+.widget_block .wp-block-page-list li {
 
     position: relative;
 }
@@ -226,6 +228,7 @@
 .widget_recent_comments ul li,
 .widget_recent_entries ul li,
 .widget_rss ul li,
+.widget_block .wp-block-page-list li,
 .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item {
 
     align-items: baseline;
@@ -254,6 +257,7 @@
 .widget_product_categories ul.children li:first-child,
 .woocommerce-widget-layered-nav > ul > li:first-child,
 .woocommerce .widget_rating_filter ul li:first-child,
+.widget_block .wp-block-page-list li:first-child,
 .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item:first-child {
 
     padding-top: 0;
@@ -273,6 +277,7 @@
 .widget_product_categories ul.children li:last-child,
 .woocommerce-widget-layered-nav > ul > li:last-child,
 .woocommerce .widget_rating_filter ul li:last-child,
+.widget_block .wp-block-page-list li:last-child,
 .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item:last-child {
     
     padding-bottom:0;
@@ -481,7 +486,8 @@
 */
 
 .widget_tag_cloud .tagcloud,
-.widget_product_tag_cloud .tagcloud {
+.widget_product_tag_cloud .tagcloud,
+.widget_tag_cloud .wp-block-tag-cloud {
 
     display: -webkit-box;
     display: -ms-flexbox;
@@ -501,7 +507,8 @@
 }
 
 .widget_tag_cloud .tagcloud a,
-.widget_product_tag_cloud .tagcloud a {
+.widget_product_tag_cloud .tagcloud a,
+.widget_tag_cloud .wp-block-tag-cloud a {
 
     flex: 1 auto;
     text-transform: capitalize;
