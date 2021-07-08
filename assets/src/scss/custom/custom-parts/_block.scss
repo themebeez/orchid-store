@@ -221,60 +221,169 @@
 /*
 ====================================================
 =
-= Added: WordPress 5.8 styles
+= Since: WordPress 5.8 styles [20 July, 2021]
 =
 ==========================================
 */
 
-// Widget/Block: Latest posts
+/* --------------------------------------------------------------------------
+	1. Search widget/block
+   -------------------------------------------------------------------------- */
 
-.widget_block.widget_recent_entries .wp-block-latest-posts.is-grid {
+.wp-block-search label,
+.wp-block-woocommerce-product-search label {
+
+    display: block;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.wp-block-search .wp-block-search__inside-wrapper {
+
+    position: relative;
+}
+
+
+.wp-block-search .wp-block-search__button,
+.wp-block-search.wp-block-search__text-button .wp-block-search__button {
+
+    color: #FFF;
+    background-color: $secondary_color;
+	border: none;
+}
+
+.wp-block-search .wp-block-search__button svg,
+.wp-block-search .wp-block-search__button:hover svg {
+
+    fill: #FFF;
+}
+
+.widget_search .wp-block-search .wp-block-search__button svg,
+.widget_search .wp-block-search .wp-block-search__button:hover svg {
+
+    fill: $primary_color;
+}
+
+.wp-block-search .wp-block-search__button:hover,
+.wp-block-search.wp-block-search__text-button .wp-block-search__button:hover {
+
+    color: #FFF;
+    background-color: $third_color;
+	border: none;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+
+    border: none;
+    padding: 0;
+}
+
+.wp-block-search .wp-block-search__input,
+.wp-block-woocommerce-product-search .wc-block-product-search__field,
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input {
+
+    border: 2px solid $border_color;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input {
+
+    padding: 15px 40px 15px 15px;
+}
+
+.widget_search .wp-block-search.wp-block-search__text-button .wp-block-search__button {
+
+    width: auto;
+    padding: 0 10px;
+    right: 8px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 13px;
+}
+
+/* --------------------------------------------------------------------------
+	2. Latest posts block
+   -------------------------------------------------------------------------- */
+
+.wp-block-rss,
+.wp-block-latest-posts {
+
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.wp-block-latest-posts li > a,
+.wp-block-rss li .wp-block-rss__item-title > a {
+
+	display: block;
+	text-decoration: none;
+}
+
+.widget_recent_entries .wp-block-latest-posts.is-grid {
 
 	align-items: flex-start;
 	justify-content: flex-start;
 }
 
-.widget_block.widget_recent_entries .wp-block-latest-posts.is-grid li {
+.widget_recent_entries .wp-block-latest-posts.is-grid li {
 
 	border-bottom: none;
 	padding: 0;
 }
 
-.widget_block .wp-block-latest-posts .wp-block-latest-posts__featured-image {
+.wp-block-latest-posts .wp-block-latest-posts__featured-image {
 
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 }
 
-.widget_block .wp-block-latest-posts .wp-block-latest-posts__featured-image > img {
+.wp-block-latest-posts .wp-block-latest-posts__featured-image > img {
 
 	border-radius: 3px;
 }
 
-.widget_block .wp-block-latest-posts .wp-block-latest-posts__post-excerpt {
+.wp-block-latest-posts .wp-block-latest-posts__post-excerpt {
 
 	margin-top: 10px;
 }
 
-.widget_block .wp-block-latest-posts .wp-block-latest-posts__post-date {
+.wp-block-rss .wp-block-rss__item-author,
+.wp-block-rss .wp-block-rss__item-publish-date,
+.wp-block-latest-posts .wp-block-latest-posts__post-date,
+.wp-block-latest-posts .wp-block-latest-posts__post-author {
+
+	display: inline-flex;
+	margin-top: 5px;
+}
+
+.wp-block-latest-posts .wp-block-latest-posts__post-date {
 
 	margin-left: 10px;
 }
 
-// Widget/Block: RSS
 
-.widget_block.widget_rss .wp-block-rss__item-title {
+/* --------------------------------------------------------------------------
+	3. RSS block
+   -------------------------------------------------------------------------- */
+
+.wp-block-rss .wp-block-rss__item {
+
+	margin-bottom: 20px;
+}
+
+.wp-block-rss .wp-block-rss__item .wp-block-rss__item-title {
 
 	margin-bottom: 5px;
 }
-.widget_block.widget_rss .wp-block-rss__item-excerpt {
+.wp-block-rss .wp-block-rss__item .wp-block-rss__item-excerpt {
 
- margin-top: 10px;
+ 	margin-top: 10px;
 }
 
-.widget_block.widget_rss .wp-block-rss__item-author {
+.wp-block-rss .wp-block-rss__item .wp-block-rss__item-author {
 
 	margin-left: 10px;
 }
+
 
 /*
 ====================================================
