@@ -88,6 +88,13 @@ if ( ! function_exists( 'orchid_store_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		/**
+		 * Remove block widget support in WordPress version 5.8 & later 
+		 *
+		 * @link https://make.wordpress.org/core/2021/06/29/block-based-widgets-editor-in-wordpress-5-8/
+		 */
+		remove_theme_support( 'widgets-block-editor' );
 	}
 endif;
 add_action( 'after_setup_theme', 'orchid_store_setup' );
