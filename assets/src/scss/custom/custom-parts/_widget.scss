@@ -531,6 +531,7 @@
 ===============================================
 */
 
+.wp-block-search,
 form.search-form,
 .widget_search form,
 .widget_product_search form {
@@ -545,6 +546,7 @@ form.search-form,
     width: 100%;
 }
 
+.wp-block-search label,
 form.search-form label,
 .widget_search form label,
 form.search-form input[type="search"],
@@ -554,11 +556,13 @@ form.search-form input[type="search"],
     width: 100%;
 }
 
+.wp-block-search label,
 form.search-form label {
 
     height: auto;
 }
 
+.wp-block-search input[type="search"],
 form.search-form input[type="search"],
 .widget_product_search form input[type="search"] {
 
@@ -598,8 +602,6 @@ form.search-form button[type="search"]:focus,
 
     outline: none;
 }
-
-
 
 /*
 =======================================
