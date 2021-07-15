@@ -183,3 +183,32 @@ if( ! function_exists( 'orchid_store_is_page_header_enabled' ) ) {
 		}	
 	}
 }
+
+
+/**
+ * Active callback function to check if mini-cart is enabled.
+ */
+if ( ! function_exists( 'orchid_store_is_mini_cart_enabled' ) ) {
+
+	function orchid_store_is_mini_cart_enabled( $control ) {
+
+		$is_mini_cart_enabled = $control->manager->get_setting( 'orchid_store_field_display_mini_cart' )->value();
+
+		return ( $is_mini_cart_enabled == true ) ? true : false;
+	}
+} 
+
+
+
+/**
+ * Active callback function to check if wishlist is enabled.
+ */
+if ( ! function_exists( 'orchid_store_is_wishlist_enabled' ) ) {
+
+	function orchid_store_is_wishlist_enabled( $control ) {
+
+		$is_wishlist_enabled = $control->manager->get_setting( 'orchid_store_field_display_wishlist' )->value();
+
+		return ( $is_wishlist_enabled == true ) ? true : false;
+	}
+} 
