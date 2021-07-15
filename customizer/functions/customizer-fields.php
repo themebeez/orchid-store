@@ -298,11 +298,14 @@ orchid_store_add_toggle_field( 'display_product_search_form_on_mobile', esc_html
 
 if( class_exists( 'WooCommerce' ) ) {
 	orchid_store_add_toggle_field( 'display_mini_cart', esc_html__( 'Display Mini Cart', 'orchid-store' ), '', '', 'mini_cart' );	
+	orchid_store_add_toggle_field( 'display_cart_items_count', esc_html__( 'Display Cart Items Count', 'orchid-store' ), '', 'orchid_store_is_mini_cart_enabled', 'mini_cart' );	
 }
 
 if( class_exists( 'WooCommerce' ) && class_exists( 'YITH_WCWL' ) ) {
 
 	orchid_store_add_toggle_field( 'display_wishlist', esc_html__( 'Display Wishlist', 'orchid-store' ), '', '', 'wishlist' );
+	orchid_store_add_toggle_field( 'display_wishlist_items_count', esc_html__( 'Display Wishlist Items Count', 'orchid-store' ), '', 'orchid_store_is_wishlist_enabled', 'wishlist' );
+
 }
 
 

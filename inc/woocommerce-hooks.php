@@ -37,7 +37,11 @@ if( ! function_exists( 'orchid_store_wishlist_icon_action' ) ) {
         if ( $wishlist_page_url ) {
             ?>
             <div class="wishlist-icon-container">
-                <a href="<?php echo esc_url( $wishlist_page_url ); ?>"><i class='bx bx-heart'></i> <span class="item-count wishlist-items-count"><?php echo esc_html( yith_wcwl_count_all_products() ); ?></span></a>
+                <a href="<?php echo esc_url( $wishlist_page_url ); ?>"><i class='bx bx-heart'></i> 
+                    <?php if ( orchid_store_get_option( 'display_wishlist_items_count' ) ) { ?>
+                        <span class="item-count wishlist-items-count"><?php echo esc_html( yith_wcwl_count_all_products() ); ?></span>
+                    <?php } ?>
+                </a>
             </div><!-- .wishlist-icon-container -->
             <?php
         }
@@ -58,7 +62,9 @@ if( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
 		<div class="mini-cart">
             <button class="trigger-mini-cart">
             	<i class='bx bx-cart'></i>
-                <span class="item-count cart-items-count"><?php echo WC()->cart->get_cart_contents_count(); ?><span>
+                <?php if ( orchid_store_get_option( 'display_cart_items_count' ) ) { ?>
+                    <span class="item-count cart-items-count"><?php echo WC()->cart->get_cart_contents_count(); ?><span>
+                <?php } ?>
             </button><!-- .trigger-mini-cart -->
             <span class="cart-amount"><?php esc_html_e( 'Total:', 'orchid-store' ); ?>
 	            <span class="price">	                

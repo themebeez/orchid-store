@@ -70,7 +70,9 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
             'select_search_form' => 'product_search',
             'display_product_search_form_on_mobile' => false,
             'display_mini_cart' => true,
+            'display_cart_items_count' => false,
             'display_wishlist' => true,
+            'display_wishlist_items_count' => false,
 
             'blog_featured_image' => false,
             'blog_display_cats' => true,
