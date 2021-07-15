@@ -4,8 +4,8 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 7.0
 Requires at least: 5.0
-Tested up to: 5.7.2
-Stable tag: 1.3.1
+Tested up to: 5.8
+Stable tag: 1.3.2
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -89,6 +89,13 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.3.2 - July 20, 2021 ==
+
+- Added: Items on wishlist count in header section.
+- Added: Items on cart count in header section mini cart.
+- Added: remove_theme_support( 'widgets-block-editor' ) hook to remove support for block widgets in widget screen.
+- Tested: up to WordPress version 5.8
 
 == 1.3.1 - June 12, 2021 ==
 

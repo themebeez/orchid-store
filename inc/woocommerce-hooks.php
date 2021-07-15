@@ -37,7 +37,7 @@ if( ! function_exists( 'orchid_store_wishlist_icon_action' ) ) {
         if ( $wishlist_page_url ) {
             ?>
             <div class="wishlist-icon-container">
-                <a href="<?php echo esc_url( $wishlist_page_url ); ?>"><i class='bx bx-heart'></i></a>
+                <a href="<?php echo esc_url( $wishlist_page_url ); ?>"><i class='bx bx-heart'></i> <span class="item-count">11</span></a>
             </div><!-- .wishlist-icon-container -->
             <?php
         }
@@ -58,6 +58,7 @@ if( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
 		<div class="mini-cart">
             <button class="trigger-mini-cart">
             	<i class='bx bx-cart'></i>
+                <span class="item-count">26</span>
             </button><!-- .trigger-mini-cart -->
             <span class="cart-amount"><?php esc_html_e( 'Total:', 'orchid-store' ); ?>
 	            <span class="price">	                
