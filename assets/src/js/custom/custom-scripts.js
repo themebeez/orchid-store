@@ -4,6 +4,11 @@
 
     $(document).ready(function() {
 
+        // Trigger WooCommerce cart fragments.
+
+        $(document.body).trigger('wc_fragment_refresh');
+        
+
         /*
         ====================
         = Init wow js
@@ -508,6 +513,17 @@
                 }
             });    
         }   
+
+
+        // Update Wishlist item counts
+
+        $( document ).on( 'added_to_wishlist removed_from_wishlist', function() {
+            $.get( yith_wcwl_l10n.ajax_url, {
+                action: 'orchid_store_update_wishlist_count'
+            }, function( data ) {
+                $('.wishlist-items-count').html( data.count );
+            } );
+        });
 
     });
 

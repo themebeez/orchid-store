@@ -37,7 +37,7 @@ if( ! function_exists( 'orchid_store_wishlist_icon_action' ) ) {
         if ( $wishlist_page_url ) {
             ?>
             <div class="wishlist-icon-container">
-                <a href="<?php echo esc_url( $wishlist_page_url ); ?>"><i class='bx bx-heart'></i> <span class="item-count">11</span></a>
+                <a href="<?php echo esc_url( $wishlist_page_url ); ?>"><i class='bx bx-heart'></i> <span class="item-count wishlist-items-count"><?php echo esc_html( yith_wcwl_count_all_products() ); ?></span></a>
             </div><!-- .wishlist-icon-container -->
             <?php
         }
@@ -58,7 +58,7 @@ if( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
 		<div class="mini-cart">
             <button class="trigger-mini-cart">
             	<i class='bx bx-cart'></i>
-                <span class="item-count">26</span>
+                <span class="item-count cart-items-count"><?php echo WC()->cart->get_cart_contents_count(); ?><span>
             </button><!-- .trigger-mini-cart -->
             <span class="cart-amount"><?php esc_html_e( 'Total:', 'orchid-store' ); ?>
 	            <span class="price">	                
@@ -455,4 +455,33 @@ if ( ! function_exists( 'orchid_store_get_yith_wishlist_page_url' ) ) {
             return get_page_link( absint( $wishlist_page_id ) );
         }
     }
+}
+
+
+
+if ( defined( 'YITH_WCWL' ) && ! function_exists( 'orchid_store_update_wishlist_count' ) ) {
+
+    function orchid_store_update_wishlist_count() {
+
+        wp_send_json( array(
+            'count' => yith_wcwl_count_all_products()
+        ) );
+    }
+    add_action( 'wp_ajax_orchid_store_update_wishlist_count', 'orchid_store_update_wishlist_count' );
+    add_action( 'wp_ajax_nopriv_orchid_store_update_wishlist_count', 'orchid_store_update_wishlist_count' );
+}
+
+
+
+if ( ! function_exists( 'orchid_store_refresh_cart_count' ) ) {
+
+    function orchid_store_refresh_cart_count( $fragments ) {
+        ob_start();
+            ?>
+            <span class="item-count cart-items-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+            <?php
+            $fragments['.trigger-mini-cart span.cart-items-count'] = ob_get_clean();
+            return $fragments;
+    }
+    add_filter( 'woocommerce_add_to_cart_fragments', 'orchid_store_refresh_cart_count' );
 }
