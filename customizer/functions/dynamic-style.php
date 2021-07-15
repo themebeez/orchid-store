@@ -86,6 +86,8 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.header-style-1 .custom-search-entry button,
 			.header-style-1 .custom-search-entry button:hover,
 			.header-style-1 .custom-search .search-form button,
+			.header-style-1  .wishlist-icon-container a > .item-count,
+			.header-style-1  .mini-cart .trigger-mini-cart > .item-count,
 			.masterheader .mini-cart button,
 			.owl-carousel button.owl-dot.active,
 			.woocommerce .added_to_cart.wc-forward,

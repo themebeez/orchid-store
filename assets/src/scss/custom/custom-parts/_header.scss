@@ -153,6 +153,7 @@
 
 .masterheader .mini-cart .trigger-mini-cart {
 
+    position: relative;
     margin-right: 5px;
 }
 
@@ -363,6 +364,7 @@
 
 .header-style-1 .wishlist-icon-container a {
 
+    position: relative;
     display: inline-block;
     width: 40px;
     line-height: 40px;
@@ -372,10 +374,35 @@
     @include border-radius(50%);
 }
 
+.header-style-1  .wishlist-icon-container a > .item-count,
+.header-style-1  .mini-cart .trigger-mini-cart > .item-count {
+
+    display: inline-block;
+    position: absolute;
+    top: -10px;
+    left: auto;
+    right: -6px;
+    bottom: auto;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-family: $system_font;
+    font-size: 10px;
+    font-weight: normal;
+    border-radius: 50%;
+    background-color: $secondary_color;
+    @include mild_drop_shadow();
+}
+
 .header-style-1 .mini-cart {
 
     min-width: 245px;
     @include border-radius(30px);
+}
+
+.masterheader .mini-cart .trigger-mini-cart > .item-count {
+
+    right: -8px;
 }
 
 .header-style-1 .custom-search-entry {
