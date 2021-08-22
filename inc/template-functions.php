@@ -73,12 +73,17 @@ function orchid_store_post_classes( $classes ) {
 		$show_featured_image = orchid_store_get_option( 'search_featured_image' );
 	}
 
-	if( $show_featured_image == false ) {
+	if ( ! is_singular() ) {
+		
+		if( $show_featured_image == false ) {
 
-		$class_key = array_search( 'has-post-thumbnail', $classes );
+			$class_key = array_search( 'has-post-thumbnail', $classes );
 
-		unset( $classes[$class_key] );
+			unset( $classes[$class_key] );
+		}
 	}
+
+	
 
 	return $classes;
 }
