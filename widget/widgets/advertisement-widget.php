@@ -67,8 +67,9 @@ if( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) :
                 <div class="section-inner">
                     <?php
                     if( !empty( $offer_image ) && $img_as_bg != true ) {
+                        $offer_image_alt_text = orchid_store_get_alt_text_of_image( $offer_image );
                         ?>
-                        <img src="<?php echo esc_url( $offer_image ); ?>">
+                        <img src="<?php echo esc_url( $offer_image ); ?>" alt="<?php echo esc_attr( $offer_image_alt_text ); ?>">
                         <?php
                     }
                     ?>

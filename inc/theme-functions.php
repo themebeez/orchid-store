@@ -302,3 +302,18 @@ function orchid_store_cat_count_span( $links ) {
     return $links;
 }
 add_filter( 'wp_list_categories', 'orchid_store_cat_count_span' );
+
+
+
+
+if ( ! function_exists( 'orchid_store_get_alt_text_of_image' ) ) {
+    
+    function orchid_store_get_alt_text_of_image( $image_url ) {
+
+        $attachment_id = attachment_url_to_postid( $image_url );
+
+        $alt = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
+
+        return ( $alt ) ? $alt : '';
+    }
+}
