@@ -44,8 +44,9 @@ if( ! class_exists( 'Orchid_Store_Services_Widget' ) ) :
                                                 <div class="left-col">
                                                     <?php
                                                     if( !empty( $services_imgs[$i] ) ) {
+                                                        $service_img_alt_text = orchid_store_get_alt_text_of_image( $services_imgs[$i] );
                                                         ?>
-                                                        <img src="<?php echo esc_url( $services_imgs[$i] ); ?>" alt="">
+                                                        <img src="<?php echo esc_url( $services_imgs[$i] ); ?>" alt="<?php echo esc_attr( $service_img_alt_text ); ?>">
                                                         <?php
                                                     }
                                                     ?>

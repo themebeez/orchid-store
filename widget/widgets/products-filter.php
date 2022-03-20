@@ -22,7 +22,7 @@ if( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
                 )
             );  
 
-            $this->value_as = orchid_store_get_option( 'value_as' );   
+            $this->value_as = orchid_store_get_option( 'value_as' );
         }
      
         public function widget( $args, $instance ) {
@@ -32,6 +32,10 @@ if( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
             $no_of_products = isset( $instance['no_of_products'] ) ? $instance['no_of_products'] : 4;
 
             $hide_out_of_stock_products = isset( $instance['hide_out_of_stock_products'] ) ? $instance['hide_out_of_stock_products'] : false;
+
+            $order = isset( $instance['order'] ) ? $instance['order'] : 'DESC';
+
+            $orderby = isset( $instance['orderby'] ) ? $instance['orderby'] : 'ID';
 
             if( empty( $product_categories ) ) {
                 $all_product_caregories = orchid_store_all_product_categories();
@@ -106,6 +110,8 @@ if( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 
                                                 $product_query_args = array(
                                                     'post_type' => 'product',
+                                                    'order' => $order,
+                                                    'orderby' => $orderby
                                                 );
 
                                                 if( $no_of_products > 0 ) {
@@ -194,6 +200,8 @@ if( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
                 'product_categories'    => '',
                 'no_of_products'        => 4,
                 'hide_out_of_stock_products' => false,
+                'order'                 => 'DESC',
+                'orderby'               => 'ID',
             );
 
             $instance = wp_parse_args( (array) $instance, $defaults );
@@ -265,6 +273,32 @@ if( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
                     <strong><?php esc_html_e( 'Hide Products Out of Stock', 'orchid-store' ); ?></strong>
                 </label>                 
             </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id('order') ); ?>"><?php echo esc_html__( 'Order', 'orchid-store' ); ?></label>
+                <select id="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'order' ) ); ?>" class="widefat">
+                    <?php foreach ( $this->get_order_options() as $value => $label ) { ?>
+                        <option 
+                            value="<?php echo esc_attr( $value ); ?>"
+                            <?php selected( $value, $instance['order'] ); ?>>
+                            <?php echo esc_html( $label ); ?>
+                        </option>
+                    <?php } ?>
+                </select>                 
+            </p>
+
+            <p>
+                <label for="<?php echo esc_attr( $this->get_field_id('orderby') ); ?>"><?php echo esc_html__( 'Order By', 'orchid-store' ); ?></label>
+                <select id="<?php echo esc_attr( $this->get_field_id( 'orderby' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'orderby' ) ); ?>" class="widefat">
+                    <?php foreach ( $this->get_orderby_options() as $value => $label ) { ?>
+                        <option 
+                            value="<?php echo esc_attr( $value ); ?>"
+                            <?php selected( $value, $instance['orderby'] ); ?>>
+                            <?php echo esc_html( $label ); ?>
+                        </option>
+                    <?php } ?>
+                </select>                 
+            </p>
     		<?php
         }
      
@@ -284,7 +318,32 @@ if( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 
             $instance['hide_out_of_stock_products']  = isset( $new_instance['hide_out_of_stock_products'] ) ? wp_validate_boolean( $new_instance['hide_out_of_stock_products'] ) : false;
 
+            $instance['order'] = ( array_key_exists( $new_instance['order'], $this->get_order_options() ) ) ? sanitize_text_field( $new_instance['order'] ) : 'DESC';
+
+            $instance['orderby'] = ( array_key_exists( $new_instance['orderby'], $this->get_orderby_options() ) ) ? sanitize_text_field( $new_instance['orderby'] ) : 'ID';
+
             return $instance;
         } 
+
+        public function get_order_options() {
+
+            return array(
+                'ASC' => esc_html__( 'ASC', 'orchid-store' ),
+                'DESC' => esc_html__( 'DESC', 'orchid-store' ),
+            );
+        }
+
+        public function get_orderby_options() {
+
+            return array(
+                'none' => esc_html__( 'None', 'orchid-store' ),
+                'ID' => esc_html__( 'ID', 'orchid-store' ),
+                'title' => esc_html__( 'Title', 'orchid-store' ),
+                'name'  => esc_html__( 'Name', 'orchid-store' ),
+                'date' => esc_html__( 'Date', 'orchid-store' ),
+                'menu_order' => esc_html__( 'Menu Order', 'orchid-store' ),
+                'rand' => esc_html__( 'Random', 'orchid-store' )
+            );
+        }
     }
 }

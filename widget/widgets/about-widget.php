@@ -55,9 +55,10 @@ if( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 		            <div class="site-branding">
                         <?php
                         if( !empty( $store_logo ) ) {
+                            $store_logo_alt_text = orchid_store_get_alt_text_of_image( $store_logo );
                             ?>
     		                <div class="logo">
-    		                    <a href="<?php echo esc_url( home_url( '/' ) ) ?>"><img src="<?php echo esc_url( $store_logo ); ?>"></a>
+    		                    <a href="<?php echo esc_url( home_url( '/' ) ) ?>"><img src="<?php echo esc_url( $store_logo ); ?>" alt="<?php echo esc_attr( $store_logo_alt_text ); ?>"></a>
     		                </div><!-- // logo -->
                             <?php
                         } 

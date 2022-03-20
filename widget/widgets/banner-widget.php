@@ -139,8 +139,9 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                                                 <a href="<?php echo esc_url( $banner_link_1 ); ?>">
                                                 <?php
                                             }
+                                            $banner_image_1_alt_text = orchid_store_get_alt_text_of_image( $banner_image_1 ); 
                                             ?>
-                                            <img src="<?php echo esc_url( $banner_image_1 ); ?>">
+                                            <img src="<?php echo esc_url( $banner_image_1 ); ?>" alt="<?php echo esc_attr( $banner_image_1_alt_text ); ?>">
                                             <?php
                                             if( !empty( $banner_link_1 ) ) {
                                                 ?>
@@ -161,8 +162,9 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
                                                 <a href="<?php echo esc_url( $banner_link_2 ); ?>">
                                                 <?php
                                             }
+                                            $banner_image_2_alt_text = orchid_store_get_alt_text_of_image( $banner_image_2 );  
                                             ?>
-                                            <img src="<?php echo esc_url( $banner_image_2 ); ?>">
+                                            <img src="<?php echo esc_url( $banner_image_2 ); ?>" alt="<?php echo esc_attr( $banner_image_2_alt_text ); ?>">
                                             <?php
                                             if( !empty( $banner_link_2 ) ) {
                                                 ?>
