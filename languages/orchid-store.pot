@@ -1,4 +1,4 @@
-# Copyright (C) 2021 Orchid Store
+# Copyright (C) 2022 Orchid Store
 # This file is distributed under the same license as the Orchid Store package.
 msgid ""
 msgstr ""
@@ -6,6 +6,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Econdig: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"MIME-Version: 1.0\n"
+"Project-Id-Version: Orchid Store\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -45,8 +49,38 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: customizer/controls/class-customizer-sortable-repeater-control.php:24
-msgid "Add"
+#: functions.php:53
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:54
+msgid "Secondary Menu"
+msgstr ""
+
+#: functions.php:55, customizer/functions/customizer-fields.php:269
+msgid "Top Header Menu"
+msgstr ""
+
+#: functions.php:153, customizer/functions/customizer-defaults.php:146
+msgid "Product successfully added to cart!"
+msgstr ""
+
+#: functions.php:158, customizer/functions/customizer-defaults.php:147
+msgid "Product has been removed from your cart!"
+msgstr ""
+
+#: functions.php:163, customizer/functions/customizer-defaults.php:148
+msgid "Cart items has been updated successfully!"
+msgstr ""
+
+#: header.php:31
+msgid "Skip to content"
+msgstr ""
+
+#. translators: %s: search query.
+#. translators: %s: search query.
+#: search.php:35, inc/custom-hooks.php:470
+msgid "Search Results for: %s"
 msgstr ""
 
 #: customizer/customizer.php:65
@@ -93,20 +127,222 @@ msgstr ""
 msgid "Body Background"
 msgstr ""
 
+#: inc/custom-fields.php:49, widget/widgets/advertisement-widget.php:189
+msgid "Right"
+msgstr ""
+
+#: inc/custom-fields.php:50, widget/widgets/advertisement-widget.php:187
+msgid "Left"
+msgstr ""
+
+#: inc/custom-fields.php:51
+msgid "Fullwidth"
+msgstr ""
+
+#: inc/custom-hooks.php:300
+msgid "Previous"
+msgstr ""
+
+#: inc/custom-hooks.php:301
+msgid "Next"
+msgstr ""
+
+#: inc/custom-hooks.php:326
+msgid "Prev post"
+msgstr ""
+
+#: inc/custom-hooks.php:336
+msgid "Next post"
+msgstr ""
+
+#. translators: 1: theme name, 2: theme author
+#: inc/custom-hooks.php:409
+msgid "%1$s Theme by %2$s"
+msgstr ""
+
+#: inc/custom-hooks.php:406
+msgid "%1$s %2$s Theme by %3$s"
+msgstr ""
+
+#: inc/theme-functions.php:272
+msgid "Search for:"
+msgstr ""
+
+#: inc/theme-functions.php:272
+msgctxt "placeholder"
+msgid "Type here to search"
+msgstr ""
+
+#: inc/woocommerce-hooks.php:69
+msgid "Total:"
+msgstr ""
+
+#: inc/woocommerce-hooks.php:152
+msgid "Login / Register"
+msgstr ""
+
+#: inc/woocommerce-hooks.php:148
+msgid "My account"
+msgstr ""
+
+#: inc/woocommerce-hooks.php:164
+msgid "My Wishlist"
+msgstr ""
+
+#: inc/woocommerce.php:195
+msgid "View your shopping cart"
+msgstr ""
+
+#. translators: number of items in the mini cart.
+#: inc/woocommerce.php:199
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: template-parts/content-none.php:37
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:24, widget/widgets/posts-widget.php:147
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-page.php:40, template-parts/content-single.php:87
+msgid "Pages:"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content-page.php:51, template-parts/content-single.php:107
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: third-party/breadcrumbs.php:264
+msgid "Browse:"
+msgstr ""
+
+#: third-party/breadcrumbs.php:265
+msgctxt "breadcrumbs aria label"
+msgid "Breadcrumbs"
+msgstr ""
+
+#: third-party/breadcrumbs.php:266
+msgid "Home"
+msgstr ""
+
+#: third-party/breadcrumbs.php:267
+msgid "404 Not Found"
+msgstr ""
+
+#: third-party/breadcrumbs.php:268
+msgid "Archives"
+msgstr ""
+
+#. translators: %s is the search query.
+#: third-party/breadcrumbs.php:270
+msgid "Search results for: %s"
+msgstr ""
+
+#. translators: %s is the page number.
+#: third-party/breadcrumbs.php:272
+msgid "Page %s"
+msgstr ""
+
+#. translators: %s is the page number.
+#: third-party/breadcrumbs.php:274
+msgid "Comment Page %s"
+msgstr ""
+
+#. translators: Minute archive title. %s is the minute time format.
+#: third-party/breadcrumbs.php:276
+msgid "Minute %s"
+msgstr ""
+
+#. translators: Weekly archive title. %s is the week date format.
+#: third-party/breadcrumbs.php:278
+msgid "Week %s"
+msgstr ""
+
+#: third-party/breadcrumbs.php:738
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr ""
+
+#: third-party/breadcrumbs.php:755
+msgctxt "minute archives time format"
+msgid "i"
+msgstr ""
+
+#: third-party/breadcrumbs.php:772
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr ""
+
+#: third-party/breadcrumbs.php:788, third-party/breadcrumbs.php:817, third-party/breadcrumbs.php:844, third-party/breadcrumbs.php:871, third-party/breadcrumbs.php:1211
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: third-party/breadcrumbs.php:789, third-party/breadcrumbs.php:845, third-party/breadcrumbs.php:1215
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr ""
+
+#: third-party/breadcrumbs.php:790, third-party/breadcrumbs.php:1219
+msgctxt "daily archives date format"
+msgid "j"
+msgstr ""
+
+#: third-party/breadcrumbs.php:818
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr ""
+
+#: widget/widgets-init.php:14, customizer/functions/customizer-fields.php:147, customizer/functions/customizer-fields.php:422
+msgid "Sidebar"
+msgstr ""
+
+#: widget/widgets-init.php:16, widget/widgets-init.php:26, widget/widgets-init.php:45
+msgid "Add widgets here."
+msgstr ""
+
+#: widget/widgets-init.php:24
+msgid "Frontpage Widget Area"
+msgstr ""
+
+#. translators: %s: number of footer widget area.
+#: widget/widgets-init.php:43
+msgid "Footer %s"
+msgstr ""
+
+#: widget/widgets-init.php:55
+msgid "Woocommerce Sidebar"
+msgstr ""
+
+#: widget/widgets-init.php:57
+msgid "Add woocommerce widgets here."
+msgstr ""
+
+#: woocommerce/product-searchform.php:25
+msgid "Search products&hellip;"
+msgstr ""
+
+#: customizer/controls/class-customizer-sortable-repeater-control.php:24
+msgid "Add"
+msgstr ""
+
 #: customizer/functions/customizer-defaults.php:67, customizer/functions/customizer-fields.php:84
 msgid "Special Menu"
-msgstr ""
-
-#: customizer/functions/customizer-defaults.php:146, functions.php:153
-msgid "Product successfully added to cart!"
-msgstr ""
-
-#: customizer/functions/customizer-defaults.php:147, functions.php:158
-msgid "Product has been removed from your cart!"
-msgstr ""
-
-#: customizer/functions/customizer-defaults.php:148, functions.php:163
-msgid "Cart items has been updated successfully!"
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:12
@@ -173,10 +409,6 @@ msgstr ""
 msgid "Page Single"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:147, customizer/functions/customizer-fields.php:422, widget/widgets-init.php:14
-msgid "Sidebar"
-msgstr ""
-
 #: customizer/functions/customizer-fields.php:154
 msgid "Footer"
 msgstr ""
@@ -221,7 +453,7 @@ msgstr ""
 msgid "Slug"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:252
+#: customizer/functions/customizer-fields.php:252, widget/widgets/products-filter.php:340, widget/widgets/products-widget.php:382
 msgid "ID"
 msgstr ""
 
@@ -245,15 +477,11 @@ msgstr ""
 msgid "Select Top Header Left Element"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:269, functions.php:55
-msgid "Top Header Menu"
-msgstr ""
-
 #: customizer/functions/customizer-fields.php:269
 msgid "Login/Register Link"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:271, widget/widgets/about-widget.php:270
+#: customizer/functions/customizer-fields.php:271, widget/widgets/about-widget.php:271
 msgid "Social Links"
 msgstr ""
 
@@ -541,226 +769,6 @@ msgstr ""
 msgid "Add Item"
 msgstr ""
 
-#: functions.php:53
-msgid "Primary Menu"
-msgstr ""
-
-#: functions.php:54
-msgid "Secondary Menu"
-msgstr ""
-
-#: header.php:31
-msgid "Skip to content"
-msgstr ""
-
-#: inc/custom-fields.php:49, widget/widgets/advertisement-widget.php:188
-msgid "Right"
-msgstr ""
-
-#: inc/custom-fields.php:50, widget/widgets/advertisement-widget.php:186
-msgid "Left"
-msgstr ""
-
-#: inc/custom-fields.php:51
-msgid "Fullwidth"
-msgstr ""
-
-#: inc/custom-hooks.php:300
-msgid "Previous"
-msgstr ""
-
-#: inc/custom-hooks.php:301
-msgid "Next"
-msgstr ""
-
-#: inc/custom-hooks.php:326
-msgid "Prev post"
-msgstr ""
-
-#: inc/custom-hooks.php:336
-msgid "Next post"
-msgstr ""
-
-#. translators: 1: theme name, 2: theme author
-#: inc/custom-hooks.php:409
-msgid "%1$s Theme by %2$s"
-msgstr ""
-
-#: inc/custom-hooks.php:406
-msgid "%1$s %2$s Theme by %3$s"
-msgstr ""
-
-#. translators: %s: search query.
-#. translators: %s: search query.
-#: inc/custom-hooks.php:470, search.php:35
-msgid "Search Results for: %s"
-msgstr ""
-
-#: inc/theme-functions.php:272
-msgid "Search for:"
-msgstr ""
-
-#: inc/theme-functions.php:272
-msgctxt "placeholder"
-msgid "Type here to search"
-msgstr ""
-
-#: inc/woocommerce-hooks.php:69
-msgid "Total:"
-msgstr ""
-
-#: inc/woocommerce-hooks.php:152
-msgid "Login / Register"
-msgstr ""
-
-#: inc/woocommerce-hooks.php:148
-msgid "My account"
-msgstr ""
-
-#: inc/woocommerce-hooks.php:164
-msgid "My Wishlist"
-msgstr ""
-
-#: inc/woocommerce.php:195
-msgid "View your shopping cart"
-msgstr ""
-
-#. translators: number of items in the mini cart.
-#: inc/woocommerce.php:199
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
-
-#: template-parts/content-none.php:14
-msgid "Nothing Found"
-msgstr ""
-
-#: template-parts/content-none.php:44
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr ""
-
-#: template-parts/content-none.php:37
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr ""
-
-#. translators: 1: link to WP admin new post page.
-#: template-parts/content-none.php:24, widget/widgets/posts-widget.php:147
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: template-parts/content-page.php:40, template-parts/content-single.php:87
-msgid "Pages:"
-msgstr ""
-
-#. translators: %s: Name of current post. Only visible to screen readers
-#. translators: %s: Name of current post. Only visible to screen readers
-#: template-parts/content-page.php:51, template-parts/content-single.php:107
-msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr ""
-
-#: third-party/breadcrumbs.php:264
-msgid "Browse:"
-msgstr ""
-
-#: third-party/breadcrumbs.php:265
-msgctxt "breadcrumbs aria label"
-msgid "Breadcrumbs"
-msgstr ""
-
-#: third-party/breadcrumbs.php:266
-msgid "Home"
-msgstr ""
-
-#: third-party/breadcrumbs.php:267
-msgid "404 Not Found"
-msgstr ""
-
-#: third-party/breadcrumbs.php:268
-msgid "Archives"
-msgstr ""
-
-#. translators: %s is the search query.
-#: third-party/breadcrumbs.php:270
-msgid "Search results for: %s"
-msgstr ""
-
-#. translators: %s is the page number.
-#: third-party/breadcrumbs.php:272
-msgid "Page %s"
-msgstr ""
-
-#. translators: %s is the page number.
-#: third-party/breadcrumbs.php:274
-msgid "Comment Page %s"
-msgstr ""
-
-#. translators: Minute archive title. %s is the minute time format.
-#: third-party/breadcrumbs.php:276
-msgid "Minute %s"
-msgstr ""
-
-#. translators: Weekly archive title. %s is the week date format.
-#: third-party/breadcrumbs.php:278
-msgid "Week %s"
-msgstr ""
-
-#: third-party/breadcrumbs.php:738
-msgctxt "minute and hour archives time format"
-msgid "g:i a"
-msgstr ""
-
-#: third-party/breadcrumbs.php:755
-msgctxt "minute archives time format"
-msgid "i"
-msgstr ""
-
-#: third-party/breadcrumbs.php:772
-msgctxt "hour archives time format"
-msgid "g a"
-msgstr ""
-
-#: third-party/breadcrumbs.php:788, third-party/breadcrumbs.php:817, third-party/breadcrumbs.php:844, third-party/breadcrumbs.php:871, third-party/breadcrumbs.php:1211
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: third-party/breadcrumbs.php:789, third-party/breadcrumbs.php:845, third-party/breadcrumbs.php:1215
-msgctxt "monthly archives date format"
-msgid "F"
-msgstr ""
-
-#: third-party/breadcrumbs.php:790, third-party/breadcrumbs.php:1219
-msgctxt "daily archives date format"
-msgid "j"
-msgstr ""
-
-#: third-party/breadcrumbs.php:818
-msgctxt "weekly archives date format"
-msgid "W"
-msgstr ""
-
-#: widget/widgets-init.php:16, widget/widgets-init.php:26, widget/widgets-init.php:45
-msgid "Add widgets here."
-msgstr ""
-
-#: widget/widgets-init.php:24
-msgid "Frontpage Widget Area"
-msgstr ""
-
-#. translators: %s: number of footer widget area.
-#: widget/widgets-init.php:43
-msgid "Footer %s"
-msgstr ""
-
-#: widget/widgets-init.php:55
-msgid "Woocommerce Sidebar"
-msgstr ""
-
-#: widget/widgets-init.php:57
-msgid "Add woocommerce widgets here."
-msgstr ""
-
 #: widget/widgets/about-widget.php:17
 msgid "OS: About Widget"
 msgstr ""
@@ -769,71 +777,71 @@ msgstr ""
 msgid "Displays Store About Information"
 msgstr ""
 
-#: widget/widgets/about-widget.php:199, widget/widgets/advertisement-widget.php:141, widget/widgets/banner-widget.php:210, widget/widgets/featured-product-categories.php:121, widget/widgets/posts-widget.php:187, widget/widgets/products-filter.php:203, widget/widgets/products-widget.php:220, widget/widgets/services-widget.php:101, widget/widgets/services-widget.php:122
+#: widget/widgets/about-widget.php:200, widget/widgets/advertisement-widget.php:142, widget/widgets/banner-widget.php:212, widget/widgets/featured-product-categories.php:121, widget/widgets/posts-widget.php:187, widget/widgets/products-filter.php:211, widget/widgets/products-filter.php:341, widget/widgets/products-widget.php:226, widget/widgets/products-widget.php:383, widget/widgets/services-widget.php:102, widget/widgets/services-widget.php:123
 msgid "Title"
 msgstr ""
 
-#: widget/widgets/about-widget.php:207
+#: widget/widgets/about-widget.php:208
 msgid "Store Information"
 msgstr ""
 
-#: widget/widgets/about-widget.php:213
+#: widget/widgets/about-widget.php:214
 msgid "Logo"
 msgstr ""
 
-#: widget/widgets/about-widget.php:235, widget/widgets/advertisement-widget.php:227, widget/widgets/banner-widget.php:307, widget/widgets/banner-widget.php:343, widget/widgets/services-widget.php:153
+#: widget/widgets/about-widget.php:236, widget/widgets/advertisement-widget.php:228, widget/widgets/banner-widget.php:309, widget/widgets/banner-widget.php:345, widget/widgets/services-widget.php:154
 msgid "Upload"
 msgstr ""
 
-#: widget/widgets/about-widget.php:236, widget/widgets/advertisement-widget.php:228, widget/widgets/banner-widget.php:308, widget/widgets/banner-widget.php:344, widget/widgets/services-widget.php:154
+#: widget/widgets/about-widget.php:237, widget/widgets/advertisement-widget.php:229, widget/widgets/banner-widget.php:310, widget/widgets/banner-widget.php:346, widget/widgets/services-widget.php:155
 msgid "Remove"
 msgstr ""
 
-#: widget/widgets/about-widget.php:240
+#: widget/widgets/about-widget.php:241
 msgid "Short Description"
 msgstr ""
 
-#: widget/widgets/about-widget.php:245
+#: widget/widgets/about-widget.php:246
 msgid "Address"
 msgstr ""
 
-#: widget/widgets/about-widget.php:250
+#: widget/widgets/about-widget.php:251
 msgid "Contact Number"
 msgstr ""
 
-#: widget/widgets/about-widget.php:255
+#: widget/widgets/about-widget.php:256
 msgid "Email"
 msgstr ""
 
-#: widget/widgets/about-widget.php:260
+#: widget/widgets/about-widget.php:261
 msgid "Opening Time"
 msgstr ""
 
-#: widget/widgets/about-widget.php:276
+#: widget/widgets/about-widget.php:277
 msgid "Facebook Link"
 msgstr ""
 
-#: widget/widgets/about-widget.php:281
+#: widget/widgets/about-widget.php:282
 msgid "Twitter Link"
 msgstr ""
 
-#: widget/widgets/about-widget.php:286
+#: widget/widgets/about-widget.php:287
 msgid "Instagram Link"
 msgstr ""
 
-#: widget/widgets/about-widget.php:291
+#: widget/widgets/about-widget.php:292
 msgid "Pinterest Link"
 msgstr ""
 
-#: widget/widgets/about-widget.php:296
+#: widget/widgets/about-widget.php:297
 msgid "YouTube Link"
 msgstr ""
 
-#: widget/widgets/about-widget.php:301
+#: widget/widgets/about-widget.php:302
 msgid "Vimeo Link"
 msgstr ""
 
-#: widget/widgets/about-widget.php:306
+#: widget/widgets/about-widget.php:307
 msgid "VK Link"
 msgstr ""
 
@@ -845,39 +853,39 @@ msgstr ""
 msgid "Displays offer advertisement."
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:149
+#: widget/widgets/advertisement-widget.php:150
 msgid "Display Offer Contents"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:162
+#: widget/widgets/advertisement-widget.php:163
 msgid "Offer Title"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:167
+#: widget/widgets/advertisement-widget.php:168
 msgid "Offer Text"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:172, widget/widgets/banner-widget.php:254
+#: widget/widgets/advertisement-widget.php:173, widget/widgets/banner-widget.php:256
 msgid "Button Title"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:177, widget/widgets/banner-widget.php:259
+#: widget/widgets/advertisement-widget.php:178, widget/widgets/banner-widget.php:261
 msgid "Button Link"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:182
+#: widget/widgets/advertisement-widget.php:183
 msgid "Content Alignment"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:187
+#: widget/widgets/advertisement-widget.php:188
 msgid "Center"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:205
+#: widget/widgets/advertisement-widget.php:206
 msgid "Offer Image"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:235
+#: widget/widgets/advertisement-widget.php:236
 msgid "Set Image In Background"
 msgstr ""
 
@@ -889,40 +897,40 @@ msgstr ""
 msgid "Displays main slider"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:216
+#: widget/widgets/banner-widget.php:218
 msgid "Slider Elements"
 msgstr ""
 
 #. translators: %s: slider item number
-#: widget/widgets/banner-widget.php:228
+#: widget/widgets/banner-widget.php:230
 msgid "Slider Item %s"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:234
+#: widget/widgets/banner-widget.php:236
 msgid "Select Page"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:272
+#: widget/widgets/banner-widget.php:274
 msgid "Show Slider Contents"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:279
+#: widget/widgets/banner-widget.php:281
 msgid "Enable Mask Layer"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:285
+#: widget/widgets/banner-widget.php:287
 msgid "Banner Image One"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:314
+#: widget/widgets/banner-widget.php:316
 msgid "Banner Link One"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:321
+#: widget/widgets/banner-widget.php:323
 msgid "Banner Image Two"
 msgstr ""
 
-#: widget/widgets/banner-widget.php:350
+#: widget/widgets/banner-widget.php:352
 msgid "Banner Link Two"
 msgstr ""
 
@@ -941,15 +949,15 @@ msgid_plural "%s Products"
 msgstr[0] ""
 msgstr[1] ""
 
-#: widget/widgets/featured-product-categories.php:127, widget/widgets/products-filter.php:209
+#: widget/widgets/featured-product-categories.php:127, widget/widgets/products-filter.php:217
 msgid "Product Categories"
 msgstr ""
 
-#: widget/widgets/featured-product-categories.php:128, widget/widgets/products-filter.php:210
+#: widget/widgets/featured-product-categories.php:128, widget/widgets/products-filter.php:218
 msgid "Below are the list of product categories. Check on a category to set is as a filter item."
 msgstr ""
 
-#: widget/widgets/featured-product-categories.php:163, widget/widgets/products-filter.php:248
+#: widget/widgets/featured-product-categories.php:163, widget/widgets/products-filter.php:256
 msgid "There are no product categories to select."
 msgstr ""
 
@@ -989,12 +997,48 @@ msgstr ""
 msgid "Displays products by category filter."
 msgstr ""
 
-#: widget/widgets/products-filter.php:257
+#: widget/widgets/products-filter.php:265
 msgid "Number of Products For Each Category"
 msgstr ""
 
-#: widget/widgets/products-filter.php:265, widget/widgets/products-widget.php:284
+#: widget/widgets/products-filter.php:273, widget/widgets/products-widget.php:290
 msgid "Hide Products Out of Stock"
+msgstr ""
+
+#: widget/widgets/products-filter.php:278, widget/widgets/products-widget.php:295
+msgid "Order"
+msgstr ""
+
+#: widget/widgets/products-filter.php:291, widget/widgets/products-widget.php:308
+msgid "Order By"
+msgstr ""
+
+#: widget/widgets/products-filter.php:331, widget/widgets/products-widget.php:373
+msgid "ASC"
+msgstr ""
+
+#: widget/widgets/products-filter.php:332, widget/widgets/products-widget.php:374
+msgid "DESC"
+msgstr ""
+
+#: widget/widgets/products-filter.php:339, widget/widgets/products-widget.php:270, widget/widgets/products-widget.php:381
+msgid "None"
+msgstr ""
+
+#: widget/widgets/products-filter.php:342, widget/widgets/products-widget.php:384
+msgid "Name"
+msgstr ""
+
+#: widget/widgets/products-filter.php:343, widget/widgets/products-widget.php:385
+msgid "Date"
+msgstr ""
+
+#: widget/widgets/products-filter.php:344, widget/widgets/products-widget.php:386
+msgid "Menu Order"
+msgstr ""
+
+#: widget/widgets/products-filter.php:345, widget/widgets/products-widget.php:387
+msgid "Random"
 msgstr ""
 
 #: widget/widgets/products-widget.php:18
@@ -1005,51 +1049,47 @@ msgstr ""
 msgid "Displays products."
 msgstr ""
 
-#: widget/widgets/products-widget.php:227
+#: widget/widgets/products-widget.php:233
 msgid "Product Category"
 msgstr ""
 
-#: widget/widgets/products-widget.php:232
+#: widget/widgets/products-widget.php:238
 msgid "Select Category"
 msgstr ""
 
-#: widget/widgets/products-widget.php:248
+#: widget/widgets/products-widget.php:254
 msgid "If no category is selected, then latest products are displayed."
 msgstr ""
 
-#: widget/widgets/products-widget.php:253
+#: widget/widgets/products-widget.php:259
 msgid "No of Products"
 msgstr ""
 
-#: widget/widgets/products-widget.php:260
+#: widget/widgets/products-widget.php:266
 msgid "Products By"
 msgstr ""
 
-#: widget/widgets/products-widget.php:264
-msgid "None"
-msgstr ""
-
-#: widget/widgets/products-widget.php:265
+#: widget/widgets/products-widget.php:271
 msgid "Rated"
 msgstr ""
 
-#: widget/widgets/products-widget.php:266
+#: widget/widgets/products-widget.php:272
 msgid "Featured"
 msgstr ""
 
-#: widget/widgets/products-widget.php:267
+#: widget/widgets/products-widget.php:273
 msgid "On Sale"
 msgstr ""
 
-#: widget/widgets/products-widget.php:290
+#: widget/widgets/products-widget.php:322
 msgid "Display Layout"
 msgstr ""
 
-#: widget/widgets/products-widget.php:294
+#: widget/widgets/products-widget.php:326
 msgid "Slider"
 msgstr ""
 
-#: widget/widgets/products-widget.php:295
+#: widget/widgets/products-widget.php:327
 msgid "Grid"
 msgstr ""
 
@@ -1062,26 +1102,22 @@ msgid "Displays services."
 msgstr ""
 
 #. translators: %s : number of service
-#: widget/widgets/services-widget.php:115
+#: widget/widgets/services-widget.php:116
 msgid "Service %s"
 msgstr ""
 
-#: widget/widgets/services-widget.php:127
+#: widget/widgets/services-widget.php:128
 msgid "Description"
 msgstr ""
 
-#: widget/widgets/services-widget.php:132
+#: widget/widgets/services-widget.php:133
 msgid "Icon Image"
 msgstr ""
 
-#: widget/widgets/services-widget.php:134
+#: widget/widgets/services-widget.php:135
 msgid "Upload image having 1x1 aspect ratio."
 msgstr ""
 
 #: woocommerce/loop/sale-flash.php:27
 msgid "Sale!"
-msgstr ""
-
-#: woocommerce/product-searchform.php:25
-msgid "Search products&hellip;"
 msgstr ""

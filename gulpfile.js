@@ -5,7 +5,7 @@ const gulp = require('gulp');
 const zip = require('gulp-zip');
 const wpPot = require('gulp-wp-pot');
 const sourcemaps = require('gulp-sourcemaps');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const postcss = require('gulp-postcss');
@@ -22,8 +22,8 @@ const shell = require('gulp-shell');
 *
 # npm update
 # npm init
-# npm install gulp gulp-zip gulp-wp-pot gulp-sourcemaps gulp-sass gulp-concat gulp-uglify gulp-postcss autoprefixer cssnano gulp-replace gulp-notify gulp-plumber gulp-rtlcss gulp-rename gulp-shell -g
-# npm install gulp gulp-zip gulp-wp-pot gulp-sourcemaps gulp-sass gulp-concat gulp-uglify gulp-postcss autoprefixer cssnano gulp-replace gulp-notify gulp-plumber gulp-rtlcss gulp-rename gulp-shell --save-dev
+# npm install gulp@4.0.2 gulp-zip gulp-wp-pot gulp-sourcemaps gulp-sass sass gulp-concat gulp-uglify gulp-postcss autoprefixer cssnano gulp-replace gulp-notify gulp-plumber gulp-rtlcss gulp-rename -g
+# npm install gulp@4.0.2 gulp-zip gulp-wp-pot gulp-sourcemaps gulp-sass sass gulp-concat gulp-uglify gulp-postcss autoprefixer cssnano gulp-replace gulp-notify gulp-plumber gulp-rtlcss gulp-rename --save-dev
 *
 */
 
@@ -271,21 +271,21 @@ gulp.task('orchidDortlTask', function () {
 
 gulp.task('default', shell.task(
 
-    'echo ====================== ⛔️ Hello Folks, gulp default command is disabled in this project. These are the available commands gulp zipprod, gulp assets, gulp makepot. If you need additional info refer gulpfile.js L269. Cheers 😜 ======================',
+    'echo ====================== ⛔️ Hello Folks, gulp default command is disabled in this project. These are the available commands gulp zip, gulp assets, gulp pot. If you need additional info refer gulpfile.js L269. Cheers 😜 ======================',
 
 ));
 
 
 // Run Task: Zip production files
 
-gulp.task('zipprod', gulp.series('ZipProductionFiles', (done) => {
+gulp.task('zip', gulp.series('ZipProductionFiles', (done) => {
 
     done();
 }));
 
 // Run Task: Make Pot file
 
-gulp.task('makepot', gulp.series('WordpressPot', (done) => {
+gulp.task('pot', gulp.series('WordpressPot', (done) => {
 
     gulp.watch(files_folders.filefolders_src, gulp.series('WordpressPot'));
     done();
