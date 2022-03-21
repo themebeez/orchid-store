@@ -305,14 +305,32 @@ add_filter( 'wp_list_categories', 'orchid_store_cat_count_span' );
 
 
 
-
+/**
+ * Get alt text for the image.
+ * 
+ * @param string $image_url Image URL.
+ * @return string $alt The alt text.
+ */
 if ( ! function_exists( 'orchid_store_get_alt_text_of_image' ) ) {
     
     function orchid_store_get_alt_text_of_image( $image_url ) {
 
+        // Get attachment id of the image.
         $attachment_id = attachment_url_to_postid( $image_url );
 
+        // Get the alt text from the attachment meta.
         $alt = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
+
+        // If alt is empty then get the post title of the attachment by attachment id.
+        if ( ! $alt ) {
+
+            $attachment_post = get_post( $attachment_id );
+
+            if ( $attachment_post ) {
+
+                $alt = $attachment_post->post_title;
+            }
+        } 
 
         return ( $alt ) ? $alt : '';
     }
