@@ -287,6 +287,11 @@ require get_template_directory() . '/widget/widgets-init.php';
 require get_template_directory() . '/inc/custom-fields.php';
 
 /**
+ * Load Everest Backup Notice.
+ */
+require get_template_directory() . '/inc/ebwp-notice.php';
+
+/**
  * Load theme dependecies
  */
 require get_template_directory() . '/vendor/autoload.php';
