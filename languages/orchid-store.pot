@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or Later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orchid Store 1.3.5\n"
+"Project-Id-Version: Orchid Store 1.3.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/orchid-store\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-05-29T10:52:16+00:00\n"
+"POT-Creation-Date: 2022-06-16T08:35:30+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: orchid-store\n"
@@ -695,26 +695,6 @@ msgstr ""
 msgid "Activate Plugin"
 msgstr ""
 
-#: inc/plugin-recommendation.php:16
-msgid "Themebeez Toolkit"
-msgstr ""
-
-#: inc/plugin-recommendation.php:21
-msgid "WooCommerce"
-msgstr ""
-
-#: inc/plugin-recommendation.php:26
-msgid "YITH WooCommerce Wishlist"
-msgstr ""
-
-#: inc/plugin-recommendation.php:31
-msgid "YITH WooCommerce Quick View"
-msgstr ""
-
-#: inc/plugin-recommendation.php:36
-msgid "Elementor Page Builder"
-msgstr ""
-
 #. translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language.
 #: inc/theme-functions.php:28
 msgctxt "Inter font: on or off"
@@ -744,6 +724,10 @@ msgstr ""
 
 #: inc/woocommerce-hooks.php:164
 msgid "My Wishlist"
+msgstr ""
+
+#: inc/woocommerce-hooks.php:285
+msgid "Quick View"
 msgstr ""
 
 #: inc/woocommerce.php:195
