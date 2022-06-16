@@ -273,14 +273,42 @@ if( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
         <div class="product-hover-items">
             <ul>
                 <?php
-                if( class_exists( 'YITH_WCQV' ) ) {
+                if ( 
+                    class_exists( 'YITH_WCQV' ) || 
+                    class_exists( 'Addonify_Quick_View' ) 
+                ) {
+                    if ( class_exists( 'Addonify_Quick_View' ) ) {
+                        ?>
+                        <li>
+                            <a 
+                                class="os-tooltip view-product addonify-qvm-button" 
+                                data-tippy-content="<?php echo get_option( 'addonify_qv_quick_view_btn_label' ) ? esc_attr( get_option( 'addonify_qv_quick_view_btn_label' ) ) : esc_attr__( 'Quick View', 'orchid-store' ); ?>" 
+                                data-product_id="<?php echo esc_attr( $product->get_id() ); ?>"
+                                href="#"
+                            >
+                                <i class="bx bx-search"></i>
+                            </a>
+                        </li>
+                        <?php
+                    } elseif ( class_exists( 'YITH_WCQV' ) ) {
+                        ?>
+                        <li>
+                            <a 
+                                class="os-tooltip view-product yith-wcqv-button" 
+                                data-product_id="<?php echo esc_attr( $product->get_id() );?>" 
+                                data-tippy-content="<?php echo esc_attr( get_option( 'yith-wcqv-button-label' ) ); ?>" href="#">
+                                    <i class="bx bx-search"></i>
+                            </a>
+                        </li>
+                        <?php
+                    } else {
+
+                    }
                     ?>
-                    <li>
-                        <a class="os-tooltip view-product yith-wcqv-button" data-product_id="<?php echo esc_attr( $product->get_id() );?>" data-tippy-content="<?php echo esc_attr( get_option( 'yith-wcqv-button-label' ) ); ?>" href="#"><i class="bx bx-search"></i></a>
-                    </li>
+                    
                     <?php
                 }
-                if( class_exists( 'YITH_WCWL' ) ) {
+                if ( class_exists( 'YITH_WCWL' ) ) {
                     ?>
                     <li><?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]'); ?></li>
                     <?php
@@ -394,7 +422,10 @@ if( ! function_exists( 'orchid_store_quantity_minus' ) ) {
         
         global $product;
 
-        if( $product->is_sold_individually() ) {
+        if ( 
+            $product->is_sold_individually() ||
+            $product->get_stock_quantity() == 1
+        ) {
 
             return;
         }
@@ -412,7 +443,10 @@ if( ! function_exists( 'orchid_store_quantity_plus' ) ) {
 
         global $product;
 
-        if( $product->is_sold_individually() ) {
+        if ( 
+            $product->is_sold_individually() ||
+            $product->get_stock_quantity() == 1
+        ) {
 
             return;
         }

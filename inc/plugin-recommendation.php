@@ -13,31 +13,35 @@ if ( ! function_exists( 'orchid_store_recommended_plugins' ) ) :
 
         $plugins = array(
             array(
-                'name'     => esc_html__( 'Themebeez Toolkit', 'orchid-store' ),
+                'name'     => 'Themebeez Toolkit',
                 'slug'     => 'themebeez-toolkit',
                 'required' => false,
             ),
             array(
-                'name'     => esc_html__( 'WooCommerce', 'orchid-store' ),
+                'name'     => 'WooCommerce',
                 'slug'     => 'woocommerce',
                 'required' => false,
             ),
             array(
-                'name'     => esc_html__( 'YITH WooCommerce Wishlist', 'orchid-store' ),
+                'name'     => 'YITH WooCommerce Wishlist',
                 'slug'     => 'yith-woocommerce-wishlist',
                 'required' => false,
             ),
             array(
-                'name'     => esc_html__( 'YITH WooCommerce Quick View', 'orchid-store' ),
-                'slug'     => 'yith-woocommerce-quick-view',
-                'required' => false,
-            ),
-            array(
-                'name'     => esc_html__( 'Elementor Page Builder', 'orchid-store' ),
+                'name'     => 'Elementor Page Builder',
                 'slug'     => 'elementor',
                 'required' => false,
             ),
         );
+
+        if ( ! class_exists( 'YITH_WCQV' ) ) {
+
+            $plugins[] = array(
+                'name'     => 'Addonify Quick View',
+                'slug'     => 'addonify-quick-view',
+                'required' => false,
+            );
+        }
 
         tgmpa( $plugins );
     }
