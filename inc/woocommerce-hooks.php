@@ -263,7 +263,7 @@ if( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 
     function orchid_store_template_loop_product_quick_link() {
 
-        if( !class_exists( 'YITH_WCWL' ) && ! class_exists( 'YITH_WCQV' ) ) {
+        if ( ! class_exists( 'YITH_WCWL' ) && ! class_exists( 'YITH_WCQV' ) && ! class_exists( 'Addonify_Quick_View' ) ) {
 
             return;
         }
@@ -277,7 +277,10 @@ if( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
                     class_exists( 'YITH_WCQV' ) || 
                     class_exists( 'Addonify_Quick_View' ) 
                 ) {
-                    if ( class_exists( 'Addonify_Quick_View' ) ) {
+                    if ( 
+                        class_exists( 'Addonify_Quick_View' ) && 
+                        (int) get_option( 'addonify_qv_enable_quick_view', false ) == 1 
+                    ) {
                         ?>
                         <li>
                             <a 
