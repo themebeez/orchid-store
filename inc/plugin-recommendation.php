@@ -23,11 +23,6 @@ if ( ! function_exists( 'orchid_store_recommended_plugins' ) ) :
                 'required' => false,
             ),
             array(
-                'name'     => 'YITH WooCommerce Wishlist',
-                'slug'     => 'yith-woocommerce-wishlist',
-                'required' => false,
-            ),
-            array(
                 'name'     => 'Elementor Page Builder',
                 'slug'     => 'elementor',
                 'required' => false,
@@ -39,6 +34,15 @@ if ( ! function_exists( 'orchid_store_recommended_plugins' ) ) :
             $plugins[] = array(
                 'name'     => 'Addonify Quick View',
                 'slug'     => 'addonify-quick-view',
+                'required' => false,
+            );
+        }
+
+        if ( ! class_exists( 'YITH_WCWL_Wishlist' ) ) {
+
+            $plugins[] = array(
+                'name'     => 'Addonify WooCommerce Wishlist',
+                'slug'     => 'addonify-wishlist',
                 'required' => false,
             );
         }

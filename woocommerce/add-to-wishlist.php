@@ -30,7 +30,7 @@ global $product;
 
         <?php else: ?>
 
-            <a href="<?php echo esc_url( add_query_arg( array( 'wishlist_notice' => 'true', 'add_to_wishlist' => $product_id ), get_permalink( wc_get_page_id( 'myaccount' ) ) ) ); ?>" rel="nofollow" class="disabled_item <?php echo str_replace( array( 'add_to_wishlist', 'single_add_to_wishlist' ), '', $link_classes ); ?> button-general wish-list-button os-tooltip" data-tippy-content="<?php echo esc_attr( $already_in_wishslist_text ); ?>">
+            <a href="<?php echo esc_url( add_query_arg( array( 'wishlist_notice' => 'true', 'add_to_wishlist' => $product_id ), get_permalink( wc_get_page_id( 'myaccount' ) ) ) ); ?>" rel="nofollow" class="disabled_item <?php echo str_replace( array( 'add_to_wishlist', 'single_add_to_wishlist' ), '', $link_classes ); ?> button-general wish-list-button os-tooltip" data-tippy-content="<?php echo esc_attr( $already_in_wishlist_text ); ?>">
                 <span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
                 <span class="text"><?php echo esc_html( $label ); ?></span>
             </a>
