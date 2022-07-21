@@ -31,13 +31,13 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.masterheader .mini-cart .trigger-mini-cart:focus,
 			.header-style-1 .custom-search-entry button:focus  {
 				
-				outline:none;
+				outline: none;
 			}
 			
 			.site-navigation ul li a:hover,
 			.category-navigation ul li a:hover {
 
-				text-decoration:none;
+				text-decoration: none;
 			}";
 		}
 
@@ -122,7 +122,10 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.product-widget-style-3 .owl-carousel .owl-nav button.owl-next, 
 			.product-widget-style-3 .owl-carousel .owl-nav button.owl-prev,
 			.mobile-header-style-1 .bottom-block,
-			.woocommerce-store-notice.demo_store {
+			.woocommerce-store-notice.demo_store,
+			.addonify-add-to-wishlist-btn, 
+			.woocommerce ul.products li.product .addonify-add-to-wishlist-btn, 
+			.woocommerce-page ul.products li.product .addonify-add-to-wishlist-btn {
 
 				background-color: {$primary_color};
 			}
@@ -264,7 +267,10 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.woocommerce input.button.alt:disabled[disabled]:hover,
 			.woocommerce #respond input#submit.alt:disabled[disabled]:hover,
 			.product-widget-style-3 .owl-carousel .owl-nav button.owl-next:hover, 
-			.product-widget-style-3 .owl-carousel .owl-nav button.owl-prev:hover {
+			.product-widget-style-3 .owl-carousel .owl-nav button.owl-prev:hover,
+			.addonify-add-to-wishlist-btn:hover, 
+			.woocommerce ul.products li.product .addonify-add-to-wishlist-btn:hover, 
+			.woocommerce-page ul.products li.product .addonify-add-to-wishlist-btn:hover  {
 
 				background-color: {$secondary_color};
 			}
