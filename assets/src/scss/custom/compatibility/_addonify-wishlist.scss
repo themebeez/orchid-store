@@ -6,15 +6,14 @@
 ==========================================
 */
 
-// Modal
-
 #addonify-wishlist-modal-wrapper {
 
     .addonify-wishlist-modal-body  {
 
         .addonify-wishlist-modal-btns  {
 
-            .adfy-wishlist-btn {
+            .adfy-wishlist-btn,
+            .adfy-wishlist-btn-link {
 
                 font-size: 15px;
             }
@@ -22,7 +21,7 @@
     }
 }
 
-// Single page.
+
 .woocommerce-page.single .addonify-add-to-wishlist-btn-wrapper {
 
     display: flex;
