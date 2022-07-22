@@ -90,10 +90,11 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.3.7 - 20 July, 2022 ==
+== 1.3.7 - 22 July, 2022 ==
 
 - Removed: Recommendation of YITH Wishlist plugin.
 - Added: Recommendation of Addonify Wishlist plugin.
+- Updated: Added support for Addonify Wishlist plugin.
 
 == 1.3.6 - 16 June, 2022 ==
 

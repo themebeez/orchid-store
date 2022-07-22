@@ -28,18 +28,32 @@ if( ! function_exists( 'orchid_store_wishlist_icon_action' ) ) {
 
     function orchid_store_wishlist_icon_action() {
 
-        if ( ! class_exists( 'YITH_WCWL' ) ) {
+        if ( ! class_exists( 'YITH_WCWL' ) && ! class_exists( 'Addonify_Wishlist' ) ) {
             return;
         }
 
-        $wishlist_page_url = orchid_store_get_yith_wishlist_page_url();
+        $wishlist_page_url = '';
+
+        $wishlist_count = 0;
+
+        if ( class_exists( 'Addonify_Wishlist' ) ) {
+
+            $wishlist_page_url = get_permalink( (int) get_option( 'addonify_wishlist_wishlist_page' ) );
+            $wishlist_count = addonify_wishlist_get_wishlist_items_count();
+
+        } elseif ( class_exists( 'YITH_WCWL' ) ) {
+
+            $wishlist_page_url = orchid_store_get_yith_wishlist_page_url();
+            $wishlist_count = yith_wcwl_count_all_products();
+
+        } else {}        
 
         if ( $wishlist_page_url ) {
             ?>
             <div class="wishlist-icon-container">
                 <a href="<?php echo esc_url( $wishlist_page_url ); ?>"><i class='bx bx-heart'></i> 
                     <?php if ( orchid_store_get_option( 'display_wishlist_items_count' ) ) { ?>
-                        <span class="item-count wishlist-items-count"><?php echo esc_html( yith_wcwl_count_all_products() ); ?></span>
+                        <span class="item-count wishlist-items-count"><?php echo esc_html( $wishlist_count ); ?></span>
                     <?php } ?>
                 </a>
             </div><!-- .wishlist-icon-container -->
@@ -156,9 +170,22 @@ if( ! function_exists( 'orchid_store_user_links_action' ) ) {
                     </li>
                     <?php
                 }
-            	if( class_exists( 'YITH_WCWL' ) ) {
+            	if( 
+                    class_exists( 'YITH_WCWL' ) ||
+                    class_exists( 'Addonify_Wishlist' )
+                ) {
 
-                    $wishlist_page_url = orchid_store_get_yith_wishlist_page_url();
+                    $wishlist_page_url = '';
+
+                    if ( class_exists( 'Addonify_Wishlist' ) ) {
+
+                        $wishlist_page_url = get_permalink( (int) get_option( 'addonify_wishlist_wishlist_page' ) );
+
+                    } elseif ( class_exists( 'YITH_WCWL' ) ) {
+
+                        $wishlist_page_url = orchid_store_get_yith_wishlist_page_url();
+
+                    } else {}   
                     if ( $wishlist_page_url ) {
                 		?>
                     	<li><a href="<?php echo esc_url( $wishlist_page_url ); ?>"><i class='bx bx-heart'></i> <?php esc_html_e( 'My Wishlist', 'orchid-store' ); ?></a></li>
@@ -263,7 +290,7 @@ if( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 
     function orchid_store_template_loop_product_quick_link() {
 
-        if ( ! class_exists( 'YITH_WCWL' ) && ! class_exists( 'YITH_WCQV' ) && ! class_exists( 'Addonify_Quick_View' ) ) {
+        if ( ! class_exists( 'YITH_WCWL' ) && ! class_exists( 'YITH_WCQV' ) && ! class_exists( 'Addonify_Quick_View' ) && ! class_exists( 'Addonify_Wishlist' ) ) {
 
             return;
         }
@@ -579,13 +606,23 @@ if ( ! function_exists( 'orchid_store_get_yith_wishlist_page_url' ) ) {
 
 
 
-if ( defined( 'YITH_WCWL' ) && ! function_exists( 'orchid_store_update_wishlist_count' ) ) {
+if ( ! function_exists( 'orchid_store_update_wishlist_count' ) ) {
 
     function orchid_store_update_wishlist_count() {
 
-        wp_send_json( array(
-            'count' => yith_wcwl_count_all_products()
-        ) );
+        if ( class_exists( 'Addonify_Wishlist' ) ) {
+            wp_send_json( array(
+                'count' => addonify_wishlist_get_wishlist_items_count()
+            ) );
+        } elseif ( class_exists( 'YITH_WCWL' ) ) {
+            wp_send_json( array(
+                'count' => yith_wcwl_count_all_products()
+            ) );
+        } else {
+            wp_send_json( array(
+                'count' => 0
+            ) );
+        }
     }
     add_action( 'wp_ajax_orchid_store_update_wishlist_count', 'orchid_store_update_wishlist_count' );
     add_action( 'wp_ajax_nopriv_orchid_store_update_wishlist_count', 'orchid_store_update_wishlist_count' );

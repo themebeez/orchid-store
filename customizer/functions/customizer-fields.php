@@ -179,7 +179,7 @@ if( ! function_exists( 'orchid_store_section_declaration' ) ) {
 			),
 		);
 
-		if( class_exists( 'WooCommerce' ) && class_exists( 'YITH_WCWL' ) ) {
+		if( class_exists( 'WooCommerce' ) && ( class_exists( 'YITH_WCWL' ) || class_exists( 'Addonify_Wishlist' ) ) ) {
 
 			$sections[] = array(
 				'id' => 'wishlist',
@@ -301,7 +301,7 @@ if( class_exists( 'WooCommerce' ) ) {
 	orchid_store_add_toggle_field( 'display_cart_items_count', esc_html__( 'Display Cart Items Count', 'orchid-store' ), '', 'orchid_store_is_mini_cart_enabled', 'mini_cart' );	
 }
 
-if( class_exists( 'WooCommerce' ) && class_exists( 'YITH_WCWL' ) ) {
+if( class_exists( 'WooCommerce' ) && ( class_exists( 'YITH_WCWL' ) || class_exists( 'Addonify_Wishlist' ) ) ) {
 
 	orchid_store_add_toggle_field( 'display_wishlist', esc_html__( 'Display Wishlist', 'orchid-store' ), '', '', 'wishlist' );
 	orchid_store_add_toggle_field( 'display_wishlist_items_count', esc_html__( 'Display Wishlist Items Count', 'orchid-store' ), '', 'orchid_store_is_wishlist_enabled', 'wishlist' );
