@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-07-21T06:21:51+00:00\n"
+"POT-Creation-Date: 2022-07-22T11:36:27+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: orchid-store\n"
@@ -124,20 +124,20 @@ msgid "Special Menu"
 msgstr ""
 
 #: customizer/functions/customizer-defaults.php:146
-#: functions.php:151
 #: functions.php:153
+#: functions.php:155
 msgid "Product successfully added to cart!"
 msgstr ""
 
 #: customizer/functions/customizer-defaults.php:147
-#: functions.php:156
 #: functions.php:158
+#: functions.php:160
 msgid "Product has been removed from your cart!"
 msgstr ""
 
 #: customizer/functions/customizer-defaults.php:148
-#: functions.php:161
 #: functions.php:163
+#: functions.php:165
 msgid "Cart items has been updated successfully!"
 msgstr ""
 
@@ -710,31 +710,31 @@ msgctxt "placeholder"
 msgid "Type here to search"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:69
+#: inc/woocommerce-hooks.php:83
 msgid "Total:"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:148
+#: inc/woocommerce-hooks.php:162
 msgid "My account"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:152
+#: inc/woocommerce-hooks.php:166
 msgid "Login / Register"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:164
+#: inc/woocommerce-hooks.php:191
 msgid "My Wishlist"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:288
+#: inc/woocommerce-hooks.php:315
 msgid "Quick View"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:323
+#: inc/woocommerce-hooks.php:350
 msgid "Already in wishlist"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:323
+#: inc/woocommerce-hooks.php:350
 msgid "Add to wishlist"
 msgstr ""
 
