@@ -210,7 +210,7 @@ if( ! function_exists( 'orchid_store_logo_row_class' ) ) {
 
         $logo_row_class = '';
 
-        if( function_exists( 'YITH_WCWL' ) ) {
+        if( class_exists( 'YITH_WCWL' ) || class_exists( 'Addonify_Wishlist' ) ) {
 
         	if( $display_wishlist_icon == false ) {
 

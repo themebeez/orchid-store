@@ -142,7 +142,9 @@ function orchid_store_scripts() {
 	
 	wp_register_script( 'orchid-store-bundle', get_template_directory_uri() . '/assets/dist/js/bundle.min.js', array('jquery'), ORCHID_STORE_VERSION, true );
 
-	$script_obj = array();
+	$script_obj = array(
+		'ajax_url' => esc_url( admin_url( 'admin-ajax.php' ) ),
+	);
 
 	$script_obj['scroll_top'] = orchid_store_get_option( 'display_scroll_top_button' );
 
