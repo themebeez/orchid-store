@@ -4,7 +4,7 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 7.0.0
 Requires at least: 5.0.0
-Tested up to: 6.0.0
+Tested up to: 6.0.1
 Stable tag: 1.3.7
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
@@ -90,7 +90,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.3.7 - 22 July, 2022 ==
+== 1.3.7 - 26 July, 2022 ==
 
 - Removed: Recommendation of YITH Wishlist plugin.
 - Added: Recommendation of Addonify Wishlist plugin.
