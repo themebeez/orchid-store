@@ -431,17 +431,18 @@ if( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 
                     $tooltip_text = get_option( 'compare_products_btn_label', __( 'Compare', 'orchid-store' ) );
 
-                    $icon = ( addonify_compare_products_is_product_in_compare_cookie( $product->get_id() ) ) ? 'bx bxs-heart' : 'bx bx-heart';
+                    $icon = ( addonify_compare_products_is_product_in_compare_cookie( $product->get_id() ) ) ? 'bx bx-layer' : 'bx bx-layer';
                     ?>
                     <li>
-                        <button 
-                            class="<?php echo implode( ' ', $addonify_compare_products_button_classes ); ?>" 
+                        <a
+                            href="#" 
+                            class="<?php echo implode( ' ', $addonify_compare_products_button_classes ); ?> os-addtocompare-btn" 
                             data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
                             data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"
                             data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
                         >
                             <span class="icon"><i class="<?php echo esc_attr( $icon ); ?>"></i></span>
-                        </button>
+                        </a>
                     </li>
                     <?php
                 }

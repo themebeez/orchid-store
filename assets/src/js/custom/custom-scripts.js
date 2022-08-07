@@ -1,13 +1,25 @@
-(function($) {
+(function ($) {
 
     'use strict';
 
-    $(document).ready(function() {
+    $(document).ready(function () {
 
         // Trigger WooCommerce cart fragments.
 
         $(document.body).trigger('wc_fragment_refresh');
-        
+
+
+        /*
+        ====================
+        = Add to compare button
+        ============================
+        */
+
+        $(".os-addtocompare-btn").on('click', function (e) {
+
+            e.preventDefault();
+        })
+
 
         /*
         ====================
@@ -94,7 +106,7 @@
 
         if (orchid_store_obj.added_to_cart_message) {
 
-            $(document.body).on('added_to_cart', function() {
+            $(document.body).on('added_to_cart', function () {
 
                 iziToast.success({
 
@@ -107,7 +119,7 @@
 
         if (orchid_store_obj.cart_updated_message) {
 
-            $(document.body).on('updated_cart_totals', function() {
+            $(document.body).on('updated_cart_totals', function () {
 
                 iziToast.info({
 
@@ -119,7 +131,7 @@
 
         if (orchid_store_obj.removed_from_cart_message) {
 
-            $(document.body).on('removed_from_cart', function() {
+            $(document.body).on('removed_from_cart', function () {
 
                 iziToast.success({
 
@@ -137,7 +149,7 @@
 
         var openCart = $('.mini-cart-open');
 
-        $('body').on('click', '.trigger-mini-cart', function(e) {
+        $('body').on('click', '.trigger-mini-cart', function (e) {
 
             openCart.toggleClass('display-block');
         });
@@ -149,15 +161,15 @@
         =======================================
         */
 
-        if ( orchid_store_obj.displayPlusMinusBtns == '1' ) {            
+        if (orchid_store_obj.displayPlusMinusBtns == '1') {
 
-            $('body').on('click', 'button.woo-quantity-plus, button.woo-quantity-minus', function() {
-                
+            $('body').on('click', 'button.woo-quantity-plus, button.woo-quantity-minus', function () {
+
                 var quantityFieldEle = $(this).siblings('.quantity').find('.qty');
 
                 var qtyVal = parseFloat(quantityFieldEle.val());
 
-                qtyVal = ( ! isNaN(qtyVal) ) ? qtyVal : parseFloat(0);
+                qtyVal = (!isNaN(qtyVal)) ? qtyVal : parseFloat(0);
 
                 var qtyMax = parseFloat(quantityFieldEle.attr('max'));
                 var qtyMin = parseFloat(quantityFieldEle.attr('min'));
@@ -166,42 +178,42 @@
                 var qtyValSplit = String(qtyVal).split('.');
                 var qtyStepSplit = String(qtyStep).split('.');
 
-                var qtyValPrecision = ( qtyValSplit[1] ) ? qtyValSplit[1].length : parseFloat(0);
-                var qtyStepPrecision = ( qtyStepSplit[1] ) ? qtyStepSplit[1].length : parseFloat(0);
+                var qtyValPrecision = (qtyValSplit[1]) ? qtyValSplit[1].length : parseFloat(0);
+                var qtyStepPrecision = (qtyStepSplit[1]) ? qtyStepSplit[1].length : parseFloat(0);
 
-                var precision = ( qtyValPrecision > qtyStepPrecision ) ? qtyValPrecision : qtyStepPrecision;
+                var precision = (qtyValPrecision > qtyStepPrecision) ? qtyValPrecision : qtyStepPrecision;
 
                 // Change the value if plus or minus
 
-                if ( $(this).is('.woo-quantity-plus') ) {
+                if ($(this).is('.woo-quantity-plus')) {
 
-                    if ( isNaN(qtyMax)) {
-                        quantityFieldEle.val( parseFloat(( qtyVal + qtyStep )).toFixed(precision) );
+                    if (isNaN(qtyMax)) {
+                        quantityFieldEle.val(parseFloat((qtyVal + qtyStep)).toFixed(precision));
                     } else {
-                        if ( qtyVal < qtyMax ) {
-                            var increVal = parseFloat( qtyVal + qtyStep ).toFixed(precision);
-                            if ( increVal >= qtyMax ) {
+                        if (qtyVal < qtyMax) {
+                            var increVal = parseFloat(qtyVal + qtyStep).toFixed(precision);
+                            if (increVal >= qtyMax) {
                                 increVal = qtyMax;
                             }
-                            quantityFieldEle.val( increVal );
-                        } 
-                        if ( qtyMax === qtyVal ) {
+                            quantityFieldEle.val(increVal);
+                        }
+                        if (qtyMax === qtyVal) {
                             quantityFieldEle.val(qtyMax);
                         }
                     }
                 }
-                
 
-                if ( $(this).is('.woo-quantity-minus') ) {
-                    if ( qtyVal == qtyMin ) {
+
+                if ($(this).is('.woo-quantity-minus')) {
+                    if (qtyVal == qtyMin) {
                         quantityFieldEle.val(qtyMin);
                     }
-                    if ( qtyVal > qtyMin ) {
-                        var decreVal = parseFloat( qtyVal - qtyStep ).toFixed(precision);
-                        if ( decreVal <= qtyMin ) {
+                    if (qtyVal > qtyMin) {
+                        var decreVal = parseFloat(qtyVal - qtyStep).toFixed(precision);
+                        if (decreVal <= qtyMin) {
                             decreVal = qtyMin;
                         }
-                        quantityFieldEle.val( decreVal );
+                        quantityFieldEle.val(decreVal);
                     }
                 }
             });
@@ -243,20 +255,20 @@
 
         var megaMenus = $('.masterheader .menu-item-has-children.menu-item-has-mega-children');
 
-        if ( megaMenus.length > 0 ) {
-            megaMenus.each( function( index ) {
+        if (megaMenus.length > 0) {
+            megaMenus.each(function (index) {
                 var currentMegaMenu = $(this);
                 var megaSubmenu = currentMegaMenu.find('ul.mega-menu-sub-menu');
-                if ( megaSubmenu.length > 0 ) {
+                if (megaSubmenu.length > 0) {
                     var submenuLi = megaSubmenu.find('li.mega-sub-menu-group');
-                    if ( submenuLi.length > 0 ) {
+                    if (submenuLi.length > 0) {
                         megaSubMenu.addClass('mega-menu-column-' + submenuLi.length);
                     }
                 }
-            } );
+            });
         }
 
-        $('body').on('click', '#site-navigation .sub-toggle', function() {
+        $('body').on('click', '#site-navigation .sub-toggle', function () {
 
             $(this).toggleClass('active-submenu');
 
@@ -264,7 +276,7 @@
 
             $(this).parent('.page_item_has_children').children('ul.children').first().slideToggle('medium');
 
-            if($(this).hasClass('active-submenu')) {
+            if ($(this).hasClass('active-submenu')) {
 
                 $(this).find('.bx').removeClass('bx-chevron-down').addClass('bx bx-chevron-up');
 
@@ -275,18 +287,18 @@
 
         });
 
-        $('body').on('click', '.masterheader .mobile-menu-toggle-btn', function(e){
+        $('body').on('click', '.masterheader .mobile-menu-toggle-btn', function (e) {
 
             $('body').toggleClass('menu-toggle-active'); // add class to body
         });
 
-        $('body').on('click', '.mobile-navigation-mask, .trigger-mob-nav-close', function(e){
+        $('body').on('click', '.mobile-navigation-mask, .trigger-mob-nav-close', function (e) {
 
             $('body').removeClass('menu-toggle-active'); // remove class from body
         });
 
 
-        $('body').on('click', '.menu-item a[href="#"]', function(e) {
+        $('body').on('click', '.menu-item a[href="#"]', function (e) {
 
             e.preventDefault(); // prevent empty links clicks
         });
@@ -294,14 +306,14 @@
 
         // Category Navigation at header 
 
-        $('body').on('click', '.cat-nav-trigger', function(e) {
+        $('body').on('click', '.cat-nav-trigger', function (e) {
 
             $('body').toggleClass('cat-nav-at-navigation-active'); // add class to body
 
         });
 
 
-        $('body').on('click', '.mobile-header .sub-toggle', function() {
+        $('body').on('click', '.mobile-header .sub-toggle', function () {
 
             $(this).toggleClass('active-submenu');
 
@@ -309,7 +321,7 @@
 
             $(this).parent('.page_item_has_children').children('ul.children').first().slideToggle('medium');
 
-            if($(this).hasClass('active-submenu')) {
+            if ($(this).hasClass('active-submenu')) {
 
                 $(this).find('.bx').removeClass('bx-chevron-down').addClass('bx-chevron-up');
 
@@ -323,11 +335,11 @@
 
         // mobile header search 
 
-        $('body').on('click', '.mobile-header .search-toggle', function(e){
+        $('body').on('click', '.mobile-header .search-toggle', function (e) {
 
             $('body').toggleClass('mobile-header-search-active'); // toggle class to display & hide mobile header search
         });
-        
+
 
         /*
         ===========================
@@ -454,7 +466,7 @@
 
         $('div#tab1').show('fast');
 
-        $('body').on('click', '.tab-nav ul li a', function(e) {
+        $('body').on('click', '.tab-nav ul li a', function (e) {
 
             e.preventDefault();
 
@@ -464,7 +476,7 @@
 
             var activeARel = activeA.attr('rel');
 
-            console.log( activeARel );
+            console.log(activeARel);
 
             $(this).parents('div.tab-wrapper').find('div#' + activeARel).hide();
 
@@ -485,7 +497,7 @@
         =======================================
         */
 
-        $('body').on('click', ".orchid-backtotop", function(event) {
+        $('body').on('click', ".orchid-backtotop", function (event) {
 
             event.preventDefault();
 
@@ -497,9 +509,9 @@
 
         // Window scroll event
 
-        if( orchid_store_obj.scroll_top == '1' ) {
+        if (orchid_store_obj.scroll_top == '1') {
 
-            $(window).scroll(function() {
+            $(window).scroll(function () {
 
                 var height = $(window).scrollTop();
 
@@ -511,18 +523,18 @@
 
                     $('.orchid-backtotop').fadeOut('slow');
                 }
-            });    
-        }   
+            });
+        }
 
 
         // Update Wishlist item counts
 
-        $( document ).on( 'added_to_wishlist removed_from_wishlist addonify_added_to_wishlist addonify_removed_from_wishlist', function() {
-            $.get( orchid_store_obj.ajax_url, {
+        $(document).on('added_to_wishlist removed_from_wishlist addonify_added_to_wishlist addonify_removed_from_wishlist', function () {
+            $.get(orchid_store_obj.ajax_url, {
                 action: 'orchid_store_update_wishlist_count'
-            }, function( data ) {
-                $('.wishlist-items-count').html( data.count );
-            } );
+            }, function (data) {
+                $('.wishlist-items-count').html(data.count);
+            });
         });
 
     });
