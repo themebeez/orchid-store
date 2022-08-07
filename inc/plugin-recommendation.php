@@ -29,20 +29,29 @@ if ( ! function_exists( 'orchid_store_recommended_plugins' ) ) :
             ),
         );
 
-        if ( ! class_exists( 'YITH_WCQV' ) ) {
+        if ( class_exists( 'WooCommerce' ) ) {
+
+            if ( ! class_exists( 'YITH_WCQV' ) ) {
+
+                $plugins[] = array(
+                    'name'     => 'Addonify WooCommerce Quick View',
+                    'slug'     => 'addonify-quick-view',
+                    'required' => false,
+                );
+            }
+
+            if ( ! class_exists( 'YITH_WCWL_Wishlist' ) ) {
+
+                $plugins[] = array(
+                    'name'     => 'Addonify WooCommerce Wishlist',
+                    'slug'     => 'addonify-wishlist',
+                    'required' => false,
+                );
+            }
 
             $plugins[] = array(
-                'name'     => 'Addonify Quick View',
-                'slug'     => 'addonify-quick-view',
-                'required' => false,
-            );
-        }
-
-        if ( ! class_exists( 'YITH_WCWL_Wishlist' ) ) {
-
-            $plugins[] = array(
-                'name'     => 'Addonify WooCommerce Wishlist',
-                'slug'     => 'addonify-wishlist',
+                'name'     => 'Addonify – Compare Products For WooCommerce',
+                'slug'     => 'addonify-compare-products',
                 'required' => false,
             );
         }

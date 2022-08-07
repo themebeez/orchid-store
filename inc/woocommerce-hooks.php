@@ -290,7 +290,7 @@ if( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 
     function orchid_store_template_loop_product_quick_link() {
 
-        if ( ! class_exists( 'YITH_WCWL' ) && ! class_exists( 'YITH_WCQV' ) && ! class_exists( 'Addonify_Quick_View' ) && ! class_exists( 'Addonify_Wishlist' ) ) {
+        if ( ! class_exists( 'YITH_WCWL' ) && ! class_exists( 'YITH_WCQV' ) && ! class_exists( 'Addonify_Quick_View' ) && ! class_exists( 'Addonify_Wishlist' ) && ! class_exists( 'Addonify_Compare_Products' ) ) {
 
             return;
         }
@@ -419,6 +419,31 @@ if( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
                         <li><?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]'); ?></li>
                         <?php
                     } else {}
+                }
+
+                if ( class_exists( 'Addonify_Compare_Products' ) ) {
+
+                    $addonify_compare_products_button_classes = array( 'os-tooltip', 'addonify-cp-button' );
+
+                    if ( addonify_compare_products_is_product_in_compare_cookie( $product->get_id() ) ) {
+                        $addonify_compare_products_button_classes[] = 'selected';
+                    }
+
+                    $tooltip_text = get_option( 'compare_products_btn_label', __( 'Compare', 'orchid-store' ) );
+
+                    $icon = ( addonify_compare_products_is_product_in_compare_cookie( $product->get_id() ) ) ? 'bx bxs-heart' : 'bx bx-heart';
+                    ?>
+                    <li>
+                        <button 
+                            class="<?php echo implode( ' ', $addonify_compare_products_button_classes ); ?>" 
+                            data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
+                            data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"
+                            data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
+                        >
+                            <span class="icon"><i class="<?php echo esc_attr( $icon ); ?>"></i></span>
+                        </button>
+                    </li>
+                    <?php
                 }
                 ?>
             </ul>
