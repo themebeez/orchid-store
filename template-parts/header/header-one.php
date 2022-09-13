@@ -91,7 +91,7 @@
                     $orchid_store_display_wishlist_icon = orchid_store_get_option( 'display_wishlist' );
                     $orchid_store_display_minicart = orchid_store_get_option( 'display_mini_cart' );
 
-                    if( class_exists( 'WooCommerce' ) && ( $orchid_store_display_product_search == true || $orchid_store_display_minicart == true || $orchid_store_display_wishlist_icon == true ) ) {
+                    if( $orchid_store_display_product_search == true || $orchid_store_display_minicart == true || $orchid_store_display_wishlist_icon == true ) {
                         ?>
                         <div class="os-col extra-col">
                             <div class="aside-right">
