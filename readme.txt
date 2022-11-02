@@ -4,8 +4,8 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 7.0.0
 Requires at least: 5.0.0
-Tested up to: 6.0.2
-Stable tag: 1.4.0
+Tested up to: 6.1
+Stable tag: 1.4.1
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -89,6 +89,12 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.4.1 - 02 November, 2022 ==
+
+- Updated: product-searchform.php WooCommerce template version.
+- Tested: with WordPress 6.1
+- Tested: with WooCommerce 7.0.1
 
 == 1.4.0 - 13 September, 2022 ==
 
