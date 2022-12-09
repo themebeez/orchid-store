@@ -184,6 +184,35 @@ if( ! function_exists( 'orchid_store_is_page_header_enabled' ) ) {
 	}
 }
 
+/**
+ * Active callback function to check if mini-cart is selected as cart.
+ */
+if ( ! function_exists( 'orchid_store_is_cart_mini_cart' ) ) {
+
+	function orchid_store_is_cart_mini_cart( $control ) {
+		
+
+		$cart_display = $control->manager->get_setting( 'orchid_store_field_cart_display' )->value();
+
+		return ( 'default' == $cart_display ) ? true : false;
+	}
+}
+
+/**
+ * Active callback function to check if floating-cart is selected as cart.
+ */
+if ( ! function_exists( 'orchid_store_is_cart_floating_cart' ) ) {
+
+	function orchid_store_is_cart_floating_cart( $control ) {
+
+		$is_mini_cart_enabled = $control->manager->get_setting( 'orchid_store_field_display_mini_cart' )->value();
+
+		$cart_display = $control->manager->get_setting( 'orchid_store_field_cart_display' )->value();
+
+		return ( true == $is_mini_cart_enabled && 'floating_cart' == $cart_display ) ? true : false;
+	}
+}
+
 
 /**
  * Active callback function to check if mini-cart is enabled.
@@ -194,7 +223,7 @@ if ( ! function_exists( 'orchid_store_is_mini_cart_enabled' ) ) {
 
 		$is_mini_cart_enabled = $control->manager->get_setting( 'orchid_store_field_display_mini_cart' )->value();
 
-		return ( $is_mini_cart_enabled == true ) ? true : false;
+		return ( true == $is_mini_cart_enabled ) ? true : false;
 	}
 } 
 

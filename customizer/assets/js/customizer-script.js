@@ -22,6 +22,103 @@
 		customizer_label( 'orchid_store_field_enable_page_common_sidebar_position', fieldHeaders.sidebar );
 		customizer_label( 'orchid_store_field_enable_parallax_page_header_background', fieldHeaders.breadcrumb_background );
 		customizer_label( 'background_color', fieldHeaders.body_background );
+
+		// Install and activate AFC plugin. @since 1.4.2
+		jQuery('body').on( 'click', '#orchid-store-install-afc', function(event) {
+			event.preventDefault();
+
+			jQuery('#orchid-store-afc-error').addClass('afc-hide').removeClass('afc-display');
+
+			var thisButton = jQuery(this);
+
+			thisButton.attr('disabled', 'disabled');
+
+			thisButton.html(fieldHeaders.installingPlugin);
+			//jQuery ajax POST request code
+			var data = {
+				action: 'wp_ajax_install_plugin',
+				_ajax_nonce: fieldHeaders.plugin_nonce, // nonce
+				slug: 'addonify-floating-cart', // e.g. woocommerce
+			};
+
+			jQuery.post( fieldHeaders.ajax_url, data, function (response) {
+
+				// console.log(response);
+
+				if (response.success === true) {
+
+					thisButton.html(fieldHeaders.installedPlugin);
+
+					setTimeout(function() {
+
+						thisButton.html(fieldHeaders.activatingPlugin);
+					}, 1500);
+					
+
+					setTimeout(function () {
+						var data = {
+							action: 'orchid_store_activate_plugin',
+							_ajax_nonce: fieldHeaders.plugin_nonce
+						};
+
+						jQuery.post(fieldHeaders.ajax_url, data, function (response) {
+							// console.log(response);
+							if (response.success === true) {
+
+								thisButton.html(fieldHeaders.activatedPlugin);
+
+								setTimeout(function(){
+									jQuery('#orchid-store-afc-install').removeClass('afc-display').addClass('afc-hide');
+									jQuery('#orchid-store-afc-activated').addClass('afc-display').removeClass('afc-hide');
+								}, 1500 );
+								
+							} else {
+								jQuery('#orchid-store-afc-error p').html(response.message);
+								jQuery('#orchid-store-afc-error').removeClass('afc-hide').addClass('afc-display');
+							}
+						});
+					}, 1500 );					
+				} else {
+					jQuery('#orchid-store-afc-error p').html( response.errorMessage );
+					jQuery('#orchid-store-afc-error').removeClass('afc-hide').addClass('afc-display');
+				}
+			} );
+		});
+		
+		// Activate AFC plugin. @since 1.4.2
+		jQuery('body').on( 'click', '#orchid-store-activate-afc', function(event) {
+
+			event.preventDefault();
+
+			var thisButton = jQuery(this);
+
+			thisButton.html(fieldHeaders.activatingPlugin);
+
+			thisButton.attr('disabled', 'disabled');
+
+			jQuery('#orchid-store-afc-error').addClass('afc-hide').removeClass('afc-display');
+
+			var data = {
+				action: 'orchid_store_activate_plugin',
+				_ajax_nonce: fieldHeaders.plugin_nonce
+			};
+
+			jQuery.post( fieldHeaders.ajax_url, data, function (response) {
+				// console.log(response);
+				if (response.success === true) {
+
+					thisButton.html(fieldHeaders.activatedPlugin);
+
+					setTimeout(function () {
+						jQuery('#orchid-store-afc-activate').removeClass('afc-display').addClass('afc-hide');
+						jQuery('#orchid-store-afc-activated').addClass('afc-display').removeClass('afc-hide');
+					}, 1500);
+				} else {
+					jQuery('#orchid-store-afc-error p').html(response.message);
+					jQuery('#orchid-store-afc-error').removeClass('afc-hide').addClass('afc-display');
+				}
+			} );
+		});
 	} );
 
 	wp.customize.sectionConstructor['wptrt-customize-pro'] = wp.customize.Section.extend( {
@@ -34,5 +131,8 @@
 			return true;
 		}
 	} );
+
+
+
 
 } ) ( jQuery );

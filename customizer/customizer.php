@@ -38,6 +38,11 @@ function orchid_store_customize_register( $wp_customize ) {
 	require get_template_directory() . '/customizer/controls/class-customizer-sortable-repeater-control.php';
 
 	/**
+	 * Load custom customizer control for recommending AFC plugin.
+	 */
+	require get_template_directory() . '/customizer/controls/class-customizer-afc-recommendation-control.php';
+
+	/**
 	 * Load customizer functions for sanitization of input values of contol fields
 	 */
 	require get_template_directory() . '/customizer/functions/sanitize-callback.php';
@@ -166,6 +171,12 @@ function orchid_store_enqueues() {
 		'sidebar' => esc_html__( 'Sidebar Position', 'orchid-store' ),
 		'breadcrumb_background' => esc_html__( 'Background', 'orchid-store' ),
 		'body_background' => esc_html__( 'Body Background', 'orchid-store' ),
+		'plugin_nonce' => wp_create_nonce( 'updates' ),
+		'ajax_url' => esc_url( admin_url( 'admin-ajax.php' ) ),
+		'installingPlugin' => esc_html__( 'Installing...', 'orchid-store' ),
+		'installedPlugin' => esc_html__( 'Installed', 'orchid-store' ),
+		'activatingPlugin' => esc_html__( 'Activating...', 'orchid-store' ),
+		'activatedPlugin' => esc_html__( 'Activated', 'orchid-store' ),
 	);
 
 	wp_localize_script( 'orchid-store-customizer-script', 'fieldHeaders', $headers );

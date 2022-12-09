@@ -1,0 +1,22 @@
+.afc-hide {
+    display: none !important;
+}
+
+.afc-display {
+    display: block !important;
+}
+
+.orchid-store-afc-recommendation {
+    margin-top: 15px;
+}
+
+.orchid-store-afc-stat {
+    background-color: aliceblue;
+    border: 1px solid #eee;
+    padding: 20px 15px;
+}
+
+.os-afc-settings-link {
+    width: 100%;
+    text-align: center;
+}

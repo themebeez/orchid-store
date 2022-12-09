@@ -4,8 +4,8 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 7.0.0
 Requires at least: 5.0.0
-Tested up to: 6.1
-Stable tag: 1.4.1
+Tested up to: 6.1.1
+Stable tag: 1.4.2
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -89,6 +89,11 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.4.2 - 09 December, 2022 ==
+
+- Added: Addonify Floating Cart recommendation in the customizer.
+- Modified: Floating cart is toggled if cart display is set as floating cart in the customizer. Else default minicart is displayed.
 
 == 1.4.1 - 02 November, 2022 ==
 

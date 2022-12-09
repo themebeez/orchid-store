@@ -151,7 +151,13 @@
 
         $('body').on('click', '.trigger-mini-cart', function (e) {
 
-            openCart.toggleClass('display-block');
+            if ( orchid_store_obj.cartDisplay == 'default' ) {
+                openCart.toggleClass('display-block');
+            }
+            
+            if ( orchid_store_obj.cartDisplay == 'floating_cart' ) {
+                document.body.classList.add('adfy__woofc-visible');
+            }
         });
 
 
