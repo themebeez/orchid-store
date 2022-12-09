@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or Later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orchid Store 1.4.1\n"
+"Project-Id-Version: Orchid Store 1.4.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/orchid-store\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-11-02T07:16:28+00:00\n"
+"POT-Creation-Date: 2022-12-09T12:14:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: orchid-store\n"
@@ -35,7 +35,7 @@ msgid "https://themebeez.com"
 msgstr ""
 
 #: 404.php:28
-#: customizer/functions/customizer-fields.php:390
+#: customizer/functions/customizer-fields.php:440
 msgid "4"
 msgstr ""
 
@@ -68,54 +68,97 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
+#. translators: 1: plugin name.
+#: customizer/controls/class-customizer-afc-recommendation-control.php:58
+msgid "Please install the %1$s plugin to enable the floating cart."
+msgstr ""
+
+#: customizer/controls/class-customizer-afc-recommendation-control.php:64
+msgid "Install Now"
+msgstr ""
+
+#. translators: 1: plugin name.
+#: customizer/controls/class-customizer-afc-recommendation-control.php:73
+msgid "Please activate the %1$s plugin to enable the floating cart."
+msgstr ""
+
+#: customizer/controls/class-customizer-afc-recommendation-control.php:78
+msgid "Activate Now"
+msgstr ""
+
+#. translators: 1: plugin name
+#: customizer/controls/class-customizer-afc-recommendation-control.php:86
+msgid "Floating cart&rsquo;s features can be configured from the %1$s plugin&rsquo;s setting page."
+msgstr ""
+
+#: customizer/controls/class-customizer-afc-recommendation-control.php:91
+msgid "Configure Now"
+msgstr ""
+
 #: customizer/controls/class-customizer-sortable-repeater-control.php:24
 msgid "Add"
 msgstr ""
 
-#: customizer/customizer.php:65
+#: customizer/customizer.php:70
 msgid "Orchid Store Pro"
 msgstr ""
 
-#: customizer/customizer.php:66
+#: customizer/customizer.php:71
 msgid "Go Pro"
 msgstr ""
 
-#: customizer/customizer.php:85
+#: customizer/customizer.php:90
 msgid "Site Title Color"
 msgstr ""
 
-#: customizer/customizer.php:88
-#: customizer/customizer.php:167
+#: customizer/customizer.php:93
+#: customizer/customizer.php:172
 msgid "Background"
 msgstr ""
 
-#: customizer/customizer.php:98
+#: customizer/customizer.php:103
 msgid "Header is used as background image for breadcrumb"
 msgstr ""
 
-#: customizer/customizer.php:162
+#: customizer/customizer.php:167
 msgid "Logo Setup"
 msgstr ""
 
-#: customizer/customizer.php:163
+#: customizer/customizer.php:168
 msgid "Favicon"
 msgstr ""
 
-#: customizer/customizer.php:164
+#: customizer/customizer.php:169
 msgid "Homepage Content"
 msgstr ""
 
-#: customizer/customizer.php:165
+#: customizer/customizer.php:170
 msgid "Post Metas"
 msgstr ""
 
-#: customizer/customizer.php:166
+#: customizer/customizer.php:171
 #: inc/custom-fields.php:26
 msgid "Sidebar Position"
 msgstr ""
 
-#: customizer/customizer.php:168
+#: customizer/customizer.php:173
 msgid "Body Background"
+msgstr ""
+
+#: customizer/customizer.php:176
+msgid "Installing..."
+msgstr ""
+
+#: customizer/customizer.php:177
+msgid "Installed"
+msgstr ""
+
+#: customizer/customizer.php:178
+msgid "Activating..."
+msgstr ""
+
+#: customizer/customizer.php:179
+msgid "Activated"
 msgstr ""
 
 #: customizer/functions/customizer-defaults.php:67
@@ -123,19 +166,19 @@ msgstr ""
 msgid "Special Menu"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:146
+#: customizer/functions/customizer-defaults.php:147
 #: functions.php:153
 #: functions.php:155
 msgid "Product successfully added to cart!"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:147
+#: customizer/functions/customizer-defaults.php:148
 #: functions.php:158
 #: functions.php:160
 msgid "Product has been removed from your cart!"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:148
+#: customizer/functions/customizer-defaults.php:149
 #: functions.php:163
 #: functions.php:165
 msgid "Cart items has been updated successfully!"
@@ -206,7 +249,7 @@ msgid "Page Single"
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:147
-#: customizer/functions/customizer-fields.php:422
+#: customizer/functions/customizer-fields.php:472
 #: widget/widgets-init.php:14
 msgid "Sidebar"
 msgstr ""
@@ -335,262 +378,274 @@ msgstr ""
 msgid "Display Search Form On Mobile Devices"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:300
+#: customizer/functions/customizer-fields.php:303
 msgid "Display Mini Cart"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:301
+#: customizer/functions/customizer-fields.php:311
 msgid "Display Cart Items Count"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:306
+#: customizer/functions/customizer-fields.php:319
+msgid "Display Cart As"
+msgstr ""
+
+#: customizer/functions/customizer-fields.php:322
+msgid "Minicart"
+msgstr ""
+
+#: customizer/functions/customizer-fields.php:323
+msgid "Floating Cart"
+msgstr ""
+
+#: customizer/functions/customizer-fields.php:356
 msgid "Display Wishlist"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:307
+#: customizer/functions/customizer-fields.php:357
 msgid "Display Wishlist Items Count"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:315
-#: customizer/functions/customizer-fields.php:327
-#: customizer/functions/customizer-fields.php:338
-#: customizer/functions/customizer-fields.php:354
+#: customizer/functions/customizer-fields.php:365
+#: customizer/functions/customizer-fields.php:377
+#: customizer/functions/customizer-fields.php:388
+#: customizer/functions/customizer-fields.php:404
 msgid "Display Featured Image"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:316
-#: customizer/functions/customizer-fields.php:328
-#: customizer/functions/customizer-fields.php:339
-#: customizer/functions/customizer-fields.php:355
+#: customizer/functions/customizer-fields.php:366
+#: customizer/functions/customizer-fields.php:378
+#: customizer/functions/customizer-fields.php:389
+#: customizer/functions/customizer-fields.php:405
 msgid "Display Categories"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:317
-#: customizer/functions/customizer-fields.php:329
-#: customizer/functions/customizer-fields.php:340
-#: customizer/functions/customizer-fields.php:356
+#: customizer/functions/customizer-fields.php:367
+#: customizer/functions/customizer-fields.php:379
+#: customizer/functions/customizer-fields.php:390
+#: customizer/functions/customizer-fields.php:406
 #: widget/widgets/posts-widget.php:223
 msgid "Display Date"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:318
-#: customizer/functions/customizer-fields.php:330
-#: customizer/functions/customizer-fields.php:341
-#: customizer/functions/customizer-fields.php:357
+#: customizer/functions/customizer-fields.php:368
+#: customizer/functions/customizer-fields.php:380
+#: customizer/functions/customizer-fields.php:391
+#: customizer/functions/customizer-fields.php:407
 msgid "Display Author"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:319
-#: customizer/functions/customizer-fields.php:331
-#: customizer/functions/customizer-fields.php:342
+#: customizer/functions/customizer-fields.php:369
+#: customizer/functions/customizer-fields.php:381
+#: customizer/functions/customizer-fields.php:392
 msgid "Select Sidebar Position"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:349
+#: customizer/functions/customizer-fields.php:399
 msgid "Select Post Column Alignment"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:349
+#: customizer/functions/customizer-fields.php:399
 msgid "Featured Image/Content"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:349
+#: customizer/functions/customizer-fields.php:399
 msgid "Content/Featured Image"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:358
+#: customizer/functions/customizer-fields.php:408
 msgid "Display Tags"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:360
-#: customizer/functions/customizer-fields.php:369
+#: customizer/functions/customizer-fields.php:410
+#: customizer/functions/customizer-fields.php:419
 msgid "Enable Common Sidebar Position"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:360
+#: customizer/functions/customizer-fields.php:410
 msgid "This option enables common sidebar position for all the posts."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:361
-#: customizer/functions/customizer-fields.php:370
+#: customizer/functions/customizer-fields.php:411
+#: customizer/functions/customizer-fields.php:420
 msgid "Select Common Sidebar Position"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:368
+#: customizer/functions/customizer-fields.php:418
 msgid "Display Featured image"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:369
+#: customizer/functions/customizer-fields.php:419
 msgid "This option enables common sidebar position for all the pages."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:378
+#: customizer/functions/customizer-fields.php:428
 msgid "Enable Sticky Sidebar"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:379
+#: customizer/functions/customizer-fields.php:429
 msgid "Enable Sidebar For Small Devices"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:379
+#: customizer/functions/customizer-fields.php:429
 msgid "This option lets you to display or do not display sidebar for devices with width smaller than 768px."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:380
+#: customizer/functions/customizer-fields.php:430
 msgid "Enable Global Sidebar Position"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:380
+#: customizer/functions/customizer-fields.php:430
 msgid "On checking this option, all the page templates of your website will have same sidebar position."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:381
+#: customizer/functions/customizer-fields.php:431
 msgid "Select Global Sidebar Position"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:388
+#: customizer/functions/customizer-fields.php:438
 msgid "Display Scroll Top Button"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:389
+#: customizer/functions/customizer-fields.php:439
 msgid "Display Footer Widgets"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:390
+#: customizer/functions/customizer-fields.php:440
 msgid "Select Footer Widget Area Columns"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:390
-#: customizer/functions/customizer-fields.php:618
+#: customizer/functions/customizer-fields.php:440
+#: customizer/functions/customizer-fields.php:668
 msgid "1"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:390
-#: customizer/functions/customizer-fields.php:619
+#: customizer/functions/customizer-fields.php:440
+#: customizer/functions/customizer-fields.php:669
 msgid "2"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:390
+#: customizer/functions/customizer-fields.php:440
 msgid "3"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:391
+#: customizer/functions/customizer-fields.php:441
 msgid "Copyright Text"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:392
+#: customizer/functions/customizer-fields.php:442
 msgid "Image of payment processors"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:398
+#: customizer/functions/customizer-fields.php:448
 msgid "Excerpt Length"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:398
+#: customizer/functions/customizer-fields.php:448
 msgid "Excerpt is the short content of post or page."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:403
+#: customizer/functions/customizer-fields.php:453
 msgid "Disable Outline On Focus"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:409
+#: customizer/functions/customizer-fields.php:459
 msgid "Primary Color"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:410
+#: customizer/functions/customizer-fields.php:460
 msgid "Secondary Color"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:439
+#: customizer/functions/customizer-fields.php:489
 msgid "Product Archive - Sidebar Position"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:461
+#: customizer/functions/customizer-fields.php:511
 msgid "Product Single - Sidebar Position"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:481
+#: customizer/functions/customizer-fields.php:531
 msgid "Shop - Product Columns"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:482
+#: customizer/functions/customizer-fields.php:532
 msgid "Set number of columns to be displayed in shop page for displaying products. Maximum number of colums is 6 while minimum number of columns is 2."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:505
+#: customizer/functions/customizer-fields.php:555
 msgid "Rows per page"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:506
+#: customizer/functions/customizer-fields.php:556
 msgid "How many rows of products should be shown per page?"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:524
+#: customizer/functions/customizer-fields.php:574
 msgid "Related Product Columns"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:525
+#: customizer/functions/customizer-fields.php:575
 msgid "Set number of columns to be displayed in related product section of product page. Maximum number of colums is 6 while minimum number of columns is 2."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:548
+#: customizer/functions/customizer-fields.php:598
 msgid "No of Related Product"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:549
+#: customizer/functions/customizer-fields.php:599
 msgid "Set number of products to be displayed in related product section of product page."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:567
+#: customizer/functions/customizer-fields.php:617
 msgid "Upsell Product Columns"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:568
+#: customizer/functions/customizer-fields.php:618
 msgid "Set number of columns to be displayed in upsell product section of product page. Maximum number of colums is 6 while minimum number of columns is 2."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:590
+#: customizer/functions/customizer-fields.php:640
 msgid "Cross Sell Product Columns"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:591
+#: customizer/functions/customizer-fields.php:641
 msgid "Set number of columns to be displayed in cross sell product section of product page. Maximum number of colums is 6 while minimum number of columns is 2."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:613
+#: customizer/functions/customizer-fields.php:663
 msgid "Mobile - Product Columns"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:614
+#: customizer/functions/customizer-fields.php:664
 msgid "This option sets number of product columns to be displayed mobile devices."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:638
+#: customizer/functions/customizer-fields.php:688
 msgid "Display Product Out of Stock Notice"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:658
+#: customizer/functions/customizer-fields.php:708
 msgid "Display Plus &amp; Minus Buttons"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:659
+#: customizer/functions/customizer-fields.php:709
 msgid "This option adds plus and minus buttons before and after quantity field respectively."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:669
+#: customizer/functions/customizer-fields.php:719
 msgid "Cart Messages"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:685
+#: customizer/functions/customizer-fields.php:735
 msgid "Product Added To Cart"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:703
+#: customizer/functions/customizer-fields.php:753
 msgid "Product Removed From Cart"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:721
+#: customizer/functions/customizer-fields.php:771
 msgid "Cart Updated"
 msgstr ""
 
@@ -604,6 +659,14 @@ msgstr ""
 
 #: functions.php:54
 msgid "Secondary Menu"
+msgstr ""
+
+#: functions.php:226
+msgid "Invalid security token."
+msgstr ""
+
+#: functions.php:235
+msgid "The plugin is activated successfully."
 msgstr ""
 
 #: header.php:31
@@ -710,35 +773,35 @@ msgctxt "placeholder"
 msgid "Type here to search"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:83
+#: inc/woocommerce-hooks.php:85
 msgid "Total:"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:162
+#: inc/woocommerce-hooks.php:164
 msgid "My account"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:166
+#: inc/woocommerce-hooks.php:168
 msgid "Login / Register"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:191
+#: inc/woocommerce-hooks.php:193
 msgid "My Wishlist"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:315
+#: inc/woocommerce-hooks.php:317
 msgid "Quick View"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:350
+#: inc/woocommerce-hooks.php:352
 msgid "Already in wishlist"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:350
+#: inc/woocommerce-hooks.php:352
 msgid "Add to wishlist"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:432
+#: inc/woocommerce-hooks.php:434
 msgid "Compare"
 msgstr ""
 
