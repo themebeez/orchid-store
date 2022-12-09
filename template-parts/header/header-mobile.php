@@ -62,7 +62,7 @@
                         $orchid_store_display_wishlist_icon = orchid_store_get_option( 'display_wishlist' );
                         $orchid_store_display_minicart = orchid_store_get_option( 'display_mini_cart' );
 
-                         if( $orchid_store_display_minicart == true && class_exists( 'WooCommerce' )  || ( $orchid_store_display_wishlist_icon == true && function_exists( 'YITH_WCWL' ) && class_exists( 'WooCommerce' ) ) ) {
+                        if ( $orchid_store_display_minicart == true && class_exists( 'WooCommerce' )  || ( $orchid_store_display_wishlist_icon == true && function_exists( 'YITH_WCWL' ) && class_exists( 'WooCommerce' ) ) ) {
                             ?>
                             <div class="header-items flex-col">
                                 <div class="flex-row">

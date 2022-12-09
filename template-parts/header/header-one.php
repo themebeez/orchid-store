@@ -128,7 +128,7 @@
                                     }                                    
                                 }
 
-                                if( class_exists( 'WooCommerce' ) && ( $orchid_store_display_minicart == true || $orchid_store_display_wishlist_icon == true ) ) { 
+                                if ( class_exists( 'WooCommerce' ) && ( $orchid_store_display_minicart == true || $orchid_store_display_wishlist_icon == true ) ) {
                                     ?>
                                     <div class="wishlist-minicart-wrapper">
                                         <div class="wishlist-minicart-inner">
@@ -143,7 +143,7 @@
                                             do_action( 'orchid_store_wishlist_icon' );
                                         }
 
-                                        if( $orchid_store_display_minicart == true ) {
+                                        if ( $orchid_store_display_minicart == true ) {
 
                                             /**
                                             * Hook - orchid_store_mini_cart.

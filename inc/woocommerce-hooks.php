@@ -72,6 +72,8 @@ if( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
 
 			return;
 		}
+
+        $cart_display = orchid_store_get_option( 'cart_display' );
 		?>
 		<div class="mini-cart">
             <button class="trigger-mini-cart">
@@ -86,7 +88,7 @@ if( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
 	            </span><!-- .price -->
             </span><!-- .cart-amount -->
             <?php
-            if( ! is_cart() && ! is_checkout() ) {
+            if ( ! is_cart() && ! is_checkout() && 'default' != $cart_display ) {
                 ?>
                 <div class="mini-cart-open">
                     <div class="mini-cart-items">

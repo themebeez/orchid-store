@@ -296,12 +296,62 @@ if( class_exists( 'WooCommerce' ) ) {
 }
 orchid_store_add_toggle_field( 'display_product_search_form_on_mobile', esc_html__( 'Display Search Form On Mobile Devices', 'orchid-store' ), '', 'orchid_store_is_product_search_form_enabled', 'product_search' );
 
-if( class_exists( 'WooCommerce' ) ) {
-	orchid_store_add_toggle_field( 'display_mini_cart', esc_html__( 'Display Mini Cart', 'orchid-store' ), '', '', 'mini_cart' );	
-	orchid_store_add_toggle_field( 'display_cart_items_count', esc_html__( 'Display Cart Items Count', 'orchid-store' ), '', 'orchid_store_is_mini_cart_enabled', 'mini_cart' );	
+if ( class_exists( 'WooCommerce' ) ) {
+
+	orchid_store_add_toggle_field(
+		'display_mini_cart',
+		esc_html__( 'Display Mini Cart', 'orchid-store' ),
+		'',
+		'',
+		'mini_cart'
+	);
+
+	orchid_store_add_toggle_field(
+		'display_cart_items_count',
+		esc_html__( 'Display Cart Items Count', 'orchid-store' ),
+		'',
+		'orchid_store_is_mini_cart_enabled',
+		'mini_cart'
+	);
+
+	orchid_store_add_select_field(
+		'cart_display',
+		esc_html__( 'Display Cart As', 'orchid-store' ),
+		'',
+		array(
+			'default'       => esc_html__( 'Minicart', 'orchid-store' ),
+			'floating_cart' => esc_html__( 'Floating Cart', 'orchid-store' ),
+		),
+		'orchid_store_is_mini_cart_enabled',
+		'mini_cart'
+	);
+
+	// AFC recommendation field.
+	$wp_customize->add_setting(
+		'orchid_store_field_afc_plugin_recommendation',
+		array(
+			'sanitize_callback' => '',
+			'default'           => '',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Orchid_Store_AFC_Recommendation_Control(
+			$wp_customize,
+			'orchid_store_field_afc_plugin_recommendation',
+			array(
+				'label'           => '',
+				'description'     => '',
+				'type'            => 'afc-recommendation',
+				'section'         => 'orchid_store_section_mini_cart',
+				'active_callback' => 'orchid_store_is_cart_floating_cart',
+			)
+		)
+	);
 }
 
-if( class_exists( 'WooCommerce' ) && ( class_exists( 'YITH_WCWL' ) || class_exists( 'Addonify_Wishlist' ) ) ) {
+if ( class_exists( 'WooCommerce' ) && ( class_exists( 'YITH_WCWL' ) || class_exists( 'Addonify_Wishlist' ) ) ) {
 
 	orchid_store_add_toggle_field( 'display_wishlist', esc_html__( 'Display Wishlist', 'orchid-store' ), '', '', 'wishlist' );
 	orchid_store_add_toggle_field( 'display_wishlist_items_count', esc_html__( 'Display Wishlist Items Count', 'orchid-store' ), '', 'orchid_store_is_wishlist_enabled', 'wishlist' );

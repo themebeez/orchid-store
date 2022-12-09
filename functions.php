@@ -139,7 +139,7 @@ function orchid_store_scripts() {
 
 		wp_add_inline_style( 'orchid-store-main-style', orchid_store_dynamic_style() );
 	}
-	
+
 	wp_register_script( 'orchid-store-bundle', get_template_directory_uri() . '/assets/dist/js/bundle.min.js', array('jquery'), ORCHID_STORE_VERSION, true );
 
 	$script_obj = array(
@@ -148,30 +148,34 @@ function orchid_store_scripts() {
 
 	$script_obj['scroll_top'] = orchid_store_get_option( 'display_scroll_top_button' );
 
-	if( class_exists( 'WooCommerce' ) ) {		
+	if ( class_exists( 'WooCommerce' ) ) {
 
-		if( get_theme_mod( 'orchid_store_field_product_added_to_cart_message', esc_html__( 'Product successfully added to cart!', 'orchid-store' ) ) ) {
+		if ( get_theme_mod( 'orchid_store_field_product_added_to_cart_message', esc_html__( 'Product successfully added to cart!', 'orchid-store' ) ) ) {
 
 			$script_obj['added_to_cart_message'] = get_theme_mod( 'orchid_store_field_product_added_to_cart_message', esc_html__( 'Product successfully added to cart!', 'orchid-store' ) );
 		}
 
-		if( get_theme_mod( 'orchid_store_field_product_removed_from_cart_message', esc_html__( 'Product has been removed from your cart!', 'orchid-store' ) ) ) {
+		if ( get_theme_mod( 'orchid_store_field_product_removed_from_cart_message', esc_html__( 'Product has been removed from your cart!', 'orchid-store' ) ) ) {
 
 			$script_obj['removed_from_cart_message'] = get_theme_mod( 'orchid_store_field_product_removed_from_cart_message', esc_html__( 'Product has been removed from your cart!', 'orchid-store' ) );
 		}
 
-		if( get_theme_mod( 'orchid_store_field_cart_update_message', esc_html__( 'Cart items has been updated successfully!', 'orchid-store' ) ) ) {
+		if ( get_theme_mod( 'orchid_store_field_cart_update_message', esc_html__( 'Cart items has been updated successfully!', 'orchid-store' ) ) ) {
 
 			$script_obj['cart_updated_message'] = get_theme_mod( 'orchid_store_field_cart_update_message', esc_html__( 'Cart items has been updated successfully!', 'orchid-store' ) );
 		}
 
-		if( get_theme_mod( 'orchid_store_field_product_cols_in_mobile', 1 ) ) {
+		if ( get_theme_mod( 'orchid_store_field_product_cols_in_mobile', 1 ) ) {
 			$script_obj['product_cols_on_mobile'] = get_theme_mod( 'orchid_store_field_product_cols_in_mobile', 1 );
 		}
 
 		if ( get_theme_mod( 'orchid_store_field_display_plus_minus_btns', true ) ) {
 			$script_obj['displayPlusMinusBtns'] = get_theme_mod( 'orchid_store_field_display_plus_minus_btns', true );
 		}
+
+		if ( get_theme_mod( 'orchid_store_field_cart_display', 'default' ) ) {
+			$script_obj['cartDisplay'] = get_theme_mod( 'orchid_store_field_cart_display', 'default' );
+		}		
 	}
 
 	wp_localize_script( 'orchid-store-bundle', 'orchid_store_obj', $script_obj );
@@ -199,6 +203,46 @@ function orchid_store_admin_enqueue( $hook ) {
 	wp_enqueue_script( 'orchid-store-admin-script', get_template_directory_uri() . '/admin/js/admin-script.js', array( 'jquery' ), ORCHID_STORE_VERSION, true );
 }
 add_action( 'admin_enqueue_scripts', 'orchid_store_admin_enqueue' );
+
+add_action( 'wp_ajax_wp_ajax_install_plugin', 'wp_ajax_install_plugin' );
+
+
+
+
+
+/**
+ * Activates plugin AFC plugin.
+ * 
+ * @since 1.4.2
+ */
+function orchid_store_activate_plugin() {
+
+	$return_data = array(
+		'success' => false,
+		'message' => '',
+	);
+
+	if ( isset( $_POST['_ajax_nonce'] ) && ! wp_verify_nonce( $_POST['_ajax_nonce'], 'updates' ) ) {
+		$return_data['message'] = esc_html__( 'Invalid security token.', 'orchid-store' );
+		wp_send_json( $return_data );
+	}
+
+	$activation = activate_plugin( WP_PLUGIN_DIR . '/addonify-floating-cart/addonify-floating-cart.php' );
+
+	if ( ! is_wp_error( $activation ) ) {
+
+		$return_data['success'] = true;
+		$return_data['message'] = esc_html__( 'The plugin is activated successfully.', 'orchid-store' );
+	} else {
+
+		$return_data['message'] = $activation->get_error_message();
+	}
+	
+	wp_send_json( $return_data ); 
+}
+
+add_action( 'wp_ajax_orchid_store_activate_plugin', 'orchid_store_activate_plugin' );
+
 
 if( defined( 'ELEMENTOR_VERSION' ) ) {
 
