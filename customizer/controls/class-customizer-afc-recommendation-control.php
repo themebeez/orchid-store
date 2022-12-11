@@ -49,8 +49,8 @@ if ( ! class_exists( 'Orchid_Store_AFC_Recommendation_Control' ) ) {
 
 			$installed_plugins = get_plugins();
 			?>
-			<div class="orchid-store-afc-recommendation">
-				<div id="orchid-store-afc-install" class="orchid-store-afc-stat <?php echo ( ! isset( $installed_plugins['addonify-floating-cart/addonify-floating-cart.php'] ) ) ? 'afc-display' : 'afc-hide'; ?>">
+			<div class="os-afc-recommendation">
+				<div id="os-afc-install" class="os-afc-stat <?php echo ( ! isset( $installed_plugins['addonify-floating-cart/addonify-floating-cart.php'] ) ) ? 'afc-display' : 'afc-hide'; ?>">
 					<p>
 						<?php
 						printf(
@@ -60,12 +60,12 @@ if ( ! class_exists( 'Orchid_Store_AFC_Recommendation_Control' ) ) {
 						);
 						?>
 					</p>
-					<button id="orchid-store-install-afc" class="widefat button button-primary">
+					<button id="os-install-afc" class="widefat button button-primary">
 						<?php echo esc_html__( 'Install Now', 'orchid-store' ); ?>
 					</button>
 				</div>
 
-				<div id="orchid-store-afc-activate" class="orchid-store-afc-stat <?php echo ( isset( $installed_plugins['addonify-floating-cart/addonify-floating-cart.php'] ) && ! is_plugin_active( 'addonify-floating-cart/addonify-floating-cart.php' ) ) ? 'afc-display' : 'afc-hide'; ?>">
+				<div id="os-afc-activate" class="os-afc-stat <?php echo ( isset( $installed_plugins['addonify-floating-cart/addonify-floating-cart.php'] ) && ! is_plugin_active( 'addonify-floating-cart/addonify-floating-cart.php' ) ) ? 'afc-display' : 'afc-hide'; ?>">
 					<p>
 						<?php
 						printf(
@@ -75,10 +75,10 @@ if ( ! class_exists( 'Orchid_Store_AFC_Recommendation_Control' ) ) {
 						);
 						?>
 					</p>
-					<button id="orchid-store-activate-afc" class="widefat button button-primary"><?php echo esc_html__( 'Activate Now', 'orchid-store' ); ?></button>
+					<button id="os-activate-afc" class="widefat button button-primary"><?php echo esc_html__( 'Activate Now', 'orchid-store' ); ?></button>
 				</div>
 
-				<div id="orchid-store-afc-activated" class="orchid-store-afc-stat <?php echo ( isset( $installed_plugins['addonify-floating-cart/addonify-floating-cart.php'] ) && is_plugin_active( 'addonify-floating-cart/addonify-floating-cart.php' ) ) ? 'afc-display' : 'afc-hide'; ?>">
+				<div id="os-afc-activated" class="os-afc-stat <?php echo ( isset( $installed_plugins['addonify-floating-cart/addonify-floating-cart.php'] ) && is_plugin_active( 'addonify-floating-cart/addonify-floating-cart.php' ) ) ? 'afc-display' : 'afc-hide'; ?>">
 					<p>
 						<?php
 						printf(
@@ -91,7 +91,7 @@ if ( ! class_exists( 'Orchid_Store_AFC_Recommendation_Control' ) ) {
 					<a href="<?php echo esc_url( admin_url( 'admin.php?page=addonify_floating_cart' ) ); ?>" class="button button-primary os-afc-settings-link"><?php echo esc_html__( 'Configure Now', 'orchid-store' ); ?></a>
 				</div>
 
-				<div id="orchid-store-afc-error" class="afc-hide">
+				<div id="os-afc-error" class="afc-hide">
 					<p></p>
 				</div>
             </div>
