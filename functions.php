@@ -174,7 +174,7 @@ function orchid_store_scripts() {
 		}
 
 		if ( get_theme_mod( 'orchid_store_field_cart_display', 'default' ) ) {
-			$script_obj['cartDisplay'] = get_theme_mod( 'orchid_store_field_cart_display', 'default' );
+			$script_obj['cartDisplay'] = apply_filters( 'orchid_store_cart_display_filter', get_theme_mod( 'orchid_store_field_cart_display', 'default' ) );
 		}		
 	}
 
