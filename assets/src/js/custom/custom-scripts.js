@@ -8,18 +8,8 @@
 
         $(document.body).trigger('wc_fragment_refresh');
 
-
-        /*
-        ====================
-        = Add to compare button
-        ============================
-        */
-
-        $(".os-addtocompare-btn").on('click', function (e) {
-
-            e.preventDefault();
-        })
-
+        // Compare button functionality.
+        orchidStoreAddonifyCompare();
 
         /*
         ====================
@@ -543,6 +533,48 @@
             });
         });
 
+
+
+        /**
+         * Modify the compare button when product is added and removed from the compare list.
+         * 
+         * @since 1.4.2
+         */
+        function orchidStoreAddonifyCompare() {
+
+            // Prevent default behaviour of add to compare button.
+            $(".os-addtocompare-btn").on('click', function (e) {
+                e.preventDefault();
+            });
+
+            // Get products in the compare list from localstorage.
+            let comparelist = JSON.parse(localStorage.getItem('addonify_compare_products_plugin_product_ids'));
+            // Change the icon of buttons if products are in the compare list.
+            if (comparelist.length > 0) {
+                $.map(comparelist, function (value, index) {
+                    if ($(".os-addtocompare-btn[data-product_id='" + value + "']").length > 0) {
+                        $(".os-addtocompare-btn[data-product_id='" + value + "']").find('.bx').removeClass('bx-layer').addClass('bxs-layer');
+                    }
+                });
+            }
+
+            // Change the icon of button if a product is added into the compare list.
+            $(document).on('addonify_added_to_comparelist', function (event, data) {
+                if ($(".os-addtocompare-btn[data-product_id='" + data.productID + "']")) {
+                    $(".os-addtocompare-btn[data-product_id='" + data.productID + "']").find('.bx').removeClass('bx-layer').addClass('bxs-layer');
+                }
+            });
+
+            // Change the icon of button if a product is removed from the compare list. Remove 'disabled' attribute and 'selected' class.
+            $(document).on('addonify_removed_from_comparelist', function (event, data) {
+                if ($(".os-addtocompare-btn[data-product_id='" + data.productID + "']")) {
+                    let addToCompareBtn = $(".os-addtocompare-btn[data-product_id='" + data.productID + "']");
+                    addToCompareBtn.removeClass('selected').removeAttr('disabled');
+                    addToCompareBtn.find('.bx').removeClass('bxs-layer').addClass('bx-layer');
+                }
+            });            
+        }
+        
     });
 
 })(jQuery);
