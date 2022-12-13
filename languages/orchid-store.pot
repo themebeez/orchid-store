@@ -1,23 +1,41 @@
-# Copyright (C) 2022 Orchid Store
-# This file is distributed under the same license as the Orchid Store package.
+# Copyright (C) 2022 themebeez
+# This file is distributed under the GNU General Public License v2 or Later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orchid Store\n"
+"Project-Id-Version: Orchid Store 1.4.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/orchid-store\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Content-Transfer-Econdig: 8bit\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"MIME-Version: 1.0\n"
-"Project-Id-Version: Orchid Store\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2022-12-13T09:11:52+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.7.1\n"
+"X-Domain: orchid-store\n"
 
-#: 404.php:28, 404.php:28, customizer/functions/customizer-fields.php:440
+#. Theme Name of the theme
+msgid "Orchid Store"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://themebeez.com/themes/orchid-store/"
+msgstr ""
+
+#. Description of the theme
+msgid "Orchid Store is a clean, flexible, stylish & dynamic e-commerce WordPress theme. It is totally based on WooCommerce, WordPress plugin. Orchid Store can be used to build a wide range of online stores ranging from a fashion store, mobile and gadget store, furniture shop, sports shop, home décor store, jewellery store or any kind of multi-category online shop. Orchid Store has adequate built-in features that are required to build an online shop or stores. Orchid Store gives users the flexible customization experience for crafting their online shop with ease. Customization in Orchid Store is so simple that it can easily be tuned from WordPress live customizer. Orchid Store is fully widgetized where one can easily drag & drop widgets to their respective widget areas to display website sections at front-end. If you are looking to extend your online store with the page builder, you can easily do it using Elementor page builder. If you are wondering how Orchid Store looks, please do kindly visit https://themebeez.com/themes/orchid-store/ for live demo preview. Do kindly visit https://themebeez.com/docs/orchid-store-theme-documentation/ if you would need a theme setup documentation guide."
+msgstr ""
+
+#. Author of the theme
+msgid "themebeez"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://themebeez.com"
+msgstr ""
+
+#: 404.php:28
+#: customizer/functions/customizer-fields.php:440
 msgid "4"
 msgstr ""
 
@@ -33,6 +51,11 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr ""
 
+#. translators: 1: title.
+#: comments.php:35
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
 #. translators: 1: comment count number, 2: title.
 #: comments.php:41
 msgctxt "comments title"
@@ -41,378 +64,8 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:35
-msgid "One thought on &ldquo;%1$s&rdquo;"
-msgstr ""
-
 #: comments.php:66
 msgid "Comments are closed."
-msgstr ""
-
-#: functions.php:53
-msgid "Primary Menu"
-msgstr ""
-
-#: functions.php:54
-msgid "Secondary Menu"
-msgstr ""
-
-#: functions.php:55, customizer/functions/customizer-fields.php:269
-msgid "Top Header Menu"
-msgstr ""
-
-#: functions.php:155, customizer/functions/customizer-defaults.php:147
-msgid "Product successfully added to cart!"
-msgstr ""
-
-#: functions.php:160, customizer/functions/customizer-defaults.php:148
-msgid "Product has been removed from your cart!"
-msgstr ""
-
-#: functions.php:165, customizer/functions/customizer-defaults.php:149
-msgid "Cart items has been updated successfully!"
-msgstr ""
-
-#: functions.php:226
-msgid "Invalid security token."
-msgstr ""
-
-#: functions.php:235
-msgid "The plugin is activated successfully."
-msgstr ""
-
-#: header.php:31
-msgid "Skip to content"
-msgstr ""
-
-#. translators: %s: search query.
-#. translators: %s: search query.
-#: search.php:35, inc/custom-hooks.php:470
-msgid "Search Results for: %s"
-msgstr ""
-
-#: customizer/customizer.php:70
-msgid "Orchid Store Pro"
-msgstr ""
-
-#: customizer/customizer.php:71
-msgid "Go Pro"
-msgstr ""
-
-#: customizer/customizer.php:90
-msgid "Site Title Color"
-msgstr ""
-
-#: customizer/customizer.php:93, customizer/customizer.php:172
-msgid "Background"
-msgstr ""
-
-#: customizer/customizer.php:103
-msgid "Header is used as background image for breadcrumb"
-msgstr ""
-
-#: customizer/customizer.php:167
-msgid "Logo Setup"
-msgstr ""
-
-#: customizer/customizer.php:168
-msgid "Favicon"
-msgstr ""
-
-#: customizer/customizer.php:169
-msgid "Homepage Content"
-msgstr ""
-
-#: customizer/customizer.php:170
-msgid "Post Metas"
-msgstr ""
-
-#: customizer/customizer.php:171, inc/custom-fields.php:26
-msgid "Sidebar Position"
-msgstr ""
-
-#: customizer/customizer.php:173
-msgid "Body Background"
-msgstr ""
-
-#: customizer/customizer.php:176
-msgid "Installing..."
-msgstr ""
-
-#: customizer/customizer.php:177
-msgid "Installed"
-msgstr ""
-
-#: customizer/customizer.php:178
-msgid "Activating..."
-msgstr ""
-
-#: customizer/customizer.php:179
-msgid "Activated"
-msgstr ""
-
-#: inc/custom-fields.php:49, widget/widgets/advertisement-widget.php:189
-msgid "Right"
-msgstr ""
-
-#: inc/custom-fields.php:50, widget/widgets/advertisement-widget.php:187
-msgid "Left"
-msgstr ""
-
-#: inc/custom-fields.php:51
-msgid "Fullwidth"
-msgstr ""
-
-#: inc/custom-hooks.php:300
-msgid "Previous"
-msgstr ""
-
-#: inc/custom-hooks.php:301
-msgid "Next"
-msgstr ""
-
-#: inc/custom-hooks.php:326
-msgid "Prev post"
-msgstr ""
-
-#: inc/custom-hooks.php:336
-msgid "Next post"
-msgstr ""
-
-#. translators: 1: theme name, 2: theme author
-#: inc/custom-hooks.php:409
-msgid "%1$s Theme by %2$s"
-msgstr ""
-
-#: inc/custom-hooks.php:406
-msgid "%1$s %2$s Theme by %3$s"
-msgstr ""
-
-#: inc/ebwp-notice.php:288
-msgid "Thank You !!!"
-msgstr ""
-
-#. translators: %s is the Everest Backup plugin name wrapped with html.
-#: inc/ebwp-notice.php:295
-msgid "%s has been installed and activated successfully."
-msgstr ""
-
-#: inc/ebwp-notice.php:354
-msgid "Your website is super precious !"
-msgstr ""
-
-#. translators: %s is the Everest Backup plugin name wrapped with html.
-#: inc/ebwp-notice.php:364
-msgid "You are just one step away. Please activate %s plugin and backup your website to keep your data safe and secure."
-msgstr ""
-
-#: inc/ebwp-notice.php:361
-msgid "The best way to protect your website is by using %s plugin to keep your data safe and secure to remote storage.."
-msgstr ""
-
-#: inc/ebwp-notice.php:386
-msgid "Activate Plugin"
-msgstr ""
-
-#: inc/ebwp-notice.php:378
-msgid "Install & Activate"
-msgstr ""
-
-#: inc/ebwp-notice.php:379
-msgid "Remind me later"
-msgstr ""
-
-#: inc/ebwp-notice.php:380
-msgid "Don't show this again"
-msgstr ""
-
-#: inc/theme-functions.php:272
-msgid "Search for:"
-msgstr ""
-
-#: inc/theme-functions.php:272
-msgctxt "placeholder"
-msgid "Type here to search"
-msgstr ""
-
-#: inc/woocommerce-hooks.php:83
-msgid "Total:"
-msgstr ""
-
-#: inc/woocommerce-hooks.php:166
-msgid "Login / Register"
-msgstr ""
-
-#: inc/woocommerce-hooks.php:162
-msgid "My account"
-msgstr ""
-
-#: inc/woocommerce-hooks.php:191
-msgid "My Wishlist"
-msgstr ""
-
-#: inc/woocommerce-hooks.php:315
-msgid "Quick View"
-msgstr ""
-
-#: inc/woocommerce-hooks.php:350
-msgid "Already in wishlist"
-msgstr ""
-
-#: inc/woocommerce-hooks.php:350
-msgid "Add to wishlist"
-msgstr ""
-
-#: inc/woocommerce-hooks.php:444
-msgid "Compare"
-msgstr ""
-
-#: inc/woocommerce.php:195
-msgid "View your shopping cart"
-msgstr ""
-
-#. translators: number of items in the mini cart.
-#: inc/woocommerce.php:199
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
-
-#: template-parts/content-none.php:14
-msgid "Nothing Found"
-msgstr ""
-
-#: template-parts/content-none.php:44
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr ""
-
-#: template-parts/content-none.php:37
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr ""
-
-#. translators: 1: link to WP admin new post page.
-#: template-parts/content-none.php:24, widget/widgets/posts-widget.php:147
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: template-parts/content-page.php:40, template-parts/content-single.php:87
-msgid "Pages:"
-msgstr ""
-
-#. translators: %s: Name of current post. Only visible to screen readers
-#. translators: %s: Name of current post. Only visible to screen readers
-#: template-parts/content-page.php:51, template-parts/content-single.php:107
-msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr ""
-
-#: third-party/breadcrumbs.php:264
-msgid "Browse:"
-msgstr ""
-
-#: third-party/breadcrumbs.php:265
-msgctxt "breadcrumbs aria label"
-msgid "Breadcrumbs"
-msgstr ""
-
-#: third-party/breadcrumbs.php:266
-msgid "Home"
-msgstr ""
-
-#: third-party/breadcrumbs.php:267
-msgid "404 Not Found"
-msgstr ""
-
-#: third-party/breadcrumbs.php:268
-msgid "Archives"
-msgstr ""
-
-#. translators: %s is the search query.
-#: third-party/breadcrumbs.php:270
-msgid "Search results for: %s"
-msgstr ""
-
-#. translators: %s is the page number.
-#: third-party/breadcrumbs.php:272
-msgid "Page %s"
-msgstr ""
-
-#. translators: %s is the page number.
-#: third-party/breadcrumbs.php:274
-msgid "Comment Page %s"
-msgstr ""
-
-#. translators: Minute archive title. %s is the minute time format.
-#: third-party/breadcrumbs.php:276
-msgid "Minute %s"
-msgstr ""
-
-#. translators: Weekly archive title. %s is the week date format.
-#: third-party/breadcrumbs.php:278
-msgid "Week %s"
-msgstr ""
-
-#: third-party/breadcrumbs.php:738
-msgctxt "minute and hour archives time format"
-msgid "g:i a"
-msgstr ""
-
-#: third-party/breadcrumbs.php:755
-msgctxt "minute archives time format"
-msgid "i"
-msgstr ""
-
-#: third-party/breadcrumbs.php:772
-msgctxt "hour archives time format"
-msgid "g a"
-msgstr ""
-
-#: third-party/breadcrumbs.php:788, third-party/breadcrumbs.php:817, third-party/breadcrumbs.php:844, third-party/breadcrumbs.php:871, third-party/breadcrumbs.php:1211
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: third-party/breadcrumbs.php:789, third-party/breadcrumbs.php:845, third-party/breadcrumbs.php:1215
-msgctxt "monthly archives date format"
-msgid "F"
-msgstr ""
-
-#: third-party/breadcrumbs.php:790, third-party/breadcrumbs.php:1219
-msgctxt "daily archives date format"
-msgid "j"
-msgstr ""
-
-#: third-party/breadcrumbs.php:818
-msgctxt "weekly archives date format"
-msgid "W"
-msgstr ""
-
-#: widget/widgets-init.php:14, customizer/functions/customizer-fields.php:147, customizer/functions/customizer-fields.php:472
-msgid "Sidebar"
-msgstr ""
-
-#: widget/widgets-init.php:16, widget/widgets-init.php:26, widget/widgets-init.php:45
-msgid "Add widgets here."
-msgstr ""
-
-#: widget/widgets-init.php:24
-msgid "Frontpage Widget Area"
-msgstr ""
-
-#. translators: %s: number of footer widget area.
-#: widget/widgets-init.php:43
-msgid "Footer %s"
-msgstr ""
-
-#: widget/widgets-init.php:55
-msgid "Woocommerce Sidebar"
-msgstr ""
-
-#: widget/widgets-init.php:57
-msgid "Add woocommerce widgets here."
-msgstr ""
-
-#: woocommerce/product-searchform.php:25
-msgid "Search products&hellip;"
 msgstr ""
 
 #. translators: 1: plugin name.
@@ -446,8 +99,89 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:67, customizer/functions/customizer-fields.php:84
+#: customizer/customizer.php:70
+msgid "Orchid Store Pro"
+msgstr ""
+
+#: customizer/customizer.php:71
+msgid "Go Pro"
+msgstr ""
+
+#: customizer/customizer.php:90
+msgid "Site Title Color"
+msgstr ""
+
+#: customizer/customizer.php:93
+#: customizer/customizer.php:172
+msgid "Background"
+msgstr ""
+
+#: customizer/customizer.php:103
+msgid "Header is used as background image for breadcrumb"
+msgstr ""
+
+#: customizer/customizer.php:167
+msgid "Logo Setup"
+msgstr ""
+
+#: customizer/customizer.php:168
+msgid "Favicon"
+msgstr ""
+
+#: customizer/customizer.php:169
+msgid "Homepage Content"
+msgstr ""
+
+#: customizer/customizer.php:170
+msgid "Post Metas"
+msgstr ""
+
+#: customizer/customizer.php:171
+#: inc/custom-fields.php:26
+msgid "Sidebar Position"
+msgstr ""
+
+#: customizer/customizer.php:173
+msgid "Body Background"
+msgstr ""
+
+#: customizer/customizer.php:176
+msgid "Installing..."
+msgstr ""
+
+#: customizer/customizer.php:177
+msgid "Installed"
+msgstr ""
+
+#: customizer/customizer.php:178
+msgid "Activating..."
+msgstr ""
+
+#: customizer/customizer.php:179
+msgid "Activated"
+msgstr ""
+
+#: customizer/functions/customizer-defaults.php:67
+#: customizer/functions/customizer-fields.php:84
 msgid "Special Menu"
+msgstr ""
+
+#: customizer/functions/customizer-defaults.php:147
+#: functions.php:153
+#: functions.php:155
+msgid "Product successfully added to cart!"
+msgstr ""
+
+#: customizer/functions/customizer-defaults.php:148
+#: functions.php:158
+#: functions.php:160
+msgid "Product has been removed from your cart!"
+msgstr ""
+
+#: customizer/functions/customizer-defaults.php:149
+#: functions.php:163
+#: functions.php:165
+msgid "Cart items has been updated successfully!"
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:12
@@ -514,6 +248,12 @@ msgstr ""
 msgid "Page Single"
 msgstr ""
 
+#: customizer/functions/customizer-fields.php:147
+#: customizer/functions/customizer-fields.php:472
+#: widget/widgets-init.php:14
+msgid "Sidebar"
+msgstr ""
+
 #: customizer/functions/customizer-fields.php:154
 msgid "Footer"
 msgstr ""
@@ -558,7 +298,9 @@ msgstr ""
 msgid "Slug"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:252, widget/widgets/products-filter.php:340, widget/widgets/products-widget.php:382
+#: customizer/functions/customizer-fields.php:252
+#: widget/widgets/products-filter.php:340
+#: widget/widgets/products-widget.php:382
 msgid "ID"
 msgstr ""
 
@@ -583,10 +325,16 @@ msgid "Select Top Header Left Element"
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:269
+#: functions.php:55
+msgid "Top Header Menu"
+msgstr ""
+
+#: customizer/functions/customizer-fields.php:269
 msgid "Login/Register Link"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:271, widget/widgets/about-widget.php:271
+#: customizer/functions/customizer-fields.php:271
+#: widget/widgets/about-widget.php:271
 msgid "Social Links"
 msgstr ""
 
@@ -658,23 +406,38 @@ msgstr ""
 msgid "Display Wishlist Items Count"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:365, customizer/functions/customizer-fields.php:377, customizer/functions/customizer-fields.php:388, customizer/functions/customizer-fields.php:404
+#: customizer/functions/customizer-fields.php:365
+#: customizer/functions/customizer-fields.php:377
+#: customizer/functions/customizer-fields.php:388
+#: customizer/functions/customizer-fields.php:404
 msgid "Display Featured Image"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:366, customizer/functions/customizer-fields.php:378, customizer/functions/customizer-fields.php:389, customizer/functions/customizer-fields.php:405
+#: customizer/functions/customizer-fields.php:366
+#: customizer/functions/customizer-fields.php:378
+#: customizer/functions/customizer-fields.php:389
+#: customizer/functions/customizer-fields.php:405
 msgid "Display Categories"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:367, customizer/functions/customizer-fields.php:379, customizer/functions/customizer-fields.php:390, customizer/functions/customizer-fields.php:406, widget/widgets/posts-widget.php:223
+#: customizer/functions/customizer-fields.php:367
+#: customizer/functions/customizer-fields.php:379
+#: customizer/functions/customizer-fields.php:390
+#: customizer/functions/customizer-fields.php:406
+#: widget/widgets/posts-widget.php:223
 msgid "Display Date"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:368, customizer/functions/customizer-fields.php:380, customizer/functions/customizer-fields.php:391, customizer/functions/customizer-fields.php:407
+#: customizer/functions/customizer-fields.php:368
+#: customizer/functions/customizer-fields.php:380
+#: customizer/functions/customizer-fields.php:391
+#: customizer/functions/customizer-fields.php:407
 msgid "Display Author"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:369, customizer/functions/customizer-fields.php:381, customizer/functions/customizer-fields.php:392
+#: customizer/functions/customizer-fields.php:369
+#: customizer/functions/customizer-fields.php:381
+#: customizer/functions/customizer-fields.php:392
 msgid "Select Sidebar Position"
 msgstr ""
 
@@ -694,7 +457,8 @@ msgstr ""
 msgid "Display Tags"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:410, customizer/functions/customizer-fields.php:419
+#: customizer/functions/customizer-fields.php:410
+#: customizer/functions/customizer-fields.php:419
 msgid "Enable Common Sidebar Position"
 msgstr ""
 
@@ -702,7 +466,8 @@ msgstr ""
 msgid "This option enables common sidebar position for all the posts."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:411, customizer/functions/customizer-fields.php:420
+#: customizer/functions/customizer-fields.php:411
+#: customizer/functions/customizer-fields.php:420
 msgid "Select Common Sidebar Position"
 msgstr ""
 
@@ -750,11 +515,13 @@ msgstr ""
 msgid "Select Footer Widget Area Columns"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:440, customizer/functions/customizer-fields.php:668
+#: customizer/functions/customizer-fields.php:440
+#: customizer/functions/customizer-fields.php:668
 msgid "1"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:440, customizer/functions/customizer-fields.php:669
+#: customizer/functions/customizer-fields.php:440
+#: customizer/functions/customizer-fields.php:669
 msgid "2"
 msgstr ""
 
@@ -886,6 +653,719 @@ msgstr ""
 msgid "Add Item"
 msgstr ""
 
+#: functions.php:53
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:54
+msgid "Secondary Menu"
+msgstr ""
+
+#: functions.php:226
+msgid "Invalid security token."
+msgstr ""
+
+#: functions.php:235
+msgid "The plugin is activated successfully."
+msgstr ""
+
+#: header.php:31
+msgid "Skip to content"
+msgstr ""
+
+#: inc/custom-fields.php:49
+#: widget/widgets/advertisement-widget.php:189
+msgid "Right"
+msgstr ""
+
+#: inc/custom-fields.php:50
+#: widget/widgets/advertisement-widget.php:187
+msgid "Left"
+msgstr ""
+
+#: inc/custom-fields.php:51
+msgid "Fullwidth"
+msgstr ""
+
+#: inc/custom-hooks.php:300
+msgid "Previous"
+msgstr ""
+
+#: inc/custom-hooks.php:301
+msgid "Next"
+msgstr ""
+
+#: inc/custom-hooks.php:326
+msgid "Prev post"
+msgstr ""
+
+#: inc/custom-hooks.php:336
+msgid "Next post"
+msgstr ""
+
+#. translators: 1: copyright text, 2: theme name, 3: theme author
+#: inc/custom-hooks.php:406
+msgid "%1$s %2$s Theme by %3$s"
+msgstr ""
+
+#. translators: 1: theme name, 2: theme author
+#: inc/custom-hooks.php:409
+msgid "%1$s Theme by %2$s"
+msgstr ""
+
+#. translators: %s: search query.
+#: inc/custom-hooks.php:470
+#: search.php:35
+msgid "Search Results for: %s"
+msgstr ""
+
+#: inc/ebwp-notice.php:288
+msgid "Thank You !!!"
+msgstr ""
+
+#. translators: %s is the Everest Backup plugin name wrapped with html.
+#: inc/ebwp-notice.php:295
+msgid "%s has been installed and activated successfully."
+msgstr ""
+
+#: inc/ebwp-notice.php:354
+msgid "Your website is super precious !"
+msgstr ""
+
+#. translators: %s is the Everest Backup plugin name wrapped with html.
+#: inc/ebwp-notice.php:361
+msgid "The best way to protect your website is by using %s plugin to keep your data safe and secure to remote storage.."
+msgstr ""
+
+#. translators: %s is the Everest Backup plugin name wrapped with html.
+#: inc/ebwp-notice.php:364
+msgid "You are just one step away. Please activate %s plugin and backup your website to keep your data safe and secure."
+msgstr ""
+
+#: inc/ebwp-notice.php:378
+msgid "Install & Activate"
+msgstr ""
+
+#: inc/ebwp-notice.php:379
+msgid "Remind me later"
+msgstr ""
+
+#: inc/ebwp-notice.php:380
+msgid "Don't show this again"
+msgstr ""
+
+#: inc/ebwp-notice.php:386
+msgid "Activate Plugin"
+msgstr ""
+
+#. translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language.
+#: inc/theme-functions.php:28
+msgctxt "Inter font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/theme-functions.php:272
+msgid "Search for:"
+msgstr ""
+
+#: inc/theme-functions.php:272
+msgctxt "placeholder"
+msgid "Type here to search"
+msgstr ""
+
+#: inc/woocommerce-hooks.php:83
+msgid "Total:"
+msgstr ""
+
+#: inc/woocommerce-hooks.php:162
+msgid "My account"
+msgstr ""
+
+#: inc/woocommerce-hooks.php:166
+msgid "Login / Register"
+msgstr ""
+
+#: inc/woocommerce-hooks.php:191
+msgid "My Wishlist"
+msgstr ""
+
+#: inc/woocommerce-hooks.php:315
+msgid "Quick View"
+msgstr ""
+
+#: inc/woocommerce-hooks.php:350
+msgid "Already in wishlist"
+msgstr ""
+
+#: inc/woocommerce-hooks.php:350
+msgid "Add to wishlist"
+msgstr ""
+
+#: inc/woocommerce-hooks.php:444
+msgid "Compare"
+msgstr ""
+
+#: inc/woocommerce.php:195
+msgid "View your shopping cart"
+msgstr ""
+
+#. translators: number of items in the mini cart.
+#: inc/woocommerce.php:199
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:24
+#: widget/widgets/posts-widget.php:147
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:37
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:40
+#: template-parts/content-single.php:87
+msgid "Pages:"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content-page.php:51
+#: template-parts/content-single.php:107
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: third-party/breadcrumbs.php:264
+msgid "Browse:"
+msgstr ""
+
+#: third-party/breadcrumbs.php:265
+msgctxt "breadcrumbs aria label"
+msgid "Breadcrumbs"
+msgstr ""
+
+#: third-party/breadcrumbs.php:266
+msgid "Home"
+msgstr ""
+
+#: third-party/breadcrumbs.php:267
+msgid "404 Not Found"
+msgstr ""
+
+#: third-party/breadcrumbs.php:268
+msgid "Archives"
+msgstr ""
+
+#. Translators: %s is the search query.
+#: third-party/breadcrumbs.php:270
+msgid "Search results for: %s"
+msgstr ""
+
+#. Translators: %s is the page number.
+#: third-party/breadcrumbs.php:272
+msgid "Page %s"
+msgstr ""
+
+#. Translators: %s is the page number.
+#: third-party/breadcrumbs.php:274
+msgid "Comment Page %s"
+msgstr ""
+
+#. Translators: Minute archive title. %s is the minute time format.
+#: third-party/breadcrumbs.php:276
+msgid "Minute %s"
+msgstr ""
+
+#. Translators: Weekly archive title. %s is the week date format.
+#: third-party/breadcrumbs.php:278
+msgid "Week %s"
+msgstr ""
+
+#: third-party/breadcrumbs.php:738
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr ""
+
+#: third-party/breadcrumbs.php:755
+msgctxt "minute archives time format"
+msgid "i"
+msgstr ""
+
+#: third-party/breadcrumbs.php:772
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr ""
+
+#: third-party/breadcrumbs.php:788
+#: third-party/breadcrumbs.php:817
+#: third-party/breadcrumbs.php:844
+#: third-party/breadcrumbs.php:871
+#: third-party/breadcrumbs.php:1211
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: third-party/breadcrumbs.php:789
+#: third-party/breadcrumbs.php:845
+#: third-party/breadcrumbs.php:1215
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr ""
+
+#: third-party/breadcrumbs.php:790
+#: third-party/breadcrumbs.php:1219
+msgctxt "daily archives date format"
+msgid "j"
+msgstr ""
+
+#: third-party/breadcrumbs.php:818
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:334
+msgid "Install Required Plugins"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:335
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: third-party/class-tgm-plugin-activation.php:337
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: third-party/class-tgm-plugin-activation.php:339
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:340
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#: third-party/class-tgm-plugin-activation.php:341
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: third-party/class-tgm-plugin-activation.php:347
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: third-party/class-tgm-plugin-activation.php:353
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: third-party/class-tgm-plugin-activation.php:359
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: third-party/class-tgm-plugin-activation.php:365
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: third-party/class-tgm-plugin-activation.php:371
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: third-party/class-tgm-plugin-activation.php:377
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: third-party/class-tgm-plugin-activation.php:382
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: third-party/class-tgm-plugin-activation.php:387
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: third-party/class-tgm-plugin-activation.php:392
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:393
+#: third-party/class-tgm-plugin-activation.php:923
+#: third-party/class-tgm-plugin-activation.php:2647
+#: third-party/class-tgm-plugin-activation.php:3696
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:394
+#: third-party/class-tgm-plugin-activation.php:3275
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:395
+#: third-party/class-tgm-plugin-activation.php:3068
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name.
+#: third-party/class-tgm-plugin-activation.php:397
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: third-party/class-tgm-plugin-activation.php:399
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: third-party/class-tgm-plugin-activation.php:401
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:402
+msgid "Dismiss this notice"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:403
+msgid "There are one or more required or recommended plugins to install, update or activate."
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:404
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:610
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:611
+msgid "Update Required"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:728
+msgid "Set the parent_slug config variable instead."
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:1030
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:1030
+#: third-party/class-tgm-plugin-activation.php:1033
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:1033
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:1217
+#: third-party/class-tgm-plugin-activation.php:3064
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. translators: %s: version number
+#: third-party/class-tgm-plugin-activation.php:2078
+msgid "TGMPA v%s"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2387
+msgid "Required"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2390
+msgid "Recommended"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2406
+msgid "WordPress Repository"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2409
+msgid "External Source"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2412
+msgid "Pre-Packaged"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2429
+msgid "Not Installed"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2433
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2435
+msgid "Active"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2441
+msgid "Required Update not Available"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2444
+msgid "Requires Update"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2447
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: third-party/class-tgm-plugin-activation.php:2456
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: third-party/class-tgm-plugin-activation.php:2502
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: third-party/class-tgm-plugin-activation.php:2506
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: third-party/class-tgm-plugin-activation.php:2510
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: third-party/class-tgm-plugin-activation.php:2514
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: third-party/class-tgm-plugin-activation.php:2596
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2604
+msgid "Installed version:"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2612
+msgid "Minimum required version:"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2624
+msgid "Available version:"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2647
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2661
+msgid "Plugin"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2662
+msgid "Source"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2663
+msgid "Type"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2667
+msgid "Version"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2668
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: third-party/class-tgm-plugin-activation.php:2717
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: third-party/class-tgm-plugin-activation.php:2722
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: third-party/class-tgm-plugin-activation.php:2728
+msgid "Activate %2$s"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2800
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2833
+msgid "Install"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2839
+msgid "Update"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2842
+msgid "Activate"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2873
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2875
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2916
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:2918
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:3024
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:3050
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:3274
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: third-party/class-tgm-plugin-activation.php:3614
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: third-party/class-tgm-plugin-activation.php:3617
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: third-party/class-tgm-plugin-activation.php:3619
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:3623
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: third-party/class-tgm-plugin-activation.php:3625
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: third-party/class-tgm-plugin-activation.php:3625
+#: third-party/class-tgm-plugin-activation.php:3633
+msgid "Show Details"
+msgstr ""
+
+#. translators: 1: plugin name.
+#: third-party/class-tgm-plugin-activation.php:3625
+#: third-party/class-tgm-plugin-activation.php:3633
+msgid "Hide Details"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:3626
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: third-party/class-tgm-plugin-activation.php:3628
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:3631
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: third-party/class-tgm-plugin-activation.php:3633
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: third-party/class-tgm-plugin-activation.php:3634
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: third-party/class-tgm-plugin-activation.php:3636
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: widget/widgets-init.php:16
+#: widget/widgets-init.php:26
+#: widget/widgets-init.php:45
+msgid "Add widgets here."
+msgstr ""
+
+#: widget/widgets-init.php:24
+msgid "Frontpage Widget Area"
+msgstr ""
+
+#. translators: %s: number of footer widget area.
+#: widget/widgets-init.php:43
+msgid "Footer %s"
+msgstr ""
+
+#: widget/widgets-init.php:55
+msgid "Woocommerce Sidebar"
+msgstr ""
+
+#: widget/widgets-init.php:57
+msgid "Add woocommerce widgets here."
+msgstr ""
+
 #: widget/widgets/about-widget.php:17
 msgid "OS: About Widget"
 msgstr ""
@@ -894,7 +1374,17 @@ msgstr ""
 msgid "Displays Store About Information"
 msgstr ""
 
-#: widget/widgets/about-widget.php:200, widget/widgets/advertisement-widget.php:142, widget/widgets/banner-widget.php:212, widget/widgets/featured-product-categories.php:121, widget/widgets/posts-widget.php:187, widget/widgets/products-filter.php:211, widget/widgets/products-filter.php:341, widget/widgets/products-widget.php:226, widget/widgets/products-widget.php:383, widget/widgets/services-widget.php:102, widget/widgets/services-widget.php:123
+#: widget/widgets/about-widget.php:200
+#: widget/widgets/advertisement-widget.php:142
+#: widget/widgets/banner-widget.php:212
+#: widget/widgets/featured-product-categories.php:121
+#: widget/widgets/posts-widget.php:187
+#: widget/widgets/products-filter.php:211
+#: widget/widgets/products-filter.php:341
+#: widget/widgets/products-widget.php:226
+#: widget/widgets/products-widget.php:383
+#: widget/widgets/services-widget.php:102
+#: widget/widgets/services-widget.php:123
 msgid "Title"
 msgstr ""
 
@@ -906,11 +1396,19 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: widget/widgets/about-widget.php:236, widget/widgets/advertisement-widget.php:228, widget/widgets/banner-widget.php:309, widget/widgets/banner-widget.php:345, widget/widgets/services-widget.php:154
+#: widget/widgets/about-widget.php:236
+#: widget/widgets/advertisement-widget.php:228
+#: widget/widgets/banner-widget.php:309
+#: widget/widgets/banner-widget.php:345
+#: widget/widgets/services-widget.php:154
 msgid "Upload"
 msgstr ""
 
-#: widget/widgets/about-widget.php:237, widget/widgets/advertisement-widget.php:229, widget/widgets/banner-widget.php:310, widget/widgets/banner-widget.php:346, widget/widgets/services-widget.php:155
+#: widget/widgets/about-widget.php:237
+#: widget/widgets/advertisement-widget.php:229
+#: widget/widgets/banner-widget.php:310
+#: widget/widgets/banner-widget.php:346
+#: widget/widgets/services-widget.php:155
 msgid "Remove"
 msgstr ""
 
@@ -982,11 +1480,13 @@ msgstr ""
 msgid "Offer Text"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:173, widget/widgets/banner-widget.php:256
+#: widget/widgets/advertisement-widget.php:173
+#: widget/widgets/banner-widget.php:256
 msgid "Button Title"
 msgstr ""
 
-#: widget/widgets/advertisement-widget.php:178, widget/widgets/banner-widget.php:261
+#: widget/widgets/advertisement-widget.php:178
+#: widget/widgets/banner-widget.php:261
 msgid "Button Link"
 msgstr ""
 
@@ -1066,15 +1566,18 @@ msgid_plural "%s Products"
 msgstr[0] ""
 msgstr[1] ""
 
-#: widget/widgets/featured-product-categories.php:127, widget/widgets/products-filter.php:217
+#: widget/widgets/featured-product-categories.php:127
+#: widget/widgets/products-filter.php:217
 msgid "Product Categories"
 msgstr ""
 
-#: widget/widgets/featured-product-categories.php:128, widget/widgets/products-filter.php:218
+#: widget/widgets/featured-product-categories.php:128
+#: widget/widgets/products-filter.php:218
 msgid "Below are the list of product categories. Check on a category to set is as a filter item."
 msgstr ""
 
-#: widget/widgets/featured-product-categories.php:163, widget/widgets/products-filter.php:256
+#: widget/widgets/featured-product-categories.php:163
+#: widget/widgets/products-filter.php:256
 msgid "There are no product categories to select."
 msgstr ""
 
@@ -1118,43 +1621,54 @@ msgstr ""
 msgid "Number of Products For Each Category"
 msgstr ""
 
-#: widget/widgets/products-filter.php:273, widget/widgets/products-widget.php:290
+#: widget/widgets/products-filter.php:273
+#: widget/widgets/products-widget.php:290
 msgid "Hide Products Out of Stock"
 msgstr ""
 
-#: widget/widgets/products-filter.php:278, widget/widgets/products-widget.php:295
+#: widget/widgets/products-filter.php:278
+#: widget/widgets/products-widget.php:295
 msgid "Order"
 msgstr ""
 
-#: widget/widgets/products-filter.php:291, widget/widgets/products-widget.php:308
+#: widget/widgets/products-filter.php:291
+#: widget/widgets/products-widget.php:308
 msgid "Order By"
 msgstr ""
 
-#: widget/widgets/products-filter.php:331, widget/widgets/products-widget.php:373
+#: widget/widgets/products-filter.php:331
+#: widget/widgets/products-widget.php:373
 msgid "ASC"
 msgstr ""
 
-#: widget/widgets/products-filter.php:332, widget/widgets/products-widget.php:374
+#: widget/widgets/products-filter.php:332
+#: widget/widgets/products-widget.php:374
 msgid "DESC"
 msgstr ""
 
-#: widget/widgets/products-filter.php:339, widget/widgets/products-widget.php:270, widget/widgets/products-widget.php:381
+#: widget/widgets/products-filter.php:339
+#: widget/widgets/products-widget.php:270
+#: widget/widgets/products-widget.php:381
 msgid "None"
 msgstr ""
 
-#: widget/widgets/products-filter.php:342, widget/widgets/products-widget.php:384
+#: widget/widgets/products-filter.php:342
+#: widget/widgets/products-widget.php:384
 msgid "Name"
 msgstr ""
 
-#: widget/widgets/products-filter.php:343, widget/widgets/products-widget.php:385
+#: widget/widgets/products-filter.php:343
+#: widget/widgets/products-widget.php:385
 msgid "Date"
 msgstr ""
 
-#: widget/widgets/products-filter.php:344, widget/widgets/products-widget.php:386
+#: widget/widgets/products-filter.php:344
+#: widget/widgets/products-widget.php:386
 msgid "Menu Order"
 msgstr ""
 
-#: widget/widgets/products-filter.php:345, widget/widgets/products-widget.php:387
+#: widget/widgets/products-filter.php:345
+#: widget/widgets/products-widget.php:387
 msgid "Random"
 msgstr ""
 
@@ -1237,4 +1751,8 @@ msgstr ""
 
 #: woocommerce/loop/sale-flash.php:27
 msgid "Sale!"
+msgstr ""
+
+#: woocommerce/product-searchform.php:25
+msgid "Search products&hellip;"
 msgstr ""
