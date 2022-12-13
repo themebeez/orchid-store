@@ -174,8 +174,8 @@ function orchid_store_scripts() {
 		}
 
 		if ( get_theme_mod( 'orchid_store_field_cart_display', 'default' ) ) {
-			$script_obj['cartDisplay'] = apply_filters( 'orchid_store_cart_display_filter', get_theme_mod( 'orchid_store_field_cart_display', 'default' ) );
-		}		
+			$script_obj['cartDisplay'] = ( class_exists( 'Addonify_Floating_Cart' ) ) ? apply_filters( 'orchid_store_cart_display_filter', get_theme_mod( 'orchid_store_field_cart_display', 'default' ) ) : 'default';
+		}
 	}
 
 	wp_localize_script( 'orchid-store-bundle', 'orchid_store_obj', $script_obj );
@@ -274,7 +274,7 @@ require get_template_directory() . '/customizer/customizer.php';
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
-	
+
 	require get_template_directory() . '/inc/jetpack.php';
 }
 

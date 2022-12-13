@@ -72,8 +72,6 @@ if( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
 
 			return;
 		}
-
-        $cart_display = orchid_store_get_option( 'cart_display' );
 		?>
 		<div class="mini-cart">
             <button class="trigger-mini-cart">
@@ -88,7 +86,7 @@ if( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
 	            </span><!-- .price -->
             </span><!-- .cart-amount -->
             <?php
-            if ( ! is_cart() && ! is_checkout() && 'default' != $cart_display ) {
+            if ( ! is_cart() && ! is_checkout() ) {
                 ?>
                 <div class="mini-cart-open">
                     <div class="mini-cart-items">
@@ -427,13 +425,23 @@ if( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 
                     $addonify_compare_products_button_classes = array( 'os-tooltip', 'addonify-cp-button' );
 
-                    if ( addonify_compare_products_is_product_in_compare_cookie( $product->get_id() ) ) {
+                    $icon = 'bx bx-layer';
+
+                    if ( 
+                        function_exists( 'addonify_compare_products_is_product_in_compare_cookie' ) &&
+                        addonify_compare_products_is_product_in_compare_cookie( $product->get_id() )
+                    ) {
                         $addonify_compare_products_button_classes[] = 'selected';
-                    }
+                        $icon = 'bxs bxs-layer';
+                    } elseif ( 
+                        function_exists( 'addonify_compare_products_get_compare_products_list' ) &&
+                        in_array( $product->get_id(), addonify_compare_products_get_compare_products_list() )
+                    ) {
+                        $addonify_compare_products_button_classes[] = 'selected';
+                        $icon = 'bxs bxs-layer';
+                    } else {}
 
                     $tooltip_text = get_option( 'compare_products_btn_label', __( 'Compare', 'orchid-store' ) );
-
-                    $icon = ( addonify_compare_products_is_product_in_compare_cookie( $product->get_id() ) ) ? 'bx bx-layer' : 'bx bx-layer';
                     ?>
                     <li>
                         <a
