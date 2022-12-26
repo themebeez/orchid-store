@@ -350,66 +350,80 @@ if( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
                         $tooltip_text = ( addonify_wishlist_is_product_in_wishlist( $product->get_id() ) ) ? get_option( 'btn_label_if_added_to_wishlist', __( 'Already in wishlist', 'orchid-store' ) ) : get_option( 'addonify_wishlist_btn_label', __( 'Add to wishlist', 'orchid-store' ) );
 
                         $icon = ( addonify_wishlist_is_product_in_wishlist( $product->get_id() ) ) ? 'bx bxs-heart' : 'bx bx-heart';
+
+
+                        
+
+                        // if ( (int) addonify_wishlist_get_option( 'require_login' ) == 1 && ! is_user_logged_in() ) {
+
+                        // }
                         ?>
                         <li>
                             <?php
-                            if ( 
-                                (int) addonify_wishlist_get_option( 'require_login' ) == 1 &&
-			                    ! is_user_logged_in() 
-                            ) {
-                                $login_url = ( get_option( 'woocommerce_myaccount_page_id' ) ) ? get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) : wp_login_url();
-                                if ( $login_url ) {
-                                    ?>
-                                    <a 
-                                        href="<?php echo esc_url( $login_url ); ?>" 
-                                        class="<?php echo implode( ' ', $addonify_wishlist_button_classes ); ?>"
-                                        data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
-                                        data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"
-                                        data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
-                                    >
-                                        <span class="icon"><i class="<?php echo esc_attr( $icon ); ?>"></i></span>
-                                    </a>
-                                    <?php
+                            if ( ! is_user_logged_in() ) {
+
+                                if ( 1 === (int) addonify_wishlist_get_option( 'require_login' ) ) {
+
+                                    if ( 'show_popup' === addonify_wishlist_get_option( 'if_not_login_action' ) ) {
+
+                                        $addonify_wishlist_button_classes[] = 'os-addtowishlist-btn addonify-wishlist-login-popup-enabled';
+                                        ?>
+                                        <a
+                                            href="#"
+                                            class="<?php echo implode( ' ', $addonify_wishlist_button_classes ); ?>" 
+                                            data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
+                                            data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"
+                                            data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
+                                        >
+                                            <span class="icon"><i class="<?php echo esc_attr( $icon ); ?>"></i></span>
+                                        </a>
+                                        <?php
+                                    } else {
+                                        $login_url = ( get_option( 'woocommerce_myaccount_page_id' ) ) ? get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) : wp_login_url();
+                                        ?>
+                                        <a 
+                                            href="<?php echo esc_url( $login_url ); ?>" 
+                                            class="<?php echo implode( ' ', $addonify_wishlist_button_classes ); ?>"
+                                            data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
+                                            data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"
+                                            data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
+                                        >
+                                            <span class="icon"><i class="<?php echo esc_attr( $icon ); ?>"></i></span>
+                                        </a>
+                                        <?php
+                                    }                                    
                                 } else {
-                                    $addonify_wishlist_button_classes[] = 'addonify-wishlist-login-popup-enabled';
+                                    $addonify_wishlist_button_classes[] = 'os-addtowishlist-btn addonify-wishlist-ajax-add-to-wishlist';
                                     ?>
-                                    <button
+                                    <a
+                                        href="#"
                                         class="<?php echo implode( ' ', $addonify_wishlist_button_classes ); ?>" 
                                         data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
                                         data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"
                                         data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
                                     >
                                         <span class="icon"><i class="<?php echo esc_attr( $icon ); ?>"></i></span>
-                                    </button>
+                                    </a>
                                     <?php
                                 }
                             } else {
-
-                                if ( addonify_wishlist_get_option( 'after_add_to_wishlist_action' ) == 'show_popup_notice' ) {
-                                    ?>
-                                    <button 
-                                        class="<?php echo implode( ' ', $addonify_wishlist_button_classes ); ?>" 
-                                        data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
-                                        data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"
-                                        data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
-                                    >
-                                        <span class="icon"><i class="<?php echo esc_attr( $icon ); ?>"></i></span>
-                                    </button>
-                                    <?php
+                                $href = '#';
+                                if ( addonify_wishlist_get_option( 'after_add_to_wishlist_action' ) === 'redirect_to_wishlist_page' ) {
+                                    $href = '?addonify-add-to-wishlist=' . esc_attr( $product->get_id() );
                                 } else {
-                                    $addonify_wishlist_button_classes[] = 'addonify-wishlist-ajax-add-to-wishlist';
-                                    ?>
-                                    <a 
-                                        href="?addonify-add-to-wishlist=<?php echo esc_attr( $product->get_id() ); ?>"
-                                        class="<?php echo implode( ' ', $addonify_wishlist_button_classes ); ?>" 
-                                        data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
-                                        data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"
-                                        data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
-                                    >
-                                        <span class="icon"><i class="<?php echo esc_attr( $icon ); ?>"></i></span>
-                                    </a>
-                                    <?php
+                                    $addonify_wishlist_button_classes[] = 'os-addtowishlist-btn addonify-wishlist-ajax-add-to-wishlist';
                                 }
+                                ?>
+                                <a
+                                    href="<?php echo esc_url( $href ); ?>"
+                                    class="<?php echo implode( ' ', $addonify_wishlist_button_classes ); ?>" 
+                                    data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
+                                    data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"
+                                    data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
+                                >
+                                    <span class="icon"><i class="<?php echo esc_attr( $icon ); ?>"></i></span>
+                                </a>
+                                <?php
                             }
                             ?>
                         </li>

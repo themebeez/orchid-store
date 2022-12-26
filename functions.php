@@ -143,7 +143,9 @@ function orchid_store_scripts() {
 	wp_register_script( 'orchid-store-bundle', get_template_directory_uri() . '/assets/dist/js/bundle.min.js', array('jquery'), ORCHID_STORE_VERSION, true );
 
 	$script_obj = array(
-		'ajax_url' => esc_url( admin_url( 'admin-ajax.php' ) ),
+		'ajax_url'              => esc_url( admin_url( 'admin-ajax.php' ) ),
+		'homeUrl'               => esc_url( home_url() ),
+		'isUserLoggedIn'        => is_user_logged_in(),
 	);
 
 	$script_obj['scroll_top'] = orchid_store_get_option( 'display_scroll_top_button' );
@@ -175,6 +177,12 @@ function orchid_store_scripts() {
 
 		if ( get_theme_mod( 'orchid_store_field_cart_display', 'default' ) ) {
 			$script_obj['cartDisplay'] = ( class_exists( 'Addonify_Floating_Cart' ) ) ? apply_filters( 'orchid_store_cart_display_filter', get_theme_mod( 'orchid_store_field_cart_display', 'default' ) ) : 'default';
+		}
+
+		if ( class_exists( 'Addonify_Wishlist' ) ) {
+			$script_obj['addToWishlistText']     = get_option( 'addonify_wishlist_btn_label', 'Add to wishlist' );
+			$script_obj['addedToWishlistText']   = get_option( 'addonify_wishlist_btn_label_when_added_to_wishlist', 'Added to wishlist' );
+			$script_obj['alreadyInWishlistText'] = get_option( 'addonify_wishlist_btn_label_if_added_to_wishlist', 'Already in wishlist' );
 		}
 	}
 
