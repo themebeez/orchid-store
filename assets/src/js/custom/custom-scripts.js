@@ -4,12 +4,16 @@
 
     $(document).ready(function () {
 
+        // console.log(orchid_store_obj.homeUrl );
+
         // Trigger WooCommerce cart fragments.
 
         $(document.body).trigger('wc_fragment_refresh');
 
         // Compare button functionality.
         orchidStoreAddonifyCompare();
+
+        orchidStoreAddonifyWishlist();
 
         /*
         ====================
@@ -523,15 +527,75 @@
         }
 
 
-        // Update Wishlist item counts
+        
 
-        $(document).on('added_to_wishlist removed_from_wishlist addonify_added_to_wishlist addonify_removed_from_wishlist', function () {
-            $.get(orchid_store_obj.ajax_url, {
-                action: 'orchid_store_update_wishlist_count'
-            }, function (data) {
-                $('.wishlist-items-count').html(data.count);
+        function orchidStoreAddonifyWishlist() {
+
+            // Prevent default behaviour of add to compare button.
+            $(".os-addtowishlist-btn").on('click', function (e) {
+                e.preventDefault();
             });
-        });
+
+            if ( ! orchid_store_obj.isUserLoggedIn ) {
+                let wishlist = JSON.parse(localStorage.getItem('addonify-wishlist_' + orchid_store_obj.homeUrl + '_product_ids'));
+                if (wishlist.length > 0) {
+                    $.map(wishlist, function (value, index) {
+                        if ($(".os-addtowishlist-btn[data-product_id='" + value + "']").length > 0) {
+                            $(".os-addtowishlist-btn[data-product_id='" + value + "']").attr('data-tippy-content', orchid_store_obj.alreadyInWishlistText);
+                            $(".os-addtowishlist-btn[data-product_id='" + value + "']").find('.bx').removeClass('bx-heart').addClass('bxs-heart');
+                        }
+                    });
+                }
+                $('.wishlist-items-count').html(wishlist.length);
+            }
+            
+            
+
+            // Update Wishlist item counts
+            $(document).on('added_to_wishlist removed_from_wishlist', function () {
+                $.get(orchid_store_obj.ajax_url, {
+                    action: 'orchid_store_update_wishlist_count'
+                }, function (data) {
+                    $('.wishlist-items-count').html(data.count);
+                });
+            });
+
+            $(document).on('addonify_added_to_wishlist', function (event, data) {
+                if ($(".os-addtowishlist-btn[data-product_id='" + data.productID + "']")) {
+                    $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']").attr('data-tippy-content', orchid_store_obj.addedToWishlistText);
+                    $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']").find('.bx').removeClass('bx-heart').addClass('bxs-heart');
+                }
+                
+                if (orchid_store_obj.isUserLoggedIn ) {
+                    $.get(orchid_store_obj.ajax_url, {
+                        action: 'orchid_store_update_wishlist_count'
+                    }, function (data) {
+                        $('.wishlist-items-count').html(data.count);
+                    });
+                } else {
+                    let wishlist = JSON.parse(localStorage.getItem('addonify-wishlist_' + orchid_store_obj.homeUrl + '_product_ids'));
+                    $('.wishlist-items-count').html(wishlist.length);
+                }
+            });
+
+            $(document).on('addonify_removed_from_wishlist', function (event, data) {
+                if ($(".os-addtowishlist-btn[data-product_id='" + data.productID + "']")) {
+                    $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']").attr('data-tippy-content', orchid_store_obj.addToWishlistText);
+                    $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']").find('.bx').removeClass('bxs-heart').addClass('bx-heart');
+                }
+
+                if (orchid_store_obj.isUserLoggedIn) {
+                    $.get(orchid_store_obj.ajax_url, {
+                        action: 'orchid_store_update_wishlist_count'
+                    }, function (data) {
+                        $('.wishlist-items-count').html(data.count);
+                    });
+                } else {
+                    let wishlist = JSON.parse(localStorage.getItem('addonify-wishlist_' + orchid_store_obj.homeUrl + '_product_ids'));
+                    $('.wishlist-items-count').html(wishlist.length);
+                }
+            });
+        }
 
 
 
@@ -548,7 +612,7 @@
             });
 
             // Get products in the compare list from localstorage.
-            let comparelist = JSON.parse(localStorage.getItem('addonify_compare_products_plugin_product_ids'));
+            let comparelist = JSON.parse(localStorage.getItem('addonify_compare_products_plugin_product_ids' + '_' + orchid_store_obj.homeUrl));
             // Change the icon of buttons if products are in the compare list.
             if (comparelist.length > 0) {
                 $.map(comparelist, function (value, index) {
