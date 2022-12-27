@@ -538,15 +538,18 @@
 
             if ( ! orchid_store_obj.isUserLoggedIn ) {
                 let wishlist = JSON.parse(localStorage.getItem('addonify-wishlist_' + orchid_store_obj.homeUrl + '_product_ids'));
-                if (wishlist.length > 0) {
-                    $.map(wishlist, function (value, index) {
-                        if ($(".os-addtowishlist-btn[data-product_id='" + value + "']").length > 0) {
-                            $(".os-addtowishlist-btn[data-product_id='" + value + "']").attr('data-tippy-content', orchid_store_obj.alreadyInWishlistText);
-                            $(".os-addtowishlist-btn[data-product_id='" + value + "']").find('.bx').removeClass('bx-heart').addClass('bxs-heart');
-                        }
-                    });
+                console.log(wishlist);
+                if ( wishlist !== null ) {
+                    if (wishlist.length > 0 ) {
+                        $.map(wishlist, function (value, index) {
+                            if ($(".os-addtowishlist-btn[data-product_id='" + value + "']").length > 0) {
+                                $(".os-addtowishlist-btn[data-product_id='" + value + "']").attr('data-tippy-content', orchid_store_obj.alreadyInWishlistText);
+                                $(".os-addtowishlist-btn[data-product_id='" + value + "']").find('.bx').removeClass('bx-heart').addClass('bxs-heart');
+                            }
+                        });
+                    }
+                    $('.wishlist-items-count').html(wishlist.length);
                 }
-                $('.wishlist-items-count').html(wishlist.length);
             }
             
             
@@ -613,13 +616,16 @@
 
             // Get products in the compare list from localstorage.
             let comparelist = JSON.parse(localStorage.getItem('addonify_compare_products_plugin_product_ids' + '_' + orchid_store_obj.homeUrl));
+            console.log( comparelist );
             // Change the icon of buttons if products are in the compare list.
-            if (comparelist.length > 0) {
-                $.map(comparelist, function (value, index) {
-                    if ($(".os-addtocompare-btn[data-product_id='" + value + "']").length > 0) {
-                        $(".os-addtocompare-btn[data-product_id='" + value + "']").find('.bx').removeClass('bx-layer').addClass('bxs-layer');
-                    }
-                });
+            if (comparelist !== null) {
+                if ( comparelist.length > 0 ) {
+                    $.map(comparelist, function (value, index) {
+                        if ($(".os-addtocompare-btn[data-product_id='" + value + "']").length > 0) {
+                            $(".os-addtocompare-btn[data-product_id='" + value + "']").find('.bx').removeClass('bx-layer').addClass('bxs-layer');
+                        }
+                    });
+                }                
             }
 
             // Change the icon of button if a product is added into the compare list.
