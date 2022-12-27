@@ -145,11 +145,11 @@
 
         $('body').on('click', '.trigger-mini-cart', function (e) {
 
-            if ( orchid_store_obj.cartDisplay == 'default' ) {
+            if (orchid_store_obj.cartDisplay == 'default') {
                 openCart.toggleClass('display-block');
             }
-            
-            if ( orchid_store_obj.cartDisplay == 'floating_cart' ) {
+
+            if (orchid_store_obj.cartDisplay == 'floating_cart') {
                 document.body.classList.add('adfy__woofc-visible');
             }
         });
@@ -476,7 +476,7 @@
 
             var activeARel = activeA.attr('rel');
 
-            console.log(activeARel);
+            //console.log(activeARel);
 
             $(this).parents('div.tab-wrapper').find('div#' + activeARel).hide();
 
@@ -527,7 +527,7 @@
         }
 
 
-        
+
 
         function orchidStoreAddonifyWishlist() {
 
@@ -536,11 +536,11 @@
                 e.preventDefault();
             });
 
-            if ( ! orchid_store_obj.isUserLoggedIn ) {
+            if (!orchid_store_obj.isUserLoggedIn) {
                 let wishlist = JSON.parse(localStorage.getItem('addonify-wishlist_' + orchid_store_obj.homeUrl + '_product_ids'));
-                console.log(wishlist);
-                if ( wishlist !== null ) {
-                    if (wishlist.length > 0 ) {
+                //console.log(wishlist);
+                if (wishlist !== null) {
+                    if (wishlist.length > 0) {
                         $.map(wishlist, function (value, index) {
                             if ($(".os-addtowishlist-btn[data-product_id='" + value + "']").length > 0) {
                                 $(".os-addtowishlist-btn[data-product_id='" + value + "']").attr('data-tippy-content', orchid_store_obj.alreadyInWishlistText);
@@ -551,8 +551,8 @@
                     $('.wishlist-items-count').html(wishlist.length);
                 }
             }
-            
-            
+
+
 
             // Update Wishlist item counts
             $(document).on('added_to_wishlist removed_from_wishlist', function () {
@@ -568,8 +568,8 @@
                     $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']").attr('data-tippy-content', orchid_store_obj.addedToWishlistText);
                     $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']").find('.bx').removeClass('bx-heart').addClass('bxs-heart');
                 }
-                
-                if (orchid_store_obj.isUserLoggedIn ) {
+
+                if (orchid_store_obj.isUserLoggedIn) {
                     $.get(orchid_store_obj.ajax_url, {
                         action: 'orchid_store_update_wishlist_count'
                     }, function (data) {
@@ -616,16 +616,16 @@
 
             // Get products in the compare list from localstorage.
             let comparelist = JSON.parse(localStorage.getItem('addonify_compare_products_plugin_product_ids' + '_' + orchid_store_obj.homeUrl));
-            console.log( comparelist );
+            //console.log(comparelist);
             // Change the icon of buttons if products are in the compare list.
             if (comparelist !== null) {
-                if ( comparelist.length > 0 ) {
+                if (comparelist.length > 0) {
                     $.map(comparelist, function (value, index) {
                         if ($(".os-addtocompare-btn[data-product_id='" + value + "']").length > 0) {
                             $(".os-addtocompare-btn[data-product_id='" + value + "']").find('.bx').removeClass('bx-layer').addClass('bxs-layer');
                         }
                     });
-                }                
+                }
             }
 
             // Change the icon of button if a product is added into the compare list.
@@ -642,9 +642,9 @@
                     addToCompareBtn.removeClass('selected').removeAttr('disabled');
                     addToCompareBtn.find('.bx').removeClass('bxs-layer').addClass('bx-layer');
                 }
-            });            
+            });
         }
-        
+
     });
 
 })(jQuery);
