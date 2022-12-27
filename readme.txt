@@ -90,7 +90,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.4.2 - 26 December, 2022 ==
+== 1.4.2 - 27 December, 2022 ==
 
 - Added: Addonify Floating Cart recommendation in the customizer.
 - Modified: Floating cart is toggled if cart display is set as floating cart in the customizer. Else default minicart is displayed.

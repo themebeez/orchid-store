@@ -4,7 +4,9 @@
   "description": "=== Orchid Store ===",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "public": "gulp assets",
+    "zip": "gulp zip"
   },
   "repository": {
     "type": "git",
