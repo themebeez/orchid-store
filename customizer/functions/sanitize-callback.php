@@ -80,3 +80,20 @@ if( ! function_exists( 'orchid_store_sanitize_urls' ) ) {
         return $input;
     }
 }
+
+/**
+ * Sanitization callback function when there is no need for sanitization.
+ * 
+ * @since 1.4.2
+ */
+if ( ! function_exists( 'orchid_store_no_sanitize' ) ) {
+    /**
+     * Sanitization callback function when there is no need for sanitization.
+     * 
+     * @since 1.4.2
+     */
+    function orchid_store_no_sanitize( $input ) {
+
+        return $input;
+    }
+}

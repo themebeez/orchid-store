@@ -330,7 +330,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$wp_customize->add_setting(
 		'orchid_store_field_afc_plugin_recommendation',
 		array(
-			'sanitize_callback' => '',
+			'sanitize_callback' => 'orchid_store_no_sanitize',
 			'default'           => '',
 			'capability'        => 'edit_theme_options',
 		)
