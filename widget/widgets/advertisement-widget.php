@@ -245,7 +245,7 @@ if( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) :
 
             $instance['title']                      = sanitize_text_field( $new_instance['title'] );
 
-            $instance['show_offer_contents']        = isset( $new_instance['show_offer_contents'] ) ? wp_validate_boolean( $new_instance['show_offer_contents'] ) : false;
+            $instance['show_offer_contents']        = isset( $new_instance['show_offer_contents'] ) ? true : false;
 
             $instance['offer_title']                = sanitize_text_field( $new_instance['offer_title'] );
 
@@ -259,7 +259,7 @@ if( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) :
 
             $instance['offer_image']                = esc_url_raw( $new_instance['offer_image'] );
 
-            $instance['set_image_in_background']    = isset( $new_instance['set_image_in_background'] ) ? wp_validate_boolean( $new_instance['set_image_in_background'] ) : false;
+            $instance['set_image_in_background']    = isset( $new_instance['set_image_in_background'] ) ? true : false;
 
             return $instance;
         } 

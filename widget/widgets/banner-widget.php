@@ -374,9 +374,9 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
             $instance['button_links'] 	= isset( $new_instance['button_links'] ) ? array_map( 'esc_url_raw', $new_instance['button_links'] ) : array();
 
-            $instance['show_contents'] 	= isset( $new_instance['show_contents'] ) ? wp_validate_boolean( $new_instance['show_contents'] ) : false;
+            $instance['show_contents'] 	= isset( $new_instance['show_contents'] ) ? true : false;
 
-            $instance['enable_mask']    = isset( $new_instance['enable_mask'] ) ? wp_validate_boolean( $new_instance['enable_mask'] ) : false;
+            $instance['enable_mask']    = isset( $new_instance['enable_mask'] ) ? true : false;
 
             $instance['banner_img_1']   = esc_url_raw( $new_instance['banner_img_1'] );
 

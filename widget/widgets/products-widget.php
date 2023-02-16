@@ -358,7 +358,7 @@ if( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
 
             $instance['display_layout']         = sanitize_text_field( $new_instance['display_layout'] );
 
-            $instance['hide_out_of_stock_products']  = isset( $new_instance['hide_out_of_stock_products'] ) ? wp_validate_boolean( $new_instance['hide_out_of_stock_products'] ) : false;
+            $instance['hide_out_of_stock_products']  = isset( $new_instance['hide_out_of_stock_products'] ) ? true : false;
 
             $instance['order'] = ( array_key_exists( $new_instance['order'], $this->get_order_options() ) ) ? sanitize_text_field( $new_instance['order'] ) : 'DESC';
 
