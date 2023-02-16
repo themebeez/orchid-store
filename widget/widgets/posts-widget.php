@@ -230,17 +230,12 @@ if( ! class_exists( 'Orchid_Store_Post_Widget' ) ) :
      
             $instance = $old_instance;
 
-            $instance['title']              = sanitize_text_field( $new_instance['title'] );
-
-            $instance['no_of_posts']        = absint( $new_instance['no_of_posts'] );
-
-            $instance['show_excerpt']       = isset( $new_instance['show_excerpt'] ) ? wp_validate_boolean( $new_instance['show_excerpt'] ) : false;
-
-            $instance['show_categories']    = isset( $new_instance['show_categories'] ) ? wp_validate_boolean( $new_instance['show_categories'] ) : false;
-
-            $instance['show_author']        = isset( $new_instance['show_author'] ) ? wp_validate_boolean( $new_instance['show_author'] ) : false;
-
-            $instance['show_date']          = isset( $new_instance['show_date'] ) ? wp_validate_boolean( $new_instance['show_date'] ) : false;
+            $instance['title']           = sanitize_text_field( $new_instance['title'] );
+            $instance['no_of_posts']     = absint( $new_instance['no_of_posts'] );
+            $instance['show_excerpt']    = isset( $new_instance['show_excerpt'] ) ? true : false;
+            $instance['show_categories'] = isset( $new_instance['show_categories'] ) ? true : false;
+            $instance['show_author']     = isset( $new_instance['show_author'] ) ? true : false;
+            $instance['show_date']       = isset( $new_instance['show_date'] ) ? true : false;
 
             return $instance;
         } 

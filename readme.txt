@@ -5,7 +5,7 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 7.0.0
 Requires at least: 5.0.0
 Tested up to: 6.1.1
-Stable tag: 1.4.2
+Stable tag: 1.4.3
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -17,7 +17,7 @@ Orchid Store is a clean, flexible, stylish & dynamic e-commerce WordPress theme.
 
 == License ==
 
-Orchid Store, WordPress Theme, Copyright (C) 2022, themebeez.
+Orchid Store, WordPress Theme, Copyright (C) 2023, themebeez.
 Orchid Store is distributed under the terms of the GNU GPL
 
 
@@ -89,6 +89,10 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.4.3 - 16 February, 2023 ==
+
+- Fixed: Issues with saving values for checkbox options in widgets.
 
 == 1.4.2 - 27 December, 2022 ==
 
