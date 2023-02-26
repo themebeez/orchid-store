@@ -49,29 +49,40 @@ if ( ! function_exists( 'orchid_store_setup' ) ) :
 		add_image_size( 'orchid-store-thumbnail-large', 800, 450, true );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary Menu', 'orchid-store' ),
-			'menu-2' => esc_html__( 'Secondary Menu', 'orchid-store' ),
-			'menu-3' => esc_html__( 'Top Header Menu', 'orchid-store' ),
-		) );
+		register_nav_menus(
+			array(
+				'menu-1' => esc_html__( 'Primary Menu', 'orchid-store' ),
+				'menu-2' => esc_html__( 'Secondary Menu', 'orchid-store' ),
+				'menu-3' => esc_html__( 'Top Header Menu', 'orchid-store' ),
+			)
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'orchid_store_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'orchid_store_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
+			)
+		);
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -81,16 +92,18 @@ if ( ! function_exists( 'orchid_store_setup' ) ) :
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
-		add_theme_support( 'custom-logo', array(
-
-			'height'      => 250,
-			'width'       => 70,
-			'flex-width'  => true,
-			'flex-height' => true,
-		) );
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 250,
+				'width'       => 70,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
 
 		/**
-		 * Remove block widget support in WordPress version 5.8 & later 
+		 * Remove block widget support in WordPress version 5.8 & later.
 		 *
 		 * @link https://make.wordpress.org/core/2021/06/29/block-based-widgets-editor-in-wordpress-5-8/
 		 */
@@ -120,32 +133,80 @@ add_action( 'after_setup_theme', 'orchid_store_content_width', 0 );
  */
 function orchid_store_scripts() {
 
-	wp_enqueue_style( 'orchid-store-style', get_stylesheet_uri() );
+	wp_enqueue_style(
+		'orchid-store-style',
+		get_stylesheet_uri(),
+		array(),
+		ORCHID_STORE_VERSION,
+		'all'
+	);
 
-	wp_enqueue_style( 'orchid-store-fonts', orchid_store_lite_fonts_url() );
+	wp_enqueue_style(
+		'orchid-store-fonts',
+		orchid_store_lite_fonts_url(),
+		array(),
+		ORCHID_STORE_VERSION,
+		'all'
+	);
 
-	wp_enqueue_style( 'orchid-store-boxicons', get_template_directory_uri() . '/assets/fonts/boxicons/boxicons.css' , array(), ORCHID_STORE_VERSION, 'all' );
+	wp_enqueue_style(
+		'orchid-store-boxicons',
+		get_template_directory_uri() . '/assets/fonts/boxicons/boxicons.css',
+		array(),
+		ORCHID_STORE_VERSION,
+		'all'
+	);
 
-	wp_enqueue_style( 'orchid-store-fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome/fontawesome.css' , array(), ORCHID_STORE_VERSION, 'all' );
+	wp_enqueue_style(
+		'orchid-store-fontawesome',
+		get_template_directory_uri() . '/assets/fonts/fontawesome/fontawesome.css',
+		array(),
+		ORCHID_STORE_VERSION,
+		'all'
+	);
 
-	if( is_rtl() ) {
+	if ( is_rtl() ) {
 
-		wp_enqueue_style( 'orchid-store-main-style-rtl', get_template_directory_uri() . '/assets/dist/css/main-style-rtl.css' , array(), ORCHID_STORE_VERSION, 'all');
+		wp_enqueue_style(
+			'orchid-store-main-style-rtl',
+			get_template_directory_uri() . '/assets/dist/css/main-style-rtl.css',
+			array(),
+			ORCHID_STORE_VERSION,
+			'all'
+		);
 
-		wp_add_inline_style( 'orchid-store-main-style-rtl', orchid_store_dynamic_style() );
+		wp_add_inline_style(
+			'orchid-store-main-style-rtl',
+			orchid_store_dynamic_style()
+		);
 	} else {
 
-		wp_enqueue_style( 'orchid-store-main-style', get_template_directory_uri() . '/assets/dist/css/main-style.css' , array(), ORCHID_STORE_VERSION, 'all' );
+		wp_enqueue_style(
+			'orchid-store-main-style',
+			get_template_directory_uri() . '/assets/dist/css/main-style.css',
+			array(),
+			ORCHID_STORE_VERSION,
+			'all'
+		);
 
-		wp_add_inline_style( 'orchid-store-main-style', orchid_store_dynamic_style() );
+		wp_add_inline_style(
+			'orchid-store-main-style',
+			orchid_store_dynamic_style()
+		);
 	}
 
-	wp_register_script( 'orchid-store-bundle', get_template_directory_uri() . '/assets/dist/js/bundle.min.js', array('jquery'), ORCHID_STORE_VERSION, true );
+	wp_register_script(
+		'orchid-store-bundle',
+		get_template_directory_uri() . '/assets/dist/js/bundle.min.js',
+		array( 'jquery' ),
+		ORCHID_STORE_VERSION,
+		true
+	);
 
 	$script_obj = array(
-		'ajax_url'              => esc_url( admin_url( 'admin-ajax.php' ) ),
-		'homeUrl'               => esc_url( home_url() ),
-		'isUserLoggedIn'        => is_user_logged_in(),
+		'ajax_url'       => esc_url( admin_url( 'admin-ajax.php' ) ),
+		'homeUrl'        => esc_url( home_url() ),
+		'isUserLoggedIn' => is_user_logged_in(),
 	);
 
 	$script_obj['scroll_top'] = orchid_store_get_option( 'display_scroll_top_button' );
@@ -200,18 +261,29 @@ add_action( 'wp_enqueue_scripts', 'orchid_store_scripts' );
 /**
  * Enqueue scripts and styles for admin.
  */
-function orchid_store_admin_enqueue( $hook ) {
+function orchid_store_admin_enqueue() {
 
 	wp_enqueue_script( 'media-upload' );
 
 	wp_enqueue_media();
 
-	wp_enqueue_style( 'orchid-store-admin-style', get_template_directory_uri() . '/admin/css/admin-style.css' );
+	wp_enqueue_style(
+		'orchid-store-admin-style',
+		get_template_directory_uri() . '/admin/css/admin-style.css',
+		array(),
+		ORCHID_STORE_VERSION,
+		'all'
+	);
 
-	wp_enqueue_script( 'orchid-store-admin-script', get_template_directory_uri() . '/admin/js/admin-script.js', array( 'jquery' ), ORCHID_STORE_VERSION, true );
+	wp_enqueue_script(
+		'orchid-store-admin-script',
+		get_template_directory_uri() . '/admin/js/admin-script.js',
+		array( 'jquery' ),
+		ORCHID_STORE_VERSION,
+		true
+	);
 }
 add_action( 'admin_enqueue_scripts', 'orchid_store_admin_enqueue' );
-
 add_action( 'wp_ajax_wp_ajax_install_plugin', 'wp_ajax_install_plugin' );
 
 
@@ -220,7 +292,7 @@ add_action( 'wp_ajax_wp_ajax_install_plugin', 'wp_ajax_install_plugin' );
 
 /**
  * Activates plugin AFC plugin.
- * 
+ *
  * @since 1.4.2
  */
 function orchid_store_activate_plugin() {
@@ -230,7 +302,7 @@ function orchid_store_activate_plugin() {
 		'message' => '',
 	);
 
-	if ( isset( $_POST['_ajax_nonce'] ) && ! wp_verify_nonce( $_POST['_ajax_nonce'], 'updates' ) ) {
+	if ( isset( $_POST['_ajax_nonce'] ) && ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_ajax_nonce'] ) ), 'updates' ) ) {
 		$return_data['message'] = esc_html__( 'Invalid security token.', 'orchid-store' );
 		wp_send_json( $return_data );
 	}
@@ -245,14 +317,13 @@ function orchid_store_activate_plugin() {
 
 		$return_data['message'] = $activation->get_error_message();
 	}
-	
-	wp_send_json( $return_data ); 
-}
 
+	wp_send_json( $return_data );
+}
 add_action( 'wp_ajax_orchid_store_activate_plugin', 'orchid_store_activate_plugin' );
 
 
-if( defined( 'ELEMENTOR_VERSION' ) ) {
+if ( defined( 'ELEMENTOR_VERSION' ) ) {
 
 	add_action( 'elementor/editor/before_enqueue_scripts', 'orchid_store_admin_enqueue' );
 }
