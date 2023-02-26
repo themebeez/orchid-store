@@ -316,6 +316,11 @@ require get_template_directory() . '/inc/plugin-recommendation.php';
  */
 require get_template_directory() . '/inc/custom-hooks.php';
 
+/**
+ * Load custom hooks necessary for theme.
+ */
+require get_template_directory() . '/inc/udp/init.php';
+
 
 /**
  * Load function that enhance theme functionality.
