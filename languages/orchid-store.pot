@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-02-26T10:54:09+00:00\n"
+"POT-Creation-Date: 2023-02-26T11:36:32+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: orchid-store\n"
@@ -167,20 +167,20 @@ msgid "Special Menu"
 msgstr ""
 
 #: customizer/functions/customizer-defaults.php:147
-#: functions.php:155
-#: functions.php:157
+#: functions.php:216
+#: functions.php:218
 msgid "Product successfully added to cart!"
 msgstr ""
 
 #: customizer/functions/customizer-defaults.php:148
-#: functions.php:160
-#: functions.php:162
+#: functions.php:221
+#: functions.php:223
 msgid "Product has been removed from your cart!"
 msgstr ""
 
 #: customizer/functions/customizer-defaults.php:149
-#: functions.php:165
-#: functions.php:167
+#: functions.php:226
+#: functions.php:228
 msgid "Cart items has been updated successfully!"
 msgstr ""
 
@@ -325,7 +325,7 @@ msgid "Select Top Header Left Element"
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:269
-#: functions.php:55
+#: functions.php:56
 msgid "Top Header Menu"
 msgstr ""
 
@@ -653,19 +653,19 @@ msgstr ""
 msgid "Add Item"
 msgstr ""
 
-#: functions.php:53
+#: functions.php:54
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:54
+#: functions.php:55
 msgid "Secondary Menu"
 msgstr ""
 
-#: functions.php:234
+#: functions.php:306
 msgid "Invalid security token."
 msgstr ""
 
-#: functions.php:243
+#: functions.php:315
 msgid "The plugin is activated successfully."
 msgstr ""
 
