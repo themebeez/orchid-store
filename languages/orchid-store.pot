@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-02-26T11:36:32+00:00\n"
+"POT-Creation-Date: 2023-02-28T02:45:58+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: orchid-store\n"
@@ -771,6 +771,35 @@ msgstr ""
 #: inc/theme-functions.php:272
 msgctxt "placeholder"
 msgid "Type here to search"
+msgstr ""
+
+#: inc/udp/class-udp-agent.php:132
+msgid "Allow Anonymous Tracking"
+msgstr ""
+
+#: inc/udp/class-udp-agent.php:192
+msgid "Become a super contributor by sharing your non-sensitive WordPress data. We guarantee no sensitive data is collected."
+msgstr ""
+
+#: inc/udp/class-udp-agent.php:194
+msgid "What data do we collect?"
+msgstr ""
+
+#. translators: %s: agent name
+#: inc/udp/init.php:112
+msgid "%s is asking to allow tracking your non-sensitive WordPress data?"
+msgstr ""
+
+#: inc/udp/init.php:120
+msgid "Allow"
+msgstr ""
+
+#: inc/udp/init.php:122
+msgid "Do not show again"
+msgstr ""
+
+#: inc/udp/init.php:124
+msgid "Later"
 msgstr ""
 
 #: inc/woocommerce-hooks.php:83
