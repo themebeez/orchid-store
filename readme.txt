@@ -90,7 +90,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.4.3 - ?, 2023 ==
+== 1.4.3 - 28 February, 2023 ==
 
 - Fixed: Issues with saving values for checkbox options in widgets.
 - Added: UDP.
