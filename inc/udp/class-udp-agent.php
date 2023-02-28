@@ -59,7 +59,6 @@ class Udp_Agent {
 		$this->agent_root_dir = $agent_root_dir;
 
 		$this->hooks();
-
 	}
 
 
@@ -73,10 +72,11 @@ class Udp_Agent {
 	 * @since    1.0.0
 	 */
 	private function hooks() {
+
 		add_action( 'init', array( $this, 'on_init' ) );
 		add_action( 'admin_init', array( $this, 'on_admin_init' ) );
 
-		// custom cron.
+		// Custom cron.
 		add_action( 'init', array( $this, 'udp_schedule_cron' ) );
 	}
 
@@ -87,11 +87,11 @@ class Udp_Agent {
 	 * @since    1.0.0
 	 */
 	public function on_init() {
-		// process user tracking actions.
+
+		// Process user tracking actions.
 		if ( isset( $_GET['udp-agent-allow-access'] ) ) { //phpcs:ignore
 			$this->process_user_tracking_choice();
 		}
-
 	}
 
 	/**
@@ -101,7 +101,7 @@ class Udp_Agent {
 	 */
 	public function on_admin_init() {
 
-		// register and save settings data.
+		// Register and save settings data.
 		register_setting(
 			'general',
 			'udp_agent_allow_tracking',
@@ -110,23 +110,26 @@ class Udp_Agent {
 			)
 		);
 
-		$plugin_directory        = untrailingslashit( dirname( __FILE__, 3 ) );
-		$dir_names               = explode( '/', $plugin_directory );
+		$plugin_directory = untrailingslashit( dirname( __FILE__, 3 ) );
+		$dir_names        = explode( '/', $plugin_directory );
+
 		if ( strpos( $dir_names[ count( $dir_names ) - 1 ], '\\' ) ) {
 			$dir_names = explode( '\\', $dir_names[ count( $dir_names ) - 1 ] );
 		}
-		$plugin_name           = array_pop( $dir_names );
+
+		$plugin_name = array_pop( $dir_names );
+
 		if ( file_exists( $plugin_directory . '/' . $plugin_name . '.php' ) ) {
-			$this_plugin_data      = get_plugin_data( $plugin_directory . '/' . $plugin_name . '.php' );
-			$text_domain = $this_plugin_data['TextDomain'];
+			$this_plugin_data = get_plugin_data( $plugin_directory . '/' . $plugin_name . '.php' );
+			$text_domain      = $this_plugin_data['TextDomain'];
 		} else {
 			$theme       = wp_get_theme();
 			$text_domain = $theme->get( 'TextDomain' );
 		}
-		// show ui in settings page.
+		// Show ui in settings page.
 		add_settings_field(
 			'udp_agent_allow_tracking',
-			__( 'Allow Anonymous Tracking', $text_domain ),
+			esc_html__( 'Allow Anonymous Tracking', 'orchid-store' ),
 			array( $this, 'show_settings_ui' ),
 			'general',
 			'default',
@@ -145,12 +148,12 @@ class Udp_Agent {
 	 * @param    string $data Data to modify.
 	 */
 	public function get_settings_field_val( $data ) {
+
 		if ( '1' === $data ) {
 			return 'yes';
 		} else {
 			return 'no';
 		}
-
 	}
 
 
@@ -164,13 +167,34 @@ class Udp_Agent {
 	 * @since    1.0.0
 	 */
 	public function show_settings_ui() {
-		echo '<p>';
-		echo "<input type='checkbox' name='udp_agent_allow_tracking' id='udp_agent_allow_tracking' value='1'";
+
+		$allowed_html = array(
+			'p'     => array(),
+			'a'     => array(
+				'href'   => array(),
+				'target' => array(),
+			),
+			'input' => array(
+				'type'    => array(),
+				'name'    => array(),
+				'id'      => array(),
+				'value'   => array(),
+				'checked' => array(),
+			),
+		);
+
+		$setting_markup  = '<p>';
+		$setting_markup .= "<input type='checkbox' name='udp_agent_allow_tracking' id='udp_agent_allow_tracking' value='1'";
 		if ( 'yes' === get_option( 'udp_agent_allow_tracking' ) ) {
-			echo ' checked';
+			$setting_markup .= ' checked';
 		}
-		echo '/>';
-		echo wp_kses_data( 'Become a super contributor by sharing your non-sensitive WordPress data. We guarantee no sensitive data is collected. <a href="https://creamcode.org/user-data-processing/" target="_blank" >What data do we collect?</a>' ) . ' </p>';
+		$setting_markup .= '/>';
+		$setting_markup .= esc_html__( 'Become a super contributor by sharing your non-sensitive WordPress data. We guarantee no sensitive data is collected.', 'orchid-store' );
+		$setting_markup .= ' <a href="https://creamcode.org/user-data-processing/" target="_blank" >';
+		$setting_markup .= esc_html__( 'What data do we collect?', 'orchid-store' );
+		$setting_markup .= '</a></p>';
+
+		echo wp_kses( $setting_markup, $allowed_html );
 	}
 
 
@@ -185,23 +209,23 @@ class Udp_Agent {
 	 * @since    1.0.0
 	 */
 	private function process_user_tracking_choice() {
+
 		$users_choice = isset( $_GET['udp-agent-allow-access'] ) ? sanitize_text_field( wp_unslash( $_GET['udp-agent-allow-access'] ) ) : ''; //phpcs:ignore
 
 		if ( empty( $users_choice ) ) {
 			return;
 		}
 
-		// add data into database.
+		// Add data into database.
 		update_option( 'udp_agent_allow_tracking', $users_choice );
 		if ( 'yes' === $users_choice ) {
 			$this->do_handshake();
 		}
 		update_option( 'udp_agent_tracking_msg_last_shown_at', time() );
 
-		// redirect back.
+		// Redirect back.
 		wp_safe_redirect( remove_query_arg( 'udp-agent-allow-access' ) );
 		exit;
-
 	}
 
 	// ----------------------------------------------
@@ -242,7 +266,7 @@ class Udp_Agent {
 		if ( strpos( $dir_names[ count( $dir_names ) - 1 ], '\\' ) ) {
 			$dir_names = explode( '\\', $dir_names[ count( $dir_names ) - 1 ] );
 		}
-		$plugin_name           = array_pop( $dir_names );
+		$plugin_name = array_pop( $dir_names );
 		if ( file_exists( $plugin_directory . '/' . $plugin_name . '.php' ) ) {
 			$this_plugin_data      = get_plugin_data( $plugin_directory . '/' . $plugin_name . '.php' );
 			$data['sender_client'] = $this_plugin_data['Name'];
@@ -252,7 +276,6 @@ class Udp_Agent {
 		}
 
 		return $data;
-
 	}
 
 
@@ -269,20 +292,20 @@ class Udp_Agent {
 		$track_user = get_option( 'udp_agent_allow_tracking' );
 
 		if ( 'yes' !== $track_user ) {
-			// do not send data.
+			// Do not send data.
 			return;
 		}
 
-		// secret key will be same for all agents.
+		// Secret key will be same for all agents.
 		$secret_key = get_option( 'udp_agent_secret_key' );
 		if ( ! empty( $secret_key ) ) {
 
-			// secret_key already exists.
-			// do nothing.
+			// Secret_key already exists.
+			// Do nothing.
 			return true;
 		}
 
-		// authenticate with engine.
+		// Authenticate with engine.
 
 		$data['agent_data'] = serialize( $this->get_data() ); //phpcs:ignore
 		$data['site_url']   = get_bloginfo( 'url' );
@@ -291,7 +314,6 @@ class Udp_Agent {
 		$this->do_curl( $url, $data );
 
 		return true;
-
 	}
 
 	// ------------------------------------------------
@@ -312,7 +334,6 @@ class Udp_Agent {
 		if ( ! wp_next_scheduled( $cron_hook_name ) ) {
 			wp_schedule_event( time(), 'daily', $cron_hook_name );
 		}
-
 	}
 
 	/**
@@ -327,17 +348,15 @@ class Udp_Agent {
 		$track_user = get_option( 'udp_agent_allow_tracking' );
 
 		if ( 'yes' !== $track_user ) {
-			// do not send data.
+			// Do not send data.
 			return;
 		}
 
 		$data_to_send['agent_data'] = serialize( $this->get_data() ); //phpcs:ignore
 		$data_to_send['secret_key'] = get_option( 'udp_agent_secret_key' );
 		$url                        = untrailingslashit( $this->engine_url ) . '/wp-json/udp-engine/v1/process-data';
-		// $this->write_log( __FUNCTION__ . $this->do_curl( $url, $data_to_send ) );
 		$this->do_curl( $url, $data_to_send );
 		exit;
-
 	}
 
 	/**
@@ -347,6 +366,7 @@ class Udp_Agent {
 	 * @param string $log Message to be logged.
 	 */
 	private function write_log( $log ) {
+
 		if ( true === WP_DEBUG ) {
 			if ( is_array( $log ) || is_object( $log ) ) {
 				error_log( print_r( $log, true ) ); //phpcs:ignore
@@ -365,6 +385,7 @@ class Udp_Agent {
 	 * @return mixed $response Response from curl request.
 	 */
 	private function do_curl( $url, $data_to_send ) {
+
 		if ( empty( $url ) ) {
 			return;
 		}
@@ -377,5 +398,4 @@ class Udp_Agent {
 
 		return wp_remote_retrieve_body( $return_data );
 	}
-
 }
