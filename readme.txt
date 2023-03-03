@@ -5,7 +5,7 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 7.0.0
 Requires at least: 5.0.0
 Tested up to: 6.1.1
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -89,6 +89,11 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.4.4 - 03 March, 2023 ==
+
+- Updated: UDP agent to version 1.0.1.
+- Updated: POT file.
 
 == 1.4.3 - 28 February, 2023 ==
 
