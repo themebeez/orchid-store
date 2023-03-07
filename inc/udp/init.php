@@ -98,30 +98,18 @@ if ( $this_agent_is_latest && isset( $all_installed_agents[ basename( $root_dir 
 					/* translators: %s: agent name */
 					esc_html__( '%s is asking to allow tracking your non-sensitive WordPress data?', 'orchid-store' ),
 					$agent_name
-				) . '</p><p>';
+				) . '</p>';
 
-				$content .= sprintf(
-					/* translators: %s: agent allow access link, %s: Allow */
-					'<a href="%1$s" class="button button-primary udp-agent-access_tracking-yes" style="margin-right: 10px" >%2$s</a>',
-					add_query_arg( 'udp-agent-allow-access', 'yes' ),
-					esc_html__( 'Allow', 'orchid-store' )
-				);
+				$content .= '<p>';
 
-				$content .= sprintf(
-					/* translators: %s: agent allow access link, %s: Allow */
-					'<a href="%1$s" class="button button-secondary udp-agent-access_tracking-no" style="margin-right: 10px" >%2$s</a>',
-					add_query_arg( 'udp-agent-allow-access', 'no' ),
-					esc_html__( 'Do not show again', 'orchid-store' )
-				);
+				$content .= '<a href="' . esc_url( admin_url( '?udp-agent-allow-access=yes' ) ) . '" class="button button-primary udp-agent-access_tracking-yes" style="margin-right: 10px">' . esc_html__( 'Allow', 'orchid-store' ) . '</a>';
 
-				$content .= sprintf(
-					/* translators: %s: agent allow access link, %s: Allow */
-					'<a href="%1$s" class="button button-secondary udp-agent-access_tracking-yes" style="margin-right: 10px" >%2$s</a>',
-					add_query_arg( 'udp-agent-allow-access', 'later' ),
-					esc_html__( 'Later', 'orchid-store' )
-				);
+				$content .= '<a href="' . esc_url( admin_url( '?udp-agent-allow-access=no' ) ) . '" class="button button-secondary udp-agent-access_tracking-yes" style="margin-right: 10px">' . esc_html__( 'Do not show again', 'orchid-store' ) . '</a>';
+
+				$content .= '<a href="' . esc_url( admin_url( '?udp-agent-allow-access=later' ) ) . '" class="button button-secondary udp-agent-access_tracking-yes" style="margin-right: 10px">' . esc_html__( 'Later', 'orchid-store' ) . '</a>';
 
 				$content .= '</p>';
+
 				add_action(
 					'load-index.php',
 					function () use ( $content ) {
