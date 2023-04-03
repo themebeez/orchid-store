@@ -9,7 +9,7 @@ if( ! class_exists( 'Orchid_Store_Post_Widget' ) ) :
 
     class Orchid_Store_Post_Widget extends WP_Widget {
  
-        function __construct() { 
+        public function __construct() { 
 
             parent::__construct(
                 'orchid-store-post-widget',

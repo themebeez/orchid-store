@@ -11,7 +11,7 @@ if( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
         public $value_as; 
      
-        function __construct() { 
+        public function __construct() { 
 
             parent::__construct(
                 'orchid-store-banner-widget',
