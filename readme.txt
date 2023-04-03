@@ -2,10 +2,10 @@
 
 Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
-Requires PHP: 7.0.0
+Requires PHP: 7.4
 Requires at least: 5.0.0
-Tested up to: 6.1.1
-Stable tag: 1.4.4
+Tested up to: 6.2
+Stable tag: 1.4.5
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -89,6 +89,12 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.4.5 - 03 April, 2023 ==
+
+- Fixed: PHP errors in widgets.
+- Removed: Everest Backup plugin recommendation.
+- Tested: With WordPress 6.2
 
 == 1.4.4 - 07 March, 2023 ==
 
