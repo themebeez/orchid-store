@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or Later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orchid Store 1.4.4\n"
+"Project-Id-Version: Orchid Store 1.4.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/orchid-store\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-07T11:04:26+00:00\n"
+"POT-Creation-Date: 2023-04-03T08:45:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: orchid-store\n"
@@ -719,45 +719,6 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: inc/ebwp-notice.php:288
-msgid "Thank You !!!"
-msgstr ""
-
-#. translators: %s is the Everest Backup plugin name wrapped with html.
-#: inc/ebwp-notice.php:295
-msgid "%s has been installed and activated successfully."
-msgstr ""
-
-#: inc/ebwp-notice.php:354
-msgid "Your website is super precious !"
-msgstr ""
-
-#. translators: %s is the Everest Backup plugin name wrapped with html.
-#: inc/ebwp-notice.php:361
-msgid "The best way to protect your website is by using %s plugin to keep your data safe and secure to remote storage.."
-msgstr ""
-
-#. translators: %s is the Everest Backup plugin name wrapped with html.
-#: inc/ebwp-notice.php:364
-msgid "You are just one step away. Please activate %s plugin and backup your website to keep your data safe and secure."
-msgstr ""
-
-#: inc/ebwp-notice.php:378
-msgid "Install & Activate"
-msgstr ""
-
-#: inc/ebwp-notice.php:379
-msgid "Remind me later"
-msgstr ""
-
-#: inc/ebwp-notice.php:380
-msgid "Don't show this again"
-msgstr ""
-
-#: inc/ebwp-notice.php:386
-msgid "Activate Plugin"
-msgstr ""
-
 #. translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language.
 #: inc/theme-functions.php:28
 msgctxt "Inter font: on or off"
@@ -1406,7 +1367,7 @@ msgstr ""
 #: widget/widgets/about-widget.php:200
 #: widget/widgets/advertisement-widget.php:142
 #: widget/widgets/banner-widget.php:212
-#: widget/widgets/featured-product-categories.php:121
+#: widget/widgets/featured-product-categories.php:118
 #: widget/widgets/posts-widget.php:187
 #: widget/widgets/products-filter.php:211
 #: widget/widgets/products-filter.php:341
@@ -1589,23 +1550,23 @@ msgid "Displays featured product categories."
 msgstr ""
 
 #. translators: %s: products count
-#: widget/widgets/featured-product-categories.php:91
+#: widget/widgets/featured-product-categories.php:87
 msgid "%s Product"
 msgid_plural "%s Products"
 msgstr[0] ""
 msgstr[1] ""
 
-#: widget/widgets/featured-product-categories.php:127
+#: widget/widgets/featured-product-categories.php:124
 #: widget/widgets/products-filter.php:217
 msgid "Product Categories"
 msgstr ""
 
-#: widget/widgets/featured-product-categories.php:128
+#: widget/widgets/featured-product-categories.php:125
 #: widget/widgets/products-filter.php:218
 msgid "Below are the list of product categories. Check on a category to set is as a filter item."
 msgstr ""
 
-#: widget/widgets/featured-product-categories.php:163
+#: widget/widgets/featured-product-categories.php:160
 #: widget/widgets/products-filter.php:256
 msgid "There are no product categories to select."
 msgstr ""
