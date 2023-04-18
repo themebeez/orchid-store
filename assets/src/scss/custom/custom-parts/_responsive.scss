@@ -1,7 +1,3 @@
-// Major spacing scalings : ;
-
-// Font scaling : 1024px, 768px, 600px;
-
 
 @media (min-width: 1400px) {
 
@@ -10,15 +6,15 @@
         max-width: 1300px;
     }
 
-    body.elementor-page .__os-container__,
     body.boxed .__os-page-wrap__,
-    body.boxed .__os-container__ {
+    body.boxed .__os-container__,
+	body.elementor-page .__os-container__ {
 
         max-width: 1170px;
     }
 
     body.boxed.elementor-page .__os-container__,
-    body.boxed.elementor-page .elementor-section-boxed>.elementor-container {
+    body.boxed.elementor-page .elementor-section-boxed > .elementor-container {
 
         max-width: 1170px;
     }
@@ -81,8 +77,6 @@
 
 @media (max-width:1024px) {
 
-    // font size 
-
     .masterheader .site-title {
 
         font-size: 24px;
@@ -103,19 +97,12 @@
         font-size: 24px;
     }
 
-
-    // layout 
-
-    .woocommerce.columns-4 ul.products li,
     .woocommerce.columns-4 ul.products li.product,
     .woocommerce ul.products.columns-4 li.product,
-    .woocommerce-page .columns-4 ul.products li.product,
-    .woocommerce.columns-5 ul.products li,
     .woocommerce.columns-5 ul.products li.product,
-    .woocommerce.columns-6 ul.products li,
     .woocommerce.columns-6 ul.products li.product,
     .woocommerce ul.products.columns-5 li.product,
-    .woocommerce ul.products.columns-5 li.product,
+	.woocommerce-page .columns-4 ul.products li.product,
     .woocommerce-page .columns-5 ul.products li.product {
 
         flex: 0 0 33.33%;
@@ -142,9 +129,6 @@
         max-width: 50%;
     }
 
-
-    // height 
-
     .banner-style-1 .thumb,
     .banner-style-1 .item-entry,
     .banner-style-1 .category-nav ul,
@@ -157,9 +141,6 @@
 
         height: 450px;
     }
-
-
-    // Major spacing 
 
     .header-style-1 {
 
@@ -190,9 +171,6 @@
 
         padding: 20px 0;
     }
-
-
-    // woocommerce 
 
     .wishlist_table.mobile {
 
@@ -256,7 +234,7 @@
         line-height: 0;
     }
 
-    .wishlist_table.mobile li .item-wrapper .button.yith-wcqv-button:before {
+    .wishlist_table.mobile li .item-wrapper .button.yith-wcqv-button::before {
 
         content: '\f06e';
         font-family: 'fontAwesome';
@@ -323,8 +301,6 @@
         margin: 0 !important;
     }
 
-    // Header 
-
     .header-style-1 .custom-search {
 
         display: none;
@@ -335,8 +311,6 @@
         justify-content: flex-end;
     }
 
-    // Responsive menu 
-
     .masterheader .site-navigation {
 
         display: none;
@@ -346,8 +320,6 @@
 
         display: block;
     }
-
-    // all styles 
 
     .banner-style-1 .content-holder {
 
@@ -400,8 +372,6 @@
 
 @media (max-width: 991px) {
 
-    // Layout 
-
 
     aside.secondary-widget-area {
 
@@ -426,10 +396,6 @@
         max-width: 100%;
     }
 
-
-    // height 
-
-
     #yith-quick-view-modal.open .yith-wcqv-main {
 
         height: 400px;
@@ -439,8 +405,6 @@
 
 @media (max-width: 850px) {
 
-
-    // Layout 
 
     .cta-style-1 .os-col,
     .cats-widget-styles .col,
@@ -463,17 +427,10 @@
         margin-bottom: 30px;
     }
 
-
-    // Height 
-
     .banner-style-1 .category-nav ul {
 
         height: 315px;
     }
-
-
-    // widget 
-
 
     .cats-widget-styles .card-content {
 
@@ -485,8 +442,6 @@
 
 @media (max-width: 768px) {
 
-
-    // Font 
 
     h1 {
 
@@ -543,10 +498,6 @@
         font-size: 20px;
     }
 
-
-    // Layout 
-
-
     .header-style-1 .logo-col,
     .header-style-1 .extra-col,
     .cta-style-1 [class*="col-"] {
@@ -563,9 +514,6 @@
         flex: 0 0 100%;
         max-width: 100%;
     }
-
-
-    // Height & Spacing 
 
     .banner-style-1 .thumb,
     .banner-style-1 .item-entry,
@@ -596,9 +544,6 @@
 
         height: 340px;
     }
-
-    // Wooocommerce 
-
 
     .woocommerce table.shop_table td {
 
@@ -668,22 +613,15 @@
         padding-left: 0;
     }
 
-
     .woocommerce-account .woocommerce .col2-set .col-2 {
 
         margin-top: 30px;
     }
 
-    // header 
-
     .header-style-1 .branding {
 
         max-width: 300px;
     }
-
-
-    // widget 
-
 
     .banner-style-1 .content-holder {
 
@@ -742,13 +680,9 @@
 
         width: 90%;
     }
-
 }
 
 @media (max-width: 767px) {
-
-
-    // Hide at small device 
 
     .hide-in-small {
 
@@ -789,8 +723,6 @@
 
 @media (max-width:650px) {
 
-    // mobile header
-
     .mobile-header.masterheader .mini-cart {
 
         min-width: auto;
@@ -815,8 +747,6 @@
         line-height: 35px;
     }
 
-    // banner
-
     .banner-style-1 .banner-image-wrapper {
 
         flex: 0 0 100%;
@@ -839,9 +769,6 @@
 
 @media (max-width: 575px) {
 
-
-    // font 
-
     .entry-404 h1 {
 
         font-size: 99px;
@@ -857,9 +784,6 @@
 
         font-size: 18px;
     }
-
-
-    // Layout
 
     .cta-style-1 .os-col,
     .os-blog-style-1 .os-col,
@@ -877,9 +801,7 @@
         max-width: 100%;
     }
 
-    .woocommerce.columns-3 ul.products li,
     .woocommerce.columns-3 ul.products li.product,
-    .woocommerce.columns-4 ul.products li,
     .woocommerce.columns-4 ul.products li.product,
     .woocommerce ul.products.columns-3 li.product,
     .woocommerce-page .columns-3 ul.products li.product,
@@ -893,7 +815,7 @@
 
     // WooCommerce: product columns for mobile. Since version 1.2.1
 
-    .woocommerce[class*="columns-"].os-mobile-col-1 ul.products li,
+    .woocommerce[class*="columns-"].os-mobile-col-1 ul.products li.product,
     .woocommerce ul.products[class*=columns-].os-mobile-col-1 li.product,
     .woocommerce-page [class*="columns-"].os-mobile-col-1 ul.products li.product {
 
@@ -909,7 +831,7 @@
         margin-left: -5px;
     }
 
-    .woocommerce[class*="columns-"].os-mobile-col-2 ul.products li,
+    .woocommerce[class*="columns-"].os-mobile-col-2 ul.products li.product,
     .woocommerce ul.products[class*=columns-].os-mobile-col-2 li.product,
     .woocommerce-page [class*="columns-"].os-mobile-col-2 ul.products li.product {
 
@@ -927,7 +849,7 @@
         margin-right: 0;
     }
 
-    .product-widget-style-3 .owl-carousel .woocommerce[class*=columns-].os-mobile-col-2 ul.products li,
+    .product-widget-style-3 .owl-carousel .woocommerce[class*=columns-].os-mobile-col-2 ul.products li.product,
     .woocommmerce .product-widget-style-3 .owl-carousel ul.products[class*=columns-].os-mobile-col-2 li.product {
 
         // product slider widget
@@ -950,16 +872,11 @@
         max-width: 80px;
     }
 
-
-    // spacing & height
-
-
     .banner-style-1 .category-nav ul {
 
         height: 225px;
     }
 
-    .woocommerce ul.products li,
     .woocommerce ul.products li.product,
     .woocommerce ul.products[class*=columns-] li.product,
     .woocommerce-page ul.products[class*=columns-] li.product {
@@ -988,9 +905,6 @@
         margin-bottom: 20px;
     }
 
-
-    // Header
-
     .header-style-1 .branding {
 
         max-width: 220px;
@@ -1012,15 +926,10 @@
         padding-bottom: 20px;
     }
 
-    // footer 
-
     .footer-bottom .payment-col {
 
         display: none;
     }
-
-
-    // widget 
 
     .cta-style-2 .box-holder.box-holder-left-align,
     .cta-style-2 .box-holder.box-holder-right-align {
@@ -1034,16 +943,11 @@
         max-width: 400px;
     }
 
-
-    // woocommerce 
-
-
     .woocommerce ul.products li .product-main-wrap .product-hover-items {
 
         opacity: 1;
         right: 20px;
     }
-
 
     .woocommerce #content div.product .woocommerce-tabs ul.tabs li,
     .woocommerce div.product .woocommerce-tabs ul.tabs li,
@@ -1069,10 +973,6 @@
 
         border-bottom: none;
     }
-
-
-    // single 
-
 
     .post-navigation .nav-previous,
     .post-navigation .nav-next {
@@ -1100,14 +1000,10 @@
         padding-bottom: 20px;
         margin-bottom: 20px;
     }
-
 }
 
 
 @media (max-width: 480px) {
-
-
-    // font 
 
     .comments-area .comments-title,
     .comment-respond .comment-reply-title {
@@ -1119,9 +1015,6 @@
 
         font-size: 17px;
     }
-
-
-    // layout 
 
     .cats-widget-styles .row {
 
@@ -1158,9 +1051,6 @@
         width: 320px;
     }
 
-
-    // Header 
-
     .mobile-navigation {
 
         width: 350px;
@@ -1176,10 +1066,6 @@
 
         text-align: left;
     }
-
-
-    // widget
-
 
     .banner-style-1 .content-holder {
 
@@ -1219,8 +1105,6 @@
         padding: 20px;
     }
 
-    // woocommmerce 
-
     .wishlist_table.mobile li .item-wrapper .item-details,
     .wishlist_table.mobile li .item-wrapper .product-thumbnail {
 
@@ -1242,7 +1126,6 @@
         bottom: 0px;
         text-align: left;
     }
-
 }
 
 @media (max-width: 420px) {
@@ -1280,8 +1163,6 @@
 
         padding: 20px;
     }
-
-
 }
 
 @media (max-width: 320px) {
@@ -1291,5 +1172,4 @@
 
         width: 280px;
     }
-
 }

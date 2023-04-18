@@ -1,12 +1,3 @@
-/*
-* Package: Orchid store
-* Contributor: Themebeez
-* Author Url: https://themebeez.com/
-* Licence: https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
-*/
-
-
-// ancours, links, images, 
 
 a:focus,
 .mobile-menu-toggle-btn:focus,
@@ -16,16 +7,12 @@ a:focus,
     outline:thin dotted #FFBF3F;
 }
 
-// input types 
-
 .header-style-1 .wishlist-icon-container a:focus,
 .masterheader .mini-cart .trigger-mini-cart:focus,
 .header-style-1 .custom-search-entry button:focus {
 
     outline:thin dotted #FFBF3F;
 }
-
-// Screen reader text
 
 .screen-reader-text {
     
@@ -65,11 +52,7 @@ a:focus,
     outline: thin dotted blue;
 }
 
-
-// navigation 
-
 @media ( min-width: 1025px ) {
-
 
     .site-navigation ul li .sub-menu, 
     .site-navigation ul li .children,
@@ -94,9 +77,9 @@ a:focus,
     .site-navigation ul li:focus > .children,
     .site-navigation ul li:focus-within > .sub-menu, 
     .site-navigation ul li:focus-within > .children,
-    .site-navigation ul li:hover>.sub-menu.mega-menu-sub-menu,
-    .site-navigation ul li:focus>.sub-menu.mega-menu-sub-menu,
-    .site-navigation ul li:focus-within>.sub-menu.mega-menu-sub-menu {
+    .site-navigation ul li:hover >.sub-menu.mega-menu-sub-menu,
+    .site-navigation ul li:focus >.sub-menu.mega-menu-sub-menu,
+    .site-navigation ul li:focus-within > .sub-menu.mega-menu-sub-menu {
         
         clip: auto;
         visibility: visible;
