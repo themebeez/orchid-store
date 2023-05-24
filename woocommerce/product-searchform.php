@@ -18,7 +18,6 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
 ?>
 <form role="search" method="get" class="woocommerce-product-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<div class="custom-search-entry">

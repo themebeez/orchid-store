@@ -25,7 +25,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 ?>
 <li <?php wc_product_class( '', $product ); ?>>
-	
 	<div class="bg-white product-main-wrap">
 		<div class="product-thumb-wrap imghover">
 			<?php
