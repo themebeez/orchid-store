@@ -69,7 +69,7 @@
             duration: 300,
             animation: 'scale',
             placement: 'left-start',
-        })
+        });
 
 
         /*
@@ -538,17 +538,19 @@
 
             if (!orchid_store_obj.isUserLoggedIn) {
                 let wishlist = JSON.parse(localStorage.getItem('addonify-wishlist_' + orchid_store_obj.homeUrl + '_product_ids'));
-                //console.log(wishlist);
-                if (wishlist !== null) {
-                    if (wishlist.length > 0) {
-                        $.map(wishlist, function (value, index) {
+                let productsInWishlist = wishlist[0].product_ids;
+                console.log(productsInWishlist);
+                if (productsInWishlist !== null) {
+                    if (productsInWishlist.length > 0) {
+                        $.map(productsInWishlist, function (value, index) {
                             if ($(".os-addtowishlist-btn[data-product_id='" + value + "']").length > 0) {
-                                $(".os-addtowishlist-btn[data-product_id='" + value + "']").attr('data-tippy-content', orchid_store_obj.alreadyInWishlistText);
-                                $(".os-addtowishlist-btn[data-product_id='" + value + "']").find('.bx').removeClass('bx-heart').addClass('bxs-heart');
+                                let osAddtoWishlistButton = $(".os-addtowishlist-btn[data-product_id='" + value + "']");
+                                osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.alreadyInWishlistText);
+                                osAddtoWishlistButton.find('.bx').removeClass('bx-heart').addClass('bxs-heart');
                             }
                         });
                     }
-                    $('.wishlist-items-count').html(wishlist.length);
+                    $('.wishlist-items-count').html(productsInWishlist.length);
                 }
             }
 
@@ -565,8 +567,9 @@
 
             $(document).on('addonify_added_to_wishlist', function (event, data) {
                 if ($(".os-addtowishlist-btn[data-product_id='" + data.productID + "']")) {
-                    $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']").attr('data-tippy-content', orchid_store_obj.addedToWishlistText);
-                    $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']").find('.bx').removeClass('bx-heart').addClass('bxs-heart');
+                    let osAddtoWishlistButton = $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']");
+                    osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.addedToWishlistText);
+                    osAddtoWishlistButton.find('.bx').removeClass('bx-heart').addClass('bxs-heart');
                 }
 
                 if (orchid_store_obj.isUserLoggedIn) {
@@ -577,14 +580,16 @@
                     });
                 } else {
                     let wishlist = JSON.parse(localStorage.getItem('addonify-wishlist_' + orchid_store_obj.homeUrl + '_product_ids'));
-                    $('.wishlist-items-count').html(wishlist.length);
+                    let productsInWishlist = wishlist[0].product_ids;
+                    $('.wishlist-items-count').html(productsInWishlist.length);
                 }
             });
 
             $(document).on('addonify_removed_from_wishlist', function (event, data) {
                 if ($(".os-addtowishlist-btn[data-product_id='" + data.productID + "']")) {
-                    $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']").attr('data-tippy-content', orchid_store_obj.addToWishlistText);
-                    $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']").find('.bx').removeClass('bxs-heart').addClass('bx-heart');
+                    let osAddtoWishlistButton = $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']");
+                    osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.addToWishlistText);
+                    osAddtoWishlistButton.find('.bx').removeClass('bxs-heart').addClass('bx-heart');
                 }
 
                 if (orchid_store_obj.isUserLoggedIn) {
