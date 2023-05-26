@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or Later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orchid Store 1.4.6\n"
+"Project-Id-Version: Orchid Store 1.4.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/orchid-store\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-05-26T08:21:14+00:00\n"
+"POT-Creation-Date: 2023-05-26T09:07:10+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: orchid-store\n"
@@ -763,35 +763,35 @@ msgstr ""
 msgid "Later"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:83
+#: inc/woocommerce-hooks.php:101
 msgid "Total:"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:162
+#: inc/woocommerce-hooks.php:193
 msgid "My account"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:166
+#: inc/woocommerce-hooks.php:197
 msgid "Login / Register"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:191
+#: inc/woocommerce-hooks.php:222
 msgid "My Wishlist"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:315
+#: inc/woocommerce-hooks.php:368
 msgid "Quick View"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:350
+#: inc/woocommerce-hooks.php:405
 msgid "Already in wishlist"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:350
+#: inc/woocommerce-hooks.php:405
 msgid "Add to wishlist"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:458
+#: inc/woocommerce-hooks.php:510
 msgid "Compare"
 msgstr ""
 
@@ -1739,7 +1739,7 @@ msgstr ""
 msgid "Upload image having 1x1 aspect ratio."
 msgstr ""
 
-#: woocommerce/loop/sale-flash.php:27
+#: woocommerce/loop/sale-flash.php:28
 msgid "Sale!"
 msgstr ""
 
