@@ -534,10 +534,19 @@
             });
 
             if (!orchid_store_obj.isUserLoggedIn) {
-                let wishlist = JSON.parse(localStorage.getItem('addonify-wishlist_' + orchid_store_obj.homeUrl + '_product_ids'));
-                let productsInWishlist = wishlist[0].product_ids;
+
+                let wishlist;
+                let productsInWishlist;
+                let wishlistLocalStorageVal = localStorage.getItem('addonify-wishlist_' + orchid_store_obj.homeUrl + '_product_ids');
+
+                if (wishlistLocalStorageVal) {
+                    wishlist = JSON.parse(localStorage.getItem('addonify-wishlist_' + orchid_store_obj.homeUrl + '_product_ids'));
+                    productsInWishlist = wishlist[0].product_ids;
+                }
+
                 console.log(productsInWishlist);
-                if (productsInWishlist !== null) {
+
+                if ((productsInWishlist !== null) || (productsInWishlist !== undefined)) {
                     if (productsInWishlist.length > 0) {
                         $.map(productsInWishlist, function (value, index) {
                             if ($(".os-addtowishlist-btn[data-product_id='" + value + "']").length > 0) {
@@ -561,7 +570,7 @@
             });
 
             $(document).on('addonify_added_to_wishlist', function (event, data) {
-                console.log(event);
+                //console.log(event);
                 if ($(".os-addtowishlist-btn[data-product_id='" + data.productID + "']")) {
                     let osAddtoWishlistButton = $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']");
 
@@ -571,8 +580,12 @@
                     // Ref: https://atomiks.github.io/tippyjs/v6/tippy-instance/
                     // Ref: https://atomiks.github.io/tippyjs/v5/methods/#setcontent
                     let tippyInstance = osAddtoWishlistButton[0]._tippy;
-                    tippyInstance.setContent(orchid_store_obj.addedToWishlistText);
-                    osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.addedToWishlistText);
+
+                    if (tippyInstance) {
+
+                        tippyInstance.setContent(orchid_store_obj.addedToWishlistText);
+                        osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.addedToWishlistText);
+                    }
                 }
 
                 if (orchid_store_obj.isUserLoggedIn) {
@@ -598,8 +611,12 @@
                     // Ref: https://atomiks.github.io/tippyjs/v6/tippy-instance/
                     // Ref: https://atomiks.github.io/tippyjs/v5/methods/#setcontent
                     let tippyInstance = osAddtoWishlistButton[0]._tippy;
-                    tippyInstance.setContent(orchid_store_obj.addedToWishlistText);
-                    osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.addToWishlistText);
+
+                    if (tippyInstance) {
+
+                        tippyInstance.setContent(orchid_store_obj.addToWishlistText);
+                        osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.addToWishlistText);
+                    }
                 }
 
                 if (orchid_store_obj.isUserLoggedIn) {
