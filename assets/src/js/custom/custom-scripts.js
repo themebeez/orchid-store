@@ -526,9 +526,6 @@
             });
         }
 
-
-
-
         function orchidStoreAddonifyWishlist() {
 
             // Prevent default behaviour of add to compare button.
@@ -554,8 +551,6 @@
                 }
             }
 
-
-
             // Update Wishlist item counts
             $(document).on('added_to_wishlist removed_from_wishlist', function () {
                 $.get(orchid_store_obj.ajax_url, {
@@ -566,10 +561,18 @@
             });
 
             $(document).on('addonify_added_to_wishlist', function (event, data) {
+                console.log(event);
                 if ($(".os-addtowishlist-btn[data-product_id='" + data.productID + "']")) {
                     let osAddtoWishlistButton = $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']");
-                    osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.addedToWishlistText);
+
                     osAddtoWishlistButton.find('.bx').removeClass('bx-heart').addClass('bxs-heart');
+
+                    // Modify the tooltip content.
+                    // Ref: https://atomiks.github.io/tippyjs/v6/tippy-instance/
+                    // Ref: https://atomiks.github.io/tippyjs/v5/methods/#setcontent
+                    let tippyInstance = osAddtoWishlistButton[0]._tippy;
+                    tippyInstance.setContent(orchid_store_obj.addedToWishlistText);
+                    osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.addedToWishlistText);
                 }
 
                 if (orchid_store_obj.isUserLoggedIn) {
@@ -588,8 +591,15 @@
             $(document).on('addonify_removed_from_wishlist', function (event, data) {
                 if ($(".os-addtowishlist-btn[data-product_id='" + data.productID + "']")) {
                     let osAddtoWishlistButton = $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']");
-                    osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.addToWishlistText);
+
                     osAddtoWishlistButton.find('.bx').removeClass('bxs-heart').addClass('bx-heart');
+
+                    // Modify the tooltip content.
+                    // Ref: https://atomiks.github.io/tippyjs/v6/tippy-instance/
+                    // Ref: https://atomiks.github.io/tippyjs/v5/methods/#setcontent
+                    let tippyInstance = osAddtoWishlistButton[0]._tippy;
+                    tippyInstance.setContent(orchid_store_obj.addedToWishlistText);
+                    osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.addToWishlistText);
                 }
 
                 if (orchid_store_obj.isUserLoggedIn) {
@@ -604,8 +614,6 @@
                 }
             });
         }
-
-
 
         /**
          * Modify the compare button when product is added and removed from the compare list.
