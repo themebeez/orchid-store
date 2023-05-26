@@ -1,18 +1,29 @@
 <?php
+/**
+ * Renders dynamic CSS from customize.
+ *
+ * @since 1.0.0
+ *
+ * @package Orchid_Store
+ */
 
-if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
-
+if ( ! function_exists( 'orchid_store_dynamic_style' ) ) {
+	/**
+	 * Prints dynamic CSS.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_dynamic_style() {
 
 		$primary_color = orchid_store_get_option( 'primary_color' );
 
 		$secondary_color = orchid_store_get_option( 'secondary_color' );
 
-		$disable_outline_focus = orchid_store_get_option( 'disable_ouline_on_focus' );		
+		$disable_outline_focus = orchid_store_get_option( 'disable_ouline_on_focus' );
 
 		$custom_style = '';
 
-		if( orchid_store_get_option( 'disable_ouline_on_focus' ) == true ) {
+		if ( orchid_store_get_option( 'disable_ouline_on_focus' ) === true ) {
 
 			$custom_style .= "
 			a:focus,
@@ -41,9 +52,8 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			}";
 		}
 
+		if ( $primary_color ) {
 
-		if( $primary_color ) {
-			
 			$custom_style .= "
 			.editor-entry a,
 			.quantity-button,
@@ -124,8 +134,8 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.mobile-header-style-1 .bottom-block,
 			.woocommerce-store-notice.demo_store,
 			.addonify-add-to-wishlist-btn, 
-			.woocommerce ul.products li.product .addonify-add-to-wishlist-btn, 
-			.woocommerce-page ul.products li.product .addonify-add-to-wishlist-btn {
+			.woocommerce ul.products li.product a.addonify-add-to-wishlist-btn.addonify-custom-wishlist-btn, 
+			.woocommerce-page ul.products li.product a.addonify-add-to-wishlist-btn.addonify-custom-wishlist-btn {
 
 				background-color: {$primary_color};
 			}
@@ -162,11 +172,11 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.header-style-1 .custom-search-entry .select-custom {
 
 				border-color: {$primary_color};
-			}";			
+			}";
 		}
 
-		if( $secondary_color ) {
-			
+		if ( $secondary_color ) {
+
 			$custom_style .= "
 			a:hover,
 			.quantity-button:hover,
@@ -269,8 +279,8 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.product-widget-style-3 .owl-carousel .owl-nav button.owl-next:hover, 
 			.product-widget-style-3 .owl-carousel .owl-nav button.owl-prev:hover,
 			.addonify-add-to-wishlist-btn:hover, 
-			.woocommerce ul.products li.product .addonify-add-to-wishlist-btn:hover, 
-			.woocommerce-page ul.products li.product .addonify-add-to-wishlist-btn:hover  {
+			.woocommerce ul.products li.product a.addonify-add-to-wishlist-btn.addonify-custom-wishlist-btn:hover, 
+			.woocommerce-page ul.products li.product a.addonify-add-to-wishlist-btn.addonify-custom-wishlist-btn:hover  {
 
 				background-color: {$secondary_color};
 			}
@@ -291,18 +301,18 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			}";
 		}
 
-		if( orchid_store_get_option( 'enable_parallax_page_header_background' ) == true ) {
+		if ( orchid_store_get_option( 'enable_parallax_page_header_background' ) === true ) {
 
-			$custom_style .= "
+			$custom_style .= '
 			.os-breadcrumb-wrap {
 
 				background-attachment: fixed;
-			}";
+			}';
 		}
 
-		if( orchid_store_get_option( 'blog_archive_search_col_align' ) == 'content_feat_img' ) {
+		if ( orchid_store_get_option( 'blog_archive_search_col_align' ) === 'content_feat_img' ) {
 
-			$custom_style .= "
+			$custom_style .= '
 			.search-entry article .thumb-col, 
 			.archive-entry .thumb-col {
 				
@@ -313,14 +323,14 @@ if( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.archive-entry article .content-col {
 
 				order: 1;
-			}";
+			}';
 		}
 
-		$custom_style .= "
+		$custom_style .= '
 		.excerpt a,
 		.editor-entry a {
 			text-decoration: underline;
-		}";
+		}';
 
 		return $custom_style;
 	}

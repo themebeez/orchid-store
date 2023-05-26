@@ -2,9 +2,8 @@
 /**
  * Add to wishlist button template - Remove button
  *
- * @author Your Inspiration Themes
- * @package YITH WooCommerce Wishlist
- * @version 3.0.0
+ * @author  Your Inspiration Themes
+ * @package Orchid_Store
  */
 
 /**
@@ -40,12 +39,23 @@ global $product;
 ?>
 
 <div class="yith-wcwl-add-button">
-	<a href="<?php echo esc_url( add_query_arg( 'remove_from_wishlist', $product_id, $base_url ) ); ?>" rel="nofollow" data-item-id="<?php echo esc_attr( $found_item->get_id() ); ?>" data-product-id="<?php echo esc_attr( $product_id ); ?>" class="delete_item <?php echo esc_attr( $link_classes ); ?> button-general wish-list-button os-tooltip" data-title="<?php echo esc_attr( apply_filters( 'yith_wcwl_add_to_wishlist_title', $label ) ) ?>" data-tippy-content="<?php echo esc_attr( $label ); ?>">
+	<a href="<?php echo esc_url( add_query_arg( 'remove_from_wishlist', $product_id, $base_url ) ); ?>"
+	rel="nofollow"
+	data-item-id="<?php echo esc_attr( $found_item->get_id() ); ?>"
+	data-product-id="<?php echo esc_attr( $product_id ); ?>"
+	class="delete_item <?php echo esc_attr( $link_classes ); ?> button-general wish-list-button os-tooltip"
+	data-title="<?php echo esc_attr( apply_filters( 'yith_wcwl_add_to_wishlist_title', $label ) ); ?>"
+	data-tippy-content="<?php echo esc_attr( $label ); ?>"
+>
 		<span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
 		<span class="text"><?php echo esc_html( $label ); ?></span>
 	</a>
 
-    <?php if( $show_view ): ?>
-        <a href="<?php echo esc_url( $found_in_list->get_url() ) ?>" class="view-wishlist button-general"><span class="icon"><i class="fa fa-eye"></i></span></a>
-    <?php endif; ?>
+	<?php
+	if ( $show_view ) :
+		?>
+		<a href="<?php echo esc_url( $found_in_list->get_url() ); ?>" class="view-wishlist button-general"><span class="icon"><i class="fa fa-eye"></i></span></a>
+		<?php
+	endif;
+	?>
 </div>

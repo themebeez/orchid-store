@@ -90,9 +90,13 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.4.7 - 24 May, 2023 ==
+== 1.4.7 - 26 May, 2023 ==
 
-- Updated: WooCommerce search form template version to 7.7.0.
+- Updated: Outdated WooCommerce templates issue.
+- Fix: Compatibilty issue with `Addonify - WooCommerce Wishlist` plugin.
+- Tested: With the plugin, `WooCommerce`, version 7.7.0.
+- Tested: With the plugin, `Addonify - Floating Cart for WooCommerce`, version 1.1.6.
+- Tested: With the plugin, `Addonify - WooCommerce Wishlist`, version 2.0.3.
 
 
 == 1.4.6 - 18 April, 2023 ==
