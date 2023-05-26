@@ -10,8 +10,8 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @package 	WooCommerce/Templates
+ * @see         https://docs.woocommerce.com/document/template-structure/
+ * @package     WooCommerce\Templates
  * @version     3.3.0
  */
 
@@ -22,6 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 $mobile_cols_no = get_theme_mod( 'orchid_store_field_product_cols_in_mobile', 1 );
 
 $mobile_col_class = 'os-mobile-col-' . $mobile_cols_no;
-
 ?>
-<ul class="products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?> <?php echo esc_attr( $mobile_col_class);  ?>">
+<ul class="products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?> <?php echo esc_attr( $mobile_col_class ); ?>">
+

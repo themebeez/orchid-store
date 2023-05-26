@@ -535,27 +535,22 @@
 
             if (!orchid_store_obj.isUserLoggedIn) {
 
-                let wishlist;
-                let productsInWishlist;
+                let wishlist, productsInWishlist;
                 let wishlistLocalStorageVal = localStorage.getItem('addonify-wishlist_' + orchid_store_obj.homeUrl + '_product_ids');
 
-                if (wishlistLocalStorageVal) {
+                if (wishlistLocalStorageVal !== null) {
                     wishlist = JSON.parse(localStorage.getItem('addonify-wishlist_' + orchid_store_obj.homeUrl + '_product_ids'));
                     productsInWishlist = wishlist[0].product_ids;
                 }
 
-                console.log(productsInWishlist);
-
-                if ((productsInWishlist !== null) || (productsInWishlist !== undefined)) {
-                    if (productsInWishlist.length > 0) {
-                        $.map(productsInWishlist, function (value, index) {
-                            if ($(".os-addtowishlist-btn[data-product_id='" + value + "']").length > 0) {
-                                let osAddtoWishlistButton = $(".os-addtowishlist-btn[data-product_id='" + value + "']");
-                                osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.alreadyInWishlistText);
-                                osAddtoWishlistButton.find('.bx').removeClass('bx-heart').addClass('bxs-heart');
-                            }
-                        });
-                    }
+                if (productsInWishlist !== null && productsInWishlist !== undefined && productsInWishlist.length > 0 ) {
+                    $.map(productsInWishlist, function (value, index) {
+                        if ($(".os-addtowishlist-btn[data-product_id='" + value + "']").length > 0) {
+                            let osAddtoWishlistButton = $(".os-addtowishlist-btn[data-product_id='" + value + "']");
+                            osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.alreadyInWishlistText);
+                            osAddtoWishlistButton.find('.bx').removeClass('bx-heart').addClass('bxs-heart');
+                        }
+                    });
                     $('.wishlist-items-count').html(productsInWishlist.length);
                 }
             }
@@ -570,21 +565,24 @@
             });
 
             $(document).on('addonify_added_to_wishlist', function (event, data) {
-                //console.log(event);
+
                 if ($(".os-addtowishlist-btn[data-product_id='" + data.productID + "']")) {
                     let osAddtoWishlistButton = $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']");
 
-                    osAddtoWishlistButton.find('.bx').removeClass('bx-heart').addClass('bxs-heart');
+                    if (osAddtoWishlistButton.length > 0 ) {
 
-                    // Modify the tooltip content.
-                    // Ref: https://atomiks.github.io/tippyjs/v6/tippy-instance/
-                    // Ref: https://atomiks.github.io/tippyjs/v5/methods/#setcontent
-                    let tippyInstance = osAddtoWishlistButton[0]._tippy;
+                        osAddtoWishlistButton.find('.bx').removeClass('bx-heart').addClass('bxs-heart');
 
-                    if (tippyInstance) {
+                        // Modify the tooltip content.
+                        // Ref: https://atomiks.github.io/tippyjs/v6/tippy-instance/
+                        // Ref: https://atomiks.github.io/tippyjs/v5/methods/#setcontent
+                        let tippyInstance = osAddtoWishlistButton[0]._tippy;
 
-                        tippyInstance.setContent(orchid_store_obj.addedToWishlistText);
-                        osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.addedToWishlistText);
+                        if (tippyInstance) {
+
+                            tippyInstance.setContent(orchid_store_obj.addedToWishlistText);
+                            osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.addedToWishlistText);
+                        }
                     }
                 }
 
@@ -605,17 +603,20 @@
                 if ($(".os-addtowishlist-btn[data-product_id='" + data.productID + "']")) {
                     let osAddtoWishlistButton = $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']");
 
-                    osAddtoWishlistButton.find('.bx').removeClass('bxs-heart').addClass('bx-heart');
+                    if (osAddtoWishlistButton.length > 0 ) {
 
-                    // Modify the tooltip content.
-                    // Ref: https://atomiks.github.io/tippyjs/v6/tippy-instance/
-                    // Ref: https://atomiks.github.io/tippyjs/v5/methods/#setcontent
-                    let tippyInstance = osAddtoWishlistButton[0]._tippy;
+                        osAddtoWishlistButton.find('.bx').removeClass('bxs-heart').addClass('bx-heart');
 
-                    if (tippyInstance) {
+                        // Modify the tooltip content.
+                        // Ref: https://atomiks.github.io/tippyjs/v6/tippy-instance/
+                        // Ref: https://atomiks.github.io/tippyjs/v5/methods/#setcontent
+                        let tippyInstance = osAddtoWishlistButton[0]._tippy;
 
-                        tippyInstance.setContent(orchid_store_obj.addToWishlistText);
-                        osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.addToWishlistText);
+                        if (tippyInstance) {
+
+                            tippyInstance.setContent(orchid_store_obj.addToWishlistText);
+                            osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.addToWishlistText);
+                        }
                     }
                 }
 

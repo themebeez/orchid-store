@@ -2,9 +2,8 @@
 /**
  * Add to wishlist button template - Browse list
  *
- * @author Your Inspiration Themes
- * @package YITH WooCommerce Wishlist
- * @version 3.0.0
+ * @author  Your Inspiration Themes
+ * @package Orchid_Store
  */
 
 /**
@@ -38,6 +37,6 @@ global $product;
 <div class="yith-wcwl-wishlistexistsbrowse">
 	<a class="button-general wish-list-button os-tooltip" href="<?php echo esc_url( $wishlist_url ); ?>" rel="nofollow" data-title="<?php echo esc_attr( $browse_wishlist_text ); ?>" data-tippy-content="<?php echo esc_attr( $browse_wishlist_text ); ?>">
 		<span class="icon"><i class='bx bxs-heart'></i></span>
-		<span class="text"><?php echo esc_html( apply_filters( 'yith-wcwl-browse-wishlist-label', $browse_wishlist_text, $product_id, $icon ) ); ?></span>
+		<span class="text"><?php echo esc_html( apply_filters( 'yith-wcwl-browse-wishlist-label', $browse_wishlist_text, $product_id, $icon ) ); // phpcs:ignore ?></span>
 	</a>
 </div>
