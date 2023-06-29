@@ -77,62 +77,65 @@
         = WooCommerce  cart events
         ============================
         */
-
-        iziToast.settings({
-
-            class: 'izitoast-notification',
-            position: 'topRight',
-            theme: 'light',
-            zindex: 99999999,
-            rtl: false,
-        });
-
-
-        if (jQuery('body').hasClass('rtl')) {
+        console.log(orchid_store_obj);
+        if (orchid_store_obj.isCartMessagesEnabled === '1') {
 
             iziToast.settings({
 
-                rtl: true,
-                position: 'topLeft',
+                class: 'izitoast-notification',
+                position: 'topRight',
+                theme: 'light',
+                zindex: 99999999,
+                rtl: false,
             });
 
-        }
 
-        if (orchid_store_obj.added_to_cart_message) {
+            if (jQuery('body').hasClass('rtl')) {
 
-            $(document.body).on('added_to_cart', function () {
+                iziToast.settings({
 
-                iziToast.success({
-
-                    message: orchid_store_obj.added_to_cart_message,
-
+                    rtl: true,
+                    position: 'topLeft',
                 });
 
-            });
-        }
+            }
 
-        if (orchid_store_obj.cart_updated_message) {
+            if (orchid_store_obj.added_to_cart_message) {
 
-            $(document.body).on('updated_cart_totals', function () {
+                $(document.body).on('added_to_cart', function () {
 
-                iziToast.info({
+                    iziToast.success({
 
-                    message: orchid_store_obj.cart_updated_message,
+                        message: orchid_store_obj.added_to_cart_message,
 
-                });
-            });
-        }
-
-        if (orchid_store_obj.removed_from_cart_message) {
-
-            $(document.body).on('removed_from_cart', function () {
-
-                iziToast.success({
-
-                    message: orchid_store_obj.removed_from_cart_message,
+                    });
 
                 });
-            });
+            }
+
+            if (orchid_store_obj.cart_updated_message) {
+
+                $(document.body).on('updated_cart_totals', function () {
+
+                    iziToast.info({
+
+                        message: orchid_store_obj.cart_updated_message,
+
+                    });
+                });
+            }
+
+            if (orchid_store_obj.removed_from_cart_message) {
+
+                $(document.body).on('removed_from_cart', function () {
+
+                    iziToast.success({
+
+                        message: orchid_store_obj.removed_from_cart_message,
+
+                    });
+                });
+            }
         }
 
         /*

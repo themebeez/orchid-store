@@ -292,6 +292,35 @@ if ( ! function_exists( 'orchid_store_template_loop_product_thumbnail' ) ) {
 
 		echo woocommerce_get_product_thumbnail(); // phpcs:ignore.
 
+		$effect_on_image_on_hover = get_theme_mod( 'orchid_store_field_on_hover_image_effect', 'none' );
+
+		if ( 'swap' === $effect_on_image_on_hover ) {
+
+			$gallery_image_ids = $product->get_gallery_image_ids();
+
+			if ( is_array( $gallery_image_ids ) && count( $gallery_image_ids ) > 0 ) {
+
+				$secondary_image = wp_get_attachment_image( $gallery_image_ids[0], 'woocommerce_thumbnail' );
+
+				echo $secondary_image; // phpcs:ignore
+			}
+		}
+
+		if ( get_theme_mod( 'orchid_store_field_add_to_cart_button_placement', 'default' ) === 'over_image' ) {
+			?>
+			<div class="custom-cart-btn">
+				<?php
+				/**
+				 * Hook: orchid_store_loop_add_to_cart.
+				 *
+				 * @hooked woocommerce_template_loop_add_to_cart - 10
+				 */
+				do_action( 'orchid_store_loop_add_to_cart' );
+				?>
+			</div>
+			<?php
+		}
+
 		/**
 		 * Hook: orchid_store_loop_product_link_close.
 		 *
@@ -580,11 +609,16 @@ if ( ! function_exists( 'orchid_store_woocommerce_title_breadcrumb_action' ) ) {
 					?>
 				>
 					<div class="__os-container__">
-						<div class="breadcrumb-inner">                    
-							<div class="title">
-								<h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>
-							</div><!-- .title -->
+						<div class="breadcrumb-inner">
 							<?php
+							if ( orchid_store_get_option( 'display_page_title' ) ) {
+								?>
+								<div class="title">
+									<h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>
+								</div><!-- .title -->
+								<?php
+							}
+
 							$display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
 
 							if ( $display_breadcrumb ) {
@@ -791,3 +825,134 @@ if ( ! function_exists( 'orchid_store_refresh_cart_count' ) ) {
 
 	add_filter( 'woocommerce_add_to_cart_fragments', 'orchid_store_refresh_cart_count' );
 }
+
+
+/**
+ * Wraps WooCommerce result count and catalog ordering in a div container.
+ *
+ * @since 1.5.0
+ */
+function orchid_store_result_count_and_catalog_ordering() {
+	?>
+	<div class="os-result-count-and-catalog-ordering">
+		<?php do_action( 'orchid_store_before_shop_loop' ); ?>
+	</div>
+	<?php
+}
+
+
+/**
+ * Adds class to product container if switching of product thumbnail on product hover is enabled.
+ *
+ * @since 1.5.0
+ *
+ * @param array      $classes Array of CSS classes.
+ * @param WC_Product $product Product object.
+ */
+function orchid_store_woocommerce_post_class( $classes, $product ) {
+
+	$effect_on_image_on_hover = get_theme_mod( 'orchid_store_field_on_hover_image_effect', 'none' );
+
+	switch ( $effect_on_image_on_hover ) {
+		case 'zoom':
+			$classes[] = 'os-product-thumbnail-effect-zoom';
+			break;
+		case 'swap':
+			$gallery_image_ids = $product->get_gallery_image_ids();
+
+			if ( is_array( $gallery_image_ids ) && count( $gallery_image_ids ) > 0 ) {
+				$classes[] = 'os-product-thumbnail-effect-swap';
+			}
+			break;
+		default:
+	}
+
+	$add_to_cart_button_position = get_theme_mod( 'orchid_store_field_add_to_cart_button_placement', 'default' );
+
+	if ( 'over_image' === $add_to_cart_button_position ) {
+		$classes[] = 'os-product-thumbnail-position-over-image';
+	}
+
+	if ( get_theme_mod( 'orchid_store_field_display_add_to_cart_button_on_hover', false ) ) {
+		$classes[] = 'os-add-to-cart-button-display-on-product-hover';
+	}
+
+	return $classes;
+}
+add_filter( 'woocommerce_post_class', 'orchid_store_woocommerce_post_class', 10, 2 );
+
+
+/**
+ * Modifies add to cart link.
+ *
+ * @since 1.5.0
+ *
+ * @param string     $add_to_cart_link HTML of add to cart link.
+ * @param WC_Product $product Product object.
+ * @param array      $args Link arguments.
+ */
+function orchid_store_woocommerce_loop_add_to_cart_link( $add_to_cart_link, $product, $args ) {
+
+	$add_to_cart_text = esc_html( $product->add_to_cart_text() );
+
+	if ( get_theme_mod( 'orchid_store_field_display_add_to_cart_button_icon', false ) ) {
+
+		$cart_icon = apply_filters(
+			'orchid_store_add_to_cart_link_icon',
+			'<span class="os-add-to-cart-icon"><i class="bx bx-cart"></i></span>'
+		);
+
+		$icon_position = get_theme_mod( 'orchid_store_filed_add_to_cart_button_icon_position', 'right' );
+
+		if ( 'left' === $icon_position ) {
+			$args['class']    = $args['class'] . ' os-left-cart-icon';
+			$add_to_cart_text = $cart_icon . $add_to_cart_text;
+		} else {
+			$args['class']    = $args['class'] . ' os-right-cart-icon';
+			$add_to_cart_text = $add_to_cart_text . $cart_icon;
+		}
+	}
+
+	return sprintf(
+		'<a href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+		esc_url( $product->add_to_cart_url() ),
+		esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
+		esc_attr( isset( $args['class'] ) ? $args['class'] : 'button' ),
+		isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
+		$add_to_cart_text
+	);
+}
+add_filter( 'woocommerce_loop_add_to_cart_link', 'orchid_store_woocommerce_loop_add_to_cart_link', 10, 3 );
+
+
+/**
+ * Modifies sale tag.
+ *
+ * @since 1.5.0
+ *
+ * @param string     $sale_tag HTML of sale tag.
+ * @param WP_Post    $post Post object.
+ * @param WC_Product $product Product object.
+ */
+function orchid_store_woocommerce_sale_flash( $sale_tag, $post, $product ) {
+
+	$product_type = $product->get_type();
+
+	if ( get_theme_mod( 'orchid_store_field_enable_percentage_sale_tag', false ) === true ) {
+
+		if (
+			'simple' === $product_type ||
+			'external' === $product_type
+		) {
+			$regular_price = $product->get_regular_price();
+			$sale_price    = $product->get_sale_price();
+
+			$discount_percent = ( ( $regular_price - $sale_price ) / $regular_price ) * 100;
+
+			return '<span class="onsale">' . apply_filters( 'orchid_store_percentage_sale_tag', '-' . esc_html( number_format( $discount_percent, 2, '.', '' ) ) . '%' ) . '</span>'; // phpcs:ignore
+		}
+	}
+
+	return '<span class="onsale">' . esc_html( get_theme_mod( 'orchid_store_field_sale_tag_text', esc_html__( 'Sale!', 'orchid-store' ) ) ) . '</span>';
+}
+add_filter( 'woocommerce_sale_flash', 'orchid_store_woocommerce_sale_flash', 10, 3 );

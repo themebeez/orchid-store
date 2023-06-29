@@ -267,3 +267,19 @@ if ( get_theme_mod( 'orchid_store_field_display_plus_minus_btns', true ) ) {
 }
 
 remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
+add_action( 'woocommerce_before_shop_loop', 'orchid_store_result_count_and_catalog_ordering', 20 );
+
+add_action( 'orchid_store_before_shop_loop', 'woocommerce_result_count' );
+add_action( 'orchid_store_before_shop_loop', 'woocommerce_catalog_ordering' );
+
+if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_2' ) {
+	remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+	remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals', 10 );
+
+	add_action( 'orchid_store_cross_sell_display', 'woocommerce_cross_sell_display' );
+	add_action( 'orchid_store_cart_totals', 'woocommerce_cart_totals', 10 );
+}

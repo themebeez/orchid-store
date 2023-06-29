@@ -2,7 +2,7 @@
 
 $orchid_store_defaults = orchid_store_get_default_theme_options();
 
-if( ! function_exists( 'orchid_store_panel_declaration' ) ) {
+if ( ! function_exists( 'orchid_store_panel_declaration' ) ) {
 
 	function orchid_store_panel_declaration() {
 
@@ -27,7 +27,7 @@ if( ! function_exists( 'orchid_store_panel_declaration' ) ) {
 			),
 		);
 
-		if( !empty( $panels ) ) {
+		if ( !empty( $panels ) ) {
 
 			foreach( $panels as $panel ) {
 
@@ -39,7 +39,7 @@ if( ! function_exists( 'orchid_store_panel_declaration' ) ) {
 orchid_store_panel_declaration();
 
 
-if( ! function_exists( 'orchid_store_section_declaration' ) ) {
+if ( ! function_exists( 'orchid_store_section_declaration' ) ) {
 
 	function orchid_store_section_declaration() {
 
@@ -179,7 +179,7 @@ if( ! function_exists( 'orchid_store_section_declaration' ) ) {
 			),
 		);
 
-		if( class_exists( 'WooCommerce' ) && ( class_exists( 'YITH_WCWL' ) || class_exists( 'Addonify_Wishlist' ) ) ) {
+		if ( class_exists( 'WooCommerce' ) && ( class_exists( 'YITH_WCWL' ) || class_exists( 'Addonify_Wishlist' ) ) ) {
 
 			$sections[] = array(
 				'id' => 'wishlist',
@@ -190,7 +190,7 @@ if( ! function_exists( 'orchid_store_section_declaration' ) ) {
 			);
 		}
 
-		if( class_exists( 'WooCommerce' ) ) {
+		if ( class_exists( 'WooCommerce' ) ) {
 
 			$sections[] = array(
 				'id' => 'mini_cart',
@@ -201,7 +201,7 @@ if( ! function_exists( 'orchid_store_section_declaration' ) ) {
 			);
 		}
 
-		if( !empty( $sections ) ) {
+		if ( !empty( $sections ) ) {
 
 			foreach( $sections as $section ) {
 
@@ -260,6 +260,27 @@ orchid_store_add_select_field(
 *******************************************************************************************************/
 orchid_store_add_select_field( 'site_layout', esc_html__( 'Select Site Layout', 'orchid-store' ), '', array( 'boxed' => esc_html__( 'Boxed', 'orchid-store' ), 'fullwidth' => esc_html__( 'Full Width', 'orchid-store' ) ), '', 'site_layout' );
 
+orchid_store_add_number_field(
+	'fullwidth_container_width',
+	esc_html__( 'Container Width', 'orchid-store' ),
+	'',
+	'orchid_store_is_fullwidth_site_layout_enabled',
+	'site_layout',
+	'',
+	'',
+	''
+);
+
+orchid_store_add_number_field(
+	'boxed_container_width',
+	esc_html__( 'Container Width', 'orchid-store' ),
+	'',
+	'orchid_store_is_boxed_site_layout_enabled',
+	'site_layout',
+	'',
+	'',
+	''
+);
 
 /*******************************************************************************************************
 ********************************** Header Control Fields Declaration *********************************
@@ -284,6 +305,13 @@ orchid_store_add_text_field( 'special_menu_title', esc_html__( 'Special Menu Tit
 *******************************************************************************************************/
 orchid_store_add_toggle_field( 'display_page_header', esc_html__( 'Display Page Header', 'orchid-store' ), '', '', 'page_header' );
 orchid_store_add_toggle_field( 'display_breadcrumb', esc_html__( 'Display Breadcrumbs', 'orchid-store' ), '', '', 'page_header' );
+orchid_store_add_toggle_field(
+	'display_page_title',
+	esc_html__( 'Display Page Title', 'orchid-store' ),
+	esc_html__( 'When enabled, page title will be displayed inside the page header. Otherwise, page title will be displayed below the page header.', 'orchid-store' ),
+	'',
+	'page_header'
+);
 orchid_store_add_toggle_field( 'enable_parallax_page_header_background', esc_html__( 'Enable Parallax Background Image', 'orchid-store' ), '', 'orchid_store_is_page_header_enabled', 'page_header' );
 
 
@@ -291,7 +319,7 @@ orchid_store_add_toggle_field( 'enable_parallax_page_header_background', esc_htm
 ********************************** WooCommerce  Elements Control Fields Declaration *********************************
 *******************************************************************************************************/
 orchid_store_add_toggle_field( 'display_product_search_form', esc_html__( 'Display Search Form', 'orchid-store' ), '', '', 'product_search' );
-if( class_exists( 'WooCommerce' ) ) {
+if ( class_exists( 'WooCommerce' ) ) {
 	orchid_store_add_select_field( 'select_search_form', esc_html__( 'Select Search Form', 'orchid-store' ), '', array( 'product_search' => esc_html__( 'Product Search Form', 'orchid-store' ), 'default_search' => esc_html__( 'Default Search Form', 'orchid-store' ) ), 'orchid_store_is_product_search_form_enabled', 'product_search' );
 }
 orchid_store_add_toggle_field( 'display_product_search_form_on_mobile', esc_html__( 'Display Search Form On Mobile Devices', 'orchid-store' ), '', 'orchid_store_is_product_search_form_enabled', 'product_search' );
@@ -464,313 +492,627 @@ orchid_store_add_color_field( 'secondary_color', esc_html__( 'Secondary Color', 
 /*******************************************************************************************************
 ***************************************** WooCommerce  Option Declaration *******************************
 *******************************************************************************************************/
-if( class_exists( 'WooCommerce' ) ) {
+if ( class_exists( 'WooCommerce' ) ) {
 
-	$wp_customize->add_section( 
-		'orchid_store_section_woocommerce_sidebar', 
+	$wp_customize->add_section(
+		'orchid_store_section_woocommerce_single',
 		array(
-			'title'			=> esc_html__( 'Sidebar', 'orchid-store' ),
-			'panel'			=> 'woocommerce',
-		) 
+			'title' => esc_html__( 'Product Single', 'orchid-store' ),
+			'panel' => 'woocommerce',
+		)
 	);
 
-	// WooCommerce  Pages Sidebar Postion
-	$wp_customize->add_setting( 'orchid_store_field_woocommerce_sidebar_position', 
+	$wp_customize->add_section(
+		'orchid_store_section_woocommerce_cart',
 		array(
-			'sanitize_callback'		=> 'orchid_store_sanitize_select',
-			'default'				=> $orchid_store_defaults['orchid_store_field_woocommerce_sidebar_position'],
+			'title' => esc_html__( 'Cart Page', 'orchid-store' ),
+			'panel' => 'woocommerce',
+		)
+	);
+
+	$wp_customize->add_section(
+		'orchid_store_section_woocommerce_sidebar',
+		array(
+			'title' => esc_html__( 'Sidebar', 'orchid-store' ),
+			'panel' => 'woocommerce',
+		)
+	);
+
+	// WooCommerce  Pages Sidebar Postion.
+	$wp_customize->add_setting(
+		'orchid_store_field_woocommerce_sidebar_position',
+		array(
+			'sanitize_callback' => 'orchid_store_sanitize_select',
+			'default'           => $orchid_store_defaults['orchid_store_field_woocommerce_sidebar_position'],
 			'capability'        => 'edit_theme_options',
 		)
 	);
 
-	$wp_customize->add_control( 
-		new Orchid_Store_Radio_Image_Control( $wp_customize, 'orchid_store_field_woocommerce_sidebar_position', 
+	$wp_customize->add_control(
+		new Orchid_Store_Radio_Image_Control(
+			$wp_customize,
+			'orchid_store_field_woocommerce_sidebar_position',
 			array(
-				'label' => esc_html__( 'Product Archive - Sidebar Position', 'orchid-store' ),
+				'label'       => esc_html__( 'Product Archive - Sidebar Position', 'orchid-store' ),
 				'description' => '',
-				'type'	=> 'select',
-				'choices' => orchid_store_all_sidebar_positions(),
-				'section' => 'orchid_store_section_woocommerce_sidebar',
+				'type'        => 'select',
+				'choices'     => orchid_store_all_sidebar_positions(),
+				'section'     => 'orchid_store_section_woocommerce_sidebar',
 			)
-		) 
+		)
 	);
 
 
-	// WooCommerce  Pages Sidebar Postion
-	$wp_customize->add_setting( 'orchid_store_field_woocommerce_product_sidebar_position', 
+	// WooCommerce  Pages Sidebar Postion.
+	$wp_customize->add_setting(
+		'orchid_store_field_woocommerce_product_sidebar_position',
 		array(
-			'sanitize_callback'		=> 'orchid_store_sanitize_select',
-			'default'				=> $orchid_store_defaults['orchid_store_field_woocommerce_product_sidebar_position'],
+			'sanitize_callback' => 'orchid_store_sanitize_select',
+			'default'           => $orchid_store_defaults['orchid_store_field_woocommerce_product_sidebar_position'],
 			'capability'        => 'edit_theme_options',
 		)
 	);
 
-	$wp_customize->add_control( 
-		new Orchid_Store_Radio_Image_Control( $wp_customize, 'orchid_store_field_woocommerce_product_sidebar_position', 
+	$wp_customize->add_control(
+		new Orchid_Store_Radio_Image_Control(
+			$wp_customize,
+			'orchid_store_field_woocommerce_product_sidebar_position',
 			array(
-				'label' => esc_html__( 'Product Single - Sidebar Position', 'orchid-store' ),
+				'label'       => esc_html__( 'Product Single - Sidebar Position', 'orchid-store' ),
 				'description' => '',
-				'type'	=> 'select',
-				'choices' => orchid_store_all_sidebar_positions(),
-				'section' => 'orchid_store_section_woocommerce_sidebar',
+				'type'        => 'select',
+				'choices'     => orchid_store_all_sidebar_positions(),
+				'section'     => 'orchid_store_section_woocommerce_sidebar',
 			)
-		) 
+		)
 	);
 
-	// No of Product Columns in Shop Page
-	$wp_customize->add_setting( 'orchid_store_field_shop_product_col_no', 
+	// No of Product Columns in Shop Page.
+	$wp_customize->add_setting(
+		'orchid_store_field_shop_product_col_no',
 		array(
-			'default' => $orchid_store_defaults['orchid_store_field_shop_product_col_no'],
+			'default'           => $orchid_store_defaults['orchid_store_field_shop_product_col_no'],
 			'sanitize_callback' => 'orchid_store_sanitize_range',
 			'capability'        => 'edit_theme_options',
 		)
-	);	
+	);
 
-	$wp_customize->add_control( 'orchid_store_field_shop_product_col_no', 
+	$wp_customize->add_control(
+		'orchid_store_field_shop_product_col_no',
 		array(
-			'label' => esc_html__( 'Shop - Product Columns', 'orchid-store' ),
+			'label'       => esc_html__( 'Shop - Product Columns', 'orchid-store' ),
 			'description' => esc_html__( 'Set number of columns to be displayed in shop page for displaying products. Maximum number of colums is 6 while minimum number of columns is 2.', 'orchid-store' ),
-			'type' => 'number',
-			'section' => 'woocommerce_product_catalog',
+			'type'        => 'number',
+			'section'     => 'woocommerce_product_catalog',
 			'input_attrs' => array(
-				'min' => 2,
-				'max' => 6,
-				'step' => 1
+				'min'  => 2,
+				'max'  => 6,
+				'step' => 1,
 			),
 		)
 	);
 
 
-	// No of Rows per page
-	$wp_customize->add_setting( 'orchid_store_field_row_per_page', 
+	// No of Rows per page.
+	$wp_customize->add_setting(
+		'orchid_store_field_row_per_page',
 		array(
-			'default' => $orchid_store_defaults['orchid_store_field_row_per_page'],
+			'default'           => $orchid_store_defaults['orchid_store_field_row_per_page'],
 			'sanitize_callback' => 'orchid_store_sanitize_number',
 			'capability'        => 'edit_theme_options',
 		)
-	);	
+	);
 
-	$wp_customize->add_control( 'orchid_store_field_row_per_page', 
+	$wp_customize->add_control(
+		'orchid_store_field_row_per_page',
 		array(
-			'label' => esc_html__( 'Rows per page', 'orchid-store' ),
+			'label'       => esc_html__( 'Rows per page', 'orchid-store' ),
 			'description' => esc_html__( 'How many rows of products should be shown per page?', 'orchid-store' ),
-			'type' => 'number',
-			'section' => 'woocommerce_product_catalog',
+			'type'        => 'number',
+			'section'     => 'woocommerce_product_catalog',
 		)
 	);
 
 
-	// No of Related Product Columns in Product Page
-	$wp_customize->add_setting( 'orchid_store_field_related_product_col_no', 
+	// No of Related Product Columns in Product Page.
+	$wp_customize->add_setting(
+		'orchid_store_field_related_product_col_no',
 		array(
-			'default' => $orchid_store_defaults['orchid_store_field_related_product_col_no'],
+			'default'           => $orchid_store_defaults['orchid_store_field_related_product_col_no'],
 			'sanitize_callback' => 'orchid_store_sanitize_range',
 			'capability'        => 'edit_theme_options',
 		)
-	);	
+	);
 
-	$wp_customize->add_control( 'orchid_store_field_related_product_col_no', 
+	$wp_customize->add_control(
+		'orchid_store_field_related_product_col_no',
 		array(
-			'label' => esc_html__( 'Related Product Columns', 'orchid-store' ),
+			'label'       => esc_html__( 'Related Product Columns', 'orchid-store' ),
 			'description' => esc_html__( 'Set number of columns to be displayed in related product section of product page. Maximum number of colums is 6 while minimum number of columns is 2.', 'orchid-store' ),
-			'type' => 'number',
-			'section' => 'woocommerce_product_catalog',
+			'type'        => 'number',
+			'section'     => 'orchid_store_section_woocommerce_single',
 			'input_attrs' => array(
-				'min' => 2,
-				'max' => 6,
-				'step' => 1
+				'min'  => 2,
+				'max'  => 6,
+				'step' => 1,
 			),
 		)
 	);
 
 
-	// No of Related Products in Product Page
-	$wp_customize->add_setting( 'orchid_store_field_related_product_no', 
+	// No of Related Products in Product Page.
+	$wp_customize->add_setting(
+		'orchid_store_field_related_product_no',
 		array(
-			'default' => $orchid_store_defaults['orchid_store_field_related_product_no'],
+			'default'           => $orchid_store_defaults['orchid_store_field_related_product_no'],
 			'sanitize_callback' => 'orchid_store_sanitize_number',
 			'capability'        => 'edit_theme_options',
 		)
-	);	
+	);
 
-	$wp_customize->add_control( 'orchid_store_field_related_product_no', 
+	$wp_customize->add_control(
+		'orchid_store_field_related_product_no',
 		array(
-			'label' => esc_html__( 'No of Related Product', 'orchid-store' ),
+			'label'       => esc_html__( 'No of Related Product', 'orchid-store' ),
 			'description' => esc_html__( 'Set number of products to be displayed in related product section of product page.', 'orchid-store' ),
-			'type' => 'number',
-			'section' => 'woocommerce_product_catalog',
+			'type'        => 'number',
+			'section'     => 'orchid_store_section_woocommerce_single',
 		)
 	);
 
 
-	// Upsell Product Columns in Product Page
-	$wp_customize->add_setting( 'orchid_store_field_upsell_product_col_no', 
+	// Upsell Product Columns in Product Page.
+	$wp_customize->add_setting(
+		'orchid_store_field_upsell_product_col_no',
 		array(
-			'default' => $orchid_store_defaults['orchid_store_field_upsell_product_col_no'],
+			'default'           => $orchid_store_defaults['orchid_store_field_upsell_product_col_no'],
 			'sanitize_callback' => 'orchid_store_sanitize_range',
 			'capability'        => 'edit_theme_options',
 		)
-	);	
+	);
 
-	$wp_customize->add_control( 'orchid_store_field_upsell_product_col_no', 
+	$wp_customize->add_control(
+		'orchid_store_field_upsell_product_col_no',
 		array(
-			'label' => esc_html__( 'Upsell Product Columns', 'orchid-store' ),
+			'label'       => esc_html__( 'Upsell Product Columns', 'orchid-store' ),
 			'description' => esc_html__( 'Set number of columns to be displayed in upsell product section of product page. Maximum number of colums is 6 while minimum number of columns is 2.', 'orchid-store' ),
-			'type' => 'number',
-			'section' => 'woocommerce_product_catalog',
+			'type'        => 'number',
+			'section'     => 'orchid_store_section_woocommerce_single',
 			'input_attrs' => array(
-				'min' => 2,
-				'max' => 6,
-				'step' => 1
+				'min'  => 2,
+				'max'  => 6,
+				'step' => 1,
 			),
 		)
 	);
 
-	// Cross Sell Product Columns in Product Page
-	$wp_customize->add_setting( 'orchid_store_field_cross_sell_product_col_no', 
+	// Cross Sell Product Columns in Product Page.
+	$wp_customize->add_setting(
+		'orchid_store_field_cross_sell_product_col_no',
 		array(
-			'default' => $orchid_store_defaults['orchid_store_field_cross_sell_product_col_no'],
+			'default'           => $orchid_store_defaults['orchid_store_field_cross_sell_product_col_no'],
 			'sanitize_callback' => 'orchid_store_sanitize_range',
 			'capability'        => 'edit_theme_options',
 		)
-	);	
+	);
 
-	$wp_customize->add_control( 'orchid_store_field_cross_sell_product_col_no', 
+	$wp_customize->add_control(
+		'orchid_store_field_cross_sell_product_col_no',
 		array(
-			'label' => esc_html__( 'Cross Sell Product Columns', 'orchid-store' ),
+			'label'       => esc_html__( 'Cross Sell Product Columns', 'orchid-store' ),
 			'description' => esc_html__( 'Set number of columns to be displayed in cross sell product section of product page. Maximum number of colums is 6 while minimum number of columns is 2.', 'orchid-store' ),
-			'type' => 'number',
-			'section' => 'woocommerce_product_catalog',
+			'type'        => 'number',
+			'section'     => 'woocommerce_product_catalog',
 			'input_attrs' => array(
-				'min' => 2,
-				'max' => 6,
-				'step' => 1
+				'min'  => 2,
+				'max'  => 6,
+				'step' => 1,
 			),
 		)
 	);
 
-	// Number of Product Columns in mobile devices
-	$wp_customize->add_setting( 'orchid_store_field_product_cols_in_mobile', 
+	// Number of Product Columns in mobile devices.
+	$wp_customize->add_setting(
+		'orchid_store_field_product_cols_in_mobile',
 		array(
-			'default' => $orchid_store_defaults['orchid_store_field_product_cols_in_mobile'],
+			'default'           => $orchid_store_defaults['orchid_store_field_product_cols_in_mobile'],
 			'sanitize_callback' => 'orchid_store_sanitize_select',
 			'capability'        => 'edit_theme_options',
 		)
-	);	
+	);
 
-	$wp_customize->add_control( 'orchid_store_field_product_cols_in_mobile', 
+	$wp_customize->add_control(
+		'orchid_store_field_product_cols_in_mobile',
 		array(
-			'label' => esc_html__( 'Mobile - Product Columns', 'orchid-store' ),
+			'label'       => esc_html__( 'Mobile - Product Columns', 'orchid-store' ),
 			'description' => esc_html__( 'This option sets number of product columns to be displayed mobile devices.', 'orchid-store' ),
-			'type' => 'select',
-			'section' => 'woocommerce_product_catalog',
-			'choices' => array(
-				1 => __( '1', 'orchid-store' ),
-				2 => __( '2', 'orchid-store' ),
+			'type'        => 'select',
+			'section'     => 'woocommerce_product_catalog',
+			'choices'     => array(
+				1 => esc_html__( '1', 'orchid-store' ),
+				2 => esc_html__( '2', 'orchid-store' ),
 			),
 		)
 	);
 
 
-	// Display Product Out of Stock Notice
-	$wp_customize->add_setting( 'orchid_store_field_display_out_of_stock_notice', 
-		array(
-			'sanitize_callback'		=> 'wp_validate_boolean',
-			'default'				=> $orchid_store_defaults['orchid_store_field_display_out_of_stock_notice'],
-			'capability'        => 'edit_theme_options',
-		)
-	);
-
-	$wp_customize->add_control( new Orchid_Store_Customizer_Toggle_Control( 
-		$wp_customize, 
+	// Display Product Out of Stock Notice.
+	$wp_customize->add_setting(
 		'orchid_store_field_display_out_of_stock_notice',
 		array(
-			'label' => esc_html__( 'Display Product Out of Stock Notice', 'orchid-store' ),
-			'section' => 'woocommerce_product_catalog',
-			'type'	=> 'flat', // ios, light, flat
-		) 
-	) );
-
-
-	// Display plus and minus buttons @since 1.2.7
-	$wp_customize->add_setting( 'orchid_store_field_display_plus_minus_btns', 
-		array(
-			'sanitize_callback'		=> 'wp_validate_boolean',
-			'default'				=> $orchid_store_defaults['orchid_store_field_display_plus_minus_btns'],
+			'sanitize_callback' => 'wp_validate_boolean',
+			'default'           => $orchid_store_defaults['orchid_store_field_display_out_of_stock_notice'],
 			'capability'        => 'edit_theme_options',
 		)
 	);
 
-	$wp_customize->add_control( new Orchid_Store_Customizer_Toggle_Control( 
-		$wp_customize, 
+	$wp_customize->add_control(
+		new Orchid_Store_Customizer_Toggle_Control(
+			$wp_customize,
+			'orchid_store_field_display_out_of_stock_notice',
+			array(
+				'label'   => esc_html__( 'Display Product Out of Stock Notice', 'orchid-store' ),
+				'section' => 'woocommerce_product_catalog',
+				'type'    => 'flat',
+			)
+		)
+	);
+
+	// Add to cart button position.
+	// @since 1.5.0.
+	$wp_customize->add_setting(
+		'orchid_store_field_add_to_cart_button_placement',
+		array(
+			'sanitize_callback' => 'orchid_store_sanitize_select',
+			'default'           => $orchid_store_defaults['orchid_store_field_add_to_cart_button_placement'],
+			'capability'        => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Orchid_Store_Radio_Image_Control(
+			$wp_customize,
+			'orchid_store_field_add_to_cart_button_placement',
+			array(
+				'label'       => esc_html__( 'Add to Cart Button Position', 'orchid-store' ),
+				'description' => '',
+				'type'        => 'select',
+				'choices'     => orchid_store_add_to_cart_button_positions(),
+				'section'     => 'woocommerce_product_catalog',
+			)
+		)
+	);
+
+	// Display add to cart button on hover.
+	// @since 1.5.0.
+	$wp_customize->add_setting(
+		'orchid_store_field_display_add_to_cart_button_on_hover',
+		array(
+			'sanitize_callback' => 'wp_validate_boolean',
+			'default'           => $orchid_store_defaults['orchid_store_field_display_add_to_cart_button_on_hover'],
+			'capability'        => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Orchid_Store_Customizer_Toggle_Control(
+			$wp_customize,
+			'orchid_store_field_display_add_to_cart_button_on_hover',
+			array(
+				'label'   => esc_html__( 'Display Add to Cart Button on Product Hover', 'orchid-store' ),
+				'section' => 'woocommerce_product_catalog',
+				'type'    => 'flat', // ios, light, flat.
+			)
+		)
+	);
+
+	// Enable add to cart button icon.
+	// @since 1.5.0.
+	$wp_customize->add_setting(
+		'orchid_store_field_display_add_to_cart_button_icon',
+		array(
+			'sanitize_callback' => 'wp_validate_boolean',
+			'default'           => $orchid_store_defaults['orchid_store_field_display_add_to_cart_button_icon'],
+			'capability'        => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Orchid_Store_Customizer_Toggle_Control(
+			$wp_customize,
+			'orchid_store_field_display_add_to_cart_button_icon',
+			array(
+				'label'   => esc_html__( 'Enable Add to Cart Button Icon', 'orchid-store' ),
+				'section' => 'woocommerce_product_catalog',
+				'type'    => 'flat', // ios, light, flat.
+			)
+		)
+	);
+
+	// Add to cart button icon position.
+	// @since 1.5.0.
+	$wp_customize->add_setting(
+		'orchid_store_field_add_to_cart_button_icon_position',
+		array(
+			'sanitize_callback' => 'orchid_store_sanitize_select',
+			'default'           => $orchid_store_defaults['orchid_store_field_add_to_cart_button_icon_position'],
+			'capability'        => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_control(
+		'orchid_store_field_add_to_cart_button_icon_position',
+		array(
+			'label'       => esc_html__( 'Add to Cart Button Icon Position', 'orchid-store' ),
+			'description' => '',
+			'type'        => 'select',
+			'choices'     => array(
+				'left'  => esc_html__( 'Left', 'orchid-store' ),
+				'right' => esc_html__( 'Right', 'orchid-store' ),
+			),
+			'section'     => 'woocommerce_product_catalog',
+		)
+	);
+
+	// Sale tag position.
+	// @since 1.5.0.
+	$wp_customize->add_setting(
+		'orchid_store_field_sale_tag_position',
+		array(
+			'sanitize_callback' => 'orchid_store_sanitize_select',
+			'default'           => $orchid_store_defaults['orchid_store_field_sale_tag_position'],
+			'capability'        => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_control(
+		'orchid_store_field_sale_tag_position',
+		array(
+			'label'       => esc_html__( 'Sale Tag Position', 'orchid-store' ),
+			'description' => '',
+			'type'        => 'select',
+			'choices'     => array(
+				'left'  => esc_html__( 'Left', 'orchid-store' ),
+				'right' => esc_html__( 'Right', 'orchid-store' ),
+			),
+			'section'     => 'woocommerce_product_catalog',
+		)
+	);
+
+	// Sale tag text.
+	// @since 1.5.0.
+	$wp_customize->add_setting(
+		'orchid_store_field_sale_tag_text',
+		array(
+			'sanitize_callback' => 'orchid_store_sanitize_select',
+			'default'           => $orchid_store_defaults['orchid_store_field_sale_tag_text'],
+			'capability'        => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_control(
+		'orchid_store_field_sale_tag_text',
+		array(
+			'label'   => esc_html__( 'Sale Tag Text', 'orchid-store' ),
+			'type'    => 'text',
+			'section' => 'woocommerce_product_catalog',
+		)
+	);
+
+	// Enable percentage sale tag.
+	// @since 1.5.0.
+	$wp_customize->add_setting(
+		'orchid_store_field_enable_percentage_sale_tag',
+		array(
+			'sanitize_callback' => 'wp_validate_boolean',
+			'default'           => $orchid_store_defaults['orchid_store_field_enable_percentage_sale_tag'],
+			'capability'        => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Orchid_Store_Customizer_Toggle_Control(
+			$wp_customize,
+			'orchid_store_field_enable_percentage_sale_tag',
+			array(
+				'label'   => esc_html__( 'Enable Percentage Sale Tag', 'orchid-store' ),
+				'section' => 'woocommerce_product_catalog',
+				'type'    => 'flat', // ios, light, flat.
+			)
+		)
+	);
+
+
+	// Display plus and minus buttons @since 1.2.7.
+	$wp_customize->add_setting(
 		'orchid_store_field_display_plus_minus_btns',
 		array(
-			'label' => esc_html__( 'Display Plus &amp; Minus Buttons', 'orchid-store' ),
-			'description' => __( 'This option adds plus and minus buttons before and after quantity field respectively.', 'orchid-store' ),
-			'section' => 'woocommerce_product_catalog',
-			'type'	=> 'flat', // ios, light, flat
-		) 
-	) );
-
-
-	$wp_customize->add_section( 
-		'orchid_store_section_woocommerce_message', 
-		array(
-			'title'			=> esc_html__( 'Cart Messages', 'orchid-store' ),
-			'panel'			=> 'woocommerce',
-		) 
+			'sanitize_callback' => 'wp_validate_boolean',
+			'default'           => $orchid_store_defaults['orchid_store_field_display_plus_minus_btns'],
+			'capability'        => 'edit_theme_options',
+		)
 	);
 
-	// Message when product is added to cart
-	$wp_customize->add_setting( 'orchid_store_field_product_added_to_cart_message', 
+	$wp_customize->add_control(
+		new Orchid_Store_Customizer_Toggle_Control(
+			$wp_customize, 
+			'orchid_store_field_display_plus_minus_btns',
+			array(
+				'label'       => esc_html__( 'Display Plus &amp; Minus Buttons', 'orchid-store' ),
+				'description' => esc_html__( 'This option adds plus and minus buttons before and after quantity field respectively.', 'orchid-store' ),
+				'section'     => 'woocommerce_product_catalog',
+				'type'        => 'flat',
+			)
+		)
+	);
+
+
+	$wp_customize->add_section(
+		'orchid_store_section_woocommerce_message',
 		array(
-			'default' => $orchid_store_defaults['orchid_store_field_product_added_to_cart_message'],
+			'title' => esc_html__( 'Cart Messages', 'orchid-store' ),
+			'panel' => 'woocommerce',
+		)
+	);
+
+	// Enable cart messages.
+	// @since 1.5.0.
+	$wp_customize->add_setting(
+		'orchid_store_field_enable_cart_messages',
+		array(
+			'sanitize_callback' => 'wp_validate_boolean',
+			'default'           => $orchid_store_defaults['orchid_store_field_enable_cart_messages'],
+			'capability'        => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Orchid_Store_Customizer_Toggle_Control(
+			$wp_customize,
+			'orchid_store_field_enable_cart_messages',
+			array(
+				'label'   => esc_html__( 'Enable Cart Messages', 'orchid-store' ),
+				'section' => 'orchid_store_section_woocommerce_message',
+				'type'    => 'flat', // ios, light, flat.
+			)
+		)
+	);
+
+	// Message when product is added to cart.
+	$wp_customize->add_setting(
+		'orchid_store_field_product_added_to_cart_message',
+		array(
+			'default'           => $orchid_store_defaults['orchid_store_field_product_added_to_cart_message'],
 			'sanitize_callback' => 'sanitize_text_field',
 			'capability'        => 'edit_theme_options',
 		)
-	);	
+	);
 
-	$wp_customize->add_control( 'orchid_store_field_product_added_to_cart_message', 
+	$wp_customize->add_control(
+		'orchid_store_field_product_added_to_cart_message',
 		array(
-			'label' => esc_html__( 'Product Added To Cart', 'orchid-store' ),
-			'type' => 'text',
+			'label'   => esc_html__( 'Product Added To Cart', 'orchid-store' ),
+			'type'    => 'text',
 			'section' => 'orchid_store_section_woocommerce_message',
 		)
 	);
 
 
-	// Message when product is removed from cart
-	$wp_customize->add_setting( 'orchid_store_field_product_removed_from_cart_message', 
+	// Message when product is removed from cart.
+	$wp_customize->add_setting(
+		'orchid_store_field_product_removed_from_cart_message',
 		array(
-			'default' => $orchid_store_defaults['orchid_store_field_product_removed_from_cart_message'],
+			'default'           => $orchid_store_defaults['orchid_store_field_product_removed_from_cart_message'],
 			'sanitize_callback' => 'sanitize_text_field',
 			'capability'        => 'edit_theme_options',
 		)
-	);	
+	);
 
-	$wp_customize->add_control( 'orchid_store_field_product_removed_from_cart_message', 
+	$wp_customize->add_control(
+		'orchid_store_field_product_removed_from_cart_message',
 		array(
-			'label' => esc_html__( 'Product Removed From Cart', 'orchid-store' ),
-			'type' => 'text',
+			'label'   => esc_html__( 'Product Removed From Cart', 'orchid-store' ),
+			'type'    => 'text',
 			'section' => 'orchid_store_section_woocommerce_message',
 		)
 	);
 
 
-	// Message when cart is updated
-	$wp_customize->add_setting( 'orchid_store_field_cart_update_message', 
+	// Message when cart is updated.
+	$wp_customize->add_setting(
+		'orchid_store_field_cart_update_message',
 		array(
-			'default' => $orchid_store_defaults['orchid_store_field_cart_update_message'],
+			'default'           => $orchid_store_defaults['orchid_store_field_cart_update_message'],
 			'sanitize_callback' => 'sanitize_text_field',
 			'capability'        => 'edit_theme_options',
 		)
-	);	
+	);
 
-	$wp_customize->add_control( 'orchid_store_field_cart_update_message', 
+	$wp_customize->add_control(
+		'orchid_store_field_cart_update_message',
 		array(
-			'label' => esc_html__( 'Cart Updated', 'orchid-store' ),
-			'type' => 'text',
+			'label'   => esc_html__( 'Cart Updated', 'orchid-store' ),
+			'type'    => 'text',
 			'section' => 'orchid_store_section_woocommerce_message',
+		)
+	);
+
+
+
+	// Effect on product image on product hover.
+	// @since 1.5.0.
+	$wp_customize->add_setting(
+		'orchid_store_field_on_hover_image_effect',
+		array(
+			'sanitize_callback' => 'orchid_store_sanitize_select',
+			'default'           => $orchid_store_defaults['orchid_store_field_on_hover_image_effect'],
+			'capability'        => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_control(
+		'orchid_store_field_on_hover_image_effect',
+		array(
+			'label'   => esc_html__( 'Effect on Product Image on Hover', 'orchid-store' ),
+			'section' => 'woocommerce_product_images',
+			'type'    => 'select',
+			'choices' => array(
+				'none' => esc_html__( 'None', 'orchid-store' ),
+				'zoom' => esc_html__( 'Zoom', 'orchid-store' ),
+				'swap' => esc_html__( 'Swap', 'orchid-store' ),
+			),
+		)
+	);
+
+
+	// Checkout page layout.
+	// @since 1.5.0.
+	$wp_customize->add_setting(
+		'orchid_store_field_checkout_layout',
+		array(
+			'sanitize_callback' => 'orchid_store_sanitize_select',
+			'default'           => $orchid_store_defaults['orchid_store_field_checkout_layout'],
+			'capability'        => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Orchid_Store_Radio_Image_Control(
+			$wp_customize,
+			'orchid_store_field_checkout_layout',
+			array(
+				'label'       => esc_html__( 'Checkout Layout', 'orchid-store' ),
+				'description' => '',
+				'type'        => 'select',
+				'choices'     => orchid_store_checkout_page_layouts(),
+				'section'     => 'woocommerce_checkout',
+			)
+		)
+	);
+
+	// Cart page layout.
+	// @since 1.5.0.
+	$wp_customize->add_setting(
+		'orchid_store_field_cart_layout',
+		array(
+			'sanitize_callback' => 'orchid_store_sanitize_select',
+			'default'           => $orchid_store_defaults['orchid_store_field_cart_layout'],
+			'capability'        => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Orchid_Store_Radio_Image_Control(
+			$wp_customize,
+			'orchid_store_field_cart_layout',
+			array(
+				'label'       => esc_html__( 'Cart Layout', 'orchid-store' ),
+				'description' => '',
+				'type'        => 'select',
+				'choices'     => orchid_store_cart_page_layouts(),
+				'section'     => 'orchid_store_section_woocommerce_cart',
+			)
 		)
 	);
 }
+

@@ -240,4 +240,36 @@ if ( ! function_exists( 'orchid_store_is_wishlist_enabled' ) ) {
 
 		return ( $is_wishlist_enabled == true ) ? true : false;
 	}
-} 
+}
+
+
+/**
+ * Active callback function that checks whether boxed site layout is enabled.
+ *
+ * @since 1.5.0
+ *
+ * @param object $control WP Customize Control.
+ * @return boolean
+ */
+function orchid_store_is_boxed_site_layout_enabled( $control ) {
+
+	$site_layout = $control->manager->get_setting( 'orchid_store_field_site_layout' )->value();
+
+	return ( 'boxed' === $site_layout ) ? true : false;
+}
+
+
+/**
+ * Active callback function that checks whether fullwidth site layout is enabled.
+ *
+ * @since 1.5.0
+ *
+ * @param object $control WP Customize Control.
+ * @return boolean
+ */
+function orchid_store_is_fullwidth_site_layout_enabled( $control ) {
+
+	$site_layout = $control->manager->get_setting( 'orchid_store_field_site_layout' )->value();
+
+	return ( 'fullwidth' === $site_layout ) ? true : false;
+}
