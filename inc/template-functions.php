@@ -161,24 +161,24 @@ if( ! function_exists( 'orchid_store_content_entry_class' ) ) {
 
 		if( class_exists( 'WooCommerce' ) ) {
 
-            if( is_cart() || is_checkout() || is_account_page() || ( is_page( 'wishlist' ) && defined( 'YITH_WCWL' ) ) || is_woocommerce() || is_shop() || is_product() ) {
+			if( is_cart() || is_checkout() || is_account_page() || ( is_page( 'wishlist' ) && defined( 'YITH_WCWL' ) ) || is_woocommerce() || is_shop() || is_product() ) {
 
-                $content_entry_class = '__os-woo-entry__';
+				$content_entry_class = '__os-woo-entry__';
 
-                echo esc_attr( $content_entry_class );
+				echo esc_attr( $content_entry_class );
 
-                return;
-            }
-        }
+				return;
+			}
+		}
 
-        if( is_single() || is_page() ) {
+		if( is_single() || is_page() ) {
 
-        	$content_entry_class = 'editor-entry';
+			$content_entry_class = 'editor-entry';
 
-        	echo esc_attr( $content_entry_class );
+			echo esc_attr( $content_entry_class );
 
-        	return;
-        }
+			return;
+		}
 	}
 }
 
@@ -205,38 +205,104 @@ if( ! function_exists( 'orchid_store_logo_row_class' ) ) {
 	function orchid_store_logo_row_class() {
 
 		$display_product_search = orchid_store_get_option( 'display_product_search_form' );
-        $display_wishlist_icon = orchid_store_get_option( 'display_wishlist' );
-        $display_minicart = orchid_store_get_option( 'display_mini_cart' );
+		$display_wishlist_icon = orchid_store_get_option( 'display_wishlist' );
+		$display_minicart = orchid_store_get_option( 'display_mini_cart' );
 
-        $logo_row_class = '';
+		$logo_row_class = '';
 
-        if( class_exists( 'YITH_WCWL' ) || class_exists( 'Addonify_Wishlist' ) ) {
+		if( class_exists( 'YITH_WCWL' ) || class_exists( 'Addonify_Wishlist' ) ) {
 
-        	if( $display_wishlist_icon == false ) {
+			if( $display_wishlist_icon == false ) {
 
-        		$logo_row_class = 'no-wishlist-icon';
-        	}
-        } else {
+				$logo_row_class = 'no-wishlist-icon';
+			}
+		} else {
 
-        	$logo_row_class = 'no-wishlist-icon';
-        }
+			$logo_row_class = 'no-wishlist-icon';
+		}
 
-        if( class_exists( 'WooCommerce' ) ) {
+		if( class_exists( 'WooCommerce' ) ) {
 
-        	if( $display_product_search == false ) {
+			if( $display_product_search == false ) {
 
-        		$logo_row_class .= ' no-product-search-form';
-        	}
+				$logo_row_class .= ' no-product-search-form';
+			}
 
-        	if( $display_minicart == false ) {
+			if( $display_minicart == false ) {
 
-        		$logo_row_class .= ' no-mini-cart';
-        	}
-        } else {
+				$logo_row_class .= ' no-mini-cart';
+			}
+		} else {
 
-        	$logo_row_class .= ' no-product-search-form no-mini-cart';
-        }
+			$logo_row_class .= ' no-product-search-form no-mini-cart';
+		}
 
-        echo esc_attr( $logo_row_class );
+		echo esc_attr( $logo_row_class );
 	}
+}
+
+
+
+function orchid_store_get_page_title() {
+	?>
+	<div class="title">
+		<?php
+		if ( have_posts() ) {
+
+			if ( is_home() ) {
+				?>
+				<h1 class="entry-title page-title"><?php single_post_title(); ?></h1>
+				<?php
+			}
+
+			if ( is_archive() ) {
+
+				the_archive_title( '<h1 class="entry-title page-title">', '</h1>' );
+			}
+
+			if ( is_search() ) {
+				?>
+				<h1 class="entry-title page-title">
+					<?php
+					/* translators: %s: search query. */
+					printf( esc_html__( 'Search Results for: %s', 'orchid-store' ), '<span>' . get_search_query() . '</span>' );
+					?>
+				</h1><!-- .entry-title -->
+				<?php
+			}
+
+			if ( is_page() ) {
+
+				while( have_posts() ) {
+
+					the_post();
+					?>
+					<h1 class="entry-title page-title"><?php the_title(); ?></h1>
+					<?php
+				}
+			}
+
+			if ( is_single() ) {
+
+				while ( have_posts() ) {
+
+					the_post();
+					?>
+					<h1 class="entry-title page-title"><?php the_title(); ?></h1>
+					<?php
+				}
+			}
+
+			if ( class_exists( 'WooCommerce' ) ) {
+
+				if ( is_shop() ) {
+					?>
+					<h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>
+					<?php
+				}
+			}
+		}
+		?>
+	</div><!-- .title -->
+	<?php
 }

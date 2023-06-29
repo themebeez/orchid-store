@@ -5,13 +5,13 @@
 
 if( ! function_exists( 'orchid_store_all_post_categories' ) ) {
 	/**
-     * Get post categories.
-     *
-     * @since 1.0.0
-     *
-     * @param null.
-     * @return array.
-     */
+	 * Get post categories.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param null.
+	 * @return array.
+	 */
 	function orchid_store_all_post_categories() {
 
 		$post_terms = get_terms( array( 'taxonomy' => 'category' ) );
@@ -43,13 +43,13 @@ if( ! function_exists( 'orchid_store_all_post_categories' ) ) {
 
 if( ! function_exists( 'orchid_store_all_pages' ) ) {
 	/**
-     * Get pages.
-     *
-     * @since 1.0.0
-     *
-     * @param null.
-     * @return array.
-     */
+	 * Get pages.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param null.
+	 * @return array.
+	 */
 	function orchid_store_all_pages() {
 
 		$pages  =  get_pages();
@@ -80,13 +80,13 @@ if( ! function_exists( 'orchid_store_all_pages' ) ) {
 
 if( ! function_exists( 'orchid_store_all_product_categories' ) ) {
 	/**
-     * Get pages.
-     *
-     * @since 1.0.0
-     *
-     * @param null.
-     * @return array.
-     */
+	 * Get pages.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param null.
+	 * @return array.
+	 */
 	function orchid_store_all_product_categories() {
 
 		if( ! class_exists( 'WooCommerce' ) ) {
@@ -96,9 +96,9 @@ if( ! function_exists( 'orchid_store_all_product_categories' ) ) {
 
 		$product_terms = get_terms( 'product_cat', array(
 			'number'     => '',
-            'orderby'    => 'name',
-            'order'      => 'ASC',
-            'hide_empty' => true
+			'orderby'    => 'name',
+			'order'      => 'ASC',
+			'hide_empty' => true
 		) );
 
 		return $product_terms;
@@ -108,19 +108,74 @@ if( ! function_exists( 'orchid_store_all_product_categories' ) ) {
 
 if( ! function_exists( 'orchid_store_all_sidebar_positions' ) ) {
 	/**
-     * Get sidebar positions.
-     *
-     * @since 1.0.0
-     *
-     * @param null.
-     * @return array.
-     */
+	 * Get sidebar positions.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param null.
+	 * @return array.
+	 */
 	function orchid_store_all_sidebar_positions() {
 
 		return array(
 			'left' => get_template_directory_uri() . '/customizer/assets/images/sidebar_left.png',
 			'right' => get_template_directory_uri() . '/customizer/assets/images/sidebar_right.png',
 			'none' => get_template_directory_uri() . '/customizer/assets/images/sidebar_none.png',
+		);
+	}
+}
+
+
+if ( ! function_exists( 'orchid_store_add_to_cart_button_positions' ) ) {
+	/**
+	 * Add to cart button positions.
+	 *
+	 * @since 1.5.0
+	 *
+	 * @return array.
+	 */
+	function orchid_store_add_to_cart_button_positions() {
+
+		return array(
+			'default'    => get_template_directory_uri() . '/customizer/assets/images/sidebar_left.png',
+			'over_image' => get_template_directory_uri() . '/customizer/assets/images/sidebar_right.png',
+			'none'       => get_template_directory_uri() . '/customizer/assets/images/sidebar_none.png',
+		);
+	}
+}
+
+
+if ( ! function_exists( 'orchid_store_checkout_page_layouts' ) ) {
+	/**
+	 * Checkout page layouts.
+	 *
+	 * @since 1.5.0
+	 *
+	 * @return array.
+	 */
+	function orchid_store_checkout_page_layouts() {
+
+		return array(
+			'layout_1' => get_template_directory_uri() . '/customizer/assets/images/sidebar_left.png',
+			'layout_2' => get_template_directory_uri() . '/customizer/assets/images/sidebar_right.png',
+		);
+	}
+}
+
+
+if ( ! function_exists( 'orchid_store_cart_page_layouts' ) ) {
+	/**
+	 * Cart page layouts.
+	 *
+	 * @since 1.5.0
+	 *
+	 * @return array.
+	 */
+	function orchid_store_cart_page_layouts() {
+
+		return array(
+			'layout_1' => get_template_directory_uri() . '/customizer/assets/images/sidebar_left.png',
+			'layout_2' => get_template_directory_uri() . '/customizer/assets/images/sidebar_right.png',
 		);
 	}
 }

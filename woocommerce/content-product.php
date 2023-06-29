@@ -67,17 +67,22 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			 * @hooked woocommerce_template_loop_price - 10
 			 */
 			do_action( 'woocommerce_after_shop_loop_item_title' );
-			?>
-			<div class="custom-cart-btn">
-				<?php
-				/**
-				 * Hook: orchid_store_loop_add_to_cart.
-				 *
-				 * @hooked woocommerce_template_loop_add_to_cart - 10
-				 */
-				do_action( 'orchid_store_loop_add_to_cart' );
+
+			if ( get_theme_mod( 'orchid_store_field_add_to_cart_button_placement', 'default' ) === 'default' ) {
 				?>
-			</div>
+				<div class="custom-cart-btn">
+					<?php
+					/**
+					 * Hook: orchid_store_loop_add_to_cart.
+					 *
+					 * @hooked woocommerce_template_loop_add_to_cart - 10
+					 */
+					do_action( 'orchid_store_loop_add_to_cart' );
+					?>
+				</div>
+				<?php 
+			}
+			?>
 		</div>
 	</div><!-- .bg-white product-main-wrap -->
 </li>
