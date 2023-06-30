@@ -67,6 +67,7 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
 
 			'display_product_search_form' => true,
 			'select_search_form' => 'product_search',
+			'search_form_shortcode' => '',
 			'display_product_search_form_on_mobile' => false,
 			'cart_display' => 'default',
 			'display_mini_cart' => true,

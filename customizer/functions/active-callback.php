@@ -273,3 +273,19 @@ function orchid_store_is_fullwidth_site_layout_enabled( $control ) {
 
 	return ( 'fullwidth' === $site_layout ) ? true : false;
 }
+
+
+/**
+ * Active callback function that checks whether third-party search form is enabled.
+ *
+ * @since 1.5.0
+ *
+ * @param object $control WP Customize Control.
+ * @return boolean
+ */
+function orchid_store_is_third_party_search_form_enabled( $control ) {
+
+	$site_layout = $control->manager->get_setting( 'orchid_store_field_select_search_form' )->value();
+
+	return ( 'third_party_search' === $site_layout ) ? true : false;
+}
