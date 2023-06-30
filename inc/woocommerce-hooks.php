@@ -30,6 +30,37 @@ if ( ! function_exists( 'orchid_store_product_search_action' ) ) {
 }
 
 
+if ( ! function_exists( 'orchid_store_third_party_product_search_action' ) ) {
+	/**
+	 * Renders third-party search form in the header.
+	 *
+	 * @since 1.0.0
+	 */
+	function orchid_store_third_party_product_search_action() {
+
+		$search_from_shortcode = orchid_store_get_option( 'search_form_shortcode' );
+
+		if ( empty( $search_from_shortcode ) ) {
+			return;
+		}
+
+		$mobile_product_search_class = '';
+
+		if ( orchid_store_get_option( 'display_product_search_form_on_mobile' ) ) {
+
+			$mobile_product_search_class = 'os-mobile-show';
+		}
+		?>
+		<div class="custom-search <?php echo esc_attr( $mobile_product_search_class ); ?>">
+			<?php echo do_shortcode( $search_from_shortcode ); ?>
+		</div><!-- .custom-search -->
+		<?php
+	}
+
+	add_action( 'orchid_store_third_party_product_search', 'orchid_store_third_party_product_search_action', 10 );
+}
+
+
 if ( ! function_exists( 'orchid_store_wishlist_icon_action' ) ) {
 	/**
 	 * Renders wishlist icon in the header.

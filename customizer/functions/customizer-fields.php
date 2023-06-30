@@ -320,7 +320,26 @@ orchid_store_add_toggle_field( 'enable_parallax_page_header_background', esc_htm
 *******************************************************************************************************/
 orchid_store_add_toggle_field( 'display_product_search_form', esc_html__( 'Display Search Form', 'orchid-store' ), '', '', 'product_search' );
 if ( class_exists( 'WooCommerce' ) ) {
-	orchid_store_add_select_field( 'select_search_form', esc_html__( 'Select Search Form', 'orchid-store' ), '', array( 'product_search' => esc_html__( 'Product Search Form', 'orchid-store' ), 'default_search' => esc_html__( 'Default Search Form', 'orchid-store' ) ), 'orchid_store_is_product_search_form_enabled', 'product_search' );
+	orchid_store_add_select_field(
+		'select_search_form',
+		esc_html__( 'Select Search Form', 'orchid-store' ),
+		'',
+		array(
+			'product_search'     => esc_html__( 'Product Search Form', 'orchid-store' ),
+			'default_search'     => esc_html__( 'Default Search Form', 'orchid-store' ),
+			'third_party_search' => esc_html__( 'Third Party Search Form', 'orchid-store' ),
+		),
+		'orchid_store_is_product_search_form_enabled',
+		'product_search'
+	);
+
+	orchid_store_add_text_field(
+		'search_form_shortcode',
+		esc_html__( 'Search Form Shortcode', 'orchid-store' ),
+		'',
+		'orchid_store_is_third_party_search_form_enabled',
+		'product_search'
+	);
 }
 orchid_store_add_toggle_field( 'display_product_search_form_on_mobile', esc_html__( 'Display Search Form On Mobile Devices', 'orchid-store' ), '', 'orchid_store_is_product_search_form_enabled', 'product_search' );
 
@@ -935,7 +954,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 	$wp_customize->add_control(
 		new Orchid_Store_Customizer_Toggle_Control(
-			$wp_customize, 
+			$wp_customize,
 			'orchid_store_field_display_plus_minus_btns',
 			array(
 				'label'       => esc_html__( 'Display Plus &amp; Minus Buttons', 'orchid-store' ),
