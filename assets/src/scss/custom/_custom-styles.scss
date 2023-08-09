@@ -992,6 +992,14 @@ section.product-widget-style-2 .section-title {
     background-color: $white;
 }
 
+.woocommerce div.product div.summary::before,
+.woocommerce div.product div.summary::after {
+
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .woocommerce div.product .entry-summary .price {
 
     margin-bottom: 15px;
@@ -1187,9 +1195,6 @@ section.product-widget-style-2 .section-title {
     margin: 0;
 }
 
-// tabs
-
-
 .woocommerce div.product .woocommerce-tabs .panel {
 
     margin: 0;
@@ -1271,10 +1276,6 @@ section.product-widget-style-2 .section-title {
 
     padding: 0;
 }
-
-
-// reviews
-
 
 .woocommerce #review_form_wrapper {
 
@@ -1368,10 +1369,6 @@ section.product-widget-style-2 .section-title {
     margin-bottom: 0;
     margin-top: 30px;
 }
-
-
-// related
-
 
 .woocommerce ul.products.columns-3 li.product,
 .woocommerce-page ul.products.columns-3 li.product {

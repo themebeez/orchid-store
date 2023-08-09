@@ -92,6 +92,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == 1.4.8 - 09 August, 2023 ==
 
+- Added: Clear float before & after WooCommerce product summary div.
 - Updated: WooCommerce template version to 8.0.0.
 - Tested: WooCommerce version 8.0.0
 - Tested: WordPress version 6.3.0
