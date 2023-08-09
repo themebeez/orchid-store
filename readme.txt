@@ -3,9 +3,9 @@
 Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 7.4
-Requires at least: 5.0.0
-Tested up to: 6.2.2
-Stable tag: 1.4.7
+Requires at least: 6.0.0
+Tested up to: 6.3.0
+Stable tag: 1.4.8
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -81,7 +81,7 @@ Orchid Store is distributed under the terms of the GNU GPL
 
 = Does this theme support any plugins? =
 
-Orchid Store includes support for WooCommerce , YITH Wishlist and YITH Quickview.
+Orchid Store includes support for WooCommerce, Addonify WooCommerce Wishlist, Addonify Compare Products For WooCommerce, Addonify Floating Cart for WooCommerce, Addonify WooCommerce Quick View, Elementor etc.
 
 = Do you have issue tracker? =
 
@@ -90,19 +90,23 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
+== 1.4.8 - 09 August, 2023 ==
+
+- Updated: WooCommerce template version to 8.0.0.
+- Tested: WooCommerce version 8.0.0
+- Tested: WordPress version 6.3.0
+
 == 1.4.7 - 26 May, 2023 ==
 
 - Updated: Outdated WooCommerce templates issue.
-- Fix: Compatibilty issue with `Addonify - WooCommerce Wishlist` plugin.
+- Fix: Compatibility issue with `Addonify - WooCommerce Wishlist` plugin.
 - Tested: With the plugin, `WooCommerce`, version 7.7.0.
 - Tested: With the plugin, `Addonify - Floating Cart for WooCommerce`, version 1.1.6.
 - Tested: With the plugin, `Addonify - WooCommerce Wishlist`, version 2.0.3.
 
-
 == 1.4.6 - 18 April, 2023 ==
 
 - Fix: Product hover icon buttons responsive issue.
-
 
 == 1.4.5 - 03 April, 2023 ==
 
@@ -156,8 +160,8 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 == 1.3.6 - 16 June, 2022 ==
 
 - Removed: Recommendation of YITH Quick View plugin.
-- Added: Recommedation of Addonify Quick View plugin.
-- Updated: Quantity increament and decrement button before add to cart button is hidden if stock quantity is 1.
+- Added: Recommendation of Addonify Quick View plugin.
+- Updated: Quantity increment and decrement button before add to cart button is hidden if stock quantity is 1.
 
 == 1.3.5 - 29 May, 2022 ==
 
