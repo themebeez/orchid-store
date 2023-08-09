@@ -1,6 +1,3 @@
-
-// gulp file to generate Orchid store WP POT, compile assets & zip Production files
-
 const gulp = require('gulp');
 const zip = require('gulp-zip');
 const wpPot = require('gulp-wp-pot');
@@ -11,7 +8,6 @@ const uglify = require('gulp-uglify');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const replace = require('gulp-replace');
 const notify = require('gulp-notify');
 const plumber = require('gulp-plumber');
 const rtlcss = require('gulp-rtlcss');
@@ -31,7 +27,7 @@ const shell = require('gulp-shell');
 /*
 ####################
 =
-= Var 1: varibales to ZIP production files
+= Var 1: variables to ZIP production files
 =
 ####################
 */
@@ -66,7 +62,7 @@ const files_folders = {
 /*
 ####################
 =
-= Var 2: varibales to make WP POT file
+= Var 2: variables to make WP POT file
 =
 ####################
 */
@@ -91,7 +87,7 @@ const project_text_domain = 'orchid-store';
 /*
 ####################
 =
-= Var 3: varibales for orchid static resources 
+= Var 3: variables for orchid static resources 
 =
 ####################
 */
@@ -261,9 +257,9 @@ gulp.task('orchidDortlTask', function () {
 // = C O M M A N D S                      = 
 //=========================================
 //
-// 1. Command: gulp makepot (will generate WP POT file)
+// 1. Command: gulp pot (will generate WP POT file)
 // 2. Command: gulp assets (will compile orchid scss, js & watch for the changes)
-// 3. Command: gulp zipprod (zips the production files)
+// 3. Command: gulp zip (zips the production files)
 //
 //=========================================
 
