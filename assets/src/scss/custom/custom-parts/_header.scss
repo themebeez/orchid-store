@@ -764,7 +764,7 @@
     height: 3px;
     margin-bottom: 7px;
     background-color: $white;
-    @include transation_delay();
+    @include transition();
 }
 .menu-toggle span:last-child {
 
@@ -1146,7 +1146,7 @@
     height: 2px;
     margin-bottom: 6px;
     background-color:#ffffff;
-    @include transation_delay();
+    @include transition();
 }
 
 .mobile-header .cat-nav-trigger .icon .line:nth-child(2) {

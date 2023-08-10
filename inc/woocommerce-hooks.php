@@ -331,7 +331,12 @@ if ( ! function_exists( 'orchid_store_template_loop_product_thumbnail' ) ) {
 
 			if ( is_array( $gallery_image_ids ) && count( $gallery_image_ids ) > 0 ) {
 
-				$secondary_image = wp_get_attachment_image( $gallery_image_ids[0], 'woocommerce_thumbnail' );
+				$additional_attr = array(
+					'alt'  		=> esc_attr( get_the_title() ),
+					'class' 	=> 'secondary-image',
+				);
+
+				$secondary_image = wp_get_attachment_image( $gallery_image_ids[0], 'woocommerce_thumbnail' , false, $additional_attr);
 
 				echo $secondary_image; // phpcs:ignore
 			}
@@ -930,7 +935,7 @@ function orchid_store_woocommerce_loop_add_to_cart_link( $add_to_cart_link, $pro
 
 		$cart_icon = apply_filters(
 			'orchid_store_add_to_cart_link_icon',
-			'<span class="os-add-to-cart-icon"><i class="bx bx-cart"></i></span>'
+			'<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>'
 		);
 
 		$icon_position = get_theme_mod( 'orchid_store_filed_add_to_cart_button_icon_position', 'right' );

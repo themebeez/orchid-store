@@ -1,0 +1,42 @@
+/*
+====================================================
+=
+= Addonify quickview
+=
+==========================================
+*/
+
+#addonify-quick-view-modal {
+
+    #adfy-quick-view-modal-content {
+
+        .woocommerce  {
+
+            .product {
+
+                .woocommerce-product-gallery {
+
+                    border: none;
+                    box-shadow: none;
+                    background: transparent;
+                    background-color: transparent;
+                }
+
+                .summary {
+
+                    border: none;
+                    box-shadow: none;
+                    background: transparent;
+                    background-color: transparent;
+
+                    &::before,
+                    &::after {
+
+                        content: "";
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

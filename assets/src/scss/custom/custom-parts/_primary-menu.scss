@@ -200,7 +200,7 @@
         -webkit-transform: translateY(-50%);
         -moz-transform: translateY(-50%);
         transform: translateY(-50%);
-        @include transation_delay();
+        @include transition();
     }
 
     .sub-toggle.visible-desktop {
@@ -218,7 +218,7 @@
         -moz-transform: rotate(-180deg);
         -webkit-transform: rotate(-180deg);
         transform: rotate(-180deg);
-        @include transation_delay();
+        @include transition();
     }
 
     .site-navigation ul li .sub-menu li .sub-toggle,
@@ -226,7 +226,7 @@
 
         color: $primary_color;
         right: 10px;
-        @include transation_delay_none();
+        @include transition_none();
     }
 
     .site-navigation ul li .sub-menu li:hover .sub-toggle,
