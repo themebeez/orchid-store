@@ -546,12 +546,12 @@
                     productsInWishlist = wishlist[0].product_ids;
                 }
 
-                if (productsInWishlist !== null && productsInWishlist !== undefined && productsInWishlist.length > 0 ) {
+                if (productsInWishlist !== null && productsInWishlist !== undefined && productsInWishlist.length > 0) {
                     $.map(productsInWishlist, function (value, index) {
                         if ($(".os-addtowishlist-btn[data-product_id='" + value + "']").length > 0) {
                             let osAddtoWishlistButton = $(".os-addtowishlist-btn[data-product_id='" + value + "']");
                             osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.alreadyInWishlistText);
-                            osAddtoWishlistButton.find('.bx').removeClass('bx-heart').addClass('bxs-heart');
+                            osAddtoWishlistButton.find('.fa').removeClass('fa-heart-o').addClass('fa-heart');
                         }
                     });
                     $('.wishlist-items-count').html(productsInWishlist.length);
@@ -572,9 +572,9 @@
                 if ($(".os-addtowishlist-btn[data-product_id='" + data.productID + "']")) {
                     let osAddtoWishlistButton = $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']");
 
-                    if (osAddtoWishlistButton.length > 0 ) {
+                    if (osAddtoWishlistButton.length > 0) {
 
-                        osAddtoWishlistButton.find('.bx').removeClass('bx-heart').addClass('bxs-heart');
+                        osAddtoWishlistButton.find('.fa').removeClass('fa-heart-o').addClass('fa-heart');
 
                         // Modify the tooltip content.
                         // Ref: https://atomiks.github.io/tippyjs/v6/tippy-instance/
@@ -606,9 +606,9 @@
                 if ($(".os-addtowishlist-btn[data-product_id='" + data.productID + "']")) {
                     let osAddtoWishlistButton = $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']");
 
-                    if (osAddtoWishlistButton.length > 0 ) {
+                    if (osAddtoWishlistButton.length > 0) {
 
-                        osAddtoWishlistButton.find('.bx').removeClass('bxs-heart').addClass('bx-heart');
+                        osAddtoWishlistButton.find('.fa').removeClass('fa-heart').addClass('fa-heart-o');
 
                         // Modify the tooltip content.
                         // Ref: https://atomiks.github.io/tippyjs/v6/tippy-instance/

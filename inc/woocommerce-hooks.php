@@ -92,7 +92,7 @@ if ( ! function_exists( 'orchid_store_wishlist_icon_action' ) ) {
 		if ( $wishlist_page_url ) {
 			?>
 			<div class="wishlist-icon-container">
-				<a href="<?php echo esc_url( $wishlist_page_url ); ?>"><i class='bx bx-heart'></i> 
+				<a href="<?php echo esc_url( $wishlist_page_url ); ?>"><i class='fa fa-heart-o'></i> 
 					<?php if ( orchid_store_get_option( 'display_wishlist_items_count' ) ) { ?>
 						<span class="item-count wishlist-items-count"><?php echo esc_html( $wishlist_count ); ?></span>
 					<?php } ?>
@@ -250,7 +250,7 @@ if ( ! function_exists( 'orchid_store_user_links_action' ) ) {
 
 					if ( $wishlist_page_url ) {
 						?>
-						<li><a href="<?php echo esc_url( $wishlist_page_url ); ?>"><i class='bx bx-heart'></i> <?php esc_html_e( 'My Wishlist', 'orchid-store' ); ?></a></li>
+						<li><a href="<?php echo esc_url( $wishlist_page_url ); ?>"><i class='fa fa-heart-o'></i> <?php esc_html_e( 'My Wishlist', 'orchid-store' ); ?></a></li>
 						<?php
 					}
 				}
@@ -469,7 +469,7 @@ if ( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 
 						$tooltip_text = ( addonify_wishlist_is_product_in_wishlist( $product->get_id() ) ) ? get_option( 'btn_label_if_added_to_wishlist', __( 'Already in wishlist', 'orchid-store' ) ) : get_option( 'addonify_wishlist_btn_label', __( 'Add to wishlist', 'orchid-store' ) );
 
-						$icon = ( addonify_wishlist_is_product_in_wishlist( $product->get_id() ) ) ? 'bx bxs-heart' : 'bx bx-heart';
+						$icon = ( addonify_wishlist_is_product_in_wishlist( $product->get_id() ) ) ? 'fa fa-heart' : 'fa fa-heart-o';
 						?>
 						<li>
 							<?php
