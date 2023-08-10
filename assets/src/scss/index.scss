@@ -14,13 +14,10 @@
 
 // Import variables
 
-@import 'variables/var-typography';
-@import 'variables/var-colors';
-@import 'variables/var-spacing';
-
-// Import mixins
-
-@import 'custom/custom-parts/mixins';
+@use 'abstract/var-typography' as *;
+@use 'abstract/var-colors' as *;
+@use 'abstract/var-spacing' as *;
+@use 'abstract/mixins' as *;
 
 
 // Import Base styling & reset CSS
@@ -55,6 +52,7 @@
 @import 'custom/compatibility/yith-quickview'; // YITH quickview
 @import 'custom/compatibility/yith-wishlist'; // YITH wishlist
 @import 'custom/compatibility/addonify-wishlist'; // Addonify wishlist
+@import 'custom/compatibility/addonify-quickview'; // Addonify quick view
 
 // custom styles
 

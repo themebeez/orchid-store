@@ -129,7 +129,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;
     vertical-align: baseline;
-    @include transation_delay();
+    @include transition();
 }
 
 body,
@@ -190,7 +190,7 @@ a {
 
     color: $primary_color;
     text-decoration: none;
-    @include transation_delay();
+    @include transition();
 }
 
 a:hover {
@@ -773,7 +773,7 @@ input[type="submit"] {
     -moz-appearance: none;
     box-sizing: border-box;
     @include border-radius(2px);
-    @include transation_delay();
+    @include transition();
 }
 
 .button-general.medium,

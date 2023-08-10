@@ -1,17 +1,3 @@
-
-// All common spacings 
-// Will re-do spacing on media query ( 1024px, 768px & 574px )
-
-
-/*
-====================================================
-=
-= padding
-=
-==========================================
-*/
-
-
 .woocommerce-page form.woocommerce-checkout {
 
 	padding-top: 10px;
@@ -27,12 +13,11 @@
 
 .header-style-1 .mid-header {
 
-	padding-top:30px;
+	padding-top: 30px;
 	padding-bottom: 30px;
 }
 
-.product-info-wrap, 
-.woocommerce ul.products li.product .woocommerce-loop-category__title {
+.product-info-wrap {
 
     padding: 25px 20px 30px 20px;
 }
@@ -41,17 +26,17 @@
 .os-blog-style-1 .card-content,
 .woocommerce div.product .woocommerce-tabs {
 
-	padding:30px;
+	padding: 30px;
 }
 
 .cats-widget-styles .card-content {
 
-	padding:30px;
+	padding: 30px;
 }
 
 .cta-style-1.section-spacing {
 
-	padding:80px 0;
+	padding: 80px 0;
 }
 
 .inner-page-wrap {
@@ -61,7 +46,7 @@
 
 .cta-style-2.section-spacing {
 
-    padding:120px 0;
+    padding: 120px 0;
 }
 
 
@@ -112,7 +97,7 @@
 .woocommerce-page .woocommerce-order-details h2,
 .product-widget-style-2.section-spacing {
 
-	margin-bottom:10px;
+	margin-bottom: 10px;
 }
 
 .woocommerce ul.order_details li strong {
@@ -193,16 +178,13 @@
 
 .header-style-1,
 .os-breadcrumb-wrap,
-.woocommerce ul.products li,
-.woocommerce ul.products li.product, 
-.woocommerce-page ul.products li.product,
 .woocommerce-page .woocommerce-notice,
 .woocommerce-page .woocommerce ul.order_details,
 .woocommerce .woocommerce-customer-details, 
 .woocommerce .woocommerce-order-details, 
 .woocommerce .woocommerce-order-downloads,
 .woocommerce div.product .woocommerce-tabs,
-.woocommerce .cross-sells>h2,
+.woocommerce .cross-sells > h2,
 .os-about-widget .info {
 
 	margin-bottom: 40px;

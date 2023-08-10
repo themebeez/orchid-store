@@ -426,7 +426,7 @@ body.boxed .__os-page-wrap__ {
     bottom: 0;
     z-index: 5;
     background: rgba(0, 0, 0, 0.1);
-    @include transation_delay();
+    @include transition();
 }
 
 

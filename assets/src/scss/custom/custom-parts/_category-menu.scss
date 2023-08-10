@@ -47,7 +47,7 @@
 	width:15px;
 	background-color:$white;
 	margin-bottom: 4px;
-	@include transation_delay();
+	@include transition();
 }
 
 .category-navigation .cat-nav-trigger .icon .line:before {

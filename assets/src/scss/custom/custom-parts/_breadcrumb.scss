@@ -76,7 +76,7 @@ body.home .os-breadcrumb-wrap {
 .breadcrumb-trail ul li a,
 .breadcrumb-trail ul li span {
 
-    @include transation_delay();
+    @include transition();
 }
 
 

@@ -537,7 +537,7 @@ span.edit-link a:before {
     text-transform: capitalize;
     padding: 15px 50px;
     font-size: 16px;
-    @include transation_delay();
+    @include transition();
 }
 
 .wpcf7 input[type="submit"]:hover,

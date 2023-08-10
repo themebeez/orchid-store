@@ -5,10 +5,6 @@
 =
 ==========================================
 */
-
-// banner style 1
-
-
 .banner-style-1 .left-col {
 
     flex: 0 0 66.66%;
@@ -188,7 +184,7 @@
     z-index: 100;
     background: whitesmoke;
     overflow: hidden;
-    @include transation_delay();
+    @include transition();
 }
 
 .carousel-preloader .init-preloader::before {
@@ -238,7 +234,7 @@
 
     padding: 20px;
     background-color: $white;
-    @include transation_delay();
+    @include transition();
 }
 
 .cats-widget-style-1 .card:hover {
@@ -280,9 +276,6 @@
 =
 ============================
 */
-
-
-// cta section style 1
 
 .cta-style-1 .os-row .os-col:last-child .box {
 
@@ -816,7 +809,7 @@ section.product-widget-style-2 .section-title {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    @include transation_delay();
+    @include transition();
 }
 
 .product-widget.product-widget-style-2 .product-entry {
@@ -875,12 +868,140 @@ section.product-widget-style-2 .section-title {
 ==========================================
 */
 
+.woocommerce {
 
-// all default woocommerce widgets styles goes to custom-parts/_widget.scss
+    .products {
+
+        .product {
+            
+            .product-main-wrap {
+
+                .product-info-wrap {
+
+                    display: flex;
+                    gap: 20px;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+
+                    .woocommerce-loop-product__link {
+
+                        .woocommerce-loop-product__title {
+
+                            margin: 0;
+                        }
+                    }
+
+                    .star-rating {
+
+                        margin: 0;
+                    }
+
+                    .custom-cart-btn {
+
+                        margin: 0;
+
+                        .button  {
+
+                            margin: 0;
+
+                            &.os-left-cart-icon {
+
+                                flex-direction: row-reverse;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Display add to cart on hover.
+.woocommerce {
+
+    .products {
+
+        .product {
+
+            &.os-add-to-cart-button-display-on-product-hover {
+
+                @include breakpoint( 'until-ipad-pro' ) {
+
+                    .product-main-wrap {
+
+                        .product-info-wrap {
+
+                            position: relative;
+                            align-items: center;
+                            justify-content: center;
+
+                            .price,
+                            .star-rating,
+                            .woocommerce-loop-product__link {
+
+                                @include transition();
+                            }
+
+                            .custom-cart-btn {
+
+                                display: flex;
+                                gap: 5px;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                position: absolute;
+                                z-index: 5;
+                                left: 0;
+                                right: 0;
+                                bottom: 40px;
+                                width: 100%;
+                                @include visibility('hidden');
+                                @include transition();
+
+                                a.wc-forward {
+
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+
+                        .product-info-wrap {
+
+                            .price,
+                            .star-rating,
+                            .woocommerce-loop-product__link {
+
+                                @include visibility('hidden');
+                            }
+
+                            .custom-cart-btn {
+
+                                animation: osfadeInUp 0.5s ease-in-out forwards;
+                                @include visibility('visible');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 .product-main-wrap {
 
-    @include transation_delay();
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: space-between;
+    overflow: hidden;
+    height: 100%;
+    background-color: white;
+    @include transition();
 }
 
 .product-main-wrap:hover {
@@ -888,17 +1009,76 @@ section.product-widget-style-2 .section-title {
     @include hover_big_shadow();
 }
 
-.woocommerce .products .imghover:hover img {
+.product-thumb-wrap {
 
-    -webkit-transform: none;
-    -ms-transform: none;
-    -o-transform: none;
-    -moz-transform: none;
-    transform: none;
+    position: relative;
+    overflow: hidden;
+
+    .woocommerce-loop-product__link {
+
+        display: block;
+        position: relative;
+        overflow: hidden;
+
+        img {
+
+            display: block;
+            position: relative;
+            z-index: 1;
+            aspect-ratio: auto;
+            @include transition( all, 0.6s, ease-in-out );
+        }
+
+        .secondary-image {
+
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 2;
+            @include visibility( 'hidden' );
+        }
+    }
+}
+
+// product hover effect swap.
+.os-product-thumbnail-effect-swap {
+
+    &:is(:hover) {
+
+        .product-thumb-wrap {
+
+            .woocommerce-loop-product__link {
+
+                .secondary-image {
+
+                    @include visibility( 'visible' );
+                }
+            }
+        }
+    }
+}
+
+// proudct hover effect zoom.
+.os-product-thumbnail-effect-zoom {
+
+    &:is(:hover) {
+
+        .product-thumb-wrap {
+
+            .woocommerce-loop-product__link {
+
+                img:not(.secondary-image) {
+
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
 }
 
 // woocommerce layout break down
-
 .woocommerce-page .page-full-bg-thumbnail .page-head {
 
     height: 370px;
@@ -919,9 +1099,6 @@ section.product-widget-style-2 .section-title {
 =
 ==========================================
 */
-
-
-// sorting select dropdown
 
 .woocommerce .woocommerce-ordering {
 
@@ -958,8 +1135,9 @@ section.product-widget-style-2 .section-title {
 
 .woocommerce.single-product div.product span.onsale {
 
+    top: 10px;
     right: auto;
-    left: 0;
+    left: 10px;
 }
 
 .woocommerce.single-product div.product span.onsale:before {
@@ -1369,14 +1547,6 @@ section.product-widget-style-2 .section-title {
     margin-bottom: 0;
     margin-top: 30px;
 }
-
-.woocommerce ul.products.columns-3 li.product,
-.woocommerce-page ul.products.columns-3 li.product {
-
-    display: unset;
-
-}
-
 
 /*
 ====================================================

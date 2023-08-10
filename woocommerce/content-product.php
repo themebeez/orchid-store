@@ -25,8 +25,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 ?>
 <li <?php wc_product_class( '', $product ); ?>>
-	<div class="bg-white product-main-wrap">
-		<div class="product-thumb-wrap imghover">
+	<div class="product-main-wrap">
+		<div class="product-thumb-wrap">
 			<?php
 			/**
 			 * Hook: orchid_store_product_thumbnail.
