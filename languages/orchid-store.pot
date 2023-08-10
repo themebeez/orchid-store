@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-08-09T08:47:08+00:00\n"
+"POT-Creation-Date: 2023-08-10T11:33:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: orchid-store\n"
@@ -167,7 +167,7 @@ msgid "Special Menu"
 msgstr ""
 
 #: customizer/functions/customizer-defaults.php:147
-#: inc/woocommerce-hooks.php:987
+#: inc/woocommerce-hooks.php:992
 #: woocommerce/loop/sale-flash.php:28
 msgid "Sale!"
 msgstr ""
@@ -877,19 +877,19 @@ msgstr ""
 msgid "My Wishlist"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:428
+#: inc/woocommerce-hooks.php:433
 msgid "Quick View"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:465
+#: inc/woocommerce-hooks.php:470
 msgid "Already in wishlist"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:465
+#: inc/woocommerce-hooks.php:470
 msgid "Add to wishlist"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:570
+#: inc/woocommerce-hooks.php:575
 msgid "Compare"
 msgstr ""
 
