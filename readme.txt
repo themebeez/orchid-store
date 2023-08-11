@@ -90,10 +90,11 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.4.8 - 09 August, 2023 ==
+== 1.4.8 - 09 ?, 2023 ==
 
 - Added: Clear float before & after WooCommerce product summary div.
 - Updated: WooCommerce template version to 8.0.0.
+- Changed: Product hover action icons (search, wishlist & compare).
 - Tested: WooCommerce version 8.0.0
 - Tested: WordPress version 6.3.0
 

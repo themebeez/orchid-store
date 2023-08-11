@@ -956,7 +956,9 @@ ul.woocommerce-page .woocommerce-notice {
 
 .woocommerce ul.products li .product-hover-items {
 
-    display: block;
+    @include flex();
+    flex-direction: column;
+    gap: 12px;
     position: absolute;
     z-index: 10;
     top: 50%;
@@ -966,62 +968,66 @@ ul.woocommerce-page .woocommerce-notice {
     @include transition();
     @include visibility( 'hidden' );
 
-    ul {
+    a {
 
-        @include flex();
-        flex-direction: column;
-        gap: 12px;
-        list-style: none;
-        margin: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        line-height: 1;
+        font-size: 18px;
         padding: 0;
+        background: $secondary_color;
+        color: $primary_color;
+        text-align: center;
+        text-decoration: none;
+        @include border_radius(100%);
 
-        li {
+        &:is(:hover) {
+
+            text-decoration: none;
+        }
+
+        &:is(:focus) {
+
+            outline: none;
+            border: none;
+        }
+
+        span {
 
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            line-height: 1;
+        }
+
+        .text {
+
+            display: none;
+        }
+
+        i {
+
             margin: 0;
-            padding: 0;
-            width: 35px;
-            height: 35px;
-            flex: 35px;
-            line-height: 35px;
-            max-width: 35px;
+        }
 
-            a {
+        svg {
 
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 35px;
-                height: 35px;
-                line-height: 1;
+            fill: currentColor;
+            display: inline-flex;
+            width: 18px;
+            height: 18px;
+        }
+
+        .yith-wcwl-add-to-wishlist {
+
+            margin: 0;
+
+            .wish-list-button {
+
                 font-size: 18px;
-                padding: 0;
-                background: $secondary_color;
-                color: $primary_color;
-                text-align: center;
-                @include border_radius(100%);
-
-                .text {
-
-                    display: none;
-                }
-
-                i {
-
-                    margin: 0;
-                }
-            }
-
-            .yith-wcwl-add-to-wishlist {
-
-                margin: 0;
-
-                .wish-list-button {
-
-                    font-size: 18px;
-                }
             }
         }
     }
@@ -1035,29 +1041,26 @@ ul.woocommerce-page .woocommerce-notice {
 
             @include visibility( 'visible' );
 
-            ul {
+            a {
 
-                li {
+                &:is(:nth-child(1)) {
 
-                    &:is(:nth-child(1)) {
+                    animation: OsfadeInDown 0.5s ease forwards;
+                }
 
-                        animation: OsfadeInDown 0.5s ease forwards;
-                    }
+                &:is(:nth-child(2)) {
 
-                    &:is(:nth-child(2)) {
+                    animation: OsfadeInDown 0.8s ease forwards;
+                }
 
-                        animation: OsfadeInDown 0.8s ease forwards;
-                    }
+                &:is(:nth-child(3)) {
 
-                    &:is(:nth-child(3)) {
+                    animation: OsfadeInDown 1.1s ease forwards;
+                }
 
-                        animation: OsfadeInDown 1.1s ease forwards;
-                    }
+                    &:is(:nth-child(4)) {
 
-                     &:is(:nth-child(4)) {
-
-                        animation: OsfadeInDown 1.4s ease forwards;
-                    }
+                    animation: OsfadeInDown 1.4s ease forwards;
                 }
             }
         }

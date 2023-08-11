@@ -531,6 +531,11 @@
 
         function orchidStoreAddonifyWishlist() {
 
+            let icons = {
+                "initial": '<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor"><path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"/></svg>',
+                "added": '<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor"><path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"/></svg>',
+            }
+
             // Prevent default behaviour of add to compare button.
             $(".os-addtowishlist-btn").on('click', function (e) {
                 e.preventDefault();
@@ -551,7 +556,7 @@
                         if ($(".os-addtowishlist-btn[data-product_id='" + value + "']").length > 0) {
                             let osAddtoWishlistButton = $(".os-addtowishlist-btn[data-product_id='" + value + "']");
                             osAddtoWishlistButton.attr('data-tippy-content', orchid_store_obj.alreadyInWishlistText);
-                            osAddtoWishlistButton.find('.fa').removeClass('fa-heart-o').addClass('fa-heart');
+                            osAddtoWishlistButton.find('.w-icon').html(icons['added']);
                         }
                     });
                     $('.wishlist-items-count').html(productsInWishlist.length);
@@ -574,7 +579,7 @@
 
                     if (osAddtoWishlistButton.length > 0) {
 
-                        osAddtoWishlistButton.find('.fa').removeClass('fa-heart-o').addClass('fa-heart');
+                        osAddtoWishlistButton.find('.w-icon').html(icons['added']);
 
                         // Modify the tooltip content.
                         // Ref: https://atomiks.github.io/tippyjs/v6/tippy-instance/
@@ -608,7 +613,7 @@
 
                     if (osAddtoWishlistButton.length > 0) {
 
-                        osAddtoWishlistButton.find('.fa').removeClass('fa-heart').addClass('fa-heart-o');
+                        osAddtoWishlistButton.find('.w-icon').html(icons['initial']);
 
                         // Modify the tooltip content.
                         // Ref: https://atomiks.github.io/tippyjs/v6/tippy-instance/
@@ -643,6 +648,11 @@
          */
         function orchidStoreAddonifyCompare() {
 
+            let icons = {
+                'initial': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22.485,10.975,12,17.267,1.515,10.975A1,1,0,1,0,.486,12.69l11,6.6a1,1,0,0,0,1.03,0l11-6.6a1,1,0,1,0-1.029-1.715Z"/><path d="M22.485,15.543,12,21.834,1.515,15.543A1,1,0,1,0,.486,17.258l11,6.6a1,1,0,0,0,1.03,0l11-6.6a1,1,0,1,0-1.029-1.715Z"/><path d="M12,14.773a2.976,2.976,0,0,1-1.531-.425L.485,8.357a1,1,0,0,1,0-1.714L10.469.652a2.973,2.973,0,0,1,3.062,0l9.984,5.991a1,1,0,0,1,0,1.714l-9.984,5.991A2.976,2.976,0,0,1,12,14.773ZM2.944,7.5,11.5,12.633a.974.974,0,0,0,1,0L21.056,7.5,12.5,2.367a.974.974,0,0,0-1,0h0Z"/></svg>',
+                'added': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22.485,10.975,12,17.267,1.515,10.975A1,1,0,1,0,.486,12.69l11,6.6a1,1,0,0,0,1.03,0l11-6.6a1,1,0,1,0-1.029-1.715Z"/><path d="M22.485,15.543,12,21.834,1.515,15.543A1,1,0,1,0,.486,17.258l11,6.6a1,1,0,0,0,1.03,0l11-6.6a1,1,0,1,0-1.029-1.715Z"/><path d="M.485,8.357l9.984,5.991a2.97,2.97,0,0,0,3.062,0l9.984-5.991a1,1,0,0,0,0-1.714L13.531.652a2.973,2.973,0,0,0-3.062,0L.485,6.643a1,1,0,0,0,0,1.714Z"/></svg>',
+            }
+
             // Prevent default behaviour of add to compare button.
             $(".os-addtocompare-btn").on('click', function (e) {
                 e.preventDefault();
@@ -656,7 +666,7 @@
                 if (comparelist.length > 0) {
                     $.map(comparelist, function (value, index) {
                         if ($(".os-addtocompare-btn[data-product_id='" + value + "']").length > 0) {
-                            $(".os-addtocompare-btn[data-product_id='" + value + "']").find('.bx').removeClass('bx-layer').addClass('bxs-layer');
+                            $(".os-addtocompare-btn[data-product_id='" + value + "']").find('.icon').html(icons['added']);
                         }
                     });
                 }
@@ -665,7 +675,7 @@
             // Change the icon of button if a product is added into the compare list.
             $(document).on('addonify_added_to_comparelist', function (event, data) {
                 if ($(".os-addtocompare-btn[data-product_id='" + data.productID + "']")) {
-                    $(".os-addtocompare-btn[data-product_id='" + data.productID + "']").find('.bx').removeClass('bx-layer').addClass('bxs-layer');
+                    $(".os-addtocompare-btn[data-product_id='" + data.productID + "']").find('.icon').html(icons['added']);
                 }
             });
 
@@ -674,7 +684,7 @@
                 if ($(".os-addtocompare-btn[data-product_id='" + data.productID + "']")) {
                     let addToCompareBtn = $(".os-addtocompare-btn[data-product_id='" + data.productID + "']");
                     addToCompareBtn.removeClass('selected').removeAttr('disabled');
-                    addToCompareBtn.find('.bx').removeClass('bxs-layer').addClass('bx-layer');
+                    addToCompareBtn.find('.icon').html(icons['initial']);
                 }
             });
         }

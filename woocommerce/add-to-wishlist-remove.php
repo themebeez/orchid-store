@@ -47,7 +47,9 @@ global $product;
 	data-title="<?php echo esc_attr( apply_filters( 'yith_wcwl_add_to_wishlist_title', $label ) ); ?>"
 	data-tippy-content="<?php echo esc_attr( $label ); ?>"
 >
-		<span class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+		<span class="icon">
+			<?php echo orchid_store_escape_svg( $icon ); ?>
+		</span>
 		<span class="text"><?php echo esc_html( $label ); ?></span>
 	</a>
 
