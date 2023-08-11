@@ -496,30 +496,13 @@ section .section-title h3:after {
 
     position: relative;
     overflow: hidden;
-    -webkit-transition: all 1.5s ease;
-    -moz-transition: all 1.5s ease;
-    -ms-transition: all 1.5s ease;
-    -o-transition: all 1.5s ease;
-    transition: all 1.5s ease;
+    @include transition();
 }
 
 .imghover img {
 
-    -webkit-transition: all 1.5s ease;
-    -moz-transition: all 1.5s ease;
-    -ms-transition: all 1.5s ease;
-    -o-transition: all 1.5s ease;
-    transition: all 1.5s ease;
+    @include transition();
 }
-
-.imghover:hover img {
-
-    transform: scale(1.09);
-
-}
-
-
-// Tooltip content
 
 .tippy-content {
 
@@ -562,11 +545,7 @@ section .section-title h3:after {
     height: 3px;
     margin-left: 5px;
     line-height: 1;
-    -webkit-transition: all 0.15s;
-    -o-transition: all 0.15s;
-    -ms-transition: all 0.15s;
-    -moz-transition: all 0.15s;
-    transition: all 0.15s;
+    transition: all 0.15s ease;
     opacity: 0.6;
 }
 
