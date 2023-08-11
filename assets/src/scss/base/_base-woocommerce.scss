@@ -1020,15 +1020,15 @@ ul.woocommerce-page .woocommerce-notice {
             width: 18px;
             height: 18px;
         }
+    }
 
-        .yith-wcwl-add-to-wishlist {
+    .yith-wcwl-add-to-wishlist {
 
-            margin: 0;
+        margin: 0;
 
-            .wish-list-button {
+        .wish-list-button {
 
-                font-size: 18px;
-            }
+            font-size: 18px;
         }
     }
 }
@@ -1062,6 +1062,11 @@ ul.woocommerce-page .woocommerce-notice {
 
                     animation: OsfadeInDown 1.4s ease forwards;
                 }
+            }
+
+            .yith-wcwl-add-to-wishlist {
+
+                animation: OsfadeInDown 1.4s ease forwards;
             }
         }
     }
