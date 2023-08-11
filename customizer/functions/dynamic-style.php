@@ -124,7 +124,7 @@ if ( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.patigation .page-numbers,
 			.woocommerce .woocommerce-pagination .page-numbers li span, 
 			.woocommerce .woocommerce-pagination .page-numbers li a,
-			.woocommerce ul.products li .product-hover-items ul li a,
+			.woocommerce ul.products li .product-hover-items a,
 			.woocommerce #respond input#submit.alt.disabled,
 			.woocommerce #respond input#submit.alt:disabled,
 			.woocommerce #respond input#submit.alt:disabled[disabled],
@@ -144,7 +144,7 @@ if ( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.woocommerce-store-notice.demo_store,
 			.addonify-add-to-wishlist-btn, 
 			.woocommerce ul.products li.product a.addonify-add-to-wishlist-btn.addonify-custom-wishlist-btn, 
-			.woocommerce-page ul.products li.product a.addonify-add-to-wishlist-btn.addonify-custom-wishlist-btn {
+			.woocommerce-page ul.products li.product .product-hover-items a.addonify-add-to-wishlist-btn {
 
 				background-color: {$primary_color};
 			}
@@ -259,7 +259,7 @@ if ( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.woocommerce a.button.alt:hover, 
 			.woocommerce input.button.alt:hover,
 			.masterheader .mini-cart button:hover,
-			.woocommerce .product-hover-items ul li a:hover,
+			.woocommerce .product-hover-items a:hover,
 			.owl-carousel .owl-nav button.owl-next:hover,
 			.owl-carousel .owl-nav button.owl-prev:hover,
 			.woocommerce .added_to_cart.wc-forward:hover,
@@ -268,7 +268,7 @@ if ( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.header-style-1 .wishlist-icon-container a:hover,
 			.header-style-1 .custom-search .search-form button:hover,
 			.os-about-widget .social-icons ul li a:hover,
-			.woocommerce ul.products li .product-hover-items ul li a:hover,
+			.woocommerce ul.products li .product-hover-items a:hover,
 			.woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist a:hover,
 			.patigation .page-numbers.current,
 			.patigation .page-numbers:hover,
@@ -289,7 +289,7 @@ if ( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			.product-widget-style-3 .owl-carousel .owl-nav button.owl-prev:hover,
 			.addonify-add-to-wishlist-btn:hover, 
 			.woocommerce ul.products li.product a.addonify-add-to-wishlist-btn.addonify-custom-wishlist-btn:hover, 
-			.woocommerce-page ul.products li.product a.addonify-add-to-wishlist-btn.addonify-custom-wishlist-btn:hover  {
+			.woocommerce-page ul.products li.product .product-hover-items a.addonify-add-to-wishlist-btn:hover {
 
 				background-color: {$secondary_color};
 			}

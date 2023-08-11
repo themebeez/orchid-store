@@ -5,10 +5,6 @@ a:visited {
 	color: inherit;
 }
 
-
-// color white 
-
-
 button,
 .entry-tags a,
 .entry-tags a:hover,
@@ -89,7 +85,8 @@ input[type="submit"]:hover,
 .category-navigation .cat-nav-trigger,
 .site-navigation ul li .sub-menu li a:hover,
 .site-navigation ul li .children li a:hover,
-.woocommerce ul.products li .product-hover-items ul li a,
+.woocommerce ul.products li .product-hover-items a,
+.woocommerce ul.products li.product .product-hover-items a.addonify-add-to-wishlist-btn,
 .woocommerce .widget_price_filter .price_slider_amount .button,
 .woocommerce .widget_price_filter .price_slider_amount .button:hover,
 .woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist a,
@@ -125,9 +122,6 @@ input[type="submit"]:hover,
 
 	color: $white;
 }
-
-
-// color primary ( black grey )
 
 a,
 body,
@@ -422,7 +416,7 @@ a.button-general:hover,
 .woocommerce a.button.alt:hover,
 .woocommerce input.button.alt:hover,
 .masterheader .mini-cart button:hover,
-.woocommerce .product-hover-items ul li a:hover,
+.woocommerce .product-hover-items a:hover,
 .owl-carousel .owl-nav button.owl-next:hover,
 .owl-carousel .owl-nav button.owl-prev:hover,
 .woocommerce .added_to_cart.wc-forward:hover,
@@ -430,7 +424,8 @@ a.button-general:hover,
 .wc-block-grid .wp-block-button__link:hover,
 .header-style-1 .wishlist-icon-container a:hover,
 .os-about-widget .social-icons ul li a:hover,
-.woocommerce ul.products li .product-hover-items ul li a:hover,
+.woocommerce ul.products li .product-hover-items a:hover,
+.woocommerce ul.products li.product .product-hover-items a.addonify-add-to-wishlist-btn:hover,
 .woocommerce div.product .entry-summary .yith-wcwl-add-to-wishlist a:hover,
 .patigation .page-numbers.current,
 .patigation .page-numbers:hover,

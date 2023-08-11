@@ -242,7 +242,6 @@ if( ! function_exists( 'orchid_store_logo_row_class' ) ) {
 }
 
 
-
 function orchid_store_get_page_title() {
 	?>
 	<div class="title">
@@ -306,3 +305,43 @@ function orchid_store_get_page_title() {
 	</div><!-- .title -->
 	<?php
 }
+
+/**
+ * Sanitizes SVG when rendering in the frontend.
+ *
+ * @since 1.4.8
+ */
+
+if ( ! function_exists( 'orchid_store_escape_svg' ) ) {
+	/**
+	 * Sanitizes SVG when rendering in the frontend.
+	 *
+	 * @since 1.4.8
+	 * @param string $svg SVG code.
+	 * @return string $svg Sanitized SVG code.
+	 */
+	function orchid_store_escape_svg( $svg ) {
+
+		$allowed_html = array(
+			'svg'   => array(
+				'class'           => true,
+				'aria-hidden'     => true,
+				'aria-labelledby' => true,
+				'role'            => true,
+				'xmlns'           => true,
+				'width'           => true,
+				'height'          => true,
+				'viewbox'         => true, // <= Must be lower case!
+			),
+			'g'     => array( 'fill' => true ),
+			'title' => array( 'title' => true ),
+			'path'  => array(
+				'd'    => true,
+				'fill' => true,
+			),
+		);
+
+		return wp_kses( $svg, $allowed_html );
+	}
+}
+

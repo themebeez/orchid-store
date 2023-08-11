@@ -416,97 +416,80 @@ if ( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 		global $product;
 		?>
 		<div class="product-hover-items">
-			<ul>
-				<?php
+			
+			<?php
+			if (
+				class_exists( 'YITH_WCQV' ) ||
+				class_exists( 'Addonify_Quick_View' )
+			) {
 				if (
-					class_exists( 'YITH_WCQV' ) ||
-					class_exists( 'Addonify_Quick_View' )
+					class_exists( 'Addonify_Quick_View' ) &&
+					(int) get_option( 'addonify_qv_enable_quick_view', false ) === 1
 				) {
-					if (
-						class_exists( 'Addonify_Quick_View' ) &&
-						(int) get_option( 'addonify_qv_enable_quick_view', false ) === 1
-					) {
-						?>
-						<li>
-							<a 
-								class="os-tooltip view-product addonify-qvm-button" 
-								data-tippy-content="<?php echo get_option( 'addonify_qv_quick_view_btn_label' ) ? esc_attr( get_option( 'addonify_qv_quick_view_btn_label' ) ) : esc_attr__( 'Quick View', 'orchid-store' ); ?>" 
-								data-product_id="<?php echo esc_attr( $product->get_id() ); ?>"
-								href="#"
-							>
-								<i class="bx bx-search"></i>
-							</a>
-						</li>
-						<?php
-					}
-
-					if ( class_exists( 'YITH_WCQV' ) ) {
-						?>
-						<li>
-							<a 
-								class="os-tooltip view-product yith-wcqv-button" 
-								data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
-								data-tippy-content="<?php echo esc_attr( get_option( 'yith-wcqv-button-label' ) ); ?>" href="#">
-									<i class="bx bx-search"></i>
-							</a>
-						</li>
-						<?php
-					}
+					$icon = '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M23.707,22.293l-5.969-5.969a10.016,10.016,0,1,0-1.414,1.414l5.969,5.969a1,1,0,0,0,1.414-1.414ZM10,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,10,18Z"/></svg>';
+					?>
+						<a 
+							class="os-tooltip view-product addonify-qvm-button" 
+							data-tippy-content="<?php echo get_option( 'addonify_qv_quick_view_btn_label' ) ? esc_attr( get_option( 'addonify_qv_quick_view_btn_label' ) ) : esc_attr__( 'Quick View', 'orchid-store' ); ?>" 
+							data-product_id="<?php echo esc_attr( $product->get_id() ); ?>"
+							href="#"
+						>
+							<span class="icon">
+								<?php echo orchid_store_escape_svg( $icon ); // phpcs:ignore ?>
+							</span>
+						</a>
+					
+					<?php
 				}
+
+				if ( class_exists( 'YITH_WCQV' ) ) {
+					?>
+					
+						<a 
+							class="os-tooltip view-product yith-wcqv-button" 
+							data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
+							data-tippy-content="<?php echo esc_attr( get_option( 'yith-wcqv-button-label' ) ); ?>" href="#">
+							
+							<span class="icon">
+								<?php echo orchid_store_escape_svg( $icon ); // phpcs:ignore ?>
+							</span>
+						</a>
+					
+					<?php
+				}
+			}
+			if (
+				class_exists( 'YITH_WCWL' ) ||
+				class_exists( 'Addonify_Wishlist' )
+			) {
 				if (
-					class_exists( 'YITH_WCWL' ) ||
-					class_exists( 'Addonify_Wishlist' )
+					class_exists( 'Addonify_Wishlist' ) &&
+					(int) get_option( 'addonify_wishlist_enable_wishlist', true ) === 1
 				) {
-					if (
-						class_exists( 'Addonify_Wishlist' ) &&
-						(int) get_option( 'addonify_wishlist_enable_wishlist', true ) === 1
-					) {
-						$addonify_wishlist_button_classes = array( 'os-tooltip', 'adfy-wishlist-btn', 'addonify-add-to-wishlist-btn', 'addonify-custom-wishlist-btn' );
+					$addonify_wishlist_button_classes = array( 'os-tooltip', 'adfy-wishlist-btn', 'addonify-add-to-wishlist-btn', 'addonify-custom-wishlist-btn' );
 
-						if ( addonify_wishlist_is_product_in_wishlist( $product->get_id() ) ) {
-							$addonify_wishlist_button_classes[] = 'added-to-wishlist';
-						}
+					if ( addonify_wishlist_is_product_in_wishlist( $product->get_id() ) ) {
+						$addonify_wishlist_button_classes[] = 'added-to-wishlist';
+					}
 
-						$tooltip_text = ( addonify_wishlist_is_product_in_wishlist( $product->get_id() ) ) ? get_option( 'btn_label_if_added_to_wishlist', __( 'Already in wishlist', 'orchid-store' ) ) : get_option( 'addonify_wishlist_btn_label', __( 'Add to wishlist', 'orchid-store' ) );
+					$tooltip_text = ( addonify_wishlist_is_product_in_wishlist( $product->get_id() ) ) ? get_option( 'btn_label_if_added_to_wishlist', __( 'Already in wishlist', 'orchid-store' ) ) : get_option( 'addonify_wishlist_btn_label', __( 'Add to wishlist', 'orchid-store' ) );
 
-						$icon = ( addonify_wishlist_is_product_in_wishlist( $product->get_id() ) ) ? 'fa fa-heart' : 'fa fa-heart-o';
-						?>
-						<li>
-							<?php
-							if ( ! is_user_logged_in() ) {
+					$wishlist_icons = array(
+						'initial'  => '<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor"><path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"/></svg>',
+						'added'	    => '<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor"><path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"/></svg>',
+					);
 
-								if ( 1 === (int) addonify_wishlist_get_option( 'require_login' ) ) {
+					$icon = ( addonify_wishlist_is_product_in_wishlist( $product->get_id() ) ) ? $wishlist_icons['added'] : $wishlist_icons['initial'];
+					?>
+					
+						<?php
+						if ( ! is_user_logged_in() ) {
 
-									if ( 'show_popup' === addonify_wishlist_get_option( 'if_not_login_action' ) ) {
+							if ( 1 === (int) addonify_wishlist_get_option( 'require_login' ) ) {
 
-										$addonify_wishlist_button_classes[] = 'os-addtowishlist-btn addonify-wishlist-login-popup-enabled';
-										?>
-										<a
-											href="#"
-											class="<?php echo esc_attr( implode( ' ', $addonify_wishlist_button_classes ) ); ?>" 
-											data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
-											data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"
-											data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
-										>
-											<span class="icon"><i class="<?php echo esc_attr( $icon ); ?>"></i></span>
-										</a>
-										<?php
-									} else {
-										$login_url = ( get_option( 'woocommerce_myaccount_page_id' ) ) ? get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) : wp_login_url();
-										?>
-										<a 
-											href="<?php echo esc_url( $login_url ); ?>" 
-											class="<?php echo esc_attr( implode( ' ', $addonify_wishlist_button_classes ) ); ?>"
-											data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
-											data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"
-											data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
-										>
-											<span class="icon"><i class="<?php echo esc_attr( $icon ); ?>"></i></span>
-										</a>
-										<?php
-									}
-								} else {
-									$addonify_wishlist_button_classes[] = 'os-addtowishlist-btn addonify-wishlist-ajax-add-to-wishlist';
+								if ( 'show_popup' === addonify_wishlist_get_option( 'if_not_login_action' ) ) {
+
+									$addonify_wishlist_button_classes[] = 'os-addtowishlist-btn addonify-wishlist-login-popup-enabled';
 									?>
 									<a
 										href="#"
@@ -515,80 +498,119 @@ if ( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 										data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"
 										data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
 									>
-										<span class="icon"><i class="<?php echo esc_attr( $icon ); ?>"></i></span>
+										<span class="w-icon">
+											<?php echo orchid_store_escape_svg( $icon ); ?>
+										</span>
+									</a>
+									<?php
+								} else {
+									$login_url = ( get_option( 'woocommerce_myaccount_page_id' ) ) ? get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) : wp_login_url();
+									?>
+									<a 
+										href="<?php echo esc_url( $login_url ); ?>" 
+										class="<?php echo esc_attr( implode( ' ', $addonify_wishlist_button_classes ) ); ?>"
+										data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
+										data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"
+										data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
+									>
+										<span class="w-icon">
+											<?php echo orchid_store_escape_svg( $icon ); ?>
+										</span>
 									</a>
 									<?php
 								}
 							} else {
-								$href = '#';
-								if ( addonify_wishlist_get_option( 'after_add_to_wishlist_action' ) === 'redirect_to_wishlist_page' ) {
-									$href = '?addonify-add-to-wishlist=' . esc_attr( $product->get_id() );
-								} else {
-									$addonify_wishlist_button_classes[] = 'os-addtowishlist-btn addonify-wishlist-ajax-add-to-wishlist';
-								}
+								$addonify_wishlist_button_classes[] = 'os-addtowishlist-btn addonify-wishlist-ajax-add-to-wishlist';
 								?>
 								<a
-									href="<?php echo esc_url( $href ); ?>"
+									href="#"
 									class="<?php echo esc_attr( implode( ' ', $addonify_wishlist_button_classes ) ); ?>" 
 									data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
 									data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"
 									data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
 								>
-									<span class="icon"><i class="<?php echo esc_attr( $icon ); ?>"></i></span>
+									<span class="w-icon">
+										<?php echo orchid_store_escape_svg( $icon ); ?>
+									</span>
 								</a>
 								<?php
 							}
+						} else {
+							$href = '#';
+							if ( addonify_wishlist_get_option( 'after_add_to_wishlist_action' ) === 'redirect_to_wishlist_page' ) {
+								$href = '?addonify-add-to-wishlist=' . esc_attr( $product->get_id() );
+							} else {
+								$addonify_wishlist_button_classes[] = 'os-addtowishlist-btn addonify-wishlist-ajax-add-to-wishlist';
+							}
 							?>
-						</li>
-						<?php
-					}
-
-					if ( class_exists( 'YITH_WCWL' ) ) {
+							<a
+								href="<?php echo esc_url( $href ); ?>"
+								class="<?php echo esc_attr( implode( ' ', $addonify_wishlist_button_classes ) ); ?>" 
+								data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
+								data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"
+								data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
+							>
+								<span class="w-icon">
+									<?php echo orchid_store_escape_svg( $icon ); ?>
+								</span>
+							</a>
+							<?php
+						}
 						?>
-						<li><?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]' ); ?></li>
-						<?php
-					}
-				}
-
-				if ( class_exists( 'Addonify_Compare_Products' ) ) {
-
-					$addonify_compare_products_button_classes = array( 'os-tooltip', 'addonify-cp-button' );
-
-					$icon = 'bx bx-layer';
-
-					if (
-						function_exists( 'addonify_compare_products_is_product_in_compare_cookie' ) &&
-						addonify_compare_products_is_product_in_compare_cookie( $product->get_id() )
-					) {
-						$addonify_compare_products_button_classes[] = 'selected';
-						$icon                                       = 'bxs bxs-layer';
-					}
-
-					if (
-						function_exists( 'addonify_compare_products_get_compare_products_list' ) &&
-						in_array( $product->get_id(), addonify_compare_products_get_compare_products_list() ) // phpcs:ignore
-					) {
-						$addonify_compare_products_button_classes[] = 'selected';
-						$icon                                       = 'bxs bxs-layer';
-					}
-
-					$tooltip_text = get_option( 'compare_products_btn_label', __( 'Compare', 'orchid-store' ) );
-					?>
-					<li>
-						<a
-							href="#" 
-							class="<?php echo esc_attr( implode( ' ', $addonify_compare_products_button_classes ) ); ?> os-addtocompare-btn" 
-							data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
-							data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"
-							data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
-						>
-							<span class="icon"><i class="<?php echo esc_attr( $icon ); ?>"></i></span>
-						</a>
-					</li>
+					
 					<?php
 				}
+
+				if ( class_exists( 'YITH_WCWL' ) ) {
+					?>
+					<?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]' ); ?>
+					<?php
+				}
+			}
+
+			if ( class_exists( 'Addonify_Compare_Products' ) ) {
+
+				$addonify_compare_products_button_classes = array( 'os-tooltip', 'addonify-cp-button' );
+				
+				$compare_icons = array(
+					'initial'	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22.485,10.975,12,17.267,1.515,10.975A1,1,0,1,0,.486,12.69l11,6.6a1,1,0,0,0,1.03,0l11-6.6a1,1,0,1,0-1.029-1.715Z"/><path d="M22.485,15.543,12,21.834,1.515,15.543A1,1,0,1,0,.486,17.258l11,6.6a1,1,0,0,0,1.03,0l11-6.6a1,1,0,1,0-1.029-1.715Z"/><path d="M12,14.773a2.976,2.976,0,0,1-1.531-.425L.485,8.357a1,1,0,0,1,0-1.714L10.469.652a2.973,2.973,0,0,1,3.062,0l9.984,5.991a1,1,0,0,1,0,1.714l-9.984,5.991A2.976,2.976,0,0,1,12,14.773ZM2.944,7.5,11.5,12.633a.974.974,0,0,0,1,0L21.056,7.5,12.5,2.367a.974.974,0,0,0-1,0h0Z"/></svg>',
+					'added'		=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22.485,10.975,12,17.267,1.515,10.975A1,1,0,1,0,.486,12.69l11,6.6a1,1,0,0,0,1.03,0l11-6.6a1,1,0,1,0-1.029-1.715Z"/><path d="M22.485,15.543,12,21.834,1.515,15.543A1,1,0,1,0,.486,17.258l11,6.6a1,1,0,0,0,1.03,0l11-6.6a1,1,0,1,0-1.029-1.715Z"/><path d="M.485,8.357l9.984,5.991a2.97,2.97,0,0,0,3.062,0l9.984-5.991a1,1,0,0,0,0-1.714L13.531.652a2.973,2.973,0,0,0-3.062,0L.485,6.643a1,1,0,0,0,0,1.714Z"/></svg>'
+				);
+
+				$icon = $compare_icons['initial'];
+
+				if (
+					function_exists( 'addonify_compare_products_is_product_in_compare_cookie' ) &&
+					addonify_compare_products_is_product_in_compare_cookie( $product->get_id() )
+				) {
+					$addonify_compare_products_button_classes[] = 'selected';
+					$icon                                       = $compare_icons['added'];
+				}
+
+				if (
+					function_exists( 'addonify_compare_products_get_compare_products_list' ) &&
+					in_array( $product->get_id(), addonify_compare_products_get_compare_products_list() ) // phpcs:ignore
+				) {
+					$addonify_compare_products_button_classes[] = 'selected';
+					$icon                                       = $compare_icons['added'];
+				}
+
+				$tooltip_text = get_option( 'compare_products_btn_label', __( 'Compare', 'orchid-store' ) );
 				?>
-			</ul>
+				
+					<a
+						href="#" 
+						class="<?php echo esc_attr( implode( ' ', $addonify_compare_products_button_classes ) ); ?> os-addtocompare-btn" 
+						data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" 
+						data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"
+						data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
+					>
+						<span class="icon"><?php echo orchid_store_escape_svg( $icon ); ?></span>
+					</a>
+				
+				<?php
+			}
+			?>
 		</div><!-- .product-hover-items -->
 		<?php
 	}
