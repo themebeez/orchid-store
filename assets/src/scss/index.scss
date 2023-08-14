@@ -13,7 +13,6 @@
 */
 
 // Import variables
-
 @use 'abstract/var-typography' as *;
 @use 'abstract/var-colors' as *;
 @use 'abstract/var-spacing' as *;
@@ -21,20 +20,17 @@
 
 
 // Import Base styling & reset CSS
-
 @import 'base/normalize'; // CSS normalize
 @import 'base/base'; // base styling
 @import 'base/base-woocommerce'; // base styling for WooCommerce specific elements
 
 
 // Import libraries
-
 @import 'libraries/owlcarousel';
 @import 'libraries/izi-toast';
 
 
 // Import custom parts & custom style file
-
 @import 'custom/custom-parts/helper-class'; // helper class
 @import 'custom/custom-parts/accessibility'; // assibility
 @import 'custom/custom-parts/clearing'; // clearing
@@ -56,27 +52,22 @@
 @import 'custom/compatibility/addonify-compare'; // Addonify compare
 
 // custom styles
-
-@import 'custom/custom-styles'; // [ we code custom style here ]
+@import 'custom/custom-styles'; // all custom styles.
 
 
 // common colors, typo & spacing
-
 @import 'custom/common/common-colors'; // custom common colors
 @import 'custom/common/common-typography'; // custom common typography
 @import 'custom/common/common-spacing'; // custom common spacing
 
 
 // Import media query for responsive
-
 @import 'custom/custom-parts/responsive';
 
 
 // Import accessibility
-
 @import 'custom/custom-parts/accessibility';
 
 
 // Import keyframes
-
 @import 'custom/custom-parts/keyframe';

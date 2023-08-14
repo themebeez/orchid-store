@@ -868,13 +868,51 @@ section.product-widget-style-2 .section-title {
 ==========================================
 */
 
+// product listing & hover effects.
 .woocommerce {
 
     .products {
 
         .product {
-            
+
+            // DEFAULT STYLE         
             .product-main-wrap {
+
+                .product-thumb-wrap {
+
+                    .custom-cart-btn {
+
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        right: 0;
+                        left: 0;
+                        width: 100%;
+                        bottom: 10px;
+                        z-index: 5;
+                        margin: 0;
+                        padding: 0;
+
+                        .button {
+
+                            margin: 0;
+                        }
+
+                        .woocommerce-loop-product__link {
+
+                            display: none;
+                        }
+
+                        @include breakpoint('mobile') {
+
+                            display: none;
+                        }
+                    }
+                    
+                }
 
                 .product-info-wrap {
 
@@ -915,28 +953,23 @@ section.product-widget-style-2 .section-title {
                     }
                 }
             }
-        }
-    }
-}
 
-// Display add to cart on hover.
-.woocommerce {
-
-    .products {
-
-        .product {
-
+            // WHEN ADD TO CART BUTTON IS DISPLAY ON PRODUCT HOVER.
             &.os-add-to-cart-button-display-on-product-hover {
 
                 @include breakpoint( 'until-ipad-pro' ) {
 
                     .product-main-wrap {
 
-                        .product-info-wrap {
+                        .product-thumb-wrap {
 
-                            position: relative;
-                            align-items: center;
-                            justify-content: center;
+                            .custom-cart-btn {
+
+                                @include visibility('hidden');
+                            }
+                        }
+
+                        .product-info-wrap {
 
                             .price,
                             .star-rating,
@@ -969,25 +1002,46 @@ section.product-widget-style-2 .section-title {
                         }
                     }
 
-                    &:hover {
+                    &:not(.os-add-to-cart-button-position-over-thumbnail):hover {
 
-                        .product-info-wrap {
+                        .product-main-wrap {
 
-                            .price,
-                            .star-rating,
-                            .woocommerce-loop-product__link {
+                            .product-info-wrap {
 
-                                @include visibility('hidden');
-                            }
+                                .price,
+                                .star-rating,
+                                .woocommerce-loop-product__link {
 
-                            .custom-cart-btn {
+                                    @include visibility('hidden');
+                                }
 
-                                animation: osfadeInUp 0.5s ease-in-out forwards;
-                                @include visibility('visible');
+                                .custom-cart-btn {
+
+                                    @include visibility('visible');
+                                    animation: osfadeInUp 0.5s ease-in-out forwards;
+                                }
                             }
                         }
                     }
-                }
+
+                    &.os-add-to-cart-button-position-over-thumbnail {
+
+                       &:hover {
+
+                            .product-main-wrap {
+
+                                .product-thumb-wrap {
+
+                                    .custom-cart-btn {
+
+                                        @include visibility('visible');
+                                        animation: osfadeInUp 0.5s ease-in-out forwards;
+                                    }
+                                }
+                            }
+                       }
+                    }
+                } 
             }
         }
     }
@@ -995,6 +1049,7 @@ section.product-widget-style-2 .section-title {
 
 .product-main-wrap {
 
+    position: relative;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     justify-content: space-between;
