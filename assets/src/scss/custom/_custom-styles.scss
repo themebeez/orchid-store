@@ -1666,6 +1666,43 @@ section.product-widget-style-2 .section-title {
     float: none;
 }
 
+.woocommerce .os-woocommerce-cart-form-and-cart-totals-wrapper,
+.woocommerce-page .os-woocommerce-cart-form-and-cart-totals-wrapper  {
+
+    &.col2-set {
+
+        display: grid;
+        grid-template-columns: 1fr 350px;
+        column-gap: 30px;
+        margin: 0 0 40px 0;
+        width: 100%;
+
+        @include breakpoint ('right-after-ipad-pro') {
+
+            row-gap: 30px;
+            column-gap: 0;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .col-1,
+        .col-2 {
+
+            float: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            max-width: 100%;
+        
+            &::after,
+            &::before {
+
+                content: "";
+                display: none;
+            }
+        }
+    }
+}
+
 
 /*
 ====================================================
