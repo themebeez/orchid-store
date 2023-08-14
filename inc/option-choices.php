@@ -156,8 +156,8 @@ if ( ! function_exists( 'orchid_store_checkout_page_layouts' ) ) {
 	function orchid_store_checkout_page_layouts() {
 
 		return array(
-			'layout_1' => get_template_directory_uri() . '/customizer/assets/images/sidebar_left.png',
-			'layout_2' => get_template_directory_uri() . '/customizer/assets/images/sidebar_right.png',
+			'layout_1' => get_template_directory_uri() . '/customizer/assets/images/checkout_layout_1.png',
+			'layout_2' => get_template_directory_uri() . '/customizer/assets/images/checkout_layout_2.png',
 		);
 	}
 }
@@ -174,8 +174,8 @@ if ( ! function_exists( 'orchid_store_cart_page_layouts' ) ) {
 	function orchid_store_cart_page_layouts() {
 
 		return array(
-			'layout_1' => get_template_directory_uri() . '/customizer/assets/images/sidebar_left.png',
-			'layout_2' => get_template_directory_uri() . '/customizer/assets/images/sidebar_right.png',
+			'layout_1' => get_template_directory_uri() . '/customizer/assets/images/cart_layout_1.png',
+			'layout_2' => get_template_directory_uri() . '/customizer/assets/images/cart_layout_2.png',
 		);
 	}
 }

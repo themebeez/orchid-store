@@ -140,4 +140,12 @@
             @content;
         }
     }
+
+    @if $breakpoint == 'right-after-ipad-pro' {
+
+        @media ( max-width: 1023px ) {
+
+            @content;
+        }
+    }
 }
