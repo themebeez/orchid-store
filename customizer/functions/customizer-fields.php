@@ -873,31 +873,6 @@ if ( class_exists( 'WooCommerce' ) ) {
 		)
 	);
 
-	// Sale tag position.
-	// @since 1.5.0.
-	$wp_customize->add_setting(
-		'orchid_store_field_sale_tag_position',
-		array(
-			'sanitize_callback' => 'orchid_store_sanitize_select',
-			'default'           => $orchid_store_defaults['orchid_store_field_sale_tag_position'],
-			'capability'        => 'edit_theme_options',
-		)
-	);
-
-	$wp_customize->add_control(
-		'orchid_store_field_sale_tag_position',
-		array(
-			'label'       => esc_html__( 'Sale Tag Position', 'orchid-store' ),
-			'description' => '',
-			'type'        => 'select',
-			'choices'     => array(
-				'left'  => esc_html__( 'Left', 'orchid-store' ),
-				'right' => esc_html__( 'Right', 'orchid-store' ),
-			),
-			'section'     => 'woocommerce_product_catalog',
-		)
-	);
-
 	// Sale tag text.
 	// @since 1.5.0.
 	$wp_customize->add_setting(
