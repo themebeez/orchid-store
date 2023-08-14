@@ -90,10 +90,18 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.4.8 - 09 ?, 2023 ==
+== 1.4.8 - ?, 2023 ==
 
+- Added: Option, `Add to cart` button display on product hover.
+- Added: Option, `Add to cart` button icon.
+- Added: Option, `Add to cart` button position (default, over thumbnail & hide add to cart).
+- Added: Option, to disable notification toast when product is added & removed from cart.
+- Added: Option, product image hover effects (none, swap & zoom).
+- Added: Option, checkout layout.
+- Added: Option, cart layout.
 - Added: Clear float before & after WooCommerce product summary div.
 - Updated: WooCommerce template version to 8.0.0.
+- Upadted: WooCommerce products listing now uses grid box.
 - Changed: Product hover action icons (search, wishlist & compare).
 - Tested: WooCommerce version 8.0.0
 - Tested: WordPress version 6.3.0

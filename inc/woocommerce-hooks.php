@@ -928,10 +928,15 @@ function orchid_store_woocommerce_post_class( $classes, $product ) {
 	$add_to_cart_button_position = get_theme_mod( 'orchid_store_field_add_to_cart_button_placement', 'default' );
 
 	if ( 'over_image' === $add_to_cart_button_position ) {
-		$classes[] = 'os-product-thumbnail-position-over-image';
+
+		$classes[] = 'os-add-to-cart-button-position-over-thumbnail';
 	}
 
-	if ( get_theme_mod( 'orchid_store_field_display_add_to_cart_button_on_hover', false ) ) {
+	if ( 
+		get_theme_mod( 'orchid_store_field_display_add_to_cart_button_on_hover', false ) && 
+		'none' !== $add_to_cart_button_position
+	) {
+
 		$classes[] = 'os-add-to-cart-button-display-on-product-hover';
 	}
 

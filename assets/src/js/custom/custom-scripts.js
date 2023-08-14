@@ -77,7 +77,7 @@
         = WooCommerce  cart events
         ============================
         */
-        console.log(orchid_store_obj);
+        //console.log(orchid_store_obj);
         if (orchid_store_obj.isCartMessagesEnabled === '1') {
 
             iziToast.settings({

@@ -137,9 +137,9 @@ if ( ! function_exists( 'orchid_store_add_to_cart_button_positions' ) ) {
 	function orchid_store_add_to_cart_button_positions() {
 
 		return array(
-			'default'    => get_template_directory_uri() . '/customizer/assets/images/sidebar_left.png',
-			'over_image' => get_template_directory_uri() . '/customizer/assets/images/sidebar_right.png',
-			'none'       => get_template_directory_uri() . '/customizer/assets/images/sidebar_none.png',
+			'default'    => get_template_directory_uri() . '/customizer/assets/images/add_to_cart_default.png',
+			'over_image' => get_template_directory_uri() . '/customizer/assets/images/add_to_cart_over_thumbnail.png',
+			'none'       => get_template_directory_uri() . '/customizer/assets/images/add_to_cart_none.png',
 		);
 	}
 }
