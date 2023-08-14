@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-08-11T11:30:27+00:00\n"
+"POT-Creation-Date: 2023-08-14T05:53:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: orchid-store\n"
@@ -166,25 +166,25 @@ msgstr ""
 msgid "Special Menu"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:147
+#: customizer/functions/customizer-defaults.php:146
 #: inc/woocommerce-hooks.php:1014
 #: woocommerce/loop/sale-flash.php:28
 msgid "Sale!"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:156
+#: customizer/functions/customizer-defaults.php:155
 #: functions.php:217
 #: functions.php:219
 msgid "Product successfully added to cart!"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:157
+#: customizer/functions/customizer-defaults.php:156
 #: functions.php:222
 #: functions.php:224
 msgid "Product has been removed from your cart!"
 msgstr ""
 
-#: customizer/functions/customizer-defaults.php:158
+#: customizer/functions/customizer-defaults.php:157
 #: functions.php:227
 #: functions.php:229
 msgid "Cart items has been updated successfully!"
@@ -677,83 +677,77 @@ msgid "Add to Cart Button Icon Position"
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:869
-#: customizer/functions/customizer-fields.php:894
 #: inc/custom-fields.php:50
 #: widget/widgets/advertisement-widget.php:187
 msgid "Left"
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:870
-#: customizer/functions/customizer-fields.php:895
 #: inc/custom-fields.php:49
 #: widget/widgets/advertisement-widget.php:189
 msgid "Right"
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:890
-msgid "Sale Tag Position"
-msgstr ""
-
-#: customizer/functions/customizer-fields.php:915
 msgid "Sale Tag Text"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:937
+#: customizer/functions/customizer-fields.php:912
 msgid "Enable Percentage Sale Tag"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:960
+#: customizer/functions/customizer-fields.php:935
 msgid "Display Plus &amp; Minus Buttons"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:961
+#: customizer/functions/customizer-fields.php:936
 msgid "This option adds plus and minus buttons before and after quantity field respectively."
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:972
+#: customizer/functions/customizer-fields.php:947
 msgid "Cart Messages"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:993
+#: customizer/functions/customizer-fields.php:968
 msgid "Enable Cart Messages"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:1013
+#: customizer/functions/customizer-fields.php:988
 msgid "Product Added To Cart"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:1033
+#: customizer/functions/customizer-fields.php:1008
 msgid "Product Removed From Cart"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:1053
+#: customizer/functions/customizer-fields.php:1028
 msgid "Cart Updated"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:1075
+#: customizer/functions/customizer-fields.php:1050
 msgid "Effect on Product Image on Hover"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:1079
+#: customizer/functions/customizer-fields.php:1054
 #: widget/widgets/products-filter.php:339
 #: widget/widgets/products-widget.php:270
 #: widget/widgets/products-widget.php:381
 msgid "None"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:1080
+#: customizer/functions/customizer-fields.php:1055
 msgid "Zoom"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:1081
+#: customizer/functions/customizer-fields.php:1056
 msgid "Swap"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:1103
+#: customizer/functions/customizer-fields.php:1078
 msgid "Checkout Layout"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:1128
+#: customizer/functions/customizer-fields.php:1103
 msgid "Cart Layout"
 msgstr ""
 
