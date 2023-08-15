@@ -888,7 +888,7 @@ if ( ! function_exists( 'orchid_store_refresh_cart_count' ) ) {
 /**
  * Wraps WooCommerce result count and catalog ordering in a div container.
  *
- * @since 1.5.0
+ * @since 1.4.8
  */
 function orchid_store_result_count_and_catalog_ordering() {
 	?>
@@ -902,7 +902,7 @@ function orchid_store_result_count_and_catalog_ordering() {
 /**
  * Adds class to product container if switching of product thumbnail on product hover is enabled.
  *
- * @since 1.5.0
+ * @since 1.4.8
  *
  * @param array      $classes Array of CSS classes.
  * @param WC_Product $product Product object.
@@ -948,7 +948,7 @@ add_filter( 'woocommerce_post_class', 'orchid_store_woocommerce_post_class', 10,
 /**
  * Modifies add to cart link.
  *
- * @since 1.5.0
+ * @since 1.4.8
  *
  * @param string     $add_to_cart_link HTML of add to cart link.
  * @param WC_Product $product Product object.
@@ -991,7 +991,7 @@ add_filter( 'woocommerce_loop_add_to_cart_link', 'orchid_store_woocommerce_loop_
 /**
  * Modifies sale tag.
  *
- * @since 1.5.0
+ * @since 1.4.8
  *
  * @param string     $sale_tag HTML of sale tag.
  * @param WP_Post    $post Post object.

@@ -139,12 +139,12 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
 
 			$defaults['orchid_store_field_woocommerce_sidebar_position']         = 'right';
 			$defaults['orchid_store_field_woocommerce_product_sidebar_position'] = 'right';
-			$defaults['orchid_store_field_add_to_cart_button_placement']         = 'default';  // @since 1.5.0
-			$defaults['orchid_store_field_display_add_to_cart_button_on_hover']  = false;  // @since 1.5.0
-			$defaults['orchid_store_field_display_add_to_cart_button_icon']      = false;  // @since 1.5.0
-			$defaults['orchid_store_field_add_to_cart_button_icon_position']     = 'right';  // @since 1.5.0
-			$defaults['orchid_store_field_sale_tag_text']                        = esc_html__( 'Sale!', 'orchid-store' );  // @since 1.5.0
-			$defaults['orchid_store_field_enable_percentage_sale_tag']           = false;  // @since 1.5.0
+			$defaults['orchid_store_field_add_to_cart_button_placement']         = 'default';  // @since 1.4.8
+			$defaults['orchid_store_field_display_add_to_cart_button_on_hover']  = false;  // @since 1.4.8
+			$defaults['orchid_store_field_display_add_to_cart_button_icon']      = false;  // @since 1.4.8
+			$defaults['orchid_store_field_add_to_cart_button_icon_position']     = 'right';  // @since 1.4.8
+			$defaults['orchid_store_field_sale_tag_text']                        = esc_html__( 'Sale!', 'orchid-store' );  // @since 1.4.8
+			$defaults['orchid_store_field_enable_percentage_sale_tag']           = false;  // @since 1.4.8
 			$defaults['orchid_store_field_shop_product_col_no']                  = 3;
 			$defaults['orchid_store_field_row_per_page']                         = 4;
 			$defaults['orchid_store_field_related_product_col_no']               = 3;
@@ -158,9 +158,9 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
 			$defaults['orchid_store_field_product_cols_in_mobile']               = 1;
 			$defaults['orchid_store_field_display_out_of_stock_notice']          = false;
 			$defaults['orchid_store_field_display_plus_minus_btns']              = true; // @since 1.2.7
-			$defaults['orchid_store_field_on_hover_image_effect']                = 'none'; // @since 1.5.0
-			$defaults['orchid_store_field_checkout_layout']                      = 'layout_1'; // @since 1.5.0
-			$defaults['orchid_store_field_cart_layout']                          = 'layout_1'; // @since 1.5.0
+			$defaults['orchid_store_field_on_hover_image_effect']                = 'none'; // @since 1.4.8
+			$defaults['orchid_store_field_checkout_layout']                      = 'layout_1'; // @since 1.4.8
+			$defaults['orchid_store_field_cart_layout']                          = 'layout_1'; // @since 1.4.8
 		}
 
 		$defaults['orchid_store_field_enable_home_content'] = false;
