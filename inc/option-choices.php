@@ -130,7 +130,7 @@ if ( ! function_exists( 'orchid_store_add_to_cart_button_positions' ) ) {
 	/**
 	 * Add to cart button positions.
 	 *
-	 * @since 1.5.0
+	 * @since 1.4.8
 	 *
 	 * @return array.
 	 */
@@ -149,7 +149,7 @@ if ( ! function_exists( 'orchid_store_checkout_page_layouts' ) ) {
 	/**
 	 * Checkout page layouts.
 	 *
-	 * @since 1.5.0
+	 * @since 1.4.8
 	 *
 	 * @return array.
 	 */
@@ -167,7 +167,7 @@ if ( ! function_exists( 'orchid_store_cart_page_layouts' ) ) {
 	/**
 	 * Cart page layouts.
 	 *
-	 * @since 1.5.0
+	 * @since 1.4.8
 	 *
 	 * @return array.
 	 */

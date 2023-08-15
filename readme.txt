@@ -97,8 +97,13 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 - Added: Option, `Add to cart` button position (default, over thumbnail & hide add to cart).
 - Added: Option, to disable notification toast when product is added & removed from cart.
 - Added: Option, product image hover effects (none, swap & zoom).
-- Added: Option, checkout layout.
-- Added: Option, cart layout.
+- Added: Options, `Sale Tag Text`, to set on sale text.
+- Added: Option, `Checkout Layout`, to choose the layout for the checkout page.
+- Added: Option, `Cart Layout`, to choose the layout for the cart page.
+- Added: Option, `Display Plus & Minus Buttons`, to display plus and minus buttons in product single quantity input field.
+- Added: Option, `Enable Percentage Sale Tag`, to display discount percentage instead of 'Sale!' text.
+- Added: Option, `Container Width`, to set container with for both Full Width and Boxed Width site layouts.
+- Added: Option to add third-party search form with option `Search Form Shortcode`.
 - Added: Clear float before & after WooCommerce product summary div.
 - Updated: WooCommerce template version to 8.0.0.
 - Upadted: WooCommerce products listing now uses grid box.
