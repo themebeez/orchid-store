@@ -2,7 +2,7 @@
 /**
  * Add to wishlist button template - Browse list
  *
- * @author  Your Inspiration Themes
+ * @author  themebeez
  * @package Orchid_Store
  */
 
@@ -36,7 +36,9 @@ global $product;
 <!-- BROWSE WISHLIST MESSAGE -->
 <div class="yith-wcwl-wishlistexistsbrowse">
 	<a class="button-general wish-list-button os-tooltip" href="<?php echo esc_url( $wishlist_url ); ?>" rel="nofollow" data-title="<?php echo esc_attr( $browse_wishlist_text ); ?>" data-tippy-content="<?php echo esc_attr( $browse_wishlist_text ); ?>">
-		<span class="icon"><i class='fa fa-heart-o'></i></span>
+		<span class="icon">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor"><path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"/></svg>
+		</span>
 		<span class="text"><?php echo esc_html( apply_filters( 'yith-wcwl-browse-wishlist-label', $browse_wishlist_text, $product_id, $icon ) ); // phpcs:ignore ?></span>
 	</a>
 </div>
