@@ -1,4 +1,22 @@
 
+.yith-wcwl-add-button .wish-list-button,
+.yith-wcwl-add-to-wishlist .wish-list-button {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.yith-wcwl-add-button .wish-list-button svg,
+.yith-wcwl-add-to-wishlist .wish-list-button svg {
+
+    display: inline-flex;
+    fill: currentColor;
+    width: 18px;
+    height: 18px;
+}
+
 .woocommerce-page .wishlist_table {
 
     padding:30px;
