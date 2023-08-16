@@ -3,12 +3,12 @@
 
 .patigation .nav-links {
 
-	margin:-1px 0;
+	margin: -1px 0;
 }
 
 .patigation .page-numbers {
 
-	margin:1px;
+	margin: 1px;
 }
 
 .patigation .page-numbers,
@@ -18,7 +18,7 @@
 	
 	display:inline-block;
 	height: 45px;
-	width:45px;
+	width: 45px;
 	line-height: 45px;
 	text-align: center;
 }
@@ -26,8 +26,8 @@
 .patigation .page-numbers.current,
 .woocommerce .woocommerce-pagination .page-numbers li .current {
 	
-	padding:0;
-	width:45px;
+	padding: 0;
+	width: 45px;
 	@include border_radius(0);
 }
 
@@ -40,14 +40,14 @@
 .patigation .page-numbers.next,
 .patigation .page-numbers.prev {
 
-	font-size:0;
+	font-size: 0;
 }
 
 .patigation .page-numbers.next:after,
 .patigation .page-numbers.prev:after {
 
 	font-family: 'boxicons';
-	font-size:14px;
+	font-size: 14px;
 	line-height: 43px;
 }
 
@@ -71,23 +71,19 @@
 	padding-left: 0;
 }
 
-
-// woocommerce 
-
-
 .woocommerce nav.woocommerce-pagination ul {
 
-	border:none;
-	display:block;
+	border: none;
+	display: block;
 	margin-top: -3px;
 	margin-bottom: -3px;
 }
 
 .woocommerce .woocommerce-pagination .page-numbers li {
 
-	margin:3px;
-	padding:0;
-	border:none;
+	margin: 3px;
+	padding: 0;
+	border: none;
 }
 
 .woocommerce .woocommerce-pagination .page-numbers li:first-child {
@@ -99,8 +95,8 @@
 .woocommerce .woocommerce-pagination .page-numbers li a,
 .woocommerce .woocommerce-pagination .page-numbers li .current {
 
-	margin:0;
-	padding:0;
+	margin: 0;
+	padding: 0;
 }
 
 .woocommerce .woocommerce-pagination .page-numbers li span,

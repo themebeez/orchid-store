@@ -1,4 +1,3 @@
-
 .orchid-backtotop {
     
     position: fixed;
@@ -12,15 +11,11 @@
     outline: none;
     opacity: 1;
     text-align:center;
-    height:40px;
+    height: 40px;
     width: 40px;
     line-height: 40px;
-    -moz-transform-origin: 100% 100%;
-    -webkit-transform-origin: 100% 100%;
     transform-origin: 100% 100%;
-    
     @include transition(); 
-
 }
 
 .orchid-backtotop span {
