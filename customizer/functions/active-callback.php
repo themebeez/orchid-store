@@ -289,3 +289,33 @@ function orchid_store_is_third_party_search_form_enabled( $control ) {
 
 	return ( 'third_party_search' === $site_layout ) ? true : false;
 }
+
+
+/**
+ * Active callback function that checks whether add to cart button is enabled in product archive.
+ *
+ * @since 1.4.8
+ *
+ * @param object $control WP Customize Control.
+ * @return boolean
+ */
+function orchid_store_is_add_to_cart_button_enabled_in_product_archive( $control ) {
+
+	$add_to_cart_layout = $control->manager->get_setting( 'orchid_store_field_add_to_cart_button_placement' )->value();
+
+	return ( 'none' !== $add_to_cart_layout ) ? true : false;
+}
+
+
+/**
+ * Active callback function that checks whether percentage discount tag is disabled.
+ *
+ * @since 1.4.8
+ *
+ * @param object $control WP Customize Control.
+ * @return boolean
+ */
+function orchid_store_is_percentage_discount_tag_disabled( $control ) {
+
+	return $control->manager->get_setting( 'orchid_store_field_enable_percentage_sale_tag' )->value();
+}

@@ -319,26 +319,26 @@ if ( ! function_exists( 'orchid_store_post_navigation_action' ) ) {
 		?>
 		<div class="post-navigation">
 			<div class="nav-links">
-				<?php
-				if ( ! empty( $previous_post ) ) {
-					?>
-					<div class="nav-previous">
+				<div class="nav-previous">
+					<?php 
+					if ( ! empty( $previous_post ) ) {
+						?>
 						<span><?php esc_html_e( 'Prev post', 'orchid-store' ); ?></span>
 						<a href="<?php echo esc_url( get_permalink( $previous_post->ID ) ); ?>"><?php echo esc_html( $previous_post->post_title ); ?></a>
-					</div><!-- .nav-previous -->
-					<?php
-				}
-
-
-				if ( ! empty( $next_post ) ) {
+						<?php
+					}
 					?>
-					<div class="nav-next">
+				</div><!-- .nav-previous -->
+				<div class="nav-next">
+					<?php
+					if ( ! empty( $next_post ) ) {
+						?>
 						<span><?php esc_html_e( 'Next post', 'orchid-store' ); ?></span>
 						<a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>"><?php echo esc_html( $next_post->post_title ); ?></a>
-					</div><!-- .nav-next -->
-					<?php
-				}
-				?>
+						<?php
+					}
+					?>
+				</div><!-- .nav-next -->
 			</div><!-- .nav-links -->
 		</div><!-- .post-navigation -->
 		<?php
