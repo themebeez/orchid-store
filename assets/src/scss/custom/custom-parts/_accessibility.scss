@@ -4,14 +4,14 @@ a:focus,
 .category-navigation .cat-nav-trigger:focus,
 .masterheader .mini-cart .trigger-mini-cart:focus  {
 
-    outline:thin dotted #FFBF3F;
+    outline: thin dotted #FFBF3F;
 }
 
 .header-style-1 .wishlist-icon-container a:focus,
 .masterheader .mini-cart .trigger-mini-cart:focus,
 .header-style-1 .custom-search-entry button:focus {
 
-    outline:thin dotted #FFBF3F;
+    outline: thin dotted #FFBF3F;
 }
 
 .screen-reader-text {
@@ -40,11 +40,7 @@ a:focus,
     top: 5px;
     width: auto;
     z-index: 100000;
-    -ms-box-shadow: 0px 0px 65px rgba(0,0,0,0.1);
-    -o-box-shadow: 0px 0px 65px rgba(0,0,0,0.1);
-    -moz-box-shadow: 0px 0px 65px rgba(0,0,0,0.1);
-    -webkit-box-shadow: 0px 0px 65px rgba(0,0,0,0.1);
-    box-shadow: 0px 0px 65px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 65px rgba( 0, 0, 0, 0.1 );
 }
 
 .screen-reader-text:focus {
@@ -59,16 +55,16 @@ a:focus,
     .site-navigation .menu-item-has-mega-children .mega-menu-sub-menu, 
     .site-navigation .menu-item-has-mega-children .mega-menu-sub-menu {
 
-        display:block;
+        display: block;
         clip: rect(1px, 1px, 1px, 1px);
         visibility: visible;
-        opacity:1;
+        opacity: 1;
     }
 
     .site-navigation .menu-item-has-mega-children .mega-menu-sub-menu, 
     .site-navigation .menu-item-has-mega-children .mega-menu-sub-menu {
 
-        display:flex;
+        display: flex;
     }
 
     .site-navigation ul li:hover > .sub-menu, 
@@ -83,6 +79,6 @@ a:focus,
         
         clip: auto;
         visibility: visible;
-        opacity:1;
+        opacity: 1;
     }
 }
