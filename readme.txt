@@ -90,7 +90,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.5.0 - ?, 2023 ==
+== 1.5.0 - 17 August, 2023 ==
 
 - Added: Option, `Add to cart` button display on product hover.
 - Added: Option, `Add to cart` button icon.
