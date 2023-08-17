@@ -521,10 +521,13 @@ body {
 
         &:is(.blog, .archive, .search) {
 
-            #primary {
+            &:not(.woocommerce-page, .woocommerce-shop, [class*="tax-product"], [class*="post-type-archive-product"]) {
 
-                margin: 0 auto;
-                max-width: 800px;
+                #primary {
+
+                    margin: 0 auto;
+                    max-width: 800px;
+                }
             }
         }
     }
