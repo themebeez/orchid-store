@@ -246,7 +246,7 @@ if ( ! function_exists( 'orchid_store_is_wishlist_enabled' ) ) {
 /**
  * Active callback function that checks whether boxed site layout is enabled.
  *
- * @since 1.4.8
+ * @since 1.5.0
  *
  * @param object $control WP Customize Control.
  * @return boolean
@@ -262,7 +262,7 @@ function orchid_store_is_boxed_site_layout_enabled( $control ) {
 /**
  * Active callback function that checks whether fullwidth site layout is enabled.
  *
- * @since 1.4.8
+ * @since 1.5.0
  *
  * @param object $control WP Customize Control.
  * @return boolean
@@ -278,7 +278,7 @@ function orchid_store_is_fullwidth_site_layout_enabled( $control ) {
 /**
  * Active callback function that checks whether third-party search form is enabled.
  *
- * @since 1.4.8
+ * @since 1.5.0
  *
  * @param object $control WP Customize Control.
  * @return boolean
@@ -294,7 +294,7 @@ function orchid_store_is_third_party_search_form_enabled( $control ) {
 /**
  * Active callback function that checks whether add to cart button is enabled in product archive.
  *
- * @since 1.4.8
+ * @since 1.5.0
  *
  * @param object $control WP Customize Control.
  * @return boolean
@@ -310,7 +310,7 @@ function orchid_store_is_add_to_cart_button_enabled_in_product_archive( $control
 /**
  * Active callback function that checks whether percentage discount tag is disabled.
  *
- * @since 1.4.8
+ * @since 1.5.0
  *
  * @param object $control WP Customize Control.
  * @return boolean

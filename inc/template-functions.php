@@ -309,14 +309,14 @@ function orchid_store_get_page_title() {
 /**
  * Sanitizes SVG when rendering in the frontend.
  *
- * @since 1.4.8
+ * @since 1.5.0
  */
 
 if ( ! function_exists( 'orchid_store_escape_svg' ) ) {
 	/**
 	 * Sanitizes SVG when rendering in the frontend.
 	 *
-	 * @since 1.4.8
+	 * @since 1.5.0
 	 * @param string $svg SVG code.
 	 * @return string $svg Sanitized SVG code.
 	 */
