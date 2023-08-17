@@ -786,7 +786,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	);
 
 	// Add to cart button position.
-	// @since 1.4.8.
+	// @since 1.5.0.
 	$wp_customize->add_setting(
 		'orchid_store_field_add_to_cart_button_placement',
 		array(
@@ -811,7 +811,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	);
 
 	// Display add to cart button on hover.
-	// @since 1.4.8.
+	// @since 1.5.0.
 	$wp_customize->add_setting(
 		'orchid_store_field_display_add_to_cart_button_on_hover',
 		array(
@@ -835,7 +835,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	);
 
 	// Enable add to cart button icon.
-	// @since 1.4.8.
+	// @since 1.5.0.
 	$wp_customize->add_setting(
 		'orchid_store_field_display_add_to_cart_button_icon',
 		array(
@@ -858,7 +858,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	);
 
 	// Add to cart button icon position.
-	// @since 1.4.8.
+	// @since 1.5.0.
 	$wp_customize->add_setting(
 		'orchid_store_field_add_to_cart_button_icon_position',
 		array(
@@ -883,7 +883,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	);
 
 	// Enable percentage sale tag.
-	// @since 1.4.8.
+	// @since 1.5.0.
 	$wp_customize->add_setting(
 		'orchid_store_field_enable_percentage_sale_tag',
 		array(
@@ -906,7 +906,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	);
 
 	// Sale tag text.
-	// @since 1.4.8.
+	// @since 1.5.0.
 	$wp_customize->add_setting(
 		'orchid_store_field_sale_tag_text',
 		array(
@@ -960,7 +960,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	);
 
 	// Enable cart messages.
-	// @since 1.4.8.
+	// @since 1.5.0.
 	$wp_customize->add_setting(
 		'orchid_store_field_enable_cart_messages',
 		array(
@@ -1044,7 +1044,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 
 	// Effect on product image on product hover.
-	// @since 1.4.8.
+	// @since 1.5.0.
 	$wp_customize->add_setting(
 		'orchid_store_field_on_hover_image_effect',
 		array(
@@ -1070,7 +1070,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 
 	// Checkout page layout.
-	// @since 1.4.8.
+	// @since 1.5.0.
 	$wp_customize->add_setting(
 		'orchid_store_field_checkout_layout',
 		array(
@@ -1095,7 +1095,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	);
 
 	// Cart page layout.
-	// @since 1.4.8.
+	// @since 1.5.0.
 	$wp_customize->add_setting(
 		'orchid_store_field_cart_layout',
 		array(
