@@ -5,7 +5,7 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 7.4
 Requires at least: 6.0.0
 Tested up to: 6.3.0
-Stable tag: 1.5.0
+Stable tag: 1.5.1
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
 
@@ -89,6 +89,11 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.5.1 - 21 August, 2023 ==
+
+- Fix: Float clearing issue in WC product summary, upsell & related products section.
+- Tested: WooCommerce version 8.0.2
 
 == 1.5.0 - 17 August, 2023 ==
 
