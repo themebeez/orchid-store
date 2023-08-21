@@ -1,6 +1,3 @@
-
-// Clearing
-
 .quantity-nav:before,
 .quantity-nav:after,
 .clearfix:before,
@@ -25,6 +22,10 @@ form.search-form:after,
 .search-form-entry form:before,
 .widget_archive ul li:before,
 .widget_archive ul li:after,
+.woocommerce div.product .upsells:after,
+.woocommerce div.product .upsells:before,
+.woocommerce div.product .related.products:after,
+.woocommerce div.product .related.products:before,
 .woocommerce div.product form.variations_form:after,
 .woocommerce div.product form.variations_form:before,
 .mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list li:after,
@@ -32,7 +33,7 @@ form.search-form:after,
 .woocommerce div.product div.images .woocommerce-product-gallery__wrapper:before,
 .woocommerce div.product div.images .woocommerce-product-gallery__wrapper:after {
 
-    content: '';
+    content: "";
     display: table;
 }
 
@@ -51,6 +52,10 @@ form.search-form:after,
 .widget_product_search form:after,
 .search-form-entry form:after,
 .widget_archive ul li:after,
+.woocommerce div.product .upsells:after,
+.woocommerce div.product .upsells:before,
+.woocommerce div.product .related.products:after,
+.woocommerce div.product .related.products:before,
 .woocommerce div.product form.variations_form:after,
 .mini-cart-open .woocommerce.widget_shopping_cart ul.cart_list li:after,
 .woocommerce ul.products li.product .woocommerce-loop-category__title:after,
