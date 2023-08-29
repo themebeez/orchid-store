@@ -870,6 +870,7 @@
 
     .woocommerce ul.products[class*="columns-"][class*="os-mobile-col-2"],
     .woocommerce[class*="columns-"] ul.products[class*="os-mobile-col-2"], 
+    .woocommerce[class*="columns-"][class*="os-mobile-col-2"] ul.products,
     .woocommerce[class*="columns-"] ul.products[class*="columns-"][class*="os-mobile-col-2"] {
 
         row-gap: 5px;
@@ -1185,7 +1186,7 @@
     }
 }
 
-@media ( max-width: 320px ) {
+@media ( max-width: 340px ) {
 
     .mobile-navigation {
 
@@ -1194,6 +1195,7 @@
 
     .woocommerce ul.products[class*="columns-"][class*="os-mobile-col-2"],
     .woocommerce[class*="columns-"] ul.products[class*="os-mobile-col-2"], 
+    .woocommerce[class*="columns-"][class*="os-mobile-col-2"] ul.products,
     .woocommerce[class*="columns-"] ul.products[class*="columns-"][class*="os-mobile-col-2"] {
 
         row-gap: 30px;

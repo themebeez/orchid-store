@@ -4,15 +4,12 @@
 
     $(document).ready(function () {
 
-        // console.log(orchid_store_obj.homeUrl );
-
         // Trigger WooCommerce cart fragments.
 
         $(document.body).trigger('wc_fragment_refresh');
 
         // Compare button functionality.
         orchidStoreAddonifyCompare();
-
         orchidStoreAddonifyWishlist();
 
         /*
@@ -22,7 +19,6 @@
         */
 
         var wow = new WOW({
-
             boxClass: 'wow', // animated element css class (default is wow)
             animateClass: 'animated', // animation css class (default is animated)
             offset: -150, // distance to the element when triggering the animation (default is 0)
@@ -30,6 +26,7 @@
             live: true, // act on asynchronously loaded content (default is true)
             scrollContainer: null // optional scroll container selector, otherwise use window
         });
+
         wow.init();
 
         if ($(window).width() <= 1000) {
@@ -59,18 +56,20 @@
         ==================================
         */
 
-        tippy('.os-tooltip', {
+        if (typeof tippy !== 'undefined') {
 
-            content: "",
-            delay: 50,
-            arrow: true,
-            arrowType: 'sharp',
-            size: 'large',
-            duration: 300,
-            animation: 'scale',
-            placement: 'left-start',
-        });
+            tippy('.os-tooltip', {
 
+                content: "",
+                delay: 50,
+                arrow: true,
+                arrowType: 'sharp',
+                size: 'large',
+                duration: 300,
+                animation: 'scale',
+                placement: 'left-start',
+            });
+        }
 
         /*
         ====================
@@ -308,7 +307,6 @@
 
 
         // Category Navigation at header 
-
         $('body').on('click', '.cat-nav-trigger', function (e) {
 
             $('body').toggleClass('cat-nav-at-navigation-active'); // add class to body
@@ -335,9 +333,7 @@
 
         });
 
-
         // mobile header search 
-
         $('body').on('click', '.mobile-header .search-toggle', function (e) {
 
             $('body').toggleClass('mobile-header-search-active'); // toggle class to display & hide mobile header search
@@ -361,13 +357,9 @@
         } else {
 
             $('.sticky-portion').theiaStickySidebar({
-
                 additionalMarginTop: 30
-
             });
-
         }
-
 
 
         /*
@@ -376,9 +368,11 @@
         ====================================
         */
 
+        let mobile_products_col = orchid_store_obj.product_cols_on_mobile;
+
         $('.carousel-preloader').hide();
 
-        var owlrtl;
+        let owlrtl;
 
         if (jQuery('body').hasClass('rtl')) {
 
@@ -389,14 +383,11 @@
             owlrtl = false;
         }
 
-        // banner style 1 
-
         jQuery('.owl-carousel-1').owlCarousel({
-
             rtl: owlrtl,
             items: 1,
             loop: true,
-            lazyLoad: false,
+            lazyLoad: true,
             margin: 0,
             smartSpeed: 1000,
             nav: false,
@@ -406,16 +397,10 @@
             autoplayHoverPause: true,
         });
 
-
-        // product widget 3
-
-        var mobile_products_col = orchid_store_obj.product_cols_on_mobile;
-
         jQuery('.owl-carousel-2').owlCarousel({
-
             rtl: owlrtl,
             loop: true,
-            lazyLoad: false,
+            lazyLoad: true,
             margin: 30,
             smartSpeed: 1000,
             nav: true,
@@ -426,9 +411,13 @@
             responsive: {
                 0: {
                     margin: 5,
-                    items: mobile_products_col
+                    items: 1
                 },
-                400: {
+                340: {
+                    margin: 5,
+                    items: 1
+                },
+                341: {
                     margin: 5,
                     items: mobile_products_col
                 },
@@ -508,9 +497,6 @@
 
             return false;
         });
-
-
-        // Window scroll event
 
         if (orchid_store_obj.scroll_top == '1') {
 
