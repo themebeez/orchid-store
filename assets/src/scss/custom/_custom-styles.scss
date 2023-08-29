@@ -872,6 +872,15 @@ section.product-widget-style-2 .section-title {
     right: -15px;
 }
 
+.product-widget-style-3 .woocommerce[class*=columns-] ul.products,
+.product-widget-style-3 .woocommerce[class*=columns-][class*=os-mobile-col-2] ul.products {
+
+    padding: 0;
+    margin: 0;
+    row-gap: 0;
+    column-gap: 0;
+    grid-template-columns: repeat( 1, 1fr );
+}
 
 /*
 ====================================================
