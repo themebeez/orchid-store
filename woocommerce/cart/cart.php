@@ -78,9 +78,9 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 							$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
 							if ( ! $product_permalink ) {
-								echo $thumbnail; // PHPCS: XSS ok.
+								echo $thumbnail; // PHPCS:ignore
 							} else {
-								printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
+								printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS:ignore.
 							}
 							?>
 							</td>
@@ -110,7 +110,7 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 							do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
 
 							// Meta data.
-							echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
+							echo esc_html( wc_get_formatted_cart_item_data( $cart_item ) ); // PHPCS: XSS ok.
 
 							// Backorder notification.
 							if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
@@ -121,7 +121,7 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 
 							<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'orchid-store' ); ?>">
 								<?php
-									echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+									echo esc_html( apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ) ); // PHPCS: XSS ok.
 								?>
 							</td>
 
@@ -147,13 +147,13 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 								false
 							);
 
-							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
+							echo esc_html( apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ) ); // PHPCS: XSS ok.
 							?>
 							</td>
 
 							<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'orchid-store' ); ?>">
 								<?php
-									echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+									echo esc_html( apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ) ); // PHPCS: XSS ok.
 								?>
 							</td>
 						</tr>
@@ -262,9 +262,9 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 									$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
 									if ( ! $product_permalink ) {
-										echo $thumbnail; // PHPCS: XSS ok.
+										echo $thumbnail; // phpcs:ignore
 									} else {
-										printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
+										printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // phpcs:ignore
 									}
 									?>
 									</td>
@@ -294,7 +294,7 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 									do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
 
 									// Meta data.
-									echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
+									echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore
 
 									// Backorder notification.
 									if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
@@ -305,7 +305,7 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 
 									<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'orchid-store' ); ?>">
 										<?php
-											echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+											echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // phpcs:ignore
 										?>
 									</td>
 
@@ -331,13 +331,13 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 										false
 									);
 
-									echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
+									echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // phpcs:ignore
 									?>
 									</td>
 
 									<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'orchid-store' ); ?>">
 										<?php
-											echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+											echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // phpcs:ignore
 										?>
 									</td>
 								</tr>

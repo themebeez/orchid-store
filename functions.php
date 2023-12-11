@@ -11,7 +11,7 @@ $current_theme = wp_get_theme( 'orchid-store' );
 
 define( 'ORCHID_STORE_VERSION', $current_theme->get( 'Version' ) );
 
-if ( ! function_exists( 'orchid_store_setup' ) ) :
+if ( ! function_exists( 'orchid_store_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -109,7 +109,7 @@ if ( ! function_exists( 'orchid_store_setup' ) ) :
 		 */
 		remove_theme_support( 'widgets-block-editor' );
 	}
-endif;
+}
 add_action( 'after_setup_theme', 'orchid_store_setup' );
 
 /**
@@ -415,7 +415,7 @@ require get_template_directory() . '/widget/widgets-init.php';
 /**
  * Load custom fields.
  */
-require get_template_directory() . '/inc/custom-fields.php';
+require get_template_directory() . '/inc/class-orchid-store-custom-fields.php';
 
 /**
  * Load theme dependecies

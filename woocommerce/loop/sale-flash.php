@@ -23,10 +23,10 @@ global $post, $product;
 
 ?>
 <?php
-if ( $product->is_on_sale() ) :
+if ( $product->is_on_sale() ) {
 	?>
 	<?php echo wp_kses_post( apply_filters( 'woocommerce_sale_flash', '<div class="product-sale"><span class="onsale">' . esc_html__( 'Sale!', 'orchid-store' ) . '</span></div>', $post, $product ) ); ?>
 	<?php
-endif;
+}
 
 /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */

@@ -494,7 +494,7 @@ if ( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 									data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
 								>
 									<span class="w-icon">
-										<?php echo orchid_store_escape_svg( $icon ); ?>
+										<?php echo esc_html( orchid_store_escape_svg( $icon ) ); ?>
 									</span>
 								</a>
 								<?php
@@ -509,7 +509,7 @@ if ( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 									data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
 								>
 									<span class="w-icon">
-										<?php echo orchid_store_escape_svg( $icon ); ?>
+										<?php echo esc_html( orchid_store_escape_svg( $icon ) ); ?>
 									</span>
 								</a>
 								<?php
@@ -525,7 +525,7 @@ if ( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 								data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
 							>
 								<span class="w-icon">
-									<?php echo orchid_store_escape_svg( $icon ); ?>
+									<?php echo esc_html( orchid_store_escape_svg( $icon ) ); ?>
 								</span>
 							</a>
 							<?php
@@ -645,10 +645,9 @@ if ( ! function_exists( 'orchid_store_woocommerce_title_breadcrumb_action' ) ) {
 				</div><!-- .os-product-single-breadcrumb-wrap -->
 				<?php
 			}
-		} else {
+		} elseif ( orchid_store_get_option( 'display_page_header' ) ) {
 
-			if ( orchid_store_get_option( 'display_page_header' ) ) {
-				?>
+			?>
 				<div
 					class="os-breadcrumb-wrap"
 					<?php
@@ -692,28 +691,27 @@ if ( ! function_exists( 'orchid_store_woocommerce_title_breadcrumb_action' ) ) {
 					<div class="mask"></div>
 				</div><!-- .os-breadcrumb-wrap -->
 				<?php
-			} else {
+		} else {
 
-				$display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
+			$display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
 
-				if ( $display_breadcrumb ) {
-					?>
+			if ( $display_breadcrumb ) {
+				?>
 					<div class="os-page-breadcrumb-wrap">
 						<div class="__os-container__">
 							<div class="os-breadcrumb">
-								<?php
-								/**
-								 * Hook - orchid_store_woocommerce_breadcrumb.
-								 *
-								 * @hooked woocommerce_breadcurmb - 20
-								 */
-								do_action( 'orchid_store_woocommerce_breadcrumb' );
-								?>
+							<?php
+							/**
+							 * Hook - orchid_store_woocommerce_breadcrumb.
+							 *
+							 * @hooked woocommerce_breadcurmb - 20
+							 */
+							do_action( 'orchid_store_woocommerce_breadcrumb' );
+							?>
 							</div><!-- .os-breadcrumb -->
 						</div><!-- .__os-container__ -->
 					</div><!-- .os-product-single-breadcrumb-wrap -->
 					<?php
-				}
 			}
 		}
 	}
@@ -881,7 +879,7 @@ if ( ! function_exists( 'orchid_store_refresh_cart_count' ) ) {
 /**
  * Wraps WooCommerce result count and catalog ordering in a div container.
  *
- * @since 1.5.0
+ * @since 1.0.0
  */
 function orchid_store_result_count_and_catalog_ordering() {
 	?>
@@ -895,7 +893,7 @@ function orchid_store_result_count_and_catalog_ordering() {
 /**
  * Adds class to product container if switching of product thumbnail on product hover is enabled.
  *
- * @since 1.5.0
+ * @since 1.0.0
  *
  * @param array      $classes Array of CSS classes.
  * @param WC_Product $product Product object.
@@ -941,7 +939,7 @@ add_filter( 'woocommerce_post_class', 'orchid_store_woocommerce_post_class', 10,
 /**
  * Modifies add to cart link.
  *
- * @since 1.5.0
+ * @since 1.0.0
  *
  * @param string     $add_to_cart_link HTML of add to cart link.
  * @param WC_Product $product Product object.
@@ -984,7 +982,7 @@ add_filter( 'woocommerce_loop_add_to_cart_link', 'orchid_store_woocommerce_loop_
 /**
  * Modifies sale tag.
  *
- * @since 1.5.0
+ * @since 1.0.0
  *
  * @param string     $sale_tag HTML of sale tag.
  * @param WP_Post    $post Post object.

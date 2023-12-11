@@ -9,43 +9,48 @@
  * @subpackage Orchid_Store/customizer/controls
  */
 
-
-if ( ! class_exists( 'Orchid_Store_AFC_Recommendation_Control' ) ) {
+if ( ! class_exists( 'Cuctomize_' ) ) {
 
 	/**
 	 * The customize control to add plugin installation and activation of AFC plugin.
 	 *
 	 * @package    Orchid_Store
- 	 * @subpackage Orchid_Store/customizer/controls
+	 * @subpackage Orchid_Store/customizer/controls
 	 * @author     Themebeez <themebeez@gmail.com>
 	 */
-	class Orchid_Store_AFC_Recommendation_Control extends WP_Customize_Control {
+	class Orchid_Store_Customize_AFC_Recommendation_Control extends WP_Customize_Control {
 
 		/**
 		 * Type of customize control.
-		 * 
-		 * @since 1.4.2
+		 *
+		 * @since 1.0.0
 		 * @access public
 		 * @var string $type Type of customize control.
 		 */
 		public $type = 'afc-recommendation';
 
 		/**
-         * Enqueue our scripts and styles.
-		 * 
-		 * @since 1.4.2
-         */
-        public function enqueue() {
+		 * Enqueue our scripts and styles.
+		 *
+		 * @since 1.0.0
+		 */
+		public function enqueue() {
 
-            wp_enqueue_style( 'orchid-store-afc-recommendation', get_template_directory_uri() . '/customizer/assets/css/afc-recommendation.css' );
-        }
+			wp_enqueue_style(
+				'orchid-store-afc-recommendation',
+				get_template_directory_uri() . '/customizer/assets/css/afc-recommendation.css',
+				array(),
+				ORCHID_STORE_VERSION,
+				'all'
+			);
+		}
 
 		/**
-         * Render control.
-		 * 
-		 * @since 1.4.2
-         */
-        public function render_content() {
+		 * Render control.
+		 *
+		 * @since 1.0.0
+		 */
+		public function render_content() {
 
 			$installed_plugins = get_plugins();
 			?>
@@ -94,8 +99,8 @@ if ( ! class_exists( 'Orchid_Store_AFC_Recommendation_Control' ) ) {
 				<div id="os-afc-error" class="afc-hide">
 					<p></p>
 				</div>
-            </div>
-            <?php
-        }
+			</div>
+			<?php
+		}
 	}
 }

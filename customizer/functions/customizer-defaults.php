@@ -1,4 +1,11 @@
 <?php
+/**
+ * Define customize settings default values and function to get customize setting value.
+ *
+ * @since 1.0.0
+ *
+ * @package Orchid_Store
+ */
 
 if ( ! function_exists( 'orchid_store_get_option' ) ) {
 	/**
@@ -50,89 +57,89 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
 
 		$defaults = array(
 
-			'value_as' => 'slug',
+			'value_as'                               => 'slug',
 
 			'site_layout'                            => 'fullwidth',
 			'fullwidth_container_width'              => '1300',
 			'boxed_container_width'                  => '1170',
 
-			'logo_mobile' => '',
+			'logo_mobile'                            => '',
 
-			'display_top_header' => false,
-			'display_menu_or_login_register_link' => 'login_register',
-			'top_header_social_links' => '',
+			'display_top_header'                     => false,
+			'display_menu_or_login_register_link'    => 'login_register',
+			'top_header_social_links'                => '',
 
-			'display_special_menu' => false,
-			'special_menu_title' => esc_html__( 'Special Menu', 'orchid-store' ),
+			'display_special_menu'                   => false,
+			'special_menu_title'                     => esc_html__( 'Special Menu', 'orchid-store' ),
 
-			'display_product_search_form' => true,
-			'select_search_form' => 'product_search',
-			'search_form_shortcode' => '',
-			'display_product_search_form_on_mobile' => false,
-			'cart_display' => 'default',
-			'display_mini_cart' => true,
-			'display_cart_items_count' => false,
-			'display_wishlist' => true,
-			'display_wishlist_items_count' => false,
+			'display_product_search_form'            => true,
+			'select_search_form'                     => 'product_search',
+			'search_form_shortcode'                  => '',
+			'display_product_search_form_on_mobile'  => false,
+			'cart_display'                           => 'default',
+			'display_mini_cart'                      => true,
+			'display_cart_items_count'               => false,
+			'display_wishlist'                       => true,
+			'display_wishlist_items_count'           => false,
 
-			'blog_featured_image' => false,
-			'blog_display_cats' => true,
-			'blog_display_excerpt' => true,
-			'blog_display_date' => true,
-			'blog_display_author' => true,
-			'blog_sidebar_position' => 'right',
+			'blog_featured_image'                    => false,
+			'blog_display_cats'                      => true,
+			'blog_display_excerpt'                   => true,
+			'blog_display_date'                      => true,
+			'blog_display_author'                    => true,
+			'blog_sidebar_position'                  => 'right',
 
-			'archive_featured_image' => false,
-			'archive_display_cats' => true,
-			'archive_display_excerpt' => true,
-			'archive_display_date' => true,
-			'archive_display_author' => true,
-			'archive_sidebar_position' => 'right',
+			'archive_featured_image'                 => false,
+			'archive_display_cats'                   => true,
+			'archive_display_excerpt'                => true,
+			'archive_display_date'                   => true,
+			'archive_display_author'                 => true,
+			'archive_sidebar_position'               => 'right',
 
-			'search_featured_image' => false,
-			'search_display_cats' => true,
-			'search_display_excerpt' => true,
-			'search_display_date' => true,
-			'search_display_author' => true,
-			'search_sidebar_position' => 'right',
+			'search_featured_image'                  => false,
+			'search_display_cats'                    => true,
+			'search_display_excerpt'                 => true,
+			'search_display_date'                    => true,
+			'search_display_author'                  => true,
+			'search_sidebar_position'                => 'right',
 
-			'blog_archive_search_col_align' => 'feat_img_content',
+			'blog_archive_search_col_align'          => 'feat_img_content',
 
-			'enable_sticky_sidebar' => true,
-			'enable_sidebar_small_devices' => true,
-			'enable_global_sidebar_position' => false,
-			'global_sidebar_position' => 'right',
+			'enable_sticky_sidebar'                  => true,
+			'enable_sidebar_small_devices'           => true,
+			'enable_global_sidebar_position'         => false,
+			'global_sidebar_position'                => 'right',
 
-			'display_post_featured_image' => false,
-			'display_post_cats' => true,
-			'display_post_date' => true,
-			'display_post_author' => true,
-			'display_post_tags' => true,
-			'enable_post_common_sidebar_position' => false,
-			'post_sidebar_position' => 'right',
+			'display_post_featured_image'            => false,
+			'display_post_cats'                      => true,
+			'display_post_date'                      => true,
+			'display_post_author'                    => true,
+			'display_post_tags'                      => true,
+			'enable_post_common_sidebar_position'    => false,
+			'post_sidebar_position'                  => 'right',
 
-			'display_page_featured_image' => false,
-			'enable_page_common_sidebar_position' => false,
-			'page_sidebar_position' => 'right',
+			'display_page_featured_image'            => false,
+			'enable_page_common_sidebar_position'    => false,
+			'page_sidebar_position'                  => 'right',
 
-			'display_page_header' => true,
-			'display_breadcrumb' => true,
-			'display_page_title' => true,
+			'display_page_header'                    => true,
+			'display_breadcrumb'                     => true,
+			'display_page_title'                     => true,
 			'enable_parallax_page_header_background' => false,
 
-			'display_footer_widget_area' => false,
-			'footer_widgets_area_columns' => '4',
-			'display_scroll_top_button' => true,
+			'display_footer_widget_area'             => false,
+			'footer_widgets_area_columns'            => '4',
+			'display_scroll_top_button'              => true,
 
-			'copyright_text' => '',
-			'payments_image' => '',
+			'copyright_text'                         => '',
+			'payments_image'                         => '',
 
-			'excerpt_length' => 30,
+			'excerpt_length'                         => 30,
 
-			'primary_color' => '#0286E7',
-			'secondary_color' => '#E26143',
+			'primary_color'                          => '#0286E7',
+			'secondary_color'                        => '#E26143',
 
-			'disable_ouline_on_focus' => false,
+			'disable_ouline_on_focus'                => false,
 		);
 
 		if ( class_exists( 'WooCommerce' ) ) {

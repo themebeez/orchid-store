@@ -111,8 +111,8 @@ add_filter( 'loop_shop_columns', 'orchid_store_woocommerce_loop_columns' );
 function orchid_store_woocommerce_related_products_args( $args ) {
 
 	$defaults = array();
-		
-	$defaults['columns'] = intval( get_theme_mod( 'orchid_store_field_related_product_col_no', 3 ) );
+
+	$defaults['columns']        = intval( get_theme_mod( 'orchid_store_field_related_product_col_no', 3 ) );
 	$defaults['posts_per_page'] = intval( get_theme_mod( 'orchid_store_field_related_product_no', 3 ) );
 
 	$args = wp_parse_args( $defaults, $args );
@@ -209,12 +209,14 @@ if ( ! function_exists( 'orchid_store_woocommerce_cart_link' ) ) {
 
 /**
  * Change number of upsells output
+ *
+ * @param array $args array of product.
  */
 function orchid_store_upsell_products_args( $args ) {
 
-	$args['columns'] = intval( get_theme_mod( 'orchid_store_field_upsell_product_col_no', 4 ) ); 	
+	$args['columns'] = intval( get_theme_mod( 'orchid_store_field_upsell_product_col_no', 4 ) );
 
- 	return $args;
+	return $args;
 }
 add_filter( 'woocommerce_upsell_display_args', 'orchid_store_upsell_products_args', 20 );
 
@@ -225,23 +227,23 @@ add_filter( 'woocommerce_upsell_display_args', 'orchid_store_upsell_products_arg
 function orchid_store_cross_sells_columns( $columns ) {
 
 	$columns = intval( get_theme_mod( 'orchid_store_field_cross_sell_product_col_no', 4 ) );
- 	
- 	return $columns;
+
+	return $columns;
 }
 add_filter( 'woocommerce_cross_sells_columns', 'orchid_store_cross_sells_columns' );
 
 
-if( ! function_exists( 'orchid_store_add_to_cart_fragments' ) ) {
+if ( ! function_exists( 'orchid_store_add_to_cart_fragments' ) ) {
 
 	function orchid_store_add_to_cart_fragments( $fragments ) {
 
 		ob_start();
-	    ?>
-	    <span class="woocommerce-Price-amount amount os-minicart-amount"><?php echo wp_kses_post( WC()->cart->get_cart_subtotal() ); ?></span>
-	    <?php
-	    $fragments['.os-minicart-amount'] = ob_get_clean();
+		?>
+		<span class="woocommerce-Price-amount amount os-minicart-amount"><?php echo wp_kses_post( WC()->cart->get_cart_subtotal() ); ?></span>
+		<?php
+		$fragments['.os-minicart-amount'] = ob_get_clean();
 
-	    return $fragments;
+		return $fragments;
 	}
 }
 add_filter( 'woocommerce_add_to_cart_fragments', 'orchid_store_add_to_cart_fragments' );

@@ -5,7 +5,7 @@
  * @package Orchid_Store
  */
 
-if ( ! function_exists( 'orchid_store_recommended_plugins' ) ) :
+if ( ! function_exists( 'orchid_store_recommended_plugins' ) ) {
 	/**
 	 * Recommend plugins.
 	 *
@@ -62,5 +62,4 @@ if ( ! function_exists( 'orchid_store_recommended_plugins' ) ) :
 	}
 
 	add_action( 'tgmpa_register', 'orchid_store_recommended_plugins' );
-endif;
-
+}

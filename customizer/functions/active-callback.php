@@ -5,240 +5,200 @@
  * @package Orchid_Store
  */
 
-/**
- * Active callback function for when top header is active.
- */
-if( ! function_exists( 'orchid_store_active_top_header' ) ) {
-
+if ( ! function_exists( 'orchid_store_active_top_header' ) ) {
+	/**
+	 * Active callback function for when top header is active.
+	 *
+	 * @param object $control WP Customize Control.
+	 */
 	function orchid_store_active_top_header( $control ) {
 
-		if ( $control->manager->get_setting( 'orchid_store_field_display_top_header' )->value() == true ) {
-
-			return true;
-		} else {
-			
-			return false;
-		}		
+		return $control->manager->get_setting( 'orchid_store_field_display_top_header' )->value();
 	}
 }
 
-
-/**
- * Active callback function for when special menu is active.
- */
-if( ! function_exists( 'orchid_store_active_special_menu' ) ) {
-
+if ( ! function_exists( 'orchid_store_active_special_menu' ) ) {
+	/**
+	 * Active callback function for when special menu is active.
+	 *
+	 * @param object $control WP Customize Control.
+	 */
 	function orchid_store_active_special_menu( $control ) {
 
-		if ( $control->manager->get_setting( 'orchid_store_field_display_special_menu' )->value() == true ) {
-
-			return true;
-		} else {
-			
-			return false;
-		}		
+		return $control->manager->get_setting( 'orchid_store_field_display_special_menu' )->value();
 	}
 }
 
 
-
-/**
- * Active callback function for when static home page is set.
- */
-if( ! function_exists( 'orchid_store_is_static_home_page_set' ) ) {
-
+if ( ! function_exists( 'orchid_store_is_static_home_page_set' ) ) {
+	/**
+	 * Active callback function for when static home page is set.
+	 *
+	 * @param object $control WP Customize Control.
+	 */
 	function orchid_store_is_static_home_page_set( $control ) {
 
-		if ( $control->manager->get_setting( 'show_on_front' )->value() == 'page' ) {
-
-			return true;
-		} else {
-			
-			return false;
-		}		
+		return ( $control->manager->get_setting( 'show_on_front' )->value() === 'page' );
 	}
 }
 
 
-/**
- * Active callback function for when global sidebar position is not active.
- */
-if( ! function_exists( 'orchid_store_is_not_global_sidebar_position_active' ) ) {
 
+if ( ! function_exists( 'orchid_store_is_not_global_sidebar_position_active' ) ) {
+	/**
+	 * Active callback function for when global sidebar position is not active.
+	 *
+	 * @param object $control WP Customize Control.
+	 */
 	function orchid_store_is_not_global_sidebar_position_active( $control ) {
 
-		if ( $control->manager->get_setting( 'orchid_store_field_enable_global_sidebar_position' )->value() == true ) {
-
-			return false;
-		} else {
-			
-			return true;
-		}		
+		return $control->manager->get_setting( 'orchid_store_field_enable_global_sidebar_position' )->value();
 	}
 }
 
-/**
- * Active callback function for when global sidebar position is active.
- */
-if( ! function_exists( 'orchid_store_is_global_sidebar_position_active' ) ) {
-
+if ( ! function_exists( 'orchid_store_is_global_sidebar_position_active' ) ) {
+	/**
+	 * Active callback function for when global sidebar position is active.
+	 *
+	 * @param object $control WP Customize Control.
+	 */
 	function orchid_store_is_global_sidebar_position_active( $control ) {
 
-		if ( $control->manager->get_setting( 'orchid_store_field_enable_global_sidebar_position' )->value() == true ) {
-
-			return true;
-		} else {
-			
-			return false;
-		}		
+		return $control->manager->get_setting( 'orchid_store_field_enable_global_sidebar_position' )->value();
 	}
 }
 
-
-/**
- * Active callback function for when common sidebar position for posts is active.
- */
-if( ! function_exists( 'orchid_store_is_post_common_sidebar_position_active' ) ) {
-
+if ( ! function_exists( 'orchid_store_is_post_common_sidebar_position_active' ) ) {
+	/**
+	 * Active callback function for when common sidebar position for posts is active.
+	 *
+	 * @param object $control WP Customize Control.
+	 */
 	function orchid_store_is_post_common_sidebar_position_active( $control ) {
 
-		if ( $control->manager->get_setting( 'orchid_store_field_enable_global_sidebar_position' )->value() == false && $control->manager->get_setting( 'orchid_store_field_enable_post_common_sidebar_position' )->value() == true ) {
+		if ( $control->manager->get_setting( 'orchid_store_field_enable_global_sidebar_position' )->value() === false && $control->manager->get_setting( 'orchid_store_field_enable_post_common_sidebar_position' )->value() === true ) {
 
 			return true;
 		} else {
-			
+
 			return false;
-		}		
+		}
 	}
 }
 
 
-/**
- * Active callback function for when common sidebar position for pages is active.
- */
-if( ! function_exists( 'orchid_store_is_page_common_sidebar_position_active' ) ) {
-
+if ( ! function_exists( 'orchid_store_is_page_common_sidebar_position_active' ) ) {
+	/**
+	 * Active callback function for when common sidebar position for pages is active.
+	 *
+	 * @param object $control WP Customize Control.
+	 */
 	function orchid_store_is_page_common_sidebar_position_active( $control ) {
 
-		if ( $control->manager->get_setting( 'orchid_store_field_enable_global_sidebar_position' )->value() == false && $control->manager->get_setting( 'orchid_store_field_enable_page_common_sidebar_position' )->value() == true ) {
+		if ( $control->manager->get_setting( 'orchid_store_field_enable_global_sidebar_position' )->value() === false && $control->manager->get_setting( 'orchid_store_field_enable_page_common_sidebar_position' )->value() === true ) {
 
 			return true;
 		} else {
-			
+
 			return false;
-		}		
+		}
 	}
 }
 
 
-/**
- * Active callback function for when footer widget area is displayed.
- */
-if( ! function_exists( 'orchid_store_is_footer_widget_area_enabled' ) ) {
-
+if ( ! function_exists( 'orchid_store_is_footer_widget_area_enabled' ) ) {
+	/**
+	 * Active callback function for when footer widget area is displayed.
+	 *
+	 * @param object $control WP Customize Control.
+	 */
 	function orchid_store_is_footer_widget_area_enabled( $control ) {
 
-		if ( $control->manager->get_setting( 'orchid_store_field_display_footer_widget_area' )->value() == true ) {
-
-			return true;
-		} else {
-			
-			return false;
-		}		
+		return $control->manager->get_setting( 'orchid_store_field_display_footer_widget_area' )->value();
 	}
 }
 
 
-/**
- * Active callback function for when product search form is enabled.
- */
-if( ! function_exists( 'orchid_store_is_product_search_form_enabled' ) ) {
-
+if ( ! function_exists( 'orchid_store_is_product_search_form_enabled' ) ) {
+	/**
+	 * Active callback function for when product search form is enabled.
+	 *
+	 * @param object $control WP Customize Control.
+	 */
 	function orchid_store_is_product_search_form_enabled( $control ) {
 
-		if ( $control->manager->get_setting( 'orchid_store_field_display_product_search_form' )->value() == true ) {
-
-			return true;
-		} else {
-			
-			return false;
-		}	
+		return $control->manager->get_setting( 'orchid_store_field_display_product_search_form' )->value();
 	}
 }
 
 
-/**
- * Active callback function for when page header is enabled.
- */
-if( ! function_exists( 'orchid_store_is_page_header_enabled' ) ) {
-
+if ( ! function_exists( 'orchid_store_is_page_header_enabled' ) ) {
+	/**
+	 * Active callback function for when page header is enabled.
+	 *
+	 * @param object $control WP Customize Control.
+	 */
 	function orchid_store_is_page_header_enabled( $control ) {
 
-		if ( $control->manager->get_setting( 'orchid_store_field_display_page_header' )->value() == true ) {
-
-			return true;
-		} else {
-			
-			return false;
-		}	
+		return $control->manager->get_setting( 'orchid_store_field_display_page_header' )->value();
 	}
 }
 
-/**
- * Active callback function to check if mini-cart is selected as cart.
- */
-if ( ! function_exists( 'orchid_store_is_cart_mini_cart' ) ) {
 
+if ( ! function_exists( 'orchid_store_is_cart_mini_cart' ) ) {
+	/**
+	 * Active callback function to check if mini-cart is selected as cart.
+	 *
+	 * @param object $control WP Customize Control.
+	 */
 	function orchid_store_is_cart_mini_cart( $control ) {
-		
 
 		$cart_display = $control->manager->get_setting( 'orchid_store_field_cart_display' )->value();
 
-		return ( 'default' == $cart_display ) ? true : false;
+		return ( 'default' === $cart_display ) ? true : false;
 	}
 }
 
-/**
- * Active callback function to check if floating-cart is selected as cart.
- */
-if ( ! function_exists( 'orchid_store_is_cart_floating_cart' ) ) {
 
+if ( ! function_exists( 'orchid_store_is_cart_floating_cart' ) ) {
+	/**
+	 * Active callback function to check if floating-cart is selected as cart.
+	 *
+	 * @param object $control WP Customize Control.
+	 */
 	function orchid_store_is_cart_floating_cart( $control ) {
 
 		$is_mini_cart_enabled = $control->manager->get_setting( 'orchid_store_field_display_mini_cart' )->value();
 
 		$cart_display = $control->manager->get_setting( 'orchid_store_field_cart_display' )->value();
 
-		return ( true == $is_mini_cart_enabled && 'floating_cart' == $cart_display ) ? true : false;
+		return ( true === $is_mini_cart_enabled && 'floating_cart' === $cart_display ) ? true : false;
 	}
 }
 
 
-/**
- * Active callback function to check if mini-cart is enabled.
- */
 if ( ! function_exists( 'orchid_store_is_mini_cart_enabled' ) ) {
-
+	/**
+	 * Active callback function to check if mini-cart is enabled.
+	 *
+	 * @param object $control WP Customize Control.
+	 */
 	function orchid_store_is_mini_cart_enabled( $control ) {
 
-		$is_mini_cart_enabled = $control->manager->get_setting( 'orchid_store_field_display_mini_cart' )->value();
-
-		return ( true == $is_mini_cart_enabled ) ? true : false;
+		return $control->manager->get_setting( 'orchid_store_field_display_mini_cart' )->value();
 	}
-} 
+}
 
 
-
-/**
- * Active callback function to check if wishlist is enabled.
- */
 if ( ! function_exists( 'orchid_store_is_wishlist_enabled' ) ) {
-
+	/**
+	 * Active callback function to check if wishlist is enabled.
+	 *
+	 * @param object $control WP Customize Control.
+	 */
 	function orchid_store_is_wishlist_enabled( $control ) {
 
-		$is_wishlist_enabled = $control->manager->get_setting( 'orchid_store_field_display_wishlist' )->value();
-
-		return ( $is_wishlist_enabled == true ) ? true : false;
+		return $control->manager->get_setting( 'orchid_store_field_display_wishlist' )->value();
 	}
 }
 
@@ -246,7 +206,7 @@ if ( ! function_exists( 'orchid_store_is_wishlist_enabled' ) ) {
 /**
  * Active callback function that checks whether boxed site layout is enabled.
  *
- * @since 1.5.0
+ * @since 1.0.0
  *
  * @param object $control WP Customize Control.
  * @return boolean
@@ -262,7 +222,7 @@ function orchid_store_is_boxed_site_layout_enabled( $control ) {
 /**
  * Active callback function that checks whether fullwidth site layout is enabled.
  *
- * @since 1.5.0
+ * @since 1.0.0
  *
  * @param object $control WP Customize Control.
  * @return boolean
@@ -278,7 +238,7 @@ function orchid_store_is_fullwidth_site_layout_enabled( $control ) {
 /**
  * Active callback function that checks whether third-party search form is enabled.
  *
- * @since 1.5.0
+ * @since 1.0.0
  *
  * @param object $control WP Customize Control.
  * @return boolean
@@ -294,7 +254,7 @@ function orchid_store_is_third_party_search_form_enabled( $control ) {
 /**
  * Active callback function that checks whether add to cart button is enabled in product archive.
  *
- * @since 1.5.0
+ * @since 1.0.0
  *
  * @param object $control WP Customize Control.
  * @return boolean
@@ -310,7 +270,7 @@ function orchid_store_is_add_to_cart_button_enabled_in_product_archive( $control
 /**
  * Active callback function that checks whether percentage discount tag is disabled.
  *
- * @since 1.5.0
+ * @since 1.0.0
  *
  * @param object $control WP Customize Control.
  * @return boolean
