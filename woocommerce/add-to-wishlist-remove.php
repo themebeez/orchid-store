@@ -48,16 +48,16 @@ global $product;
 	data-tippy-content="<?php echo esc_attr( $label ); ?>"
 >
 		<span class="icon">
-			<?php echo orchid_store_escape_svg( $icon ); ?>
+			<?php echo esc_html( orchid_store_escape_svg( $icon ) ); ?>
 		</span>
 		<span class="text"><?php echo esc_html( $label ); ?></span>
 	</a>
 
 	<?php
-	if ( $show_view ) :
+	if ( $show_view ) {
 		?>
 		<a href="<?php echo esc_url( $found_in_list->get_url() ); ?>" class="view-wishlist button-general"><span class="icon"><i class="fa fa-eye"></i></span></a>
 		<?php
-	endif;
+	}
 	?>
 </div>

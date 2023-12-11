@@ -80,7 +80,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 					do_action( 'orchid_store_loop_add_to_cart' );
 					?>
 				</div>
-				<?php 
+				<?php
 			}
 			?>
 		</div>

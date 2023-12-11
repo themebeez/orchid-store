@@ -5,95 +5,87 @@
  * @package Orchid_Store
  */
 
-
-/**
- * Sanitization callback function for number field with value in range.
- */
 if ( ! function_exists( 'orchid_store_sanitize_range' ) ) {
+	/**
+	 * Sanitization callback function for number field with value in range.
+	 */
+	function orchid_store_sanitize_range( $input, $setting ) {
 
-    function orchid_store_sanitize_range( $input, $setting ) {
+		if ( $input <= $setting->manager->get_control( $setting->id )->input_attrs['max'] ) {
 
-        if(  $input <= $setting->manager->get_control( $setting->id )->input_attrs['max'] ) {
+			if ( $input >= $setting->manager->get_control( $setting->id )->input_attrs['min'] ) {
 
-            if( $input >= $setting->manager->get_control( $setting->id )->input_attrs['min'] ) {
-
-                return absint( $input );
-            }
-        }
-    }
+				return absint( $input );
+			}
+		}
+	}
 }
 
 
-/**
- * Sanitization callback function for number field.
- */
+
 if ( ! function_exists( 'orchid_store_sanitize_number' ) ) {
+	/**
+	 * Sanitization callback function for number field.
+	 */
+	function orchid_store_sanitize_number( $input, $setting ) {
 
-    function orchid_store_sanitize_number( $input, $setting ) {
-
-        return absint( $input );
-    }
+		return absint( $input );
+	}
 }
 
 
-/**
- * Sanitization callback function for select field.
- */
-if ( !function_exists('orchid_store_sanitize_select') ) {
+if ( ! function_exists( 'orchid_store_sanitize_select' ) ) {
+	/**
+	 * Sanitization callback function for select field.
+	 */
+	function orchid_store_sanitize_select( $input, $setting ) {
 
-    function orchid_store_sanitize_select( $input, $setting ) {
+		$input = sanitize_key( $input );
 
-        $input = sanitize_key( $input );
-        
-        $choices = $setting->manager->get_control( $setting->id )->choices;
-        
-        return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-    }
+		$choices = $setting->manager->get_control( $setting->id )->choices;
+
+		return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+	}
 }
 
 
-/**
- * Sanitization callback function for sanitizing urls.
- */
-if( ! function_exists( 'orchid_store_sanitize_urls' ) ) {
 
-    function orchid_store_sanitize_urls( $input ) {
+if ( ! function_exists( 'orchid_store_sanitize_urls' ) ) {
+	/**
+	 * Sanitization callback function for sanitizing urls.
+	 */
+	function orchid_store_sanitize_urls( $input ) {
 
-        if ( strpos( $input, ',' ) !== false) {
+		if ( strpos( $input, ',' ) !== false ) {
 
-            $input = explode( ',', $input );
-        }
+			$input = explode( ',', $input );
+		}
 
-        if ( is_array( $input ) ) {
+		if ( is_array( $input ) ) {
 
-            foreach ($input as $key => $value) {
+			foreach ( $input as $key => $value ) {
 
-                $input[$key] = esc_url_raw( $value );
-            }
+				$input[ $key ] = esc_url_raw( $value );
+			}
 
-            $input = implode( ',', $input );
-        } else {
+			$input = implode( ',', $input );
+		} else {
 
-            $input = esc_url_raw( $input );
-        }
+			$input = esc_url_raw( $input );
+		}
 
-        return $input;
-    }
+		return $input;
+	}
 }
 
-/**
- * Sanitization callback function when there is no need for sanitization.
- * 
- * @since 1.4.2
- */
 if ( ! function_exists( 'orchid_store_no_sanitize' ) ) {
-    /**
-     * Sanitization callback function when there is no need for sanitization.
-     * 
-     * @since 1.4.2
-     */
-    function orchid_store_no_sanitize( $input ) {
+	/**
+	 * Sanitization callback function when there is no need for sanitization.
+	 *
+	 * @since 1.0.0
+	 */
+	function orchid_store_no_sanitize( $input ) {
 
-        return $input;
-    }
+		return $input;
+	}
 }

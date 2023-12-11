@@ -11,7 +11,7 @@ $sidebar_position = orchid_store_sidebar_position();
 
 
 
-if ( ! is_active_sidebar( 'sidebar-1' ) || $sidebar_position == 'none' ) {
+if ( ! is_active_sidebar( 'sidebar-1' ) || 'none' === $sidebar_position ) {
 	return;
 }
 ?>

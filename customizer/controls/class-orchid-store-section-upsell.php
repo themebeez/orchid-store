@@ -8,11 +8,19 @@
  * @copyright 2019 WPTRT
  * @license   https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0-or-later
  * @link      https://github.com/WPTRT/wptrt-customize-pro
+ *
+ * @package orchid_store
  */
 
-if( ! class_exists( 'Orchid_Store_Pro_Upsell' ) ) {
-
-	class Orchid_Store_Pro_Upsell extends WP_Customize_Section {
+if ( ! class_exists( 'Orchid_Store_Pro_Upsell' ) ) {
+	/**
+	 * Class Orchid_Store_Pro_Upsell.
+	 *
+	 * @package    Orchid_Store
+	 * @subpackage Orchid_Store/customizer/controls
+	 * @author     Themebeez <themebeez@gmail.com>
+	 */
+	class Orchid_Store_Section_Upsell extends WP_Customize_Section {
 
 		/**
 		 * The type of customize section being rendered.
@@ -55,7 +63,6 @@ if( ! class_exists( 'Orchid_Store_Pro_Upsell' ) ) {
 		 *
 		 * @since  1.0.0
 		 * @access public
-		 * @return void
 		 */
 		public function json() {
 			$json = parent::json();
@@ -68,7 +75,7 @@ if( ! class_exists( 'Orchid_Store_Pro_Upsell' ) ) {
 				: $theme->get( 'Name' )
 			);
 
-			$json['button_url']  = esc_url(
+			$json['button_url'] = esc_url(
 				$this->button_url
 				? $this->button_url
 				: $theme->get( 'ThemeURI' )
@@ -84,7 +91,8 @@ if( ! class_exists( 'Orchid_Store_Pro_Upsell' ) ) {
 		 * @access public
 		 * @return void
 		 */
-		protected function render_template() { ?>
+		protected function render_template() {
+			?>
 
 			<li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
 
@@ -96,6 +104,7 @@ if( ! class_exists( 'Orchid_Store_Pro_Upsell' ) ) {
 					<# } #>
 				</h3>
 			</li>
-		<?php }
+			<?php
+		}
 	}
 }

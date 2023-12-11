@@ -21,10 +21,10 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<?php 
-	if( function_exists( 'wp_body_open' ) ) { 
-		wp_body_open(); 
-	} 
+	<?php
+	if ( function_exists( 'wp_body_open' ) ) {
+		wp_body_open();
+	}
 	?>
 	<div id="page" class="site __os-page-wrap__">
 
@@ -32,11 +32,11 @@
 
 		<?php
 		/**
-        * Hook - orchid_store_header.
-        *
-        * @hooked orchid_store_header_action - 10
-        */
-        do_action( 'orchid_store_header' );
-        ?>
-        
-        <div id="content" class="site-content">
+		 * Hook - orchid_store_header.
+		 *
+		 * @hooked orchid_store_header_action - 10
+		 */
+		do_action( 'orchid_store_header' );
+		?>
+		
+		<div id="content" class="site-content">
