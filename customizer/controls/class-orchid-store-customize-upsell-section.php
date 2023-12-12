@@ -12,15 +12,15 @@
  * @package orchid_store
  */
 
-if ( ! class_exists( 'Orchid_Store_Pro_Upsell' ) ) {
+if ( ! class_exists( 'Orchid_Store_Customize_Upsell_Section' ) ) {
 	/**
-	 * Class Orchid_Store_Pro_Upsell.
+	 * Class Orchid_Store_Customize_Upsell_Section.
 	 *
 	 * @package    Orchid_Store
 	 * @subpackage Orchid_Store/customizer/controls
 	 * @author     Themebeez <themebeez@gmail.com>
 	 */
-	class Orchid_Store_Section_Upsell extends WP_Customize_Section {
+	class Orchid_Store_Customize_Upsell_Section extends WP_Customize_Section {
 
 		/**
 		 * The type of customize section being rendered.
@@ -99,7 +99,7 @@ if ( ! class_exists( 'Orchid_Store_Pro_Upsell' ) ) {
 				<h3 class="accordion-section-title">
 					{{ data.title }}
 
-					<# if ( data.button_text && data.button_url ) { #>
+					<# if ( data . button_text && data . button_url ) { #>
 						<a href="{{ data.button_url }}" class="button button-secondary alignright" target="_blank">{{ data.button_text }}</a>
 					<# } #>
 				</h3>
