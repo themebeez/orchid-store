@@ -22,11 +22,6 @@ function orchid_store_customize_register( $wp_customize ) {
 	require get_template_directory() . '/customizer/controls/class-orchid-store-customize-radio-image-control.php';
 
 	/**
-	 * Load custom customizer control for select control
-	 */
-	require get_template_directory() . '/customizer/controls/class-orchid-store-select-control.php';
-
-	/**
 	 * Load custom customizer control for toggle control
 	 */
 	require get_template_directory() . '/customizer/controls/class-orchid-store-customize-toggle-control.php';
@@ -60,12 +55,12 @@ function orchid_store_customize_register( $wp_customize ) {
 	/**
 	 * Load customizer functions for intializing theme upsell
 	 */
-	require get_template_directory() . '/customizer/controls/class-orchid-store-section-upsell.php';
+	require get_template_directory() . '/customizer/controls/class-orchid-store-customize-upsell-section.php';
 
-	$wp_customize->register_section_type( 'Orchid_Store_Pro_Upsell' );
+	$wp_customize->register_section_type( 'Orchid_Store_Customize_Upsell_Section' );
 
 	$wp_customize->add_section(
-		new Orchid_Store_Section_Upsell(
+		new Orchid_Store_Customize_Upsell_Section(
 			$wp_customize,
 			'orchid_store_pro_upsell',
 			array(

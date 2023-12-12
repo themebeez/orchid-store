@@ -329,7 +329,13 @@ orchid_store_add_select_field(
 	'top_header'
 );
 
-orchid_store_add_sortable_repeater_field( 'top_header_social_links', esc_html__( 'Social Links', 'orchid-store' ), '', 'orchid_store_active_top_header', 'top_header' );
+orchid_store_add_sortable_repeater_field(
+	'top_header_social_links',
+	esc_html__( 'Social Links', 'orchid-store' ),
+	'',
+	'orchid_store_active_top_header',
+	'top_header'
+);
 
 
 /*******************************************************************************************************

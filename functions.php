@@ -109,8 +109,8 @@ if ( ! function_exists( 'orchid_store_setup' ) ) {
 		 */
 		remove_theme_support( 'widgets-block-editor' );
 	}
+	add_action( 'after_setup_theme', 'orchid_store_setup' );
 }
-add_action( 'after_setup_theme', 'orchid_store_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -349,14 +349,6 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/customizer/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-
-	require get_template_directory() . '/inc/jetpack.php';
-}
 
 /**
  * Load WooCommerce compatibility file.

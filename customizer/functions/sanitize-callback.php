@@ -8,6 +8,10 @@
 if ( ! function_exists( 'orchid_store_sanitize_range' ) ) {
 	/**
 	 * Sanitization callback function for number field with value in range.
+	 *
+	 * @param string $input Setting value.
+	 * @param object $setting setting object.
+	 * @return int.
 	 */
 	function orchid_store_sanitize_range( $input, $setting ) {
 
@@ -25,9 +29,12 @@ if ( ! function_exists( 'orchid_store_sanitize_range' ) ) {
 
 if ( ! function_exists( 'orchid_store_sanitize_number' ) ) {
 	/**
-	 * Sanitization callback function for number field.
+	 * Sanitization callback for number field
+	 *
+	 * @param string $input Setting value.
+	 * @return int
 	 */
-	function orchid_store_sanitize_number( $input, $setting ) {
+	function orchid_store_sanitize_number( $input ) {
 
 		return absint( $input );
 	}
@@ -37,6 +44,10 @@ if ( ! function_exists( 'orchid_store_sanitize_number' ) ) {
 if ( ! function_exists( 'orchid_store_sanitize_select' ) ) {
 	/**
 	 * Sanitization callback function for select field.
+	 *
+	 * @param string $input setting value.
+	 * @param object $setting setting object.
+	 * @return string.
 	 */
 	function orchid_store_sanitize_select( $input, $setting ) {
 
@@ -53,6 +64,9 @@ if ( ! function_exists( 'orchid_store_sanitize_select' ) ) {
 if ( ! function_exists( 'orchid_store_sanitize_urls' ) ) {
 	/**
 	 * Sanitization callback function for sanitizing urls.
+	 *
+	 * @param string $input setting value.
+	 * @return string sanitized url.
 	 */
 	function orchid_store_sanitize_urls( $input ) {
 
@@ -82,6 +96,7 @@ if ( ! function_exists( 'orchid_store_no_sanitize' ) ) {
 	/**
 	 * Sanitization callback function when there is no need for sanitization.
 	 *
+	 * @param string $input setting value.
 	 * @since 1.0.0
 	 */
 	function orchid_store_no_sanitize( $input ) {
