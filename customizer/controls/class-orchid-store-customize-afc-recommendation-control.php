@@ -80,7 +80,9 @@ if ( ! class_exists( 'Cuctomize_' ) ) {
 						);
 						?>
 					</p>
-					<button id="os-activate-afc" class="widefat button button-primary"><?php echo esc_html__( 'Activate Now', 'orchid-store' ); ?></button>
+					<button id="os-activate-afc" class="widefat button button-primary">
+						<?php echo esc_html__( 'Activate Now', 'orchid-store' ); ?>
+					</button>
 				</div>
 
 				<div id="os-afc-activated" class="os-afc-stat <?php echo ( isset( $installed_plugins['addonify-floating-cart/addonify-floating-cart.php'] ) && is_plugin_active( 'addonify-floating-cart/addonify-floating-cart.php' ) ) ? 'afc-display' : 'afc-hide'; ?>">
@@ -93,7 +95,9 @@ if ( ! class_exists( 'Cuctomize_' ) ) {
 						);
 						?>
 					</p>
-					<a href="<?php echo esc_url( admin_url( 'admin.php?page=addonify_floating_cart' ) ); ?>" class="button button-primary os-afc-settings-link"><?php echo esc_html__( 'Configure Now', 'orchid-store' ); ?></a>
+					<a href="<?php echo esc_url( admin_url( 'admin.php?page=addonify_floating_cart' ) ); ?>" class="button button-primary os-afc-settings-link">
+						<?php echo esc_html__( 'Configure Now', 'orchid-store' ); ?>
+					</a>
 				</div>
 
 				<div id="os-afc-error" class="afc-hide">

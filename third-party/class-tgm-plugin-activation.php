@@ -273,26 +273,6 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		}
 
 		/**
-		 * Magic method to (not) set protected properties from outside of this class.
-		 *
-		 * {@internal hackedihack... There is a serious bug in v2.3.2 - 2.3.6  where the `menu` property
-		 * is being assigned rather than tested in a conditional, effectively rendering it useless.
-		 * This 'hack' prevents this from happening.}}
-		 *
-		 * @see https://github.com/TGMPA/TGM-Plugin-Activation/blob/2.3.6/tgm-plugin-activation/class-tgm-plugin-activation.php#L1593
-		 *
-		 * @since 2.5.2
-		 *
-		 * @param string $name  Name of an inaccessible property.
-		 * @param mixed  $value Value to assign to the property.
-		 * @return void  Silently fail to set the property when this is tried from outside of this class context.
-		 *               (Inside this class context, the __set() method if not used as there is direct access.)
-		 */
-		public function __set( $name, $value ) {
-			return;
-		}
-
-		/**
 		 * Magic method to get the value of a protected property outside of this class context.
 		 *
 		 * @since 2.5.2

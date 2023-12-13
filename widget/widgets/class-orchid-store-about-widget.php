@@ -93,7 +93,12 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 						if ( ! empty( $store_address ) ) {
 							?>
 							<li class="location">
-								<p><span><i class='bx bx-map-pin'></i></span> <?php echo esc_html( $store_address ); ?></p>
+								<p>
+									<span>
+										<i class='bx bx-map-pin'></i>
+									</span>
+									<?php echo esc_html( $store_address ); ?>
+								</p>
 							</li>
 							<?php
 						}
@@ -101,7 +106,11 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 						if ( ! empty( $store_phone ) ) {
 							?>
 							<li class="phone">
-								<p><span><i class='bx bx-phone'></i></span> <?php echo esc_html( $store_phone ); ?></p>
+								<p>
+									<span>
+										<i class='bx bx-phone'></i>
+									</span>
+								<?php echo esc_html( $store_phone ); ?></p>
 							</li>
 							<?php
 						}
@@ -109,7 +118,12 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 						if ( ! empty( $store_email ) ) {
 							?>
 							<li class="email">
-								<p><span><i class='bx bx-paper-plane'></i></span> <?php echo esc_html( $store_email ); ?></p>
+								<p>
+									<span>
+										<i class='bx bx-paper-plane'></i>
+									</span>
+									<?php echo esc_html( $store_email ); ?>
+								</p>
 							</li>
 							<?php
 						}
@@ -117,7 +131,12 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 						if ( ! empty( $store_opening_time ) ) {
 							?>
 							<li class="opening-time">
-								<p><span><i class='bx bx-time'></i></span> <?php echo esc_html( $store_opening_time ); ?></p>
+								<p>
+									<span>
+										<i class='bx bx-time'></i>
+									</span>
+									<?php echo esc_html( $store_opening_time ); ?>
+								</p>
 							</li>
 							<?php
 						}
@@ -221,7 +240,12 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 				<label for="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>">
 					<strong><?php esc_html_e( 'Title', 'orchid-store' ); ?></strong>
 				</label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />   
+				<input
+					class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
+					name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
+					type="text"
+					value="<?php echo esc_attr( $instance['title'] ); ?>"
+				/>   
 			</p>
 
 			<p>
@@ -253,16 +277,35 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 							}
 							?>
 							
-							<span class="os-upload-image-holder" style="background-image: url( <?php echo esc_url( $instance['store_logo'] ); ?> );"></span>
-							<input type="hidden" class="widefat os-upload-image-url-holder" name="<?php echo esc_attr( $this->get_field_name( 'store_logo' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'store_logo' ) ); ?>" value="<?php echo esc_attr( $instance['store_logo'] ); ?>">
-							<button class="<?php echo esc_attr( $upload_btn_class ); ?>" id="os-upload-btn"><?php esc_html_e( 'Upload', 'orchid-store' ); ?></button>
-							<button class="<?php echo esc_attr( $remove_btn_class ); ?>" id="os-remove-btn"><?php esc_html_e( 'Remove', 'orchid-store' ); ?></button>
+							<span
+								class="os-upload-image-holder"
+								style="background-image: url( <?php echo esc_url( $instance['store_logo'] ); ?> );">
+							</span>
+							<input
+								type="hidden"
+								class="widefat os-upload-image-url-holder"
+								name="<?php echo esc_attr( $this->get_field_name( 'store_logo' ) ); ?>"
+								id="<?php echo esc_attr( $this->get_field_id( 'store_logo' ) ); ?>"
+								value="<?php echo esc_attr( $instance['store_logo'] ); ?>"
+							>
+							<button class="<?php echo esc_attr( $upload_btn_class ); ?>" id="os-upload-btn">
+								<?php esc_html_e( 'Upload', 'orchid-store' ); ?>
+							</button>
+							<button class="<?php echo esc_attr( $remove_btn_class ); ?>" id="os-remove-btn">
+								<?php esc_html_e( 'Remove', 'orchid-store' ); ?>
+							</button>
 						</span>
 
 						<label for="<?php echo esc_attr( $this->get_field_name( 'store_description' ) ); ?>">
 							<strong><?php esc_html_e( 'Short Description', 'orchid-store' ); ?></strong>
 						</label>
-						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'store_description' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'store_description' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['store_description'] ); ?>" />  
+						<input
+							class="widefat"
+							id="<?php echo esc_attr( $this->get_field_id( 'store_description' ) ); ?>"
+							name="<?php echo esc_attr( $this->get_field_name( 'store_description' ) ); ?>"
+							type="text"
+							value="<?php echo esc_attr( $instance['store_description'] ); ?>"
+						/>  
 
 						<label for="<?php echo esc_attr( $this->get_field_name( 'store_address' ) ); ?>">
 							<strong><?php esc_html_e( 'Address', 'orchid-store' ); ?></strong>
@@ -272,17 +315,35 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 						<label for="<?php echo esc_attr( $this->get_field_name( 'store_phone' ) ); ?>">
 							<strong><?php esc_html_e( 'Contact Number', 'orchid-store' ); ?></strong>
 						</label>
-						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'store_phone' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'store_phone' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['store_phone'] ); ?>" />
+						<input
+							class="widefat"
+							id="<?php echo esc_attr( $this->get_field_id( 'store_phone' ) ); ?>"
+							name="<?php echo esc_attr( $this->get_field_name( 'store_phone' ) ); ?>"
+							type="text"
+							value="<?php echo esc_attr( $instance['store_phone'] ); ?>"
+						/>
 
 						<label for="<?php echo esc_attr( $this->get_field_name( 'store_email' ) ); ?>">
 							<strong><?php esc_html_e( 'Email', 'orchid-store' ); ?></strong>
 						</label>
-						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'store_email' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'store_email' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['store_email'] ); ?>" /> 
+						<input
+							class="widefat"
+							id="<?php echo esc_attr( $this->get_field_id( 'store_email' ) ); ?>"
+							name="<?php echo esc_attr( $this->get_field_name( 'store_email' ) ); ?>"
+							type="text"
+							value="<?php echo esc_attr( $instance['store_email'] ); ?>"
+						/> 
 
 						<label for="<?php echo esc_attr( $this->get_field_name( 'store_opening_time' ) ); ?>">
 							<strong><?php esc_html_e( 'Opening Time', 'orchid-store' ); ?></strong>
 						</label>
-						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'store_opening_time' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'store_opening_time' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['store_opening_time'] ); ?>" />  
+						<input
+							class="widefat"
+							id="<?php echo esc_attr( $this->get_field_id( 'store_opening_time' ) ); ?>"
+							name="<?php echo esc_attr( $this->get_field_name( 'store_opening_time' ) ); ?>"
+							type="text"
+							value="<?php echo esc_attr( $instance['store_opening_time'] ); ?>"
+						/>  
 					</span>
 				</span>
 			</p>
@@ -298,37 +359,78 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 						<label for="<?php echo esc_attr( $this->get_field_name( 'facebook_url' ) ); ?>">
 							<strong><?php esc_html_e( 'Facebook Link', 'orchid-store' ); ?></strong>
 						</label>
-						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'facebook_url' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'facebook_url' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['facebook_url'] ); ?>" /> 
+						<input
+						class="widefat"
+						id="<?php echo esc_attr( $this->get_field_id( 'facebook_url' ) ); ?>"
+						name="<?php echo esc_attr( $this->get_field_name( 'facebook_url' ) ); ?>"
+						type="text"
+						value="<?php echo esc_attr( $instance['facebook_url'] ); ?>"
+					/> 
 
 						<label for="<?php echo esc_attr( $this->get_field_name( 'twitter_url' ) ); ?>">
 							<strong><?php esc_html_e( 'Twitter Link', 'orchid-store' ); ?></strong>
 						</label>
-						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'twitter_url' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'twitter_url' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['twitter_url'] ); ?>" /> 
+						<input
+							class="widefat"
+							id="<?php echo esc_attr( $this->get_field_id( 'twitter_url' ) ); ?>"
+							name="<?php echo esc_attr( $this->get_field_name( 'twitter_url' ) ); ?>"
+							type="text"
+							value="<?php echo esc_attr( $instance['twitter_url'] ); ?>"
+						/> 
 
 						<label for="<?php echo esc_attr( $this->get_field_name( 'instagram_url' ) ); ?>">
 							<strong><?php esc_html_e( 'Instagram Link', 'orchid-store' ); ?></strong>
 						</label>
-						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'instagram_url' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'instagram_url' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['instagram_url'] ); ?>" /> 
+						<input
+							class="widefat"
+							id="<?php echo esc_attr( $this->get_field_id( 'instagram_url' ) ); ?>"
+							name="<?php echo esc_attr( $this->get_field_name( 'instagram_url' ) ); ?>"
+							type="text"
+							value="<?php echo esc_attr( $instance['instagram_url'] ); ?>" 
+						/> 
 
 						<label for="<?php echo esc_attr( $this->get_field_name( 'pinterest_url' ) ); ?>">
 							<strong><?php esc_html_e( 'Pinterest Link', 'orchid-store' ); ?></strong>
 						</label>
-						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'pinterest_url' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'pinterest_url' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['pinterest_url'] ); ?>" />  
+						<input
+							class="widefat"
+							id="<?php echo esc_attr( $this->get_field_id( 'pinterest_url' ) ); ?>"
+							name="<?php echo esc_attr( $this->get_field_name( 'pinterest_url' ) ); ?>"
+							type="text" value="<?php echo esc_attr( $instance['pinterest_url'] ); ?>"
+						/>  
 
 						<label for="<?php echo esc_attr( $this->get_field_name( 'youtube_url' ) ); ?>">
 							<strong><?php esc_html_e( 'YouTube Link', 'orchid-store' ); ?></strong>
 						</label>
-						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'youtube_url' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'youtube_url' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['youtube_url'] ); ?>" /> 
+						<input
+							class="widefat"
+							id="<?php echo esc_attr( $this->get_field_id( 'youtube_url' ) ); ?>"
+							name="<?php echo esc_attr( $this->get_field_name( 'youtube_url' ) ); ?>"
+							type="text"
+							value="<?php echo esc_attr( $instance['youtube_url'] ); ?>"
+						/> 
 
 						<label for="<?php echo esc_attr( $this->get_field_name( 'vimeo_url' ) ); ?>">
 							<strong><?php esc_html_e( 'Vimeo Link', 'orchid-store' ); ?></strong>
 						</label>
-						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'vimeo_url' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'vimeo_url' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['vimeo_url'] ); ?>" />  
+						<input
+							class="widefat"
+							id="<?php echo esc_attr( $this->get_field_id( 'vimeo_url' ) ); ?>"
+							name="<?php echo esc_attr( $this->get_field_name( 'vimeo_url' ) ); ?>"
+							type="text"
+							value="<?php echo esc_attr( $instance['vimeo_url'] ); ?>"
+						/>  
 
 						<label for="<?php echo esc_attr( $this->get_field_name( 'vk_url' ) ); ?>">
 							<strong><?php esc_html_e( 'VK Link', 'orchid-store' ); ?></strong>
 						</label>
-						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'vk_url' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'vk_url' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['vk_url'] ); ?>" />
+						<input
+							class="widefat"
+							id="<?php echo esc_attr( $this->get_field_id( 'vk_url' ) ); ?>"
+							name="<?php echo esc_attr( $this->get_field_name( 'vk_url' ) ); ?>"
+							type="text"
+							value="<?php echo esc_attr( $instance['vk_url'] ); ?>"
+						/>
 					</span>
 				</span>   
 			</p>               

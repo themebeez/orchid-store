@@ -361,6 +361,24 @@ if ( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			text-decoration: underline;
 		}';
 
+		$sidebar_width = orchid_store_get_option( 'sidebar_width' );
+
+		$custom_style .= '
+		@media( min-width: 992px ) {
+
+			.sidebar-col {
+				flex: 0 0 ' . esc_attr( $sidebar_width ) . '%;
+				max-width: ' . esc_attr( $sidebar_width ) . '%;
+				width: ' . esc_attr( $sidebar_width ) . '%;
+			}
+			
+			.content-col {
+				flex: 0 0 ' . ( 100 - esc_attr( $sidebar_width ) ) . '%;
+				max-width: ' . ( 100 - esc_attr( $sidebar_width ) ) . '%;
+				width: ' . ( 100 - esc_attr( $sidebar_width ) ) . '%;
+			}
+		}';
+
 		return $custom_style;
 	}
 }

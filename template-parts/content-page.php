@@ -12,10 +12,7 @@ $orchid_store_display_featured_image = orchid_store_get_option( 'display_page_fe
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 
-	if (
-		! orchid_store_get_option( 'display_page_header' ) ||
-		! orchid_store_get_option( 'display_page_title' )
-	) {
+	if ( ! orchid_store_get_option( 'display_page_header' ) || ! orchid_store_get_option( 'display_page_title' ) ) {
 		?>
 		<h1 class="entry-title page-title"><?php the_title(); ?></h1>
 		<?php

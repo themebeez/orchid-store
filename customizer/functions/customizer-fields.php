@@ -446,8 +446,21 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 if ( class_exists( 'WooCommerce' ) && ( class_exists( 'YITH_WCWL' ) || class_exists( 'Addonify_Wishlist' ) ) ) {
 
-	orchid_store_add_toggle_field( 'display_wishlist', esc_html__( 'Display Wishlist', 'orchid-store' ), '', '', 'wishlist' );
-	orchid_store_add_toggle_field( 'display_wishlist_items_count', esc_html__( 'Display Wishlist Items Count', 'orchid-store' ), '', 'orchid_store_is_wishlist_enabled', 'wishlist' );
+	orchid_store_add_toggle_field(
+		'display_wishlist',
+		esc_html__( 'Display Wishlist', 'orchid-store' ),
+		'',
+		'',
+		'wishlist'
+	);
+
+	orchid_store_add_toggle_field(
+		'display_wishlist_items_count',
+		esc_html__( 'Display Wishlist Items Count', 'orchid-store' ),
+		'',
+		'orchid_store_is_wishlist_enabled',
+		'wishlist'
+	);
 
 }
 
@@ -455,11 +468,49 @@ if ( class_exists( 'WooCommerce' ) && ( class_exists( 'YITH_WCWL' ) || class_exi
 /*******************************************************************************************************
 ************************************* Blog Page Control Fields Declaration *****************************
 */
-orchid_store_add_toggle_field( 'blog_featured_image', esc_html__( 'Display Featured Image', 'orchid-store' ), '', '', 'blog_page' );
-orchid_store_add_toggle_field( 'blog_display_cats', esc_html__( 'Display Categories', 'orchid-store' ), '', '', 'blog_page' );
-orchid_store_add_toggle_field( 'blog_display_date', esc_html__( 'Display Date', 'orchid-store' ), '', '', 'blog_page' );
-orchid_store_add_toggle_field( 'blog_display_author', esc_html__( 'Display Author', 'orchid-store' ), '', '', 'blog_page' );
-orchid_store_add_radio_image_field( 'blog_sidebar_position', esc_html__( 'Select Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), 'orchid_store_is_not_global_sidebar_position_active', 'blog_page' );
+orchid_store_add_toggle_field(
+	'blog_featured_image',
+	esc_html__( 'Display Featured Image', 'orchid-store' ),
+	'',
+	'',
+	'blog_page'
+);
+
+orchid_store_add_toggle_field(
+	'blog_display_cats',
+	esc_html__( 'Display Categories', 'orchid-store' ),
+	'',
+	'',
+	'blog_page'
+);
+
+orchid_store_add_toggle_field(
+	'blog_display_date',
+	esc_html__(
+		'Display Date',
+		'orchid-store'
+	),
+	'',
+	'',
+	'blog_page'
+);
+
+orchid_store_add_toggle_field(
+	'blog_display_author',
+	esc_html__( 'Display Author', 'orchid-store' ),
+	'',
+	'',
+	'blog_page'
+);
+
+orchid_store_add_radio_image_field(
+	'blog_sidebar_position',
+	esc_html__( 'Select Sidebar Position', 'orchid-store' ),
+	'',
+	orchid_store_all_sidebar_positions(),
+	'orchid_store_is_not_global_sidebar_position_active',
+	'blog_page'
+);
 
 
 
@@ -467,22 +518,92 @@ orchid_store_add_radio_image_field( 'blog_sidebar_position', esc_html__( 'Select
 /*******************************************************************************************************
 ********************************** Archive Page Control Fields Declaration *****************************
 */
-orchid_store_add_toggle_field( 'archive_featured_image', esc_html__( 'Display Featured Image', 'orchid-store' ), '', '', 'archive_page' );
-orchid_store_add_toggle_field( 'archive_display_cats', esc_html__( 'Display Categories', 'orchid-store' ), '', '', 'archive_page' );
-orchid_store_add_toggle_field( 'archive_display_date', esc_html__( 'Display Date', 'orchid-store' ), '', '', 'archive_page' );
-orchid_store_add_toggle_field( 'archive_display_author', esc_html__( 'Display Author', 'orchid-store' ), '', '', 'archive_page' );
-orchid_store_add_radio_image_field( 'archive_sidebar_position', esc_html__( 'Select Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), 'orchid_store_is_not_global_sidebar_position_active', 'archive_page' );
+orchid_store_add_toggle_field(
+	'archive_featured_image',
+	esc_html__( 'Display Featured Image', 'orchid-store' ),
+	'',
+	'',
+	'archive_page'
+);
+
+orchid_store_add_toggle_field(
+	'archive_display_cats',
+	esc_html__( 'Display Categories', 'orchid-store' ),
+	'',
+	'',
+	'archive_page'
+);
+
+orchid_store_add_toggle_field(
+	'archive_display_date',
+	esc_html__( 'Display Date', 'orchid-store' ),
+	'',
+	'',
+	'archive_page'
+);
+
+orchid_store_add_toggle_field(
+	'archive_display_author',
+	esc_html__( 'Display Author', 'orchid-store' ),
+	'',
+	'',
+	'archive_page'
+);
+
+orchid_store_add_radio_image_field(
+	'archive_sidebar_position',
+	esc_html__( 'Select Sidebar Position', 'orchid-store' ),
+	'',
+	orchid_store_all_sidebar_positions(),
+	'orchid_store_is_not_global_sidebar_position_active',
+	'archive_page'
+);
 
 
 
 /*******************************************************************************************************
 *********************************** Search Page Control Fields Declaration *****************************
 */
-orchid_store_add_toggle_field( 'search_featured_image', esc_html__( 'Display Featured Image', 'orchid-store' ), '', '', 'search_page' );
-orchid_store_add_toggle_field( 'search_display_cats', esc_html__( 'Display Categories', 'orchid-store' ), '', '', 'search_page' );
-orchid_store_add_toggle_field( 'search_display_date', esc_html__( 'Display Date', 'orchid-store' ), '', '', 'search_page' );
-orchid_store_add_toggle_field( 'search_display_author', esc_html__( 'Display Author', 'orchid-store' ), '', '', 'search_page' );
-orchid_store_add_radio_image_field( 'search_sidebar_position', esc_html__( 'Select Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), 'orchid_store_is_not_global_sidebar_position_active', 'search_page' );
+orchid_store_add_toggle_field(
+	'search_featured_image',
+	esc_html__( 'Display Featured Image', 'orchid-store' ),
+	'',
+	'',
+	'search_page'
+);
+
+orchid_store_add_toggle_field(
+	'search_display_cats',
+	esc_html__( 'Display Categories', 'orchid-store' ),
+	'',
+	'',
+	'search_page'
+);
+
+orchid_store_add_toggle_field(
+	'search_display_date',
+	esc_html__( 'Display Date', 'orchid-store' ),
+	'',
+	'',
+	'search_page'
+);
+
+orchid_store_add_toggle_field(
+	'search_display_author',
+	esc_html__( 'Display Author', 'orchid-store' ),
+	'',
+	'',
+	'search_page'
+);
+
+orchid_store_add_radio_image_field(
+	'search_sidebar_position',
+	esc_html__( 'Select Sidebar Position', 'orchid-store' ),
+	'',
+	orchid_store_all_sidebar_positions(),
+	'orchid_store_is_not_global_sidebar_position_active',
+	'search_page'
+);
 
 
 
@@ -504,42 +625,160 @@ orchid_store_add_select_field(
 /*******************************************************************************************************
 *********************************** Blog Single Control Fields Declaration *****************************
 */
-orchid_store_add_toggle_field( 'display_post_featured_image', esc_html__( 'Display Featured Image', 'orchid-store' ), '', '', 'post_single' );
-orchid_store_add_toggle_field( 'display_post_cats', esc_html__( 'Display Categories', 'orchid-store' ), '', '', 'post_single' );
-orchid_store_add_toggle_field( 'display_post_date', esc_html__( 'Display Date', 'orchid-store' ), '', '', 'post_single' );
-orchid_store_add_toggle_field( 'display_post_author', esc_html__( 'Display Author', 'orchid-store' ), '', '', 'post_single' );
-orchid_store_add_toggle_field( 'display_post_tags', esc_html__( 'Display Tags', 'orchid-store' ), '', '', 'post_single' );
+orchid_store_add_toggle_field(
+	'display_post_featured_image',
+	esc_html__( 'Display Featured Image', 'orchid-store' ),
+	'',
+	'',
+	'post_single'
+);
 
-orchid_store_add_toggle_field( 'enable_post_common_sidebar_position', esc_html__( 'Enable Common Sidebar Position', 'orchid-store' ), esc_html__( 'This option enables common sidebar position for all the posts.', 'orchid-store' ), 'orchid_store_is_not_global_sidebar_position_active', 'post_single' );
-orchid_store_add_radio_image_field( 'post_sidebar_position', esc_html__( 'Select Common Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), 'orchid_store_is_post_common_sidebar_position_active', 'post_single' );
+orchid_store_add_toggle_field(
+	'display_post_cats',
+	esc_html__( 'Display Categories', 'orchid-store' ),
+	'',
+	'',
+	'post_single'
+);
 
+orchid_store_add_toggle_field(
+	'display_post_date',
+	esc_html__( 'Display Date', 'orchid-store' ),
+	'',
+	'',
+	'post_single'
+);
 
+orchid_store_add_toggle_field(
+	'display_post_author',
+	esc_html__( 'Display Author', 'orchid-store' ),
+	'',
+	'',
+	'post_single'
+);
+
+orchid_store_add_toggle_field(
+	'display_post_tags',
+	esc_html__( 'Display Tags', 'orchid-store' ),
+	'',
+	'',
+	'post_single'
+);
+
+orchid_store_add_toggle_field(
+	'enable_post_common_sidebar_position',
+	esc_html__( 'Enable Common Sidebar Position', 'orchid-store' ),
+	esc_html__( 'This option enables common sidebar position for all the posts.', 'orchid-store' ),
+	'orchid_store_is_not_global_sidebar_position_active',
+	'post_single'
+);
+
+orchid_store_add_radio_image_field(
+	'post_sidebar_position',
+	esc_html__( 'Select Common Sidebar Position', 'orchid-store' ),
+	'',
+	orchid_store_all_sidebar_positions(),
+	'orchid_store_is_post_common_sidebar_position_active',
+	'post_single'
+);
 
 /*******************************************************************************************************
 *********************************** Page Single Control Fields Declaration *****************************
 */
-orchid_store_add_toggle_field( 'display_page_featured_image', esc_html__( 'Display Featured image', 'orchid-store' ), '', '', 'page_single' );
-orchid_store_add_toggle_field( 'enable_page_common_sidebar_position', esc_html__( 'Enable Common Sidebar Position', 'orchid-store' ), esc_html__( 'This option enables common sidebar position for all the pages.', 'orchid-store' ), 'orchid_store_is_not_global_sidebar_position_active', 'page_single' );
-orchid_store_add_radio_image_field( 'page_sidebar_position', esc_html__( 'Select Common Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), 'orchid_store_is_page_common_sidebar_position_active', 'page_single' );
+orchid_store_add_toggle_field(
+	'display_page_featured_image',
+	esc_html__( 'Display Featured image', 'orchid-store' ),
+	'',
+	'',
+	'page_single'
+);
 
+orchid_store_add_toggle_field(
+	'enable_page_common_sidebar_position',
+	esc_html__( 'Enable Common Sidebar Position', 'orchid-store' ),
+	esc_html__( 'This option enables common sidebar position for all the pages.', 'orchid-store' ),
+	'orchid_store_is_not_global_sidebar_position_active',
+	'page_single'
+);
 
+orchid_store_add_radio_image_field(
+	'page_sidebar_position',
+	esc_html__( 'Select Common Sidebar Position', 'orchid-store' ),
+	'',
+	orchid_store_all_sidebar_positions(),
+	'orchid_store_is_page_common_sidebar_position_active',
+	'page_single'
+);
 
 
 /*******************************************************************************************************
 ************************************ Sidebar Control Fields Declaration *********************************
 */
-orchid_store_add_toggle_field( 'enable_sticky_sidebar', esc_html__( 'Enable Sticky Sidebar', 'orchid-store' ), '', '', 'site_sidebar' );
-orchid_store_add_toggle_field( 'enable_sidebar_small_devices', esc_html__( 'Enable Sidebar For Small Devices', 'orchid-store' ), esc_html__( 'This option lets you to display or do not display sidebar for devices with width smaller than 768px.', 'orchid-store' ), '', 'site_sidebar' );
-orchid_store_add_toggle_field( 'enable_global_sidebar_position', esc_html__( 'Enable Global Sidebar Position', 'orchid-store' ), esc_html__( 'On checking this option, all the page templates of your website will have same sidebar position.', 'orchid-store' ), '', 'site_sidebar' );
-orchid_store_add_radio_image_field( 'global_sidebar_position', esc_html__( 'Select Global Sidebar Position', 'orchid-store' ), '', orchid_store_all_sidebar_positions(), 'orchid_store_is_global_sidebar_position_active', 'site_sidebar' );
+orchid_store_add_number_field(
+	'sidebar_width',
+	esc_html__( 'Change Sidebar Width Dynamically', 'orchid-store' ),
+	'SidebarWidth in %',
+	'',
+	'site_sidebar',
+	'',
+	'',
+	''
+);
+
+orchid_store_add_toggle_field(
+	'enable_sticky_sidebar',
+	esc_html__( 'Enable Sticky Sidebar', 'orchid-store' ),
+	'',
+	'',
+	'site_sidebar'
+);
+
+orchid_store_add_toggle_field(
+	'enable_sidebar_small_devices',
+	esc_html__( 'Enable Sidebar For Small Devices', 'orchid-store' ),
+	esc_html__( 'This option lets you to display or do not display sidebar for devices with width smaller than 768px.', 'orchid-store' ),
+	'',
+	'site_sidebar'
+);
+
+orchid_store_add_toggle_field(
+	'enable_global_sidebar_position',
+	esc_html__( 'Enable Global Sidebar Position', 'orchid-store' ),
+	esc_html__( 'On checking this option, all the page templates of your website will have same sidebar position.', 'orchid-store' ),
+	'',
+	'site_sidebar'
+);
+
+orchid_store_add_radio_image_field(
+	'global_sidebar_position',
+	esc_html__( 'Select Global Sidebar Position', 'orchid-store' ),
+	'',
+	orchid_store_all_sidebar_positions(),
+	'orchid_store_is_global_sidebar_position_active',
+	'site_sidebar'
+);
 
 
 
 /*******************************************************************************************************
 ************************************ Footer Control Fields Declaration *********************************
 */
-orchid_store_add_toggle_field( 'display_scroll_top_button', esc_html__( 'Display Scroll Top Button', 'orchid-store' ), '', '', 'site_footer' );
-orchid_store_add_toggle_field( 'display_footer_widget_area', esc_html__( 'Display Footer Widgets', 'orchid-store' ), '', '', 'site_footer' );
+orchid_store_add_toggle_field(
+	'display_scroll_top_button',
+	esc_html__( 'Display Scroll Top Button', 'orchid-store' ),
+	'',
+	'',
+	'site_footer'
+);
+
+orchid_store_add_toggle_field(
+	'display_footer_widget_area',
+	esc_html__( 'Display Footer Widgets', 'orchid-store' ),
+	'',
+	'',
+	'site_footer'
+);
+
 orchid_store_add_select_field(
 	'footer_widgets_area_columns',
 	esc_html__( 'Select Footer Widget Area Columns', 'orchid-store' ),
@@ -553,26 +792,68 @@ orchid_store_add_select_field(
 	'orchid_store_is_footer_widget_area_enabled',
 	'site_footer'
 );
-orchid_store_add_text_field( 'copyright_text', esc_html__( 'Copyright Text', 'orchid-store' ), '', '', 'site_footer' );
-orchid_store_add_image_field( 'payments_image', esc_html__( 'Image of payment processors', 'orchid-store' ), '', '', 'site_footer' );
+
+orchid_store_add_text_field(
+	'copyright_text',
+	esc_html__( 'Copyright Text', 'orchid-store' ),
+	'',
+	'',
+	'site_footer'
+);
+
+orchid_store_add_image_field(
+	'payments_image',
+	esc_html__( 'Image of payment processors', 'orchid-store' ),
+	'',
+	'',
+	'site_footer'
+);
 
 
 /*******************************************************************************************************
 ***************************************** Excerpt Fields Declaration ***********************************
 */
-orchid_store_add_number_field( 'excerpt_length', esc_html__( 'Excerpt Length', 'orchid-store' ), esc_html__( 'Excerpt is the short content of post or page.', 'orchid-store' ), '', 'post_excerpt', '', '', '' );
+orchid_store_add_number_field(
+	'excerpt_length',
+	esc_html__( 'Excerpt Length', 'orchid-store' ),
+	esc_html__( 'Excerpt is the short content of post or page.', 'orchid-store' ),
+	'',
+	'post_excerpt',
+	'',
+	'',
+	''
+);
 
 /*******************************************************************************************************
 ***************************************** Accessibility Fields Declaration ***********************************
 */
-orchid_store_add_toggle_field( 'disable_ouline_on_focus', esc_html__( 'Disable Outline On Focus', 'orchid-store' ), '', '', 'theme_accessibility' );
+orchid_store_add_toggle_field(
+	'disable_ouline_on_focus',
+	esc_html__( 'Disable Outline On Focus', 'orchid-store' ),
+	'',
+	'',
+	'theme_accessibility'
+);
 
 
 /*******************************************************************************************************
 ***************************************** Theme Color Declaration ***********************************
 */
-orchid_store_add_color_field( 'primary_color', esc_html__( 'Primary Color', 'orchid-store' ), '', '', 'theme_color' );
-orchid_store_add_color_field( 'secondary_color', esc_html__( 'Secondary Color', 'orchid-store' ), '', '', 'theme_color' );
+orchid_store_add_color_field(
+	'primary_color',
+	esc_html__( 'Primary Color', 'orchid-store' ),
+	'',
+	'',
+	'theme_color'
+);
+
+orchid_store_add_color_field(
+	'secondary_color',
+	esc_html__( 'Secondary Color', 'orchid-store' ),
+	'',
+	'',
+	'theme_color'
+);
 
 
 
