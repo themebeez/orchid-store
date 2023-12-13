@@ -10,6 +10,7 @@ if ( ! function_exists( 'orchid_store_active_top_header' ) ) {
 	 * Active callback function for when top header is active.
 	 *
 	 * @param object $control WP Customize Control.
+	 * @return boolean.
 	 */
 	function orchid_store_active_top_header( $control ) {
 
@@ -35,6 +36,7 @@ if ( ! function_exists( 'orchid_store_is_static_home_page_set' ) ) {
 	 * Active callback function for when static home page is set.
 	 *
 	 * @param object $control WP Customize Control.
+	 * @return boolean
 	 */
 	function orchid_store_is_static_home_page_set( $control ) {
 
@@ -49,6 +51,7 @@ if ( ! function_exists( 'orchid_store_is_not_global_sidebar_position_active' ) )
 	 * Active callback function for when global sidebar position is not active.
 	 *
 	 * @param object $control WP Customize Control.
+	 * @return boolean.
 	 */
 	function orchid_store_is_not_global_sidebar_position_active( $control ) {
 
@@ -61,6 +64,7 @@ if ( ! function_exists( 'orchid_store_is_global_sidebar_position_active' ) ) {
 	 * Active callback function for when global sidebar position is active.
 	 *
 	 * @param object $control WP Customize Control.
+	 * @return boolean
 	 */
 	function orchid_store_is_global_sidebar_position_active( $control ) {
 
@@ -73,6 +77,7 @@ if ( ! function_exists( 'orchid_store_is_post_common_sidebar_position_active' ) 
 	 * Active callback function for when common sidebar position for posts is active.
 	 *
 	 * @param object $control WP Customize Control.
+	 * @return boolean.
 	 */
 	function orchid_store_is_post_common_sidebar_position_active( $control ) {
 
@@ -92,6 +97,7 @@ if ( ! function_exists( 'orchid_store_is_page_common_sidebar_position_active' ) 
 	 * Active callback function for when common sidebar position for pages is active.
 	 *
 	 * @param object $control WP Customize Control.
+	 * @return boolean.
 	 */
 	function orchid_store_is_page_common_sidebar_position_active( $control ) {
 
@@ -111,6 +117,7 @@ if ( ! function_exists( 'orchid_store_is_footer_widget_area_enabled' ) ) {
 	 * Active callback function for when footer widget area is displayed.
 	 *
 	 * @param object $control WP Customize Control.
+	 * @return boolean
 	 */
 	function orchid_store_is_footer_widget_area_enabled( $control ) {
 
@@ -124,6 +131,7 @@ if ( ! function_exists( 'orchid_store_is_product_search_form_enabled' ) ) {
 	 * Active callback function for when product search form is enabled.
 	 *
 	 * @param object $control WP Customize Control.
+	 * @return boolean.
 	 */
 	function orchid_store_is_product_search_form_enabled( $control ) {
 
@@ -137,6 +145,7 @@ if ( ! function_exists( 'orchid_store_is_page_header_enabled' ) ) {
 	 * Active callback function for when page header is enabled.
 	 *
 	 * @param object $control WP Customize Control.
+	 * @return boolean.
 	 */
 	function orchid_store_is_page_header_enabled( $control ) {
 
@@ -150,6 +159,7 @@ if ( ! function_exists( 'orchid_store_is_cart_mini_cart' ) ) {
 	 * Active callback function to check if mini-cart is selected as cart.
 	 *
 	 * @param object $control WP Customize Control.
+	 * @return boolean.
 	 */
 	function orchid_store_is_cart_mini_cart( $control ) {
 
@@ -165,6 +175,7 @@ if ( ! function_exists( 'orchid_store_is_cart_floating_cart' ) ) {
 	 * Active callback function to check if floating-cart is selected as cart.
 	 *
 	 * @param object $control WP Customize Control.
+	 * @return boolean.
 	 */
 	function orchid_store_is_cart_floating_cart( $control ) {
 
@@ -172,7 +183,7 @@ if ( ! function_exists( 'orchid_store_is_cart_floating_cart' ) ) {
 
 		$cart_display = $control->manager->get_setting( 'orchid_store_field_cart_display' )->value();
 
-		return ( true === $is_mini_cart_enabled && 'floating_cart' === $cart_display ) ? true : false;
+		return ( $is_mini_cart_enabled && 'floating_cart' === $cart_display ) ? true : false;
 	}
 }
 
@@ -182,6 +193,7 @@ if ( ! function_exists( 'orchid_store_is_mini_cart_enabled' ) ) {
 	 * Active callback function to check if mini-cart is enabled.
 	 *
 	 * @param object $control WP Customize Control.
+	 * @return boolean.
 	 */
 	function orchid_store_is_mini_cart_enabled( $control ) {
 
@@ -195,6 +207,7 @@ if ( ! function_exists( 'orchid_store_is_wishlist_enabled' ) ) {
 	 * Active callback function to check if wishlist is enabled.
 	 *
 	 * @param object $control WP Customize Control.
+	 * @return boolean.
 	 */
 	function orchid_store_is_wishlist_enabled( $control ) {
 

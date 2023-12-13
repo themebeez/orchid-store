@@ -3,6 +3,8 @@
  * Collection of reuseable customizer functions.
  *
  * @package Orchid_Store
+ *
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'orchid_store_add_panel' ) ) {
@@ -148,7 +150,6 @@ if ( ! function_exists( 'orchid_store_add_number_field' ) ) {
 		global $wp_customize;
 
 		$defaults = orchid_store_get_default_theme_options();
-
 		$field_id = 'orchid_store_field_' . $id;
 
 		$section_id = 'orchid_store_section_' . $section;

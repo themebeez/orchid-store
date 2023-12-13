@@ -122,7 +122,9 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 																			if ( ! empty( $button_titles[ $slider_index ] ) && ! empty( $button_links[ $slider_index ] ) ) {
 																				?>
 																				<div class="permalink">
-																					<a class="button-general" href="<?php echo esc_url( $button_links[ $slider_index ] ); ?>"><?php echo esc_html( $button_titles[ $slider_index ] ); ?></a>
+																					<a lass="button-general" href="<?php echo esc_url( $button_links[ $slider_index ] ); ?>">
+																						<?php echo esc_html( $button_titles[ $slider_index ] ); ?>
+																					</a>
 																				</div><!-- .permalink -->
 																				<?php
 																			}
@@ -238,11 +240,21 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
 					<strong><?php esc_html_e( 'Title', 'orchid-store' ); ?></strong>
 				</label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />   
+				<input
+					class="widefat"
+					id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
+					name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
+					type="text"
+					value="<?php echo esc_attr( $instance['title'] ); ?>"
+				/>   
 			</p>
 
 			<p>
-				<span class="sldr-elmnt-title"><strong><?php esc_html_e( 'Slider Elements', 'orchid-store' ); ?></strong></span>
+				<span class="sldr-elmnt-title">
+					<strong>
+						<?php esc_html_e( 'Slider Elements', 'orchid-store' ); ?>
+					</strong>
+				</span>
 
 				<?php
 				$page_choices = orchid_store_all_pages();
@@ -257,22 +269,39 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 								printf( esc_html__( 'Slider Item %s', 'orchid-store' ), $i + 1 ); // phpcs:ignore
 								?>
 							</strong>
-							<span class="os-collapse-icon"><span class="dashicons dashicons-arrow-down"></span></span>
+							<span class="os-collapse-icon">
+								<span class="dashicons dashicons-arrow-down"></span>
+							</span>
 						</span>
 						<span class="os-fields">
-							<label for="<?php echo esc_attr( $this->get_field_id( 'slider_pages' ) . $i ); ?>"><strong><?php esc_html_e( 'Select Page', 'orchid-store' ); ?></strong></label>
-							<select class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'slider_pages' ) ); ?>[]" id="<?php echo esc_attr( $this->get_field_id( 'slider_pages' ) . $i ); ?>">
+							<label for="<?php echo esc_attr( $this->get_field_id( 'slider_pages' ) . $i ); ?>">
+								<strong>
+									<?php esc_html_e( 'Select Page', 'orchid-store' ); ?>
+								</strong>
+							</label>
+							<select
+								class="widefat"
+								name="<?php echo esc_attr( $this->get_field_name( 'slider_pages' ) ); ?>[]"
+								id="<?php echo esc_attr( $this->get_field_id( 'slider_pages' ) . $i ); ?>">
 								<?php
 								if ( 'slug' === $this->value_as ) {
 									foreach ( $page_choices as $page_slug => $page_title ) {
 										?>
-										<option value="<?php echo esc_attr( $page_slug ); ?>" <?php selected( $page_slug, ( ! empty( $instance['slider_pages'][ $i ] ) ? $instance['slider_pages'][ $i ] : '' ) ); ?>><?php echo esc_html( $page_title ); ?></option>
+										<option
+											value="<?php echo esc_attr( $page_slug ); ?>"
+											<?php selected( $page_slug, ( ! empty( $instance['slider_pages'][ $i ] ) ? $instance['slider_pages'][ $i ] : '' ) ); ?>>
+											<?php echo esc_html( $page_title ); ?>
+										</option>
 										<?php
 									}
 								} else {
 									foreach ( $page_choices as $page_id => $page_title ) {
 										?>
-										<option value="<?php echo esc_attr( $page_id ); ?>" <?php selected( $page_id, ( ! empty( $instance['slider_pages'][ $i ] ) ? $instance['slider_pages'][ $i ] : '' ) ); ?>><?php echo esc_html( $page_title ); ?></option>
+										<option
+										value="<?php echo esc_attr( $page_id ); ?>"
+										<?php selected( $page_id, ( ! empty( $instance['slider_pages'][ $i ] ) ? $instance['slider_pages'][ $i ] : '' ) ); ?>>
+										<?php echo esc_html( $page_title ); ?>
+									</option>
 										<?php
 									}
 								}
@@ -282,7 +311,11 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 							<label for="<?php echo esc_attr( $this->get_field_id( 'button_titles' ) . $i ); ?>">
 								<strong><?php esc_html_e( 'Button Title', 'orchid-store' ); ?></strong>
 							</label>
-							<input class="widefat" type="text" id="<?php echo esc_attr( $this->get_field_id( 'button_titles' ) . $i ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_titles' ) ); ?>[]"
+							<input
+								class="widefat"
+								type="text"
+								id="<?php echo esc_attr( $this->get_field_id( 'button_titles' ) . $i ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'button_titles' ) ); ?>[]"
 								value="
 								<?php
 								if ( ! empty( $instance['button_titles'][ $i ] ) ) {
@@ -294,7 +327,11 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 							<label for="<?php echo esc_attr( $this->get_field_id( 'button_links' ) . $i ); ?>">
 								<strong><?php esc_html_e( 'Button Link', 'orchid-store' ); ?></strong>
 							</label>
-							<input class="widefat" type="text" id="<?php echo esc_attr( $this->get_field_id( 'button_links' ) . $i ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'button_links' ) ); ?>[]"
+							<input
+								class="widefat"
+								type="text"
+								id="<?php echo esc_attr( $this->get_field_id( 'button_links' ) . $i ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'button_links' ) ); ?>[]"
 								value="
 								<?php
 								if ( ! empty( $instance['button_links'][ $i ] ) ) {
@@ -311,14 +348,22 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'show_contents' ) ); ?>">
-					<input id="<?php echo esc_attr( $this->get_field_id( 'show_contents' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_contents' ) ); ?>" type="checkbox" <?php checked( true, $instance['show_contents'] ); ?> />  
+					<input
+						id="<?php echo esc_attr( $this->get_field_id( 'show_contents' ) ); ?>"
+						name="<?php echo esc_attr( $this->get_field_name( 'show_contents' ) ); ?>"
+						type="checkbox" <?php checked( true, $instance['show_contents'] ); ?>
+					>  
 					<strong><?php esc_html_e( 'Show Slider Contents', 'orchid-store' ); ?></strong>
 				</label>                 
 			</p>
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'enable_mask' ) ); ?>">
-					<input id="<?php echo esc_attr( $this->get_field_id( 'enable_mask' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'enable_mask' ) ); ?>" type="checkbox" <?php checked( true, $instance['enable_mask'] ); ?> />
+					<input
+						id="<?php echo esc_attr( $this->get_field_id( 'enable_mask' ) ); ?>"
+						name="<?php echo esc_attr( $this->get_field_name( 'enable_mask' ) ); ?>"
+						type="checkbox" <?php checked( true, $instance['enable_mask'] ); ?>
+					>
 					<strong><?php esc_html_e( 'Enable Mask Layer', 'orchid-store' ); ?></strong>
 				</label>                 
 			</p>
@@ -345,10 +390,25 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 					}
 					?>
 					
-					<span class="os-upload-image-holder" style="background-image: url( <?php echo esc_url( $banner_img_1 ); ?> );"></span>
-					<input type="hidden" class="widefat os-upload-image-url-holder" name="<?php echo esc_attr( $this->get_field_name( 'banner_img_1' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'banner_img_1' ) ); ?>" value="<?php echo esc_attr( $banner_img_1 ); ?>">
-					<button class="<?php echo esc_attr( $upload_btn_class ); ?>" id="os-upload-btn"><?php esc_html_e( 'Upload', 'orchid-store' ); ?></button>
-					<button class="<?php echo esc_attr( $remove_btn_class ); ?>" id="os-remove-btn"><?php esc_html_e( 'Remove', 'orchid-store' ); ?></button>
+					<span
+						class="os-upload-image-holder"
+						style="background-image: url( <?php echo esc_url( $banner_img_1 ); ?> );">
+					</span>
+					<input
+						type="hidden"
+						class="widefat os-upload-image-url-holder"
+						name="<?php echo esc_attr( $this->get_field_name( 'banner_img_1' ) ); ?>"
+						id="<?php echo esc_attr( $this->get_field_id( 'banner_img_1' ) ); ?>"
+						value="<?php echo esc_attr( $banner_img_1 ); ?>"
+					>
+					<button
+						class="<?php echo esc_attr( $upload_btn_class ); ?>"
+						id="os-upload-btn"><?php esc_html_e( 'Upload', 'orchid-store' ); ?>
+					</button>
+					<button
+						class="<?php echo esc_attr( $remove_btn_class ); ?>"
+						id="os-remove-btn"><?php esc_html_e( 'Remove', 'orchid-store' ); ?>
+					</button>
 				</span>
 			</p>
 
@@ -356,7 +416,13 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 				<label for="<?php echo esc_attr( $this->get_field_id( 'banner_link_1' ) ); ?>">
 					<strong><?php esc_html_e( 'Banner Link One', 'orchid-store' ); ?></strong>
 				</label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'banner_link_1' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'banner_link_1' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['banner_link_1'] ); ?>" />   
+				<input
+					class="widefat"
+					id="<?php echo esc_attr( $this->get_field_id( 'banner_link_1' ) ); ?>"
+					name="<?php echo esc_attr( $this->get_field_name( 'banner_link_1' ) ); ?>"
+					type="text"
+					value="<?php echo esc_attr( $instance['banner_link_1'] ); ?>"
+				>   
 			</p>
 
 			<p>
@@ -382,9 +448,21 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 					?>
 					
 					<span class="os-upload-image-holder" style="background-image: url( <?php echo esc_url( $banner_img_2 ); ?> );"></span>
-					<input type="hidden" class="widefat os-upload-image-url-holder" name="<?php echo esc_attr( $this->get_field_name( 'banner_img_2' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'banner_img_2' ) ); ?>" value="<?php echo esc_attr( $banner_img_2 ); ?>">
-					<button class="<?php echo esc_attr( $upload_btn_class ); ?>" id="os-upload-btn"><?php esc_html_e( 'Upload', 'orchid-store' ); ?></button>
-					<button class="<?php echo esc_attr( $remove_btn_class ); ?>" id="os-remove-btn"><?php esc_html_e( 'Remove', 'orchid-store' ); ?></button>
+					<input
+						type="hidden"
+						class="widefat os-upload-image-url-holder"
+						name="<?php echo esc_attr( $this->get_field_name( 'banner_img_2' ) ); ?>"
+						id="<?php echo esc_attr( $this->get_field_id( 'banner_img_2' ) ); ?>"
+						value="<?php echo esc_attr( $banner_img_2 ); ?>"
+					>
+					<button
+						class="<?php echo esc_attr( $upload_btn_class ); ?>"
+						id="os-upload-btn"><?php esc_html_e( 'Upload', 'orchid-store' ); ?>
+					</button>
+					<button
+						class="<?php echo esc_attr( $remove_btn_class ); ?>"
+						id="os-remove-btn"><?php esc_html_e( 'Remove', 'orchid-store' ); ?>
+					</button>
 				</span>
 			</p>
 
@@ -392,7 +470,13 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 				<label for="<?php echo esc_attr( $this->get_field_id( 'banner_link_2' ) ); ?>">
 					<strong><?php esc_html_e( 'Banner Link Two', 'orchid-store' ); ?></strong>
 				</label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'banner_link_2' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'banner_link_2' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['banner_link_2'] ); ?>" />   
+				<input
+					class="widefat"
+					id="<?php echo esc_attr( $this->get_field_id( 'banner_link_2' ) ); ?>"
+					name="<?php echo esc_attr( $this->get_field_name( 'banner_link_2' ) ); ?>"
+					type="text"
+					value="<?php echo esc_attr( $instance['banner_link_2'] ); ?>"
+				>   
 			</p>
 			<?php
 		}

@@ -152,7 +152,13 @@ function orchid_store_customize_partial_blogdescription() {
  */
 function orchid_store_customize_preview_js() {
 
-	wp_enqueue_script( 'orchid-store-customizer', get_template_directory_uri() . '/customizer/assets/js/customizer.js', array( 'customize-preview' ), ORCHID_STORE_VERSION, true );
+	wp_enqueue_script(
+		'orchid-store-customizer',
+		get_template_directory_uri() . '/customizer/assets/js/customizer.js',
+		array( 'customize-preview' ),
+		ORCHID_STORE_VERSION,
+		true
+	);
 }
 add_action( 'customize_preview_init', 'orchid_store_customize_preview_js' );
 

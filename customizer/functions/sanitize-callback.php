@@ -70,7 +70,7 @@ if ( ! function_exists( 'orchid_store_sanitize_urls' ) ) {
 	 */
 	function orchid_store_sanitize_urls( $input ) {
 
-		if ( strpos( $input, ',' ) !== false ) {
+		if ( strpos( $input, ',' ) ) {
 
 			$input = explode( ',', $input );
 		}
