@@ -82,10 +82,14 @@ if ( ! class_exists( 'Orchid_Store_Sortable_Repeater_Control' ) ) {
 			?>
 			<div class="sortable_repeater_control">
 				<?php if ( ! empty( $this->label ) ) { ?>
-					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+					<span class="customize-control-title">
+						<?php echo esc_html( $this->label ); ?>
+					</span>
 				<?php } ?>
 				<?php if ( ! empty( $this->description ) ) { ?>
-					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+					<span class="customize-control-description">
+						<?php echo esc_html( $this->description ); ?>
+					</span>
 				<?php } ?>
 				<input
 					type="hidden"

@@ -30,6 +30,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 				)
 			);
 		}
+
 		/**
 		 * Renders widget at the frontend.
 		 *
@@ -208,6 +209,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 			<?php
 			echo esc_html( $args['after_widget'] );
 		}
+
 		/**
 		 * Adds setting fields to the widget and renders them in the form.
 		 *
@@ -310,7 +312,13 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 						<label for="<?php echo esc_attr( $this->get_field_name( 'store_address' ) ); ?>">
 							<strong><?php esc_html_e( 'Address', 'orchid-store' ); ?></strong>
 						</label>
-						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'store_address' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'store_address' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['store_address'] ); ?>" />
+						<input
+							class="widefat"
+							id="<?php echo esc_attr( $this->get_field_id( 'store_address' ) ); ?>"
+							name="<?php echo esc_attr( $this->get_field_name( 'store_address' ) ); ?>"
+							type="text"
+							value="<?php echo esc_attr( $instance['store_address'] ); ?>"
+						/>
 
 						<label for="<?php echo esc_attr( $this->get_field_name( 'store_phone' ) ); ?>">
 							<strong><?php esc_html_e( 'Contact Number', 'orchid-store' ); ?></strong>
@@ -437,6 +445,8 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 	  
 			<?php
 		}
+
+
 		/**
 		 * Sanitizes and saves the instance of the widget.
 		 *
@@ -450,33 +460,32 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 
 			$instance = $old_instance;
 
-			$instance['title'] = sanitize_text_field( $new_instance['title'] );
+			$instance['title'] = isset( $new_instance['title'] ) ? sanitize_text_field( $new_instance['title'] ) : '';
 
-			$instance['store_logo'] = esc_url_raw( $new_instance['store_logo'] );
+			$instance['store_logo'] = isset( $new_instance['store_logo'] ) ? esc_url_raw( $new_instance['store_logo'] ) : '';
 
-			$instance['store_description'] = sanitize_text_field( $new_instance['store_description'] );
+			$instance['store_description'] = isset( $new_instance['store_description'] ) ? sanitize_text_field( $new_instance['store_description'] ) : '';
+			$instance['store_address']     = isset( $new_instance['store_address'] ) ? sanitize_text_field( $new_instance['store_address'] ) : '';
 
-			$instance['store_address'] = sanitize_text_field( $new_instance['store_address'] );
+			$instance['store_phone'] = isset( $new_instance['store_phone'] ) ? sanitize_text_field( $new_instance['store_phone'] ) : '';
 
-			$instance['store_phone'] = sanitize_text_field( $new_instance['store_phone'] );
+			$instance['store_email'] = isset( $new_instance['store_email'] ) ? sanitize_email( $new_instance['store_email'] ) : '';
 
-			$instance['store_email'] = sanitize_email( $new_instance['store_email'] );
+			$instance['store_opening_time'] = isset( $new_instance['store_opening_time'] ) ? sanitize_text_field( $new_instance['store_opening_time'] ) : '';
 
-			$instance['store_opening_time'] = sanitize_text_field( $new_instance['store_opening_time'] );
+			$instance['facebook_url'] = isset( $new_instance['facebook_url'] ) ? esc_url_raw( $new_instance['facebook_url'] ) : '';
 
-			$instance['facebook_url'] = esc_url_raw( $new_instance['facebook_url'] );
+			$instance['twitter_url'] = isset( $new_instance['twitter_url'] ) ? esc_url_raw( $new_instance['twitter_url'] ) : '';
 
-			$instance['twitter_url'] = esc_url_raw( $new_instance['twitter_url'] );
+			$instance['instagram_url'] = isset( $new_instance['instagram_url'] ) ? sc_url_raw( $new_instance['instagram_url'] ) : '';
 
-			$instance['instagram_url'] = esc_url_raw( $new_instance['instagram_url'] );
+			$instance['youtube_url'] = isset( $new_instance['youtube_url'] ) ? esc_url_raw( $new_instance['youtube_url'] ) : '';
 
-			$instance['youtube_url'] = esc_url_raw( $new_instance['youtube_url'] );
+			$instance['pinterest_url'] = isset( $new_instance['pinterest_url'] ) ? esc_url_raw( $new_instance['pinterest_url'] ) : '';
 
-			$instance['pinterest_url'] = esc_url_raw( $new_instance['pinterest_url'] );
+			$instance['vimeo_url'] = isset( $new_instance['vimeo_url'] ) ? esc_url_raw( $new_instance['vimeo_url'] ) : '';
 
-			$instance['vimeo_url'] = esc_url_raw( $new_instance['vimeo_url'] );
-
-			$instance['vk_url'] = esc_url_raw( $new_instance['vk_url'] );
+			$instance['vk_url'] = isset( $new_instance['vk_url'] ) ? esc_url_raw( $new_instance['vk_url'] ) : '';
 
 			return $instance;
 		}

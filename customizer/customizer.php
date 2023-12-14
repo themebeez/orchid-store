@@ -109,6 +109,7 @@ function orchid_store_customize_register( $wp_customize ) {
 	$wp_customize->get_control( 'header_image' )->active_callback = 'orchid_store_is_page_header_enabled';
 	$wp_customize->get_section( 'static_front_page' )->priority   = 1;
 }
+
 add_action( 'customize_register', 'orchid_store_customize_register' );
 
 /**
@@ -160,6 +161,7 @@ function orchid_store_customize_preview_js() {
 		true
 	);
 }
+
 add_action( 'customize_preview_init', 'orchid_store_customize_preview_js' );
 
 
@@ -205,4 +207,5 @@ function orchid_store_enqueues() {
 
 	wp_enqueue_script( 'orchid-store-customizer-script' );
 }
+
 add_action( 'customize_controls_enqueue_scripts', 'orchid_store_enqueues' );
