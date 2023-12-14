@@ -124,7 +124,13 @@ if ( ! class_exists( 'Orchid_Store_Services_Widget' ) ) {
 				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
 					<strong><?php esc_html_e( 'Title', 'orchid-store' ); ?></strong>
 				</label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />   
+				<input
+					class="widefat"
+					id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
+					name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
+					type="text"
+					value="<?php echo esc_attr( $instance['title'] ); ?>"
+				/>   
 			</p>
 
 			<?php
@@ -145,30 +151,40 @@ if ( ! class_exists( 'Orchid_Store_Services_Widget' ) ) {
 							<label for="<?php echo esc_attr( $this->get_field_id( 'services_titles' ) . $i ); ?>">
 								<strong><?php esc_html_e( 'Title', 'orchid-store' ); ?></strong>
 							</label>
-							<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'services_titles' ) . $i ); ?>"
-								name="<?php echo esc_attr( $this->get_field_name( 'services_titles' ) ); ?>[]" type="text" value="
+							<input
+								class="widefat"
+								id="<?php echo esc_attr( $this->get_field_id( 'services_titles' ) . $i ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'services_titles' ) ); ?>[]"
+								type="text"
+								value="
 								<?php
 								if ( ! empty( $services_titles[ $i ] ) ) {
 									echo esc_attr( $services_titles[ $i ] );
 								}
 								?>
-							" /> 
+							"/> 
 
 							<label for="<?php echo esc_attr( $this->get_field_id( 'services_descs' ) . $i ); ?>">
 								<strong><?php esc_html_e( 'Description', 'orchid-store' ); ?></strong>
 							</label>
-							<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'services_descs' ) . $i ); ?>"
-							name="<?php echo esc_attr( $this->get_field_name( 'services_descs' ) ); ?>[]" type="text" value="
+							<input
+								class="widefat"
+								id="<?php echo esc_attr( $this->get_field_id( 'services_descs' ) . $i ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( 'services_descs' ) ); ?>[]"
+								type="text"
+								value="
 							<?php
 							if ( ! empty( $services_descs[ $i ] ) ) {
 								echo esc_attr( $services_descs[ $i ] ); }
 							?>
-							" /> 
+							"/> 
 
 							<label for="<?php echo esc_attr( $this->get_field_id( 'services_imgs' ) . $i ); ?>">
 								<strong><?php esc_html_e( 'Icon Image', 'orchid-store' ); ?></strong>
 							</label>
-							<span class="os-image-notice"><?php esc_html_e( 'Upload image having 1x1 aspect ratio.', 'orchid-store' ); ?></span>
+							<span class="os-image-notice">
+								<?php esc_html_e( 'Upload image having 1x1 aspect ratio.', 'orchid-store' ); ?>
+							</span>
 
 							<span class="os-image-uploader-container">
 								<?php
@@ -192,16 +208,23 @@ if ( ! class_exists( 'Orchid_Store_Services_Widget' ) ) {
 									echo esc_url( $services_imgs[ $i ] ); }
 								?>
 								);"></span>
-								<input type="hidden" class="widefat os-upload-image-url-holder"
+								<input
+									type="hidden"
+									class="widefat os-upload-image-url-holder"
 									name="<?php echo esc_attr( $this->get_field_name( 'services_imgs' ) ); ?>[]"
-									id="<?php echo esc_attr( $this->get_field_id( 'services_imgs' ) . $i ); ?>" value="
+									id="<?php echo esc_attr( $this->get_field_id( 'services_imgs' ) . $i ); ?>"
+									value="
 									<?php
 									if ( ! empty( $services_imgs[ $i ] ) ) {
 										echo esc_attr( $services_imgs[ $i ] ); }
 									?>
 								">
-								<button class="<?php echo esc_attr( $upload_btn_class ); ?>" id="os-upload-btn"><?php esc_html_e( 'Upload', 'orchid-store' ); ?></button>
-								<button class="<?php echo esc_attr( $remove_btn_class ); ?>" id="os-remove-btn"><?php esc_html_e( 'Remove', 'orchid-store' ); ?></button>
+								<button class="<?php echo esc_attr( $upload_btn_class ); ?>" id="os-upload-btn">
+									<?php esc_html_e( 'Upload', 'orchid-store' ); ?>
+								</button>
+								<button class="<?php echo esc_attr( $remove_btn_class ); ?>" id="os-remove-btn">
+									<?php esc_html_e( 'Remove', 'orchid-store' ); ?>
+								</button>
 							</span>  
 						</span>
 					</span>

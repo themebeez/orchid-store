@@ -8,7 +8,7 @@
 /**
  * Adds custom classes to the array of body classes.
  *
- * @param array $classes Classes for the body element.
+ * @param array $classes Class for the body element.
  * @return array
  */
 function orchid_store_body_classes( $classes ) {
@@ -49,9 +49,9 @@ add_action( 'wp_head', 'orchid_store_pingback_header' );
 
 
 /**
- * Adds custom classes to the array of post classes.
+ * Adds custom class to the array of post classes.
  *
- * @param array $classes Classes for the post article element.
+ * @param array $classes Class for the post article element.
  * @return array
  */
 function orchid_store_post_classes( $classes ) {
@@ -89,7 +89,11 @@ add_filter( 'post_class', 'orchid_store_post_classes' );
 
 
 if ( ! function_exists( 'orchid_store_sidebar_class' ) ) {
-
+	/**
+	 * Function to set sidebar class.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_sidebar_class() {
 
 		$sidebar_class = 'col-desktop-4 sidebar-col col-tab-100 col-mob-100';
@@ -118,7 +122,11 @@ if ( ! function_exists( 'orchid_store_sidebar_class' ) ) {
 
 
 if ( ! function_exists( 'orchid_store_content_container_class' ) ) {
-
+	/**
+	 * Function to set content container class.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_content_container_class() {
 
 		$container_class = '';
@@ -152,7 +160,9 @@ if ( ! function_exists( 'orchid_store_content_container_class' ) ) {
 
 
 if ( ! function_exists( 'orchid_store_content_entry_class' ) ) {
-
+	/**
+	 * Function to set class to content entry
+	 */
 	function orchid_store_content_entry_class() {
 
 		$content_entry_class = '';
@@ -182,7 +192,9 @@ if ( ! function_exists( 'orchid_store_content_entry_class' ) ) {
 
 
 if ( ! function_exists( 'orchid_store_menu_row_class' ) ) {
-
+	/**
+	 * Function to set class to menus
+	 */
 	function orchid_store_menu_row_class() {
 
 		$menu_row_class = '';
@@ -199,7 +211,9 @@ if ( ! function_exists( 'orchid_store_menu_row_class' ) ) {
 }
 
 if ( ! function_exists( 'orchid_store_logo_row_class' ) ) {
-
+	/**
+	 * Functiom to set logo class
+	 */
 	function orchid_store_logo_row_class() {
 
 		$display_product_search = orchid_store_get_option( 'display_product_search_form' );
@@ -239,7 +253,9 @@ if ( ! function_exists( 'orchid_store_logo_row_class' ) ) {
 	}
 }
 
-
+/**
+ * Function to get page title
+ */
 function orchid_store_get_page_title() {
 	?>
 	<div class="title">

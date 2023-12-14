@@ -28,7 +28,9 @@
 	?>
 	<div id="page" class="site __os-page-wrap__">
 
-		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'orchid-store' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#content">
+			<?php esc_html_e( 'Skip to content', 'orchid-store' ); ?>
+		</a>
 
 		<?php
 		/**

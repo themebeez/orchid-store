@@ -212,41 +212,75 @@ if ( ! class_exists( 'Orchid_Store_Post_Widget' ) ) {
 				<label for="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>">
 					<strong><?php esc_html_e( 'Title', 'orchid-store' ); ?></strong>
 				</label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />   
+				<input
+					class="widefat"
+					id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
+					name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
+					type="text"
+					value="<?php echo esc_attr( $instance['title'] ); ?>"
+				/>   
 			</p>
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_name( 'no_of_posts' ) ); ?>">
 					<strong><?php esc_html_e( 'No of Posts', 'orchid-store' ); ?></strong>
 				</label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'no_of_posts' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'no_of_posts' ) ); ?>" type="number" value="<?php echo esc_attr( absint( $instance['no_of_posts'] ) ); ?>" />   
+				<input
+					class="widefat"
+					id="<?php echo esc_attr( $this->get_field_id( 'no_of_posts' ) ); ?>"
+					name="<?php echo esc_attr( $this->get_field_name( 'no_of_posts' ) ); ?>"
+					type="number"
+					value="<?php echo esc_attr( absint( $instance['no_of_posts'] ) ); ?>"
+				/>   
 			</p>
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'show_excerpt' ) ); ?>">
-					<input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'show_excerpt' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_excerpt' ) ); ?>" <?php checked( absint( $instance['show_excerpt'] ), 1 ); ?> >                
-					<strong><?php esc_html_e( 'Display Post Excerpt', 'orchid-store' ); ?></strong>
+					<input
+						type="checkbox"
+						id="<?php echo esc_attr( $this->get_field_id( 'show_excerpt' ) ); ?>"
+						name="<?php echo esc_attr( $this->get_field_name( 'show_excerpt' ) ); ?>" <?php checked( absint( $instance['show_excerpt'] ), 1 ); ?>
+					>                
+					<strong>
+						<?php esc_html_e( 'Display Post Excerpt', 'orchid-store' ); ?>
+					</strong>
 				</label>
 			</p>
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'show_categories' ) ); ?>">
-					<input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'show_categories' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_categories' ) ); ?>" <?php checked( absint( $instance['show_categories'] ), 1 ); ?> >                
+					<input
+						type="checkbox"
+						id="<?php echo esc_attr( $this->get_field_id( 'show_categories' ) ); ?>"
+						name="<?php echo esc_attr( $this->get_field_name( 'show_categories' ) ); ?>" <?php checked( absint( $instance['show_categories'] ), 1 ); ?>
+					>                
 					<strong><?php esc_html_e( 'Display Post Categories', 'orchid-store' ); ?></strong>
 				</label>
 			</p>
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'show_author' ) ); ?>">
-					<input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'show_author' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_author' ) ); ?>" <?php checked( absint( $instance['show_author'] ), 1 ); ?> >                
-					<strong><?php esc_html_e( 'Display Post Author', 'orchid-store' ); ?></strong>
+					<input
+						type="checkbox"
+						id="<?php echo esc_attr( $this->get_field_id( 'show_author' ) ); ?>"
+						name="<?php echo esc_attr( $this->get_field_name( 'show_author' ) ); ?>" <?php checked( absint( $instance['show_author'] ), 1 ); ?>
+					>                
+					<strong>
+						<?php esc_html_e( 'Display Post Author', 'orchid-store' ); ?>
+					</strong>
 				</label>
 			</p>
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'show_date' ) ); ?>">
-					<input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'show_date' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_date' ) ); ?>" <?php checked( absint( $instance['show_date'] ), 1 ); ?> >                
-					<strong><?php esc_html_e( 'Display Date', 'orchid-store' ); ?></strong>
+					<input
+						type="checkbox"
+						id="<?php echo esc_attr( $this->get_field_id( 'show_date' ) ); ?>"
+						name="<?php echo esc_attr( $this->get_field_name( 'show_date' ) ); ?>" <?php checked( absint( $instance['show_date'] ), 1 ); ?>
+					>                
+					<strong>
+						<?php esc_html_e( 'Display Date', 'orchid-store' ); ?>
+					</strong>
 				</label>
 			</p>           
 			<?php

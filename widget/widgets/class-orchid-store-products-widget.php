@@ -394,7 +394,11 @@ if ( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
 
 			return $instance;
 		}
-
+		/**
+		 * Function to get order options
+		 *
+		 * @return array.
+		 */
 		public function get_order_options() {
 
 			return array(
@@ -402,7 +406,11 @@ if ( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
 				'DESC' => esc_html__( 'DESC', 'orchid-store' ),
 			);
 		}
-
+		/**
+		 * Function to get orderby options
+		 *
+		 * @return array.
+		 */
 		public function get_orderby_options() {
 
 			return array(
