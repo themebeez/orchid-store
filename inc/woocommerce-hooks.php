@@ -131,7 +131,9 @@ if ( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
 			</button><!-- .trigger-mini-cart -->
 			<span class="cart-amount"><?php esc_html_e( 'Total:', 'orchid-store' ); ?>
 				<span class="price">	                
-					<span class="woocommerce-Price-amount amount os-minicart-amount"><?php echo wp_kses_post( WC()->cart->get_cart_subtotal() ); ?></span>
+					<span class="woocommerce-Price-amount amount os-minicart-amount">
+						<?php echo wp_kses_post( WC()->cart->get_cart_subtotal() ); ?>
+					</span>
 				</span><!-- .price -->
 			</span><!-- .cart-amount -->
 			<?php
@@ -154,6 +156,7 @@ if ( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
 		<?php
 	}
 }
+
 add_action( 'orchid_store_mini_cart', 'orchid_store_mini_cart_action', 10 );
 
 
@@ -221,11 +224,15 @@ if ( ! function_exists( 'orchid_store_user_links_action' ) ) {
 						<?php
 						if ( is_user_logged_in() ) {
 							?>
-							<a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>"><i class='bx bx-user'></i> <?php esc_html_e( 'My account', 'orchid-store' ); ?></a>
+							<a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>">
+								<i class='bx bx-user'></i> <?php esc_html_e( 'My account', 'orchid-store' ); ?>
+							</a>
 							<?php
 						} else {
 							?>
-							<a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>"><i class='bx bx-user'></i> <?php esc_html_e( 'Login / Register', 'orchid-store' ); ?></a>
+							<a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>">
+								<i class='bx bx-user'></i> <?php esc_html_e( 'Login / Register', 'orchid-store' ); ?>
+							</a>
 							<?php
 						}
 						?>
@@ -250,7 +257,11 @@ if ( ! function_exists( 'orchid_store_user_links_action' ) ) {
 
 					if ( $wishlist_page_url ) {
 						?>
-						<li><a href="<?php echo esc_url( $wishlist_page_url ); ?>"><i class='fa fa-heart-o'></i> <?php esc_html_e( 'My Wishlist', 'orchid-store' ); ?></a></li>
+						<li>
+							<a href="<?php echo esc_url( $wishlist_page_url ); ?>">
+								<i class='fa fa-heart-o'></i> <?php esc_html_e( 'My Wishlist', 'orchid-store' ); ?>
+							</a>
+						</li>
 						<?php
 					}
 				}
@@ -1009,4 +1020,5 @@ function orchid_store_woocommerce_sale_flash( $sale_tag, $post, $product ) {
 
 	return '<span class="onsale">' . esc_html( get_theme_mod( 'orchid_store_field_sale_tag_text', esc_html__( 'Sale!', 'orchid-store' ) ) ) . '</span>';
 }
+
 add_filter( 'woocommerce_sale_flash', 'orchid_store_woocommerce_sale_flash', 10, 3 );

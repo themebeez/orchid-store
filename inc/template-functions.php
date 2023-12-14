@@ -33,7 +33,9 @@ function orchid_store_body_classes( $classes ) {
 
 	return $classes;
 }
+
 add_filter( 'body_class', 'orchid_store_body_classes' );
+
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
@@ -45,6 +47,7 @@ function orchid_store_pingback_header() {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
+
 add_action( 'wp_head', 'orchid_store_pingback_header' );
 
 
@@ -85,6 +88,7 @@ function orchid_store_post_classes( $classes ) {
 
 	return $classes;
 }
+
 add_filter( 'post_class', 'orchid_store_post_classes' );
 
 
@@ -143,7 +147,7 @@ if ( ! function_exists( 'orchid_store_content_container_class' ) ) {
 
 			$is_sticky = orchid_store_get_option( 'enable_sticky_sidebar' );
 
-			if ( true === $is_sticky && 'none' !== $sidebar_position ) {
+			if ( $is_sticky && 'none' !== $sidebar_position ) {
 
 				$container_class .= ' sticky-portion';
 			}

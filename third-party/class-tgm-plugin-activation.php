@@ -3763,7 +3763,7 @@ if ( ! class_exists( 'TGMPA_Utils' ) ) {
 	 * @package TGM-Plugin-Activation
 	 * @author  Juliette Reinders Folmer
 	 */
-	class TGMPA_Utils {
+	class TGMPA_Utils { // phpcs:ignore
 		/**
 		 * Whether the PHP filter extension is enabled.
 		 *

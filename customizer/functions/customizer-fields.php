@@ -232,7 +232,13 @@ if ( ! function_exists( 'orchid_store_section_declaration' ) ) {
 
 
 
-orchid_store_add_image_field( 'logo_mobile', esc_html__( 'Logo - For Mobile', 'orchid-store' ), '', '', 'site_logo' );
+orchid_store_add_image_field(
+	'logo_mobile',
+	esc_html__( 'Logo - For Mobile', 'orchid-store' ),
+	'',
+	'',
+	'site_logo'
+);
 $wp_customize->get_control( 'orchid_store_field_logo_mobile' )->priority = 5;
 
 
@@ -315,7 +321,13 @@ orchid_store_add_number_field(
 /*******************************************************************************************************
 ********************************** Header Control Fields Declaration *********************************
 */
-orchid_store_add_toggle_field( 'display_top_header', esc_html__( 'Display Top Header', 'orchid-store' ), '', '', 'top_header' );
+orchid_store_add_toggle_field(
+	'display_top_header',
+	esc_html__( 'Display Top Header', 'orchid-store' ),
+	'',
+	'',
+	'top_header'
+);
 
 orchid_store_add_select_field(
 	'display_menu_or_login_register_link',
@@ -341,16 +353,42 @@ orchid_store_add_sortable_repeater_field(
 /*******************************************************************************************************
 ********************************** Special Menu Control Fields Declaration *********************************
 */
-orchid_store_add_toggle_field( 'display_special_menu', esc_html__( 'Display Special Menu', 'orchid-store' ), '', '', 'special_menu' );
+orchid_store_add_toggle_field(
+	'display_special_menu',
+	esc_html__( 'Display Special Menu', 'orchid-store' ),
+	'',
+	'',
+	'special_menu'
+);
 
-orchid_store_add_text_field( 'special_menu_title', esc_html__( 'Special Menu Title', 'orchid-store' ), '', 'orchid_store_active_special_menu', 'special_menu' );
+orchid_store_add_text_field(
+	'special_menu_title',
+	esc_html__( 'Special Menu Title', 'orchid-store' ),
+	'',
+	'orchid_store_active_special_menu',
+	'special_menu'
+);
 
 
 /*******************************************************************************************************
 ********************************** Page Header Control Fields Declaration *********************************
 */
-orchid_store_add_toggle_field( 'display_page_header', esc_html__( 'Display Page Header', 'orchid-store' ), '', '', 'page_header' );
-orchid_store_add_toggle_field( 'display_breadcrumb', esc_html__( 'Display Breadcrumbs', 'orchid-store' ), '', '', 'page_header' );
+orchid_store_add_toggle_field(
+	'display_page_header',
+	esc_html__( 'Display Page Header', 'orchid-store' ),
+	'',
+	'',
+	'page_header'
+);
+
+orchid_store_add_toggle_field(
+	'display_breadcrumb',
+	esc_html__( 'Display Breadcrumbs', 'orchid-store' ),
+	'',
+	'',
+	'page_header'
+);
+
 orchid_store_add_toggle_field(
 	'display_page_title',
 	esc_html__( 'Display Page Title', 'orchid-store' ),
@@ -358,13 +396,27 @@ orchid_store_add_toggle_field(
 	'',
 	'page_header'
 );
-orchid_store_add_toggle_field( 'enable_parallax_page_header_background', esc_html__( 'Enable Parallax Background Image', 'orchid-store' ), '', 'orchid_store_is_page_header_enabled', 'page_header' );
+
+orchid_store_add_toggle_field(
+	'enable_parallax_page_header_background',
+	esc_html__( 'Enable Parallax Background Image', 'orchid-store' ),
+	'',
+	'orchid_store_is_page_header_enabled',
+	'page_header'
+);
 
 
 /*******************************************************************************************************
 ********************************** WooCommerce  Elements Control Fields Declaration *********************************
 */
-orchid_store_add_toggle_field( 'display_product_search_form', esc_html__( 'Display Search Form', 'orchid-store' ), '', '', 'product_search' );
+orchid_store_add_toggle_field(
+	'display_product_search_form',
+	esc_html__( 'Display Search Form', 'orchid-store' ),
+	'',
+	'',
+	'product_search'
+);
+
 if ( class_exists( 'WooCommerce' ) ) {
 	orchid_store_add_select_field(
 		'select_search_form',
@@ -387,7 +439,13 @@ if ( class_exists( 'WooCommerce' ) ) {
 		'product_search'
 	);
 }
-orchid_store_add_toggle_field( 'display_product_search_form_on_mobile', esc_html__( 'Display Search Form On Mobile Devices', 'orchid-store' ), '', 'orchid_store_is_product_search_form_enabled', 'product_search' );
+orchid_store_add_toggle_field(
+	'display_product_search_form_on_mobile',
+	esc_html__( 'Display Search Form On Mobile Devices', 'orchid-store' ),
+	'',
+	'orchid_store_is_product_search_form_enabled',
+	'product_search'
+);
 
 if ( class_exists( 'WooCommerce' ) ) {
 

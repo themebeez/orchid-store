@@ -32,12 +32,13 @@ add_action( 'orchid_store_header', 'orchid_store_header_action', 10 );
 
 
 if ( ! function_exists( 'orchid_store_desktop_header_template' ) ) {
-	
+
 	function orchid_store_desktop_header_template() {
 
 		get_template_part( 'template-parts/header/header', 'one' );
 	}
 }
+
 add_action( 'orchid_store_desktop_header', 'orchid_store_desktop_header_template' );
 
 
@@ -48,6 +49,7 @@ if ( ! function_exists( 'orchid_store_mobile_header_template' ) ) {
 		get_template_part( 'template-parts/header/header', 'mobile' );
 	}
 }
+
 add_action( 'orchid_store_mobile_header', 'orchid_store_mobile_header_template' );
 
 
@@ -70,6 +72,7 @@ if ( ! function_exists( 'orchid_store_top_header_menu_action' ) ) {
 		}
 	}
 }
+
 add_action( 'orchid_store_top_header_menu', 'orchid_store_top_header_menu_action', 10 );
 
 
@@ -88,6 +91,7 @@ if ( ! function_exists( 'orchid_store_secondary_navigation_action' ) ) {
 		);
 	}
 }
+
 add_action( 'orchid_store_secondary_navigation', 'orchid_store_secondary_navigation_action', 10 );
 
 
@@ -130,7 +134,9 @@ if ( ! function_exists( 'orchid_store_desktop_site_identity_action' ) ) {
 				$site_description = get_bloginfo( 'description', 'display' );
 				if ( $site_description || is_customize_preview() ) {
 					?>
-					<p class="site-description"><?php echo esc_html( $site_description ); // phpcs:ignore. ?></p> 
+					<p class="site-description">
+						<?php echo esc_html( $site_description ); ?>
+					</p> 
 					<?php
 				}
 			}
@@ -139,6 +145,7 @@ if ( ! function_exists( 'orchid_store_desktop_site_identity_action' ) ) {
 		<?php
 	}
 }
+
 add_action( 'orchid_store_desktop_site_identity', 'orchid_store_desktop_site_identity_action', 10 );
 
 
@@ -201,6 +208,7 @@ if ( ! function_exists( 'orchid_store_mobile_site_identity_action' ) ) {
 		<?php
 	}
 }
+
 add_action( 'orchid_store_mobile_site_identity', 'orchid_store_mobile_site_identity_action', 10 );
 
 
@@ -237,6 +245,7 @@ if ( ! function_exists( 'orchid_store_post_author_action' ) ) {
 		}
 	}
 }
+
 add_action( 'orchid_store_post_author', 'orchid_store_post_author_action', 10 );
 
 
@@ -246,7 +255,9 @@ if ( ! function_exists( 'orchid_store_post_date_action' ) ) {
 
 		if ( 'post' === get_post_type() ) {
 			?>
-			<li class="posted-date"><?php orchid_store_posted_on(); ?></li>
+			<li class="posted-date">
+				<?php orchid_store_posted_on(); ?>
+			</li>
 			<?php
 		}
 	}
@@ -267,6 +278,7 @@ if ( ! function_exists( 'orchid_store_post_categories_action' ) ) {
 		}
 	}
 }
+
 add_action( 'orchid_store_post_categories', 'orchid_store_post_categories_action', 10 );
 
 
@@ -277,6 +289,7 @@ if ( ! function_exists( 'orchid_store_post_tags_action' ) ) {
 		orchid_store_post_tags_list();
 	}
 }
+
 add_action( 'orchid_store_post_tags', 'orchid_store_post_tags_action', 10 );
 
 
@@ -290,6 +303,7 @@ if ( ! function_exists( 'orchid_store_excerpt_action' ) ) {
 		<?php
 	}
 }
+
 add_action( 'orchid_store_excerpt', 'orchid_store_excerpt_action', 10 );
 
 
@@ -313,6 +327,7 @@ if ( ! function_exists( 'orchid_store_pagination_action' ) ) {
 		<?php
 	}
 }
+
 add_action( 'orchid_store_pagination', 'orchid_store_pagination_action' );
 
 
@@ -331,7 +346,9 @@ if ( ! function_exists( 'orchid_store_post_navigation_action' ) ) {
 					if ( ! empty( $previous_post ) ) {
 						?>
 						<span><?php esc_html_e( 'Prev post', 'orchid-store' ); ?></span>
-						<a href="<?php echo esc_url( get_permalink( $previous_post->ID ) ); ?>"><?php echo esc_html( $previous_post->post_title ); ?></a>
+						<a href="<?php echo esc_url( get_permalink( $previous_post->ID ) ); ?>">
+							<?php echo esc_html( $previous_post->post_title ); ?>
+						</a>
 						<?php
 					}
 					?>
@@ -341,7 +358,9 @@ if ( ! function_exists( 'orchid_store_post_navigation_action' ) ) {
 					if ( ! empty( $next_post ) ) {
 						?>
 						<span><?php esc_html_e( 'Next post', 'orchid-store' ); ?></span>
-						<a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>"><?php echo esc_html( $next_post->post_title ); ?></a>
+						<a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>">
+							<?php echo esc_html( $next_post->post_title ); ?>
+						</a>
 						<?php
 					}
 					?>
@@ -351,6 +370,7 @@ if ( ! function_exists( 'orchid_store_post_navigation_action' ) ) {
 		<?php
 	}
 }
+
 add_action( 'orchid_store_post_navigation', 'orchid_store_post_navigation_action', 10 );
 
 
@@ -379,6 +399,7 @@ if ( ! function_exists( 'orchid_store_large_thumbnail_action' ) ) {
 		}
 	}
 }
+
 add_action( 'orchid_store_large_thumbnail', 'orchid_store_large_thumbnail_action', 10 );
 
 
@@ -431,6 +452,7 @@ if ( ! function_exists( 'orchid_store_footer_left_action' ) ) {
 		<?php
 	}
 }
+
 add_action( 'orchid_store_footer_left', 'orchid_store_footer_left_action', 10 );
 
 if ( ! function_exists( 'orchid_store_footer_right_action' ) ) {
@@ -447,6 +469,7 @@ if ( ! function_exists( 'orchid_store_footer_right_action' ) ) {
 		}
 	}
 }
+
 add_action( 'orchid_store_footer_right', 'orchid_store_footer_right_action', 10 );
 
 
@@ -518,6 +541,7 @@ if ( ! function_exists( 'orchid_store_title_breadcrumb_action' ) ) {
 		}
 	}
 }
+
 add_action( 'orchid_store_title_breadcrumb', 'orchid_store_title_breadcrumb_action', 10 );
 
 
@@ -541,4 +565,5 @@ if ( ! function_exists( 'orchid_store_default_search_action' ) ) {
 		<?php
 	}
 }
+
 add_action( 'orchid_store_default_search', 'orchid_store_default_search_action', 10 );

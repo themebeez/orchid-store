@@ -329,23 +329,23 @@ if ( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) {
 
 			$instance = $old_instance;
 
-			$instance['title'] = sanitize_text_field( $new_instance['title'] );
+			$instance['title'] = isset( $new_instance['title'] ) ? sanitize_text_field( $new_instance['title'] ) : '';
 
-			$instance['show_offer_contents'] = isset( $new_instance['show_offer_contents'] ) ? true : false;
+			$instance['show_offer_contents'] = isset( $new_instance['show_offer_contents'] ) ? true : true;
 
-			$instance['offer_title'] = sanitize_text_field( $new_instance['offer_title'] );
+			$instance['offer_title'] = isset( $new_instance['offer_title'] ) ? sanitize_text_field( $new_instance['offer_title'] ) : '';
 
-			$instance['offer_text'] = sanitize_text_field( $new_instance['offer_text'] );
+			$instance['offer_text'] = isset( $new_instance['offer_text'] ) ? sanitize_text_field( $new_instance['offer_text'] ) : '';
 
-			$instance['button_title'] = sanitize_text_field( $new_instance['button_title'] );
+			$instance['button_title'] = isset( $new_instance['button_title'] ) ? sanitize_text_field( $new_instance['button_title'] ) : '';
 
-			$instance['button_link'] = esc_url_raw( $new_instance['button_link'] );
+			$instance['button_link'] = isset( $new_instance['button_link'] ) ? esc_url_raw( $new_instance['button_link'] ) : '';
 
-			$instance['content_alignment'] = sanitize_text_field( $new_instance['content_alignment'] );
+			$instance['content_alignment'] = isset( $new_instance['content_alignment'] ) ? sanitize_text_field( $new_instance['content_alignment'] ) : 'left';
 
-			$instance['offer_image'] = esc_url_raw( $new_instance['offer_image'] );
+			$instance['offer_image'] = isset( $new_instance['offer_image'] ) ? esc_url_raw( $new_instance['offer_image'] ) : '';
 
-			$instance['set_image_in_background'] = isset( $new_instance['set_image_in_background'] ) ? true : false;
+			$instance['set_image_in_background'] = isset( $new_instance['set_image_in_background'] ) ? $new_instance['set_image_in_background'] : true;
 
 			return $instance;
 		}

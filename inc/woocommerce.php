@@ -22,6 +22,7 @@ function orchid_store_woocommerce_setup() {
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
 }
+
 add_action( 'after_setup_theme', 'orchid_store_woocommerce_setup' );
 
 /**
@@ -45,7 +46,9 @@ function orchid_store_woocommerce_scripts() {
 
 	wp_add_inline_style( 'orchid-store-woocommerce-style', $inline_font );
 }
+
 add_action( 'wp_enqueue_scripts', 'orchid_store_woocommerce_scripts' );
+
 
 /**
  * Add 'woocommerce-active' class to the body tag.
@@ -59,7 +62,9 @@ function orchid_store_woocommerce_active_body_class( $classes ) {
 
 	return $classes;
 }
+
 add_filter( 'body_class', 'orchid_store_woocommerce_active_body_class' );
+
 
 /**
  * Products per page.
@@ -76,7 +81,9 @@ function orchid_store_woocommerce_products_per_page() {
 
 	return $items;
 }
+
 add_filter( 'loop_shop_per_page', 'orchid_store_woocommerce_products_per_page', 20 );
+
 
 /**
  * Product gallery thumnbail columns.
@@ -87,7 +94,9 @@ function orchid_store_woocommerce_thumbnail_columns() {
 
 	return 4;
 }
+
 add_filter( 'woocommerce_product_thumbnails_columns', 'orchid_store_woocommerce_thumbnail_columns' );
+
 
 /**
  * Default loop columns on product archives.
@@ -100,7 +109,9 @@ function orchid_store_woocommerce_loop_columns() {
 
 	return $no_of_cols;
 }
+
 add_filter( 'loop_shop_columns', 'orchid_store_woocommerce_loop_columns' );
+
 
 /**
  * Related Products Args.
@@ -119,7 +130,9 @@ function orchid_store_woocommerce_related_products_args( $args ) {
 
 	return $args;
 }
+
 add_filter( 'woocommerce_output_related_products_args', 'orchid_store_woocommerce_related_products_args' );
+
 
 if ( ! function_exists( 'orchid_store_woocommerce_product_columns_wrapper' ) ) {
 	/**
@@ -134,7 +147,9 @@ if ( ! function_exists( 'orchid_store_woocommerce_product_columns_wrapper' ) ) {
 		echo '<div class="columns-' . absint( $columns ) . '">';
 	}
 }
+
 add_action( 'woocommerce_before_shop_loop', 'orchid_store_woocommerce_product_columns_wrapper', 40 );
+
 
 if ( ! function_exists( 'orchid_store_woocommerce_product_columns_wrapper_close' ) ) {
 	/**
@@ -154,13 +169,12 @@ add_action( 'woocommerce_after_shop_loop', 'orchid_store_woocommerce_product_col
  * Sample implementation of the WooCommerce Mini Cart.
  *
  * You can add the WooCommerce Mini Cart to header.php like so ...
- *
-	<?php
-		if ( function_exists( 'orchid_store_woocommerce_header_cart' ) ) {
-			orchid_store_woocommerce_header_cart();
-		}
-	?>
  */
+
+if ( function_exists( 'orchid_store_woocommerce_header_cart' ) ) {
+	orchid_store_woocommerce_header_cart();
+}
+
 
 if ( ! function_exists( 'orchid_store_woocommerce_cart_link_fragment' ) ) {
 	/**
@@ -180,7 +194,9 @@ if ( ! function_exists( 'orchid_store_woocommerce_cart_link_fragment' ) ) {
 		return $fragments;
 	}
 }
+
 add_filter( 'woocommerce_add_to_cart_fragments', 'orchid_store_woocommerce_cart_link_fragment' );
+
 
 if ( ! function_exists( 'orchid_store_woocommerce_cart_link' ) ) {
 	/**
@@ -256,7 +272,9 @@ if ( ! function_exists( 'orchid_store_add_to_cart_fragments' ) ) {
 		return $fragments;
 	}
 }
+
 add_filter( 'woocommerce_add_to_cart_fragments', 'orchid_store_add_to_cart_fragments' );
+
 
 /**
  * Defining custom hooks from woocommerce functions
