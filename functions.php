@@ -363,7 +363,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 /**
  * Load breadcrumb trails.
  */
-require get_template_directory() . '/third-party/breadcrumbs.php';
+require get_template_directory() . '/third-party/class-orchid-store-breadcrumb-trail.php';
 
 /**
  * Load TGM plugin activation.

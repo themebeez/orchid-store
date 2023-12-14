@@ -41,6 +41,25 @@ if ( ! function_exists( 'orchid_store_lite_fonts_url' ) ) {
 	}
 }
 
+/**
+ * Shows a breadcrumb for all types of pages.  This is a wrapper function for the Breadcrumb_Trail class,
+ * which should be used in theme templates.
+ *
+ * @since  0.1.0
+ * @access public
+ * @param  array $args Arguments to pass to Breadcrumb_Trail.
+ */
+function orchid_store_breadcrumb_trail( $args = array() ) {
+
+	$breadcrumb = apply_filters( 'breadcrumb_trail_object', null, $args );
+
+	if ( ! is_object( $breadcrumb ) ) {
+		$breadcrumb = new orchid_store_Breadcrumb_Trail( $args );
+	}
+
+	return $breadcrumb->trail();
+}
+
 
 if ( ! function_exists( 'orchid_store_navigation_fallback' ) ) {
 	/**
