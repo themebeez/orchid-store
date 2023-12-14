@@ -1,4 +1,4 @@
-<?php // phpcs:ignore
+<?php
 /**
  * Breadcrumb Trail - A breadcrumb menu script for WordPress.
  *
@@ -23,31 +23,12 @@
  */
 
 /**
- * Shows a breadcrumb for all types of pages.  This is a wrapper function for the Breadcrumb_Trail class,
- * which should be used in theme templates.
- *
- * @since  0.1.0
- * @access public
- * @param  array $args Arguments to pass to Breadcrumb_Trail.
- */
-function orchid_store_breadcrumb_trail( $args = array() ) {
-
-	$breadcrumb = apply_filters( 'breadcrumb_trail_object', null, $args );
-
-	if ( ! is_object( $breadcrumb ) ) {
-		$breadcrumb = new Orchid_Store_Breadcrumb_Trail( $args );
-	}
-
-	return $breadcrumb->trail();
-}
-
-/**
  * Creates a breadcrumbs menu for the site based on the current page that's being viewed by the user.
  *
  * @since  0.6.0
  * @access public
  */
-class Orchid_Store_Breadcrumb_Trail { // phpcs:ignore
+class Orchid_Store_Breadcrumb_Trail {
 
 	/**
 	 * Array of items belonging to the current breadcrumb trail.
@@ -105,7 +86,21 @@ class Orchid_Store_Breadcrumb_Trail { // phpcs:ignore
 	 *
 	 * @since  0.6.0
 	 * @access public
-	 * @param  array $args control array.
+	 * @param  array $args  {.
+	 *     @type string    $container      Container HTML element. nav|div.
+	 *     @type string    $before         String to output before breadcrumb menu.
+	 *     @type string    $after          String to output after breadcrumb menu.
+	 *     @type string    $browse_tag     The HTML tag to use to wrap the "Browse" header text.
+	 *     @type string    $list_tag       The HTML tag to use for the list wrapper.
+	 *     @type string    $item_tag       The HTML tag to use for the item wrapper.
+	 *     @type bool      $show_on_front  Whether to show when `is_front_page()`.
+	 *     @type bool      $network        Whether to link to the network main site (multisite only).
+	 *     @type bool      $show_title     Whether to show the title (last item) in the trail.
+	 *     @type bool      $show_browse    Whether to show the breadcrumb menu header.
+	 *     @type array     $labels         Text labels. @see Breadcrumb_Trail::set_labels()
+	 *     @type array     $post_taxonomy  Taxonomies to use for post types. @see Breadcrumb_Trail::set_post_taxonomy()
+	 *     @type bool      $echo           Whether to print or return the breadcrumbs.
+	 * }
 	 * @return void
 	 */
 	public function __construct( $args = array() ) {
@@ -147,6 +142,8 @@ class Orchid_Store_Breadcrumb_Trail { // phpcs:ignore
 	 * @return string
 	 */
 	public function trail() {
+
+		global $wp;
 
 		// Set up variables that we'll need.
 		$breadcrumb    = '';
@@ -191,13 +188,14 @@ class Orchid_Store_Breadcrumb_Trail { // phpcs:ignore
 				// Wrap the item with its itemprop.
 				$item = ! empty( $matches )
 					? preg_replace( '/(<a.*?)([\'"])>/i', '$1$2 itemprop=$2item$2>', $item )
-					: sprintf( '<a href="#" itemprop="item">%s</a>', $item );
+					: sprintf( '<a href="%1$s" itemprop="item">%2$s</a>', home_url( add_query_arg( array(), $wp->request ) ), $item );
 
 				// Add list item classes.
 				$item_class = 'trail-item';
 
 				if ( 1 === $item_position && 1 < $item_count ) {
 					$item_class .= ' trail-begin';
+
 				} elseif ( $item_count === $item_position ) {
 					$item_class .= ' trail-end';
 				}
@@ -233,7 +231,7 @@ class Orchid_Store_Breadcrumb_Trail { // phpcs:ignore
 			return $breadcrumb;
 		}
 
-		echo wp_kses_post( $breadcrumb );
+		echo $breadcrumb; // phpcs:ignore
 	}
 
 	/* ====== Protected Methods ====== */
@@ -721,7 +719,7 @@ class Orchid_Store_Breadcrumb_Trail { // phpcs:ignore
 
 		// Add the minute + hour item.
 		if ( true === $this->args['show_title'] ) {
-			$this->items[] = sprintf( $this->labels['archive_minute_hour'], get_the_time( esc_html_x( 'g:i a', 'minute and hour archives time format', 'orchid-store' ) ) );
+			$this->items[] = sprintf( $this->labels['archive_minute_hour'], get_the_time( esc_html_x( 'g:i a', 'minute and hour archives time format', 'cream-blog-pro' ) ) );
 		}
 	}
 
@@ -739,7 +737,7 @@ class Orchid_Store_Breadcrumb_Trail { // phpcs:ignore
 
 		// Add the minute item.
 		if ( true === $this->args['show_title'] ) {
-			$this->items[] = sprintf( $this->labels['archive_minute'], get_the_time( esc_html_x( 'i', 'minute archives time format', 'orchid-store' ) ) );
+			$this->items[] = sprintf( $this->labels['archive_minute'], get_the_time( esc_html_x( 'i', 'minute archives time format', 'cream-blog-pro' ) ) );
 		}
 	}
 
@@ -757,7 +755,7 @@ class Orchid_Store_Breadcrumb_Trail { // phpcs:ignore
 
 		// Add the hour item.
 		if ( true === $this->args['show_title'] ) {
-			$this->items[] = sprintf( $this->labels['archive_hour'], get_the_time( esc_html_x( 'g a', 'hour archives time format', 'orchid-store' ) ) );
+			$this->items[] = sprintf( $this->labels['archive_hour'], get_the_time( esc_html_x( 'g a', 'hour archives time format', 'cream-blog-pro' ) ) );
 		}
 	}
 
@@ -774,9 +772,9 @@ class Orchid_Store_Breadcrumb_Trail { // phpcs:ignore
 		$this->add_rewrite_front_items();
 
 		// Get year, month, and day.
-		$year  = sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'orchid-store' ) ) );
-		$month = sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'orchid-store' ) ) );
-		$day   = sprintf( $this->labels['archive_day'], get_the_time( esc_html_x( 'j', 'daily archives date format', 'orchid-store' ) ) );
+		$year  = sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'cream-blog-pro' ) ) );
+		$month = sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'cream-blog-pro' ) ) );
+		$day   = sprintf( $this->labels['archive_day'], get_the_time( esc_html_x( 'j', 'daily archives date format', 'cream-blog-pro' ) ) );
 
 		// Add the year and month items.
 		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
@@ -804,8 +802,8 @@ class Orchid_Store_Breadcrumb_Trail { // phpcs:ignore
 		$this->add_rewrite_front_items();
 
 		// Get the year and week.
-		$year = sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'orchid-store' ) ) );
-		$week = sprintf( $this->labels['archive_week'], get_the_time( esc_html_x( 'W', 'weekly archives date format', 'orchid-store' ) ) );
+		$year = sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'cream-blog-pro' ) ) );
+		$week = sprintf( $this->labels['archive_week'], get_the_time( esc_html_x( 'W', 'weekly archives date format', 'cream-blog-pro' ) ) );
 
 		// Add the year item.
 		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
@@ -844,8 +842,8 @@ class Orchid_Store_Breadcrumb_Trail { // phpcs:ignore
 		$this->add_rewrite_front_items();
 
 		// Get the year and month.
-		$year  = sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'orchid-store' ) ) );
-		$month = sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'orchid-store' ) ) );
+		$year  = sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'cream-blog-pro' ) ) );
+		$month = sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'cream-blog-pro' ) ) );
 
 		// Add the year item.
 		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
@@ -872,7 +870,7 @@ class Orchid_Store_Breadcrumb_Trail { // phpcs:ignore
 		$this->add_rewrite_front_items();
 
 		// Get the year.
-		$year = sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'orchid-store' ) ) );
+		$year = sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'cream-blog-pro' ) ) );
 
 		// Add the year item.
 		if ( is_paged() ) {
@@ -1040,6 +1038,7 @@ class Orchid_Store_Breadcrumb_Trail { // phpcs:ignore
 	 * @since  0.6.0
 	 * @access protected
 	 * @param  int $slug  The post type archive slug to search for.
+	 * @return array
 	 */
 	protected function get_post_types_by_slug( $slug ) {
 
@@ -1221,12 +1220,12 @@ class Orchid_Store_Breadcrumb_Trail { // phpcs:ignore
 
 				// If using the %year% tag, add a link to the yearly archive.
 				if ( '%year%' === $tag ) {
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y', $post_id ) ) ), sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'orchid-store' ) ) ) );
+					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y', $post_id ) ) ), sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'cream-blog-pro' ) ) ) );
 				} elseif ( '%monthnum%' === $tag ) { // If using the %monthnum% tag, add a link to the monthly archive.
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_month_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ) ) ), sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'orchid-store' ) ) ) );
+					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_month_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ) ) ), sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'cream-blog-pro' ) ) ) );
 				} elseif ( '%day%' === $tag ) { // If using the %day% tag, add a link to the daily archive.
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_day_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ), get_the_time( 'd', $post_id ) ) ), sprintf( $this->labels['archive_day'], get_the_time( esc_html_x( 'j', 'daily archives date format', 'orchid-store' ) ) ) );
-				} elseif ( '%author%' === $tag ) { // If using the %author% tag, add a link to the post author archive.
+					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_day_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ), get_the_time( 'd', $post_id ) ) ), sprintf( $this->labels['archive_day'], get_the_time( esc_html_x( 'j', 'daily archives date format', 'cream-blog-pro' ) ) ) );
+				} elseif ( '%author%' === $tag ) {
 					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_author_posts_url( $post->post_author ) ), get_the_author_meta( 'display_name', $post->post_author ) );
 				} elseif ( taxonomy_exists( trim( $tag, '%' ) ) ) { // If using the %category% tag, add a link to the first category archive to match permalinks.
 
