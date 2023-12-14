@@ -234,73 +234,92 @@ if ( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
 					<strong><?php esc_html_e( 'Title', 'orchid-store' ); ?></strong>
 				</label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />   
+				<input
+					class="widefat"
+					id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
+					name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
+					type="text"
+					value="<?php echo esc_attr( $instance['title'] ); ?>"
+				/>   
 			</p>
 
 			<p>
-				<span class="sldr-elmnt-title"><strong><?php esc_html_e( 'Product Categories', 'orchid-store' ); ?></strong></span>
-				<span class="sldr-elmnt-desc"><?php esc_html_e( 'Below are the list of product categories. Check on a category to set is as a filter item.', 'orchid-store' ); ?></span>
+				<span class="sldr-elmnt-title">
+					<strong><?php esc_html_e( 'Product Categories', 'orchid-store' ); ?></strong>
+				</span>
+				<span class="sldr-elmnt-desc">
+					<?php esc_html_e( 'Below are the list of product categories. Check on a category to set is as a filter item.', 'orchid-store' ); ?>
+				</span>
 
 				<span class="widget_multicheck">
-				<?php
+					<?php
 
-				$product_categories = orchid_store_all_product_categories();
+					$product_categories = orchid_store_all_product_categories();
 
-				if ( ! empty( $product_categories ) ) {
+					if ( ! empty( $product_categories ) ) {
 
-					if ( 'slug' === $this->value_as ) {
+						if ( 'slug' === $this->value_as ) {
 
-						foreach ( $product_categories as $product_category ) {
-							?>
-							<span class="sldr-elmnt-cntnr">
-								<label for="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>">
-									<input id="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'product_categories' ) ); ?>[]" type="checkbox" value="<?php echo esc_attr( $product_category->slug ); ?>" 
-															<?php
-															if ( ! empty( $instance['product_categories'] ) ) {
-																if ( in_array( $product_category->slug, $instance['product_categories'], true ) ) {
-																	?>
-										checked
-																	<?php
+							foreach ( $product_categories as $product_category ) {
+								?>
+								<span class="sldr-elmnt-cntnr">
+									<label for="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>">
+										<input id="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'product_categories' ) ); ?>[]" type="checkbox" value="<?php echo esc_attr( $product_category->slug ); ?>" 
+																<?php
+																if ( ! empty( $instance['product_categories'] ) ) {
+																	if ( in_array( $product_category->slug, $instance['product_categories'], true ) ) {
+																		?>
+											checked
+																		<?php
+																	}
 																}
-															}
-															?>
-									>
-									<strong><?php echo esc_html( $product_category->name ); ?></strong>
-								</label>
+																?>
+										>
+										<strong><?php echo esc_html( $product_category->name ); ?></strong>
+									</label>
 
-							</span><!-- .sldr-elmnt-cntnr -->
-							<?php
+								</span><!-- .sldr-elmnt-cntnr -->
+								<?php
+							}
+						} else {
+							foreach ( $product_categories as $product_category ) {
+								?>
+								<span class="sldr-elmnt-cntnr">
+									<label for="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>">
+										<input
+											id="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>"
+											name="<?php echo esc_attr( $this->get_field_name( 'product_categories' ) ); ?>[]"
+											type="checkbox"
+											value="<?php echo esc_attr( $product_category->term_id ); ?>" 
+											<?php
+											if ( ! empty( $instance['product_categories'] ) ) {
+												if ( in_array( $product_category->term_id, $instance['product_categories'], true ) ) {
+													?>
+													checked
+													<?php
+												}
+											}
+											?>
+										>
+										<strong><?php echo esc_html( $product_category->name ); ?></strong>
+									</label>
+
+								</span><!-- .sldr-elmnt-cntnr -->
+								<?php
+							}
 						}
 					} else {
-						foreach ( $product_categories as $product_category ) {
-							?>
-							<span class="sldr-elmnt-cntnr">
-								<label for="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>">
-									<input id="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'product_categories' ) ); ?>[]" type="checkbox" value="<?php echo esc_attr( $product_category->term_id ); ?>" 
-															<?php
-															if ( ! empty( $instance['product_categories'] ) ) {
-																if ( in_array( $product_category->term_id, $instance['product_categories'], true ) ) {
-																	?>
-										checked
-																	<?php
-																}
-															}
-															?>
-									>
-									<strong><?php echo esc_html( $product_category->name ); ?></strong>
-								</label>
-
-							</span><!-- .sldr-elmnt-cntnr -->
-							<?php
-						}
+						?>
+						<input
+							id="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) ); ?>"
+							name="<?php echo esc_attr( $this->get_field_name( 'product_categories' ) ); ?>"
+							type="hidden"
+							value="" checked
+						>
+						<small><?php echo esc_html__( 'There are no product categories to select.', 'orchid-store' ); ?></small>
+						<?php
 					}
-				} else {
 					?>
-					<input id="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'product_categories' ) ); ?>" type="hidden" value="" checked>
-					<small><?php echo esc_html__( 'There are no product categories to select.', 'orchid-store' ); ?></small>
-					<?php
-				}
-				?>
 				</span>
 			</p>
 
@@ -308,18 +327,30 @@ if ( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 				<label for="<?php echo esc_attr( $this->get_field_name( 'no_of_products' ) ); ?>">
 					<strong><?php esc_html_e( 'Number of Products For Each Category', 'orchid-store' ); ?></strong>
 				</label>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'no_of_products' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'no_of_products' ) ); ?>" type="number" value="<?php echo esc_attr( absint( $instance['no_of_products'] ) ); ?>" />   
+				<input
+					class="widefat"
+					id="<?php echo esc_attr( $this->get_field_id( 'no_of_products' ) ); ?>"
+					name="<?php echo esc_attr( $this->get_field_name( 'no_of_products' ) ); ?>"
+					type="number"
+					value="<?php echo esc_attr( absint( $instance['no_of_products'] ) ); ?>"
+				/>   
 			</p>
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'hide_out_of_stock_products' ) ); ?>">
-					<input id="<?php echo esc_attr( $this->get_field_id( 'hide_out_of_stock_products' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'hide_out_of_stock_products' ) ); ?>" type="checkbox" <?php checked( true, $instance['hide_out_of_stock_products'] ); ?> />  
+					<input
+						id="<?php echo esc_attr( $this->get_field_id( 'hide_out_of_stock_products' ) ); ?>"
+						name="<?php echo esc_attr( $this->get_field_name( 'hide_out_of_stock_products' ) ); ?>"
+						type="checkbox" <?php checked( true, $instance['hide_out_of_stock_products'] ); ?>
+					/>  
 					<strong><?php esc_html_e( 'Hide Products Out of Stock', 'orchid-store' ); ?></strong>
 				</label>                 
 			</p>
 
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php echo esc_html__( 'Order', 'orchid-store' ); ?></label>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>">
+					<?php echo esc_html__( 'Order', 'orchid-store' ); ?>
+				</label>
 				<select id="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'order' ) ); ?>" class="widefat">
 					<?php foreach ( $this->get_order_options() as $value => $label ) { ?>
 						<option 
@@ -376,7 +407,11 @@ if ( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 
 			return $instance;
 		}
-
+		/**
+		 * Function to get order options
+		 *
+		 * @return array.
+		 */
 		public function get_order_options() {
 
 			return array(
@@ -384,7 +419,11 @@ if ( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 				'DESC' => esc_html__( 'DESC', 'orchid-store' ),
 			);
 		}
-
+		/**
+		 * Function to get orderby options
+		 *
+		 * @return array.
+		 */
 		public function get_orderby_options() {
 
 			return array(

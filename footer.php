@@ -79,7 +79,11 @@
 	<?php
 	if ( orchid_store_get_option( 'display_scroll_top_button' ) ) {
 		?>
-		<div class="orchid-backtotop"><span><i class="bx bx-chevron-up"></i></span></div>
+		<div class="orchid-backtotop">
+			<span>
+				<i class="bx bx-chevron-up"></i>
+			</span>
+		</div>
 		<?php
 	}
 	?>

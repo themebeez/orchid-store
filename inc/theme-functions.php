@@ -42,11 +42,10 @@ if ( ! function_exists( 'orchid_store_lite_fonts_url' ) ) {
 }
 
 
-/**
- * Fallback For Main Menu
- */
 if ( ! function_exists( 'orchid_store_navigation_fallback' ) ) {
-
+	/**
+	 * Fallback For Main Menu
+	 */
 	function orchid_store_navigation_fallback() {
 		?>
 		<ul class="primary-menu">
@@ -63,11 +62,11 @@ if ( ! function_exists( 'orchid_store_navigation_fallback' ) ) {
 	}
 }
 
-/**
- * Fallback For Special Menu
- */
-if ( ! function_exists( 'orchid_store_special_menu_fallback' ) ) {
 
+if ( ! function_exists( 'orchid_store_special_menu_fallback' ) ) {
+	/**
+	 * Fallback For Special Menu
+	 */
 	function orchid_store_special_menu_fallback() {
 
 		if ( ! class_exists( 'WooCommerce' ) ) {
@@ -105,11 +104,12 @@ if ( ! function_exists( 'orchid_store_special_menu_fallback' ) ) {
 }
 
 
-/**
- * Function to get post thumbnail alt text value.
- */
 if ( ! function_exists( 'orchid_store_thumbnail_alt_text' ) ) {
-
+	/**
+	 * Function to get post thumbnail alt text value.
+	 *
+	 * @param int $post_id post id.
+	 */
 	function orchid_store_thumbnail_alt_text( $post_id ) {
 
 		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
@@ -132,7 +132,11 @@ if ( ! function_exists( 'orchid_store_thumbnail_alt_text' ) ) {
 }
 
 if ( ! function_exists( 'orchid_store_sidebar_position' ) ) {
-
+	/**
+	 * Function to position sidebar according to the customization value.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_sidebar_position() {
 
 		$sidebar_position = '';
@@ -267,11 +271,24 @@ if ( ! function_exists( 'orchid_store_search_form' ) ) {
 	/**
 	 * Search form of the theme.
 	 *
+	 * @param string $form form element.
+	 * @return string
 	 * @since 1.0.0
 	 */
 	function orchid_store_search_form( $form ) {
 
-		$form = '<form role="search" method="get" id="search-form" class="search-form" action="' . esc_url( home_url( '/' ) ) . '"><label class="screen-reader-text" for="s">' . esc_html__( 'Search for:', 'orchid-store' ) . '</label><input type="search" name="s" placeholder="' . esc_html_x( 'Type here to search', 'placeholder', 'orchid-store' ) . '" value="' . get_search_query() . '"><button type="submit"><i class="bx bx-search"></i></button></form>';
+		$form = '<form role="search" method="get" id="search-form" class="search-form" action="' . esc_url( home_url( '/' ) ) . '">
+					<label class="screen-reader-text" for="s">' . esc_html__( 'Search for:', 'orchid-store' ) . '</label>
+					<input 
+						type="search" 
+						name="s" 
+						placeholder="' . esc_html_x( 'Type here to search', 'placeholder', 'orchid-store' ) . '"
+						value="' . get_search_query() . '"
+					>
+					<button type="submit">
+						<i class="bx bx-search"></i>
+					</button>
+				</form>';
 
 		return $form;
 	}

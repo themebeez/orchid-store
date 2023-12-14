@@ -292,9 +292,9 @@ add_action( 'wp_ajax_wp_ajax_install_plugin', 'wp_ajax_install_plugin' );
 
 
 /**
- * Activates plugin AFC plugin.
+ * Activates AFC plugin.
  *
- * @since 1.4.2
+ * @since 1.0.0
  */
 function orchid_store_activate_plugin() {
 

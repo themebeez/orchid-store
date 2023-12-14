@@ -223,6 +223,9 @@ add_filter( 'woocommerce_upsell_display_args', 'orchid_store_upsell_products_arg
 
 /**
  * Change number of cross sells column
+ *
+ * @param int $columns column value.
+ * @return int.
  */
 function orchid_store_cross_sells_columns( $columns ) {
 
@@ -234,12 +237,19 @@ add_filter( 'woocommerce_cross_sells_columns', 'orchid_store_cross_sells_columns
 
 
 if ( ! function_exists( 'orchid_store_add_to_cart_fragments' ) ) {
-
+	/**
+	 * Function orchid_store_add_to_cart_fragments
+	 *
+	 * @param array $fragments cart fragments.
+	 * @return array.
+	 */
 	function orchid_store_add_to_cart_fragments( $fragments ) {
 
 		ob_start();
 		?>
-		<span class="woocommerce-Price-amount amount os-minicart-amount"><?php echo wp_kses_post( WC()->cart->get_cart_subtotal() ); ?></span>
+		<span class="woocommerce-Price-amount amount os-minicart-amount">
+			<?php echo wp_kses_post( WC()->cart->get_cart_subtotal() ); ?>
+		</span>
 		<?php
 		$fragments['.os-minicart-amount'] = ob_get_clean();
 
