@@ -34,6 +34,8 @@ if ( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 
 			$this->value_as = orchid_store_get_option( 'value_as' );
 		}
+
+
 		/**
 		 * Renders widget at the frontend.
 		 *
@@ -210,6 +212,8 @@ if ( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 				<?php
 			}
 		}
+
+
 		/**
 		 * Adds setting fields to the widget and renders them in the form.
 		 *
@@ -376,6 +380,9 @@ if ( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 			</p>
 			<?php
 		}
+
+
+
 		/**
 		 * Sanitizes and saves the instance of the widget.
 		 *
@@ -397,7 +404,7 @@ if ( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 				$instance['product_categories'] = isset( $new_instance['product_categories'] ) ? array_map( 'absint', $new_instance['product_categories'] ) : array();
 			}
 
-			$instance['no_of_products'] = absint( $new_instance['no_of_products'] );
+			$instance['no_of_products'] = isset( $new_instance['no_of_products'] ) ? absint( $new_instance['no_of_products'] ) : 4;
 
 			$instance['hide_out_of_stock_products'] = isset( $new_instance['hide_out_of_stock_products'] ) ? true : false;
 
@@ -407,6 +414,8 @@ if ( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 
 			return $instance;
 		}
+
+
 		/**
 		 * Function to get order options
 		 *
@@ -419,6 +428,8 @@ if ( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 				'DESC' => esc_html__( 'DESC', 'orchid-store' ),
 			);
 		}
+
+
 		/**
 		 * Function to get orderby options
 		 *

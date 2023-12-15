@@ -34,6 +34,8 @@ if ( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
 
 			$this->value_as = orchid_store_get_option( 'value_as' );
 		}
+
+
 		/**
 		 * Renders widget at the frontend.
 		 *
@@ -219,6 +221,8 @@ if ( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
 				}
 			}
 		}
+
+
 		/**
 		 * Adds setting fields to the widget and renders them in the form.
 		 *
@@ -306,7 +310,11 @@ if ( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'hide_out_of_stock_products' ) ); ?>">
-					<input id="<?php echo esc_attr( $this->get_field_id( 'hide_out_of_stock_products' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'hide_out_of_stock_products' ) ); ?>" type="checkbox" <?php checked( true, $instance['hide_out_of_stock_products'] ); ?> />  
+					<input
+						id="<?php echo esc_attr( $this->get_field_id( 'hide_out_of_stock_products' ) ); ?>"
+						name="<?php echo esc_attr( $this->get_field_name( 'hide_out_of_stock_products' ) ); ?>"
+						type="checkbox" <?php checked( true, $instance['hide_out_of_stock_products'] ); ?>
+					/>  
 					<strong><?php esc_html_e( 'Hide Products Out of Stock', 'orchid-store' ); ?></strong>
 				</label>                 
 			</p>
@@ -359,6 +367,8 @@ if ( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
 			</p>
 			<?php
 		}
+
+
 		/**
 		 * Sanitizes and saves the instance of the widget.
 		 *
@@ -372,19 +382,19 @@ if ( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
 
 			$instance = $old_instance;
 
-			$instance['title'] = sanitize_text_field( $new_instance['title'] );
+			$instance['title'] = isset( $new_instance['title'] ) ? sanitize_text_field( $new_instance['title'] ) : '';
 
 			if ( 'slug' === $this->value_as ) {
-				$instance['product_category'] = sanitize_text_field( $new_instance['product_category'] );
+				$instance['product_category'] = isset( $new_instance['product_category'] ) ? sanitize_text_field( $new_instance['product_category'] ) : '';
 			} else {
-				$instance['product_category'] = absint( $new_instance['product_category'] );
+				$instance['product_category'] = isset( $new_instance['product_category'] ) ? absint( $new_instance['product_category'] ) : '';
 			}
 
-			$instance['no_of_products'] = absint( $new_instance['no_of_products'] );
+			$instance['no_of_products'] = isset( $new_instance['no_of_products'] ) ? absint( $new_instance['no_of_products'] ) : 4;
 
-			$instance['products_by'] = sanitize_text_field( $new_instance['products_by'] );
+			$instance['products_by'] = isset( $new_instance['products_by'] ) ? sanitize_text_field( $new_instance['products_by'] ) : 'default';
 
-			$instance['display_layout'] = sanitize_text_field( $new_instance['display_layout'] );
+			$instance['display_layout'] = isset( $new_instance['display_layout'] ) ? sanitize_text_field( $new_instance['display_layout'] ) : 'slider';
 
 			$instance['hide_out_of_stock_products'] = isset( $new_instance['hide_out_of_stock_products'] ) ? true : false;
 
@@ -394,6 +404,8 @@ if ( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
 
 			return $instance;
 		}
+
+
 		/**
 		 * Function to get order options
 		 *
@@ -406,6 +418,8 @@ if ( ! class_exists( 'Orchid_Store_Products_Widget' ) ) {
 				'DESC' => esc_html__( 'DESC', 'orchid-store' ),
 			);
 		}
+
+
 		/**
 		 * Function to get orderby options
 		 *

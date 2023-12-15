@@ -33,6 +33,8 @@ if ( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 
 			$this->value_as = orchid_store_get_option( 'value_as' );
 		}
+
+
 		/**
 		 * Renders widget at the frontend.
 		 *
@@ -130,6 +132,8 @@ if ( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 				<?php
 			}
 		}
+
+
 		/**
 		 * Adds setting fields to the widget and renders them in the form.
 		 *
@@ -229,6 +233,8 @@ if ( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 			</p>
 			<?php
 		}
+
+
 		/**
 		 * Sanitizes and saves the instance of the widget.
 		 *
@@ -242,7 +248,7 @@ if ( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 
 			$instance = $old_instance;
 
-			$instance['title'] = sanitize_text_field( $new_instance['title'] );
+			$instance['title'] = isset( $new_instance['title'] ) ? sanitize_text_field( $new_instance['title'] ) : '';
 
 			if ( 'slug' === $this->value_as ) {
 				$instance['product_categories'] = isset( $new_instance['product_categories'] ) ? array_map( 'sanitize_text_field', $new_instance['product_categories'] ) : array();
