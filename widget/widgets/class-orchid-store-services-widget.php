@@ -29,6 +29,8 @@ if ( ! class_exists( 'Orchid_Store_Services_Widget' ) ) {
 				)
 			);
 		}
+
+
 		/**
 		 * Renders widget at the frontend.
 		 *
@@ -99,6 +101,8 @@ if ( ! class_exists( 'Orchid_Store_Services_Widget' ) ) {
 					<?php
 			}
 		}
+
+
 		/**
 		 * Adds setting fields to the widget and renders them in the form.
 		 *
@@ -234,6 +238,8 @@ if ( ! class_exists( 'Orchid_Store_Services_Widget' ) ) {
 			?>
 			<?php
 		}
+
+
 		/**
 		 * Sanitizes and saves the instance of the widget.
 		 *
@@ -247,7 +253,7 @@ if ( ! class_exists( 'Orchid_Store_Services_Widget' ) ) {
 
 			$instance = $old_instance;
 
-			$instance['title'] = sanitize_text_field( $new_instance['title'] );
+			$instance['title'] = isset( $new_instance['title'] ) ? sanitize_text_field( $new_instance['title'] ) : '';
 
 			$instance['services_titles'] = isset( $new_instance['services_titles'] ) ? array_map( 'sanitize_text_field', $new_instance['services_titles'] ) : array();
 

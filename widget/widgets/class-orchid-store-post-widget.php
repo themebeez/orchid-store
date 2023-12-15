@@ -29,6 +29,8 @@ if ( ! class_exists( 'Orchid_Store_Post_Widget' ) ) {
 				)
 			);
 		}
+
+
 		/**
 		 * Renders widget at the frontend.
 		 *
@@ -186,6 +188,8 @@ if ( ! class_exists( 'Orchid_Store_Post_Widget' ) ) {
 			</section><!-- .os-blog -->
 			<?php
 		}
+
+
 		/**
 		 * Adds setting fields to the widget and renders them in the form.
 		 *
@@ -285,6 +289,8 @@ if ( ! class_exists( 'Orchid_Store_Post_Widget' ) ) {
 			</p>           
 			<?php
 		}
+
+
 		/**
 		 * Sanitizes and saves the instance of the widget.
 		 *

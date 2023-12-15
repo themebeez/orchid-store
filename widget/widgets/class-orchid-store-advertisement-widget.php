@@ -129,6 +129,8 @@ if ( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) {
 			</section><!-- .section -->
 			<?php
 		}
+
+
 		/**
 		 * Adds setting fields to the widget and renders them in the form.
 		 *
@@ -316,6 +318,8 @@ if ( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) {
 			</p> 
 			<?php
 		}
+
+
 		/**
 		 * Sanitizes and saves the instance of the widget.
 		 *
@@ -331,7 +335,7 @@ if ( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) {
 
 			$instance['title'] = isset( $new_instance['title'] ) ? sanitize_text_field( $new_instance['title'] ) : '';
 
-			$instance['show_offer_contents'] = isset( $new_instance['show_offer_contents'] ) ? true : true;
+			$instance['show_offer_contents'] = isset( $new_instance['show_offer_contents'] ) ? true : false;
 
 			$instance['offer_title'] = isset( $new_instance['offer_title'] ) ? sanitize_text_field( $new_instance['offer_title'] ) : '';
 
@@ -345,7 +349,7 @@ if ( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) {
 
 			$instance['offer_image'] = isset( $new_instance['offer_image'] ) ? esc_url_raw( $new_instance['offer_image'] ) : '';
 
-			$instance['set_image_in_background'] = isset( $new_instance['set_image_in_background'] ) ? $new_instance['set_image_in_background'] : true;
+			$instance['set_image_in_background'] = isset( $new_instance['set_image_in_background'] ) ? true : false;
 
 			return $instance;
 		}

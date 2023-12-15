@@ -34,6 +34,8 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
 			$this->value_as = orchid_store_get_option( 'value_as' );
 		}
+
+
 		/**
 		 * Renders widget at the frontend.
 		 *
@@ -210,6 +212,8 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 			</section><!-- .general-banner -->
 			<?php
 		}
+
+
 		/**
 		 * Adds setting fields to the widget and renders them in the form.
 		 *
@@ -480,6 +484,8 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 			</p>
 			<?php
 		}
+
+
 		/**
 		 * Sanitizes and saves the instance of the widget.
 		 *
@@ -493,7 +499,7 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
 			$instance = $old_instance;
 
-			$instance['title'] = sanitize_text_field( $new_instance['title'] );
+			$instance['title'] = isset( $new_instance['title'] ) ? sanitize_text_field( $new_instance['title'] ) : '';
 
 			if ( 'slug' === $this->value_as ) {
 
@@ -511,13 +517,13 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 
 			$instance['enable_mask'] = isset( $new_instance['enable_mask'] ) ? true : false;
 
-			$instance['banner_img_1'] = esc_url_raw( $new_instance['banner_img_1'] );
+			$instance['banner_img_1'] = isset( $new_instance['banner_img_1'] ) ? esc_url_raw( $new_instance['banner_img_1'] ) : '';
 
-			$instance['banner_img_2'] = esc_url_raw( $new_instance['banner_img_2'] );
+			$instance['banner_img_2'] = isset( $new_instance['banner_img_2'] ) ? esc_url_raw( $new_instance['banner_img_2'] ) : '';
 
-			$instance['banner_link_1'] = esc_url_raw( $new_instance['banner_link_1'] );
+			$instance['banner_link_1'] = isset( $new_instance['banner_link_1'] ) ? esc_url_raw( $new_instance['banner_link_1'] ) : '';
 
-			$instance['banner_link_2'] = esc_url_raw( $new_instance['banner_link_2'] );
+			$instance['banner_link_2'] = isset( $new_instance['banner_link_2'] ) ? esc_url_raw( $new_instance['banner_link_2'] ) : '';
 
 			return $instance;
 		}
