@@ -54,14 +54,14 @@ if ( ! class_exists( 'Orchid_Store_Customize_Radio_Image_Control' ) ) {
 				foreach ( $this->choices as $value => $label ) {
 					?>
 					<label
-						for="<?php echo esc_attr( $this->id ) . esc_attr( $value ); ?>"
+						for="<?php echo esc_attr( $this->id . $value ); ?>"
 					>
 						<input
 							class="image-select"
 							type="radio"
 							value="<?php echo esc_attr( $value ); ?>"
 							name="<?php echo esc_attr( '_customize-radio-' . $this->id ); ?>"
-							id="<?php echo esc_attr( $this->id ) . esc_attr( $value ); ?>" 
+							id="<?php echo esc_attr( $this->id . $value ); ?>" 
 							<?php $this->link(); ?>
 							<?php checked( $this->value(), $value ); ?>
 						>

@@ -5,91 +5,103 @@
  * @package Orchid_Store
  */
 
-/**
- * Adds custom classes to the array of body classes.
- *
- * @param array $classes Class for the body element.
- * @return array
- */
-function orchid_store_body_classes( $classes ) {
+if ( ! function_exists( 'orchid_store_body_classes' ) ) {
+	/**
+	 * Adds custom classes to the array of body classes.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $classes Class for the body element.
+	 * @return array
+	 */
+	function orchid_store_body_classes( $classes ) {
 
-	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
+		// Adds a class of hfeed to non-singular pages.
+		if ( ! is_singular() ) {
 
-		$classes[] = 'hfeed';
+			$classes[] = 'hfeed';
+		}
+
+		// Adds a class of no-sidebar when there is no sidebar present.
+		if ( 'none' === orchid_store_sidebar_position() ) {
+
+			$classes[] = 'no-sidebar';
+		}
+
+		// Adds a class of boxed.
+		if ( orchid_store_get_option( 'site_layout' ) === 'boxed' ) {
+
+			$classes[] = 'boxed';
+		}
+
+		return $classes;
 	}
 
-	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( 'none' === orchid_store_sidebar_position() ) {
-
-		$classes[] = 'no-sidebar';
-	}
-
-	// Adds a class of boxed.
-	if ( orchid_store_get_option( 'site_layout' ) === 'boxed' ) {
-
-		$classes[] = 'boxed';
-	}
-
-	return $classes;
+	add_filter( 'body_class', 'orchid_store_body_classes' );
 }
 
-add_filter( 'body_class', 'orchid_store_body_classes' );
 
+if ( ! function_exists( 'orchid_store_pingback_header' ) ) {
+	/**
+	 * Add a pingback url auto-discovery header for single posts, pages, or attachments.
+	 *
+	 * @since 1.0.0
+	 */
+	function orchid_store_pingback_header() {
 
-/**
- * Add a pingback url auto-discovery header for single posts, pages, or attachments.
- */
-function orchid_store_pingback_header() {
+		if ( is_singular() && pings_open() ) {
 
-	if ( is_singular() && pings_open() ) {
-
-		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
-	}
-}
-
-add_action( 'wp_head', 'orchid_store_pingback_header' );
-
-
-/**
- * Adds custom class to the array of post classes.
- *
- * @param array $classes Class for the post article element.
- * @return array
- */
-function orchid_store_post_classes( $classes ) {
-
-	$show_featured_image = '';
-
-	if ( is_home() ) {
-
-		$show_featured_image = orchid_store_get_option( 'blog_featured_image' );
-	}
-
-	if ( is_archive() ) {
-
-		$show_featured_image = orchid_store_get_option( 'archive_featured_image' );
-	}
-
-	if ( is_search() ) {
-
-		$show_featured_image = orchid_store_get_option( 'search_featured_image' );
-	}
-
-	if ( ! is_singular() ) {
-
-		if ( ! $show_featured_image ) {
-
-			$class_key = array_search( 'has-post-thumbnail', $classes, true );
-
-			unset( $classes[ $class_key ] );
+			printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 		}
 	}
 
-	return $classes;
+	add_action( 'wp_head', 'orchid_store_pingback_header' );
 }
 
-add_filter( 'post_class', 'orchid_store_post_classes' );
+
+if ( ! function_exists( 'orchid_store_post_classes' ) ) {
+	/**
+	 * Adds custom class to the array of post classes.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $classes Class for the post article element.
+	 * @return array
+	 */
+	function orchid_store_post_classes( $classes ) {
+
+		$show_featured_image = '';
+
+		if ( is_home() ) {
+
+			$show_featured_image = orchid_store_get_option( 'blog_featured_image' );
+		}
+
+		if ( is_archive() ) {
+
+			$show_featured_image = orchid_store_get_option( 'archive_featured_image' );
+		}
+
+		if ( is_search() ) {
+
+			$show_featured_image = orchid_store_get_option( 'search_featured_image' );
+		}
+
+		if ( ! is_singular() ) {
+
+			if ( ! $show_featured_image ) {
+
+				$class_key = array_search( 'has-post-thumbnail', $classes, true );
+
+				unset( $classes[ $class_key ] );
+			}
+		}
+
+		return $classes;
+	}
+
+	add_filter( 'post_class', 'orchid_store_post_classes' );
+}
 
 
 if ( ! function_exists( 'orchid_store_sidebar_class' ) ) {
@@ -127,7 +139,7 @@ if ( ! function_exists( 'orchid_store_sidebar_class' ) ) {
 
 if ( ! function_exists( 'orchid_store_content_container_class' ) ) {
 	/**
-	 * Function to set content container class.
+	 * Function to set CSS classes to content container.
 	 *
 	 * @since 1.0.0
 	 */
@@ -165,7 +177,9 @@ if ( ! function_exists( 'orchid_store_content_container_class' ) ) {
 
 if ( ! function_exists( 'orchid_store_content_entry_class' ) ) {
 	/**
-	 * Function to set class to content entry
+	 * Sets CSS class to the container of single content.
+	 *
+	 * @since 1.0.0
 	 */
 	function orchid_store_content_entry_class() {
 
@@ -197,7 +211,9 @@ if ( ! function_exists( 'orchid_store_content_entry_class' ) ) {
 
 if ( ! function_exists( 'orchid_store_menu_row_class' ) ) {
 	/**
-	 * Function to set class to menus
+	 * Sets CSS class to the row container of special menu.
+	 *
+	 * @since 1.0.0
 	 */
 	function orchid_store_menu_row_class() {
 
@@ -214,9 +230,12 @@ if ( ! function_exists( 'orchid_store_menu_row_class' ) ) {
 	}
 }
 
+
 if ( ! function_exists( 'orchid_store_logo_row_class' ) ) {
 	/**
-	 * Functiom to set logo class
+	 * Sets CSS class to the row container of logo.
+	 *
+	 * @since 1.0.0
 	 */
 	function orchid_store_logo_row_class() {
 
@@ -257,78 +276,78 @@ if ( ! function_exists( 'orchid_store_logo_row_class' ) ) {
 	}
 }
 
-/**
- * Function to get page title
- */
-function orchid_store_get_page_title() {
-	?>
-	<div class="title">
-		<?php
-		if ( have_posts() ) {
 
-			if ( is_home() ) {
-				?>
-				<h1 class="entry-title page-title"><?php single_post_title(); ?></h1>
-				<?php
-			}
-
-			if ( is_archive() ) {
-
-				the_archive_title( '<h1 class="entry-title page-title">', '</h1>' );
-			}
-
-			if ( is_search() ) {
-				?>
-				<h1 class="entry-title page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'orchid-store' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1><!-- .entry-title -->
-				<?php
-			}
-
-			if ( is_page() ) {
-
-				while ( have_posts() ) {
-
-					the_post();
-					?>
-					<h1 class="entry-title page-title"><?php the_title(); ?></h1>
-					<?php
-				}
-			}
-
-			if ( is_single() ) {
-
-				while ( have_posts() ) {
-
-					the_post();
-					?>
-					<h1 class="entry-title page-title"><?php the_title(); ?></h1>
-					<?php
-				}
-			}
-
-			if ( class_exists( 'WooCommerce' ) ) {
-
-				if ( is_shop() ) {
-					?>
-					<h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>
-					<?php
-				}
-			}
-		}
+if ( ! function_exists( 'orchid_store_get_page_title' ) ) {
+	/**
+	 * Renders page title.
+	 *
+	 * @since 1.0.0
+	 */
+	function orchid_store_get_page_title() {
 		?>
-	</div><!-- .title -->
-	<?php
+		<div class="title">
+			<?php
+			if ( have_posts() ) {
+
+				if ( is_home() ) {
+					?>
+					<h1 class="entry-title page-title"><?php single_post_title(); ?></h1>
+					<?php
+				}
+
+				if ( is_archive() ) {
+
+					the_archive_title( '<h1 class="entry-title page-title">', '</h1>' );
+				}
+
+				if ( is_search() ) {
+					?>
+					<h1 class="entry-title page-title">
+						<?php
+						/* translators: %s: search query. */
+						printf( esc_html__( 'Search Results for: %s', 'orchid-store' ), '<span>' . get_search_query() . '</span>' );
+						?>
+					</h1><!-- .entry-title -->
+					<?php
+				}
+
+				if ( is_page() ) {
+
+					while ( have_posts() ) {
+
+						the_post();
+						?>
+						<h1 class="entry-title page-title"><?php the_title(); ?></h1>
+						<?php
+					}
+				}
+
+				if ( is_single() ) {
+
+					while ( have_posts() ) {
+
+						the_post();
+						?>
+						<h1 class="entry-title page-title"><?php the_title(); ?></h1>
+						<?php
+					}
+				}
+
+				if ( class_exists( 'WooCommerce' ) ) {
+
+					if ( is_shop() ) {
+						?>
+						<h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>
+						<?php
+					}
+				}
+			}
+			?>
+		</div><!-- .title -->
+		<?php
+	}
 }
 
-/**
- * Sanitizes SVG when rendering in the frontend.
- *
- * @since 1.5.0
- */
 
 if ( ! function_exists( 'orchid_store_escape_svg' ) ) {
 	/**

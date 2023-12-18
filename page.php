@@ -14,7 +14,11 @@
 
 get_header();
 
-if ( get_theme_mod( 'orchid_store_field_enable_home_content', true ) === true && is_front_page() && ! is_home() ) {
+if (
+	get_theme_mod( 'orchid_store_field_enable_home_content', true ) &&
+	is_front_page() &&
+	! is_home()
+) {
 
 	if ( is_active_sidebar( 'sidebar-2' ) ) {
 

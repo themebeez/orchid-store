@@ -4,7 +4,7 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 7.4
 Requires at least: 6.0.0
-Tested up to: 6.3.0
+Tested up to: 6.4.0
 Stable tag: 1.5.2
 License: GNU General Public License v2 or Later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
@@ -89,6 +89,16 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.5.3 - ? December, 2023 ==
+
+- 
+- Added:   Option to change the width of sidebar.
+- Updated: Minified dynamic CSS.
+- Updated: Breadcrumb trails.
+- Updated: DB Query optimization.
+- Tested:  WooCommerce version 8.4.0.
+- Tested:  PHP versions .
 
 == 1.5.2 - 29 August, 2023 ==
 

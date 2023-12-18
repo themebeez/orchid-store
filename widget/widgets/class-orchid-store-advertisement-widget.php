@@ -14,6 +14,7 @@ if ( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) {
 	 * @package orchit_store
 	 */
 	class Orchid_Store_Advertisement_Widget extends WP_Widget {
+
 		/**
 		 * Define id, name and description of the widget.
 		 *
@@ -30,6 +31,8 @@ if ( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) {
 				)
 			);
 		}
+
+
 		/**
 		 * Renders widget at the frontend.
 		 *
@@ -82,7 +85,10 @@ if ( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) {
 					if ( ! empty( $offer_image ) && true !== $img_as_bg ) {
 						$offer_image_alt_text = orchid_store_get_alt_text_of_image( $offer_image );
 						?>
-						<img src="<?php echo esc_url( $offer_image ); ?>" alt="<?php echo esc_attr( $offer_image_alt_text ); ?>">
+						<img
+							src="<?php echo esc_url( $offer_image ); ?>"
+							alt="<?php echo esc_attr( $offer_image_alt_text ); ?>"
+						>
 						<?php
 					}
 					?>
@@ -157,8 +163,6 @@ if ( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) {
 
 			$offer_image = $instance['offer_image'];
 			?>
-			 
-
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
 					<strong><?php esc_html_e( 'Title', 'orchid-store' ); ?></strong>
@@ -265,9 +269,7 @@ if ( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'offer_image' ) ); ?>">
-					<strong><?php esc_html_e( 'Offer Image', 'orchid-store' ); ?></strong>
-				</label>
+				<span><strong><?php esc_html_e( 'Offer Image', 'orchid-store' ); ?></strong></span>
 
 				<span class="os-image-uploader-container">
 
@@ -285,7 +287,6 @@ if ( ! class_exists( 'Orchid_Store_Advertisement_Widget' ) ) {
 						$upload_btn_class .= ' os-btn-hide';
 					}
 					?>
-					
 					<span
 						class="os-upload-image-holder"
 						style="background-image: url( <?php echo esc_url( $offer_image ); ?> );">

@@ -14,6 +14,7 @@ if ( ! class_exists( 'Orchid_Store_Post_Widget' ) ) {
 	 * @package orchit_store
 	 */
 	class Orchid_Store_Post_Widget extends WP_Widget {
+
 		/**
 		 * Define id, name and description of the widget.
 		 *
@@ -210,10 +211,8 @@ if ( ! class_exists( 'Orchid_Store_Post_Widget' ) ) {
 
 			$instance = wp_parse_args( (array) $instance, $defaults );
 			?>
-			 
-
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>">
+				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
 					<strong><?php esc_html_e( 'Title', 'orchid-store' ); ?></strong>
 				</label>
 				<input
@@ -226,7 +225,7 @@ if ( ! class_exists( 'Orchid_Store_Post_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_name( 'no_of_posts' ) ); ?>">
+				<label for="<?php echo esc_attr( $this->get_field_id( 'no_of_posts' ) ); ?>">
 					<strong><?php esc_html_e( 'No of Posts', 'orchid-store' ); ?></strong>
 				</label>
 				<input

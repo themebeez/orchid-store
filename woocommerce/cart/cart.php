@@ -96,7 +96,14 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 								 * @param array $cart_item The product in the cart.
 								 * @param string $cart_item_key Key for the product in the cart.
 								 */
-								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $product_name, $cart_item, $cart_item_key ) . '&nbsp;' );
+								echo wp_kses_post(
+									apply_filters(
+										'woocommerce_cart_item_name',
+										$product_name,
+										$cart_item,
+										$cart_item_key
+									) . '&nbsp;'
+								);
 							} else {
 								/**
 								 * Filter the product name.
@@ -104,13 +111,24 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 								 * @since 7.8.0
 								 * @param string $product_url URL the product in the cart.
 								 */
-								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $product_name ), $cart_item, $cart_item_key ) );
+								echo wp_kses_post(
+									apply_filters(
+										'woocommerce_cart_item_name',
+										sprintf(
+											'<a href="%s">%s</a>',
+											esc_url( $product_permalink ),
+											$product_name
+										),
+										$cart_item,
+										$cart_item_key
+									)
+								);
 							}
 
 							do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
 
 							// Meta data.
-							echo esc_html( wc_get_formatted_cart_item_data( $cart_item ) ); // PHPCS: XSS ok.
+							echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 							// Backorder notification.
 							if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
@@ -121,7 +139,12 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 
 							<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'orchid-store' ); ?>">
 								<?php
-									echo esc_html( apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ) ); // PHPCS: XSS ok.
+									echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+										'woocommerce_cart_item_price',
+										WC()->cart->get_product_price( $_product ),
+										$cart_item,
+										$cart_item_key
+									);
 								?>
 							</td>
 
@@ -147,13 +170,23 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 								false
 							);
 
-							echo esc_html( apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ) ); // PHPCS: XSS ok.
+							echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								'woocommerce_cart_item_quantity',
+								$product_quantity,
+								$cart_item_key,
+								$cart_item
+							);
 							?>
 							</td>
 
 							<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'orchid-store' ); ?>">
 								<?php
-									echo esc_html( apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ) ); // PHPCS: XSS ok.
+									echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+										'woocommerce_cart_item_subtotal',
+										WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ),
+										$cart_item,
+										$cart_item_key
+									);
 								?>
 							</td>
 						</tr>
@@ -262,9 +295,13 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 									$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
 									if ( ! $product_permalink ) {
-										echo $thumbnail; // phpcs:ignore
+										echo $thumbnail; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 									} else {
-										printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // phpcs:ignore
+										printf(
+											'<a href="%s">%s</a>',
+											esc_url( $product_permalink ),
+											$thumbnail // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+										);
 									}
 									?>
 									</td>
@@ -280,7 +317,14 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 										 * @param array $cart_item The product in the cart.
 										 * @param string $cart_item_key Key for the product in the cart.
 										 */
-										echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $product_name, $cart_item, $cart_item_key ) . '&nbsp;' );
+										echo wp_kses_post(
+											apply_filters(
+												'woocommerce_cart_item_name',
+												$product_name,
+												$cart_item,
+												$cart_item_key
+											) . '&nbsp;'
+										);
 									} else {
 										/**
 										 * Filter the product name.
@@ -288,7 +332,18 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 										 * @since 7.8.0
 										 * @param string $product_url URL the product in the cart.
 										 */
-										echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $product_name ), $cart_item, $cart_item_key ) );
+										echo wp_kses_post(
+											apply_filters(
+												'woocommerce_cart_item_name',
+												sprintf(
+													'<a href="%s">%s</a>',
+													esc_url( $product_permalink ),
+													$product_name
+												),
+												$cart_item,
+												$cart_item_key
+											)
+										);
 									}
 
 									do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
@@ -305,7 +360,7 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 
 									<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'orchid-store' ); ?>">
 										<?php
-											echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // phpcs:ignore
+										echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // phpcs:ignore
 										?>
 									</td>
 
@@ -337,7 +392,7 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 
 									<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'orchid-store' ); ?>">
 										<?php
-											echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // phpcs:ignore
+										echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // phpcs:ignore
 										?>
 									</td>
 								</tr>

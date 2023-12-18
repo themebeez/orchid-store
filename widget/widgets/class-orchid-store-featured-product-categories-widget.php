@@ -15,7 +15,14 @@ if ( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 	 */
 	class Orchid_Store_Featured_Product_Categories_Widget extends WP_Widget {
 
-		public $value_as; // phpcs:ignore
+		/**
+		 * Slug or id.
+		 *
+		 * @var string
+		 */
+		public $value_as;
+
+
 		/**
 		 * Define id, name and description of the widget.
 		 *

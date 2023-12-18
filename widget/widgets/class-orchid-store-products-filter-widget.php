@@ -15,7 +15,14 @@ if ( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 	 */
 	class Orchid_Store_Products_Filter_Widget extends WP_Widget {
 
-		public $value_as; //phpcs:ignore
+		/**
+		 * Slug or id.
+		 *
+		 * @var string
+		 */
+		public $value_as;
+
+
 		/**
 		 * Define id, name and description of the widget.
 		 *
@@ -113,11 +120,21 @@ if ( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 
 													if ( ! empty( $product_category_term ) ) {
 														?>
-														<li><a href="#tab<?php echo esc_attr( $index ); ?>" rel="tab<?php echo esc_attr( $index ); ?>" 
-																					<?php
-																					if ( 1 === $index ) {
-																						?>
-															class="active"<?php } ?>><?php echo esc_html( $product_category_term->name ); ?></a></li>
+														<li>
+															<a
+																href="#tab<?php echo esc_attr( $index ); ?>"
+																rel="tab<?php echo esc_attr( $index ); ?>" 
+																<?php
+																if ( 1 === $index ) {
+																	?>
+																	class="active"
+																	<?php
+																}
+																?>
+															>
+																<?php echo esc_html( $product_category_term->name ); ?>
+															</a>
+														</li>
 														<?php
 													}
 												}
@@ -268,20 +285,23 @@ if ( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 								?>
 								<span class="sldr-elmnt-cntnr">
 									<label for="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>">
-										<input id="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'product_categories' ) ); ?>[]" type="checkbox" value="<?php echo esc_attr( $product_category->slug ); ?>" 
-																<?php
-																if ( ! empty( $instance['product_categories'] ) ) {
-																	if ( in_array( $product_category->slug, $instance['product_categories'], true ) ) {
-																		?>
-											checked
-																		<?php
-																	}
-																}
-																?>
+										<input
+											id="<?php echo esc_attr( $this->get_field_id( 'product_categories' ) . $product_category->term_id ); ?>"
+											name="<?php echo esc_attr( $this->get_field_name( 'product_categories' ) ); ?>[]"
+											type="checkbox"
+											value="<?php echo esc_attr( $product_category->slug ); ?>" 
+											<?php
+											if ( ! empty( $instance['product_categories'] ) ) {
+												if ( in_array( $product_category->slug, $instance['product_categories'], true ) ) {
+													?>
+													checked
+													<?php
+												}
+											}
+											?>
 										>
 										<strong><?php echo esc_html( $product_category->name ); ?></strong>
 									</label>
-
 								</span><!-- .sldr-elmnt-cntnr -->
 								<?php
 							}
@@ -328,7 +348,7 @@ if ( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_name( 'no_of_products' ) ); ?>">
+				<label for="<?php echo esc_attr( $this->get_field_id( 'no_of_products' ) ); ?>">
 					<strong><?php esc_html_e( 'Number of Products For Each Category', 'orchid-store' ); ?></strong>
 				</label>
 				<input
@@ -382,7 +402,6 @@ if ( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 		}
 
 
-
 		/**
 		 * Sanitizes and saves the instance of the widget.
 		 *
@@ -396,7 +415,7 @@ if ( ! class_exists( 'Orchid_Store_Products_Filter_Widget' ) ) {
 
 			$instance = $old_instance;
 
-			$instance['title'] = sanitize_text_field( $new_instance['title'] );
+			$instance['title'] = isset( $new_instance['title'] ) ? sanitize_text_field( $new_instance['title'] ) : '';
 
 			if ( 'slug' === $this->value_as ) {
 				$instance['product_categories'] = isset( $new_instance['product_categories'] ) ? array_map( 'sanitize_text_field', $new_instance['product_categories'] ) : array();

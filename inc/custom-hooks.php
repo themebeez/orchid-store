@@ -27,34 +27,48 @@ if ( ! function_exists( 'orchid_store_header_action' ) ) {
 		*/
 		do_action( 'orchid_store_mobile_header' );
 	}
+
+	add_action( 'orchid_store_header', 'orchid_store_header_action', 10 );
 }
-add_action( 'orchid_store_header', 'orchid_store_header_action', 10 );
+
 
 
 if ( ! function_exists( 'orchid_store_desktop_header_template' ) ) {
-
+	/**
+	 * Renders header one layout template for desktop devices.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_desktop_header_template() {
 
 		get_template_part( 'template-parts/header/header', 'one' );
 	}
-}
 
-add_action( 'orchid_store_desktop_header', 'orchid_store_desktop_header_template' );
+	add_action( 'orchid_store_desktop_header', 'orchid_store_desktop_header_template' );
+}
 
 
 if ( ! function_exists( 'orchid_store_mobile_header_template' ) ) {
-
+	/**
+	 * Renders header template for mobile devices.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_mobile_header_template() {
 
 		get_template_part( 'template-parts/header/header', 'mobile' );
 	}
-}
 
-add_action( 'orchid_store_mobile_header', 'orchid_store_mobile_header_template' );
+	add_action( 'orchid_store_mobile_header', 'orchid_store_mobile_header_template' );
+}
 
 
 if ( ! function_exists( 'orchid_store_top_header_menu_action' ) ) {
-
+	/**
+	 * Renders menu in top header section.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_top_header_menu_action() {
 
 		if ( has_nav_menu( 'menu-3' ) ) {
@@ -71,13 +85,17 @@ if ( ! function_exists( 'orchid_store_top_header_menu_action' ) ) {
 			<?php
 		}
 	}
-}
 
-add_action( 'orchid_store_top_header_menu', 'orchid_store_top_header_menu_action', 10 );
+	add_action( 'orchid_store_top_header_menu', 'orchid_store_top_header_menu_action', 10 );
+}
 
 
 if ( ! function_exists( 'orchid_store_secondary_navigation_action' ) ) {
-
+	/**
+	 * Renders special menu for displaying product categories.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_secondary_navigation_action() {
 
 		wp_nav_menu(
@@ -90,13 +108,17 @@ if ( ! function_exists( 'orchid_store_secondary_navigation_action' ) ) {
 			)
 		);
 	}
-}
 
-add_action( 'orchid_store_secondary_navigation', 'orchid_store_secondary_navigation_action', 10 );
+	add_action( 'orchid_store_secondary_navigation', 'orchid_store_secondary_navigation_action', 10 );
+}
 
 
 if ( ! function_exists( 'orchid_store_desktop_site_identity_action' ) ) {
-
+	/**
+	 * Renders site logo or site title and tagline in header section on desktop devices.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_desktop_site_identity_action() {
 		?>
 		<div class="site-branding">
@@ -144,13 +166,17 @@ if ( ! function_exists( 'orchid_store_desktop_site_identity_action' ) ) {
 		</div><!-- site-branding -->
 		<?php
 	}
-}
 
-add_action( 'orchid_store_desktop_site_identity', 'orchid_store_desktop_site_identity_action', 10 );
+	add_action( 'orchid_store_desktop_site_identity', 'orchid_store_desktop_site_identity_action', 10 );
+}
 
 
 if ( ! function_exists( 'orchid_store_mobile_site_identity_action' ) ) {
-
+	/**
+	 * Renders site logo or site title and tagline in header section on mobile devices.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_mobile_site_identity_action() {
 		?>
 		<div class="site-branding">
@@ -207,13 +233,17 @@ if ( ! function_exists( 'orchid_store_mobile_site_identity_action' ) ) {
 		</div><!-- site-branding -->
 		<?php
 	}
-}
 
-add_action( 'orchid_store_mobile_site_identity', 'orchid_store_mobile_site_identity_action', 10 );
+	add_action( 'orchid_store_mobile_site_identity', 'orchid_store_mobile_site_identity_action', 10 );
+}
 
 
 if ( ! function_exists( 'orchid_store_primary_navigation_action' ) ) {
-
+	/**
+	 * Renders primary navigation on header section.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_primary_navigation_action() {
 		?>
 		<nav id="site-navigation" class="site-navigation">
@@ -230,12 +260,17 @@ if ( ! function_exists( 'orchid_store_primary_navigation_action' ) ) {
 		</nav><!-- .site-navigation.site-navigation -->
 		<?php
 	}
+
+	add_action( 'orchid_store_primary_navigation', 'orchid_store_primary_navigation_action', 10 );
 }
-add_action( 'orchid_store_primary_navigation', 'orchid_store_primary_navigation_action', 10 );
 
 
 if ( ! function_exists( 'orchid_store_post_author_action' ) ) {
-
+	/**
+	 * Renders post's author meta.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_post_author_action() {
 
 		if ( 'post' === get_post_type() ) {
@@ -244,13 +279,17 @@ if ( ! function_exists( 'orchid_store_post_author_action' ) ) {
 			<?php
 		}
 	}
-}
 
-add_action( 'orchid_store_post_author', 'orchid_store_post_author_action', 10 );
+	add_action( 'orchid_store_post_author', 'orchid_store_post_author_action', 10 );
+}
 
 
 if ( ! function_exists( 'orchid_store_post_date_action' ) ) {
-
+	/**
+	 * Renders post's published date meta.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_post_date_action() {
 
 		if ( 'post' === get_post_type() ) {
@@ -261,12 +300,17 @@ if ( ! function_exists( 'orchid_store_post_date_action' ) ) {
 			<?php
 		}
 	}
+
+	add_action( 'orchid_store_post_date', 'orchid_store_post_date_action', 10 );
 }
-add_action( 'orchid_store_post_date', 'orchid_store_post_date_action', 10 );
 
 
 if ( ! function_exists( 'orchid_store_post_categories_action' ) ) {
-
+	/**
+	 * Renders post's categories meta.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_post_categories_action() {
 
 		if ( 'post' === get_post_type() ) {
@@ -277,24 +321,32 @@ if ( ! function_exists( 'orchid_store_post_categories_action' ) ) {
 			<?php
 		}
 	}
-}
 
-add_action( 'orchid_store_post_categories', 'orchid_store_post_categories_action', 10 );
+	add_action( 'orchid_store_post_categories', 'orchid_store_post_categories_action', 10 );
+}
 
 
 if ( ! function_exists( 'orchid_store_post_tags_action' ) ) {
-
+	/**
+	 * Renders post's tags meta.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_post_tags_action() {
 
 		orchid_store_post_tags_list();
 	}
-}
 
-add_action( 'orchid_store_post_tags', 'orchid_store_post_tags_action', 10 );
+	add_action( 'orchid_store_post_tags', 'orchid_store_post_tags_action', 10 );
+}
 
 
 if ( ! function_exists( 'orchid_store_excerpt_action' ) ) {
-
+	/**
+	 * Renders post's excerpt.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_excerpt_action() {
 		?>
 		<div class="excerpt">
@@ -302,13 +354,17 @@ if ( ! function_exists( 'orchid_store_excerpt_action' ) ) {
 		</div><!-- .excerpt -->
 		<?php
 	}
-}
 
-add_action( 'orchid_store_excerpt', 'orchid_store_excerpt_action', 10 );
+	add_action( 'orchid_store_excerpt', 'orchid_store_excerpt_action', 10 );
+}
 
 
 if ( ! function_exists( 'orchid_store_pagination_action' ) ) {
-
+	/**
+	 * Renders pagination.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_pagination_action() {
 		?>
 		<div class="patigation">
@@ -326,13 +382,17 @@ if ( ! function_exists( 'orchid_store_pagination_action' ) ) {
 		</div><!-- .pagination -->
 		<?php
 	}
-}
 
-add_action( 'orchid_store_pagination', 'orchid_store_pagination_action' );
+	add_action( 'orchid_store_pagination', 'orchid_store_pagination_action' );
+}
 
 
 if ( ! function_exists( 'orchid_store_post_navigation_action' ) ) {
-
+	/**
+	 * Renders posts navigation in post single.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_post_navigation_action() {
 
 		$next_post = get_next_post();
@@ -369,14 +429,17 @@ if ( ! function_exists( 'orchid_store_post_navigation_action' ) ) {
 		</div><!-- .post-navigation -->
 		<?php
 	}
+
+	add_action( 'orchid_store_post_navigation', 'orchid_store_post_navigation_action', 10 );
 }
-
-add_action( 'orchid_store_post_navigation', 'orchid_store_post_navigation_action', 10 );
-
 
 
 if ( ! function_exists( 'orchid_store_large_thumbnail_action' ) ) {
-
+	/**
+	 * Renders thumbnail of size `orchid-store-thumbnail-large`.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_large_thumbnail_action() {
 
 		if ( has_post_thumbnail() ) {
@@ -398,13 +461,17 @@ if ( ! function_exists( 'orchid_store_large_thumbnail_action' ) ) {
 			<?php
 		}
 	}
-}
 
-add_action( 'orchid_store_large_thumbnail', 'orchid_store_large_thumbnail_action', 10 );
+	add_action( 'orchid_store_large_thumbnail', 'orchid_store_large_thumbnail_action', 10 );
+}
 
 
 if ( ! function_exists( 'orchid_store_extra_large_thumbnail_action' ) ) {
-
+	/**
+	 * Renders thumbnail of size `orchid-store-thumbnail-extra-large`.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_extra_large_thumbnail_action() {
 
 		if ( has_post_thumbnail() ) {
@@ -426,12 +493,17 @@ if ( ! function_exists( 'orchid_store_extra_large_thumbnail_action' ) ) {
 			<?php
 		}
 	}
+
+	add_action( 'orchid_store_extra_large_thumbnail', 'orchid_store_extra_large_thumbnail_action', 10 );
 }
-add_action( 'orchid_store_extra_large_thumbnail', 'orchid_store_extra_large_thumbnail_action', 10 );
 
 
 if ( ! function_exists( 'orchid_store_footer_left_action' ) ) {
-
+	/**
+	 * Renders copyright text in the footer
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_footer_left_action() {
 
 		$copyright_text = orchid_store_get_option( 'copyright_text' );
@@ -439,7 +511,7 @@ if ( ! function_exists( 'orchid_store_footer_left_action' ) ) {
 		<div class="copyrights">
 			<p>
 				<?php
-				if ( ! empty( $copyright_text ) ) {
+				if ( $copyright_text ) {
 					/* translators: 1: copyright text, 2: theme name, 3: theme author */
 					printf( esc_html__( '%1$s %2$s Theme by %3$s', 'orchid-store' ), esc_html( $copyright_text ), 'Orchid Store', '<a href="https://themebeez.com" rel="author" target="_blank">Themebeez</a>' );
 				} else {
@@ -451,12 +523,17 @@ if ( ! function_exists( 'orchid_store_footer_left_action' ) ) {
 		</div><!-- .copyrights -->
 		<?php
 	}
+
+	add_action( 'orchid_store_footer_left', 'orchid_store_footer_left_action', 10 );
 }
 
-add_action( 'orchid_store_footer_left', 'orchid_store_footer_left_action', 10 );
 
 if ( ! function_exists( 'orchid_store_footer_right_action' ) ) {
-
+	/**
+	 * Renders payment processors image in the footer.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_footer_right_action() {
 
 		$payments_processors = orchid_store_get_option( 'payments_image' );
@@ -468,21 +545,24 @@ if ( ! function_exists( 'orchid_store_footer_right_action' ) ) {
 			<?php
 		}
 	}
-}
 
-add_action( 'orchid_store_footer_right', 'orchid_store_footer_right_action', 10 );
+	add_action( 'orchid_store_footer_right', 'orchid_store_footer_right_action', 10 );
+}
 
 
 if ( ! function_exists( 'orchid_store_title_breadcrumb_action' ) ) {
-
+	/**
+	 * Renders page title and breadcrumbs in page header section.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_title_breadcrumb_action() {
 
 		if ( is_front_page() ) {
-
 			return;
 		}
 
-		if ( orchid_store_get_option( 'display_page_header' ) === true ) {
+		if ( orchid_store_get_option( 'display_page_header' ) ) {
 			?>
 			<div class="os-breadcrumb-wrap" 
 			<?php
@@ -495,11 +575,8 @@ if ( ! function_exists( 'orchid_store_title_breadcrumb_action' ) ) {
 					if ( orchid_store_get_option( 'display_page_title' ) ) {
 						orchid_store_get_page_title();
 					}
-					?>
-					<?php
-					$display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
 
-					if ( true === $display_breadcrumb ) {
+					if ( orchid_store_get_option( 'display_breadcrumb' ) ) {
 						?>
 						<div class="os-breadcrumb">
 							<?php
@@ -519,9 +596,7 @@ if ( ! function_exists( 'orchid_store_title_breadcrumb_action' ) ) {
 			</div><!-- .os-breadcrumb-wrap -->
 			<?php
 		} else {
-			$display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
-
-			if ( true === $display_breadcrumb ) {
+			if ( orchid_store_get_option( 'display_breadcrumb' ) ) {
 				?>
 				<div class="os-page-breadcrumb-wrap">
 					<div class="__os-container__">
@@ -540,14 +615,17 @@ if ( ! function_exists( 'orchid_store_title_breadcrumb_action' ) ) {
 			}
 		}
 	}
+
+	add_action( 'orchid_store_title_breadcrumb', 'orchid_store_title_breadcrumb_action', 10 );
 }
-
-add_action( 'orchid_store_title_breadcrumb', 'orchid_store_title_breadcrumb_action', 10 );
-
 
 
 if ( ! function_exists( 'orchid_store_default_search_action' ) ) {
-
+	/**
+	 * Renders WordPress's default search form.
+	 *
+	 * @since 1.0.0
+	 */
 	function orchid_store_default_search_action() {
 
 		$mobile_product_search_class = '';
@@ -564,6 +642,6 @@ if ( ! function_exists( 'orchid_store_default_search_action' ) ) {
 		</div><!-- .custom-search -->
 		<?php
 	}
-}
 
-add_action( 'orchid_store_default_search', 'orchid_store_default_search_action', 10 );
+	add_action( 'orchid_store_default_search', 'orchid_store_default_search_action', 10 );
+}

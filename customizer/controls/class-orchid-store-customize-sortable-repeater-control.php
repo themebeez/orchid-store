@@ -81,16 +81,23 @@ if ( ! class_exists( 'Orchid_Store_Sortable_Repeater_Control' ) ) {
 		public function render_content() {
 			?>
 			<div class="sortable_repeater_control">
-				<?php if ( ! empty( $this->label ) ) { ?>
+				<?php
+				if ( ! empty( $this->label ) ) {
+					?>
 					<span class="customize-control-title">
 						<?php echo esc_html( $this->label ); ?>
 					</span>
-				<?php } ?>
-				<?php if ( ! empty( $this->description ) ) { ?>
+					<?php
+				}
+
+				if ( ! empty( $this->description ) ) {
+					?>
 					<span class="customize-control-description">
 						<?php echo esc_html( $this->description ); ?>
 					</span>
-				<?php } ?>
+					<?php
+				}
+				?>
 				<input
 					type="hidden"
 					id="<?php echo esc_attr( $this->id ); ?>"
@@ -121,7 +128,9 @@ if ( ! class_exists( 'Orchid_Store_Sortable_Repeater_Control' ) ) {
 				</div>
 				<button
 					class="button customize-control-sortable-repeater-add"
-					type="button"><?php echo esc_html( $this->button_labels['add'] ); ?>
+					type="button"
+				>
+					<?php echo esc_html( $this->button_labels['add'] ); ?>
 				</button>
 			</div>
 			<?php
