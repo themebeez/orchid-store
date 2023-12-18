@@ -14,6 +14,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 	 * @package orchit_store
 	 */
 	class Orchid_Store_About_Widget extends WP_Widget {
+
 		/**
 		 * Define id, name and description of the widget.
 		 *
@@ -30,6 +31,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 				)
 			);
 		}
+
 
 		/**
 		 * Renders widget at the frontend.
@@ -56,15 +58,15 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 			$vimeo_url          = ! empty( $instance['vimeo_url'] ) ? $instance['vimeo_url'] : '';
 			$vk_url             = ! empty( $instance['vk_url'] ) ? $instance['vk_url'] : '';
 
-			echo esc_html( $args['before_widget'] );
+			echo $args['before_widget']; // phpcs:ignore
 
 			if ( ! empty( $title ) ) {
 
-				echo esc_html( $args['before_title'] );
+				echo $args['before_title']; // phpcs:ignore
 
 				echo esc_html( $title );
 
-				echo esc_html( $args['after_title'] );
+				echo $args['after_title']; // phpcs:ignore
 			}
 			?>
 			<div class="widget-entry">
@@ -207,8 +209,9 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 				</div><!-- // social-icons -->
 			</div><!-- // widget-entry -->
 			<?php
-			echo esc_html( $args['after_widget'] );
+			echo $args['after_widget']; // phpcs:ignore
 		}
+
 
 		/**
 		 * Adds setting fields to the widget and renders them in the form.
@@ -239,11 +242,12 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 			$instance = wp_parse_args( (array) $instance, $defaults );
 			?>
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>">
+				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
 					<strong><?php esc_html_e( 'Title', 'orchid-store' ); ?></strong>
 				</label>
 				<input
-					class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
+					class="widefat"
+					id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
 					name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
 					type="text"
 					value="<?php echo esc_attr( $instance['title'] ); ?>"
@@ -258,9 +262,9 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 					</span>
 
 					<span class="os-fields">
-						<label for="<?php echo esc_attr( $this->get_field_id( 'store_logo' ) ); ?>">
+						<span>
 							<strong><?php esc_html_e( 'Logo', 'orchid-store' ); ?></strong>
-						</label>
+						</span>
 
 						<span class="os-image-uploader-container">
 
@@ -278,7 +282,6 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 								$upload_btn_class .= ' os-btn-hide';
 							}
 							?>
-							
 							<span
 								class="os-upload-image-holder"
 								style="background-image: url( <?php echo esc_url( $instance['store_logo'] ); ?> );">
@@ -298,7 +301,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 							</button>
 						</span>
 
-						<label for="<?php echo esc_attr( $this->get_field_name( 'store_description' ) ); ?>">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'store_description' ) ); ?>">
 							<strong><?php esc_html_e( 'Short Description', 'orchid-store' ); ?></strong>
 						</label>
 						<input
@@ -309,7 +312,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 							value="<?php echo esc_attr( $instance['store_description'] ); ?>"
 						/>  
 
-						<label for="<?php echo esc_attr( $this->get_field_name( 'store_address' ) ); ?>">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'store_address' ) ); ?>">
 							<strong><?php esc_html_e( 'Address', 'orchid-store' ); ?></strong>
 						</label>
 						<input
@@ -320,7 +323,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 							value="<?php echo esc_attr( $instance['store_address'] ); ?>"
 						/>
 
-						<label for="<?php echo esc_attr( $this->get_field_name( 'store_phone' ) ); ?>">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'store_phone' ) ); ?>">
 							<strong><?php esc_html_e( 'Contact Number', 'orchid-store' ); ?></strong>
 						</label>
 						<input
@@ -331,7 +334,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 							value="<?php echo esc_attr( $instance['store_phone'] ); ?>"
 						/>
 
-						<label for="<?php echo esc_attr( $this->get_field_name( 'store_email' ) ); ?>">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'store_email' ) ); ?>">
 							<strong><?php esc_html_e( 'Email', 'orchid-store' ); ?></strong>
 						</label>
 						<input
@@ -342,7 +345,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 							value="<?php echo esc_attr( $instance['store_email'] ); ?>"
 						/> 
 
-						<label for="<?php echo esc_attr( $this->get_field_name( 'store_opening_time' ) ); ?>">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'store_opening_time' ) ); ?>">
 							<strong><?php esc_html_e( 'Opening Time', 'orchid-store' ); ?></strong>
 						</label>
 						<input
@@ -364,7 +367,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 					</span>
 
 					<span class="os-fields">
-						<label for="<?php echo esc_attr( $this->get_field_name( 'facebook_url' ) ); ?>">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'facebook_url' ) ); ?>">
 							<strong><?php esc_html_e( 'Facebook Link', 'orchid-store' ); ?></strong>
 						</label>
 						<input
@@ -375,7 +378,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 						value="<?php echo esc_attr( $instance['facebook_url'] ); ?>"
 					/> 
 
-						<label for="<?php echo esc_attr( $this->get_field_name( 'twitter_url' ) ); ?>">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'twitter_url' ) ); ?>">
 							<strong><?php esc_html_e( 'Twitter Link', 'orchid-store' ); ?></strong>
 						</label>
 						<input
@@ -386,7 +389,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 							value="<?php echo esc_attr( $instance['twitter_url'] ); ?>"
 						/> 
 
-						<label for="<?php echo esc_attr( $this->get_field_name( 'instagram_url' ) ); ?>">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'instagram_url' ) ); ?>">
 							<strong><?php esc_html_e( 'Instagram Link', 'orchid-store' ); ?></strong>
 						</label>
 						<input
@@ -397,7 +400,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 							value="<?php echo esc_attr( $instance['instagram_url'] ); ?>" 
 						/> 
 
-						<label for="<?php echo esc_attr( $this->get_field_name( 'pinterest_url' ) ); ?>">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'pinterest_url' ) ); ?>">
 							<strong><?php esc_html_e( 'Pinterest Link', 'orchid-store' ); ?></strong>
 						</label>
 						<input
@@ -407,7 +410,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 							type="text" value="<?php echo esc_attr( $instance['pinterest_url'] ); ?>"
 						/>  
 
-						<label for="<?php echo esc_attr( $this->get_field_name( 'youtube_url' ) ); ?>">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'youtube_url' ) ); ?>">
 							<strong><?php esc_html_e( 'YouTube Link', 'orchid-store' ); ?></strong>
 						</label>
 						<input
@@ -418,7 +421,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 							value="<?php echo esc_attr( $instance['youtube_url'] ); ?>"
 						/> 
 
-						<label for="<?php echo esc_attr( $this->get_field_name( 'vimeo_url' ) ); ?>">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'vimeo_url' ) ); ?>">
 							<strong><?php esc_html_e( 'Vimeo Link', 'orchid-store' ); ?></strong>
 						</label>
 						<input
@@ -429,7 +432,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 							value="<?php echo esc_attr( $instance['vimeo_url'] ); ?>"
 						/>  
 
-						<label for="<?php echo esc_attr( $this->get_field_name( 'vk_url' ) ); ?>">
+						<label for="<?php echo esc_attr( $this->get_field_id( 'vk_url' ) ); ?>">
 							<strong><?php esc_html_e( 'VK Link', 'orchid-store' ); ?></strong>
 						</label>
 						<input
@@ -441,8 +444,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 						/>
 					</span>
 				</span>   
-			</p>               
-	  
+			</p>
 			<?php
 		}
 

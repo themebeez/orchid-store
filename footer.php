@@ -75,7 +75,7 @@
 			</div><!-- .footer-mask -->
 		</div><!-- .footer-inner -->
 	</footer><!-- .footer -->
-	
+
 	<?php
 	if ( orchid_store_get_option( 'display_scroll_top_button' ) ) {
 		?>

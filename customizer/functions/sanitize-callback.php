@@ -26,7 +26,6 @@ if ( ! function_exists( 'orchid_store_sanitize_range' ) ) {
 }
 
 
-
 if ( ! function_exists( 'orchid_store_sanitize_number' ) ) {
 	/**
 	 * Sanitization callback for number field
@@ -60,7 +59,6 @@ if ( ! function_exists( 'orchid_store_sanitize_select' ) ) {
 }
 
 
-
 if ( ! function_exists( 'orchid_store_sanitize_urls' ) ) {
 	/**
 	 * Sanitization callback function for sanitizing urls.
@@ -91,6 +89,7 @@ if ( ! function_exists( 'orchid_store_sanitize_urls' ) ) {
 		return $input;
 	}
 }
+
 
 if ( ! function_exists( 'orchid_store_no_sanitize' ) ) {
 	/**

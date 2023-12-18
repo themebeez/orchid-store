@@ -7,9 +7,6 @@
  * @package Orchid_Store
  */
 
-/**
- * Funtion To Get Google Fonts
- */
 if ( ! function_exists( 'orchid_store_lite_fonts_url' ) ) {
 	/**
 	 * Return Font's URL.
@@ -37,33 +34,39 @@ if ( ! function_exists( 'orchid_store_lite_fonts_url' ) ) {
 				'https://fonts.googleapis.com/css'
 			);
 		}
+
 		return $fonts_url;
 	}
 }
 
-/**
- * Shows a breadcrumb for all types of pages.  This is a wrapper function for the Breadcrumb_Trail class,
- * which should be used in theme templates.
- *
- * @since  0.1.0
- * @access public
- * @param  array $args Arguments to pass to Breadcrumb_Trail.
- */
-function orchid_store_breadcrumb_trail( $args = array() ) {
 
-	$breadcrumb = apply_filters( 'breadcrumb_trail_object', null, $args );
+if ( ! function_exists( 'orchid_store_breadcrumb_trail' ) ) {
+	/**
+	 * Shows a breadcrumb for all types of pages.  This is a wrapper function for the Breadcrumb_Trail class,
+	 * which should be used in theme templates.
+	 *
+	 * @since  0.1.0
+	 * @access public
+	 * @param  array $args Arguments to pass to Breadcrumb_Trail.
+	 */
+	function orchid_store_breadcrumb_trail( $args = array() ) {
 
-	if ( ! is_object( $breadcrumb ) ) {
-		$breadcrumb = new orchid_store_Breadcrumb_Trail( $args );
+		$breadcrumb = apply_filters( 'breadcrumb_trail_object', null, $args );
+
+		if ( ! is_object( $breadcrumb ) ) {
+			$breadcrumb = new orchid_store_Breadcrumb_Trail( $args );
+		}
+
+		return $breadcrumb->trail();
 	}
-
-	return $breadcrumb->trail();
 }
 
 
 if ( ! function_exists( 'orchid_store_navigation_fallback' ) ) {
 	/**
-	 * Fallback For Main Menu
+	 * Callback function for primary menu.
+	 *
+	 * @since 1.0.0
 	 */
 	function orchid_store_navigation_fallback() {
 		?>
@@ -84,7 +87,9 @@ if ( ! function_exists( 'orchid_store_navigation_fallback' ) ) {
 
 if ( ! function_exists( 'orchid_store_special_menu_fallback' ) ) {
 	/**
-	 * Fallback For Special Menu
+	 * Callback function for special menu.
+	 *
+	 * @since 1.0.0
 	 */
 	function orchid_store_special_menu_fallback() {
 
@@ -111,7 +116,14 @@ if ( ! function_exists( 'orchid_store_special_menu_fallback' ) ) {
 					<?php
 					foreach ( $product_categories as $product_category ) {
 						?>
-						<li><a href="<?php echo esc_url( get_term_link( $product_category->term_id, 'product_cat' ) ); ?>" title="<?php echo esc_attr( $product_category->name ); ?>"><?php echo esc_html( $product_category->name ); ?></a></li>
+						<li>
+							<a
+								href="<?php echo esc_url( get_term_link( $product_category->term_id, 'product_cat' ) ); ?>"
+								title="<?php echo esc_attr( $product_category->name ); ?>"
+							>
+								<?php echo esc_html( $product_category->name ); ?>
+							</a>
+						</li>
 						<?php
 					}
 					?>
@@ -127,7 +139,9 @@ if ( ! function_exists( 'orchid_store_thumbnail_alt_text' ) ) {
 	/**
 	 * Function to get post thumbnail alt text value.
 	 *
-	 * @param int $post_id post id.
+	 * @since 1.0.0
+	 *
+	 * @param int $post_id Post id.
 	 */
 	function orchid_store_thumbnail_alt_text( $post_id ) {
 
@@ -135,20 +149,18 @@ if ( ! function_exists( 'orchid_store_thumbnail_alt_text' ) ) {
 
 		$alt_text = '';
 
-		if ( ! empty( $post_thumbnail_id ) ) {
-
+		if ( $post_thumbnail_id ) {
 			$alt_text = get_post_meta( $post_thumbnail_id, '_wp_attachment_image_alt', true );
 		}
 
-		if ( ! empty( $alt_text ) ) {
-
+		if ( $alt_text ) {
 			echo esc_attr( $alt_text );
 		} else {
-
 			the_title_attribute();
 		}
 	}
 }
+
 
 if ( ! function_exists( 'orchid_store_sidebar_position' ) ) {
 	/**
@@ -177,7 +189,18 @@ if ( ! function_exists( 'orchid_store_sidebar_position' ) ) {
 					$sidebar_position = get_theme_mod( 'orchid_store_field_woocommerce_product_sidebar_position', 'right' );
 				}
 			}
-		} elseif ( class_exists( 'WooCommerce' ) && ( is_cart() || is_checkout() || is_account_page() || ( defined( 'YITH_WCWL' ) && is_page( get_option( 'yith_wcwl_wishlist_page_id' ) ) ) ) ) {
+		} elseif (
+			class_exists( 'WooCommerce' ) &&
+			(
+				is_cart() ||
+				is_checkout() ||
+				is_account_page() ||
+				(
+					defined( 'YITH_WCWL' ) &&
+					is_page( get_option( 'yith_wcwl_wishlist_page_id' ) )
+				)
+			)
+		) {
 
 				$sidebar_position = 'none';
 		} elseif ( ! is_active_sidebar( 'sidebar-1' ) ) {
@@ -202,15 +225,14 @@ if ( ! function_exists( 'orchid_store_sidebar_position' ) ) {
 
 			if ( is_single() ) {
 
-				if ( orchid_store_get_option( 'enable_post_common_sidebar_position' ) === true ) {
+				if ( orchid_store_get_option( 'enable_post_common_sidebar_position' ) ) {
 
 					$sidebar_position = orchid_store_get_option( 'post_sidebar_position' );
 				} else {
 
 					$sidebar_position = get_post_meta( get_the_ID(), 'orchid_store_sidebar_position', true );
 
-					if ( empty( $sidebar_position ) ) {
-
+					if ( ! $sidebar_position ) {
 						$sidebar_position = 'right';
 					}
 				}
@@ -218,15 +240,14 @@ if ( ! function_exists( 'orchid_store_sidebar_position' ) ) {
 
 			if ( is_page() ) {
 
-				if ( orchid_store_get_option( 'enable_page_common_sidebar_position' ) === true ) {
+				if ( orchid_store_get_option( 'enable_page_common_sidebar_position' ) ) {
 
 					$sidebar_position = orchid_store_get_option( 'page_sidebar_position' );
 				} else {
 
 					$sidebar_position = get_post_meta( get_the_ID(), 'orchid_store_sidebar_position', true );
 
-					if ( empty( $sidebar_position ) ) {
-
+					if ( ! $sidebar_position ) {
 						$sidebar_position = 'right';
 					}
 				}
@@ -237,14 +258,12 @@ if ( ! function_exists( 'orchid_store_sidebar_position' ) ) {
 	}
 }
 
-/**
- * Filters For Excerpt Length
- */
+
 if ( ! function_exists( 'orchid_store_excerpt_length' ) ) {
 	/**
-	 * Function to filter the excerpt length
+	 * Modifies the length of post excerpt.
 	 *
-	 * @param int $length excerpt length.
+	 * @param int $length Post excerpt's length.
 	 */
 	function orchid_store_excerpt_length( $length ) {
 
@@ -256,44 +275,38 @@ if ( ! function_exists( 'orchid_store_excerpt_length' ) ) {
 		$excerpt_length = orchid_store_get_option( 'excerpt_length' );
 
 		if ( absint( $excerpt_length ) > 0 ) {
-
-			$excerpt_length = absint( $excerpt_length );
+			$length = absint( $excerpt_length );
 		}
 
-		return $excerpt_length;
+		return $length;
 	}
+
+	add_filter( 'excerpt_length', 'orchid_store_excerpt_length' );
 }
-
-add_filter( 'excerpt_length', 'orchid_store_excerpt_length' );
-
 
 
 if ( ! function_exists( 'orchid_store_excerpt_more' ) ) {
 	/**
-	 * Filter For Excerpt More
+	 * Modifies the trailing string of post excerpt.
 	 *
-	 * @param int $more excerpt length.
+	 * @param string $more Post excerpt's trailing string.
 	 */
 	function orchid_store_excerpt_more( $more ) {
 
-		if ( is_admin() ) {
-
-			return $more;
-		}
-
-		return '';
+		return ( is_admin() ) ? $more : '';
 	}
-}
 
-add_filter( 'excerpt_more', 'orchid_store_excerpt_more' );
+	add_filter( 'excerpt_more', 'orchid_store_excerpt_more' );
+}
 
 
 if ( ! function_exists( 'orchid_store_search_form' ) ) {
 	/**
-	 * Search form of the theme.
+	 * Modifies WordPress's default search form HTML.
 	 *
 	 * @since 1.0.0
-	 * @param string $form form element.
+	 *
+	 * @param string $form Search form HTML.
 	 * @return string
 	 */
 	function orchid_store_search_form( $form ) {
@@ -313,36 +326,45 @@ if ( ! function_exists( 'orchid_store_search_form' ) ) {
 
 		return $form;
 	}
-}
-add_filter( 'get_search_form', 'orchid_store_search_form', 10 );
 
-/**
- * Filter for default archive widget
- *
- * @param string $links links.
- */
-function orchid_store_default_archive_widget( $links ) {
-
-	$links = str_replace( '</a>&nbsp;(', '</a> <span class="count">(', $links );
-	$links = str_replace( ')', ')</span>', $links );
-	return $links;
+	add_filter( 'get_search_form', 'orchid_store_search_form', 10 );
 }
 
-add_filter( 'get_archives_link', 'orchid_store_default_archive_widget' );
 
+if ( ! function_exists( 'orchid_store_default_archive_widget' ) ) {
+	/**
+	 * Modifies the archive HTML link content.
+	 *
+	 * @param string $link_html The archive HTML link content.
+	 */
+	function orchid_store_default_archive_widget( $link_html ) {
 
-/**
- * Filter the default categories widget
- *
- * @param string $links links.
- */
-function orchid_store_cat_count_span( $links ) {
+		$link_html = str_replace( '</a>&nbsp;(', '</a> <span class="count">(', $link_html );
+		$link_html = str_replace( ')', ')</span>', $link_html );
+		return $link_html;
+	}
 
-	$links = str_replace( '</a> (', '</a><span class="count">(', $links );
-	$links = str_replace( ')', ')</span>', $links );
-	return $links;
+	add_filter( 'get_archives_link', 'orchid_store_default_archive_widget' );
 }
-add_filter( 'wp_list_categories', 'orchid_store_cat_count_span' );
+
+
+if ( ! function_exists( 'orchid_store_cat_count_span' ) ) {
+	/**
+	 * Modifies the HTML output of a taxonomy list.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $output HTML output.
+	 */
+	function orchid_store_cat_count_span( $output ) {
+
+		$output = str_replace( '</a> (', '</a><span class="count">(', $output );
+		$output = str_replace( ')', ')</span>', $output );
+		return $output;
+	}
+
+	add_filter( 'wp_list_categories', 'orchid_store_cat_count_span' );
+}
 
 
 if ( ! function_exists( 'orchid_store_get_alt_text_of_image' ) ) {
@@ -366,7 +388,6 @@ if ( ! function_exists( 'orchid_store_get_alt_text_of_image' ) ) {
 			$attachment_post = get_post( $attachment_id );
 
 			if ( $attachment_post ) {
-
 				$alt = $attachment_post->post_title;
 			}
 		}

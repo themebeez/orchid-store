@@ -361,24 +361,48 @@ if ( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			text-decoration: underline;
 		}';
 
-		$sidebar_width = orchid_store_get_option( 'sidebar_width' );
+		if ( orchid_store_sidebar_position() !== 'none' ) {
 
-		$custom_style .= '
-		@media( min-width: 992px ) {
+			$sidebar_width = orchid_store_get_option( 'sidebar_width' );
 
-			.sidebar-col {
-				flex: 0 0 ' . esc_attr( $sidebar_width ) . '%;
-				max-width: ' . esc_attr( $sidebar_width ) . '%;
-				width: ' . esc_attr( $sidebar_width ) . '%;
-			}
-			
-			.content-col {
-				flex: 0 0 ' . ( 100 - esc_attr( $sidebar_width ) ) . '%;
-				max-width: ' . ( 100 - esc_attr( $sidebar_width ) ) . '%;
-				width: ' . ( 100 - esc_attr( $sidebar_width ) ) . '%;
-			}
-		}';
+			$custom_style .= '
+			@media( min-width: 992px ) {
 
-		return $custom_style;
+				.sidebar-col {
+					flex: 0 0 ' . esc_attr( $sidebar_width ) . '%;
+					max-width: ' . esc_attr( $sidebar_width ) . '%;
+					width: ' . esc_attr( $sidebar_width ) . '%;
+				}
+				
+				.content-col {
+					flex: 0 0 ' . ( 100 - esc_attr( $sidebar_width ) ) . '%;
+					max-width: ' . ( 100 - esc_attr( $sidebar_width ) ) . '%;
+					width: ' . ( 100 - esc_attr( $sidebar_width ) ) . '%;
+				}
+			}';
+		}
+
+		return orchid_store_minify_css( $custom_style );
+	}
+}
+
+
+if ( ! function_exists( 'orchid_store_minify_css' ) ) {
+	/**
+	 * Minify the dynamic css.
+	 *
+	 * @param string $css css to minify.
+	 * @return string minified css.
+	 */
+	function orchid_store_minify_css( $css ) {
+
+		$css = preg_replace( '/\s+/', ' ', $css );
+		$css = preg_replace( '/\/\*[^\!](.*?)\*\//', '', $css );
+		$css = preg_replace( '/(,|:|;|\{|}) /', '$1', $css );
+		$css = preg_replace( '/ (,|;|\{|})/', '$1', $css );
+		$css = preg_replace( '/(:| )0\.([0-9]+)(%|em|ex|px|in|cm|mm|pt|pc)/i', '${1}.${2}${3}', $css );
+		$css = preg_replace( '/(:| )(\.?)0(%|em|ex|px|in|cm|mm|pt|pc)/i', '${1}0', $css );
+
+		return trim( $css );
 	}
 }

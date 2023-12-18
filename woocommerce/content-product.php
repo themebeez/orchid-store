@@ -33,7 +33,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			 *
 			 * @hooked orchid_store_template_loop_product_thumbnail - 10
 			 */
-			do_action( 'orchid_store_product_thumbnail' );
+			do_action( 'orchid_store_product_thumbnail', $product );
 
 			/**
 			 * Hook: orchid_store_loop_sale_flash.
@@ -47,7 +47,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			 *
 			 * @hooked orchid_store_template_loop_product_quick_link - 10
 			 */
-			do_action( 'orchid_store_loop_product_quick_link' );
+			do_action( 'orchid_store_loop_product_quick_link', $product );
 			?>
 		</div>
 

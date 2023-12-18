@@ -20,6 +20,7 @@ if ( ! function_exists( 'orchid_store_active_top_header' ) ) {
 	}
 }
 
+
 if ( ! function_exists( 'orchid_store_active_special_menu' ) ) {
 	/**
 	 * Active callback function for when special menu is active.
@@ -49,7 +50,6 @@ if ( ! function_exists( 'orchid_store_is_static_home_page_set' ) ) {
 }
 
 
-
 if ( ! function_exists( 'orchid_store_is_not_global_sidebar_position_active' ) ) {
 	/**
 	 * Active callback function for when global sidebar position is not active.
@@ -63,6 +63,7 @@ if ( ! function_exists( 'orchid_store_is_not_global_sidebar_position_active' ) )
 		return $control->manager->get_setting( 'orchid_store_field_enable_global_sidebar_position' )->value();
 	}
 }
+
 
 if ( ! function_exists( 'orchid_store_is_global_sidebar_position_active' ) ) {
 	/**
@@ -78,6 +79,7 @@ if ( ! function_exists( 'orchid_store_is_global_sidebar_position_active' ) ) {
 	}
 }
 
+
 if ( ! function_exists( 'orchid_store_is_post_common_sidebar_position_active' ) ) {
 	/**
 	 * Active callback function for when common sidebar position for posts is active.
@@ -88,13 +90,10 @@ if ( ! function_exists( 'orchid_store_is_post_common_sidebar_position_active' ) 
 	 */
 	function orchid_store_is_post_common_sidebar_position_active( $control ) {
 
-		if ( $control->manager->get_setting( 'orchid_store_field_enable_global_sidebar_position' )->value() === false && $control->manager->get_setting( 'orchid_store_field_enable_post_common_sidebar_position' )->value() === true ) {
-
-			return true;
-		} else {
-
-			return false;
-		}
+		return (
+			! $control->manager->get_setting( 'orchid_store_field_enable_global_sidebar_position' )->value() &&
+			$control->manager->get_setting( 'orchid_store_field_enable_post_common_sidebar_position' )->value()
+		);
 	}
 }
 
@@ -109,13 +108,10 @@ if ( ! function_exists( 'orchid_store_is_page_common_sidebar_position_active' ) 
 	 */
 	function orchid_store_is_page_common_sidebar_position_active( $control ) {
 
-		if ( $control->manager->get_setting( 'orchid_store_field_enable_global_sidebar_position' )->value() === false && $control->manager->get_setting( 'orchid_store_field_enable_page_common_sidebar_position' )->value() === true ) {
-
-			return true;
-		} else {
-
-			return false;
-		}
+		return (
+			! $control->manager->get_setting( 'orchid_store_field_enable_global_sidebar_position' )->value() &&
+			$control->manager->get_setting( 'orchid_store_field_enable_page_common_sidebar_position' )->value()
+		);
 	}
 }
 
@@ -177,7 +173,7 @@ if ( ! function_exists( 'orchid_store_is_cart_mini_cart' ) ) {
 
 		$cart_display = $control->manager->get_setting( 'orchid_store_field_cart_display' )->value();
 
-		return ( 'default' === $cart_display ) ? true : false;
+		return ( 'default' === $cart_display );
 	}
 }
 
@@ -196,7 +192,7 @@ if ( ! function_exists( 'orchid_store_is_cart_floating_cart' ) ) {
 
 		$cart_display = $control->manager->get_setting( 'orchid_store_field_cart_display' )->value();
 
-		return ( $is_mini_cart_enabled && 'floating_cart' === $cart_display ) ? true : false;
+		return ( $is_mini_cart_enabled && 'floating_cart' === $cart_display );
 	}
 }
 
@@ -243,7 +239,7 @@ function orchid_store_is_boxed_site_layout_enabled( $control ) {
 
 	$site_layout = $control->manager->get_setting( 'orchid_store_field_site_layout' )->value();
 
-	return ( 'boxed' === $site_layout ) ? true : false;
+	return ( 'boxed' === $site_layout );
 }
 
 
@@ -259,7 +255,7 @@ function orchid_store_is_fullwidth_site_layout_enabled( $control ) {
 
 	$site_layout = $control->manager->get_setting( 'orchid_store_field_site_layout' )->value();
 
-	return ( 'fullwidth' === $site_layout ) ? true : false;
+	return ( 'fullwidth' === $site_layout );
 }
 
 
@@ -275,7 +271,7 @@ function orchid_store_is_third_party_search_form_enabled( $control ) {
 
 	$site_layout = $control->manager->get_setting( 'orchid_store_field_select_search_form' )->value();
 
-	return ( 'third_party_search' === $site_layout ) ? true : false;
+	return ( 'third_party_search' === $site_layout );
 }
 
 
@@ -291,7 +287,7 @@ function orchid_store_is_add_to_cart_button_enabled_in_product_archive( $control
 
 	$add_to_cart_layout = $control->manager->get_setting( 'orchid_store_field_add_to_cart_button_placement' )->value();
 
-	return ( 'none' !== $add_to_cart_layout ) ? true : false;
+	return ( 'none' !== $add_to_cart_layout );
 }
 
 

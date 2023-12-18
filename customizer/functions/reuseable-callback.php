@@ -245,7 +245,9 @@ if ( ! function_exists( 'orchid_store_add_radio_image_field' ) ) {
 			)
 		);
 
-		$wp_customize->add_control( new Orchid_Store_Customize_Radio_Image_Control( $wp_customize, $field_id, $control_args ) );
+		$wp_customize->add_control(
+			new Orchid_Store_Customize_Radio_Image_Control( $wp_customize, $field_id, $control_args )
+		);
 	}
 }
 
@@ -294,7 +296,9 @@ if ( ! function_exists( 'orchid_store_add_toggle_field' ) ) {
 			)
 		);
 
-		$wp_customize->add_control( new Orchid_Store_Customize_Toggle_Control( $wp_customize, $field_id, $control_args ) );
+		$wp_customize->add_control(
+			new Orchid_Store_Customize_Toggle_Control( $wp_customize, $field_id, $control_args )
+		);
 	}
 }
 
@@ -392,7 +396,9 @@ if ( ! function_exists( 'orchid_store_add_image_field' ) ) {
 			)
 		);
 
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $field_id, $control_args ) );
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control( $wp_customize, $field_id, $control_args )
+		);
 	}
 }
 
@@ -441,7 +447,9 @@ if ( ! function_exists( 'orchid_store_add_sortable_repeater_field' ) ) {
 			)
 		);
 
-		$wp_customize->add_control( new Orchid_Store_Customize_Sortable_Repeater_Control( $wp_customize, $field_id, $control_args ) );
+		$wp_customize->add_control(
+			new Orchid_Store_Customize_Sortable_Repeater_Control( $wp_customize, $field_id, $control_args )
+		);
 	}
 }
 
@@ -488,6 +496,8 @@ if ( ! function_exists( 'orchid_store_add_color_field' ) ) {
 			)
 		);
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $field_id, $control_args ) );
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control( $wp_customize, $field_id, $control_args )
+		);
 	}
 }

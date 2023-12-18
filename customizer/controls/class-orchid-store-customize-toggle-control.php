@@ -1,6 +1,6 @@
 <?php
 /**
- * Toggle Custom Control
+ * Toggle Custom Control.
  *
  * @package orchid_store
  */
@@ -68,11 +68,13 @@ if ( ! class_exists( 'Orchid_Store_Customize_Toggle_Control' ) ) {
 					<label for="cb<?php echo esc_attr( $this->instance_number ); ?>" class="tgl-btn"></label>
 				</div>
 				<?php
-				if ( ! empty( $this->description ) ) {
+				if ( $this->description ) {
 					?>
-					<span class="description customize-control-description">
-						<?php echo esc_html( $this->description ); ?>
-					</span>
+					<div class="customize-control-description-wrapper">
+						<span class="description customize-control-description">
+							<?php echo esc_html( $this->description ); ?>
+						</span>
+					</div>
 					<?php
 				}
 				?>

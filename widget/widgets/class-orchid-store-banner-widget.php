@@ -15,7 +15,14 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 	 */
 	class Orchid_Store_Banner_Widget extends WP_Widget {
 
-		public $value_as; // phpcs:ignore
+		/**
+		 * Slug or id.
+		 *
+		 * @var string
+		 */
+		public $value_as;
+
+
 		/**
 		 * Define id, name and description of the widget.
 		 *
@@ -98,11 +105,16 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 													$slider_item->the_post();
 													?>
 													<div class="item">
-														<figure class="thumb" 
-														<?php
-														if ( has_post_thumbnail() ) {
+														<figure
+															class="thumb" 
+															<?php
+															if ( has_post_thumbnail() ) {
+																?>
+																style="background-image:url( <?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?> );"
+																<?php
+															}
 															?>
-															style="background-image:url( <?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?> );" <?php } ?>>
+														>
 															<?php
 															if ( $enable_mask ) {
 																?>
@@ -320,13 +332,8 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 								type="text"
 								id="<?php echo esc_attr( $this->get_field_id( 'button_titles' ) . $i ); ?>"
 								name="<?php echo esc_attr( $this->get_field_name( 'button_titles' ) ); ?>[]"
-								value="
-								<?php
-								if ( ! empty( $instance['button_titles'][ $i ] ) ) {
-									echo esc_attr( $instance['button_titles'][ $i ] );
-								}
-								?>
-							">
+								value="<?php echo isset( $instance['button_titles'][ $i ] ) ? esc_attr( $instance['button_titles'][ $i ] ) : ''; ?>"
+							>
 
 							<label for="<?php echo esc_attr( $this->get_field_id( 'button_links' ) . $i ); ?>">
 								<strong><?php esc_html_e( 'Button Link', 'orchid-store' ); ?></strong>
@@ -336,13 +343,8 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 								type="text"
 								id="<?php echo esc_attr( $this->get_field_id( 'button_links' ) . $i ); ?>"
 								name="<?php echo esc_attr( $this->get_field_name( 'button_links' ) ); ?>[]"
-								value="
-								<?php
-								if ( ! empty( $instance['button_links'][ $i ] ) ) {
-									echo esc_attr( $instance['button_links'][ $i ] );
-								}
-								?>
-							">
+								value="<?php echo isset( $instance['button_links'][ $i ] ) ? esc_attr( $instance['button_links'][ $i ] ) : ''; ?>"
+							>
 						</span>
 					</span>
 					<?php
@@ -373,9 +375,7 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'banner_img_1' ) ); ?>">
-					<strong><?php esc_html_e( 'Banner Image One', 'orchid-store' ); ?></strong>
-				</label>
+				<span><strong><?php esc_html_e( 'Banner Image One', 'orchid-store' ); ?></strong></span>
 
 				<span class="os-image-uploader-container">
 
@@ -393,7 +393,6 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 						$upload_btn_class .= ' os-btn-hide';
 					}
 					?>
-					
 					<span
 						class="os-upload-image-holder"
 						style="background-image: url( <?php echo esc_url( $banner_img_1 ); ?> );">
@@ -430,9 +429,7 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'banner_img_2' ) ); ?>">
-					<strong><?php esc_html_e( 'Banner Image Two', 'orchid-store' ); ?></strong>
-				</label>
+				<span><strong><?php esc_html_e( 'Banner Image Two', 'orchid-store' ); ?></strong></span>
 
 				<span class="os-image-uploader-container">
 
@@ -450,7 +447,6 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 						$upload_btn_class .= ' os-btn-hide';
 					}
 					?>
-					
 					<span class="os-upload-image-holder" style="background-image: url( <?php echo esc_url( $banner_img_2 ); ?> );"></span>
 					<input
 						type="hidden"

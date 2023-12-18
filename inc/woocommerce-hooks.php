@@ -155,9 +155,9 @@ if ( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
 		</div><!-- .mini-cart -->
 		<?php
 	}
-}
 
-add_action( 'orchid_store_mini_cart', 'orchid_store_mini_cart_action', 10 );
+	add_action( 'orchid_store_mini_cart', 'orchid_store_mini_cart_action', 10 );
+}
 
 
 if ( ! function_exists( 'orchid_store_woocommerce_header_cart' ) ) {
@@ -311,11 +311,13 @@ if ( ! function_exists( 'orchid_store_product_categories_list_action' ) ) {
 
 if ( ! function_exists( 'orchid_store_template_loop_product_thumbnail' ) ) {
 	/**
-	 * Get the product thumbnail for the loop.
+	 * Renders product thumbnail for the loop.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param WC_Product $product WC_Product object.
 	 */
-	function orchid_store_template_loop_product_thumbnail() {
-
-		global $product;
+	function orchid_store_template_loop_product_thumbnail( $product ) {
 
 		if ( get_theme_mod( 'orchid_store_field_display_out_of_stock_notice', false ) === true ) {
 
@@ -410,8 +412,10 @@ if ( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 	 * Renders wishlist, quick view, and compare buttons.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param WC_Product $product WC_Product object.
 	 */
-	function orchid_store_template_loop_product_quick_link() {
+	function orchid_store_template_loop_product_quick_link( $product ) {
 
 		if (
 			! class_exists( 'YITH_WCWL' ) &&
@@ -423,8 +427,6 @@ if ( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 
 			return;
 		}
-
-		global $product;
 		?>
 		<div class="product-hover-items">
 			<?php
@@ -480,7 +482,7 @@ if ( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 						$addonify_wishlist_button_classes[] = 'added-to-wishlist';
 					}
 
-					$tooltip_text = ( addonify_wishlist_is_product_in_wishlist( $product->get_id() ) ) ? get_option( 'btn_label_if_added_to_wishlist', __( 'Already in wishlist', 'orchid-store' ) ) : get_option( 'addonify_wishlist_btn_label', __( 'Add to wishlist', 'orchid-store' ) );
+					$tooltip_text = ( addonify_wishlist_is_product_in_wishlist( $product->get_id() ) ) ? get_option( 'btn_label_if_added_to_wishlist', esc_html__( 'Already in wishlist', 'orchid-store' ) ) : get_option( 'addonify_wishlist_btn_label', esc_html__( 'Add to wishlist', 'orchid-store' ) );
 
 					$wishlist_icons = array(
 						'initial' => '<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="currentColor"><path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"/></svg>',
@@ -505,7 +507,7 @@ if ( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 									data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
 								>
 									<span class="w-icon">
-										<?php echo esc_html( orchid_store_escape_svg( $icon ) ); ?>
+										<?php echo orchid_store_escape_svg( $icon ); // phpcs:ignore ?>
 									</span>
 								</a>
 								<?php
@@ -520,7 +522,7 @@ if ( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 									data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
 								>
 									<span class="w-icon">
-										<?php echo esc_html( orchid_store_escape_svg( $icon ) ); ?>
+										<?php echo orchid_store_escape_svg( $icon ); // phpcs:ignore ?>
 									</span>
 								</a>
 								<?php
@@ -536,7 +538,7 @@ if ( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 								data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"
 							>
 								<span class="w-icon">
-									<?php echo esc_html( orchid_store_escape_svg( $icon ) ); ?>
+									<?php echo orchid_store_escape_svg( $icon ); // phpcs:ignore ?>
 								</span>
 							</a>
 							<?php
@@ -595,13 +597,13 @@ if ( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 
 				if (
 					function_exists( 'addonify_compare_products_get_compare_products_list' ) &&
-					in_array( $product->get_id(), addonify_compare_products_get_compare_products_list() ) // phpcs:ignore
+					in_array( $product->get_id(), addonify_compare_products_get_compare_products_list(), true )
 				) {
 					$addonify_compare_products_button_classes[] = 'selected';
 					$icon                                       = $compare_icons['added'];
 				}
 
-				$tooltip_text = get_option( 'compare_products_btn_label', __( 'Compare', 'orchid-store' ) );
+				$tooltip_text = get_option( 'compare_products_btn_label', esc_html__( 'Compare', 'orchid-store' ) );
 				?>
 					<a
 						href="#" 
@@ -630,13 +632,12 @@ if ( ! function_exists( 'orchid_store_woocommerce_title_breadcrumb_action' ) ) {
 	function orchid_store_woocommerce_title_breadcrumb_action() {
 
 		if ( ! class_exists( 'WooCommerce' ) ) {
-
 			return;
 		}
 
-		if ( is_product() ) {
+		$display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
 
-			$display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
+		if ( is_product() ) {
 
 			if ( $display_breadcrumb ) {
 				?>
@@ -657,72 +658,67 @@ if ( ! function_exists( 'orchid_store_woocommerce_title_breadcrumb_action' ) ) {
 				<?php
 			}
 		} elseif ( orchid_store_get_option( 'display_page_header' ) ) {
-
 			?>
-				<div
-					class="os-breadcrumb-wrap"
-					<?php
-					if ( has_header_image() ) {
-						?>
-						style="background-image: url(<?php header_image(); ?>);"
-						<?php
-					}
-					?>
-				>
-					<div class="__os-container__">
-						<div class="breadcrumb-inner">
-							<?php
-							if ( orchid_store_get_option( 'display_page_title' ) ) {
-								?>
-								<div class="title">
-									<h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>
-								</div><!-- .title -->
-								<?php
-							}
-
-							$display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
-
-							if ( $display_breadcrumb ) {
-								?>
-								<div class="os-breadcrumb">
-									<?php
-									/**
-									 * Hook - orchid_store_woocommerce_breadcrumb.
-									 *
-									 * @hooked woocommerce_breadcurmb - 20
-									 */
-									do_action( 'orchid_store_woocommerce_breadcrumb' );
-									?>
-								</div><!-- .os-breadcrumb -->
-								<?php
-							}
-							?>
-						</div><!-- .breadcrumb-inner -->
-					</div><!-- .os-container -->
-					<div class="mask"></div>
-				</div><!-- .os-breadcrumb-wrap -->
+			<div
+				class="os-breadcrumb-wrap"
 				<?php
-		} else {
+				if ( has_header_image() ) {
+					?>
+					style="background-image: url(<?php header_image(); ?>);"
+					<?php
+				}
+				?>
+			>
+				<div class="__os-container__">
+					<div class="breadcrumb-inner">
+						<?php
+						if ( orchid_store_get_option( 'display_page_title' ) ) {
+							?>
+							<div class="title">
+								<h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>
+							</div><!-- .title -->
+							<?php
+						}
 
-			$display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
+						if ( $display_breadcrumb ) {
+							?>
+							<div class="os-breadcrumb">
+								<?php
+								/**
+								 * Hook - orchid_store_woocommerce_breadcrumb.
+								 *
+								 * @hooked woocommerce_breadcurmb - 20
+								 */
+								do_action( 'orchid_store_woocommerce_breadcrumb' );
+								?>
+							</div><!-- .os-breadcrumb -->
+							<?php
+						}
+						?>
+					</div><!-- .breadcrumb-inner -->
+				</div><!-- .os-container -->
+				<div class="mask"></div>
+			</div><!-- .os-breadcrumb-wrap -->
+			<?php
+		} else {
 
 			if ( $display_breadcrumb ) {
 				?>
-					<div class="os-page-breadcrumb-wrap">
-						<div class="__os-container__">
-							<div class="os-breadcrumb">
-							<?php
-							/**
-							 * Hook - orchid_store_woocommerce_breadcrumb.
-							 *
-							 * @hooked woocommerce_breadcurmb - 20
-							 */
-							do_action( 'orchid_store_woocommerce_breadcrumb' );
-							?>
-							</div><!-- .os-breadcrumb -->
-						</div><!-- .__os-container__ -->
-					</div><!-- .os-product-single-breadcrumb-wrap -->
-					<?php
+				<div class="os-page-breadcrumb-wrap">
+					<div class="__os-container__">
+						<div class="os-breadcrumb">
+						<?php
+						/**
+						 * Hook - orchid_store_woocommerce_breadcrumb.
+						 *
+						 * @hooked woocommerce_breadcurmb - 20
+						 */
+						do_action( 'orchid_store_woocommerce_breadcrumb' );
+						?>
+						</div><!-- .os-breadcrumb -->
+					</div><!-- .__os-container__ -->
+				</div><!-- .os-product-single-breadcrumb-wrap -->
+				<?php
 			}
 		}
 	}

@@ -33,7 +33,14 @@ if ( ! class_exists( 'Orchid_Store_Custom_Fields' ) ) {
 		 */
 		public function register_post_meta() {
 
-			add_meta_box( 'sidebar_position_metabox', esc_html__( 'Sidebar Position', 'orchid-store' ), array( $this, 'sidebar_position_meta' ), array( 'post', 'page' ), 'side', 'default' );
+			add_meta_box(
+				'sidebar_position_metabox',
+				esc_html__( 'Sidebar Position', 'orchid-store' ),
+				array( $this, 'sidebar_position_meta' ),
+				array( 'post', 'page' ),
+				'side',
+				'default'
+			);
 		}
 
 		/**
@@ -60,9 +67,7 @@ if ( ! class_exists( 'Orchid_Store_Custom_Fields' ) ) {
 				'left'  => esc_html__( 'Left', 'orchid-store' ),
 				'none'  => esc_html__( 'Fullwidth', 'orchid-store' ),
 			);
-
 			?>
-
 			<table width="100%" border="0" class="options" cellspacing="5" cellpadding="5">
 				<tr>
 					<td>
@@ -70,9 +75,9 @@ if ( ! class_exists( 'Orchid_Store_Custom_Fields' ) ) {
 							<?php
 							foreach ( $choices as $key => $choice ) {
 								?>
-								<option value="<?php echo esc_attr( $key ); ?>" 
-									<?php if ( $key === $sidebar_position ) { ?>
-										selected<?php } ?>
+								<option
+									value="<?php echo esc_attr( $key ); ?>"
+									<?php selected( $key, $sidebar_position ); ?>
 								>
 									<?php echo esc_html( $choice ); ?>
 								</option>

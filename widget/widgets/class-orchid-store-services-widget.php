@@ -14,6 +14,7 @@ if ( ! class_exists( 'Orchid_Store_Services_Widget' ) ) {
 	 * @package orchit_store
 	 */
 	class Orchid_Store_Services_Widget extends WP_Widget {
+
 		/**
 		 * Define id, name and description of the widget.
 		 *
@@ -57,19 +58,22 @@ if ( ! class_exists( 'Orchid_Store_Services_Widget' ) ) {
 								<?php
 								for ( $i = 0; $i < 3; $i++ ) {
 									?>
-										<div class="os-col">
-											<div class="box">
-												<div class="left-col">
+									<div class="os-col">
+										<div class="box">
+											<div class="left-col">
 												<?php
 												if ( ! empty( $services_imgs[ $i ] ) ) {
 													$service_img_alt_text = orchid_store_get_alt_text_of_image( $services_imgs[ $i ] );
 													?>
-														<img src="<?php echo esc_url( $services_imgs[ $i ] ); ?>" alt="<?php echo esc_attr( $service_img_alt_text ); ?>">
+														<img
+															src="<?php echo esc_url( $services_imgs[ $i ] ); ?>"
+															alt="<?php echo esc_attr( $service_img_alt_text ); ?>"
+														>
 														<?php
 												}
 												?>
-												</div><!-- .left-col -->
-												<div class="right-col">
+											</div><!-- .left-col -->
+											<div class="right-col">
 												<?php
 												if ( ! empty( $services_titles[ $i ] ) ) {
 													?>
@@ -87,10 +91,10 @@ if ( ! class_exists( 'Orchid_Store_Services_Widget' ) ) {
 														<?php
 												}
 												?>
-												</div><!-- .right-col -->
-											</div><!-- .box -->
-										</div><!-- .col -->
-										<?php
+											</div><!-- .right-col -->
+										</div><!-- .box -->
+									</div><!-- .col -->
+									<?php
 								}
 								?>
 								</div><!-- .row -->
@@ -98,7 +102,7 @@ if ( ! class_exists( 'Orchid_Store_Services_Widget' ) ) {
 						</div><!-- .__os-container__ -->
 					</div><!-- .section-inner -->
 				</section><!-- .section -->
-					<?php
+				<?php
 			}
 		}
 
@@ -122,8 +126,6 @@ if ( ! class_exists( 'Orchid_Store_Services_Widget' ) ) {
 			$services_descs  = ! empty( $instance['services_descs'] ) ? $instance['services_descs'] : array();
 			$services_imgs   = ! empty( $instance['services_imgs'] ) ? $instance['services_imgs'] : array();
 			?>
-			 
-
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
 					<strong><?php esc_html_e( 'Title', 'orchid-store' ); ?></strong>
@@ -160,13 +162,8 @@ if ( ! class_exists( 'Orchid_Store_Services_Widget' ) ) {
 								id="<?php echo esc_attr( $this->get_field_id( 'services_titles' ) . $i ); ?>"
 								name="<?php echo esc_attr( $this->get_field_name( 'services_titles' ) ); ?>[]"
 								type="text"
-								value="
-								<?php
-								if ( ! empty( $services_titles[ $i ] ) ) {
-									echo esc_attr( $services_titles[ $i ] );
-								}
-								?>
-							"/> 
+								value="<?php echo isset( $services_titles[ $i ] ) ? esc_attr( $services_titles[ $i ] ) : ''; ?>"
+							/> 
 
 							<label for="<?php echo esc_attr( $this->get_field_id( 'services_descs' ) . $i ); ?>">
 								<strong><?php esc_html_e( 'Description', 'orchid-store' ); ?></strong>
@@ -176,16 +173,10 @@ if ( ! class_exists( 'Orchid_Store_Services_Widget' ) ) {
 								id="<?php echo esc_attr( $this->get_field_id( 'services_descs' ) . $i ); ?>"
 								name="<?php echo esc_attr( $this->get_field_name( 'services_descs' ) ); ?>[]"
 								type="text"
-								value="
-							<?php
-							if ( ! empty( $services_descs[ $i ] ) ) {
-								echo esc_attr( $services_descs[ $i ] ); }
-							?>
-							"/> 
+								value="<?php echo isset( $services_descs[ $i ] ) ? esc_attr( $services_descs[ $i ] ) : ''; ?>"
+							/> 
 
-							<label for="<?php echo esc_attr( $this->get_field_id( 'services_imgs' ) . $i ); ?>">
-								<strong><?php esc_html_e( 'Icon Image', 'orchid-store' ); ?></strong>
-							</label>
+							<span><strong><?php esc_html_e( 'Icon Image', 'orchid-store' ); ?></strong></span>
 							<span class="os-image-notice">
 								<?php esc_html_e( 'Upload image having 1x1 aspect ratio.', 'orchid-store' ); ?>
 							</span>
@@ -205,7 +196,6 @@ if ( ! class_exists( 'Orchid_Store_Services_Widget' ) ) {
 									$upload_btn_class .= ' os-btn-hide';
 								}
 								?>
-																
 								<span class="os-upload-image-holder" style="background-image: url( 
 								<?php
 								if ( ! empty( $services_imgs[ $i ] ) ) {
@@ -217,12 +207,8 @@ if ( ! class_exists( 'Orchid_Store_Services_Widget' ) ) {
 									class="widefat os-upload-image-url-holder"
 									name="<?php echo esc_attr( $this->get_field_name( 'services_imgs' ) ); ?>[]"
 									id="<?php echo esc_attr( $this->get_field_id( 'services_imgs' ) . $i ); ?>"
-									value="
-									<?php
-									if ( ! empty( $services_imgs[ $i ] ) ) {
-										echo esc_attr( $services_imgs[ $i ] ); }
-									?>
-								">
+									value="<?php echo isset( $services_imgs[ $i ] ) ? esc_attr( $services_imgs[ $i ] ) : ''; ?>"
+								>
 								<button class="<?php echo esc_attr( $upload_btn_class ); ?>" id="os-upload-btn">
 									<?php esc_html_e( 'Upload', 'orchid-store' ); ?>
 								</button>

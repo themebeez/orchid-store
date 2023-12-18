@@ -9,7 +9,7 @@
  * @subpackage Orchid_Store/customizer/controls
  */
 
-if ( ! class_exists( 'Cuctomize_' ) ) {
+if ( ! class_exists( 'Orchid_Store_Customize_AFC_Recommendation_Control' ) ) {
 
 	/**
 	 * The customize control to add plugin installation and activation of AFC plugin.
@@ -55,7 +55,10 @@ if ( ! class_exists( 'Cuctomize_' ) ) {
 			$installed_plugins = get_plugins();
 			?>
 			<div class="os-afc-recommendation">
-				<div id="os-afc-install" class="os-afc-stat <?php echo ( ! isset( $installed_plugins['addonify-floating-cart/addonify-floating-cart.php'] ) ) ? 'afc-display' : 'afc-hide'; ?>">
+				<div
+					id="os-afc-install"
+					class="os-afc-stat <?php echo ( ! isset( $installed_plugins['addonify-floating-cart/addonify-floating-cart.php'] ) ) ? 'afc-display' : 'afc-hide'; ?>"
+				>
 					<p>
 						<?php
 						printf(
@@ -70,7 +73,10 @@ if ( ! class_exists( 'Cuctomize_' ) ) {
 					</button>
 				</div>
 
-				<div id="os-afc-activate" class="os-afc-stat <?php echo ( isset( $installed_plugins['addonify-floating-cart/addonify-floating-cart.php'] ) && ! is_plugin_active( 'addonify-floating-cart/addonify-floating-cart.php' ) ) ? 'afc-display' : 'afc-hide'; ?>">
+				<div
+					id="os-afc-activate"
+					class="os-afc-stat <?php echo ( isset( $installed_plugins['addonify-floating-cart/addonify-floating-cart.php'] ) && ! is_plugin_active( 'addonify-floating-cart/addonify-floating-cart.php' ) ) ? 'afc-display' : 'afc-hide'; ?>"
+				>
 					<p>
 						<?php
 						printf(
@@ -85,7 +91,10 @@ if ( ! class_exists( 'Cuctomize_' ) ) {
 					</button>
 				</div>
 
-				<div id="os-afc-activated" class="os-afc-stat <?php echo ( isset( $installed_plugins['addonify-floating-cart/addonify-floating-cart.php'] ) && is_plugin_active( 'addonify-floating-cart/addonify-floating-cart.php' ) ) ? 'afc-display' : 'afc-hide'; ?>">
+				<div
+					id="os-afc-activated"
+					class="os-afc-stat <?php echo ( isset( $installed_plugins['addonify-floating-cart/addonify-floating-cart.php'] ) && is_plugin_active( 'addonify-floating-cart/addonify-floating-cart.php' ) ) ? 'afc-display' : 'afc-hide'; ?>"
+				>
 					<p>
 						<?php
 						printf(

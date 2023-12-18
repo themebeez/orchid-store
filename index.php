@@ -39,6 +39,12 @@ get_header();
 										<?php
 									}
 
+									$display_post_thumbnail  = orchid_store_get_option( 'blog_featured_image' );
+									$display_categories_meta = orchid_store_get_option( 'blog_display_cats' );
+									$display_post_excerpt    = orchid_store_get_option( 'blog_display_excerpt' );
+									$display_author_meta     = orchid_store_get_option( 'blog_display_author' );
+									$display_date_meta       = orchid_store_get_option( 'blog_display_date' );
+
 									/* Start the Loop */
 									while ( have_posts() ) {
 
@@ -49,7 +55,17 @@ get_header();
 										 * If you want to override this in a child theme, then include a file
 										 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 										 */
-										get_template_part( 'template-parts/content', get_post_type() );
+										get_template_part(
+											'template-parts/content',
+											get_post_type(),
+											array(
+												'display_post_thumbnail'  => $display_post_thumbnail,
+												'display_categories_meta' => $display_categories_meta,
+												'display_excerpt'         => $display_post_excerpt,
+												'display_author_meta'     => $display_author_meta,
+												'display_date_meta'       => $display_date_meta,
+											)
+										);
 
 									}
 

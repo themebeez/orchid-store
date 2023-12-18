@@ -109,6 +109,7 @@ if ( ! function_exists( 'orchid_store_setup' ) ) {
 		 */
 		remove_theme_support( 'widgets-block-editor' );
 	}
+
 	add_action( 'after_setup_theme', 'orchid_store_setup' );
 }
 

@@ -488,7 +488,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	);
 
 	$wp_customize->add_control(
-		new Orchid_Store_AFC_Recommendation_Control(
+		new Orchid_Store_Customize_AFC_Recommendation_Control(
 			$wp_customize,
 			'orchid_store_field_afc_plugin_recommendation',
 			array(
@@ -772,10 +772,11 @@ orchid_store_add_radio_image_field(
 /*******************************************************************************************************
 ************************************ Sidebar Control Fields Declaration *********************************
 */
+// @since 1.5.3
 orchid_store_add_number_field(
 	'sidebar_width',
-	esc_html__( 'Change Sidebar Width Dynamically', 'orchid-store' ),
-	'SidebarWidth in %',
+	esc_html__( 'Sidebar Width', 'orchid-store' ),
+	esc_html__( '(In %)', 'orchid-store' ),
 	'',
 	'site_sidebar',
 	'',
@@ -1181,7 +1182,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	);
 
 	$wp_customize->add_control(
-		new Orchid_Store_Customizer_Toggle_Control(
+		new Orchid_Store_Customize_Toggle_Control(
 			$wp_customize,
 			'orchid_store_field_display_out_of_stock_notice',
 			array(
@@ -1229,7 +1230,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	);
 
 	$wp_customize->add_control(
-		new Orchid_Store_Customizer_Toggle_Control(
+		new Orchid_Store_Customize_Toggle_Control(
 			$wp_customize,
 			'orchid_store_field_display_add_to_cart_button_on_hover',
 			array(
@@ -1253,7 +1254,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	);
 
 	$wp_customize->add_control(
-		new Orchid_Store_Customizer_Toggle_Control(
+		new Orchid_Store_Customize_Toggle_Control(
 			$wp_customize,
 			'orchid_store_field_display_add_to_cart_button_icon',
 			array(
@@ -1301,7 +1302,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	);
 
 	$wp_customize->add_control(
-		new Orchid_Store_Customizer_Toggle_Control(
+		new Orchid_Store_Customize_Toggle_Control(
 			$wp_customize,
 			'orchid_store_field_enable_percentage_sale_tag',
 			array(
@@ -1345,7 +1346,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	);
 
 	$wp_customize->add_control(
-		new Orchid_Store_Customizer_Toggle_Control(
+		new Orchid_Store_Customize_Toggle_Control(
 			$wp_customize,
 			'orchid_store_field_display_plus_minus_btns',
 			array(
@@ -1378,7 +1379,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	);
 
 	$wp_customize->add_control(
-		new Orchid_Store_Customizer_Toggle_Control(
+		new Orchid_Store_Customize_Toggle_Control(
 			$wp_customize,
 			'orchid_store_field_enable_cart_messages',
 			array(

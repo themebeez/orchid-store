@@ -40,5 +40,5 @@
 		 */
 		do_action( 'orchid_store_header' );
 		?>
-		
+
 		<div id="content" class="site-content">
