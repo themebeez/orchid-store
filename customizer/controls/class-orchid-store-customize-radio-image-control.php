@@ -49,6 +49,17 @@ if ( ! class_exists( 'Orchid_Store_Customize_Radio_Image_Control' ) ) {
 			<span class="customize-control-title">
 				<?php echo esc_html( $this->label ); ?>
 			</span>
+			<?php
+			if ( $this->description ) {
+				?>
+				<div class="customize-control-description-wrapper">
+					<span class="customize-control-description">
+						<?php echo esc_html( $this->description ); ?>
+					</span>
+				</div>
+				<?php
+			}
+			?>
 			<div id="input_<?php echo esc_attr( $this->id ); ?>" class="image">
 				<?php
 				foreach ( $this->choices as $value => $label ) {

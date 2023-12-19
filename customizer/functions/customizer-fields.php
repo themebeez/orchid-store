@@ -1493,12 +1493,11 @@ if ( class_exists( 'WooCommerce' ) ) {
 			$wp_customize,
 			'orchid_store_field_checkout_layout',
 			array(
-				'label'           => esc_html__( 'Checkout Layout', 'orchid-store' ),
-				'description'     => '',
-				'type'            => 'select',
-				'choices'         => orchid_store_checkout_page_layouts(),
-				'section'         => 'woocommerce_checkout',
-				'active_callback' => 'orchid_store_has_checkout_page_checkout_shortcode',
+				'label'       => esc_html__( 'Checkout Layout', 'orchid-store' ),
+				'description' => esc_html__( 'This option works when cart page content has cart shortcode or classic cart block.', 'orchid-store' ),
+				'type'        => 'select',
+				'choices'     => orchid_store_checkout_page_layouts(),
+				'section'     => 'woocommerce_checkout',
 			)
 		)
 	);
@@ -1519,12 +1518,11 @@ if ( class_exists( 'WooCommerce' ) ) {
 			$wp_customize,
 			'orchid_store_field_cart_layout',
 			array(
-				'label'           => esc_html__( 'Cart Layout', 'orchid-store' ),
-				'description'     => '',
-				'type'            => 'select',
-				'choices'         => orchid_store_cart_page_layouts(),
-				'section'         => 'orchid_store_section_woocommerce_cart',
-				'active_callback' => 'orchid_store_has_cart_page_cart_shortcode',
+				'label'       => esc_html__( 'Cart Layout', 'orchid-store' ),
+				'description' => esc_html__( 'This option works when checkout page content has checkout shortcode or classic checkout block.', 'orchid-store' ),
+				'type'        => 'select',
+				'choices'     => orchid_store_cart_page_layouts(),
+				'section'     => 'orchid_store_section_woocommerce_cart',
 			)
 		)
 	);
