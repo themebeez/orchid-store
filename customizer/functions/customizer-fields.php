@@ -779,9 +779,9 @@ orchid_store_add_number_field(
 	esc_html__( '(In %)', 'orchid-store' ),
 	'',
 	'site_sidebar',
-	'',
-	'',
-	''
+	'40',
+	'20',
+	'1'
 );
 
 orchid_store_add_toggle_field(
@@ -1493,11 +1493,12 @@ if ( class_exists( 'WooCommerce' ) ) {
 			$wp_customize,
 			'orchid_store_field_checkout_layout',
 			array(
-				'label'       => esc_html__( 'Checkout Layout', 'orchid-store' ),
-				'description' => '',
-				'type'        => 'select',
-				'choices'     => orchid_store_checkout_page_layouts(),
-				'section'     => 'woocommerce_checkout',
+				'label'           => esc_html__( 'Checkout Layout', 'orchid-store' ),
+				'description'     => '',
+				'type'            => 'select',
+				'choices'         => orchid_store_checkout_page_layouts(),
+				'section'         => 'woocommerce_checkout',
+				'active_callback' => 'orchid_store_has_checkout_page_checkout_shortcode',
 			)
 		)
 	);
@@ -1518,11 +1519,12 @@ if ( class_exists( 'WooCommerce' ) ) {
 			$wp_customize,
 			'orchid_store_field_cart_layout',
 			array(
-				'label'       => esc_html__( 'Cart Layout', 'orchid-store' ),
-				'description' => '',
-				'type'        => 'select',
-				'choices'     => orchid_store_cart_page_layouts(),
-				'section'     => 'orchid_store_section_woocommerce_cart',
+				'label'           => esc_html__( 'Cart Layout', 'orchid-store' ),
+				'description'     => '',
+				'type'            => 'select',
+				'choices'         => orchid_store_cart_page_layouts(),
+				'section'         => 'orchid_store_section_woocommerce_cart',
+				'active_callback' => 'orchid_store_has_cart_page_cart_shortcode',
 			)
 		)
 	);

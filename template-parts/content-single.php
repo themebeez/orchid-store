@@ -15,7 +15,7 @@ $orchid_store_show_featured_img = orchid_store_get_option( 'display_post_feature
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
-	if ( ! orchid_store_get_option( 'display_page_header' ) ) {
+	if ( ! orchid_store_get_option( 'display_page_header' ) || ! orchid_store_get_option( 'display_page_title' ) ) {
 		?>
 		<h1 class="entry-title page-title"><?php the_title(); ?></h1>
 		<?php
