@@ -303,3 +303,57 @@ function orchid_store_is_percentage_discount_tag_disabled( $control ) {
 
 	return $control->manager->get_setting( 'orchid_store_field_enable_percentage_sale_tag' )->value();
 }
+
+
+if ( ! function_exists( 'orchid_store_has_cart_page_cart_shortcode' ) ) {
+	/**
+	 * Active callback function that checks whether cart shortcode exists in cart page content.
+	 *
+	 * @since 1.5.3
+	 *
+	 * @return boolean
+	 */
+	function orchid_store_has_cart_page_cart_shortcode() {
+
+		$woo_cart_page_id = get_option( 'woocommerce_cart_page_id' );
+
+		if ( $woo_cart_page_id ) {
+
+			$cart_page_post = get_post( (int) $woo_cart_page_id );
+
+			if ( $cart_page_post instanceof WP_Post ) {
+
+				return has_shortcode( $cart_page_post->post_content, 'woocommerce_cart' );
+			}
+		}
+
+		return false;
+	}
+}
+
+
+if ( ! function_exists( 'orchid_store_has_checkout_page_checkout_shortcode' ) ) {
+	/**
+	 * Active callback function that checks whether checkout shortcode exists in checkout page content.
+	 *
+	 * @since 1.5.3
+	 *
+	 * @return boolean
+	 */
+	function orchid_store_has_checkout_page_checkout_shortcode() {
+
+		$woo_checkout_page_id = get_option( 'woocommerce_checkout_page_id' );
+
+		if ( $woo_checkout_page_id ) {
+
+			$checkout_page_post = get_post( (int) $woo_checkout_page_id );
+
+			if ( $checkout_page_post instanceof WP_Post ) {
+
+				return has_shortcode( $checkout_page_post->post_content, 'woocommerce_cart' );
+			}
+		}
+
+		return false;
+	}
+}
