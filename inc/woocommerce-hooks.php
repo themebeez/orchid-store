@@ -114,11 +114,6 @@ if ( ! function_exists( 'orchid_store_mini_cart_action' ) ) {
 	 * @since 1.0.0
 	 */
 	function orchid_store_mini_cart_action() {
-
-		if ( ! class_exists( 'WooCommerce' ) ) {
-
-			return;
-		}
 		?>
 		<div class="mini-cart">
 			<button class="trigger-mini-cart">
@@ -203,39 +198,18 @@ if ( ! function_exists( 'orchid_store_user_links_action' ) ) {
 	 * @since 1.0.0
 	 */
 	function orchid_store_user_links_action() {
-
-		if (
-			! class_exists( 'WooCommerce' ) &&
-			(
-				! class_exists( 'YITH_WCWL' ) &&
-				! class_exists( 'Addonify_Wishlist' )
-			)
-		) {
-
-			return;
-		}
 		?>
 		<nav class="login_register_link">
 			<ul>
 				<?php
-				if ( class_exists( 'WooCommerce' ) ) {
+				$login_link       = get_permalink( get_option( 'woocommerce_myaccount_page_id' ) );
+				$login_link_title = ( is_user_logged_in() ) ? esc_html__( 'My account', 'orchid-store' ) : esc_html__( 'Login / Register', 'orchid-store' );
+				if ( $login_link && $login_link_title ) {
 					?>
 					<li>
-						<?php
-						if ( is_user_logged_in() ) {
-							?>
-							<a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>">
-								<i class='bx bx-user'></i> <?php esc_html_e( 'My account', 'orchid-store' ); ?>
-							</a>
-							<?php
-						} else {
-							?>
-							<a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>">
-								<i class='bx bx-user'></i> <?php esc_html_e( 'Login / Register', 'orchid-store' ); ?>
-							</a>
-							<?php
-						}
-						?>
+						<a href="<?php echo esc_url( $login_link ); ?>">
+							<i class='bx bx-user'></i> <?php echo esc_html( $login_link_title ); ?>
+						</a>
 					</li>
 					<?php
 				}
@@ -631,10 +605,6 @@ if ( ! function_exists( 'orchid_store_woocommerce_title_breadcrumb_action' ) ) {
 	 */
 	function orchid_store_woocommerce_title_breadcrumb_action() {
 
-		if ( ! class_exists( 'WooCommerce' ) ) {
-			return;
-		}
-
 		$display_breadcrumb = orchid_store_get_option( 'display_breadcrumb' );
 
 		if ( is_product() ) {
@@ -700,10 +670,9 @@ if ( ! function_exists( 'orchid_store_woocommerce_title_breadcrumb_action' ) ) {
 				<div class="mask"></div>
 			</div><!-- .os-breadcrumb-wrap -->
 			<?php
-		} else {
+		} elseif ( $display_breadcrumb ) {
 
-			if ( $display_breadcrumb ) {
-				?>
+			?>
 				<div class="os-page-breadcrumb-wrap">
 					<div class="__os-container__">
 						<div class="os-breadcrumb">
@@ -719,7 +688,7 @@ if ( ! function_exists( 'orchid_store_woocommerce_title_breadcrumb_action' ) ) {
 					</div><!-- .__os-container__ -->
 				</div><!-- .os-product-single-breadcrumb-wrap -->
 				<?php
-			}
+
 		}
 	}
 
