@@ -479,7 +479,7 @@ if ( ! class_exists( 'Orchid_Store_About_Widget' ) ) {
 
 			$instance['twitter_url'] = isset( $new_instance['twitter_url'] ) ? esc_url_raw( $new_instance['twitter_url'] ) : '';
 
-			$instance['instagram_url'] = isset( $new_instance['instagram_url'] ) ? sc_url_raw( $new_instance['instagram_url'] ) : '';
+			$instance['instagram_url'] = isset( $new_instance['instagram_url'] ) ? esc_url_raw( $new_instance['instagram_url'] ) : '';
 
 			$instance['youtube_url'] = isset( $new_instance['youtube_url'] ) ? esc_url_raw( $new_instance['youtube_url'] ) : '';
 
