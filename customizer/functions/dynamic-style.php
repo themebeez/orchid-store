@@ -339,15 +339,17 @@ if ( ! function_exists( 'orchid_store_dynamic_style' ) ) {
 			if ( 'fullwidth' === $site_layout ) {
 				$custom_style .= '
 				@media( min-width: 1400px ) {
-					.__os-container__ {
+					body.elementor-page .__os-container__, body.elementor-page .elementor-section-boxed>.elementor-container, .__os-container__ {
 						max-width: ' . esc_attr( $container_width ) . 'px;
 					}
+
+					
 				}
 				';
 			} else {
 				$custom_style .= '
 				@media( min-width: 1400px ) {
-					body.boxed .__os-container__, body.boxed .__os-page-wrap__, body.boxed.elementor-page .__os-container__, body.boxed.elementor-page .elementor-section-boxed>.elementor-container, body.elementor-page .__os-container__ {
+					body.boxed .__os-container__, body.boxed .__os-page-wrap__, body.boxed.elementor-page .__os-container__, body.boxed.elementor-page .elementor-section-boxed>.elementor-container {
 						max-width: ' . esc_attr( $container_width ) . 'px;
 					}
 				}

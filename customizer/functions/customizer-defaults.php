@@ -131,7 +131,7 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
 			'footer_widgets_area_columns'            => '4',
 			'display_scroll_top_button'              => true,
 
-			'copyright_text'                         => '',
+			'copyright_text'                         => esc_html__( 'Copyright {copy} {year}, {site_title}. All rights reserved. Theme by {theme_author}.', 'orchid-store' ),
 			'payments_image'                         => '',
 
 			'excerpt_length'                         => 30,
