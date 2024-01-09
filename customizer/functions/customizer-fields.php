@@ -852,12 +852,13 @@ orchid_store_add_select_field(
 	'site_footer'
 );
 
-orchid_store_add_text_field(
-	'copyright_text',
-	esc_html__( 'Copyright Text', 'orchid-store' ),
-	'',
-	'',
-	'site_footer'
+orchid_store_add_textarea_field(
+	array(
+		'id'          => 'copyright_text',
+		'section'     => 'site_footer',
+		'label'       => esc_html__( 'Copyright Text', 'orchid-store' ),
+		'description' => esc_html__( 'You can use {copy}, {year}, {site_title}, and {theme_author} placeholders to display copyright icon, current year, site title,and theme author respectively in the copyright text.', 'orchid-store' ),
+	)
 );
 
 orchid_store_add_image_field(
