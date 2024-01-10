@@ -107,23 +107,22 @@ if ( ! class_exists( 'Orchid_Store_Sortable_Repeater_Control' ) ) {
 					<?php $this->link(); ?>
 				/>
 				<div class="sortable">
-					<div class="repeater">
+					<div
+						class="repeater"
+						style="display: flex; gap: 3px; align-items: center; margin-bottom: 5px;"
+					>
 						<input
 							type="text"
 							value=""
 							class="repeater-input"
+							name="repeater-input-0"
 						/>
-						<span
-							class="dashicons dashicons-sort">
-						</span>
+						<span class="dashicons dashicons-sort"></span>
 						<a 
 							class="customize-control-sortable-repeater-delete"
-							href="#">
-							<span 
-								class="dashicons dashicons-no-alt">
-
-							</span>
-						</a>
+							href="#"
+							style="text-decoration: none;"
+						><span class="dashicons dashicons-no-alt"></span></a>
 					</div>
 				</div>
 				<button
