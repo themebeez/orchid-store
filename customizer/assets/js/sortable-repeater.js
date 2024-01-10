@@ -1,6 +1,8 @@
 (function( $ ) {
 
 	wp.customize.bind( 'ready', function() {
+
+		let repeaterCount = 100;
 		
 		/**
 		 * Sortable Repeater Custom Control
@@ -23,7 +25,7 @@
 				if(numRepeaterItems > 1) {
 					var i;
 					for (i = 1; i < numRepeaterItems; ++i) {
-						orchidstoreAppendRow($(this), defaultValuesArray[i]);
+						orchidstoreAppendRow($(this), defaultValuesArray[i], i);
 					}
 				}
 			}
@@ -77,8 +79,15 @@
 		});
 
 		// Append a new row to our list of elements
-		function orchidstoreAppendRow($element, defaultValue = '') {
-			var newRow = '<div class="repeater" style="display:none"><input type="text" value="' + defaultValue + '" class="repeater-input" /><span class="dashicons dashicons-sort"></span><a class="customize-control-sortable-repeater-delete" href="#"><span class="dashicons dashicons-no-alt"></span></a></div>';
+		function orchidstoreAppendRow($element, defaultValue = '', index = 0 ) {
+
+			if ( index === undefined || ! ( index > 0 ) ) {
+				index = repeaterCount++;
+			} else {
+				repeaterCount = index;
+			}
+
+			var newRow = '<div class="repeater" style="display: flex; gap: 3px; align-items: center; margin-bottom: 5px;"><input type="text" value="' + defaultValue + '" class="repeater-input" name="repeater-input-' + index + '" /><span class="dashicons dashicons-sort"></span><a class="customize-control-sortable-repeater-delete" href="#" style="text-decoration: none;"><span class="dashicons dashicons-no-alt"></span></a></div>';
 
 			$element.find('.sortable').append(newRow);
 			$element.find('.sortable').find('.repeater:last').slideDown('slow', function(){
