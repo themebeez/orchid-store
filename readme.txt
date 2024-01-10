@@ -18,8 +18,8 @@ Orchid Store is a clean, flexible, stylish & dynamic e-commerce WordPress theme.
 
 == License ==
 
-Orchid Store, WordPress Theme, Copyright (C) 2024, themebeez.
-Orchid Store is distributed under the terms of the GNU GPL
+Orchid Store WordPress Theme, Copyright (C) 2024, themebeez.
+Orchid Store is distributed under the terms of the GNU GPL.
 
 
 == Credits ==
@@ -93,11 +93,13 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == 1.5.3 - 10 January, 2024 ==
 
+- Added:   Search form template.
 - Added:   Option to change the width of sidebar.
-- Updated: Copyright field to textarea from text. Copyright text now can include placeholders `{copy}`, `{year}`, `{site_title}`, and `{theme_author}` to display copyright icon, current year, site title, and theme author respectively.
+- Updated: Copyright field changed to textarea from text. Copyright text now can include placeholders `{copy}`, `{year}`, `{site_title}`, and `{theme_author}` to display copyright icon, current year, site title, and theme author respectively.
 - Updated: Minified dynamic CSS.
 - Updated: Breadcrumb trails.
 - Updated: DB Query optimization.
+- Fixed:   Dynamic container width for elementor page.
 - Fixed:   PHP error `Warning: sprintf(): Too few arguments in \wp-admin\includes\class-bulk-upgrader-skin.php on line 162` while installing plugins via TGMPA.
 - Tested:  WooCommerce version 8.4.0.
 - Tested:  PHP versions 8.0.
