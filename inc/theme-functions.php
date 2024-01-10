@@ -300,43 +300,6 @@ if ( ! function_exists( 'orchid_store_excerpt_more' ) ) {
 }
 
 
-if ( ! function_exists( 'orchid_store_search_form' ) ) {
-	/**
-	 * Modifies WordPress's default search form HTML.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param string $form Search form HTML.
-	 * @return string
-	 */
-	function orchid_store_search_form( $form ) {
-
-		$form = '<form role="search" method="get" id="search-form" class="search-form" action="' . esc_url( home_url( '/' ) ) . '">
-					<label for="s">
-						<span class="screen-reader-text">'
-							/* translators: Hidden accessibility text. */
-							. _x( 'Search for:', 'label', 'orchid-store' ) .
-						'</span>
-					</label>
-					<input 
-						type="search"
-						id="s"
-						name="s" 
-						placeholder="' . esc_html_x( 'Type here to search', 'placeholder', 'orchid-store' ) . '"
-						value="' . get_search_query() . '"
-					>
-					<button type="submit">
-						<i class="bx bx-search"></i>
-					</button>
-				</form>';
-
-		return $form;
-	}
-
-	add_filter( 'get_search_form', 'orchid_store_search_form', 10 );
-}
-
-
 if ( ! function_exists( 'orchid_store_default_archive_widget' ) ) {
 	/**
 	 * Modifies the archive HTML link content.

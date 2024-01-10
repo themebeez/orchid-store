@@ -75,11 +75,12 @@ if ( ! function_exists( 'orchid_store_top_header_menu_action' ) ) {
 			?>
 			<nav id="top-header-menu" class="top-header-menu">
 				<?php
-				$menu_args = array(
-					'theme_location' => 'menu-3',
-					'container'      => '',
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-3',
+						'container'      => '',
+					)
 				);
-				wp_nav_menu( $menu_args );
 				?>
 			</nav><!-- .site-navigation.site-navigation -->
 			<?php
@@ -248,14 +249,15 @@ if ( ! function_exists( 'orchid_store_primary_navigation_action' ) ) {
 		?>
 		<nav id="site-navigation" class="site-navigation">
 			<?php
-			$menu_args = array(
-				'theme_location' => 'menu-1',
-				'container'      => '',
-				'menu_class'     => 'primary-menu',
-				'menu_id'        => 'primary-menu',
-				'fallback_cb'    => 'orchid_store_navigation_fallback',
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-1',
+					'container'      => '',
+					'menu_class'     => 'primary-menu',
+					'menu_id'        => 'primary-menu',
+					'fallback_cb'    => 'orchid_store_navigation_fallback',
+				)
 			);
-			wp_nav_menu( $menu_args );
 			?>
 		</nav><!-- .site-navigation.site-navigation -->
 		<?php
