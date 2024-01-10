@@ -11,7 +11,7 @@ $current_theme = wp_get_theme( 'orchid-store' );
 
 define( 'ORCHID_STORE_VERSION', $current_theme->get( 'Version' ) );
 
-if ( ! function_exists( 'orchid_store_setup' ) ) :
+if ( ! function_exists( 'orchid_store_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -109,8 +109,9 @@ if ( ! function_exists( 'orchid_store_setup' ) ) :
 		 */
 		remove_theme_support( 'widgets-block-editor' );
 	}
-endif;
-add_action( 'after_setup_theme', 'orchid_store_setup' );
+
+	add_action( 'after_setup_theme', 'orchid_store_setup' );
+}
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -292,9 +293,9 @@ add_action( 'wp_ajax_wp_ajax_install_plugin', 'wp_ajax_install_plugin' );
 
 
 /**
- * Activates plugin AFC plugin.
+ * Activates AFC plugin.
  *
- * @since 1.4.2
+ * @since 1.0.0
  */
 function orchid_store_activate_plugin() {
 
@@ -351,14 +352,6 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/customizer/customizer.php';
 
 /**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-
-	require get_template_directory() . '/inc/jetpack.php';
-}
-
-/**
  * Load WooCommerce compatibility file.
  */
 if ( class_exists( 'WooCommerce' ) ) {
@@ -371,7 +364,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 /**
  * Load breadcrumb trails.
  */
-require get_template_directory() . '/third-party/breadcrumbs.php';
+require get_template_directory() . '/third-party/class-orchid-store-breadcrumb-trail.php';
 
 /**
  * Load TGM plugin activation.
@@ -415,7 +408,7 @@ require get_template_directory() . '/widget/widgets-init.php';
 /**
  * Load custom fields.
  */
-require get_template_directory() . '/inc/custom-fields.php';
+require get_template_directory() . '/inc/class-orchid-store-custom-fields.php';
 
 /**
  * Load theme dependecies

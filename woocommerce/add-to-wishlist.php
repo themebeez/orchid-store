@@ -18,18 +18,18 @@ global $product;
 	data-fragment-ref="<?php echo esc_attr( $product_id ); ?>"
 	data-fragment-options="<?php echo esc_attr( wp_json_encode( $fragment_options ) ); ?>"
 >
-	<?php if ( ! $ajax_loading ) : ?>
-		<?php if ( ! ( $disable_wishlist && ! is_user_logged_in() ) ) : ?>
+	<?php if ( ! $ajax_loading ) { ?>
+		<?php if ( ! ( $disable_wishlist && ! is_user_logged_in() ) ) { ?>
 			<!-- ADD TO WISHLIST -->
 			<?php yith_wcwl_get_template( 'add-to-wishlist-' . $template_part . '.php', $var ); ?>
 
 			<!-- COUNT TEXT -->
 			<?php
-			if ( $show_count ) :
-				echo yith_wcwl_get_count_text( $product_id ); // phpcs:ignore
-			endif;
+			if ( $show_count ) {
+				echo esc_html( yith_wcwl_get_count_text( $product_id ) );
+			}
 			?>
-		<?php else : ?>
+		<?php } else { ?>
 			<a
 				href="<?php echo esc_url( add_query_arg( array( 'wishlist_notice' => 'true', 'add_to_wishlist' => $product_id ), get_permalink( wc_get_page_id( 'myaccount' ) ) ) ); // phpcs:ignore ?>"
 				rel="nofollow"
@@ -41,6 +41,6 @@ global $product;
 				</span>
 				<span class="text"><?php echo esc_html( $label ); ?></span>
 			</a>
-		<?php endif; ?>
-	<?php endif; ?>
+		<?php } ?>
+	<?php } ?>
 </div>

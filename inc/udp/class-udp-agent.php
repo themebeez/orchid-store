@@ -189,7 +189,6 @@ class Udp_Agent {
 		// Redirect back to dashboard.
 		wp_safe_redirect( admin_url() );
 		exit;
-
 	}
 
 	// ----------------------------------------------
@@ -225,7 +224,7 @@ class Udp_Agent {
 		$data['data']            = WP_Debug_Data::debug_data();
 		$data['site_url']        = $site_scheme . $site_host . $site_port;
 		$data['site_user_email'] = get_bloginfo( 'admin_email' );
-		$plugin_directory        = untrailingslashit( dirname( __FILE__, 3 ) );
+		$plugin_directory        = untrailingslashit( dirname( __DIR__, 2 ) );
 		$dir_names               = explode( '/', $plugin_directory );
 		if ( strpos( $dir_names[ count( $dir_names ) - 1 ], '\\' ) ) {
 			$dir_names = explode( '\\', $dir_names[ count( $dir_names ) - 1 ] );

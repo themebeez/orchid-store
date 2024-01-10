@@ -4,10 +4,11 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 7.4
 Requires at least: 6.0.0
-Tested up to: 6.3.0
-Stable tag: 1.5.2
-License: GNU General Public License v2 or Later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html or Later
+Tested up to: 6.4.2
+Version: 1.5.3
+Stable tag: 1.5.3
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Description ==
@@ -17,7 +18,7 @@ Orchid Store is a clean, flexible, stylish & dynamic e-commerce WordPress theme.
 
 == License ==
 
-Orchid Store, WordPress Theme, Copyright (C) 2023, themebeez.
+Orchid Store, WordPress Theme, Copyright (C) 2024, themebeez.
 Orchid Store is distributed under the terms of the GNU GPL
 
 
@@ -89,6 +90,17 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.5.3 - 10 January, 2024 ==
+
+- Added:   Option to change the width of sidebar.
+- Updated: Copyright field to textarea from text. Copyright text now can include placeholders `{copy}`, `{year}`, `{site_title}`, and `{theme_author}` to display copyright icon, current year, site title, and theme author respectively.
+- Updated: Minified dynamic CSS.
+- Updated: Breadcrumb trails.
+- Updated: DB Query optimization.
+- Fixed:   PHP error `Warning: sprintf(): Too few arguments in \wp-admin\includes\class-bulk-upgrader-skin.php on line 162` while installing plugins via TGMPA.
+- Tested:  WooCommerce version 8.4.0.
+- Tested:  PHP versions 8.0.
 
 == 1.5.2 - 29 August, 2023 ==
 

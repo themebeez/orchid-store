@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								if (
 									! is_product() &&
 									! orchid_store_get_option( 'display_page_header' ) &&
-									orchid_store_get_option( 'display_page_title' ) 
+									orchid_store_get_option( 'display_page_title' )
 								) {
 									?>
 									<h1 class="entry-title page-title"><?php woocommerce_page_title(); ?></h1>

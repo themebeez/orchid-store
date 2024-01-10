@@ -21,22 +21,24 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<?php 
-	if( function_exists( 'wp_body_open' ) ) { 
-		wp_body_open(); 
-	} 
+	<?php
+	if ( function_exists( 'wp_body_open' ) ) {
+		wp_body_open();
+	}
 	?>
 	<div id="page" class="site __os-page-wrap__">
 
-		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'orchid-store' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#content">
+			<?php esc_html_e( 'Skip to content', 'orchid-store' ); ?>
+		</a>
 
 		<?php
 		/**
-        * Hook - orchid_store_header.
-        *
-        * @hooked orchid_store_header_action - 10
-        */
-        do_action( 'orchid_store_header' );
-        ?>
-        
-        <div id="content" class="site-content">
+		 * Hook - orchid_store_header.
+		 *
+		 * @hooked orchid_store_header_action - 10
+		 */
+		do_action( 'orchid_store_header' );
+		?>
+
+		<div id="content" class="site-content">
