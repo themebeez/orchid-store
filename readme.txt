@@ -91,15 +91,16 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.5.3 - 9 January, 2024 ==
+== 1.5.3 - 10 January, 2024 ==
 
 - Added:   Option to change the width of sidebar.
 - Updated: Copyright field to textarea from text. Copyright text now can include placeholders `{copy}`, `{year}`, `{site_title}`, and `{theme_author}` to display copyright icon, current year, site title, and theme author respectively.
 - Updated: Minified dynamic CSS.
 - Updated: Breadcrumb trails.
 - Updated: DB Query optimization.
+- Fixed:   PHP error `Warning: sprintf(): Too few arguments in \wp-admin\includes\class-bulk-upgrader-skin.php on line 162` while installing plugins via TGMPA.
 - Tested:  WooCommerce version 8.4.0.
-- Tested:  PHP versions .
+- Tested:  PHP versions 8.0.
 
 == 1.5.2 - 29 August, 2023 ==
 
