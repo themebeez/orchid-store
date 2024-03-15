@@ -293,6 +293,10 @@ if ( ! function_exists( 'orchid_store_template_loop_product_thumbnail' ) ) {
 	 */
 	function orchid_store_template_loop_product_thumbnail( $product ) {
 
+		if ( ! $product instanceof WC_Product ) {
+			global $product;
+		}
+
 		if ( get_theme_mod( 'orchid_store_field_display_out_of_stock_notice', false ) === true ) {
 
 			if ( ! $product->is_in_stock() ) {
@@ -390,6 +394,10 @@ if ( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 	 * @param WC_Product $product WC_Product object.
 	 */
 	function orchid_store_template_loop_product_quick_link( $product ) {
+
+		if ( ! $product instanceof WC_Product ) {
+			global $product;
+		}
 
 		if (
 			! class_exists( 'YITH_WCWL' ) &&
@@ -671,24 +679,22 @@ if ( ! function_exists( 'orchid_store_woocommerce_title_breadcrumb_action' ) ) {
 			</div><!-- .os-breadcrumb-wrap -->
 			<?php
 		} elseif ( $display_breadcrumb ) {
-
 			?>
-				<div class="os-page-breadcrumb-wrap">
-					<div class="__os-container__">
-						<div class="os-breadcrumb">
-						<?php
-						/**
-						 * Hook - orchid_store_woocommerce_breadcrumb.
-						 *
-						 * @hooked woocommerce_breadcurmb - 20
-						 */
-						do_action( 'orchid_store_woocommerce_breadcrumb' );
-						?>
-						</div><!-- .os-breadcrumb -->
-					</div><!-- .__os-container__ -->
-				</div><!-- .os-product-single-breadcrumb-wrap -->
-				<?php
-
+			<div class="os-page-breadcrumb-wrap">
+				<div class="__os-container__">
+					<div class="os-breadcrumb">
+					<?php
+					/**
+					 * Hook - orchid_store_woocommerce_breadcrumb.
+					 *
+					 * @hooked woocommerce_breadcurmb - 20
+					 */
+					do_action( 'orchid_store_woocommerce_breadcrumb' );
+					?>
+					</div><!-- .os-breadcrumb -->
+				</div><!-- .__os-container__ -->
+			</div><!-- .os-product-single-breadcrumb-wrap -->
+			<?php
 		}
 	}
 
