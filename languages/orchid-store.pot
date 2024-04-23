@@ -2,35 +2,40 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orchid Store 1.5.3\n"
+"Project-Id-Version: Orchid Store 1.5.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/orchid-store\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-01-10T13:26:32+00:00\n"
+"POT-Creation-Date: 2024-04-23T06:43:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: orchid-store\n"
 
 #. Theme Name of the theme
+#: style.css
 msgid "Orchid Store"
 msgstr ""
 
 #. Theme URI of the theme
+#: style.css
 msgid "https://themebeez.com/themes/orchid-store/"
 msgstr ""
 
 #. Description of the theme
+#: style.css
 msgid "Orchid Store is a clean, flexible, stylish & dynamic e-commerce WordPress theme. It is totally based on WooCommerce, WordPress plugin. Orchid Store can be used to build a wide range of online stores ranging from a fashion store, mobile and gadget store, furniture shop, sports shop, home décor store, jewellery store or any kind of multi-category online shop. Orchid Store has adequate built-in features that are required to build an online shop or stores. Orchid Store gives users the flexible customization experience for crafting their online shop with ease. Customization in Orchid Store is so simple that it can easily be tuned from WordPress live customizer. Orchid Store is fully widgetized where one can easily drag & drop widgets to their respective widget areas to display website sections at front-end. If you are looking to extend your online store with the page builder, you can easily do it using Elementor page builder. If you are wondering how Orchid Store looks, please do kindly visit https://themebeez.com/themes/orchid-store/ for live demo preview. Do kindly visit https://themebeez.com/docs/orchid-store-theme-documentation/ if you would need a theme setup documentation guide."
 msgstr ""
 
 #. Author of the theme
+#: style.css
 msgid "themebeez"
 msgstr ""
 
 #. Author URI of the theme
+#: style.css
 msgid "https://themebeez.com"
 msgstr ""
 
@@ -172,7 +177,7 @@ msgid "Copyright {copy} {year}, {site_title}. All rights reserved. Theme by {the
 msgstr ""
 
 #: customizer/functions/customizer-defaults.php:153
-#: inc/woocommerce-hooks.php:986
+#: inc/woocommerce-hooks.php:992
 #: woocommerce/loop/sale-flash.php:28
 msgid "Sale!"
 msgstr ""
@@ -886,19 +891,19 @@ msgstr ""
 msgid "My Wishlist"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:421
+#: inc/woocommerce-hooks.php:429
 msgid "Quick View"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:459
+#: inc/woocommerce-hooks.php:467
 msgid "Already in wishlist"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:459
+#: inc/woocommerce-hooks.php:467
 msgid "Add to wishlist"
 msgstr ""
 
-#: inc/woocommerce-hooks.php:580
+#: inc/woocommerce-hooks.php:588
 msgid "Compare"
 msgstr ""
 
