@@ -4,9 +4,9 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 7.4
 Requires at least: 6.0.0
-Tested up to: 6.4.3
-Version: 1.5.4
-Stable tag: 1.5.4
+Tested up to: 6.5.2
+Version: 1.5.5
+Stable tag: 1.5.5
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,10 +16,20 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Orchid Store is a clean, flexible, stylish & dynamic e-commerce WordPress theme. It is totally based on WooCommerce, WordPress plugin. Orchid Store can be used to build a wide range of online stores ranging from a fashion store, mobile and gadget store, furniture shop, sports shop, home décor store, jewellery store or any kind of multi-category online shop. Orchid Store has adequate built-in features that are required to build an online shop or stores. Orchid Store gives users the flexible customization experience for crafting their online shop with ease. Customization in Orchid Store is so simple that it can easily be tuned from WordPress live customizer. Orchid Store is fully widgetized where one can easily drag & drop widgets to their respective widget areas to display website sections at front-end. If you are looking to extend your online store with the page builder, you can easily do it using Elementor page builder. If you are wondering how Orchid Store looks, please do kindly visit https://themebeez.com/themes/orchid-store/ for live demo preview. Do kindly visit https://themebeez.com/docs/orchid-store-theme-documentation/ if you would need a theme setup documentation guide.
 
 
-== License ==
+== Copyright ==
 
 Orchid Store WordPress Theme, Copyright (C) 2024, themebeez.
 Orchid Store is distributed under the terms of the GNU GPL.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
 
 
 == Credits ==
@@ -90,6 +100,12 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.5.5 - 23 April, 2024 ==
+
+- Updated: WooCommerce template version.
+- Tested:  WooCommerce version 8.8.2.
+- Tested:  WordPress version 6.5.2.
 
 == 1.5.4 - 15 March, 2024 ==
 
