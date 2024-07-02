@@ -4,7 +4,7 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 7.4
 Requires at least: 6.4
-Tested up to: 6.6
+Tested up to: 6.5.5
 Version: 1.5.6
 Stable tag: 1.5.6
 License: GNU General Public License v2 or later
@@ -101,10 +101,11 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.5.6 - ?, 2024 ==
+== 1.5.6 - 2 July, 2024 ==
 
-- Tested:  WooCommerce version 8.9.3.
-- Tested:  WordPress version 6.5.2.
+- Fixed:  Banner button link issue. 
+- Tested: WooCommerce version 9.0.2.
+- Tested: WordPress version 6.5.5.
 
 == 1.5.5 - 23 April, 2024 ==
 
