@@ -7,7 +7,7 @@ Requires at least: 6.4
 Tested up to: 6.5.5
 Version: 1.5.6
 Stable tag: 1.5.6
-License: GNU General Public License v2 or later
+License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 
