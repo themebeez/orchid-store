@@ -136,7 +136,7 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 																			if ( ! empty( $button_titles[ $slider_index ] ) && ! empty( $button_links[ $slider_index ] ) ) {
 																				?>
 																				<div class="permalink">
-																					<a lass="button-general" href="<?php echo esc_url( $button_links[ $slider_index ] ); ?>">
+																					<a class="button-general" href="<?php echo esc_url( $button_links[ $slider_index ] ); ?>">
 																						<?php echo esc_html( $button_titles[ $slider_index ] ); ?>
 																					</a>
 																				</div><!-- .permalink -->
