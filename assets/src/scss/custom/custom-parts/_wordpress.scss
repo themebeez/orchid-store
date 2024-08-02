@@ -151,12 +151,6 @@ span.edit-link a:before {
     padding: 20px;
  }
 
-  .comments-area textarea,
-  .comments-area input {
-    
-    margin-bottom: 30px;
-}
-
 .comments-area .comments-title,
 .comment-respond .comment-reply-title {
 
@@ -318,7 +312,6 @@ span.edit-link a:before {
 .comment-respond {
 
     padding: 30px;
-    margin-bottom: 30px;
 }
 
 .comment-respond .comment-form {
@@ -329,6 +322,10 @@ span.edit-link a:before {
     justify-content: flex-start;
     align-items: stretch;
     align-content: stretch;
+
+    .form-submit {
+        margin-bottom: 0;
+    }
 }
 
 .comment-respond .comment-form-comment,

@@ -184,12 +184,12 @@
 
     padding: 0;
     margin: 0;
-    height: 50px;
     padding: 10px;
     width: 70px;
     text-align: center;
     border-width: 1px;
     border-color: #efefef;
+    margin-right: 15px;
     @include border_radius(3px);
 }
 
@@ -840,7 +840,7 @@ ul.woocommerce-page .woocommerce-notice {
         grid-template-columns: repeat( 4, 1fr );
         list-style: none;
         padding: 0;
-        margin: 0 0 40px 0;
+        margin: 0;
 
         &::before,
         &::after {
@@ -1144,4 +1144,17 @@ ul.woocommerce-page .woocommerce-notice {
     text-align: center;
     font-weight: normal;
     font-style: normal;
+}
+
+/*
+    WooCommerce Cart Image
+*/
+.woocommerce-cart table.cart .product-thumbnail,
+.woocommerce-checkout table.cart .product-thumbnail {
+    text-align: center;
+}
+
+.woocommerce-cart table.cart img,
+.woocommerce-checkout table.cart img {
+    width: 60px;
 }

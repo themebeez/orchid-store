@@ -291,17 +291,23 @@
     max-width: 50px;
 }
 
-.cta-style-1 .right-col {
+.cta-style-1 .box.os-cta-has-image .right-col {
 
     flex: 0 0 calc(100% - 50px);
     max-width: calc(100% - 50px);
     padding-left: 30px;
 }
 
+.cta-style-1 .box.os-cta-has-no-image .right-col {
+
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
 .cta-style-1 .title h3 {
 
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .cta-style-1 .excerpt p {
@@ -386,8 +392,9 @@
 
 .footer-top {
 
-    padding-top: 60px;
     border-bottom: 1px dotted rgba(255, 255, 255, 0.1);
+    padding-bottom: 30px;
+    padding-top: 60px;
 }
 
 .footer ul {
@@ -511,23 +518,23 @@
 }
 
 // case: no sidebar.
-body {
+// body {
 
-    &:is(.no-sidebar) {
+//     &:is(.no-sidebar) {
 
-        &:is(.blog, .archive, .search) {
+//         &:is(.blog, .archive, .search, .single-post, .page ) {
 
-            &:not(.woocommerce-page, .woocommerce-shop, [class*="tax-product"], [class*="post-type-archive-product"]) {
+//             &:not(.woocommerce-page, .woocommerce-shop, [class*="tax-product"], [class*="post-type-archive-product"]) {
 
-                #primary {
+//                 #primary {
 
-                    margin: 0 auto;
-                    max-width: 1000px;
-                }
-            }
-        }
-    }
-}
+//                     margin: 0 auto;
+//                     max-width: 1000px;
+//                 }
+//             }
+//         }
+//     }
+// }
 
 
 /*
@@ -678,16 +685,27 @@ body {
     margin-bottom: 30px;
 }
 
-.default-page-wrap .inner-content-metas,
-.default-page-wrap .inner-content-metas .entry-cats {
-
-    margin-bottom: 20px;
+.default-page-wrap .inner-content-metas {
+    align-items: center;
+    column-gap: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    row-gap: 10px;
 }
 
-.default-page-wrap .inner-content-metas,
-.default-page-wrap .editor-entry {
+.default-page-wrap .os-post-content {
 
     padding: 30px;
+}
+
+.editor-entry > * {
+    margin-bottom: 30px;
+}
+
+.editor-entry > :last-child {
+    margin-bottom: 0;
 }
 
 .entry-tags {
@@ -696,27 +714,20 @@ body {
     margin-bottom: 30px;
 }
 
-.entry-tags ul {
-
+.entry-tags ul,
+.entry-tags .post-tags {
+    column-gap: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     list-style: none;
-}
-
-.entry-tags li,
-.entry-tags a {
-
-    display: inline-block;
+    row-gap: 10px;
 }
 
 .entry-tags a {
-
-    padding: 10px 20px;
-    margin: 3px;
+    border-radius: 2px;
     line-height: 1;
-}
-
-.entry-tags a:first-child {
-
-    margin-left: 0;
+    padding: 10px 15px;
 }
 
 .post-navigation {
@@ -773,12 +784,6 @@ body {
 ======================================
 */
 
-
-section.product-widget-style-2 .section-title {
-
-    margin-bottom: 0;
-}
-
 .product-widget-style-2 .widget-entry {
 
     position: relative;
@@ -795,22 +800,14 @@ section.product-widget-style-2 .section-title {
 
 .product-widget-style-2 .tab-nav ul {
 
-    padding: 0;
-    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
     list-style: none;
-    text-align: center;
-}
-
-.product-widget-style-2 .tab-nav ul li {
-
-    display: inline-block;
-    position: relative;
-    margin-right: 10px;
-}
-
-.product-widget-style-2 .tab-nav ul li:last-child {
-
-    margin-right: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .product-widget-style-2 .tab-nav ul li a {
@@ -823,12 +820,6 @@ section.product-widget-style-2 .section-title {
     -ms-user-select: none;
     user-select: none;
     @include transition();
-}
-
-.product-widget.product-widget-style-2 .product-entry {
-
-    margin-top: 0;
-    padding-top: 40px;
 }
 
 .product-widget-style-2 .tab-content {
@@ -881,6 +872,7 @@ section.product-widget-style-2 .section-title {
     column-gap: 0;
     grid-template-columns: repeat( 1, 1fr );
 }
+
 
 /*
 ====================================================
@@ -1195,7 +1187,10 @@ section.product-widget-style-2 .section-title {
 ==========================================
 */
 
-.woocommerce.single-product .header-style-1,
+.woocommerce.single-product .header-style-1 {
+    margin-bottom: 40px;
+}
+
 .woocommerce.single-product .woocommerce-breadcrumb {
 
     margin-bottom: 20px; // Since: when Woocommerce breadcrumb was added
@@ -1226,6 +1221,10 @@ section.product-widget-style-2 .section-title {
 
     margin-bottom: 40px;
 }
+
+body.woocommerce:not(.no-sidebar) #content div.product div.summary {
+    width: 48.5%;
+} 
 
 .woocommerce div.product div.images img {
 
@@ -1520,7 +1519,7 @@ section.product-widget-style-2 .section-title {
 }
 
 .woocommerce #reviews #respond {
-
+    box-shadow: none;
     margin-bottom: 0;
 }
 
@@ -1589,11 +1588,6 @@ section.product-widget-style-2 .section-title {
     margin-bottom: 0;
 }
 
-.woocommerce #review_form #respond textarea {
-
-    margin-bottom: 30px;
-}
-
 .woocommerce #reviews #respond p.comment-form-cookies-consent {
 
     margin-top: 30px;
@@ -1633,10 +1627,7 @@ section.product-widget-style-2 .section-title {
 .woocommerce-cart table.cart td.actions .coupon .input-text#coupon_code {
 
     width: 200px;
-    padding-left: 0;
-    border-top-color: transparent;
-    border-left-color: transparent;
-    border-right-color: transparent;
+    margin-right: 10px;
 }
 
 .woocommerce-cart .cart_totals h2 {

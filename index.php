@@ -45,6 +45,8 @@ get_header();
 									$display_author_meta     = orchid_store_get_option( 'blog_display_author' );
 									$display_date_meta       = orchid_store_get_option( 'blog_display_date' );
 
+									echo '<div class="os-archive-articles">';
+
 									/* Start the Loop */
 									while ( have_posts() ) {
 
@@ -68,6 +70,8 @@ get_header();
 										);
 
 									}
+
+									echo '</div>';
 
 									/**
 									* Hook - orchid_store_pagination.
