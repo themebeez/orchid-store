@@ -368,21 +368,24 @@ if ( ! function_exists( 'orchid_store_pagination_action' ) ) {
 	 * @since 1.0.0
 	 */
 	function orchid_store_pagination_action() {
-		?>
-		<div class="patigation">
-			<div class="pagination-entry">
-				<?php
-				the_posts_pagination(
-					array(
-						'mid_size'  => 0,
-						'prev_text' => esc_html__( 'Previous', 'orchid-store' ),
-						'next_text' => esc_html__( 'Next', 'orchid-store' ),
-					)
-				);
-				?>
-			</div><!-- .pagination-entry -->
-		</div><!-- .pagination -->
-		<?php
+
+		if ( ! empty( get_the_posts_pagination() ) ) {
+			?>
+			<div class="os-pagination">
+				<div class="pagination-entry">
+					<?php
+					the_posts_pagination(
+						array(
+							'mid_size'  => 0,
+							'prev_text' => esc_html__( 'Previous', 'orchid-store' ),
+							'next_text' => esc_html__( 'Next', 'orchid-store' ),
+						)
+					);
+					?>
+				</div><!-- .pagination-entry -->
+			</div><!-- .pagination -->
+			<?php
+		}
 	}
 
 	add_action( 'orchid_store_pagination', 'orchid_store_pagination_action' );

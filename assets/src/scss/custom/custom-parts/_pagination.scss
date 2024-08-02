@@ -1,21 +1,16 @@
 
 // Pagination 
 
-.patigation .nav-links {
+.os-pagination .page-numbers {
 
-	margin: -1px 0;
+	margin-left: 5px;
 }
 
-.patigation .page-numbers {
-
-	margin: 1px;
-}
-
-.patigation .page-numbers,
+.os-pagination .page-numbers,
 .woocommerce .woocommerce-pagination .page-numbers li,
 .woocommerce .woocommerce-pagination .page-numbers li a,
 .woocommerce .woocommerce-pagination .page-numbers li span {
-	
+	border-radius: 2px;
 	display:inline-block;
 	height: 45px;
 	width: 45px;
@@ -23,7 +18,7 @@
 	text-align: center;
 }
 
-.patigation .page-numbers.current,
+.os-pagination .page-numbers.current,
 .woocommerce .woocommerce-pagination .page-numbers li .current {
 	
 	padding: 0;
@@ -31,42 +26,42 @@
 	@include border_radius(0);
 }
 
-.patigation .page-numbers:first-child {
+.os-pagination .page-numbers:first-child {
 
 	padding-left: 0;
 	margin-left: 0;
 }
 
-.patigation .page-numbers.next,
-.patigation .page-numbers.prev {
+.os-pagination .page-numbers.next,
+.os-pagination .page-numbers.prev {
 
 	font-size: 0;
 }
 
-.patigation .page-numbers.next:after,
-.patigation .page-numbers.prev:after {
+.os-pagination .page-numbers.next:after,
+.os-pagination .page-numbers.prev:after {
 
 	font-family: 'boxicons';
 	font-size: 14px;
-	line-height: 43px;
+	line-height: 45px;
 }
 
-.patigation .page-numbers.next:after {
+.os-pagination .page-numbers.next:after {
 
 	content: "\e9e4";
 }
 
-.patigation .page-numbers.prev:after {
+.os-pagination .page-numbers.prev:after {
 
 	content: "\e9e3";
 }
 
-.patigation .page-numbers:last-child {
+.os-pagination .page-numbers:last-child {
 	
 	padding-right: 0;
 }
 
-.patigation .page-numbers:first-child {
+.os-pagination .page-numbers:first-child {
 	
 	padding-left: 0;
 }

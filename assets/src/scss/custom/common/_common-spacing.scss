@@ -41,7 +41,7 @@
 
 .inner-page-wrap {
 
-    padding-bottom: 80px;
+    padding-bottom: 50px;
 }
 
 .cta-style-2.section-spacing {
@@ -147,8 +147,6 @@
 .woocommerce-message,
 .banner-style-1 .excerpt p,
 .cta-style-2 .sub-title h4,
-.search-entry article,
-.archive-entry article,
 .category-description,
 .cats-widget-styles .card,
 .woocommerce .related.products h2,
@@ -169,11 +167,27 @@
 	margin-bottom:30px;
 }
 
+.os-archive-articles article:not(:last-child) {
+	margin-bottom: 30px;
+}
+
+.os-pagination {
+	margin-top: 30px;
+}
+
+.inner-page-wrap .page-title {
+	margin-top: 20px;
+}
+
 .os-blog .blog-entry,
-.product-widget .product-entry,
 .woocommerce-cart .wc-proceed-to-checkout {
 
 	margin-top:30px;
+}
+
+.product-widget .product-entry {
+	margin-bottom: 40px;
+	margin-top: 40px;
 }
 
 .header-style-1,

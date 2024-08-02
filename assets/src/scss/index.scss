@@ -45,6 +45,7 @@
 @import 'custom/custom-parts/wordpress'; // wp styles
 
 // compatibility
+@import 'custom/compatibility/woocommerce'; // WooCommerce
 @import 'custom/compatibility/yith-quickview'; // YITH quickview
 @import 'custom/compatibility/yith-wishlist'; // YITH wishlist
 @import 'custom/compatibility/addonify-wishlist'; // Addonify wishlist

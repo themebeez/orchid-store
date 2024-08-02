@@ -6,10 +6,15 @@
 ==========================================
 */
 
+
 .secondary-widget-area .widget {
 
     margin-bottom: 30px;
     padding: 30px;
+}
+
+.secondary-widget-area .widget:last-child {
+    margin-bottom: 0;
 }
 
 .widget .widget-title h3,
@@ -789,7 +794,8 @@ form.search-form button[type="search"]:focus,
 .woocommerce .widget_shopping_cart .total,
 .woocommerce.widget_shopping_cart .total {
 
-    border: none;
+    border-bottom: 1px solid #e8e8e8;
+    border-top: 1px solid #e8e8e8;
     margin: 20px 0;
 }
 
