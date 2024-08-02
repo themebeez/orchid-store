@@ -107,7 +107,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 - Updated: Checked user capability for activating plugin in the customize.
 - Updated: Minor CSS for design issues. GitHub issues [332](https://github.com/themebeez/orchid-store/issues/332) and [333](https://github.com/themebeez/orchid-store/issues/333)
 - Tested:  WordPress version 6.6.
-- Tested:  WooCommerce version 
+- Tested:  WooCommerce version 9.1.4.
 
 == 1.5.6 - 2 July, 2024 ==
 
