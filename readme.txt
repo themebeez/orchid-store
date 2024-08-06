@@ -103,6 +103,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == 1.5.7 - ? August, 2024 ==
 
+- Added:   Option to display display products count in `OS: Featured Product Categories` widget.
 - Updated: Checked for pagination in blog, archive, and search pages.
 - Updated: Checked user capability for activating plugin in the customize.
 - Updated: Minor CSS for design issues. GitHub issues [332](https://github.com/themebeez/orchid-store/issues/332) and [333](https://github.com/themebeez/orchid-store/issues/333)
