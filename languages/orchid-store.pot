@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orchid Store 1.5.6\n"
+"Project-Id-Version: Orchid Store 1.5.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/orchid-store\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-02T07:34:18+00:00\n"
+"POT-Creation-Date: 2024-08-06T11:11:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: orchid-store\n"
@@ -173,7 +173,7 @@ msgid "Special Menu"
 msgstr ""
 
 #: customizer/functions/customizer-defaults.php:134
-msgid "Copyright {copy} {year}, {site_title}. All rights reserved. Theme by {theme_author}."
+msgid "Copyright {copy} {year}, {site_title}. All rights reserved."
 msgstr ""
 
 #: customizer/functions/customizer-defaults.php:153
@@ -798,10 +798,14 @@ msgid "Secondary Menu"
 msgstr ""
 
 #: functions.php:308
+msgid "User can not activate plugins."
+msgstr ""
+
+#: functions.php:313
 msgid "Invalid security token."
 msgstr ""
 
-#: functions.php:317
+#: functions.php:322
 msgid "The plugin is activated successfully."
 msgstr ""
 
@@ -813,24 +817,24 @@ msgstr ""
 msgid "Fullwidth"
 msgstr ""
 
-#: inc/custom-hooks.php:378
+#: inc/custom-hooks.php:380
 msgid "Previous"
 msgstr ""
 
-#: inc/custom-hooks.php:379
+#: inc/custom-hooks.php:381
 msgid "Next"
 msgstr ""
 
-#: inc/custom-hooks.php:410
+#: inc/custom-hooks.php:413
 msgid "Prev post"
 msgstr ""
 
-#: inc/custom-hooks.php:422
+#: inc/custom-hooks.php:425
 msgid "Next post"
 msgstr ""
 
 #. translators: 1: theme name, 2: theme author
-#: inc/custom-hooks.php:542
+#: inc/custom-hooks.php:545
 msgid "%1$s Theme by %2$s"
 msgstr ""
 
@@ -945,13 +949,13 @@ msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searc
 msgstr ""
 
 #: template-parts/content-page.php:46
-#: template-parts/content-single.php:97
+#: template-parts/content-single.php:99
 msgid "Pages:"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
 #: template-parts/content-page.php:59
-#: template-parts/content-single.php:118
+#: template-parts/content-single.php:120
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
@@ -1475,14 +1479,14 @@ msgstr ""
 #: widget/widgets/class-orchid-store-about-widget.php:246
 #: widget/widgets/class-orchid-store-advertisement-widget.php:168
 #: widget/widgets/class-orchid-store-banner-widget.php:257
-#: widget/widgets/class-orchid-store-featured-product-categories-widget.php:159
+#: widget/widgets/class-orchid-store-featured-product-categories-widget.php:168
 #: widget/widgets/class-orchid-store-post-widget.php:216
 #: widget/widgets/class-orchid-store-products-filter-widget.php:256
 #: widget/widgets/class-orchid-store-products-filter-widget.php:462
 #: widget/widgets/class-orchid-store-products-widget.php:257
 #: widget/widgets/class-orchid-store-products-widget.php:440
-#: widget/widgets/class-orchid-store-services-widget.php:131
-#: widget/widgets/class-orchid-store-services-widget.php:158
+#: widget/widgets/class-orchid-store-services-widget.php:132
+#: widget/widgets/class-orchid-store-services-widget.php:159
 msgid "Title"
 msgstr ""
 
@@ -1498,7 +1502,7 @@ msgstr ""
 #: widget/widgets/class-orchid-store-advertisement-widget.php:302
 #: widget/widgets/class-orchid-store-banner-widget.php:409
 #: widget/widgets/class-orchid-store-banner-widget.php:460
-#: widget/widgets/class-orchid-store-services-widget.php:213
+#: widget/widgets/class-orchid-store-services-widget.php:214
 msgid "Upload"
 msgstr ""
 
@@ -1506,7 +1510,7 @@ msgstr ""
 #: widget/widgets/class-orchid-store-advertisement-widget.php:305
 #: widget/widgets/class-orchid-store-banner-widget.php:413
 #: widget/widgets/class-orchid-store-banner-widget.php:464
-#: widget/widgets/class-orchid-store-services-widget.php:216
+#: widget/widgets/class-orchid-store-services-widget.php:217
 msgid "Remove"
 msgstr ""
 
@@ -1649,34 +1653,38 @@ msgstr ""
 msgid "Banner Link Two"
 msgstr ""
 
-#: widget/widgets/class-orchid-store-featured-product-categories-widget.php:34
+#: widget/widgets/class-orchid-store-featured-product-categories-widget.php:33
 msgid "OS: Featured Product Categories"
 msgstr ""
 
-#: widget/widgets/class-orchid-store-featured-product-categories-widget.php:37
+#: widget/widgets/class-orchid-store-featured-product-categories-widget.php:36
 msgid "Displays featured product categories."
 msgstr ""
 
 #. translators: %s: products count
-#: widget/widgets/class-orchid-store-featured-product-categories-widget.php:118
+#: widget/widgets/class-orchid-store-featured-product-categories-widget.php:122
 msgid "%s Product"
 msgid_plural "%s Products"
 msgstr[0] ""
 msgstr[1] ""
 
-#: widget/widgets/class-orchid-store-featured-product-categories-widget.php:171
+#: widget/widgets/class-orchid-store-featured-product-categories-widget.php:180
 #: widget/widgets/class-orchid-store-products-filter-widget.php:269
 msgid "Product Categories"
 msgstr ""
 
-#: widget/widgets/class-orchid-store-featured-product-categories-widget.php:174
+#: widget/widgets/class-orchid-store-featured-product-categories-widget.php:183
 #: widget/widgets/class-orchid-store-products-filter-widget.php:272
 msgid "Below are the list of product categories. Check on a category to set is as a filter item."
 msgstr ""
 
-#: widget/widgets/class-orchid-store-featured-product-categories-widget.php:234
+#: widget/widgets/class-orchid-store-featured-product-categories-widget.php:243
 #: widget/widgets/class-orchid-store-products-filter-widget.php:343
 msgid "There are no product categories to select."
+msgstr ""
+
+#: widget/widgets/class-orchid-store-featured-product-categories-widget.php:258
+msgid "Display Products Count"
 msgstr ""
 
 #: widget/widgets/class-orchid-store-post-widget.php:27
@@ -1825,19 +1833,19 @@ msgid "Displays services."
 msgstr ""
 
 #. translators: %s : number of service
-#: widget/widgets/class-orchid-store-services-widget.php:151
+#: widget/widgets/class-orchid-store-services-widget.php:152
 msgid "Service %s"
 msgstr ""
 
-#: widget/widgets/class-orchid-store-services-widget.php:169
+#: widget/widgets/class-orchid-store-services-widget.php:170
 msgid "Description"
 msgstr ""
 
-#: widget/widgets/class-orchid-store-services-widget.php:179
+#: widget/widgets/class-orchid-store-services-widget.php:180
 msgid "Icon Image"
 msgstr ""
 
-#: widget/widgets/class-orchid-store-services-widget.php:181
+#: widget/widgets/class-orchid-store-services-widget.php:182
 msgid "Upload image having 1x1 aspect ratio."
 msgstr ""
 
