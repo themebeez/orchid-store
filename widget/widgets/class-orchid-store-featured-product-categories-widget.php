@@ -22,7 +22,6 @@ if ( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 		 */
 		public $value_as;
 
-
 		/**
 		 * Define id, name and description of the widget.
 		 *
@@ -55,6 +54,8 @@ if ( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 			$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
 			$product_categories = isset( $instance['product_categories'] ) ? $instance['product_categories'] : array();
+
+			$display_products_count = isset( $instance['display_products_count'] ) ? true : false;
 
 			if ( ! empty( $product_categories ) ) {
 				?>
@@ -110,19 +111,25 @@ if ( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 																	</a>
 																</h3>
 															</div><!-- .title -->
-															<div class="product-numbers">
-																<p>
-																	<?php
-																	printf(
-																		/* translators: %s: products count */
-																		wp_kses_post( _n( '%s Product', '%s Products', $category_term->count, 'orchid-store' ) ),
-																		'<span class="count">' .
-																		esc_html( number_format_i18n( $category_term->count ) ) . '</span>'
-																	);
-																	?>
-																	   
-																</p>
-															</div><!-- // product-numbers -->
+															<?php
+															if ( $display_products_count ) {
+																?>
+																<div class="product-numbers">
+																	<p>
+																		<?php
+																		printf(
+																			/* translators: %s: products count */
+																			wp_kses_post( _n( '%s Product', '%s Products', $category_term->count, 'orchid-store' ) ),
+																			'<span class="count">' .
+																			esc_html( number_format_i18n( $category_term->count ) ) . '</span>'
+																		);
+																		?>
+																		
+																	</p>
+																</div><!-- // product-numbers -->
+																<?php
+															}
+															?>
 														</div><!-- .right -->
 													</div><!-- box -->
 												</div><!-- // card -->
@@ -153,6 +160,8 @@ if ( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 			$instance['title'] = isset( $instance['title'] ) ? $instance['title'] : '';
 
 			$instance['product_categories'] = isset( $instance['product_categories'] ) ? $instance['product_categories'] : array();
+
+			$instance['display_products_count'] = isset( $instance['display_products_count'] ) ? true : false;
 			?>
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
@@ -238,6 +247,17 @@ if ( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 				?>
 				</span>
 			</p>
+
+			<p>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'display_products_count' ) ); ?>">
+					<input
+						id="<?php echo esc_attr( $this->get_field_id( 'display_products_count' ) ); ?>"
+						name="<?php echo esc_attr( $this->get_field_name( 'display_products_count' ) ); ?>"
+						type="checkbox" <?php checked( true, $instance['display_products_count'] ); ?>
+					/>
+					<strong><?php esc_html_e( 'Display Products Count', 'orchid-store' ); ?></strong>
+				</label>                 
+			</p>
 			<?php
 		}
 
@@ -262,6 +282,8 @@ if ( ! class_exists( 'Orchid_Store_Featured_Product_Categories_Widget' ) ) {
 			} else {
 				$instance['product_categories'] = isset( $new_instance['product_categories'] ) ? array_map( 'absint', $new_instance['product_categories'] ) : array();
 			}
+
+			$instance['display_products_count'] = isset( $new_instance['display_products_count'] ) ? true : false;
 
 			return $instance;
 		}
