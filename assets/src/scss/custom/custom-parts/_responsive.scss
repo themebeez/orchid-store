@@ -705,6 +705,12 @@
         float: none;
         width: 100%;
     }
+
+    body.woocommerce.no-sidebar #content div.product div.images,
+    body.woocommerce.no-sidebar #content div.product div.summary,
+    body.woocommerce:not(.no-sidebar) #content div.product div.summary {
+        width: 100%;
+    }
 }
 
 @media ( max-width: 767px ) {
