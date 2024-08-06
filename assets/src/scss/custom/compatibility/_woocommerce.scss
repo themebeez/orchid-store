@@ -1,0 +1,72 @@
+body.woocommerce.no-sidebar #content div.product div.images {
+    width: 38%;
+}
+
+body.woocommerce.no-sidebar #content div.product div.summary {
+    width: 60%;
+}
+
+.woocommerce.woocommerce-page div.product .product_title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.os-quantity-wrapper {
+    margin-right: 15px;
+}
+
+.woocommerce .related.products ul.products {
+    margin-bottom: 0;
+}
+
+.woocommerce .widget_shopping_cart .buttons,
+.woocommerce.widget_shopping_cart .buttons {
+    column-gap: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.woocommerce .widget_shopping_cart .total,
+.woocommerce.widget_shopping_cart .total {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 10px 0px;
+   
+}
+
+.os-result-count-and-catalog-ordering {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.woocommerce nav.woocommerce-pagination {
+    margin-top: 40px;
+}
+
+.woocommerce nav.woocommerce-pagination ul {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.woocommerce .woocommerce-pagination ul.page-numbers::after,
+.woocommerce .woocommerce-pagination ul.page-numbers::before,
+.woocommerce-page .woocommerce-pagination ul.page-numbers::after,
+.woocommerce-page .woocommerce-pagination ul.page-numbers::before {
+    display: none;
+}
+
+.woocommerce .woocommerce-pagination .page-numbers li {
+    margin: 0;
+    border-radius: 2px;
+}

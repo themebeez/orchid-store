@@ -57,22 +57,23 @@ if ( ! class_exists( 'Orchid_Store_Services_Widget' ) ) {
 								<div class="os-row">
 								<?php
 								for ( $i = 0; $i < 3; $i++ ) {
+									$has_image = ! empty( $services_imgs[ $i ] );
 									?>
 									<div class="os-col">
-										<div class="box">
-											<div class="left-col">
-												<?php
-												if ( ! empty( $services_imgs[ $i ] ) ) {
-													$service_img_alt_text = orchid_store_get_alt_text_of_image( $services_imgs[ $i ] );
-													?>
-														<img
-															src="<?php echo esc_url( $services_imgs[ $i ] ); ?>"
-															alt="<?php echo esc_attr( $service_img_alt_text ); ?>"
-														>
-														<?php
-												}
+										<div class="box <?php echo $has_image ? 'os-cta-has-img' : 'os-cta-has-no-img'; ?>">
+											<?php
+											if ( $has_image ) {
+												$service_img_alt_text = orchid_store_get_alt_text_of_image( $services_imgs[ $i ] );
 												?>
-											</div><!-- .left-col -->
+												<div class="left-col">
+													<img
+														src="<?php echo esc_url( $services_imgs[ $i ] ); ?>"
+														alt="<?php echo esc_attr( $service_img_alt_text ); ?>"
+													>
+												</div><!-- .left-col -->
+												<?php
+											}
+											?>
 											<div class="right-col">
 												<?php
 												if ( ! empty( $services_titles[ $i ] ) ) {

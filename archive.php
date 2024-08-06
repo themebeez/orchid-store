@@ -42,6 +42,8 @@ get_header();
 										<?php
 									}
 
+									echo '<div class="os-archive-articles">';
+
 									$display_post_thumbnail  = orchid_store_get_option( 'archive_featured_image' );
 									$display_categories_meta = orchid_store_get_option( 'archive_display_cats' );
 									$display_post_excerpt    = orchid_store_get_option( 'archive_display_excerpt' );
@@ -69,8 +71,9 @@ get_header();
 												'display_date_meta'       => $display_date_meta,
 											)
 										);
-
 									}
+
+									echo '</div>';
 
 									/**
 									* Hook - orchid_store_pagination.

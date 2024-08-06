@@ -27,7 +27,7 @@ get_header();
 							<?php
 							if ( have_posts() ) {
 
-								if ( orchid_store_get_option( 'display_page_header' ) ) {
+								if ( ! orchid_store_get_option( 'display_page_header' ) ) {
 									?>
 									<h1 class="entry-title page-title">
 										<?php
@@ -40,6 +40,9 @@ get_header();
 								?>
 								<div class="search-entry">
 									<?php
+
+									echo '<div class="os-archive-articles">';
+
 									$display_post_thumbnail  = orchid_store_get_option( 'search_featured_image' );
 									$display_categories_meta = orchid_store_get_option( 'search_display_cats' );
 									$display_post_excerpt    = orchid_store_get_option( 'search_display_excerpt' );
@@ -68,6 +71,8 @@ get_header();
 											)
 										);
 									}
+
+									echo '</div>';
 
 									/**
 									* Hook - orchid_store_pagination.

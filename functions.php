@@ -304,6 +304,11 @@ function orchid_store_activate_plugin() {
 		'message' => '',
 	);
 
+	if ( ! current_user_can( 'manage_options' ) ) {
+		$return_data['message'] = esc_html__( 'User can not activate plugins.', 'orchid-store' );
+		wp_send_json( $return_data );
+	}
+
 	if ( isset( $_POST['_ajax_nonce'] ) && ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_ajax_nonce'] ) ), 'updates' ) ) {
 		$return_data['message'] = esc_html__( 'Invalid security token.', 'orchid-store' );
 		wp_send_json( $return_data );

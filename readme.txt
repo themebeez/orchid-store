@@ -4,9 +4,9 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 7.4
 Requires at least: 6.4
-Tested up to: 6.5.5
-Version: 1.5.6
-Stable tag: 1.5.6
+Tested up to: 6.6
+Version: 1.5.7
+Stable tag: 1.5.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,15 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.5.7 - 6 August, 2024 ==
+
+- Added:   Option to display display products count in `OS: Featured Product Categories` widget.
+- Updated: Checked for pagination in blog, archive, and search pages.
+- Updated: Checked user capability for activating plugin in the customize.
+- Updated: Minor CSS for design issues. GitHub issues [332](https://github.com/themebeez/orchid-store/issues/332) and [333](https://github.com/themebeez/orchid-store/issues/333)
+- Tested:  WordPress version 6.6.
+- Tested:  WooCommerce version 9.1.4.
 
 == 1.5.6 - 2 July, 2024 ==
 
