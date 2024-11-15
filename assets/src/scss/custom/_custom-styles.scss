@@ -1090,7 +1090,6 @@
             display: block;
             position: relative;
             z-index: 1;
-            aspect-ratio: auto;
             @include transition( all, 0.6s, ease-in-out );
         }
 

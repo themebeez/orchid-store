@@ -101,6 +101,13 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
+== 1.5.8 - 15 November, 2024 ==
+
+- Fixed:   Issue - product image stretched due to CSS property aspect-ratio: auto;
+- Updated: Version of WooCommerce templates form-checkout.php and content-product.php.
+- Tested:  WordPress version 6.7.
+- Tested:  WooCommerce version 9.4.1.
+
 == 1.5.7 - 6 August, 2024 ==
 
 - Added:   Option to display display products count in `OS: Featured Product Categories` widget.
