@@ -4,9 +4,9 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 7.4
 Requires at least: 6.4
-Tested up to: 6.6
-Version: 1.5.7
-Stable tag: 1.5.7
+Tested up to: 6.7
+Version: 1.5.8
+Stable tag: 1.5.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,13 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.5.8 - 16 November, 2024 ==
+
+- Fixed:   Issue - product image stretched due to CSS property aspect-ratio: auto;
+- Updated: Version of WooCommerce templates form-checkout.php and content-product.php.
+- Tested:  WordPress version 6.7.
+- Tested:  WooCommerce version 9.4.1.
 
 == 1.5.7 - 6 August, 2024 ==
 
