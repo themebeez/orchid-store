@@ -113,7 +113,7 @@ class Udp_Agent {
 		// Render setting field to get user's consent for data collection.
 		add_settings_field(
 			'udp_agent_allow_tracking',
-			esc_html__( 'Allow Anonymous Tracking', 'AGENT_TEXT_DOMAIN' ),
+			esc_html__( 'Allow Anonymous Tracking', 'orchid-store' ),
 			array( $this, 'show_settings_ui' ),
 			'general',
 			'default',
@@ -155,8 +155,8 @@ class Udp_Agent {
 			echo ' checked';
 		}
 		echo '/>';
-		echo esc_html__( 'Become a super contributor by sharing your non-sensitive WordPress data. We guarantee no sensitive data is collected.', 'AGENT_TEXT_DOMAIN' );
-		echo wp_kses_data( '<a href="https://creamcode.org/user-data-processing/" target="_blank" > ' . esc_html__( ' What data do we collect?', 'AGENT_TEXT_DOMAIN' ) . '</a>' );
+		echo esc_html__( 'Become a super contributor by sharing your non-sensitive WordPress data. We guarantee no sensitive data is collected.', 'orchid-store' );
+		echo wp_kses_data( '<a href="https://creamcode.org/user-data-processing/" target="_blank" > ' . esc_html__( ' What data do we collect?', 'orchid-store' ) . '</a>' );
 		echo ' </p>';
 	}
 
