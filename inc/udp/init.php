@@ -96,17 +96,17 @@ if ( $this_agent_is_latest && isset( $all_installed_agents[ basename( $root_dir 
 
 				$content = '<p>' . sprintf(
 					/* translators: %s: agent name */
-					esc_html__( '%s is asking to allow tracking your non-sensitive WordPress data?', 'AGENT_TEXT_DOMAIN' ),
+					esc_html__( '%s is asking to allow tracking your non-sensitive WordPress data?', 'orchid-store' ),
 					$agent_name
 				) . '</p>';
 
 				$content .= '<p>';
 
-				$content .= '<a href="' . esc_url( admin_url( '?udp-agent-allow-access=yes' ) ) . '" class="button button-primary udp-agent-access_tracking-yes" style="margin-right: 10px">' . esc_html__( 'Allow', 'AGENT_TEXT_DOMAIN' ) . '</a>';
+				$content .= '<a href="' . esc_url( admin_url( '?udp-agent-allow-access=yes' ) ) . '" class="button button-primary udp-agent-access_tracking-yes" style="margin-right: 10px">' . esc_html__( 'Allow', 'orchid-store' ) . '</a>';
 
-				$content .= '<a href="' . esc_url( admin_url( '?udp-agent-allow-access=no' ) ) . '" class="button button-secondary udp-agent-access_tracking-yes" style="margin-right: 10px">' . esc_html__( 'Do not show again', 'AGENT_TEXT_DOMAIN' ) . '</a>';
+				$content .= '<a href="' . esc_url( admin_url( '?udp-agent-allow-access=no' ) ) . '" class="button button-secondary udp-agent-access_tracking-yes" style="margin-right: 10px">' . esc_html__( 'Do not show again', 'orchid-store' ) . '</a>';
 
-				$content .= '<a href="' . esc_url( admin_url( '?udp-agent-allow-access=later' ) ) . '" class="button button-secondary udp-agent-access_tracking-yes" style="margin-right: 10px">' . esc_html__( 'Later', 'AGENT_TEXT_DOMAIN' ) . '</a>';
+				$content .= '<a href="' . esc_url( admin_url( '?udp-agent-allow-access=later' ) ) . '" class="button button-secondary udp-agent-access_tracking-yes" style="margin-right: 10px">' . esc_html__( 'Later', 'orchid-store' ) . '</a>';
 
 				$content .= '</p>';
 
