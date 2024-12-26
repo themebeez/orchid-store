@@ -199,6 +199,18 @@
 	margin-bottom: 40px;
 }
 
+.woocommerce #content div.product .woocommerce-tabs,
+.woocommerce div.product .woocommerce-tabs,
+.woocommerce-page #content div.product .woocommerce-tabs,
+.woocommerce-page div.product .woocommerce-tabs {
+	margin-bottom: 0px;
+}
+
+.woocommerce-page div.product .up-sells.products,
+.woocommerce-page div.product .related.products, {
+	margin-top: 40px;
+}
+
 
 .woocommerce .cart-collaterals, 
 .woocommerce-page .cart-collaterals,

@@ -1282,7 +1282,7 @@ body.woocommerce:not(.no-sidebar) #content div.product div.summary {
 
     flex: 0 0 auto;
     float: none;
-    margin-left: 20px;
+    margin-left: 0px;
 
 }
 
@@ -1375,6 +1375,7 @@ body.woocommerce:not(.no-sidebar) #content div.product div.summary {
 
     margin: 0;
     height: 41px;
+    line-height: inherit;
 }
 
 // WooCommerce grouped product
