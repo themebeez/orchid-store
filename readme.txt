@@ -101,9 +101,13 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.5.9 - 2 December, 2024 ==
+== 1.5.9 - 26 December, 2024 ==
 
 - Fixed: CSS issue of line-height in variation select field, spacing in related section, and background color of order by field in product catalog page.
+- Added:   Theme welcome notice.
+- Added:   Udp agent to track user's non sensitive data.
+- Tested:  WordPress version 6.7
+- Tested:  WooCommerce version 9.5.1
 
 
 == 1.5.8 - 16 November, 2024 ==
