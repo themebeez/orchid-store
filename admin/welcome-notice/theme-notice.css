@@ -1,0 +1,99 @@
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.themebeez-theme-welcome-notice.notice {
+
+    --ttwn-primary-color: #201658;
+    --ttwn-secondary-color: #98ABEE;
+    --ttwn-accent-color: #F9E8C9;
+
+    background-color: var(--ttwn-accent-color);
+    border-left-color: var(--ttwn-primary-color);
+    margin-bottom: 30px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.theme-notice__content {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.theme-notice__text {
+    max-width: 900px;
+    padding: 30px;
+}
+
+.theme-notice__subheading {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.theme-notice__heading {
+    font-size: 1.625rem;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.theme-notice__description {
+    font-size: 0.875rem;
+    letter-spacing: 0.2px;;
+}
+
+.theme-notice__cta {
+    margin-top: 30px;
+}
+
+.theme-notice__cta p {
+    align-items: center;
+    display: flex;
+    column-gap: 15px;
+    margin: 0;
+}
+
+.theme-notice__cta button {
+    font-size: 0.875rem;
+    padding: 5px 20px;
+}
+
+.theme-notice__cta #get-started-btn {
+    align-items: center;
+    background-color: var(--ttwn-primary-color);
+    border-color: var(--ttwn-primary-color);
+    color: #fff;
+    display: inline-flex;
+    column-gap: 5px;
+}
+
+.theme-notice__cta #get-started-btn:focus {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px var(--ttwn-primary-color);
+}
+
+.theme-notice__cta #get-started-btn[disabled] {
+    background-color: var(--ttwn-secondary-color) !important;
+    border-color: var(--ttwn-secondary-color) !important;
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px var(--ttwn-secondary-color) !important;
+    color: #fff !important;
+}
+
+.theme-notice__cta .get-started-btn-icon {
+    vertical-align: middle;
+    font-size: 18px;
+    color: #fff;
+}
+
+.theme-notice__cta .spinning {
+    animation: spin 1s linear infinite;
+}
+
+.theme-notice__image img {
+    max-height: 200px;
+}
+
+
