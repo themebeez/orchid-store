@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orchid Store 1.5.8\n"
+"Project-Id-Version: Orchid Store 1.5.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/orchid-store\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-02T06:57:36+00:00\n"
+"POT-Creation-Date: 2024-12-27T06:56:33+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: orchid-store\n"
@@ -55,6 +55,29 @@ msgstr ""
 
 #: 404.php:41
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#. translators: %s: current user's display name
+#: admin/welcome-notice/class-orchid-store-theme-welcome-notice.php:137
+msgid "Hello, %s"
+msgstr ""
+
+#. translators: %s: theme name
+#: admin/welcome-notice/class-orchid-store-theme-welcome-notice.php:146
+msgid "Welcome to %s"
+msgstr ""
+
+#. translators: 1: theme name
+#: admin/welcome-notice/class-orchid-store-theme-welcome-notice.php:155
+msgid "Thank you for choosing %1$s! To get started with %1$s and import starter templates, install Themebeez Toolkit plugin by clicking on the button below! We hope you enjoy using %1$s."
+msgstr ""
+
+#: admin/welcome-notice/class-orchid-store-theme-welcome-notice.php:165
+msgid "Get Started"
+msgstr ""
+
+#: admin/welcome-notice/class-orchid-store-theme-welcome-notice.php:175
+msgid "Notice Image"
 msgstr ""
 
 #. translators: 1: title.
