@@ -58,7 +58,7 @@ if ( ! class_exists( 'Orchid_Store_Theme_Welcome_Notice' ) ) {
 		 * @param string $dashboard_page_slug Theme's dashboard page slug.
 		 * @param array  $required_plugins Required plugins.
 		 */
-		public function __construct( $theme_name, $dashboard_page_slug = '', $required_plugins = [] ) {
+		public function __construct( $theme_name, $dashboard_page_slug = '', $required_plugins = array() ) {
 
 			global $pagenow;
 
@@ -152,7 +152,7 @@ if ( ! class_exists( 'Orchid_Store_Theme_Welcome_Notice' ) ) {
 								<?php
 								printf(
 									/* translators: 1: theme name */
-									esc_html__( 'Thank you for choosing %1$s! To get started with %1$s and import starter templates, install Themebeez Toolkit plugin by clicking on the button below! We hope you enjoy using %1$s.', 'orchid-store' ),
+									esc_html__( 'Thank you for choosing %1$s! To get started with %1$s and import starter templates for WooCommerce install Themebeez Toolkit and WooCommerce plugins by clicking on the button below! We hope you enjoy using %1$s.', 'orchid-store' ),
 									esc_html( $this->theme_name )
 								);
 								?>
