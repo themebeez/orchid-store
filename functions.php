@@ -419,3 +419,26 @@ require get_template_directory() . '/inc/class-orchid-store-custom-fields.php';
  * Load theme dependecies
  */
 require get_template_directory() . '/vendor/autoload.php';
+
+/**
+* Adds welcome notice to admin dashboard.
+*
+* @since 1.5.8.
+*/
+require get_template_directory() . '/admin/welcome-notice/class-orchid-store-theme-welcome-notice.php';
+
+
+add_action(
+	'init',
+	function () {
+		new Orchid_Store_Theme_Welcome_Notice(
+			'Orchid Store',
+			admin_url( 'admin.php?page=orchid-store' ),
+			array(
+				'themebeez-toolkit/themebeez-toolkit.php' => 'https://downloads.wordpress.org/plugin/themebeez-toolkit.zip',
+			)
+		);
+	}
+);
+
+
