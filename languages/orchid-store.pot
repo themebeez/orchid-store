@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-27T06:56:33+00:00\n"
+"POT-Creation-Date: 2024-12-30T12:04:25+05:45\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: orchid-store\n"
@@ -69,7 +69,7 @@ msgstr ""
 
 #. translators: 1: theme name
 #: admin/welcome-notice/class-orchid-store-theme-welcome-notice.php:155
-msgid "Thank you for choosing %1$s! To get started with %1$s and import starter templates, install Themebeez Toolkit plugin by clicking on the button below! We hope you enjoy using %1$s."
+msgid "Thank you for choosing %1$s! To get started with %1$s, install WooCommerce and Themebeez Toolkit plugins by clicking on the button below! We hope you enjoy using %1$s."
 msgstr ""
 
 #: admin/welcome-notice/class-orchid-store-theme-welcome-notice.php:165

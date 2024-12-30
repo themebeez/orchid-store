@@ -9,7 +9,9 @@
 
 $current_theme = wp_get_theme( 'orchid-store' );
 
-define( 'ORCHID_STORE_VERSION', $current_theme->get( 'Version' ) );
+if ( ! defined( 'ORCHID_STORE_VERSION' ) ) {
+	define( 'ORCHID_STORE_VERSION', $current_theme->get( 'Version' ) );
+}
 
 if ( ! function_exists( 'orchid_store_setup' ) ) {
 	/**
@@ -436,9 +438,8 @@ add_action(
 			admin_url( 'admin.php?page=orchid-store' ),
 			array(
 				'themebeez-toolkit/themebeez-toolkit.php' => 'https://downloads.wordpress.org/plugin/themebeez-toolkit.zip',
+				'woocommerce/woocommerce.php'             => 'https://downloads.wordpress.org/plugin/woocommerce.latest-stable.zip',
 			)
 		);
 	}
 );
-
-
