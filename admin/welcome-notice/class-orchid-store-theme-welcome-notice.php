@@ -152,7 +152,7 @@ if ( ! class_exists( 'Orchid_Store_Theme_Welcome_Notice' ) ) {
 								<?php
 								printf(
 									/* translators: 1: theme name */
-									esc_html__( 'Thank you for choosing %1$s! To get started with %1$s and import starter templates for WooCommerce install Themebeez Toolkit and WooCommerce plugins by clicking on the button below! We hope you enjoy using %1$s.', 'orchid-store' ),
+									esc_html__( 'Thank you for choosing %1$s! To get started with %1$s, install WooCommerce and Themebeez Toolkit plugins by clicking on the button below! We hope you enjoy using %1$s.', 'orchid-store' ),
 									esc_html( $this->theme_name )
 								);
 								?>

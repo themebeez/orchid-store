@@ -436,7 +436,7 @@ add_action(
 			admin_url( 'admin.php?page=orchid-store' ),
 			array(
 				'themebeez-toolkit/themebeez-toolkit.php' => 'https://downloads.wordpress.org/plugin/themebeez-toolkit.zip',
-				'woocommerce/woocommerce.php'             => 'https://downloads.wordpress.org/plugin/woocommerce.latest-stable.zip',
+				'woocommerce/woocommerce.php'             => 'https://downloads.wordpress.org/plugin/woocommerce.zip',
 			)
 		);
 	}
