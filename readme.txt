@@ -5,8 +5,8 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 7.4
 Requires at least: 6.4
 Tested up to: 6.7
-Version: 1.5.9
-Stable tag: 1.5.9
+Version: 1.5.10
+Stable tag: 1.5.10
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -101,14 +101,15 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.5.9 - 30 December, 2024 ==
+== 1.5.10 - 30 December, 2024 ==
 
 - Added:   Theme welcome notice.
 - Added:   Udp agent to track user's non sensitive data.
-- Fixed:   CSS issue of line-height in variation select field, spacing in related section, and background color of order by field in product catalog page.
-- Tested:  WordPress version 6.7
 - Tested:  WooCommerce version 9.5.1
 
+== 1.5.9 - 2 December, 2024 ==
+
+- Fixed:   CSS issue of line-height in variation select field, spacing in related section, and background color of order by field in product catalog page.
 
 == 1.5.8 - 16 November, 2024 ==
 
