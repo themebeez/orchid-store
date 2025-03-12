@@ -7,10 +7,8 @@
  * @package Orchid_Store
  */
 
-$current_theme = wp_get_theme( 'orchid-store' );
-
 if ( ! defined( 'ORCHID_STORE_VERSION' ) ) {
-	define( 'ORCHID_STORE_VERSION', $current_theme->get( 'Version' ) );
+	define( 'ORCHID_STORE_VERSION', '1.5.11' );
 }
 
 if ( ! function_exists( 'orchid_store_setup' ) ) {
@@ -140,7 +138,7 @@ function orchid_store_scripts() {
 		'orchid-store-style',
 		get_stylesheet_uri(),
 		array(),
-		ORCHID_STORE_VERSION,
+		null, // phpcs:ignore.
 		'all'
 	);
 

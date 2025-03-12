@@ -101,6 +101,11 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
+== 1.5.11 - 25 March, 2025 ==
+
+- Tested:  WordPress version 6.8
+- Tested:  WooCommerce version 9.5.1
+
 == 1.5.10 - 30 December, 2024 ==
 
 - Added:   Theme welcome notice.
