@@ -1,15 +1,15 @@
-# Copyright (C) 2024 themebeez
+# Copyright (C) 2025 themebeez
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orchid Store 1.5.10\n"
+"Project-Id-Version: Orchid Store 1.5.11\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/orchid-store\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-30T06:47:41+00:00\n"
+"POT-Creation-Date: 2025-04-18T06:37:42+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: orchid-store\n"
