@@ -1466,10 +1466,11 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$wp_customize->add_control(
 		'orchid_store_field_on_hover_image_effect',
 		array(
-			'label'   => esc_html__( 'Effect on Product Image on Hover', 'orchid-store' ),
-			'section' => 'woocommerce_product_images',
-			'type'    => 'select',
-			'choices' => array(
+			'label'       => esc_html__( 'Effect on Product Image on Hover', 'orchid-store' ),
+			'description' => esc_html__( 'Image animation for products in the catalog.', 'orchid-store' ),
+			'section'     => 'woocommerce_product_images',
+			'type'        => 'select',
+			'choices'     => array(
 				'none' => esc_html__( 'None', 'orchid-store' ),
 				'zoom' => esc_html__( 'Zoom', 'orchid-store' ),
 				'swap' => esc_html__( 'Swap', 'orchid-store' ),
@@ -1477,6 +1478,54 @@ if ( class_exists( 'WooCommerce' ) ) {
 		)
 	);
 
+	// Theme support for product gallery zoom.
+	// @since 1.5.12.
+	$wp_customize->add_setting(
+		'orchid_store_field_enable_product_gallery_zoom',
+		array(
+			'sanitize_callback' => 'wp_validate_boolean',
+			'default'           => $orchid_store_defaults['orchid_store_field_enable_product_gallery_zoom'],
+			'capability'        => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Orchid_Store_Customize_Toggle_Control(
+			$wp_customize,
+			'orchid_store_field_enable_product_gallery_zoom',
+			array(
+				'label'       => esc_html__( 'Enable product gallery zoom', 'orchid-store' ),
+				'description' => esc_html__( 'On mouse hover adds zoom effect for the product image on single product pages. ', 'orchid-store' ),
+				'section'     => 'woocommerce_product_images',
+				'type'        => 'flat', // ios, light, flat.
+			)
+		)
+	);
+
+	// Theme support for product gallery lightbox.
+	// @since 1.5.12.
+	$wp_customize->add_setting(
+		'orchid_store_field_enable_product_gallery_lightbox',
+		array(
+			'sanitize_callback' => 'wp_validate_boolean',
+			'default'           => $orchid_store_defaults['orchid_store_field_enable_product_gallery_lightbox'],
+			'capability'        => 'edit_theme_options',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Orchid_Store_Customize_Toggle_Control(
+			$wp_customize,
+			'orchid_store_field_enable_product_gallery_lightbox',
+			array(
+				'label'           => esc_html__( 'Enable product gallery lightbox', 'orchid-store' ),
+				'description'     => esc_html__( 'Product gallery images are displayed in the lightbox on single product pages.', 'orchid-store' ),
+				'section'         => 'woocommerce_product_images',
+				'type'            => 'flat', // ios, light, flat.
+				'active_callback' => 'orchid_store_is_product_gallery_zoom_enabled',
+			)
+		)
+	);
 
 	// Checkout page layout.
 	// @since 1.5.0.
