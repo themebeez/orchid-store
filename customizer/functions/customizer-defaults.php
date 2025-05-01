@@ -168,6 +168,9 @@ if ( ! function_exists( 'orchid_store_get_default_theme_options' ) ) {
 			$defaults['orchid_store_field_on_hover_image_effect']                = 'none'; // @since 1.5.0
 			$defaults['orchid_store_field_checkout_layout']                      = 'layout_1'; // @since 1.5.0
 			$defaults['orchid_store_field_cart_layout']                          = 'layout_1'; // @since 1.5.0
+
+			$defaults['orchid_store_field_enable_product_gallery_zoom']     = true; // @since 1.5.12
+			$defaults['orchid_store_field_enable_product_gallery_lightbox'] = true; // @since 1.5.12
 		}
 
 		$defaults['orchid_store_field_enable_home_content'] = false;

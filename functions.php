@@ -208,6 +208,7 @@ function orchid_store_scripts() {
 
 	$script_obj = array(
 		'ajax_url'              => esc_url( admin_url( 'admin-ajax.php' ) ),
+		'nonce'                 => wp_create_nonce( 'orchid_store_ajax_nonce' ),
 		'homeUrl'               => esc_url( home_url() ),
 		'isUserLoggedIn'        => is_user_logged_in(),
 		'isCartMessagesEnabled' => orchid_store_get_option( 'enable_cart_messages' ),

@@ -515,6 +515,24 @@
             });
         }
 
+        // Update YITH Wishlist item counts.
+        $('body').on('added_to_wishlist removed_from_wishlist', function () {
+            $.get(orchid_store_obj.ajax_url, {
+                action: 'orchid_store_update_wishlist_count',
+                nonce: orchid_store_obj.nonce
+            }, function (response) {
+                if(response.success) {
+                    if (response.hasOwnProperty('data') && response.data.hasOwnProperty('count')) {
+                        $('.wishlist-items-count').html(response.data.count);
+                    }
+                } else {
+                    if (response.hasOwnProperty('data') && response.data.hasOwnProperty('message')) {
+                        console.error(response.data.message);
+                    }
+                }
+            });
+        });
+
         function orchidStoreAddonifyWishlist() {
 
             let icons = {
@@ -549,14 +567,7 @@
                 }
             }
 
-            // Update Wishlist item counts
-            $(document).on('added_to_wishlist removed_from_wishlist', function () {
-                $.get(orchid_store_obj.ajax_url, {
-                    action: 'orchid_store_update_wishlist_count'
-                }, function (data) {
-                    $('.wishlist-items-count').html(data.count);
-                });
-            });
+           
 
             $(document).on('addonify_added_to_wishlist', function (event, data) {
 
@@ -564,6 +575,10 @@
                     let osAddtoWishlistButton = $(".os-addtowishlist-btn[data-product_id='" + data.productID + "']");
 
                     if (osAddtoWishlistButton.length > 0) {
+
+                        if (!osAddtoWishlistButton.hasClass('added-to-wishlist')) {
+                            osAddtoWishlistButton.addClass('added-to-wishlist');
+                        }
 
                         osAddtoWishlistButton.find('.w-icon').html(icons['added']);
 
@@ -582,9 +597,18 @@
 
                 if (orchid_store_obj.isUserLoggedIn) {
                     $.get(orchid_store_obj.ajax_url, {
-                        action: 'orchid_store_update_wishlist_count'
-                    }, function (data) {
-                        $('.wishlist-items-count').html(data.count);
+                        action: 'orchid_store_update_wishlist_count',
+                        nonce: orchid_store_obj.nonce
+                    }, function (response) {
+                        if (response.success) {
+                            if (response.hasOwnProperty('data') && response.data.hasOwnProperty('count')) {
+                                $('.wishlist-items-count').html(response.data.count);
+                            }
+                        } else {
+                            if (response.hasOwnProperty('data') && response.data.hasOwnProperty('message')) {
+                                console.error(response.data.message);
+                            }
+                        }
                     });
                 } else {
                     let wishlist = JSON.parse(localStorage.getItem('addonify-wishlist_' + orchid_store_obj.homeUrl + '_product_ids'));
@@ -616,9 +640,18 @@
 
                 if (orchid_store_obj.isUserLoggedIn) {
                     $.get(orchid_store_obj.ajax_url, {
-                        action: 'orchid_store_update_wishlist_count'
-                    }, function (data) {
-                        $('.wishlist-items-count').html(data.count);
+                        action: 'orchid_store_update_wishlist_count',
+                        nonce: orchid_store_obj.nonce
+                    }, function (response) {
+                        if (response.success) {
+                            if (response.hasOwnProperty('data') && response.data.hasOwnProperty('count')) {
+                                $('.wishlist-items-count').html(response.data.count);
+                            }
+                        } else {
+                            if (response.hasOwnProperty('data') && response.data.hasOwnProperty('message')) {
+                                console.error(response.data.message);
+                            }
+                        }
                     });
                 } else {
                     let wishlist = JSON.parse(localStorage.getItem('addonify-wishlist_' + orchid_store_obj.homeUrl + '_product_ids'));
