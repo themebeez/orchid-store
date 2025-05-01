@@ -458,7 +458,7 @@ if ( ! function_exists( 'orchid_store_template_loop_product_quick_link' ) ) {
 					class_exists( 'Addonify_Wishlist' ) &&
 					get_option( 'addonify_wishlist_enable_wishlist', true )
 				) {
-					$addonify_wishlist_button_classes = array( 'os-tooltip', 'adfy-wishlist-btn', 'addonify-add-to-wishlist-btn', 'addonify-custom-wishlist-btn' );
+					$addonify_wishlist_button_classes = array( 'os-tooltip', 'adfy-wishlist-btn', 'addonify-add-to-wishlist-btn', 'addonify-custom-wishlist-btn', 'adfy-wl-ajax-add-to-wishlist', 'adfy-wl-add-to-wishlist' );
 
 					if ( addonify_wishlist_is_product_in_wishlist( $product->get_id() ) ) {
 						$addonify_wishlist_button_classes[] = 'added-to-wishlist';
@@ -810,22 +810,44 @@ if ( ! function_exists( 'orchid_store_update_wishlist_count' ) ) {
 	 */
 	function orchid_store_update_wishlist_count() {
 
+		$nonce = isset( $_GET['nonce'] ) ? sanitize_text_field( wp_unslash( $_GET['nonce'] ) ) : '';
+
+		if ( ! wp_verify_nonce( $nonce, 'orchid_store_ajax_nonce' ) ) {
+			wp_send_json(
+				array(
+					'success' => false,
+					'data'    => array(
+						'message' => esc_html__( 'Invalid security token', 'orchid-store' ),
+					),
+				)
+			);
+		}
+
 		if ( class_exists( 'Addonify_Wishlist' ) ) {
 			wp_send_json(
 				array(
-					'count' => addonify_wishlist_get_wishlist_items_count(),
+					'success' => true,
+					'data'    => array(
+						'count' => addonify_wishlist_get_wishlist_items_count(),
+					),
 				)
 			);
 		} elseif ( class_exists( 'YITH_WCWL' ) ) {
 			wp_send_json(
 				array(
-					'count' => yith_wcwl_count_all_products(),
+					'success' => true,
+					'data'    => array(
+						'count' => yith_wcwl_count_all_products(),
+					),
 				)
 			);
 		} else {
 			wp_send_json(
 				array(
-					'count' => 0,
+					'success' => false,
+					'data'    => array(
+						'count' => 0,
+					),
 				)
 			);
 		}

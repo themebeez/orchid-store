@@ -5,8 +5,8 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 7.4
 Requires at least: 6.4
 Tested up to: 6.8
-Version: 1.5.11
-Stable tag: 1.5.11
+Version: 1.5.12
+Stable tag: 1.5.12
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,12 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.5.12 - 1 May, 2024 ==
+
+- Fixed:   Comptibility issue with Addonify Wishlist plugin.
+- Updated: Added 'nonce' in the AJAX requests.
+- Added:   Options to enable product gallery zoom and gallery lightbox on single product pages.
 
 == 1.5.11 - 18 April, 2024 ==
 

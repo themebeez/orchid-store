@@ -303,3 +303,17 @@ function orchid_store_is_percentage_discount_tag_disabled( $control ) {
 
 	return $control->manager->get_setting( 'orchid_store_field_enable_percentage_sale_tag' )->value();
 }
+
+
+/**
+ * Active callback function that checks whether product gallery zoom is enabled.
+ *
+ * @since 1.0.0
+ *
+ * @param object $control WP Customize Control.
+ * @return boolean
+ */
+function orchid_store_is_product_gallery_zoom_enabled( $control ) {
+
+	return $control->manager->get_setting( 'orchid_store_field_enable_product_gallery_zoom' )->value();
+}

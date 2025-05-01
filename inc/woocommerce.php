@@ -18,8 +18,15 @@
 function orchid_store_woocommerce_setup() {
 
 	add_theme_support( 'woocommerce' );
-	add_theme_support( 'wc-product-gallery-zoom' );
-	add_theme_support( 'wc-product-gallery-lightbox' );
+
+	if ( get_theme_mod( 'orchid_store_field_enable_product_gallery_zoom', true ) ) {
+		add_theme_support( 'wc-product-gallery-zoom' );
+	}
+
+	if ( get_theme_mod( 'orchid_store_field_enable_product_gallery_lightbox', true ) ) {
+		add_theme_support( 'wc-product-gallery-lightbox' );
+	}
+
 	add_theme_support( 'wc-product-gallery-slider' );
 }
 
