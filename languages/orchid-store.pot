@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orchid Store 1.5.11\n"
+"Project-Id-Version: Orchid Store 1.5.12\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/orchid-store\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-18T06:37:42+00:00\n"
+"POT-Creation-Date: 2025-05-01T13:51:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: orchid-store\n"
@@ -200,26 +200,26 @@ msgid "Copyright {copy} {year}, {site_title}. All rights reserved."
 msgstr ""
 
 #: customizer/functions/customizer-defaults.php:153
-#: inc/woocommerce-hooks.php:992
+#: inc/woocommerce-hooks.php:1014
 #: woocommerce/loop/sale-flash.php:28
 msgid "Sale!"
 msgstr ""
 
 #: customizer/functions/customizer-defaults.php:162
-#: functions.php:220
-#: functions.php:222
+#: functions.php:221
+#: functions.php:223
 msgid "Product successfully added to cart!"
 msgstr ""
 
 #: customizer/functions/customizer-defaults.php:163
-#: functions.php:225
-#: functions.php:227
+#: functions.php:226
+#: functions.php:228
 msgid "Product has been removed from your cart!"
 msgstr ""
 
 #: customizer/functions/customizer-defaults.php:164
-#: functions.php:230
-#: functions.php:232
+#: functions.php:231
+#: functions.php:233
 msgid "Cart items has been updated successfully!"
 msgstr ""
 
@@ -777,34 +777,54 @@ msgstr ""
 msgid "Effect on Product Image on Hover"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:1473
+#: customizer/functions/customizer-fields.php:1470
+msgid "Image animation for products in the catalog."
+msgstr ""
+
+#: customizer/functions/customizer-fields.php:1474
 #: widget/widgets/class-orchid-store-products-filter-widget.php:460
 #: widget/widgets/class-orchid-store-products-widget.php:301
 #: widget/widgets/class-orchid-store-products-widget.php:438
 msgid "None"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:1474
+#: customizer/functions/customizer-fields.php:1475
 msgid "Zoom"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:1475
+#: customizer/functions/customizer-fields.php:1476
 msgid "Swap"
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:1497
-msgid "Checkout Layout"
+msgid "Enable product gallery zoom"
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:1498
-msgid "This option works when cart page content has cart shortcode or classic cart block."
+msgid "On mouse hover adds zoom effect for the product image on single product pages. "
+msgstr ""
+
+#: customizer/functions/customizer-fields.php:1521
+msgid "Enable product gallery lightbox"
 msgstr ""
 
 #: customizer/functions/customizer-fields.php:1522
+msgid "Product gallery images are displayed in the lightbox on single product pages."
+msgstr ""
+
+#: customizer/functions/customizer-fields.php:1546
+msgid "Checkout Layout"
+msgstr ""
+
+#: customizer/functions/customizer-fields.php:1547
+msgid "This option works when cart page content has cart shortcode or classic cart block."
+msgstr ""
+
+#: customizer/functions/customizer-fields.php:1571
 msgid "Cart Layout"
 msgstr ""
 
-#: customizer/functions/customizer-fields.php:1523
+#: customizer/functions/customizer-fields.php:1572
 msgid "This option works when checkout page content has checkout shortcode or classic checkout block."
 msgstr ""
 
@@ -820,15 +840,15 @@ msgstr ""
 msgid "Secondary Menu"
 msgstr ""
 
-#: functions.php:310
+#: functions.php:311
 msgid "User can not activate plugins."
 msgstr ""
 
-#: functions.php:315
+#: functions.php:316
 msgid "Invalid security token."
 msgstr ""
 
-#: functions.php:324
+#: functions.php:325
 msgid "The plugin is activated successfully."
 msgstr ""
 
@@ -934,12 +954,16 @@ msgstr ""
 msgid "Compare"
 msgstr ""
 
-#: inc/woocommerce.php:212
+#: inc/woocommerce-hooks.php:820
+msgid "Invalid security token"
+msgstr ""
+
+#: inc/woocommerce.php:219
 msgid "View your shopping cart"
 msgstr ""
 
 #. translators: number of items in the mini cart.
-#: inc/woocommerce.php:216
+#: inc/woocommerce.php:223
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
