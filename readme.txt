@@ -5,8 +5,8 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 7.4
 Requires at least: 6.4
 Tested up to: 6.8
-Version: 1.5.12
-Stable tag: 1.5.12
+Version: 1.5.13
+Stable tag: 1.5.13
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,7 +18,7 @@ Orchid Store is a clean, flexible, stylish & dynamic e-commerce WordPress theme.
 
 == Copyright ==
 
-Orchid Store WordPress Theme, Copyright (C) 2025, themebeez.
+Orchid Store WordPress Theme, Copyright (C) 2019-2025, themebeez.
 Orchid Store is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
@@ -101,13 +101,17 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.5.12 - 1 May, 2024 ==
+== 1.5.13 - 18 May, 2025 ===
+
+- Updated: Submenu toggles when arrow icon is clicked in the special(category) menu.
+
+== 1.5.12 - 1 May, 2025 ==
 
 - Fixed:   Comptibility issue with Addonify Wishlist plugin.
 - Updated: Added 'nonce' in the AJAX requests.
 - Added:   Options to enable product gallery zoom and gallery lightbox on single product pages.
 
-== 1.5.11 - 18 April, 2024 ==
+== 1.5.11 - 18 April, 2025 ==
 
 - Tested: Up to WooCommerce version 9.8.1.
 

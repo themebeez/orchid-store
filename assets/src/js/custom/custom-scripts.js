@@ -243,6 +243,14 @@
 
         $('.category-navigation .page_item_has_children > .menu-link').append('<span class="sub-toggle visible-desktop"> <i class="bx bx-chevron-right"></i> </span>');
 
+        $('body').on('click', '.category-navigation .menu-item-has-children > .menu-link .sub-toggle.visible-desktop, .category-navigation .page_item_has_children > .menu-link .sub-toggle.visible-desktop', function(event) {
+            event.preventDefault();
+
+            let currentSubToggle = $(this);
+
+            currentSubToggle.parent().parent().toggleClass('os-submenu-open');
+        });
+
         // add to li 
 
         $('.category-navigation .menu-item-has-children').append('<span class="sub-toggle visible-tablet"> <i class="bx bx-chevron-down"></i> </span>');
