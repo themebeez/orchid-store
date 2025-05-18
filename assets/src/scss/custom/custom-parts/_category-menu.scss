@@ -170,8 +170,10 @@ body.cat-nav-at-navigation-active .category-navigation .cat-nav-trigger .icon .l
 	
 	right: 0;
 	color: $primary_color;
-	font-size: 12px;
+	font-size: 18px;
 	opacity: 1;
+	padding: 3px;
+	line-height: 1;
 }
 
 // Menu label 
@@ -211,7 +213,9 @@ body.cat-nav-at-navigation-active .category-navigation .cat-nav-trigger .icon .l
 } 
 
 .category-navigation ul li:hover > .sub-menu, 
-.category-navigation ul li:hover > .children {
+.category-navigation ul li:hover > .children,
+.category-navigation ul li.os-submenu-open > .sub-menu,
+.category-navigation ul li.os-submenu-open > .children {
     
     display:block;
     opacity: 1;
