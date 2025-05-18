@@ -2,16 +2,16 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Orchid Store 1.5.12\n"
+"Project-Id-Version: Orchid Store 1.5.13\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/orchid-store\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-01T13:51:39+00:00\n"
+"POT-Creation-Date: 2025-05-18T08:03:45+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.11.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: orchid-store\n"
 
 #. Theme Name of the theme
@@ -59,16 +59,19 @@ msgstr ""
 
 #. translators: %s: current user's display name
 #: admin/welcome-notice/class-orchid-store-theme-welcome-notice.php:137
+#, php-format
 msgid "Hello, %s"
 msgstr ""
 
 #. translators: %s: theme name
 #: admin/welcome-notice/class-orchid-store-theme-welcome-notice.php:146
+#, php-format
 msgid "Welcome to %s"
 msgstr ""
 
 #. translators: 1: theme name
 #: admin/welcome-notice/class-orchid-store-theme-welcome-notice.php:155
+#, php-format
 msgid "Thank you for choosing %1$s! To get started with %1$s, install WooCommerce and Themebeez Toolkit plugins by clicking on the button below! We hope you enjoy using %1$s."
 msgstr ""
 
@@ -82,11 +85,13 @@ msgstr ""
 
 #. translators: 1: title.
 #: comments.php:35
+#, php-format
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
 #. translators: 1: comment count number, 2: title.
 #: comments.php:41
+#, php-format
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
@@ -99,6 +104,7 @@ msgstr ""
 
 #. translators: 1: plugin name.
 #: customizer/controls/class-orchid-store-customize-afc-recommendation-control.php:66
+#, php-format
 msgid "Please install the %1$s plugin to enable the floating cart."
 msgstr ""
 
@@ -108,6 +114,7 @@ msgstr ""
 
 #. translators: 1: plugin name.
 #: customizer/controls/class-orchid-store-customize-afc-recommendation-control.php:84
+#, php-format
 msgid "Please activate the %1$s plugin to enable the floating cart."
 msgstr ""
 
@@ -117,6 +124,7 @@ msgstr ""
 
 #. translators: 1: plugin name
 #: customizer/controls/class-orchid-store-customize-afc-recommendation-control.php:102
+#, php-format
 msgid "Floating cart&rsquo;s features can be configured from the %1$s plugin&rsquo;s setting page."
 msgstr ""
 
@@ -878,12 +886,14 @@ msgstr ""
 
 #. translators: 1: theme name, 2: theme author
 #: inc/custom-hooks.php:545
+#, php-format
 msgid "%1$s Theme by %2$s"
 msgstr ""
 
 #. translators: %s: search query.
 #: inc/template-functions.php:308
 #: search.php:35
+#, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -907,6 +917,7 @@ msgstr ""
 
 #. translators: %s: agent name
 #: inc/udp/init.php:99
+#, php-format
 msgid "%s is asking to allow tracking your non-sensitive WordPress data?"
 msgstr ""
 
@@ -964,6 +975,7 @@ msgstr ""
 
 #. translators: number of items in the mini cart.
 #: inc/woocommerce.php:223
+#, php-format
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
@@ -984,6 +996,7 @@ msgstr ""
 #. translators: 1: link to WP admin new post page.
 #: template-parts/content-none.php:24
 #: widget/widgets/class-orchid-store-post-widget.php:169
+#, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
@@ -1003,6 +1016,7 @@ msgstr ""
 #. translators: %s: Name of current post. Only visible to screen readers
 #: template-parts/content-page.php:59
 #: template-parts/content-single.php:120
+#, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
@@ -1029,26 +1043,31 @@ msgstr ""
 
 #. Translators: %s is the search query.
 #: third-party/class-orchid-store-breadcrumb-trail.php:255
+#, php-format
 msgid "Search results for: %s"
 msgstr ""
 
 #. Translators: %s is the page number.
 #: third-party/class-orchid-store-breadcrumb-trail.php:257
+#, php-format
 msgid "Page %s"
 msgstr ""
 
 #. Translators: %s is the page number.
 #: third-party/class-orchid-store-breadcrumb-trail.php:259
+#, php-format
 msgid "Comment Page %s"
 msgstr ""
 
 #. Translators: Minute archive title. %s is the minute time format.
 #: third-party/class-orchid-store-breadcrumb-trail.php:261
+#, php-format
 msgid "Minute %s"
 msgstr ""
 
 #. Translators: Weekly archive title. %s is the week date format.
 #: third-party/class-orchid-store-breadcrumb-trail.php:263
+#, php-format
 msgid "Week %s"
 msgstr ""
 
@@ -1104,11 +1123,13 @@ msgstr ""
 
 #. translators: %s: plugin name.
 #: third-party/class-tgm-plugin-activation.php:317
+#, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
 #. translators: %s: plugin name.
 #: third-party/class-tgm-plugin-activation.php:319
+#, php-format
 msgid "Updating Plugin: %s"
 msgstr ""
 
@@ -1118,6 +1139,7 @@ msgstr ""
 
 #. translators: 1: plugin name(s).
 #: third-party/class-tgm-plugin-activation.php:321
+#, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
@@ -1125,6 +1147,7 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: third-party/class-tgm-plugin-activation.php:327
+#, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
@@ -1132,6 +1155,7 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: third-party/class-tgm-plugin-activation.php:333
+#, php-format
 msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
 msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
 msgstr[0] ""
@@ -1139,6 +1163,7 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: third-party/class-tgm-plugin-activation.php:339
+#, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
@@ -1146,6 +1171,7 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: third-party/class-tgm-plugin-activation.php:345
+#, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
@@ -1153,6 +1179,7 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: third-party/class-tgm-plugin-activation.php:351
+#, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
@@ -1201,16 +1228,19 @@ msgstr[1] ""
 
 #. translators: 1: plugin name.
 #: third-party/class-tgm-plugin-activation.php:377
+#, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
 #. translators: 1: plugin name.
 #: third-party/class-tgm-plugin-activation.php:379
+#, php-format
 msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
 msgstr ""
 
 #. translators: 1: dashboard link.
 #: third-party/class-tgm-plugin-activation.php:381
+#, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
@@ -1259,6 +1289,7 @@ msgstr ""
 
 #. translators: %s: version number
 #: third-party/class-tgm-plugin-activation.php:2074
+#, php-format
 msgid "TGMPA v%s"
 msgstr ""
 
@@ -1308,12 +1339,14 @@ msgstr ""
 
 #. translators: 1: install status, 2: update status
 #: third-party/class-tgm-plugin-activation.php:2452
+#, php-format
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
 #. translators: 1: number of plugins.
 #: third-party/class-tgm-plugin-activation.php:2498
+#, php-format
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
@@ -1322,6 +1355,7 @@ msgstr[1] ""
 
 #. translators: 1: number of plugins.
 #: third-party/class-tgm-plugin-activation.php:2502
+#, php-format
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
@@ -1329,6 +1363,7 @@ msgstr[1] ""
 
 #. translators: 1: number of plugins.
 #: third-party/class-tgm-plugin-activation.php:2506
+#, php-format
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
@@ -1336,6 +1371,7 @@ msgstr[1] ""
 
 #. translators: 1: number of plugins.
 #: third-party/class-tgm-plugin-activation.php:2510
+#, php-format
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
@@ -1384,16 +1420,19 @@ msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
 #: third-party/class-tgm-plugin-activation.php:2713
+#, php-format
 msgid "Install %2$s"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
 #: third-party/class-tgm-plugin-activation.php:2718
+#, php-format
 msgid "Update %2$s"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
 #: third-party/class-tgm-plugin-activation.php:2724
+#, php-format
 msgid "Activate %2$s"
 msgstr ""
 
@@ -1443,16 +1482,19 @@ msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: third-party/class-tgm-plugin-activation.php:3616
+#, php-format
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #. translators: 1: plugin name, 2: error message.
 #: third-party/class-tgm-plugin-activation.php:3619
+#, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
 #. translators: 1: plugin name.
 #: third-party/class-tgm-plugin-activation.php:3621
+#, php-format
 msgid "The installation of %1$s failed."
 msgstr ""
 
@@ -1462,6 +1504,7 @@ msgstr ""
 
 #. translators: 1: plugin name.
 #: third-party/class-tgm-plugin-activation.php:3627
+#, php-format
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
@@ -1471,6 +1514,7 @@ msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: third-party/class-tgm-plugin-activation.php:3630
+#, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
@@ -1480,6 +1524,7 @@ msgstr ""
 
 #. translators: 1: plugin name.
 #: third-party/class-tgm-plugin-activation.php:3635
+#, php-format
 msgid "%1$s installed successfully."
 msgstr ""
 
@@ -1489,6 +1534,7 @@ msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: third-party/class-tgm-plugin-activation.php:3638
+#, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
@@ -1504,6 +1550,7 @@ msgstr ""
 
 #. translators: %s: number of footer widget area.
 #: widget/widgets-init.php:52
+#, php-format
 msgid "Footer %s"
 msgstr ""
 
@@ -1669,6 +1716,7 @@ msgstr ""
 
 #. translators: %s: slider item number
 #: widget/widgets/class-orchid-store-banner-widget.php:285
+#, php-format
 msgid "Slider Item %s"
 msgstr ""
 
@@ -1710,6 +1758,7 @@ msgstr ""
 
 #. translators: %s: products count
 #: widget/widgets/class-orchid-store-featured-product-categories-widget.php:122
+#, php-format
 msgid "%s Product"
 msgid_plural "%s Products"
 msgstr[0] ""
@@ -1881,6 +1930,7 @@ msgstr ""
 
 #. translators: %s : number of service
 #: widget/widgets/class-orchid-store-services-widget.php:152
+#, php-format
 msgid "Service %s"
 msgstr ""
 
@@ -1937,6 +1987,7 @@ msgstr ""
 #. translators: %s is the product name
 #: woocommerce/cart/cart.php:67
 #: woocommerce/cart/cart.php:284
+#, php-format
 msgid "Remove %s from cart"
 msgstr ""
 
