@@ -12,7 +12,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 8.0.0
+ * @version 10.0.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -30,10 +30,10 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 				<tr>
 					<th class="product-remove"><span class="screen-reader-text"><?php esc_html_e( 'Remove item', 'orchid-store' ); ?></span></th>
 					<th class="product-thumbnail"><span class="screen-reader-text"><?php esc_html_e( 'Thumbnail image', 'orchid-store' ); ?></span></th>
-					<th class="product-name"><?php esc_html_e( 'Product', 'orchid-store' ); ?></th>
-					<th class="product-price"><?php esc_html_e( 'Price', 'orchid-store' ); ?></th>
-					<th class="product-quantity"><?php esc_html_e( 'Quantity', 'orchid-store' ); ?></th>
-					<th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'orchid-store' ); ?></th>
+					<th scope="col" class="product-name"><?php esc_html_e( 'Product', 'orchid-store' ); ?></th>
+					<th scope="col" class="product-price"><?php esc_html_e( 'Price', 'orchid-store' ); ?></th>
+					<th scope="col" class="product-quantity"><?php esc_html_e( 'Quantity', 'orchid-store' ); ?></th>
+					<th scope="col" class="product-subtotal"><?php esc_html_e( 'Subtotal', 'orchid-store' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -46,8 +46,10 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 					/**
 					 * Filter the product name.
 					 *
-					 * @since 7.8.0
+					 * @since 2.1.0
 					 * @param string $product_name Name of the product in the cart.
+					 * @param array $cart_item The product in the cart.
+					 * @param string $cart_item_key Key for the product in the cart.
 					 */
 					$product_name = apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key );
 
@@ -61,10 +63,10 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 									echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 										'woocommerce_cart_item_remove_link',
 										sprintf(
-											'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+											'<a role="button" href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
 											esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 											/* translators: %s is the product name */
-											esc_attr( sprintf( __( 'Remove %s from cart', 'orchid-store' ), $product_name ) ),
+											esc_attr( sprintf( __( 'Remove %s from cart', 'orchid-store' ), wp_strip_all_tags( $product_name ) ) ),
 											esc_attr( $product_id ),
 											esc_attr( $_product->get_sku() )
 										),
@@ -75,76 +77,57 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 
 							<td class="product-thumbnail">
 							<?php
+							/**
+							 * Filter the product thumbnail displayed in the WooCommerce cart.
+							 *
+							 * This filter allows developers to customize the HTML output of the product
+							 * thumbnail. It passes the product image along with cart item data
+							 * for potential modifications before being displayed in the cart.
+							 *
+							 * @param string $thumbnail     The HTML for the product image.
+							 * @param array  $cart_item     The cart item data.
+							 * @param string $cart_item_key Unique key for the cart item.
+							 *
+							 * @since 2.1.0
+							 */
 							$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
 							if ( ! $product_permalink ) {
-								echo $thumbnail; // PHPCS:ignore
+								echo $thumbnail; // PHPCS: XSS ok.
 							} else {
-								printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS:ignore.
+								printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
 							}
 							?>
 							</td>
 
-							<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'orchid-store' ); ?>">
+							<th scope="row" class="product-name" data-title="<?php esc_attr_e( 'Product', 'orchid-store' ); ?>">
 							<?php
 							if ( ! $product_permalink ) {
-								/**
-								 * Filter the product name.
-								 *
-								 * @since 7.8.0
-								 * @param string $product_name Name of the product in the cart.
-								 * @param array $cart_item The product in the cart.
-								 * @param string $cart_item_key Key for the product in the cart.
-								 */
-								echo wp_kses_post(
-									apply_filters(
-										'woocommerce_cart_item_name',
-										$product_name,
-										$cart_item,
-										$cart_item_key
-									) . '&nbsp;'
-								);
+								echo wp_kses_post( $product_name . '&nbsp;' );
 							} else {
 								/**
-								 * Filter the product name.
+								 * This filter is documented above.
 								 *
-								 * @since 7.8.0
-								 * @param string $product_url URL the product in the cart.
+								 * @since 2.1.0
 								 */
-								echo wp_kses_post(
-									apply_filters(
-										'woocommerce_cart_item_name',
-										sprintf(
-											'<a href="%s">%s</a>',
-											esc_url( $product_permalink ),
-											$product_name
-										),
-										$cart_item,
-										$cart_item_key
-									)
-								);
+								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
 							}
 
 							do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
 
 							// Meta data.
-							echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
 
 							// Backorder notification.
 							if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
 								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'orchid-store' ) . '</p>', $product_id ) );
 							}
 							?>
-							</td>
+							</th>
 
 							<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'orchid-store' ); ?>">
 								<?php
-									echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-										'woocommerce_cart_item_price',
-										WC()->cart->get_product_price( $_product ),
-										$cart_item,
-										$cart_item_key
-									);
+									echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 								?>
 							</td>
 
@@ -170,23 +153,13 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 								false
 							);
 
-							echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-								'woocommerce_cart_item_quantity',
-								$product_quantity,
-								$cart_item_key,
-								$cart_item
-							);
+							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
 							?>
 							</td>
 
 							<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'orchid-store' ); ?>">
 								<?php
-									echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-										'woocommerce_cart_item_subtotal',
-										WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ),
-										$cart_item,
-										$cart_item_key
-									);
+									echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 								?>
 							</td>
 						</tr>
@@ -225,13 +198,13 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 
 	<div class="cart-collaterals">
 		<?php
-		/**
-		 * Cart collaterals hook.
-		 *
-		 * @hooked woocommerce_cross_sell_display
-		 * @hooked woocommerce_cart_totals - 10
-		 */
-		do_action( 'woocommerce_cart_collaterals' );
+			/**
+			 * Cart collaterals hook.
+			 *
+			 * @hooked woocommerce_cross_sell_display
+			 * @hooked woocommerce_cart_totals - 10
+			 */
+			do_action( 'woocommerce_cart_collaterals' );
 		?>
 	</div>
 	<?php
@@ -247,10 +220,10 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 						<tr>
 							<th class="product-remove"><span class="screen-reader-text"><?php esc_html_e( 'Remove item', 'orchid-store' ); ?></span></th>
 							<th class="product-thumbnail"><span class="screen-reader-text"><?php esc_html_e( 'Thumbnail image', 'orchid-store' ); ?></span></th>
-							<th class="product-name"><?php esc_html_e( 'Product', 'orchid-store' ); ?></th>
-							<th class="product-price"><?php esc_html_e( 'Price', 'orchid-store' ); ?></th>
-							<th class="product-quantity"><?php esc_html_e( 'Quantity', 'orchid-store' ); ?></th>
-							<th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'orchid-store' ); ?></th>
+							<th scope="col" class="product-name"><?php esc_html_e( 'Product', 'orchid-store' ); ?></th>
+							<th scope="col" class="product-price"><?php esc_html_e( 'Price', 'orchid-store' ); ?></th>
+							<th scope="col" class="product-quantity"><?php esc_html_e( 'Quantity', 'orchid-store' ); ?></th>
+							<th scope="col" class="product-subtotal"><?php esc_html_e( 'Subtotal', 'orchid-store' ); ?></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -263,8 +236,10 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 							/**
 							 * Filter the product name.
 							 *
-							 * @since 7.8.0
+							 * @since 2.1.0
 							 * @param string $product_name Name of the product in the cart.
+							 * @param array $cart_item The product in the cart.
+							 * @param string $cart_item_key Key for the product in the cart.
 							 */
 							$product_name = apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key );
 
@@ -278,10 +253,10 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 											echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 												'woocommerce_cart_item_remove_link',
 												sprintf(
-													'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+													'<a role="button" href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
 													esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 													/* translators: %s is the product name */
-													esc_attr( sprintf( __( 'Remove %s from cart', 'orchid-store' ), $product_name ) ),
+													esc_attr( sprintf( __( 'Remove %s from cart', 'orchid-store' ), wp_strip_all_tags( $product_name ) ) ),
 													esc_attr( $product_id ),
 													esc_attr( $_product->get_sku() )
 												),
@@ -292,75 +267,57 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 
 									<td class="product-thumbnail">
 									<?php
+									/**
+									 * Filter the product thumbnail displayed in the WooCommerce cart.
+									 *
+									 * This filter allows developers to customize the HTML output of the product
+									 * thumbnail. It passes the product image along with cart item data
+									 * for potential modifications before being displayed in the cart.
+									 *
+									 * @param string $thumbnail     The HTML for the product image.
+									 * @param array  $cart_item     The cart item data.
+									 * @param string $cart_item_key Unique key for the cart item.
+									 *
+									 * @since 2.1.0
+									 */
 									$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 
 									if ( ! $product_permalink ) {
-										echo $thumbnail; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+										echo $thumbnail; // PHPCS: XSS ok.
 									} else {
-										printf(
-											'<a href="%s">%s</a>',
-											esc_url( $product_permalink ),
-											$thumbnail // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-										);
+										printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
 									}
 									?>
 									</td>
 
-									<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'orchid-store' ); ?>">
+									<th scope="row" class="product-name" data-title="<?php esc_attr_e( 'Product', 'orchid-store' ); ?>">
 									<?php
 									if ( ! $product_permalink ) {
-										/**
-										 * Filter the product name.
-										 *
-										 * @since 7.8.0
-										 * @param string $product_name Name of the product in the cart.
-										 * @param array $cart_item The product in the cart.
-										 * @param string $cart_item_key Key for the product in the cart.
-										 */
-										echo wp_kses_post(
-											apply_filters(
-												'woocommerce_cart_item_name',
-												$product_name,
-												$cart_item,
-												$cart_item_key
-											) . '&nbsp;'
-										);
+										echo wp_kses_post( $product_name . '&nbsp;' );
 									} else {
 										/**
-										 * Filter the product name.
+										 * This filter is documented above.
 										 *
-										 * @since 7.8.0
-										 * @param string $product_url URL the product in the cart.
+										 * @since 2.1.0
 										 */
-										echo wp_kses_post(
-											apply_filters(
-												'woocommerce_cart_item_name',
-												sprintf(
-													'<a href="%s">%s</a>',
-													esc_url( $product_permalink ),
-													$product_name
-												),
-												$cart_item,
-												$cart_item_key
-											)
-										);
+										echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
 									}
 
 									do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
 
 									// Meta data.
-									echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore
+									echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
 
 									// Backorder notification.
 									if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
 										echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'orchid-store' ) . '</p>', $product_id ) );
 									}
 									?>
-									</td>
+									</th>
 
 									<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'orchid-store' ); ?>">
 										<?php
-										echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // phpcs:ignore
+											echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 										?>
 									</td>
 
@@ -386,13 +343,13 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 										false
 									);
 
-									echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // phpcs:ignore
+									echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
 									?>
 									</td>
 
 									<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'orchid-store' ); ?>">
 										<?php
-										echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // phpcs:ignore
+											echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 										?>
 									</td>
 								</tr>
