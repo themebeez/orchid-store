@@ -152,11 +152,14 @@
         max-width: 50%;
     }
 
-    .banner-style-1 .thumb,
     .banner-style-1 .item-entry,
     .banner-style-1 .category-nav ul,
     .banner-style-1 .carousel-preloader {
 
+        height: 400px;
+    }
+
+    .banner-style-1:not(.os-no-banner-image-in-bg) .thumb {
         height: 400px;
     }
 
@@ -359,8 +362,7 @@
         margin-top: 30px;
     }
 
-    .banner-style-1 .banner-image-wrapper img {
-
+    .banner-style-1:not(.os-no-banner-image-in-bg) .banner-image-wrapper img {
         height: 250px;
     }
 
@@ -380,6 +382,10 @@
     .banner-style-1 .banner-image-wrapper {
 
         padding: 0 15px;
+    }
+
+    .banner-style-1.os-no-banner-image-in-bg .right-col .banner-item-holder {
+        flex-direction: row;
     }
 }
 
@@ -490,7 +496,6 @@
         font-size: 17px;
     }
 
-    .banner-style-1 h2,
     .cta-style-2 .title h3,
     .woocommerce .entry-title,
     .archive-page-wrap .entry-title,
@@ -500,6 +505,15 @@
     .archive-entry .entry-title {
 
         font-size: 26px;
+    }
+
+    .banner-style-1 h2 {
+        font-size: 18px;
+    }
+
+    .banner-style-1 .excerpt p {
+        font-size: 16px;
+        margin-bottom: 15px;
     }
 
     section .section-title {
@@ -535,10 +549,13 @@
         max-width: 100%;
     }
 
-    .banner-style-1 .thumb,
     .banner-style-1 .item-entry,
     .banner-style-1 .carousel-preloader {
 
+        height: 350px;
+    }
+
+    .banner-style-1:not(.os-no-banner-image-in-bg) .thumb {
         height: 350px;
     }
 
@@ -718,6 +735,10 @@
     .hide-in-small {
 
         display: none;
+    }
+
+    .banner-style-1.os-no-banner-image-in-bg .right-col .banner-item-holder {
+        flex-direction: row;
     }
 
     #yith-quick-view-content div.product div.images .woocommerce-product-gallery__trigger {

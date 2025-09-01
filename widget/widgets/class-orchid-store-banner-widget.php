@@ -58,6 +58,7 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 			$button_titles  = isset( $instance['button_titles'] ) ? $instance['button_titles'] : array();
 			$button_links   = isset( $instance['button_links'] ) ? $instance['button_links'] : array();
 			$show_contents  = isset( $instance['show_contents'] ) ? $instance['show_contents'] : true;
+			$set_img_in_bg  = isset( $instance['set_img_in_bg'] ) ? $instance['set_img_in_bg'] : true;
 			$enable_mask    = isset( $instance['enable_mask'] ) ? $instance['enable_mask'] : false;
 			$banner_image_1 = isset( $instance['banner_img_1'] ) ? $instance['banner_img_1'] : '';
 			$banner_image_2 = isset( $instance['banner_img_2'] ) ? $instance['banner_img_2'] : '';
@@ -69,6 +70,10 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 			if ( $enable_mask ) {
 
 				$banner_class = 'show-mask';
+			}
+
+			if ( ! $set_img_in_bg ) {
+				$banner_class .= ' os-no-banner-image-in-bg';
 			}
 			?>
 			<section class="general-banner banner-style-1 section-spacing <?php echo esc_attr( $banner_class ); ?>">
@@ -105,22 +110,71 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 													$slider_item->the_post();
 													?>
 													<div class="item">
-														<figure
-															class="thumb" 
-															<?php
-															if ( has_post_thumbnail() ) {
-																?>
-																style="background-image:url( <?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?> );"
-																<?php
-															}
+														<?php
+														if ( $set_img_in_bg ) {
 															?>
-														>
+															<figure
+																class="thumb" 
+																<?php
+																if ( has_post_thumbnail() ) {
+																	?>
+																	style="background-image:url( <?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?> );"
+																	<?php
+																}
+																?>
+															>
+																<?php
+																if ( $enable_mask ) {
+																	?>
+																	<div class="mask"></div>
+																	<?php
+																}
+																if ( $show_contents ) {
+																	?>
+																	<div class="item-entry">
+																		<div class="content-holder">
+																			<div class="entry-contents">
+																				<div class="title">
+																					<h2><?php the_title(); ?></h2>
+																				</div>
+																				<div class="excerpt">
+																					<?php the_content(); ?>
+																				</div><!-- .excerpt -->
+																				<?php
+																				if ( ! empty( $button_titles[ $slider_index ] ) && ! empty( $button_links[ $slider_index ] ) ) {
+																					?>
+																					<div class="permalink">
+																						<a class="button-general" href="<?php echo esc_url( $button_links[ $slider_index ] ); ?>">
+																							<?php echo esc_html( $button_titles[ $slider_index ] ); ?>
+																						</a>
+																					</div><!-- .permalink -->
+																					<?php
+																				}
+																				?>
+																			</div><!-- .entry-contents -->
+																		</div><!-- .content-holder -->
+																	</div><!-- .item-entry -->
+																	<?php
+																}
+																?>
+															</figure><!-- .thumb -->
+															<?php
+														} else {
+															?>
+															<figure class="thumb">
+																<?php
+																if ( has_post_thumbnail() ) {
+																	the_post_thumbnail();
+																}
+																?>
+															</figure><!-- .thumb -->
 															<?php
 															if ( $enable_mask ) {
 																?>
 																<div class="mask"></div>
 																<?php
 															}
+
 															if ( $show_contents ) {
 																?>
 																<div class="item-entry">
@@ -148,8 +202,8 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 																</div><!-- .item-entry -->
 																<?php
 															}
-															?>
-														</figure><!-- .thumb -->
+														}
+														?>
 													</div>
 													<?php
 												}
@@ -241,6 +295,7 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 				'button_titles' => array(),
 				'button_links'  => array(),
 				'show_contents' => true,
+				'set_img_in_bg' => true,
 				'enable_mask'   => false,
 				'banner_img_1'  => '',
 				'banner_img_2'  => '',
@@ -360,6 +415,17 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 						type="checkbox" <?php checked( true, $instance['show_contents'] ); ?>
 					>  
 					<strong><?php esc_html_e( 'Show Slider Contents', 'orchid-store' ); ?></strong>
+				</label>                 
+			</p>
+
+			<p>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'set_img_in_bg' ) ); ?>">
+					<input
+						id="<?php echo esc_attr( $this->get_field_id( 'set_img_in_bg' ) ); ?>"
+						name="<?php echo esc_attr( $this->get_field_name( 'set_img_in_bg' ) ); ?>"
+						type="checkbox" <?php checked( true, $instance['set_img_in_bg'] ); ?>
+					>  
+					<strong><?php esc_html_e( 'Set Image as Background Image', 'orchid-store' ); ?></strong>
 				</label>                 
 			</p>
 
@@ -510,6 +576,8 @@ if ( ! class_exists( 'Orchid_Store_Banner_Widget' ) ) {
 			$instance['button_links'] = isset( $new_instance['button_links'] ) ? array_map( 'esc_url_raw', $new_instance['button_links'] ) : array();
 
 			$instance['show_contents'] = isset( $new_instance['show_contents'] ) ? true : false;
+
+			$instance['set_img_in_bg'] = isset( $new_instance['set_img_in_bg'] ) ? true : false;
 
 			$instance['enable_mask'] = isset( $new_instance['enable_mask'] ) ? true : false;
 
