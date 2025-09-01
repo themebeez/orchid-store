@@ -21,15 +21,21 @@
 
     position: relative;
     overflow: hidden;
+}
+
+.banner-style-1:not(.os-no-banner-image-in-bg) .banner-image-wrapper {
     margin-bottom: 30px;
 }
 
 .banner-style-1 .banner-image-wrapper img {
 
     width: 100%;
-    height: 210px;
     object-fit: cover;
     object-position: center;
+}
+
+.banner-style-1:not(.os-no-banner-image-in-bg) .banner-image-wrapper img {
+    height: 210px;
 }
 
 .banner-style-1 .right-col .banner-image-wrapper:last-child {
@@ -89,12 +95,15 @@
     font-size: 14px;
 }
 
-.banner-style-1 .thumb,
 .banner-style-1 .item-entry,
 .banner-style-1 .category-nav ul {
 
     position: relative;
     @include bg_image(center center, cover, inherit);
+    height: 453px;
+}
+
+.banner-style-1:not(.os-no-banner-image-in-bg) .thumb {
     height: 453px;
 }
 
@@ -133,6 +142,26 @@
 .banner-style-1.show-mask .entry-contents {
 
     color: $white;
+}
+
+.banner-style-1.os-no-banner-image-in-bg .right-col .banner-item-holder {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.banner-style-1.os-no-banner-image-in-bg .item {
+    position: relative;
+}
+
+.banner-style-1.os-no-banner-image-in-bg .item-entry {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
 }
 
 // animation
@@ -1641,6 +1670,11 @@ body.woocommerce:not(.no-sidebar) #content div.product div.summary {
     float: right;
     width: 100%;
     padding: 30px;
+}
+
+.woocommerce .cart-collaterals:not(.os-cart-totals-wrapper) .cart_totals,
+.woocommerce-page .cart-collaterals:not(.os-cart-totals-wrapper) .cart_totals {
+    margin-top: 40px;
 }
 
 #add_payment_method .cart-collaterals .cart_totals table,

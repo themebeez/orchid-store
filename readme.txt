@@ -5,8 +5,8 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 7.4
 Requires at least: 6.4
 Tested up to: 6.8
-Version: 1.5.13
-Stable tag: 1.5.13
+Version: 1.5.15
+Stable tag: 1.5.15
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -101,7 +101,16 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.5.13 - 18 May, 2025 ===
+== 1.5.15 - 1 September, 2025 ==
+
+- Updated: WooCommerce template file, cart.php.
+- Added:   Option - Set Image as Background Image in the OS:Banner widget.
+
+== 1.5.14 - 24 July, 2025 ==
+
+- Updated: WooCommerce template files.
+
+== 1.5.13 - 18 May, 2025 ==
 
 - Updated: Submenu toggles when arrow icon is clicked in the special(category) menu.
 
