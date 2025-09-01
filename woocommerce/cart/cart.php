@@ -12,7 +12,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 10.0.0
+ * @version 10.1.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -100,7 +100,7 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 							?>
 							</td>
 
-							<th scope="row" class="product-name" data-title="<?php esc_attr_e( 'Product', 'orchid-store' ); ?>">
+							<td scope="row" role="rowheader" class="product-name" data-title="<?php esc_attr_e( 'Product', 'orchid-store' ); ?>">
 							<?php
 							if ( ! $product_permalink ) {
 								echo wp_kses_post( $product_name . '&nbsp;' );
@@ -123,7 +123,7 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 								echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'orchid-store' ) . '</p>', $product_id ) );
 							}
 							?>
-							</th>
+							</td>
 
 							<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'orchid-store' ); ?>">
 								<?php
@@ -198,13 +198,13 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 
 	<div class="cart-collaterals">
 		<?php
-			/**
-			 * Cart collaterals hook.
-			 *
-			 * @hooked woocommerce_cross_sell_display
-			 * @hooked woocommerce_cart_totals - 10
-			 */
-			do_action( 'woocommerce_cart_collaterals' );
+		/**
+		 * Cart collaterals hook.
+		 *
+		 * @hooked woocommerce_cross_sell_display
+		 * @hooked woocommerce_cart_totals - 10
+		 */
+		do_action( 'woocommerce_cart_collaterals' );
 		?>
 	</div>
 	<?php
@@ -290,7 +290,7 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 									?>
 									</td>
 
-									<th scope="row" class="product-name" data-title="<?php esc_attr_e( 'Product', 'orchid-store' ); ?>">
+									<td scope="row" role="rowheader" class="product-name" data-title="<?php esc_attr_e( 'Product', 'orchid-store' ); ?>">
 									<?php
 									if ( ! $product_permalink ) {
 										echo wp_kses_post( $product_name . '&nbsp;' );
@@ -313,7 +313,7 @@ if ( get_theme_mod( 'orchid_store_field_cart_layout', 'layout_1' ) === 'layout_1
 										echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'orchid-store' ) . '</p>', $product_id ) );
 									}
 									?>
-									</th>
+									</td>
 
 									<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'orchid-store' ); ?>">
 										<?php
