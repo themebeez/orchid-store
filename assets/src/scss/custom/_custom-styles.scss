@@ -1672,6 +1672,11 @@ body.woocommerce:not(.no-sidebar) #content div.product div.summary {
     padding: 30px;
 }
 
+.woocommerce .cart-collaterals:not(.os-cart-totals-wrapper) .cart_totals,
+.woocommerce-page .cart-collaterals:not(.os-cart-totals-wrapper) .cart_totals {
+    margin-top: 40px;
+}
+
 #add_payment_method .cart-collaterals .cart_totals table,
 .woocommerce-cart .cart-collaterals .cart_totals table,
 .woocommerce-checkout .cart-collaterals .cart_totals table {
