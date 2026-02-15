@@ -172,7 +172,12 @@ class Udp_Agent {
 	 * @since    1.0.0
 	 */
 	private function process_user_tracking_choice() {
-
+		// Verify if the user is logged in and has the capability to manage options.
+		if ( ! is_user_logged_in() || ! current_user_can( 'manage_options' ) ) {
+			wp_safe_redirect( home_url() );
+			exit;
+		}
+		
 		$users_choice = isset( $_GET['udp-agent-allow-access'] ) ? sanitize_text_field( wp_unslash( $_GET['udp-agent-allow-access'] ) ) : ''; //phpcs:ignore
 
 		if ( empty( $users_choice ) ) {
