@@ -4,9 +4,9 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 7.4
 Requires at least: 6.4
-Tested up to: 6.8
-Version: 1.5.15
-Stable tag: 1.5.15
+Tested up to: 6.9.1
+Version: 1.5.16
+Stable tag: 1.5.16
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,8 +98,11 @@ Orchid Store includes support for WooCommerce, Addonify WooCommerce Wishlist, Ad
 
 We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
-
 == Changelog ==
+
+== 1.5.16 - 15 February, 2026 ==
+
+- Fix: Broken access control in udp agent class.
 
 == 1.5.15 - 1 September, 2025 ==
 
