@@ -100,7 +100,7 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 == Changelog ==
 
-== 1.5.17 - 16 July. 2026 ==
+== 1.5.17 - 16 July, 2026 ==
 
 - Updated: WooCommerce template file, cart.php.
 - Fix:     Fatal error in UDP agent.
