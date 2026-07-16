@@ -5,8 +5,8 @@ Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-t
 Requires PHP: 7.4
 Requires at least: 6.4
 Tested up to: 7.0.1
-Version: 1.5.16
-Stable tag: 1.5.16
+Version: 1.5.17
+Stable tag: 1.5.17
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,13 +98,16 @@ Orchid Store includes support for WooCommerce, Addonify WooCommerce Wishlist, Ad
 
 We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
-
 == Changelog ==
 
-== 1.5.16 - 16 July. 2026 ==
+== 1.5.17 - 16 July. 2026 ==
 
 - Updated: WooCommerce template file, cart.php.
 - Tested:  WooCommerce upto 10.9.4.
+
+== 1.5.16 - 15 February, 2026 ==
+
+- Fix: Broken access control in udp agent class.
 
 == 1.5.15 - 1 September, 2025 ==
 
