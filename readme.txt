@@ -4,9 +4,9 @@ Contributors: themebeez
 Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, blog, left-sidebar, right-sidebar, e-commerce, rtl-language-support
 Requires PHP: 7.4
 Requires at least: 6.4
-Tested up to: 6.8
-Version: 1.5.15
-Stable tag: 1.5.15
+Tested up to: 7.0.1
+Version: 1.5.16
+Stable tag: 1.5.16
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,7 +18,7 @@ Orchid Store is a clean, flexible, stylish & dynamic e-commerce WordPress theme.
 
 == Copyright ==
 
-Orchid Store WordPress Theme, Copyright (C) 2019-2025, themebeez.
+Orchid Store WordPress Theme, Copyright (C) 2019-2026, themebeez.
 Orchid Store is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
@@ -100,6 +100,11 @@ We do have issue tracker at Github https://github.com/themebeez/orchid-store
 
 
 == Changelog ==
+
+== 1.5.16 - 16 July. 2026 ==
+
+- Updated: WooCommerce template file, cart.php.
+- Tested:  WooCommerce upto 10.9.4.
 
 == 1.5.15 - 1 September, 2025 ==
 
